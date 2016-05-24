@@ -25,7 +25,7 @@ class Model {
      */
     public function __get($name)
     {
-        // @TODO: Return the value from attributes with a matching $name, if it exists
+        // Return the value from attributes with a matching $name, if it exists
         if ( array_key_exists( $name, $this->attributes ) )
         {
 
@@ -42,7 +42,7 @@ class Model {
     public function __set($name, $value)
     {
 
-        // @TODO: Store name/value pair in attributes array
+        // Store name/value pair in attributes array
         $this->attributes[ $name ] = $value;
     }
 
@@ -56,7 +56,7 @@ class Model {
         if ( ! self::$dbc )
         {
 
-            // @TODO: Connect to database
+            //Connect to database
             require_once __DIR__ . '/../database/db_connect.php';
 
             self::$dbc = $dbc;
@@ -70,8 +70,8 @@ class Model {
     public function save()
     {
 
-        // @TODO: Ensure there are attributes before attempting to save
-        // @TODO: Perform the proper action - if the `id` is set, this is an update, if not it is a insert
+        //Ensure there are attributes before attempting to save
+        //Perform the proper action - if the `id` is set, this is an update, if not it is a insert
         if ( ! empty( $this->attributes ) && isset( $this->attributes['id'] ) )
         {
 
@@ -99,9 +99,9 @@ class Model {
     protected function insert()
     {
 
-        // @TODO: After insert, add the id back to the attributes array so the object can properly reflect the id
-        // @TODO: You will need to iterate through all the attributes to build the prepared query
-        // @TODO: Use prepared statements to ensure data security
+        //After insert, add the id back to the attributes array so the object can properly reflect the id
+        //Iterate through all the attributes to build the prepared query
+        //Use prepared statements to ensure data security
         $columns = '';
         $value_placeholders = '';
 
@@ -139,9 +139,9 @@ class Model {
     protected function update($id)
     {
 
-        // @TODO: Ensure that update is properly handled with the id key
-        // @TODO: You will need to iterate through all the attributes to build the prepared query
-        // @TODO: Use prepared statements to ensure data security
+        //Ensure that update is properly handled with the id key
+        //You will need to iterate through all the attributes to build the prepared query
+        //Use prepared statements to ensure data security
         $query = "UPDATE " . static::$table . " SET ";
         $first_value = true;
 
@@ -190,14 +190,14 @@ class Model {
         // Get connection to the database
         self::dbConnect();
 
-        // @TODO: Create select statement using prepared statements
+        //Create select statement using prepared statements
         $query = 'SELECT * FROM ' . static::$table . ' WHERE id = :id';
 
         $stmt = self::$dbc->prepare($query);
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
 
-        // @TODO: Store the resultset in a variable named $result
+        //Store the resultset in a variable named $result
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
         // The following code will set the attributes on the calling object based on the result variable's contents
@@ -223,14 +223,14 @@ class Model {
 
         self::dbConnect();
 
-        // @TODO: Learning from the previous method, return all the matching records
-        // @TODO: Create select statement using prepared statements
+        //Learning from the previous method, return all the matching records
+        //Create select statement using prepared statements
         $query = 'SELECT * FROM ' . static::$table;
 
         $stmt = self::$dbc->prepare($query);
         $stmt->execute();
 
-        // @TODO: Store the resultset in a variable named $result
+        //Store the resultset in a variable named $result
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         // The following code will set the attributes on the calling object based on the result variable's contents
