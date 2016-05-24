@@ -31,7 +31,7 @@ class User extends Model {
         $stmt->bindValue(':email', $username_or_email, PDO::PARAM_STR);
         $stmt->execute();
 
-        // @TODO: Store the resultset in a variable named $result
+        //Store the resultset in a variable named $result
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
 
         // The following code will set the attributes on the calling object based on the result variable's contents
@@ -48,12 +48,6 @@ class User extends Model {
         return $instance;
     }
 
-    // relationship to items owned by user
-    public function items()
-    {
-
-        return Item::findAllWithUserId($this->id);
-    }
 
 }
 
