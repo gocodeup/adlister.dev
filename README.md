@@ -37,7 +37,7 @@ database/
 
 models/ 
 	Ad.php
-	BaseModel.php **** called Model in repo
+	Model.php
 	User.php
 
 public/ 
@@ -95,16 +95,17 @@ Good news! The Elbonians built a database migration for your users table. Think 
 Sketch out a UML-style map of the database, tables, and models before you begin coding.
 Ultimately, the resulting code returned from your model will look something like this:
 
-￼```
-$ads = [ [
-'image_url' => '/img/uploads/100.png' ],
-// ...
-];
-'id' => 100,
-'user_id' => 100,
-'name' => 'SNES',
-'description' => 'Plays like new! Includes mario kart.', 'price' => 150.00,
-```
+~~~~
+$ads = [[
+        'id' => 100,
+        'user_id' => 100,
+        'name' => 'SNES',
+        'description' => 'Plays like new! Includes mario kart.', 
+        'price' => 150.00
+        'image_url' => '/img/uploads/100.png'
+    ],
+    //More ads within array]
+~~~~
 (hint: key/value pairs in the above model relate to table columns).
 
 Create the database tables with migration files. Remember to first drop existing tables before table creation. Seed your tables with seeder files using SQL statements and PDO::exec(). Your seeders should truncate the applicable tables before using prepared statements to insert data. Create sample data to test all the relations in your application.
