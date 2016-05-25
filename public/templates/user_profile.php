@@ -25,7 +25,7 @@
     
         <p>Email</p>
 
-        <button>Edit Profile</button>
+        <button class="btn btn-default" type="submit">Edit Profile</button>
     </div>
 
     <div class="col-sm-4 col-sm-offset-3 text-center">
@@ -39,7 +39,7 @@
         <p>    
             <a href="#">Ad 3</a>
         </p>
-        <button>Create Ad</button>
+        <button class="btn btn-default" type="submit">Create Ad</button>
     </div>
 
 </div>
