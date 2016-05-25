@@ -8,7 +8,7 @@ session_start();
 <html>
 <head>
 	<title>Ad Lister</title>
-	<!-- <php require '../views/partials/head.php'; ?> -->
+	<?php require '../../views/partials/head.php'; ?>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -16,7 +16,7 @@ session_start();
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>        
 </head>
 <body>
-	<!-- <php require '../../views/partials/navbar.php'; ?> -->
+	<?php require '../../views/partials/navbar.php'; ?> -->
 <div class="section card">
   	<div class="slider">
 		<ul class="slides">
