@@ -92,24 +92,24 @@
               
               <div id="signupNameField" class="form-group col-sm-10 col-sm-offset-1">
                 <label for="signupNameField" class="sr-only">Name</label>
-                <input id="signupNameField" type="text" class="form-control" name="title" maxlength="50quired>
+                <input id="signupNameField" type="text" class="form-control" name="title" maxlength="50" placeholder="Your Name" required>
               </div>
               <div id="signupEmailField" class="form-group col-sm-10 col-sm-offset-1">
                   <label for="signupEmailField" class="sr-only">E-Mail</label>
-                  <input id="signupEmailField" type="text" class="form-control" name="title" maxlength="50quired>
+                  <input id="signupEmailField" type="text" class="form-control" name="title" maxlength="50" placeholder="Your Email"required>
               </div>
               <div id="signupUsernameField" class="form-group col-sm-10 col-sm-offset-1">
                   <label for="signupUsernameField" class="sr-only">Username</label>
-                  <input id="signupUsernameField" type="text" class="form-control" name="title" maxlength="20" required>
+                  <input id="signupUsernameField" type="text" class="form-control" name="title" maxlength="20" placeholder="Create a Username" required>
               </div>
               <div id="signupPasswordField" class="form-group col-sm-10 col-sm-offset-1">
                 <label for="signupPasswordField" class="sr-only">Password</label>
-                <input id="signupPasswordField" type="text" class="form-control" name="title" maxlength="20" required>
+                <input id="signupPasswordField" type="password" class="form-control" name="title" maxlength="20" placeholder="Create a Password" required>
             </div>
 
             <div id="signupConfirmField" class="form-group col-sm-10 col-sm-offset-1">
                 <label for="signupConfirmField" class="sr-only">Confirm Password</label>
-                <input id="signupConfirmField" type="text" class="form-control" name="title" maxlength="20" required>
+                <input id="signupConfirmField" type="text" class="form-control" name="title" maxlength="20" placeholder="Confirm Password"required>
             </div>
             <div id="emailsignupBtnDiv" class="form-group col-sm-10 col-sm-offset-1 text-center">
                 <button type="submit" class="btn btn-primary btn-block">CLICK TO SIGN UP</button>
