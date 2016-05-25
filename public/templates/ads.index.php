@@ -13,8 +13,7 @@
    <?php require '../../views/partials/navbar.php'; ?>
 </header>
 
-<div class="container text-center">
-    
+<div class="container text-center">  
     <div class="row">
       <div class="col-sm-3">
         <div class="thumbnail">
@@ -27,7 +26,10 @@
                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                     consequat.
                 </p>
-            <p><a href="#" class="btn btn-primary" role="button">View</a> <a href="#" class="btn btn-default" role="button">Add to Cart</a></p>
+                <p>
+                    <a href="#" class="btn btn-primary" role="button">View</a>
+                    <a href="#" class="btn btn-default" role="button">Add to Cart</a>
+                </p>    
           </div>
         </div>
       </div>
@@ -43,7 +45,10 @@
                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                     consequat.
                 </p>
-            <p><a href="#" class="btn btn-primary" role="button">View</a> <a href="#" class="btn btn-default" role="button">Add to Cart</a></p>
+                <p>
+                    <a href="#" class="btn btn-primary" role="button">View</a>
+                    <a href="#" class="btn btn-default" role="button">Add to Cart</a>
+                </p>
           </div>
         </div>
       </div>
@@ -59,7 +64,10 @@
                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                     consequat.
                 </p>
-            <p><a href="#" class="btn btn-primary" role="button">View</a> <a href="#" class="btn btn-default" role="button">Add to Cart</a></p>
+                <p>
+                    <a href="#" class="btn btn-primary" role="button">View</a>
+                    <a href="#" class="btn btn-default" role="button">Add to Cart</a>
+                </p>
           </div>
         </div>
       </div>
@@ -75,7 +83,10 @@
                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                     consequat.
                 </p>
-            <p><a href="#" class="btn btn-primary" role="button">View</a> <a href="#" class="btn btn-default" role="button">Add to Cart</a></p>
+                <p>
+                    <a href="#" class="btn btn-primary" role="button">View</a>
+                    <a href="#" class="btn btn-default" role="button">Add to Cart</a>
+                </p>
           </div>
         </div>
       </div>
@@ -93,7 +104,10 @@
                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                     consequat.
                 </p>
-            <p><a href="#" class="btn btn-primary" role="button">View</a> <a href="#" class="btn btn-default" role="button">Add to Cart</a></p>
+                <p>
+                    <a href="#" class="btn btn-primary" role="button">View</a>
+                    <a href="#" class="btn btn-default" role="button">Add to Cart</a>
+                </p>
           </div>
         </div>
       </div>
@@ -109,7 +123,10 @@
                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                     consequat.
                 </p>
-            <p><a href="#" class="btn btn-primary" role="button">View</a> <a href="#" class="btn btn-default" role="button">Add to Cart</a></p>
+                <p>
+                    <a href="#" class="btn btn-primary" role="button">View</a>
+                    <a href="#" class="btn btn-default" role="button">Add to Cart</a>
+                </p>
           </div>
         </div>
       </div>
@@ -125,7 +142,10 @@
                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                     consequat.
                 </p>
-            <p><a href="#" class="btn btn-primary" role="button">View</a> <a href="#" class="btn btn-default" role="button">Add to Cart</a></p>
+                <p>
+                    <a href="#" class="btn btn-primary" role="button">View</a>
+                    <a href="#" class="btn btn-default" role="button">Add to Cart</a>
+                </p>
           </div>
         </div>
       </div>
@@ -141,14 +161,15 @@
                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                     consequat.
                 </p>
-            <p><a href="#" class="btn btn-primary" role="button">View</a> <a href="#" class="btn btn-default" role="button">Add to Cart</a></p>
+                <p>
+                    <a href="#" class="btn btn-primary" role="button">View</a>
+                    <a href="#" class="btn btn-default" role="button">Add to Cart</a>
+                </p>
           </div>
         </div>
       </div>
     </div>
-
 </div>
-
 
 <?php require '../../views/partials/common_js.php'; ?>
 </body>
