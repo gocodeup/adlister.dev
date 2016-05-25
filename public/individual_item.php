@@ -1,7 +1,6 @@
 <?php  
 
 
-
 ?>
 
 <!DOCTYPE html>
@@ -12,14 +11,16 @@
 </head>
 <body>
 <header>
-<?php require_once '../views/partials/navbar.php'; ?>
+<link rel="stylesheet" type="text/css" href="individual_item.css">
+<?php require_once '../views/partials/head.php';?>
+<?php require_once '../views/partials/navbar.php';?>
 </header>
 <div class="container">
 <h1>Individual Items Page</h1>
     <div class="row">
         <div class="col-md-6">
             <div class="thumbnail">
-                <img src="img/bears.jpg" class="img-responsive" alt="">
+                <img src="templates/img/bears.jpg" class="img-responsive" alt="">
                 <div class="caption">
                     <h3>Item Name Goes HERE!!</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
