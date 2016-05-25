@@ -1,6 +1,8 @@
 
 <?php
 session_start();
+require_once "navbar.php";
+require_once "header.php";
 // require_once __DIR__ . '/../bootstrap.php';
 ?>
 
@@ -106,6 +108,6 @@ session_start();
 
     <!-- <php require $main_view; ?> -->
 
-    <!-- <php require '../views/partials/common_js.php'; ?> -->
+    <?= require_once "footer.php"; ?>
 </body>
 </html>
