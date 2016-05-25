@@ -1,3 +1,5 @@
-.items{
-    border: solid black 1px !important;
+
+.jumbotron {
+    height: 300px; 
+    width: 300px;
 }
