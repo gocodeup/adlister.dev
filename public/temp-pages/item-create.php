@@ -48,5 +48,6 @@
             </form>
         </div>
     </div>
+    <?php require 'temp-foot.php'; ?>
 </body>
 </html>

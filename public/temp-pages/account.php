@@ -65,6 +65,6 @@
         </div><!-- End of user-ads -->
     </div><!-- End of container -->
 
-    <?php //require 'js-files'; ?>
+    <?php require 'temp-foot.php'; ?>
 </body>
 </html>
