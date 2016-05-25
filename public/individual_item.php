@@ -7,10 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<link rel="stylesheet" type="text/css" href="individual_item.css">
     <title>Individual Item</title>
 </head>
 <body>
@@ -22,7 +19,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="thumbnail">
-                <img src="css/bears.jpg" class="img-responsive" alt="">
+                <img src="img/bears.jpg" class="img-responsive" alt="">
                 <div class="caption">
                     <h3>Item Name Goes HERE!!</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
