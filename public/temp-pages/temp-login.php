@@ -9,7 +9,7 @@
     <title>Login Page</title>
 </head>
 <body>
-<h5>Creating A New User</h5>    
+<center>Creating A New User</center>    
 <div class="row">
     <div class="col s12 m6 l4 offset-m3 offset-l4">
         <form class="col s12">
@@ -39,7 +39,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col l4 offset-l4">
+            <div class="col s12 m8 l4 offset-m2 offset-l4">
               <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
             </div>
           </div>
