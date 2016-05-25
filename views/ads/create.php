@@ -2,8 +2,11 @@
 
 <?php
 
+session_start();
+
 // Uncomment in order to link necessary materialize css and javascript in later version.
 // require '/css.css';
+// require_once __DIR__ . '/../bootstrap.php';
 
 ?>
 
@@ -20,6 +23,9 @@
 
 </head>
 <body class = "container">
+
+<!-- <php require __DIR__ . '/navbar.php'; ?> -->
+<!-- <php require __DIR__ . '/common_js.php'; ?> -->
 
 <h1> Create an Ad Listing </h1>
 
@@ -72,7 +78,7 @@
     </form>
 </div> 
 
-
+<!-- <php require __DIR__ . '/footer.php'; ?> -->
 </body>
 </html>
 
