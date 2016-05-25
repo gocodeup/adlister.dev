@@ -10,7 +10,7 @@ session_start();
 <html>
 <head>
     <title>Ad Lister</title>
-    <!-- <php require '../views/partials/head.php'; ?> -->
+    <php require '../../views/partials/head.php'; ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
 
     <!-- Compiled and minified JavaScript -->
@@ -18,6 +18,8 @@ session_start();
              
 </head>
 <body>
+
+<php require '../../views/partials/navbar.php'; ?>
 
 <div class="section">
     <a class="title" href="">INDEX OF ITEMS</a>
@@ -102,7 +104,7 @@ session_start();
         </div>
 </div>
 </div>
-    <!-- <php require '../../views/partials/navbar.php'; ?> -->
+    
 
     <!-- <php require $main_view; ?> -->
 

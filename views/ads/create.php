@@ -24,7 +24,7 @@ session_start();
 </head>
 <body class = "container">
 
-<!-- <php require __DIR__ . '/navbar.php'; ?> -->
+<php require __DIR__ . '/navbar.php'; ?>
 <!-- <php require __DIR__ . '/common_js.php'; ?> -->
 
 <h1> Create an Ad Listing </h1>

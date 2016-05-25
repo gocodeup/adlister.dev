@@ -10,7 +10,7 @@ session_start();
 <html>
 <head>
     <title>Single Ad Page</title>
-    <!-- <php require '../views/partials/head.php'; ?> -->
+    <php require '../../views/partials/head.php'; ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
 
     <!-- Compiled and minified JavaScript -->
@@ -19,7 +19,7 @@ session_start();
 </head>
 <body>
 
-    <!-- <php require '../../views/partials/navbar.php'; ?> -->
+    <php require '../../views/partials/navbar.php'; ?>
 
     <!-- <php require $main_view; ?> -->
 
