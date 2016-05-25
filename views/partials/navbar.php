@@ -89,17 +89,32 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
               <h4 class="modal-title text-center" id="mySmallModalLabel">Let's Get Started!</h4>
-              <div id="loginEmailField" class="form-group col-sm-10 col-sm-offset-1">
-                <label for="loginEmail" class="sr-only">Email</label>
-                <input id="loginEmail" type="email" class="form-control" placeholder="Email Address">
+              
+              <div id="signupNameField" class="form-group col-sm-10 col-sm-offset-1">
+                <label for="signupNameField" class="sr-only">Name</label>
+                <input id="signupNameField" type="text" class="form-control" name="title" maxlength="50quired>
               </div>
-              <div id="loginPasswordField" class="form-group col-sm-10 col-sm-offset-1">
-                  <label for="loginPass" class="sr-only">Password</label>
-                  <input id="loginPass" type="password" class="form-control" placeholder="Password">
+              <div id="signupEmailField" class="form-group col-sm-10 col-sm-offset-1">
+                  <label for="signupEmailField" class="sr-only">E-Mail</label>
+                  <input id="signupEmailField" type="text" class="form-control" name="title" maxlength="50quired>
               </div>
-              <div id="emailLoginBtnDiv" class="form-group col-sm-10 col-sm-offset-1 text-center">
-                  <button id="loginWithEmailBtn" type="submit" class="btn btn-primary btn-block">CLICK TO LOG IN</button>
+              <div id="signupUsernameField" class="form-group col-sm-10 col-sm-offset-1">
+                  <label for="signupUsernameField" class="sr-only">Username</label>
+                  <input id="signupUsernameField" type="text" class="form-control" name="title" maxlength="20" required>
               </div>
+              <div id="signupPasswordField" class="form-group col-sm-10 col-sm-offset-1">
+                <label for="signupPasswordField" class="sr-only">Password</label>
+                <input id="signupPasswordField" type="text" class="form-control" name="title" maxlength="20" required>
+            </div>
+
+            <div id="signupConfirmField" class="form-group col-sm-10 col-sm-offset-1">
+                <label for="signupConfirmField" class="sr-only">Confirm Password</label>
+                <input id="signupConfirmField" type="text" class="form-control" name="title" maxlength="20" required>
+            </div>
+            <div id="emailsignupBtnDiv" class="form-group col-sm-10 col-sm-offset-1 text-center">
+                <button type="submit" class="btn btn-primary btn-block">CLICK TO SIGN UP</button>
+            </div>
+
             </div>
           </div>
         </div>
