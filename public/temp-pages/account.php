@@ -20,8 +20,14 @@ body {
     margin: 0 40px;
 }
 
-.user-info, .user-ads {
+.info {
     margin: 0 auto;
+    width: 250px;
+    background-color: #eeeeee;
+}
+
+.info p {
+    margin: 0px 20px;
 }
 </style>
 </head>
@@ -31,7 +37,7 @@ body {
         <div class="user-info section center-align">
             <h2>User Info</h2>
 
-            <div class="info">
+            <div class="info left-align">
                 <div class="name">
                     <p>Name: Johnny Sellsit</p>
                 </div>
@@ -39,8 +45,8 @@ body {
                 <div class="email">
                     <p>Email: jsellsit@gmail.com</p>
                 </div>
-          </div>
-          <button class="edit-profile btn">Edit Profile</button>
+            </div>
+            <button class="edit-profile btn">Edit Profile</button>
         </div><!-- End of user-info -->
 
         <div class="user-ads section center-align">
