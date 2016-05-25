@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<?php require '../../views/partials/head.php'; ?>
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
 	<?php require '../../views/partials/navbar.php'; ?>
