@@ -1,3 +1,9 @@
+<?php 
+
+require '../utils/Input.php'; 
+
+?>
+
 <form method="POST" action="./users/create.php" enctype="multipart/form-data">
 	<fieldset class="form-group">
         <label>Name</label>

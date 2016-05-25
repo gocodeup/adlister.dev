@@ -1,3 +1,9 @@
+<?php 
+
+require '../utils/Input.php'; 
+
+?>
+
 <form method="POST" action="./items/edit.php" enctype="multipart/form-data">
 	<fieldset class="form-group">
         <label>A Title For your Ad</label>
