@@ -16,6 +16,7 @@ session_start();
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>        
 </head>
 <body>
+
 	<?php require '../../views/partials/navbar.php'; ?> -->
 <div class="section card">
   	<div class="slider">
@@ -51,6 +52,7 @@ session_start();
 		</ul>
   	</div>
 </div>
+
 <div class="section">
 	<a class="title" href="">FEATURED ITEMS</a>
 	<div class="row isotope">
@@ -148,4 +150,3 @@ session_start();
 </script>
  </body>
 </html>
-
