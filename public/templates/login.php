@@ -31,5 +31,6 @@
 		</div>
 	</div>
 </div>
+	<?php require '../../views/partials/common_js.php'; ?>
 </body>
 </html>
