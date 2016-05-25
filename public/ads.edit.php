@@ -4,7 +4,7 @@ require '../utils/Input.php';
 
 ?>
 
-<form method="POST" action="./items/create.php" enctype="multipart/form-data">
+<form method="POST" action="./items/edit.php" enctype="multipart/form-data">
 	<fieldset class="form-group">
         <label>A Title For your Ad</label>
         <input type="text" class="form-control" name="title" maxlength="50" value="<?php if (Input::has('title')) echo $_POST['title']; ?>" required>
@@ -30,5 +30,5 @@ require '../utils/Input.php';
 	    <label>Select an image to upload</label>
 	    <input type="file" class="form-control" name="parkImg" id="parkImg" required>
     </fieldset>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Update</button>
 </form>
