@@ -3,6 +3,7 @@
 	<?php require '../../views/partials/head.php'; ?>
 </head>
 <body>
+	<?php require '../../views/partials/navbar.php'; ?>
 <div class="container">
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
