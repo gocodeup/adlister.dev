@@ -13,7 +13,7 @@ $query = 'CREATE TABLE ads (
     description TEXT,
     price INT UNSIGNED NOT NULL,
     img_ulr TEXT NOT NULL,
-    catagories VARCHAR(255) NOT NULL,
+    category VARCHAR(255) NOT NULL,
     tags VARCHAR(255),
     PRIMARY KEY (id)
 )';
