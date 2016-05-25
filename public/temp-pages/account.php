@@ -16,10 +16,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
 <style type="text/css">
-body {
-    margin: 0 40px;
-}
-
 .info {
     margin: 0 auto;
     width: 250px;
@@ -32,7 +28,7 @@ body {
 </style>
 </head>
 <body>
-    <?php //require 'nav-bar'; ?>
+    <?php require 'temp-navbar.php'; ?>
     <div class="container">
         <div class="user-info section center-align">
             <h2>User Info</h2>
