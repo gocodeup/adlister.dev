@@ -17,7 +17,6 @@ session_start();
 </head>
 <body>
 
-
 <div class="section">
     <a class="title" href="">FEATURED ITEMS</a>
     <div class="row isotope">
@@ -108,4 +107,3 @@ session_start();
     <!-- <php require '../views/partials/common_js.php'; ?> -->
 </body>
 </html>
-
