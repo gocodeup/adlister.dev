@@ -1,8 +1,5 @@
 <?php
-
-
 require_once __DIR__ . '/../../utils/Auth.php';
-
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
   $username = $_POST['username'];
   $password = $_POST['password'];
@@ -158,4 +155,3 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
