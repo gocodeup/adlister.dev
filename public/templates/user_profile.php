@@ -25,6 +25,8 @@
     
         <p>Email</p>
 
+        <p>Location</p>
+
         <button class="btn btn-default" type="submit">Edit Profile</button>
     </div>
 
