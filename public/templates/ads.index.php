@@ -26,7 +26,6 @@
                 </p>
                 <p>
                     <a href="#" class="btn btn-primary" role="button">View</a>
-                    <a href="#" class="btn btn-default" role="button">Add to Cart</a>
                 </p>    
           </div>
         </div>
@@ -43,7 +42,6 @@
                 </p>
                 <p>
                     <a href="#" class="btn btn-primary" role="button">View</a>
-                    <a href="#" class="btn btn-default" role="button">Add to Cart</a>
                 </p>
           </div>
         </div>
@@ -60,7 +58,6 @@
                 </p>
                 <p>
                     <a href="#" class="btn btn-primary" role="button">View</a>
-                    <a href="#" class="btn btn-default" role="button">Add to Cart</a>
                 </p>
           </div>
         </div>
@@ -77,7 +74,6 @@
                 </p>
                 <p>
                     <a href="#" class="btn btn-primary" role="button">View</a>
-                    <a href="#" class="btn btn-default" role="button">Add to Cart</a>
                 </p>
           </div>
         </div>
@@ -96,7 +92,6 @@
                 </p>
                 <p>
                     <a href="#" class="btn btn-primary" role="button">View</a>
-                    <a href="#" class="btn btn-default" role="button">Add to Cart</a>
                 </p>
           </div>
         </div>
@@ -113,7 +108,6 @@
                 </p>
                 <p>
                     <a href="#" class="btn btn-primary" role="button">View</a>
-                    <a href="#" class="btn btn-default" role="button">Add to Cart</a>
                 </p>
           </div>
         </div>
@@ -130,7 +124,6 @@
                 </p>
                 <p>
                     <a href="#" class="btn btn-primary" role="button">View</a>
-                    <a href="#" class="btn btn-default" role="button">Add to Cart</a>
                 </p>
           </div>
         </div>
@@ -147,7 +140,6 @@
                 </p>
                 <p>
                     <a href="#" class="btn btn-primary" role="button">View</a>
-                    <a href="#" class="btn btn-default" role="button">Add to Cart</a>
                 </p>
           </div>
         </div>
