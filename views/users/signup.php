@@ -1,3 +1,54 @@
+<html>
+<head>
+<?php require 'temp-head.php'; ?>
+
+
+    <title>Create New User</title>
+</head>
+<body>
+<?php require "temp-navbar.php"; ?>
+
+<center>Creating A New User</center>    
+<div class="row">
+    <div class="col s12 m6 l4 offset-m3 offset-l4">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field">
+              <input placeholder="First Name" id="first_name" type="text" class="validate">
+            </div>
+          </div>  
+          <div class="row">  
+            <div class="input-field">
+              <input placeholder="Last Name" id="last_name" type="text" class="validate">
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field">
+              <input placeholder="Password" id="password" type="password" class="validate">
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field">
+              <input placeholder="Confirm Password" id="confirmPassword" type="password" class="validate">
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field">
+              <input placeholder="Email" id="email" type="email" class="validate">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m8 l4 offset-m2 offset-l4">
+              <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+            </div>
+          </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
+
 <div class="container">
 
 	<section id="login">
