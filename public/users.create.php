@@ -1,6 +1,7 @@
 <?php 
 
-require '../utils/Input.php'; 
+require '../utils/Input.php';
+require '../views/partials/header.php';
 
 ?>
 
@@ -27,3 +28,5 @@ require '../utils/Input.php';
     </fieldset>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+<?php require '../views/partials/footer.php'; ?>
