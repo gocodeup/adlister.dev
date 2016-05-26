@@ -8,6 +8,7 @@ $dbc->exec('DROP TABLE IF EXISTS ads');
 $query = 'CREATE TABLE ads (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     ad_name VARCHAR(240) NOT NULL,
+    ad_description VARCHAR(5000) NOT NULL,
     price DOUBLE(50,2) NOT NULL,
     phone VARCHAR(100) NOT NULL,
     email VARCHAR(255) NOT NULL,
