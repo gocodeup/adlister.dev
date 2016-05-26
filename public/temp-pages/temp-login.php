@@ -1,10 +1,6 @@
 <html>
 <head>
-<!-- Compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+<?php require 'temp-head.php'; ?>
 
     <title>Login Page</title>
 </head>
@@ -16,12 +12,12 @@
         <form class="col s12">
           <div class="row">
             <div class="input-field">
-              <input placeholder="Usernae" id="userName" type="text" class="validate">
+              <input placeholder="Username" id="userName" type="text" class="validate">
             </div>
           </div>
           <div class="row">
             <div class="input-field">
-              <input placeholder="Password" id="password" type="text" class="validate">
+              <input placeholder="Password" id="password" type="password" class="validate">
             </div>
           </div>
           <div class="row">
