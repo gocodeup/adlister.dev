@@ -1,6 +1,8 @@
 <?php 
 
-require_once "../../utils/helper_function.php";
+require_once __DIR__ . "../../models/Ad.php";
+require_once __DIR__ . "../../utils/helper_function.php";
+require_once __DIR__ . "../../utils/Input.php";
 
     $errors = [];
 
@@ -14,8 +16,9 @@ require_once "../../utils/helper_function.php";
             $ad->user_id = $_SESSION['LOGGED_IN_ID'];
             $ad->save();
         }
+    }
 
- ?>
+?>
 
 <div class="container"> 
     <h1>Create a New Ad</h1>
