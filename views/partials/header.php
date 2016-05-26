@@ -12,8 +12,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
   }
 }
 
-var_dump($_POST);
+
 ?>
+
+<!-- Bootstrap CSS cdn-->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!-- external css -->
+<link rel="stylesheet" href="/css/main.css">
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -142,7 +148,3 @@ var_dump($_POST);
   </div><!-- /.container-fluid -->
 </nav>
 
-<!-- Bootstrap CSS cdn-->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<!-- external css -->
-<link rel="stylesheet" href="/css/main.css">
