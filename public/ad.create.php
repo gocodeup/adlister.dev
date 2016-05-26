@@ -3,10 +3,13 @@ require_once __DIR__ . '/../database/db_connect.php';
 require_once '../utils/Input.php';
 require_once '../utils/helper_functions.php';
 
-function pageController($dbc)
+function newAdd($dbc)
 {
 
  	if (!empty($_POST)){
+
+ 		// This will need to be grabed from the session, hard coded for testing
+ 		$user_id = 1;
 
 		$title = Input::getString('title');
 
@@ -20,8 +23,9 @@ function pageController($dbc)
 
 		$tag = Input::getString('tag');
 
-		$stmt = $dbc->prepare('INSERT INTO ads (title, description, price, img_url, catagory, tag) VALUES (:title, :description, :price, :img_url, :catagory, :tag)');
+		$stmt = $dbc->prepare('INSERT INTO ads (user_id. title, description, price, img_url, catagory, tag) VALUES (:user_id :title, :description, :price, :img_url, :catagory, :tag)');
 
+	    $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
 	    $stmt->bindValue(':title', $title, PDO::PARAM_STR);
 	    $stmt->bindValue(':description', $description,  PDO::PARAM_STR);
 	    $stmt->bindValue(':price', $price,  PDO::PARAM_INT);
