@@ -21,7 +21,6 @@ extract(getAds($dbc));
 <html>
 <head>
 	<title>All adds</title>
-
     <?php require '../views/partials/header.php'; ?>
 </head>
 <body>
