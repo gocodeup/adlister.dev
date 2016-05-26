@@ -1,3 +1,20 @@
+<?php
+
+
+require_once __DIR__ . '/../../utils/Auth.php';
+
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+  if(Auth::attempt($username, $password)) {
+    header ('Location: authorized.php');
+    exit();
+  }
+}
+
+var_dump($_POST);
+?>
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -63,17 +80,19 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
               <h4 class="modal-title" id="mySmallModalLabel">Welcome back!</h4>
-              <div id="loginEmailField" class="form-group col-sm-10 col-sm-offset-1">
-                <label for="loginEmail" class="sr-only">Email</label>
-                <input id="loginEmail" type="email" class="form-control" placeholder="Email Address">
-              </div>
-              <div id="loginPasswordField" class="form-group col-sm-10 col-sm-offset-1">
-                  <label for="loginPass" class="sr-only">Password</label>
-                  <input id="loginPass" type="password" class="form-control" placeholder="Password">
-              </div>
-              <div id="emailLoginBtnDiv" class="form-group col-sm-10 col-sm-offset-1 text-center">
-                  <button id="loginWithEmailBtn" type="submit" class="btn btn-primary btn-block">CLICK TO LOG IN</button>
-              </div>
+              <form method="POST">
+                <div id="loginEmailField" class="form-group col-sm-10 col-sm-offset-1">
+                  <label for="loginEmail" class="sr-only">Username</label>
+                  <input name="username" id="loginEmail" type="text" class="form-control" placeholder="Username">
+                </div>
+                <div id="loginPasswordField" class="form-group col-sm-10 col-sm-offset-1">
+                    <label for="loginPass" class="sr-only">Password</label>
+                    <input name="password" id="loginPass" type="password" class="form-control" placeholder="Password">
+                </div>
+                <div id="emailLoginBtnDiv" class="form-group col-sm-10 col-sm-offset-1 text-center">
+                    <button id="loginWithEmailBtn" type="submit" class="btn btn-primary btn-block">CLICK TO LOG IN</button>
+                </div>
+              </form>
               <div class="text-center">
                   <a href="#" id="forgotPasswordLink">Forgot your password?</a>
               </div>
@@ -96,7 +115,7 @@
               </div>
               <div id="signupEmailField" class="form-group col-sm-10 col-sm-offset-1">
                   <label for="signupEmailField" class="sr-only">E-Mail</label>
-                  <input id="signupEmailField" type="text" class="form-control" name="title" maxlength="50" placeholder="Your Email"required>
+                  <input id="signupEmailField" type="text" class="form-control" name="title" maxlength="50" placeholder="Your E-Mail"required>
               </div>
               <div id="signupUsernameField" class="form-group col-sm-10 col-sm-offset-1">
                   <label for="signupUsernameField" class="sr-only">Username</label>
@@ -109,7 +128,7 @@
 
             <div id="signupConfirmField" class="form-group col-sm-10 col-sm-offset-1">
                 <label for="signupConfirmField" class="sr-only">Confirm Password</label>
-                <input id="signupConfirmField" type="text" class="form-control" name="title" maxlength="20" placeholder="Confirm Password"required>
+                <input id="signupConfirmField" type="password" class="form-control" name="title" maxlength="20" placeholder="Confirm Password"required>
             </div>
             <div id="emailsignupBtnDiv" class="form-group col-sm-10 col-sm-offset-1 text-center">
                 <button type="submit" class="btn btn-primary btn-block">CLICK TO SIGN UP</button>

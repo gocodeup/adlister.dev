@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require_once __DIR__ . '/../database/db_connect.php';
 
@@ -21,7 +21,6 @@ extract(getAds($dbc));
 <html>
 <head>
 	<title>All adds</title>
-
     <?php require '../views/partials/header.php'; ?>
 </head>
 <body>
@@ -32,7 +31,7 @@ extract(getAds($dbc));
 		<?php foreach($ads as $ad) : ?>
 			<div class="col-md-4">
 				<h3><?= $ad['title'] ?></h3>
-				<a href="link to ad page" target="_blank"><img height="200" src="<?= $ad['img_url'] ?>"/></a>
+				<a href="/ad.show.php?id=<?= $ad['id'] ?>" target="_blank"><img height="200" src="<?= $ad['img_url'] ?>"/></a>
 				<p>$<?= $ad['price'] ?></p>
 			</div>
 		<?php endforeach ?>
