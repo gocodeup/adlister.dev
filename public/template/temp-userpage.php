@@ -8,7 +8,6 @@ session_start();
 <html>
 <head>
     <title>Ad Lister</title>
-    <!-- <php require '../views/partials/head.php'; ?> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -16,12 +15,12 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>        
 </head>
 <body>
-    <!-- <php require '../../views/partials/navbar.php'; ?> -->
+  <?php require '../../views/partials/navbar.php'; ?>
 
-<div class="section">
+<div class="row">
     <a class="title" href="">USER ACCOUNT</a>
     <div class="row isotope">
-        <div class="col s12 m12 l4">
+        <div class="col s12 m3">
             <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
                     <a href="">
@@ -34,7 +33,6 @@ session_start();
                 </div>
             </div>
         </div>
-    </div>
 
 <a class="waves-effect waves-light btn">Edit</a>
 <div width="20%">
@@ -74,6 +72,8 @@ session_start();
   </ul>
 </div>
 </div>
+    </div>
+  <?= require_once "footer.php"; ?>
     <!-- <php require $main_view; ?> -->
 
      <!-- <php require '../views/partials/common_js.php'; ?> -->
