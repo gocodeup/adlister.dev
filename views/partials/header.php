@@ -96,12 +96,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
               <h4 class="modal-title" id="mySmallModalLabel">Welcome back!</h4>
               <form method="POST">
                 <div id="loginEmailField" class="form-group col-sm-10 col-sm-offset-1">
-                  <label for="loginEmail" class="sr-only">Username</label>
-                  <input name="username" id="loginEmail" type="text" class="form-control" placeholder="Username">
+                  <label for="username" class="sr-only">Username</label>
+                  <input name="username" id="username" type="text" class="form-control" placeholder="Username">
                 </div>
                 <div id="loginPasswordField" class="form-group col-sm-10 col-sm-offset-1">
-                    <label for="loginPass" class="sr-only">Password</label>
-                    <input name="password" id="loginPass" type="password" class="form-control" placeholder="Password">
+                    <label for="password" class="sr-only">Password</label>
+                    <input name="password" id="password" type="password" class="form-control" placeholder="Password">
                 </div>
                 <div id="emailLoginBtnDiv" class="form-group col-sm-10 col-sm-offset-1 text-center">
                     <button id="loginWithEmailBtn" type="submit" class="btn btn-primary btn-block">CLICK TO LOG IN</button>

@@ -1,20 +1,10 @@
 <?php 
 
-// require_once __DIR__ . '/../../database/db_connect.php';
+require_once __DIR__ . '/../../models/Ad.php';
 
-function get3Ads($dbc)
-{
-	$adLimit = 3;
+$ads = Ad::get3Ads();
 
-	$ads = [];
-		$stmt = $dbc->prepare("SELECT * FROM ads LIMIT {$adLimit}");
-		$stmt->execute();
-		$ads['ads'] = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-		return $ads;
-}
-
-extract(get3Ads($dbc));
+// extract(get3Ads($dbc));
 
 ?>
 <h2>Recent adds</h2>
