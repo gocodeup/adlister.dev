@@ -1,7 +1,9 @@
 <?php
+//this is starting the session
+session_start();
 require_once "navbar.php";
-// require_once "../utils/Auth.php";
-// require_once "../utils/Input.php";
+require_once "../../utils/Auth.php";
+require_once "../../utils/Input.php";
 ?>
 
 <!DOCTYPE html>
