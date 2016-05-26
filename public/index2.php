@@ -1,5 +1,5 @@
 
-​
+​<div class="container">
     <div class="row">
 ​
         <div class="col-md-4 col-md-offset-1 gearpic">
@@ -41,3 +41,4 @@
             </div>
         </div><!-- end col-md-4 col-md-offset-2 class -->
     </div> <!-- end row class -->
+</div>
