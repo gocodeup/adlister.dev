@@ -1,19 +1,20 @@
 <?php
-
-require_once __DIR__ . '/../../database/db_connect.php';
-
 require_once __DIR__ . '/../../utils/Auth.php';
-
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
   $username = $_POST['username'];
   $password = $_POST['password'];
   if(Auth::attempt($username, $password)) {
-    header ('Location: authorized.php');
+    header ('Location: index.php');
     exit();
   }
 }
-
 ?>
+
+<!-- Bootstrap CSS cdn-->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!-- external css -->
+<link rel="stylesheet" href="/css/main.css">
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -31,10 +32,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/ads.index.php">Items <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Account</a></li>
-        <li><a href="#">Logout</a></li>
-        <li><a href="/ad.create.php">Post Ad</a></li>    
+        <li class="active"><a href="/ads.index.php">Ads <span class="sr-only">(current)</span></a></li>
+
+        <!-- These buttons only show if the user is logged IN -->
+        <?php if (isset($_SESSION['IS_LOGGED_IN'])){ ?>
+          <li><a href="#">Account</a></li>
+          <li><a href="/ads.create.php">Post Ad</a></li>   
+        <?php } ?> 
+        
 <!--         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -69,8 +74,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
       </ul> -->
       <!-- Login & Signup Buttons -->
        <div class="nav-menu btn-group pull-right" role="group">
+
+        <!-- These buttons only show if the user is logged IN -->
+        <?php if (isset($_SESSION['IS_LOGGED_IN'])){ ?>
+        <a href="auth.logout.php" type="button" class="btn btn-default" id="logout-button">Logout</a>
+        <a href="#" type="button" class="btn btn-default" id="profile-button">Profile</a>
+        <?php } else { ?>
+
+        <!-- These buttons only show if the user is logged OUT -->
         <button type="button" class="btn btn-default" id="login-button" data-toggle="modal" data-target=".login-modal">Login</button>
-        <button type="button" class="btn btn-default" id="signup-button" data-toggle="modal" data-target=".signup-modal">Signup</button>
+        <button type="button" class="btn btn-default" id="signup-button" data-toggle="modal" data-target=".signup-modal">Sign Up</button>
+        <?php }?>
       </div>
 
       <!-- Login modal -->
@@ -141,16 +155,3 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-<!-- Bootstrap CSS cdn-->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<!-- external css -->
-<link rel="stylesheet" href="/css/main.css">
-
-<div class="header">
-	<div class="jumbotron">
-		<div class="container">
-			<h1>Welcome to RadLister!</h1>
-		  </div>
-	</div>
-</div>
