@@ -1,23 +1,14 @@
 <?php 
 require_once __DIR__ . '/../utils/Auth.php';
-require_once __DIR__ . '/../database/db_connect.php';
+require_once __DIR__ . '/../models/Model.php';
+
 session_start();
 if (isset($_SESSION['LOGGED_IN_ID']))
 {
 	$userId = $_SESSION['LOGGED_IN_ID'];
 }
 
-function showUser($dbc, $id)
-{
-	$user = [];
-	$stmt = $dbc->prepare("SELECT * FROM users JOIN ads ON users.id = ads.user_id WHERE users.id = $id");
-
-	$stmt->execute();
-	$user['user'] = $stmt->fetch(PDO::FETCH_ASSOC);
-	return $user;
-}
-
-extract(showUser($dbc, $userId));
+$user = User::showUser($userId);
 
 ?>
 <!DOCTYPE html>
