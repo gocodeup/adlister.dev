@@ -1,0 +1,195 @@
+body, html{
+    font-family: 'Oswald', sans-serif;
+    background-color: #f5f0f0;
+    text-align: center;
+    height: 100%;
+}
+#container {
+   min-height:100%;
+   position:relative;
+}
+#body{
+    padding-bottom:60px;
+}
+/* NAVBAR STYLING */
+.signin{
+    float: right;
+    padding-right: 10px;
+    padding-top: 30px;
+}   
+.navbut{
+    background-color: #222222;
+    color: white;
+    border: none;
+    box-shadow: inset 0 0 5px white;
+}
+.signinbut{
+    padding-right: 20px;
+}
+.navbar{
+    margin-bottom: 0px;
+}
+.logo{
+    font-family: 'Pacifico', cursive;
+    font-size: 50px;
+    color: white;
+    text-align: left;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    padding-left: 40px;
+}
+.username{
+    float: right;
+    padding-right: 30px;
+    padding-top: 30px;
+    color: #999999;
+    font-size: 20px;
+}
+
+/*GEAR PICTURE AND TEXT STYLING*/
+.gearpic{
+    padding-top: 50px;
+}
+.gear-line-one{
+    font-size: 30px;
+    color: red;
+    text-align: center;
+    padding-top: 20px;
+}
+.gear-line-two{
+    text-align: center;
+    font-size: 20px;
+}
+
+/*SIGN UP FORM STYLING*/
+.cattitle{
+    color: red;
+}
+.sign-up-text{
+    padding-top: 60px;
+    font-size: 40px;
+    color: red;
+    text-align: left;
+}
+.sign-up-free{
+    font-size: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+}
+
+.first-name, .email, .password{
+    padding-bottom: 25px;
+}
+.sign-up-btn{
+    background-color: red;
+    -moz-box-shadow: inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #000000;
+}
+
+/* SIDEBAR STYLING */
+#wrapper{
+    text-align: left;
+}
+.sidebar-nav{
+    float: left;
+}
+#sidebar-wrapper {
+    z-index: 1000;
+    width: 0;
+    height: 100%;
+    overflow-y: auto;
+    background: #222222;
+    margin-right: 0px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.sidebar-nav {
+    list-style: none;
+}
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+    line-height: 40px;
+}
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+@media(min-width:768px) {
+    #sidebar-wrapper {
+        width: 180px;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+}
+
+
+/* ITEM STYLING */
+.items{
+    padding-top: 25px;
+}
+.item-title{
+    padding: 0px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    margin: 0px;
+}
+.item-description{
+    margin: 0px;
+}
+
+/*FOOTER STYLING*/
+.footer{
+    background-color: #222222;
+    text-align: center;
+    color: #999999; 
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+
+}
+.footerinfo{
+    padding-top: 15px;
+    font-size: 15px;
+}
+.followinfo{
+    padding-top: 10px;
+    font-size: 20px;
+}
+.sell-crap-footer{
+    font-size: 20px;
+    padding-top: 10px;
+    padding-right: 15px;
+    margin-right: 50px;
+}
+.copyright-image{
+    height: 10px;
+    width: 10px;
+    margin-bottom: 10px;
+}
+.craptastic{
+    padding-right: 10px;
+}
+.subscribe-boxes{
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #808080;
+}
