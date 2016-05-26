@@ -34,6 +34,10 @@ function pageController()
 
     $data['main_view'] = $main_view;
 
+    $ads = Ads::all();
+
+    $data['ads'] = $ads;
+
     return $data;
 }
 
