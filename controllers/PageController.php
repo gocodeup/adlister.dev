@@ -34,7 +34,7 @@ function pageController()
             $main_view = '../views/users/login.php';
             break;
         case '/users/signup':
-            $main_view = '../public/index2.php';
+            $main_view = '../views/users/signup.php';
             break;
         //ads cases
         case '/':
