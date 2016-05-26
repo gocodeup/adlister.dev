@@ -33,6 +33,5 @@ extract(showAd($dbc, $id));
 		<?= $ad['description'] ?></p>
 
 
-
 	</div>
 	<?php require '../views/partials/footer.php'; ?>
