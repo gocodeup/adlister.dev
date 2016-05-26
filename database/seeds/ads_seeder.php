@@ -1,6 +1,6 @@
 <!--Page for an index of advertisements-->
 <?php 
-​
+​$_ENV = include __DIR__ . '/../../.env.php';
       // will stop duplicate 
 $truncate = 'TRUNCATE ads';
 $dbc->exec($truncate);
