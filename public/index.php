@@ -1,5 +1,7 @@
 <?php
-// session_start();
+
+session_start();
+
 // require_once __DIR__ . '/../bootstrap.php';
 
 // extract(get3Ads($dbc));
@@ -12,7 +14,9 @@
     <title>Rad-Lister</title>
     <?php require '../views/partials/header.php'; ?>
 </head>
-<body>
+<body>	
+	<?php require_once 'auth.login.php'; ?>
+
     <div class="container">
 	<!-- <?php //require $main_view; ?> 
 

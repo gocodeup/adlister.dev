@@ -1,7 +1,8 @@
 <?php
 
-require_once 'Log.php';
+require_once '../public/Log.php';
 require_once '../models/User.php';
+require_once 'Input.php';
 
 class Auth
 {
@@ -9,6 +10,7 @@ class Auth
 	// runs login attempt with parameters
 	public static function attempt($username, $password)
 	{
+
 
 		// makes sure the values passed in are not empty
 		if(($username == '' || $username == null) || ($password == '' || $password == null))
@@ -20,7 +22,7 @@ class Auth
 
 		// gets instance of user model by searching with username or email($username)
 		$user = User::findByUsernameOrEmail($username);
-
+		var_dump($user);
 		// makes sure the instance returned is not empty
 		if ($user == null)
 		{
@@ -30,7 +32,7 @@ class Auth
 		}
 
 		// checks password submitted against hashed password
-		if (password_verify($password, $user->password))
+		if ($password == $user->password)
 		{
 
 			// sets session variables used for logged in user
