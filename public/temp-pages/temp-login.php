@@ -9,7 +9,8 @@
     <title>Login Page</title>
 </head>
 <body>
-<center>Creating A New User</center>    
+  <?php require "temp-navbar.php"; ?>
+<center>Creating A New User</center>
 <div class="row">
     <div class="col s12 m6 l4 offset-m3 offset-l4">
         <form class="col s12">
@@ -17,8 +18,8 @@
             <div class="input-field">
               <input placeholder="First Name" id="first_name" type="text" class="validate">
             </div>
-          </div>  
-          <div class="row">  
+          </div>
+          <div class="row">
             <div class="input-field">
               <input placeholder="Last Name" id="last_name" type="text" class="validate">
             </div>
@@ -46,6 +47,7 @@
         </form>
     </div>
 </div>
+    <?php require 'temp-foot.php'; ?>
 
 </body>
 </html>
