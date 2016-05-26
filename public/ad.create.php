@@ -3,13 +3,14 @@ require_once __DIR__ . '/../database/db_connect.php';
 require_once '../utils/Input.php';
 require_once '../utils/helper_functions.php';
 
-function newAdd($dbc)
+function pageController($dbc)
 {
 
  	if (!empty($_POST)){
 
- 		// This will need to be grabed from the session, hard coded for testing
  		$user_id = 1;
+
+ 		$date_listed = '2015-04-04';
 
 		$title = Input::getString('title');
 
@@ -19,25 +20,29 @@ function newAdd($dbc)
 
 		$img_url = Input::getString('img_url');
 
-		$catagory = Input::getString('catagory');
+		$category = Input::getString('category');
 
-		$tag = Input::getString('tag');
+		$tags = Input::getString('tags');
 
-		$stmt = $dbc->prepare('INSERT INTO ads (user_id. title, description, price, img_url, catagory, tag) VALUES (:user_id :title, :description, :price, :img_url, :catagory, :tag)');
+		$stmt = $dbc->prepare('INSERT INTO ads (user_id, date_listed, title, description, price, img_url, category, tags) VALUES (:user_id, :date_listed, :title, :description, :price, :img_url, :category, :tags)');
 
-	    $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+		$stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+		$stmt->bindValue(':date_listed', $date_listed, PDO::PARAM_INT);
 	    $stmt->bindValue(':title', $title, PDO::PARAM_STR);
 	    $stmt->bindValue(':description', $description,  PDO::PARAM_STR);
 	    $stmt->bindValue(':price', $price,  PDO::PARAM_INT);
 	    $stmt->bindValue(':img_url', $img_url,  PDO::PARAM_STR);
-	    $stmt->bindValue(':catagory', $catagory,  PDO::PARAM_STR);
-	    $stmt->bindValue(':tag', $tag,  PDO::PARAM_STR);
+	    $stmt->bindValue(':category', $category,  PDO::PARAM_STR);
+	    $stmt->bindValue(':tags', $tags,  PDO::PARAM_STR);
+
 
 	    $stmt->execute();
 	    $_POST = [];
 	}
 
 } 
+
+pageController($dbc);
 
 ?>
 
@@ -67,11 +72,11 @@ function newAdd($dbc)
 		    <label>Image url</label>
 		    <input name="img_url" class="form-control" required>
 		    
-		    <label>Catagory</label>
-		    <input name="catagory" class="form-control" placeholder="characters only" required>
+		    <label>Category</label>
+		    <input name="category" class="form-control" placeholder="characters only" required>
 
-		    <label>Tag</label>
-		    <input name="tag" class="form-control" placeholder="characters only" required>
+		    <label>Tags</label>
+		    <input name="tags" class="form-control" placeholder="characters only" required>
 
   			<button type="submit" class="btn btn-default">add</button>
 		</form>  
