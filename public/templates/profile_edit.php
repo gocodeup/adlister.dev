@@ -16,8 +16,8 @@
 
 <div class="container"> 
 
+    <h1>Edit Profile</h1>
     <div class="col-sm-4 col-sm-offset-3 col-md-6 col-md-offset-3 text-center">
-    <h1>Edit Profile Page</h1>
         <form class="form-horizontal">
         <div class="form-group">
             <label for="name" class="col-sm-2 control-label">Username</label>
