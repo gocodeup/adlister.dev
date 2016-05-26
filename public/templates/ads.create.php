@@ -17,7 +17,8 @@
     
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
-            <form class="text-center">
+
+            <form action="demo_post_enctype.asp" method="post" enctype="multipart/form-data"class="text-center">
                 <div class="form-group">
                     <label for="itemname">Name</label>
                     <input type="text" class="form-control" placeholder="Item Name">
@@ -30,9 +31,13 @@
                     <label for="description">Description</label>
                     <textarea class="form-control" rows="5" placeholder="Describe your item"></textarea>
                 </div>
-              
-              <button type="submit" class="btn btn-default">Make My Ad</button>
+                <div class="form-group text-left">
+                    <label for="itemPicture">Add Picture</label>
+                    <input type="file" id="itemPicture">
+                </div>
+                <input class="btn btn-default" type="submit" value="Make My Ad">
             </form>
+
         </div>
     </div>
 
