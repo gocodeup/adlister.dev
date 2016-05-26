@@ -30,6 +30,10 @@
                     <label for="description">Description</label>
                     <textarea class="form-control" rows="5" placeholder="Describe your item"></textarea>
                 </div>
+                <div class="form-group">
+                    <label for="itemPicture">Add Picture</label>
+                    <input type="file" id="itemPicture">
+                </div>
               
               <button type="submit" class="btn btn-default">Make My Ad</button>
             </form>
