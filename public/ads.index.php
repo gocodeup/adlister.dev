@@ -20,7 +20,7 @@ extract(getAds($dbc));
 <!DOCTYPE html>
 <html>
 <head>
-	<title>All adds</title>
+	<title>All ads</title>
     <?php require '../views/partials/header.php'; ?>
 </head>
 <body>

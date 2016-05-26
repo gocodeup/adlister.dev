@@ -1,5 +1,6 @@
 <?php
 
+require_once __DIR__ . '/../../database/db_connect.php';
 
 require_once __DIR__ . '/../../utils/Auth.php';
 
@@ -12,7 +13,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
   }
 }
 
-var_dump($_POST);
 ?>
 
 <nav class="navbar navbar-default">
@@ -34,7 +34,7 @@ var_dump($_POST);
         <li class="active"><a href="/ads.index.php">Items <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Account</a></li>
         <li><a href="#">Logout</a></li>
-        <li><a href="/ads.create.php">Post Ad</a></li>    
+        <li><a href="/ad.create.php">Post Ad</a></li>    
 <!--         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -151,8 +151,6 @@ var_dump($_POST);
 	<div class="jumbotron">
 		<div class="container">
 			<h1>Welcome to RadLister!</h1>
-		  	<p>Here's where we can describe what Rad Lister's </p>
-		  	<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
 		  </div>
 	</div>
 </div>

@@ -31,12 +31,12 @@ extract(showAd($dbc, Input::get('id')));
 <body>
 	<div class="container">  
 
-	<h2><?= $ad['title'] ?></h2>
-	<p>Description:<br><?= $ad['description'] ?></p> 
-	<p>Date listed:<br><?= $ad['date_listed'] ?></p>
-	<p>Price:<br>$<?= $ad['price'] ?></p>
-	<p>Seller:<br><?= $ad['username'] ?></p>
-	<p><img height="600" src="<?= $ad['img_url'] ?>"/></p>
+		<h2><?= $ad['title'] ?></h2>
+		<p>Description:<br><?= $ad['description'] ?></p> 
+		<p>Date listed:<br><?= $ad['date_listed'] ?></p>
+		<p>Price:<br>$<?= $ad['price'] ?></p>
+		<p>Seller:<br><?= $ad['username'] ?></p>
+		<p><img height="500" src="<?= $ad['img_url'] ?>"/></p>
 
 	</div>
 	<?php require '../views/partials/footer.php'; ?>

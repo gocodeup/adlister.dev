@@ -33,4 +33,51 @@ class Input
     {
         return $_REQUEST;
     }
+
+        public static function getString($key, $min = 0, $max = 240)
+    {
+
+        if(is_numeric(self::get($key))){
+            throw new Exception('should be letters'); 
+        }
+
+        if(!is_string(self::get($key)) || !is_numeric($max) || !is_numeric($min)){
+            throw new InvalidArgumentException('key is not a string, or min & max are not numbers');
+        }
+        
+        if (!self::has($key)){
+            throw new OutOfRangeException('the requested key is missing from the input');
+        } 
+
+        if (gettype($key) != 'string'){
+            throw new DomainException('the requested key is missing from the input');
+        }
+
+        if (strlen(self::get($key)) < $min || (strlen(self::get($key))) > $max){
+            throw new LengthException('please enter between 0 and 240 characters');
+        } 
+
+        return self::get($key);
+    }
+
+    public static function getNumber($key, $min = 0, $max = 999999999999999)
+    {
+        if (!is_numeric(self::get($key))){
+            throw new Exception('should be a number');
+        }
+
+        if (!self::has($key)){
+            throw new OutOfRangeException('the requested key is missing from the input');
+        } 
+
+        if (self::get($key) < $min || self::get($key) > $max){
+            throw new RangeException('number must be greater than 0');
+        } 
+
+        if (!self::has($key)){
+            throw new OutOfRangeException('the requested key is missing from the input');
+        } 
+
+        return intval(self::get($key)); 
+    }
 }
