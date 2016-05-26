@@ -15,14 +15,12 @@
             <div class="formdiv">
                 <form class="form"type="GET" action="#">
                     <div class="row">
-                        <div class="col-xs-6 first-name">
-                            <input name="firstname" type="text" placeholder="First Name" class="form-control input-lg" id="firstname">
+                        <div class="col-xs-12 name">
+                            <input name="name" type="text" placeholder="Name" class="form-control input-lg" id="name">
                         </div>
-                        <div class="col-xs-6">
-                            <input name="lastname" type="text" placeholder="Last Name" class="form-control input-lg" id="lastname">
+                        <div class="col-xs-12 username">
+                            <input name="username" type="text" placeholder="Username" class="form-control input-lg" id="username">
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col-xs-12 email">
                             <input name="email" type="text" placeholder="Email" class="form-control input-lg" id="email">
                         </div>

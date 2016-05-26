@@ -3,14 +3,15 @@ body, html{
     background-color: #f5f0f0;
     text-align: center;
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
+
 #container {
    min-height:100%;
    position:relative;
 }
-#body{
-    padding-bottom:60px;
-}
+
 /* NAVBAR STYLING */
 .signin{
     float: right;
@@ -27,7 +28,14 @@ body, html{
     padding-right: 20px;
 }
 .navbar{
-    margin-bottom: 0px;
+    margin: 0;
+    padding: 0px;
+    border-radius: 0px;
+}
+.navbardiv{
+    margin: 0px;
+    padding: 0px;
+    border-radius: 0px;
 }
 .logo{
     font-family: 'Pacifico', cursive;
@@ -62,23 +70,21 @@ body, html{
 }
 
 /*SIGN UP FORM STYLING*/
-.cattitle{
-    color: red;
-}
 .sign-up-text{
-    padding-top: 60px;
     font-size: 40px;
     color: red;
     text-align: left;
 }
 .sign-up-free{
     font-size: 20px;
-    padding-bottom: 20px;
     text-align: left;
 }
 
-.first-name, .email, .password{
+.name, .email, .password, .username{
     padding-bottom: 25px;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 .sign-up-btn{
     background-color: red;
@@ -88,14 +94,15 @@ body, html{
 }
 
 /* SIDEBAR STYLING */
-#wrapper{
-    text-align: left;
-}
+
 .sidebar-nav{
     float: left;
 }
+.sidebar{
+    height: 100%;
+    padding-left: 0px;
+}
 #sidebar-wrapper {
-    z-index: 1000;
     width: 0;
     height: 100%;
     overflow-y: auto;
@@ -125,6 +132,7 @@ body, html{
     height: 65px;
     font-size: 18px;
     line-height: 60px;
+    color: red;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
@@ -160,8 +168,8 @@ body, html{
     background-color: #222222;
     text-align: center;
     color: #999999; 
-    /*position: absolute;*/
-    bottom: 0;
+/*    position: absolute;
+*/    bottom: 0;
     width: 100%;
     height: 60px;
 
