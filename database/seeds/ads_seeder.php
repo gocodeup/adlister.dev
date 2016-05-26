@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../../models/User.php';
+require_once __DIR__ . '/../../models/Model.php';
 
 $ads = new AD;
 $ads->ad_name = 'Lamp';
@@ -36,7 +36,7 @@ $ads = new AD;
 $ads->ad_name = 'Codeup Mug';
 $ads->ad_description = 'Top of the line mug that I received during my time at Codeup';
 $ads->price= "4";
-$ads->phone = '210-222-2222'];
+$ads->phone = '210-222-2222';
 $ads->email = "coolmug@codeup.com";
 $ads->location = "San Antonio";
 $ads->img_url = 'http://www.recyclethis.co.uk/wp-content/uploads/2009/05/broken_mug.jpg';
