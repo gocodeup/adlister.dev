@@ -20,6 +20,9 @@ function pageController()
     // switch that will run functions and setup variables dependent on what route was accessed
     switch ($request) {
         //users cases
+        case '/';
+            $main_view = '../public/index2.php';
+            break;
         case '/users/edit';
             $main_view = '../views/users/edit.php';
             break;
@@ -49,6 +52,7 @@ function pageController()
             $main_view = '../views/404.php';
             break;
     }
+    
     $data['main_view'] = $main_view;
     return $data;
 }
