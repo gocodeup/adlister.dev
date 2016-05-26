@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 require_once __DIR__ . '/../../models/Ads.php';
 
 $ads = new Ads;
@@ -62,3 +63,57 @@ $ads->email = "buymymac@icloud.com";
 $ads->location = "Alamo Heights";
 $ads->img_url = "http://i.ebayimg.com/00/s/MjI1WDMwMA==/z/Ba4AAOSwQItUADCb/$_35.JPG?set_id=2";
 $ads->save();
+=======
+require_once __DIR__ . '/../../models/User.php';
+
+$ads = new AD;
+$ads->itemName = 'Finn Mertens';
+$ads->description = 'finn@fansofbilly.com';
+$ads->price = "finn_the_human";
+$ads->phone = $_ENV['USER_PASS'];
+$ads->email = "finn_the_human";
+$ads->username = "finn_the_human";
+$ads->save();
+
+$ads = new AD;
+$ads->name = 'Jake';
+$ads->email = 'jake@fansofbilly.com';
+$ads->username = "jake_the_dog";
+$ads->password = $_ENV['USER_PASS'];
+$ads->save();
+
+$ads = new AD;
+$ads->name = 'Simon Petrikov';
+$ads->email = 'iceking@princessaholicanonymous.com';
+$ads->username = "ice_king";
+$ads->password = $_ENV['USER_PASS'];
+$ads->save();
+
+$ads = new AD;
+$ads->name = 'Marceline Abadeer';
+$ads->email = 'marceline@vampirequeen.com';
+$ads->username = "marceline_abadeer";
+$ads->password = $_ENV['USER_PASS'];
+$ads->save();
+
+$ads = new AD;
+$ads->name = 'Marceline Abadeer';
+$ads->email = 'marceline@vampirequeen.com';
+$ads->username = "marceline_abadeer";
+$ads->password = $_ENV['USER_PASS'];
+$ads->save();
+
+$ads = new AD;
+$ads->name = 'Marceline Abadeer';
+$ads->email = 'marceline@vampirequeen.com';
+$ads->username = "marceline_abadeer";
+$ads->password = $_ENV['USER_PASS'];
+$ads->save();
+
+$ads = new AD;
+$ads->name = 'Marceline Abadeer';
+$ads->email = 'marceline@vampirequeen.com';
+$ads->username = "marceline_abadeer";
+$ads->password = $_ENV['USER_PASS'];
+$ads->save();
+>>>>>>> 1e68f3a9070981c79984f0b98878a91251ad2e9a
