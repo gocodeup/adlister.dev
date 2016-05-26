@@ -1,5 +1,4 @@
-<!--Page that includes the form to edit an existing ad-->
-
+<!--Page for creating new advertisement listings-->
 
 <?php
 
@@ -14,7 +13,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Edit Ad</title>
+    <title>Create Ad</title>
 
     <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
@@ -23,17 +22,19 @@ session_start();
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
 </head>
+
+<php require __DIR__ . '/navbar.php'; ?>
+
 <body class = "container">
 
-<?php require __DIR__ . '/navbar.php'; ?>
 <!-- <php require __DIR__ . '/common_js.php'; ?> -->
 
-<h1> Edit Ad Listing <?php ?> </h1>
+<h1> Create an Ad Listing </h1>
 
 <!-- Form to submit new Ad using POST method -->
 <div class="row">
 
-    <form method="POST" action="index.php" class="col s12">
+    <form method="POST" action="/createAdTemplate.php" class="col s12">
 
         <div class = "row">
             <div class="input-field col s6">
@@ -55,6 +56,11 @@ session_start();
                 <label for="textarea">Ad/Item Description</label>
             </div>
         </div>
+            <button class="btn waves-effect waves-light" type="submit">Submit
+            </button>
+        </div>
+    </form>
+</div>
 <!-- Form to submit an image  -->
         <div>     
             <form method="POST" action="">
@@ -69,18 +75,9 @@ session_start();
                 </div>
             </form>
         </div>
-<!-- submits all forms, uses field actions taking user to ad index -->
-        <div class="row">
-            <div class="col-sm-6">
-                <button type="submit" class="btn btn-primary">Submit Edited Ad</button>
-
-            </div>
-        </div>
-    </form>
-</div> 
+ 
 
 <!-- <php require __DIR__ . '/footer.php'; ?> -->
 </body>
 </html>
-
 
