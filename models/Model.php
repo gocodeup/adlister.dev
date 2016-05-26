@@ -1,6 +1,10 @@
 <?php
 
-$_ENV = include __DIR__ . '/../.env.php';
+
+
+// PUT BACK at step 6
+
+// $_ENV = include __DIR__ . '/../.env.php';
 
 class Model {
 

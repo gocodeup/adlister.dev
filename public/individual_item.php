@@ -11,7 +11,7 @@
 </head>
 <body>
 <header>
-<link rel="stylesheet" type="text/css" href="individual_item.css">
+
 <?php require_once '../views/partials/head.php';?>
 <?php require_once '../views/partials/navbar.php';?>
 </header>
