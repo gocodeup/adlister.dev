@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../utils/helper_functions.php';
+
 function pageController()
 {
     // defines array to be returned and extracted for view
@@ -20,9 +21,9 @@ function pageController()
     // switch that will run functions and setup variables dependent on what route was accessed
     switch ($request) {
         //users cases
-        case '/';
-            $main_view = '../public/index2.php';
-            break;
+        // case '/';
+        //     $main_view = '../public/index2.php';
+        //     break;
         case '/users/edit';
             $main_view = '../views/users/edit.php';
             break;
@@ -33,17 +34,17 @@ function pageController()
             $main_view = '../views/users/login.php';
             break;
         case '/users/signup':
-            $main_view = '../views/users/signup.php';
+            $main_view = '../public/index2.php';
             break;
-        //edit cases
+        //ads cases
+        case '/':
+            $main_view = '../views/ads/index.php';
+            break;
         case '/ads/edit';
             $main_view = '../views/ads/edit.php';
             break;
         case '/ads/show';
             $main_view = '../views/ads/show.php';
-            break;
-        case '/ads/items':
-            $main_view = '../views/ads/index.php';
             break;
         case '/ads/create':
             $main_view = '../views/ads/create.php';
