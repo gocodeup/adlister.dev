@@ -1,4 +1,32 @@
-<?php require '../views/partials/header.php'; ?>
+<?php 
+
+require_once __DIR__ . '/../database/db_connect.php';
+require_once '../utils/Input.php';
+
+if (isset($_SESSION['LOGGED_IN_ID']))
+{
+	$id = $_SESSION['LOGGED_IN_ID'];
+}
+
+function showUser($dbc, $id)
+{
+	$id = Input::get('id');
+	$ad = [];
+	$stmt = $dbc->prepare("SELECT * FROM user JOIN ads ON user.id = ads.user_id WHERE ads.id = {$id}");
+	$stmt->execute();
+	$ad['ad'] = $stmt->fetch(PDO::FETCH_ASSOC);
+	return $ad;
+}
+
+extract(showUser($dbc, Input::get('id')));
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>An ad</title>
+	<?php require '../views/partials/header.php'; ?>
+</head>
 <div class="container">
 	<div class="row">
 		<div class=" col-xs-12">
@@ -25,7 +53,7 @@
     </div>
 	<div class="row">
 		<div class=" col-xs-12">
-            <h2>Latest items From this seller:</h2>
+            <h2>Your Latest Items:</h2>
             <div class="item-list">
 				<div class="col-sm-2 no-padding photobox">
 					<div class="add-image"> 
