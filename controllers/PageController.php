@@ -23,8 +23,6 @@ function pageController()
         $request = $_SERVER['REQUEST_URI'];
     }
 
-    var_dump($request);
-
     // Router
     // switch that will run functions and setup variables dependent on what route was accessed
     switch ($request) {
@@ -51,6 +49,22 @@ function pageController()
 
         case '/home':
             $main_view = '../views/home.php';
+            break;
+
+        case '/login':
+            $main_view = '../views/users/login.php';
+            break;
+
+        case '/account':
+            $main_view = '../views/users/account.php';
+            break;
+
+        case '/account/edit':
+            $main_view = '../views/users/edit.php';
+            break;
+
+        case '/signup':
+            $main_view = '../views/users/signup.php';
             break;
 
         default:    // displays 404 if route not specified above

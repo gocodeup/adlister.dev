@@ -4,7 +4,7 @@
 
 		<div class="row">
 
-			<h1 class="section-title">Signup For OooLister</h1>
+			<h1 class="section-title">Signup For Peddler's Corner</h1>
 
 			<div class="col-md-6 col-md-offset-3">
 
@@ -26,6 +26,9 @@
 
 					<div class="form-group">
 					    <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" data-required>
+					</div>
+					<div class="form-group">
+					    <input type="text" class="form-control" id="location" name="location" placeholder="Location" data-required>
 					</div>
 					<div class="form-group">
 					    <input type="text" class="form-control" id="email" name="email" placeholder="Email" data-required>
