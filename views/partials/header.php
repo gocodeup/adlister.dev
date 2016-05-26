@@ -7,11 +7,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
   $username = $_POST['username'];
   $password = $_POST['password'];
   if(Auth::attempt($username, $password)) {
-    header ('Location: authorized.php');
+    header ('Location: index.php');
     exit();
   }
 }
-
 
 ?>
 
@@ -37,10 +36,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/ads.index.php">Items <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Account</a></li>
-        <li><a href="#">Logout</a></li>
-        <li><a href="/ads.create.php">Post Ad</a></li>    
+        <li class="active"><a href="/ads.index.php">Ads <span class="sr-only">(current)</span></a></li>
+
+        <!-- These buttons only show if the user is logged IN -->
+        <?php if (isset($_SESSION['IS_LOGGED_IN'])){ ?>
+          <li><a href="#">Account</a></li>
+          <li><a href="/ads.create.php">Post Ad</a></li>   
+        <?php } ?> 
+        
 <!--         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -75,8 +78,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
       </ul> -->
       <!-- Login & Signup Buttons -->
        <div class="nav-menu btn-group pull-right" role="group">
+
+        <!-- These buttons only show if the user is logged IN -->
+        <?php if (isset($_SESSION['IS_LOGGED_IN'])){ ?>
+        <a href="auth.logout.php" type="button" class="btn btn-default" id="logout-button">Logout</a>
+        <a href="#" type="button" class="btn btn-default" id="profile-button">Profile</a>
+        <?php } else { ?>
+
+        <!-- These buttons only show if the user is logged OUT -->
         <button type="button" class="btn btn-default" id="login-button" data-toggle="modal" data-target=".login-modal">Login</button>
-        <button type="button" class="btn btn-default" id="signup-button" data-toggle="modal" data-target=".signup-modal">Signup</button>
+        <button type="button" class="btn btn-default" id="signup-button" data-toggle="modal" data-target=".signup-modal">Sign Up</button>
+        <?php }?>
       </div>
 
       <!-- Login modal -->
