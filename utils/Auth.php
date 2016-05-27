@@ -20,6 +20,7 @@ class Auth
 
 		// gets instance of user model by searching with username or email($username)
 		$user = User::findByUsernameOrEmail($username);
+		// var_dump($user);
 		// makes sure the instance returned is not empty
 		if ($user == null)
 		{
@@ -29,7 +30,7 @@ class Auth
 		}
 
 		// checks password submitted against hashed password
-		if ($password == $user->password)
+		if (password_verify($password, $user->password))
 		{
 
 			// sets session variables used for logged in user

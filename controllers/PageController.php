@@ -39,14 +39,17 @@ function pageController()
             break;
 
         case '/ads/create':
+            loggedInOnly();
             $main_view = '../views/ads/create.php';
             break;
 
         case '/users/account';
+            loggedInOnly();
             $main_view = '..users/account.php';
             break;
 
         case '/users/edit';
+            loggedInOnly();
             $main_view = '..users/edit.php';
             break;
 
@@ -59,5 +62,7 @@ function pageController()
 
     return $data;
 }
+
+
 
 extract(pageController());

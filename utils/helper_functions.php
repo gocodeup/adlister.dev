@@ -32,7 +32,7 @@ function inputHas($key)
     return isset($_REQUEST[$key]);
 }
 
-function inputGet($key)
+function inputGet($key) 
 {
     if (inputHas($key)){
         return $_REQUEST[$key];
@@ -44,4 +44,12 @@ function inputGet($key)
 function escape($input)
 {
     return strip_tags(htmlspecialchars($input));
+}
+
+function loggedInOnly()
+{
+  if(!isset($_SESSION['IS_LOGGED_IN'])){
+    header("Location: http://adlister.dev/");
+    die();
+  }
 }
