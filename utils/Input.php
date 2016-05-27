@@ -33,7 +33,7 @@ class Input
     {
         return $_REQUEST;
     }
-    public static function getString($key, $min, $max)
+    public static function getString($key, $min = 0, $max = 255)
     {
         $potentialString = self::get($key);
 
@@ -53,7 +53,7 @@ class Input
         return $potentialString;
     }
 
-    public static function getNumber($key, $min, $max)
+    public static function getNumber($key, $min = 1, $max = 255)
     {
         $potentialInt = self::get($key,0);
 
