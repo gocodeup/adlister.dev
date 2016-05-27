@@ -10,7 +10,7 @@ if(Auth::attempt($loginUsername, $loginPassword)) {
   header ('Location: index.php');
   exit();
 }
-
+// Signup Functionality. Likely needs to be refactored
 $signupNameField = Input::get('signupNameField');
 $signupEmailField = Input::get('signupEmailField');
 $signupUsernameField = Input::get('signupUsernameField');
