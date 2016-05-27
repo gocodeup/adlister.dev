@@ -7,35 +7,49 @@ body, html{
     padding: 0;
 }
 
+.home-row-picture{
+    background-image: url(http://placehold.it/1000x350);
+}
+
 #container {
    min-height:100%;
 }
 
-/* NAVBAR STYLING */
+.container{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+}
+
 .signin{
     float: right;
     padding-right: 10px;
     padding-top: 30px;
 }   
+
 .navbut{
     background-color: #222222;
     color: white;
     border: none;
     box-shadow: inset 0 0 5px white;
 }
+
 .signinbut{
     padding-right: 20px;
 }
+
 .navbar{
     margin: 0;
     padding: 0px;
     border-radius: 0px;
 }
+
 .navbardiv{
     margin: 0px;
     padding: 0px;
     border-radius: 0px;
 }
+
 .logo{
     font-family: 'Pacifico', cursive;
     font-size: 50px;
@@ -45,6 +59,7 @@ body, html{
     padding-top: 15px;
     padding-left: 40px;
 }
+
 .username{
     float: right;
     padding-right: 30px;
@@ -53,27 +68,28 @@ body, html{
     font-size: 20px;
 }
 
-/*GEAR PICTURE AND TEXT STYLING*/
 .gearpic{
     padding-top: 50px;
 }
+
 .gear-line-one{
     font-size: 30px;
     color: red;
     text-align: center;
     padding-top: 20px;
 }
+
 .gear-line-two{
     text-align: center;
     font-size: 20px;
 }
 
-/*SIGN UP FORM STYLING*/
 .sign-up-text{
     font-size: 40px;
     color: red;
     text-align: left;
 }
+
 .sign-up-free{
     font-size: 20px;
     text-align: left;
@@ -85,21 +101,26 @@ body, html{
     padding-left: 0px;
     padding-right: 0px;
 }
+
 .image{
     padding-top: 50px;
 }
+
 .sign-up-btn{
     background-color: red;
     -moz-box-shadow: inset 0 0 10px #000000;
     -webkit-box-shadow: inset 0 0 10px #000000;
     box-shadow: inset 0 0 10px #000000;
 }
+
 .edit-delete{
     padding-bottom: 20px;
 }
+
 .centerdiv{
     padding-bottom: 70px;
 }
+
 .item-for-sale{
     padding-top: 40px;
 }
@@ -127,16 +148,20 @@ body, html{
     padding-top: 40px;
     color: red;
 }
+
 .edit-price{
     padding-top: 40px;
 }
+
 .sidebar-nav{
     float: left;
 }
+
 .sidebar{
     height: 100%;
     padding-left: 0px;
 }
+
 #sidebar-wrapper {
     width: 0;
     height: 100%;
@@ -148,15 +173,18 @@ body, html{
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
+
 .sidebar-nav {
     list-style: none;
 }
+
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
     color: #999999;
     line-height: 40px;
 }
+
 .sidebar-nav li a:hover {
     text-decoration: none;
     color: #fff;
@@ -174,6 +202,7 @@ body, html{
     color: #fff;
     background: none;
 }
+
 @media(min-width:768px) {
     #sidebar-wrapper {
         width: 180px;
@@ -183,14 +212,14 @@ body, html{
     }
 }
 
-
-/* ITEM STYLING */
 .items{
     padding-top: 25px;
 }
+
 .single-item{
     padding-bottom: 25px;
 }
+
 .item-info-right{
     padding-top: 140px;
     font-size: 30px;
@@ -198,21 +227,23 @@ body, html{
     padding-left: 100px;
     color: red;
 }
+
 .item-info-bottom{
     padding-bottom: 50px;
     font-size: 15px;
 }
+
 .item-title{
     padding: 0px;
     padding-top: 10px;
     padding-bottom: 5px;
     margin: 0px;
 }
+
 .item-description{
     margin: 0px;
 }
 
-/*FOOTER STYLING*/
 .footer{
     background-color: #222222;
     text-align: center;
@@ -222,28 +253,34 @@ body, html{
     height: 60px;
     overflow: hidden;
 }
+
 .footerinfo{
     padding-top: 15px;
     font-size: 15px;
 }
+
 .followinfo{
     padding-top: 10px;
     font-size: 20px;
 }
+
 .sell-crap-footer{
     font-size: 20px;
     padding-top: 10px;
     padding-right: 15px;
     margin-right: 50px;
 }
+
 .copyright-image{
     height: 10px;
     width: 10px;
     margin-bottom: 10px;
 }
+
 .craptastic{
     padding-right: 10px;
 }
+
 .subscribe-boxes{
     background-color: transparent;
     color: #fff;
