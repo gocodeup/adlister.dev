@@ -30,37 +30,13 @@ function pageController()
         case '/':
              $main_view = "../views/home.php";
              break;
-             
+
         case '/ads':
             $main_view ='../views/ads/index.php';
             break;
 
         case '/ads/create':
             $main_view ='../views/ads/create.php';
-            break;
-
-        case '/ads/edit':
-            $main_view ='../views/ads/edit.php';
-            break;
-
-        case '/ads/show':
-            $main_view='../views/ads/show.php';
-            break;
-
-        case '/users/account':
-            $main_view='../views/users/account.php';
-            break;
-
-        case '/users/edit':
-            $main_view='../views/users/edit.php';
-            break;
-
-        case '/users/login':
-            $main_view='../views/users/login.php';
-            break;
-
-        case '/users/signup':
-            $main_view='../views/users/signup.php';
             break;
 
         default:    // displays 404 if route not specified above
@@ -73,6 +49,10 @@ function pageController()
     $ads = Ads::all();
 
     $data['ads'] = $ads;
+
+    $users = User::all();
+
+    $data['users'] = $users;
 
     return $data;
 }
