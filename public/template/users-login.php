@@ -1,9 +1,32 @@
 <?php
 //this is starting the session
 session_start();
+// edit these once it's merged correctly
+
 require_once "navbar.php";
 require_once "../../utils/Auth.php";
 require_once "../../utils/Input.php";
+require_once "../../models/User.php";
+
+if (Auth::check()) {
+    header('Location: template/template.php');
+    exit();
+  }
+
+if (!Auth::attempt(Input::get('username'), Input::get('password') )) {
+    if($_POST){
+    echo "Incorrect username or password";
+    }
+}else{
+    //once the login is correct will direct user to main page
+    header('Location: /template/template.php');
+    exit();
+}
+
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -11,10 +34,8 @@ require_once "../../utils/Input.php";
 <head>
     <title>Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-
-
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+<!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script> -->
              
 </head>
 <body>
@@ -38,31 +59,34 @@ require_once "../../utils/Input.php";
 
         <div class="col-md-6 col-md-offset-3">
             <p>Login with your email/userame and password</p>
-                <form method="POST" action="" data-validation data-required-message="This field is required">
+    <!-- input correct site once logged in -->
+                <form method="POST" action="/template/users-signup.php">
                     <div class="container">
                         <div class="row">
-                            <form class="col s12">
+                        
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input placeholder="Email/Username" id="email" type="email" class="validate">
+                                        <input placeholder="Email/Username" id="email" name="email" type="text" class="validate" required>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input placeholder="Password" id="password" type="password" class="validate">
+                                        <input placeholder="Password" id="password" name="password" type="password" class="validate" required>
                                     </div>
                                 </div>
                                 <div class="center-align">
-                                    <a class="waves-effect waves-light btn-large">Log in</a>
+                                    <input type="submit" class="waves-effect waves-light btn-large" value="Log in">
                                 </div>
-                            </form>
-                            <p>New to adlister? <a href="">Create account</a></p>
+                    
                         </div>
+                        <p>New to adlister? <a href="/template/users-signup.php">Create account</a></p>
                     </div>
                 </form>
             </div>
         </div>
   </section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 </div>
 </body>
 </html>
