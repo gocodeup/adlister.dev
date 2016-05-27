@@ -6,7 +6,12 @@ body, html{
     margin: 0;
     padding: 0;
 }
-
+#welcome {
+    margin-top: -175px;
+}
+#features {
+    margin-top: 100px;
+}
 .home-row-picture{
     background-image: url(http://placehold.it/1000x350);
 }
