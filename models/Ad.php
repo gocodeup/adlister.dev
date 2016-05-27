@@ -15,7 +15,7 @@ class Ad extends Model {
         $stmt = self::$dbc->prepare($query);
         $stmt->bindValue(':title', $title_or_price, PDO::PARAM_STR);
         $stmt->bindValue(':price', $title_or_price, PDO::PARAM_INT);
-        $stmt->execute();
+        $stmt->execute(); 
 
         //Store the resultset in a variable named $result
         $results = $stmt->fetch(PDO::FETCH_ASSOC);

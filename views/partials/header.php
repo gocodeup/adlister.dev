@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../../utils/Auth.php';
+
 require_once __DIR__ . '/../../models/User.php';
 
 // Login Functionality. Works Pretty Well.
@@ -22,7 +23,7 @@ if (!is_null($signupNameField) && !is_null($signupEmailField) && !is_null($signu
     $newUser->email = $signupEmailField;
     $newUser->username = $signupUsernameField;
     $newUser->password = $signupConfirmField;
-    echo "win";
+    
     $newUser->save();
 
     $newUser->save();
