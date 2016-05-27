@@ -1,3 +1,18 @@
+<?php 
+
+require_once '../models/User.php';
+
+if (!empty($_POST))   {  
+$user = new User;
+$user->name = Input::get('name');
+$user->email = Input::get('email');
+$user->password = Input::get('password');
+$user->location = Input::get('location');
+$user->username = Input::get('username');
+$user->save();
+}
+?>
+
 <div class="container">
 
 	<section id="login">
@@ -25,19 +40,19 @@
 				<form method="POST" action="" data-validation data-required-message="This field is required">
 
 					<div class="form-group">
-					    <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" data-required>
+					    <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" required="required">
 					</div>
 					<div class="form-group">
-					    <input type="text" class="form-control" id="location" name="location" placeholder="Location" data-required>
+					    <input type="text" class="form-control" id="location" name="location" placeholder="Location" required="required">
 					</div>
 					<div class="form-group">
-					    <input type="text" class="form-control" id="email" name="email" placeholder="Email" data-required>
+					    <input type="text" class="form-control" id="email" name="email" placeholder="Email" required="required">
 					</div>
 					<div class="form-group">
-					    <input type="text" class="form-control" id="username" name="username" placeholder="Username" data-required>
+					    <input type="text" class="form-control" id="username" name="username" placeholder="Username" required="required">
 					</div>
 					<div class="form-group">
-					    <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required>
+					    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required="required">
 					</div>
 					<div class="row">
 						<div class="col-sm-6">
@@ -55,5 +70,6 @@
 		</div>
 
 	</section>
+
 
 </div>
