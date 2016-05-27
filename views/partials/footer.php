@@ -1,4 +1,4 @@
-<footer class="footer navbar-fixed-bottom">
+<footer class="footer">
 	<div class="row last-row">
 		<div class="col-lg-5 footerinfo">
 				<span class="sell-crap-footer">SELL YOUR CRAP <img class="copyright-image" src="/img/copyright.png"></span>
