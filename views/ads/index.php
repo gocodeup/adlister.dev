@@ -25,7 +25,7 @@ $ads = Ad::all();
             <p><?= $ad['description']; ?></p>
           </div>
           <p>
-              <a href="#" class="btn btn-primary" role="button">View</a>
+              <a href="/ads/show?id=<?= $ad['id']?>" class="btn btn-primary" role="button">View</a>
           </p> 
       <?php if($index % 4 == 3) : ?>
         </div> <!-- closes row -->
