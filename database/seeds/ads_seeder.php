@@ -9,7 +9,7 @@ $ads->price= "300";
 $ads->phone = '210-555-5555';
 $ads->email = "monklamps@yahoo.com";
 $ads->location = "San Antonio, TX";
-$ads->img_url = "http://blog.memes.com/i-am-ron-burgundy/";
+$ads->img_url = "http://static.dudeiwantthat.com/img/entertainment/movie-props/A-Christmas-Story-Leg-Lamp-1615.jpg";
 $ads->user_id = "3";
 $ads->save();
 
