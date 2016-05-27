@@ -2,8 +2,6 @@
 //this is starting the session
 session_start();
 // edit these once it's merged correctly
-
-
 require_once "../../models/User.php";
 require_once "../../utils/Auth.php";
 require_once "../../utils/Input.php";
