@@ -51,6 +51,7 @@ function pageController()
         case '/users/edit';
             loggedInOnly();
             $main_view = '..users/edit.php';
+
             break;
 
         default:    // displays 404 if route not specified above
