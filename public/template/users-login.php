@@ -59,7 +59,7 @@ if (!Auth::attempt(Input::get('username'), Input::get('password') )) {
 
         <div class="col-md-6 col-md-offset-3">
             <p>Login with your email/userame and password</p>
-            <!-- input correct site once logged in -->
+    <!-- input correct site once logged in -->
                 <form method="POST" action="/template/users-signup.php">
                     <div class="container">
                         <div class="row">
