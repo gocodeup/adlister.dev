@@ -1,4 +1,18 @@
-<!--Page for an index of advertisements-->
+<?php
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Items Listing</title>
+    <?php require '../../views/partials/head.php'; ?>
+</head>
+<body>
+<header>
+   <?php require '../../views/partials/navbar.php'; ?>
+</header>
+
 <div class="container text-center">  
     <div class="row">
       <div class="col-sm-3">
@@ -132,3 +146,7 @@
       </div>
     </div>
 </div>
+
+<?php require '../../views/partials/common_js.php'; ?>
+</body>
+</html>

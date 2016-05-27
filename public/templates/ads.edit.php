@@ -1,4 +1,18 @@
-<!--Page that includes the form to edit an existing ad-->
+<?php
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Your Ad</title>
+    <?php require '../../views/partials/head.php'; ?>
+</head>
+<body>
+<header>
+   <?php require '../../views/partials/navbar.php'; ?>
+</header>
+
 <div class="container">
 <h1>Edit My Ad</h1>
     
@@ -25,4 +39,10 @@
             </form>
         </div>
     </div>
+
 </div>
+<?php require '../../views/partials/common_js.php'; ?>
+
+
+</body>
+</html>

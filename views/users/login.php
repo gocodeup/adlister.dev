@@ -1,10 +1,33 @@
+<?php 
+
+require_once __DIR__ . "../../../utils/Auth.php";
+require_once __DIR__ . "../../../utils/Input.php";
+
+
+	$username_or_email = Input::get('email_user');
+	$password = Input::get('password');
+
+	if (Auth::check()) {
+		header('Location: home');
+		exit();
+	} 
+
+	if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+		if (Auth::attempt($username_or_email,$password)) {
+			header('Location: account');
+			exit();	
+		} 
+	}
+
+
+?>
 <div class="container">
 
 	<section id="login">
 
 		<div class="row">
 
-			<h1 class="section-title">Login To OooLister</h1>
+			<h1 class="section-title">Login To Peddler's Corner</h1>
 
 			<?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
                 <div class="alert alert-danger">
@@ -40,7 +63,6 @@
 						</div>
 					</div>
 				</form>
-
 			</div>
 
 		</div>

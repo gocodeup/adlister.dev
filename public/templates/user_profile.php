@@ -1,4 +1,20 @@
-<!--Page for user account home-->
+<?php
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seller's Profile</title>
+    <?php require '../../views/partials/head.php'; ?>
+
+    <link rel="stylesheet" type="text/css" href="../individual_item.css">
+</head>
+<body>
+<header>
+   <?php require '../../views/partials/navbar.php'; ?>
+</header>
+
 <div class="container"> 
     <h1>Profile Page</h1>
 
@@ -6,8 +22,6 @@
         <h2>User Info</h2>
             
         <p>Name</p>
-
-        <p>Username</p>
     
         <p>Email</p>
 
@@ -31,3 +45,6 @@
     </div>
 
 </div>
+<?php require '../../views/partials/common_js.php'; ?>
+</body>
+</html>
