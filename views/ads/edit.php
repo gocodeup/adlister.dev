@@ -6,7 +6,7 @@
 		Edit Your Super Awesome Ad Here!
 	</div>	
 
-	<form class="form"type="POST" action="#">
+	<form class="form" method="POST" action="#">
 		
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3 item-for-sale">

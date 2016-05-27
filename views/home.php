@@ -1,12 +1,12 @@
-<div class="container">
+<div class="container" id="container">
 
-    <section id="welcome">
+    <section id="welcome" class="home-row-picture">
 
         <div class="row">
 
-            <div class="col-xs-12">
+            <div class="col-md-12">
 
-                <h1 class="text-center">CRAPPY PHRASE HERE</h1>
+                <h1 class="text-center">Welcome To Sell Your Crap</h1>
 
             </div>
 

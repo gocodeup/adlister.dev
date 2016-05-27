@@ -13,7 +13,7 @@
             <p class="sign-up-free"> It's always free and always will be.</p>
 ​
             <div class="formdiv">
-                <form class="form"type="POST" action="#">
+                <form class="form" method="POST" action="#">
                     <div class="row">
                         <div class="col-xs-12 name">
                             <input name="name" type="text" placeholder="Name" class="form-control input-lg" id="name">

@@ -5,7 +5,7 @@
 		Create Your Super Awesome Ad Here!
 	</div>	
 
-	<form class="form"type="POST" action="#">
+	<form class="form" method="POST" action="#">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 image">
 			    <label class="btn btn-info btn-file">
