@@ -43,5 +43,29 @@ $ad->price = 95.00;
 $ad->user_id = 1;
 $ad->save();
 
+$ad = new Ad;
+$ad->title = 'Bear Encounter';
+$ad->image_url = '/../../img/bears.jpg';
+$ad->description = 'Everyone does dolphin encounters, but you want true adventure! Our guides will take you deep into the woods to interact with real, wild bears. Make sure to bring your cameras to this one-of-a-kind experience! Safety not guaranteed. Must sign waiver to attend.';
+$ad->price = 300.00;
+$ad->user_id = 2;
+$ad->save();
+
+$ad = new Ad;
+$ad->title = 'Seasonal Cthulhu Cookies';
+$ad->image_url = '/../../img/scarySanta.jpg';
+$ad->description = 'Homemade cookies, custom made for you. Christmas cookies are shown, but all holidays are available (Halloween, Easter, Arbor Day, etc). Cookies are sold in full Baker\'s dozen only. Please allow one week for delivery. No P.O. boxes.';
+$ad->price = 66.00;
+$ad->user_id = 4;
+$ad->save();
+
+$ad = new Ad;
+$ad->title = 'Natural Candles';
+$ad->image_url = '/../../img/naturalCandles.jpg';
+$ad->description = 'Natural beeswax candles made with beeswax gathered from my own, personal apiary. You can be assured that these candles are of the highest quality, since the bees have very expensive flowers to get pollen from in my backyard.';
+$ad->price = 29.00;
+$ad->user_id = 3;
+$ad->save();
+
 
 
