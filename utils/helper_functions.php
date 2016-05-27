@@ -6,7 +6,6 @@
 // takes image from form submission and moves it into the uploads directory
 function saveUploadedImage($input_name)
 {
-
     $valid = true;
 
     // checks if $input_name is in the files super global
@@ -18,7 +17,7 @@ function saveUploadedImage($input_name)
         {
 
             $tempFile = $_FILES[$input_name]['tmp_name'];
-                $image_url = '/img/uploads' . $input_name;
+                $image_url = '/img/uploads/' . $_FILES[$input_name]['name'];
                 move_uploaded_file($tempFile, __DIR__ .'/../public' . $image_url);
                 return $image_url;
         }

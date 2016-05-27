@@ -7,6 +7,7 @@ session_start();
 // Uncomment in order to link necessary materialize css and javascript in later version.
 // require '/css.css';
 require_once __DIR__ . '/../../bootstrap.php';
+// require_once '../../utils/helper_functions.php';
 
 if(isset($_POST['ad_name'])){ 
     $ads = new Ads();
@@ -16,7 +17,7 @@ if(isset($_POST['ad_name'])){
     $ads->phone = $_POST['phone'];
     $ads->email = $_POST['email'];
     $ads->location = $_POST['location'];
-    $ads->img_url = $_POST['img_url'];
+    $ads->img_url = saveUploadedImage('img_url');
     $ads->save();
 }
 
@@ -48,7 +49,7 @@ if(isset($_POST['ad_name'])){
 
   <div class="row">
 
-      <form method="POST" action="/template/createAdTemplate.php" class="col s12">
+      <form method="POST" action="/template/createAdTemplate.php" class="col s12" enctype="multipart/form-data">
 
           <div class = "row">
               <div class="input-field col s6">
@@ -76,10 +77,10 @@ if(isset($_POST['ad_name'])){
               <div class="file-field input-field">
                 <div class="btn">
                   <span>File</span>
-                  <input type="file">
+                  <input type="file" name="img_url">
                 </div>
                 <div class="file-path-wrapper">
-                  <input class="file-path validate" type="text" name="img_url">
+                  <input class="file-path validate" type="text" name="">
                 </div>
               </div>
           </div>
