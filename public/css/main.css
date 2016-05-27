@@ -52,6 +52,25 @@ body, html{
     border-radius: 0px;
 }
 
+/* unvisited link */
+.nav-home:link {
+    color: white;
+}
+
+/* visited link */
+.nav-home:visited {
+    color: white;
+}
+
+/* mouse over link */
+.nav-home:hover {
+    color: white;
+}
+
+/* selected link */
+.nav-home:active {
+    color: white;
+}
 .logo{
     font-family: 'Pacifico', cursive;
     font-size: 50px;

@@ -5,6 +5,6 @@
             <a href="/users/login" type="submit" class="btn btn-default navbut">Sign in</a>
         </div>
         <div class="logo">
-            Sell Your Crap!
+            <a href="/users/home" type="submit" class="nav-home">Sell Your Crap!</a>
         </div>
     </nav>

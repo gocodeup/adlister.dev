@@ -8,6 +8,12 @@
 	</div>	
 
 	<div class="row">
+		<div class="col-md-12">
+            <a href="/ads/create" type="submit" class="btn btn-default navbut">CREATE AN AD</a>
+		</div>
+	</div>
+	
+	<div class="row">
 		<div class="col-md-12 account-ad-title">
 			My Craptastic Ads!
 		</div>
