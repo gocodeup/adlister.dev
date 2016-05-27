@@ -218,7 +218,7 @@ class Model {
     /*
      * Find all records in a table
      */
-    public static function all()
+    public static function all()  
     {
 
         self::dbConnect();

@@ -1,3 +1,7 @@
+
+
+<!-- The code commented out is what was here before....Andrew your code is below this. Was this commented code placed by Codeup??
+
 <div class="container">
 
 	<section id="login">
@@ -43,4 +47,38 @@
 
 	</section>
 
-</div>
+</div> -->
+
+
+
+<!--Andrew this is your code from user.edit, after being routed -->
+
+<?php 
+
+require '../utils/Input.php'; 
+
+?>
+
+<form method="POST" action="./users/edit.php" enctype="multipart/form-data">
+	<fieldset class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" name="title" maxlength="50" value="<?php if (Input::has('name')) echo $_POST['title']; ?>" required>
+    </fieldset>
+    <fieldset class="form-group">
+        <label>E-Mail</label>
+        <input type="text" class="form-control" name="title" maxlength="50" value="<?php if (Input::has('email')) echo $_POST['title']; ?>" required>
+    </fieldset>
+    <fieldset class="form-group">
+        <label>Username</label>
+        <input type="text" class="form-control" name="title" maxlength="20" value="<?php if (Input::has('username')) echo $_POST['title']; ?>" required>
+    </fieldset>
+    <fieldset class="form-group">
+        <label>Password</label>
+        <input type="text" class="form-control" name="title" maxlength="20" required>
+    </fieldset>
+    <fieldset class="form-group">
+        <label>Confirm Password</label>
+        <input type="text" class="form-control" name="title" maxlength="20" required>
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>

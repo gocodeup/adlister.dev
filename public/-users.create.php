@@ -1,11 +1,11 @@
 <?php 
 
-require '../utils/Input.php';
-require '../views/partials/header.php';
+// require '../utils/Input.php';
+// require '../views/partials/header.php';
 
 ?>
 
-<form method="POST" action="./users/create.php" enctype="multipart/form-data">
+<!-- <form method="POST" action="./users/create.php" enctype="multipart/form-data">
 	<fieldset class="form-group">
         <label>Name</label>
         <input type="text" class="form-control" name="title" maxlength="50" value="<?php if (Input::has('name')) echo $_POST['title']; ?>" required>
@@ -27,6 +27,6 @@ require '../views/partials/header.php';
         <input type="text" class="form-control" name="title" maxlength="20" required>
     </fieldset>
     <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</form> -->
 
 <?php require '../views/partials/footer.php'; ?>

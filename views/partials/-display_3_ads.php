@@ -1,6 +1,6 @@
 <?php 
-
-require_once __DIR__ . '/../../models/Ad.php';
+/*
+require_once __DIR__ . '/../models/Ad.php';
 
 $ads = Ad::get3Ads();
 
