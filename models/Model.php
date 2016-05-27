@@ -1,7 +1,7 @@
 <?php
 
 // REMEMBER TO UNCOMMENT THE LINE BELOW (WHEN NEEDED)
-// $_ENV = include __DIR__ . '/../.env.php';
+$_ENV = include __DIR__ . '/../.env.php';
 
 class Model {
 

@@ -26,10 +26,11 @@ function pageController()
     // switch that will run functions and setup variables dependent on what route was accessed
     switch ($request) {
 
-        // can create home page by:
-        // case '/':
-        //      $main_view = "../homepage.php";
-
+        
+        case '/':
+             $main_view = "../views/home.php";
+             break;
+             
         case '/ads':
             $main_view ='../views/ads/index.php';
             break;
