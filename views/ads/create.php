@@ -1,10 +1,9 @@
 <div class="container">
   <h1> Create an Ad Listing </h1>
 
-
   <div class="row">
 
-      <form method="POST" action="/template/createAdTemplate.php" class="col s12">
+      <form method="POST" action="/create.php" class="col s12">
 
           <div class = "row">
               <div class="input-field col s6">
