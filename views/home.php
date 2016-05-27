@@ -1,3 +1,6 @@
+
+    
+
 <div class="section card">
     <div class="slider">
         <ul class="slides">
@@ -35,6 +38,12 @@
         
 </div>
 </div>
+
+    <!-- <php require $main_view; ?> -->
+
+
+    // <= require_once "footer.php"; ?>
+
      <!-- <php require '../views/partials/common_js.php'; ?> -->
      <!--Import jQuery before materialize.js-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -42,5 +51,3 @@
 <script>
    $(document).ready(function () {
        $('.slider').slider({full_width: true});
-   });
-</script>
