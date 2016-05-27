@@ -38,9 +38,9 @@ $userAds = Ad::getUserAds($user->id);
            <h3><?php echo $ad['title'] ?></h3>
            <?php echo $ad['description'] ?>
         </p>
-        <h4><a href="/ads/show">View Ad</a></h4>
-        <h4><a href="/ads/edit">Edit Ad</a></h4>
-        <h4><a href="/ads/delete">Delete Ad</a></h4>
+        <h4><a href="/ads/show?id=<?=$ad['id'] ?>">View Ad</a></h4>
+        <h4><a href="/ads/edit?id=<?=$ad['id'] ?>">Edit Ad</a></h4>
+        <h4><a href="/ads/delete?id=<?=$ad['id'] ?>">Delete Ad</a></h4>
     <?php endforeach; ?>
         <div>
 
