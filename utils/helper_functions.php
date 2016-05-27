@@ -19,7 +19,7 @@ function saveUploadedImage($input_name)
 
             $tempFile = $_FILES[$input_name]['tmp_name'];
                 $image_url = '/img/uploads' . $input_name;
-                move_uploaded_file($tempFile, __DIR__ .'/../public' . $image_url);
+                move_uploaded_file($tempFile, __DIR__ .'/../public/img' . $image_url);
                 return $image_url;
         }
 
