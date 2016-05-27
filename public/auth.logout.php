@@ -15,7 +15,7 @@ session_start();
 
 clearSession();
 
-header('Location: /');
+header('Location: http://adlister.dev/');
 
 
 // ...
