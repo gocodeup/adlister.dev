@@ -2,7 +2,7 @@
 
 $_ENV = include __DIR__ . '/../.env.php';
 
-class Model {
+class Model { 
 
     protected static $dbc;
     protected static $table;
