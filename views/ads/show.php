@@ -29,7 +29,7 @@
             <p> Email: <?= $ad['email']; ?> </p>
             <p> Phone: <?= $ad['phone']; ?> </p>
 <!-- Display only if user is logged in, otherwise hide -->
-            <a class="waves-effect waves-light green btn" href="edit">Edit</a>
+            <a class="waves-effect waves-light green btn" href="edit?id=<?=$ad['id']?>">Edit</a>
 
 <!-- Will eventually reference delete method from Model.php -->
             <a class="waves-effect waves-light red darken-4 btn">Delete</a>
