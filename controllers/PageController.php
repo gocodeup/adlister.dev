@@ -43,11 +43,11 @@ function pageController()
             break;
 
         case '/users/account';
-            $main_view = '..users/account.php';
+            $main_view = '../views/users/account.php';
             break;
 
         case '/users/edit';
-            $main_view = '..users/edit.php';
+            $main_view = '../views/users/edit.php';
             break;
 
         default:    // displays 404 if route not specified above

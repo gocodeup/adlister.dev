@@ -29,7 +29,7 @@ class Auth
 		}
 
 		// checks password submitted against hashed password
-		if ($password == $user->password)
+		if (password_verify($password, $user->password))
 		{
 
 			// sets session variables used for logged in user
