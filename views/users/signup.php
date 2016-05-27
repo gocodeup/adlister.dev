@@ -1,3 +1,104 @@
+<?php
+
+$_ENV = include __DIR__ . '/../../.env.php';
+require_once '../database/db_connect.php';
+require_once '../models/User.php';
+function pageControllerSignup($dbc) 
+{
+    $message = [];
+    $name = '';
+    $username = '';
+    $email = '';
+    $password = '';
+    $confirm = '';
+    $data = [];
+    $stmt = $dbc->prepare('SELECT * FROM users');
+    $stmt->execute();
+    $data['users'] = $stmt->fetchALL(PDO::FETCH_ASSOC);
+
+    if (!empty($_POST))
+    {
+
+        try {
+            $name = Input::getString('name',1,150);
+        }
+        catch (InvalidArgumentException $e) {
+                $message[] = $e->getMessage();
+        }catch (OutOfRangeException $e) {
+                $message[] = $e->getMessage();
+        }catch (RangeException $e) {
+                $message[] = $e->getMessage();
+        }catch (LengthException $e) {
+                $message[] = $e->getMessage();
+        }
+
+        try {
+            $username = Input::getString('username',0,150);
+        }
+        catch (InvalidArgumentException $e) {
+                $message[] = $e->getMessage();
+        }catch (OutOfRangeException $e) {
+                $message[] = $e->getMessage();
+        }catch (RangeException $e) {
+                $message[] = $e->getMessage();
+        }catch (LengthException $e) {
+                $message[] = $e->getMessage();
+        }
+
+        try {
+            $email = Input::getString('email',0,150);
+        }
+        catch (InvalidArgumentException $e) {
+                $message[] = $e->getMessage();
+        }catch (OutOfRangeException $e) {
+                $message[] = $e->getMessage();
+        }catch (RangeException $e) {
+                $message[] = $e->getMessage();
+        }catch (LengthException $e) {
+                $message[] = $e->getMessage();
+        }
+
+        try {
+            $password  = Input::getNumber('password',0,150);
+        }
+        catch (InvalidArgumentException $e) {
+                $message[] = $e->getMessage();
+        }catch (OutOfRangeException $e) {
+                $message[] = $e->getMessage();
+        }catch (RangeException $e) {
+                $message[] = $e->getMessage();
+        }catch (LengthException $e) {
+                $message[] = $e->getMessage();
+        }
+
+        try {
+            $confirm = Input::getString('confirm',10,150);
+        }
+        catch (InvalidArgumentException $e) {
+                $message[] = $e->getMessage();
+        }catch (OutOfRangeException $e) {
+                $message[] = $e->getMessage();
+        }catch (RangeException $e) {
+                $message[] = $e->getMessage();
+        }catch (LengthException $e) {
+                $message[] = $e->getMessage();
+        }
+            if(empty($message)){
+                saveUser($dbc, $user);
+            }
+        } 
+
+    $data['message'] = $message;
+    return $data;
+}
+extract(pageControllerSignup($dbc));
+
+    function getPost($field) 
+    {
+       return (isset($_POST[$field]) && $_POST[$field] != "" ? $_POST[$field] : "");
+    }
+var_dump($_POST);
+?>
 <div class="container">
     <div class="row">
 ​
