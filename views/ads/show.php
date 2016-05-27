@@ -2,6 +2,8 @@
 
 <div class="section">
     <div class="row isotope">
+    <?php foreach($ads as $ad) {
+            if ($ad['id'] == $_GET['id']){  ?>
         <div class="col s12 m12 l4">
         <!-- card block to display image of item for sale -->
             <div class="card">
@@ -11,20 +13,22 @@
             </div>
         </div>
         <div class="col s8">
-            <p>ITEM <?= "\$ID"; ?></p>
+            <p>ITEM <?=$ad['id']; ?>: <?=$ad['ad_name']; ?></p>
             <p><span class="card-title activator brown-text text-darken-4"></span></p>
         </div>
         <div class ="col s8">
-            <p> User: <a href="../users/account.php"> <?= $users['username']; ?> </a> </p>
-            <p> Price: <?=$ads['price']; ?> </p>
-            <p> Email: <?= $ads['email']; ?> </p>
-            <p> Phone: <?= $ads['phone']; ?> </p>
+            <p> User: <a href="../users/account.php">  </a> </p>
+            <p> <?= $ad['ad_description'] ?>  </p>
+            <p> Price: <?=$ad['price']; ?> </p>
+            <p> Email: <?= $ad['email']; ?> </p>
+            <p> Phone: <?= $ad['phone']; ?> </p>
 <!-- Display only if user is logged in, otherwise hide -->
             <a class="waves-effect waves-light green btn" href="edit.php">Edit</a>
 
 <!-- Will eventually reference delete method from Model.php -->
             <a class="waves-effect waves-light red darken-4 btn">Delete</a>
         </div>
+    <?php }} ?> 
     </div>
 
 </div>
