@@ -12,9 +12,6 @@ body, html{
 #features {
     margin-top: 100px;
 }
-.home-row-picture{
-    background-image: url(http://placehold.it/1000x350);
-}
 
 #container {
    min-height:100%;
