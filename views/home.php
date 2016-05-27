@@ -1,27 +1,19 @@
-<div class="container">
+<?php 
 
-    <section id="welcome">
+require_once __DIR__ . '/../models/Ad.php';
 
-        <div class="row">
+$ads = Ad::get3Ads();
 
-            <div class="col-xs-12">
+?>
+<h2>Recent adds</h2>
 
-                <h1 class="text-center">Welcome To Adlister</h1>
-
-            </div>
-
+    <?php foreach($ads as $ad) : ?>
+        <div class="col-md-4">
+            <h3><?= $ad['title'] ?></h3>
+            <a href="/ads/show?id=<?= $ad['id'] ?>" ><img height="200" src="<?= $ad['img_url'] ?>"/></a>
+            <p>$<?= $ad['price'] ?></p>
         </div>
+    <?php endforeach ?>
 
-    </section>
 
-    <section id="features">
 
-        <div class="row">
-
-            <h3 class="section-title">Featured Items</h3>
-            <!-- Placeholder for featured items.-->
-        </div>
-
-    </section>
-
-</div>

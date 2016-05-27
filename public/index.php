@@ -1,19 +1,23 @@
 <?php
-session_start();
-require_once __DIR__ . '/../bootstrap.php';
 
+session_start();
+
+require_once __DIR__ . '/../bootstrap.php';
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>OooLister</title>
-    <?php require '../views/partials/head.php'; ?>
+
+    <title>Rad-Lister</title>
+    <?php require '../views/partials/header.php'; ?>
 </head>
-<body>
-    <?php require '../views/partials/navbar.php'; ?>
+<body>	
 
-    <?php require $main_view; ?>
+    <div class="container">
 
-    <?php require '../views/partials/common_js.php'; ?>
-</body>
-</html>
+		<?php require $main_view; ?> 
+
+
+    </div>
+    
+    <?php require '../views/partials/footer.php'; ?>

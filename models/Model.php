@@ -2,7 +2,7 @@
 
 $_ENV = include __DIR__ . '/../.env.php';
 
-class Model {
+class Model { 
 
     protected static $dbc;
     protected static $table;
@@ -58,7 +58,7 @@ class Model {
 
             //Connect to database
             require_once __DIR__ . '/../database/db_connect.php';
-
+            var_dump($dbc);
             self::$dbc = $dbc;
         }
     }
@@ -218,7 +218,7 @@ class Model {
     /*
      * Find all records in a table
      */
-    public static function all()
+    public static function all()  
     {
 
         self::dbConnect();

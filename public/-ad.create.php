@@ -1,13 +1,20 @@
 <?php 
+require_once '../utils/Auth.php';
+require_once '../utils/Input.php';
 require_once '../models/Ad.php';
+require_once '../models/Model.php';
 
-function newUserAd()   
+function newUserAd()
 
 {
 //To do: sanatize these values. 
+//To do: get user id if logged in. 
+//To do: only logged in users should see this page. 
+
+
 
 	$ad = new Ad;
-	$ad->user_id = $_SESSION['LOGGED_IN_ID'];
+	$ad->user_id = 1;
 	$ad->date_listed = date("Y-m-d");;
 	$ad->title = Input::get('title');
 	$ad->description = Input::get('description');
@@ -19,12 +26,22 @@ function newUserAd()
 
 }
 
-if(Input::has('title')) {    
-	newUserAd();
+if(Input::has('title')) { 
+		newUserAd();
 }
 
 ?>
 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add an ad</title>
+	
+    <?php require '../views/partials/header.php'; ?>
+   
+</head>
+<body>
+	<div class="container">  
 		<form role="form" method="POST">  
 			<h2>Make a new ad</h2>
 
@@ -47,4 +64,8 @@ if(Input::has('title')) {
 		    <input name="tags" class="form-control" placeholder="characters only" required>
 
   			<button type="submit" class="btn btn-default">add</button>
-		</form>
+		</form>  
+	</div>
+
+	
+	<?php require '../views/partials/footer.php'; ?>
