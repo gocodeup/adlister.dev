@@ -1,4 +1,3 @@
-<!--Page for user account home-->
 <?php  
 
 require_once __DIR__ . '../../../models/Ad.php';
