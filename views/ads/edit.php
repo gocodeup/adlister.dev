@@ -1,7 +1,8 @@
 <?php 
 
+
 if(isset($_POST['ad_name'])){ 
-    Ads::find($_GET['id']);
+    $ads = Ads::find($_GET['id']);
     $ads->ad_name = $_POST['ad_name'];
     $ads->ad_description = $_POST['description'];
     $ads->price = $_POST['price'];
@@ -20,7 +21,7 @@ if(isset($_POST['ad_name'])){
 
 <div class="row">
 
-      <form method="POST" action="/template/edit.php" class="col s12" enctype="multipart/form-data">
+      <form method="POST" action="/ads/edit?id=<?= $_GET['id'] ?>" class="col s12" enctype="multipart/form-data">
 
           <div class = "row">
               <div class="input-field col s6">
@@ -59,3 +60,6 @@ if(isset($_POST['ad_name'])){
           </button>
       </form>
   </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
