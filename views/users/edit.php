@@ -1,10 +1,10 @@
 <?php
 //this is starting the session
-session_start();
+// session_start();
 // edit these once it's merged correctly
-require_once "../models/User.php";
-require_once "../utils/Auth.php";
-require_once "../utils/Input.php";
+// require_once "../models/User.php";
+// require_once "../utils/Auth.php";
+// require_once "../utils/Input.php";
 
 if(!Auth::check()) {
     var_dump("You are not logged in!!!");
