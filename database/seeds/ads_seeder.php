@@ -10,6 +10,7 @@ $ads->phone = '210-555-5555';
 $ads->email = "monklamps@yahoo.com";
 $ads->location = "San Antonio, TX";
 $ads->img_url = "http://blog.memes.com/i-am-ron-burgundy/";
+$ads->user_id = "3";
 $ads->save();
 
 $ads = new Ads;
@@ -20,6 +21,7 @@ $ads->phone = '210-444-4444';
 $ads->email = "dinotent@gmail.com";
 $ads->location = "Boerne, TX";
 $ads->img_url = "http://www.thelocal.es/userdata/images/article/w468/c4f025006b5229b42842b597f7812454d8614de0f99f43986ee6d492eaacd9e5.jpg";
+$ads->user_id = "2";
 $ads->save();
 
 $ads = new Ads;
@@ -30,6 +32,7 @@ $ads->phone = '210-333-3333';
 $ads->email = "buggyhood@hotmail.com";
 $ads->location = "Kerrville";
 $ads->img_url = "http://media.liveauctiongroup.net/i/5736/8633086_1.jpg?v=8CE71410914F540";
+$ads->user_id = "2";
 $ads->save();
 
 $ads = new Ads;
@@ -40,6 +43,7 @@ $ads->phone = '210-222-2222';
 $ads->email = "coolmug@codeup.com";
 $ads->location = "San Antonio";
 $ads->img_url = 'http://www.recyclethis.co.uk/wp-content/uploads/2009/05/broken_mug.jpg';
+$ads->user_id = "4";
 $ads->save();
 
 $ads = new Ads;
@@ -50,6 +54,7 @@ $ads->phone = "210-888-8888";
 $ads->email = "softhoodie@aol.com";
 $ads->location = "San Antonio";
 $ads->img_url = "https://alexadp.files.wordpress.com/2010/09/it-is-a-hoodie.jpg";
+$ads->user_id = "3";
 $ads->save();
 
 
@@ -61,5 +66,6 @@ $ads->phone = "210-999-9999";
 $ads->email = "buymymac@icloud.com";
 $ads->location = "Alamo Heights";
 $ads->img_url = "http://i.ebayimg.com/00/s/MjI1WDMwMA==/z/Ba4AAOSwQItUADCb/\$_35.JPG?set_id=2";
+$ads->user_id = "1";
 $ads->save();
 
