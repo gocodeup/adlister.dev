@@ -11,7 +11,7 @@ $query = 'CREATE TABLE ads (
     date_listed DATE NOT NULL,
     title VARCHAR(255) NOT NULL,
     description TEXT,
-    price DECIMAL(4,2) UNSIGNED NOT NULL,
+    price DECIMAL(9,2) UNSIGNED NOT NULL,
     img_url TEXT NOT NULL,
     category VARCHAR(255) NOT NULL,
     tags VARCHAR(255),
