@@ -1,10 +1,5 @@
-<!--Page for user account home-->
-
 <?php 
-require_once __DIR__ . '/../utils/Auth.php';
-require_once __DIR__ . '/../models/Model.php';
 
-session_start();
 if (isset($_SESSION['LOGGED_IN_ID']))
 {
 	$userId = $_SESSION['LOGGED_IN_ID'];

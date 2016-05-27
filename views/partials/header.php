@@ -109,7 +109,7 @@ var_dump($_SESSION);
         <!-- These buttons only show if the user is logged IN -->
         <?php if (isset($_SESSION['IS_LOGGED_IN'])){ ?>
         <a href="auth.logout.php" type="button" class="btn btn-default" id="logout-button">Logout</a>
-        <a href="#" type="button" class="btn btn-default" id="profile-button">Profile</a>
+        <a href="/users/account" type="button" class="btn btn-default" id="profile-button">Profile</a>
         <?php } else { ?>
 
         <!-- These buttons only show if the user is logged OUT -->
