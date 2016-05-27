@@ -39,15 +39,19 @@ function pageController()
             break;
 
         case '/ads/create':
+            loggedInOnly();
             $main_view = '../views/ads/create.php';
             break;
 
         case '/users/account';
-            $main_view = '../views/users/account.php';
+            loggedInOnly();
+            $main_view = '..users/account.php';
             break;
 
         case '/users/edit';
-            $main_view = '../views/users/edit.php';
+            loggedInOnly();
+            $main_view = '..users/edit.php';
+
             break;
 
         default:    // displays 404 if route not specified above
@@ -59,5 +63,7 @@ function pageController()
 
     return $data;
 }
+
+
 
 extract(pageController());

@@ -1,14 +1,15 @@
 <?php
-require_once __DIR__ . '/../../utils/Auth.php';
+// require_once __DIR__ . '/../../utils/Auth.php';
 
-require_once __DIR__ . '/../../models/User.php';
+// require_once __DIR__ . '/../../models/User.php';     
 
 // Login Functionality. Works Pretty Well.
 $loginUsername = Input::get('loginUsername');
 $loginPassword = Input::get('loginPassword');
+
 if(Auth::attempt($loginUsername, $loginPassword)) {
-  header ('Location: /');
-  exit();
+  // header ('Location: /');
+  // exit();
 }
 // Signup Functionality. Likely needs to be refactored
 $signupNameField = Input::get('signupNameField');
@@ -23,8 +24,6 @@ if (!is_null($signupNameField) && !is_null($signupEmailField) && !is_null($signu
     $newUser->email = $signupEmailField;
     $newUser->username = $signupUsernameField;
     $newUser->password = $signupConfirmField;
-    
-    $newUser->save();
 
     $newUser->save();
 }
@@ -64,10 +63,11 @@ var_dump($_SESSION);
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/ads/show">Ads <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="/ads">Ads <span class="sr-only">(current)</span></a></li>
 
         <!-- These buttons only show if the user is logged IN -->
         <?php if (isset($_SESSION['IS_LOGGED_IN'])){ ?>
+          <li><a href="/users/account">Account</a></li>
           <li><a href="/ads/create">Post Ad</a></li>   
         <?php } ?> 
         
