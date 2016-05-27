@@ -22,14 +22,14 @@
 
             <p> User: <?php foreach($users as $user){
                 if ($ad['user_id'] == $user['id']){ ?>
-                <a href="../users/account?user_id=<?php $user['id'];?>"> <?= $users['username']; ?> </a> </p>
+                <a href="../users/account?user_id=<?= $user['id'];?>"> <?= $user['username']; ?> </a> </p>
                 <?php } } ?>
             <p> <?= $ad['ad_description'] ?>  </p>
             <p> Price: <?=$ad['price']; ?> </p>
             <p> Email: <?= $ad['email']; ?> </p>
             <p> Phone: <?= $ad['phone']; ?> </p>
 <!-- Display only if user is logged in, otherwise hide -->
-            <a class="waves-effect waves-light green btn" href="edit.php">Edit</a>
+            <a class="waves-effect waves-light green btn" href="edit">Edit</a>
 
 <!-- Will eventually reference delete method from Model.php -->
             <a class="waves-effect waves-light red darken-4 btn">Delete</a>
