@@ -7,9 +7,8 @@ require_once __DIR__ . "../../../utils/Input.php";
 	$username_or_email = Input::get('email_user');
 	$password = Input::get('password');
 
-
 	if (Auth::check()) {
-		header('Location: account');
+		header('Location: home');
 		exit();
 	} 
 
@@ -17,9 +16,7 @@ require_once __DIR__ . "../../../utils/Input.php";
 		if (Auth::attempt($username_or_email,$password)) {
 			header('Location: account');
 			exit();	
-		} else {
-			$message = $_SESSION['ERROR_MESSAGE'];
-		}
+		} 
 	}
 
 

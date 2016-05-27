@@ -25,7 +25,7 @@
               <ul class="dropdown-menu">
                 <li><a href="/account">Account Info</a></li>
                 <li><a href="/ads/create">Create Ad</a></li>
-                <li><a href="#">Logout</a></li>
+                <li><a href="/logout">Logout</a></li>
               </ul>
             </li>
           </ul>
