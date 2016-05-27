@@ -8,7 +8,6 @@
                 <img src="<?= $ad['img_url']; ?>">
                 <div class="caption center-align">
                     <h3><?= $ad['ad_name']; ?></h3>
-                    <!-- <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5> -->
                 </div>
             </li>
         <?php } ?>      
@@ -23,12 +22,12 @@
         <div class="col s12 m12 l4">
             <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <a href="">
+                    <a href="/ads/show?id=<?=$ad['id']?>">
                         <img width="305" height="229" src="<?= $ad['img_url']; ?>" class="responsive-img wp-post-image" alt="ITEM_1" title="item_1" sizes="(max-width: 305px) 100vw, 305px"/> 
                     </a>
                 </div>
                 <div class="card-content">
-                    <a href=""><span class="card-title activator brown-text text-darken-4"><?= $ad['ad_name']; ?></span></a>
+                    <a href="/ads/show?id=<?=$ad['id']?>"><span class="card-title activator brown-text text-darken-4"><?= $ad['ad_name']; ?></span></a>
                     <p class="area"><a href=""><?= $ad['ad_description'] ?></a></p>
                 </div>
             </div>
@@ -38,12 +37,6 @@
 </div>
 </div>
 
-    <!-- <php require $main_view; ?> -->
-
-
-    // <= require_once "footer.php"; ?>
-
-     <!-- <php require '../views/partials/common_js.php'; ?> -->
      <!--Import jQuery before materialize.js-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
