@@ -1,7 +1,5 @@
 <?php
 
-loggedInOnly();
-
 require_once '../models/Ad.php';
 
 $ads = Ad::all();
