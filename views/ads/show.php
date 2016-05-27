@@ -3,7 +3,7 @@
 <div class="section">
     <div class="row isotope">
     <?php foreach($ads as $ad) {
-            if ($ad['id'] == $_GET['id']){  ?>
+        if ($ad['id'] == $_GET['id']){  ?>
         <div class="col s12 m12 l4">
         <!-- card block to display image of item for sale -->
             <div class="card">
@@ -17,7 +17,10 @@
             <p><span class="card-title activator brown-text text-darken-4"></span></p>
         </div>
         <div class ="col s8">
-            <p> User: <a href="../users/account.php"> <?= $users['username']; ?> </a> </p>
+            <p> User: <?php foreach($users as $user){
+                if ($ad['user_id'] == $user['id']){ ?>
+                <a href="../users/account?user_id=<?php $user['id'];?>"> <?= $users['username']; ?> </a> </p>
+                <?php } } ?>
             <p> <?= $ad['ad_description'] ?>  </p>
             <p> Price: <?=$ad['price']; ?> </p>
             <p> Email: <?= $ad['email']; ?> </p>
