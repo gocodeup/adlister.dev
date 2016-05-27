@@ -7,7 +7,7 @@ require_once __DIR__ . '/../../models/User.php';
 $loginUsername = Input::get('loginUsername');
 $loginPassword = Input::get('loginPassword');
 if(Auth::attempt($loginUsername, $loginPassword)) {
-  header ('Location: index.php');
+  header ('Location: /');
   exit();
 }
 // Signup Functionality. Likely needs to be refactored
@@ -58,18 +58,18 @@ var_dump($_SESSION);
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="http://adlister.dev/">Home</a>
+      <a class="navbar-brand" href="/">Home</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/ads.index.php">Ads <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="/ads/show">Ads <span class="sr-only">(current)</span></a></li>
 
         <!-- These buttons only show if the user is logged IN -->
         <?php if (isset($_SESSION['IS_LOGGED_IN'])){ ?>
           <li><a href="#">Account</a></li>
-          <li><a href="/ads.create.php">Post Ad</a></li>   
+          <li><a href="/ads/create">Post Ad</a></li>   
         <?php } ?> 
         
 <!--         <li class="dropdown">

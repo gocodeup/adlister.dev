@@ -15,7 +15,7 @@ session_start();
 
 clearSession();
 
-header('Location: index.php');
+header('Location: /');
 
 
 // ...
