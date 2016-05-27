@@ -1,33 +1,52 @@
 <!--Page for user account home-->
+<?php  
+
+require_once __DIR__ . '../../../models/Ad.php';
+require_once __DIR__ . '../../../models/User.php';
+require_once __DIR__ . '/../../utils/Auth.php';
+
+  $user = User::find(Auth::id());
+
+
+
+$userAds = Ad::getUserAds($user->id);
+
+?>
+
 <div class="container"> 
     <h1>Profile Page</h1>
 
     <div class="col-sm-4 col-sm-offset-3 text-center">
         <h2>User Info</h2>
             
-        <p>Name</p>
+        <p><?php echo $user->name; ?></p>
 
-        <p>Username</p>
+        <p><?php echo $user->username; ?></p>
     
-        <p>Email</p>
+        <p><?php echo $user->email; ?></p>
 
-        <p>Location</p>
+        <p><?php echo $user->location; ?></p>
 
-        <button class="btn btn-default" type="submit">Edit Profile</button>
+        <a href='account/edit' class="btn btn-default" type="submit">Edit Profile</a>
     </div>
 
-    <div class="col-sm-4 col-sm-offset-3 text-center">
+    <div class="col-sm-4 col-sm-offset-3">
         <h2>Your Ads</h2>
+        <?php foreach ($userAds as  $ad):  ?>
+
         <p>
-            <a href="#">Ad 1</a>
+           <h3><?php echo $ad['title'] ?></h3>
+           <?php echo $ad['description'] ?>
         </p>
-        <p>    
-            <a href="#">Ad 2</a>
-        </p>
-        <p>    
-            <a href="#">Ad 3</a>
-        </p>
-        <button class="btn btn-default" type="submit">Create Ad</button>
+        <h4><a href="/ads/show">View Ad</a></h4>
+        <h4><a href="/ads/edit">Edit Ad</a></h4>
+        <h4><a href="/ads/delete">Delete Ad</a></h4>
+    <?php endforeach; ?>
+        <div>
+
+        <a href='/ads/create' class="btn btn-default" type="submit">Create Ad</a>
+
+        </div>
     </div>
 
 </div>
