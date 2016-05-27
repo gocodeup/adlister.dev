@@ -9,7 +9,7 @@
 	<form class="form"type="POST" action="#">
 		
 		<div class="row">
-			<div class="col-md-6 col-md-offset-3 edit-price">
+			<div class="col-md-6 col-md-offset-3 item-for-sale">
 				<input name="name" type="text" placeholder="ITEM FOR SALE" class="form-control" id="name">
 			</div>
 		</div>
@@ -21,7 +21,7 @@
 		</div>
 
 		<div class="row">
-			<div class="col-md-6 col-md-offset-3 price">
+			<div class="col-md-6 col-md-offset-3 description">
 				<div class="btn-group">
 				  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				    CATEGORY <span class="caret"></span>
