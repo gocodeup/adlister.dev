@@ -1,4 +1,5 @@
 <?php 
+require_once '../utils/Auth.php';
 require_once '../utils/Input.php';
 require_once '../models/Ad.php';
 require_once '../models/Model.php';
@@ -9,6 +10,7 @@ function newUserAd()
 //To do: sanatize these values. 
 //To do: get user id if logged in. 
 //To do: only logged in users should see this page. 
+
 
 
 	$ad = new Ad;
@@ -40,7 +42,6 @@ if(Input::has('title')) {
 </head>
 <body>
 	<div class="container">  
-
 		<form role="form" method="POST">  
 			<h2>Make a new ad</h2>
 
@@ -64,6 +65,7 @@ if(Input::has('title')) {
 
   			<button type="submit" class="btn btn-default">add</button>
 		</form>  
-
 	</div>
+
+	
 	<?php require '../views/partials/footer.php'; ?>
