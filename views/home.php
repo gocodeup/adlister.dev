@@ -1,6 +1,5 @@
 
-    
-
+<?php require '../views/partials/head.php'; ?>    
 <div class="section card">
     <div class="slider">
         <ul class="slides">
@@ -51,3 +50,5 @@
 <script>
    $(document).ready(function () {
        $('.slider').slider({full_width: true});
+   });
+</script>
