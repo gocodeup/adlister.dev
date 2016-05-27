@@ -20,6 +20,6 @@
 	</div>
 </div>
 <div class="row edit-delete">
-	<button type="submit" class="btn btn-danger sign-up-btn">EDIT</button>
+	<a href="/ads/edit" class="btn btn-danger sign-up-btn">EDIT</a>
 	<a href="/signup" class="btn btn-danger sign-up-btn">DELETE</a>
 </div>

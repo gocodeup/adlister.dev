@@ -79,7 +79,7 @@ body, html{
     text-align: left;
 }
 
-.name, .email, .password, .username, .price, .description, .image{
+.name, .email, .password, .username, .price, .description, .image, .item-for-sale{
     padding-bottom: 25px;
     padding-top: 0px;
     padding-left: 0px;
@@ -99,6 +99,26 @@ body, html{
 }
 .centerdiv{
     padding-bottom: 70px;
+}
+.item-for-sale{
+    padding-top: 40px;
+}
+
+.account-welcome{
+    color: red;
+    font-size: 50px;
+    padding-top: 40px;
+}
+
+.account-email{
+    font-size: 20px;
+}
+
+.account-ad-title{
+    padding-top: 150px;
+    font-family: 'Pacifico';
+    font-size: 40px;
+    padding-bottom: 20px;
 }
 
 .super-awesome-ad{
