@@ -5,6 +5,7 @@ require_once __DIR__ . '/Model.php';
 class Ad extends Model {
 	protected static $table = 'ads';
 
+<<<<<<< HEAD
 public static function getUserAds($user_id)
     {
 
@@ -24,5 +25,7 @@ $query = 'SELECT * FROM ' . static::$table . " where user_id = $user_id";
 return $results;
 
     }
+=======
+>>>>>>> master
 }
 
