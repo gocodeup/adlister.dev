@@ -2,7 +2,7 @@
 require_once "../../models/User.php";
 session_start();
 
-var_dump($_POST);
+// var_dump($_POST);
 
 
 if(isset($_POST['name'])){ 

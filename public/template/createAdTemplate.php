@@ -1,8 +1,16 @@
-<?php 
+<!--Page for creating new advertisement listings-->
 
+<?php
+
+session_start();
+
+// Uncomment in order to link necessary materialize css and javascript in later version.
+// require '/css.css';
+require_once __DIR__ . '/../../bootstrap.php';
+// require_once '../../utils/helper_functions.php';
 
 if(isset($_POST['ad_name'])){ 
-    $ads = Ads::find($_GET['id']);
+    $ads = new Ads();
     $ads->ad_name = $_POST['ad_name'];
     $ads->ad_description = $_POST['description'];
     $ads->price = $_POST['price'];
@@ -15,13 +23,33 @@ if(isset($_POST['ad_name'])){
 
 ?>
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Ad</title>
+
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+</head>
+
+ <?php require __DIR__ . '/navbar.php'; ?>
+
+<body>
+
+<!-- <php require __DIR__ . '/common_js.php'; ?> -->
+
+<!-- Form to submit new Ad using POST method -->
+
+
 
 <div class="container">
-  <h1> Edit Ad Listing </h1>
+  <h1> Create an Ad Listing </h1>
 
-<div class="row">
 
-      <form method="POST" action="/ads/edit?id=<?= $_GET['id'] ?>" class="col s12" enctype="multipart/form-data">
+  <div class="row">
+
+      <form method="POST" action="/template/createAdTemplate.php" class="col s12" enctype="multipart/form-data">
 
           <div class = "row">
               <div class="input-field col s6">
@@ -60,6 +88,14 @@ if(isset($_POST['ad_name'])){
           </button>
       </form>
   </div>
+<!-- Form to submit an image  -->
 
+
+<!-- <php require __DIR__ . '/footer.php'; ?> -->
+  <!-- Compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+</body>
+</html>
+

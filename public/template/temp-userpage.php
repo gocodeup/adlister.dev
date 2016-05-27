@@ -1,4 +1,23 @@
-<div class="row">
+
+<?php
+session_start();
+// require_once __DIR__ . '/../bootstrap.php';
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ad Lister</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+      <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>        
+</head>
+<body>
+  <?php require '../../views/partials/navbar.php'; ?>
+
+  <div class="row">
     <a class="title" href="">USER ACCOUNT</a>
     <div class="row isotope">
         <div class="col s12 m3">
@@ -44,6 +63,15 @@
     </div>
     <a class="waves-effect waves-light btn">Change Profile Picture</a>
     </div>
-  </div><!--Page for user account home-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+  </div>
+  <?= require_once "footer.php"; ?>
+    <!-- <php require $main_view; ?> -->
+
+     <!-- <php require '../views/partials/common_js.php'; ?> -->
+     <!--Import jQuery before materialize.js-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+</script>
+ </body>
+</html>

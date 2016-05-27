@@ -60,13 +60,13 @@ if (!Auth::attempt(Input::get('username'), Input::get('password') )) {
         <div class="col-md-6 col-md-offset-3">
             <p>Login with your email/userame and password</p>
     <!-- input correct site once logged in -->
-                <form method="POST" action="/template/users-signup.php">
+                <form method="POST" action="users-login.php">
                     <div class="container">
                         <div class="row">
                         
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input placeholder="Email/Username" id="email" name="email" type="text" class="validate" required>
+                                        <input placeholder="Email/Username" id="username" name="username" type="text" class="validate" required>
                                     </div>
                                 </div>
                                 <div class="row">
