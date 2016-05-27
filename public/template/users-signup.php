@@ -46,7 +46,7 @@ if(isset($_POST['name'])){
                     <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
                 <?php endif; ?>
 
-
+<!-- edit the action -->
                 <form method="POST" action="/template/users-signup.php" >
                 <div class="container">
                     <div class="row">
