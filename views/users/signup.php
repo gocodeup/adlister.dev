@@ -126,10 +126,10 @@ var_dump($_POST);
                             <input name="email" type="text" placeholder="Email" class="form-control input-lg" id="email">
                         </div>
                         <div class="col-xs-12 password">
-                            <input name="password" type="text" placeholder="Password" class="form-control input-lg" id="password">
+                            <input name="password" type="password" placeholder="Password" class="form-control input-lg" id="password">
                         </div>
                         <div class="col-xs-12 password">
-                            <input name="confirm" type="text" placeholder="Confirm Password" class="form-control input-lg" id="confirm">
+                            <input name="confirm" type="password" placeholder="Confirm Password" class="form-control input-lg" id="confirm">
                         </div>
                     </div>
                     <div class="centerdiv">
