@@ -47,18 +47,6 @@ class User extends Model {
 
         return $instance;
     }
-    public static function saveUser($dbc, $user)
-    {
-        $query = "INSERT INTO users (name,username,email,password,confirm) VALUES (:name, :username, :email, :password, :confirm)";
-        $stmt = $dbc->prepare($query);
-        $stmt->bindvalue(':name', $user['name'], PDO::PARAM_STR); 
-        $stmt->bindvalue(':username', $user['username'], PDO::PARAM_STR); 
-        $stmt->bindvalue(':email', $user['email'], PDO::PARAM_STR); 
-        $stmt->bindvalue(':password', $user['password'], PDO::PARAM_STR);
-        $stmt->bindvalue(':confirm', $user['confirm'], PDO::PARAM_STR);
-
-        $stmt->execute();
-    }
 }
 
 ?>

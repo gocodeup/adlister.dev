@@ -3,63 +3,23 @@
 
 $_ENV = include __DIR__ . '/../../.env.php';
 require_once '../database/db_connect.php';
-require_once __DIR__ . '/../../models/Ads.php';
+require_once __DIR__ . '/../../bootstrap.php';
 
 var_dump($_POST);
+	if(Input::has('name')){
+		
+		$ads = new Ads();
+        $ads->name = Input::get('name');
+        $ads->price = Input::get('price');
+        $ads->img_url = saveUploadedImage('img_url');
+        $ads->category = Input::get('category');
+        $ads->description = Input::get('description');
 
-function getAdsFromInput(){
-
-    $errors = [];
-    $ads = [];
-        try {
-            $ads['name'] = Input::getString('name');
-        } catch (Exception $e1) {
-            $errors[] = $e1->getMessage();
-        }
-        try {
-            $ads['description'] = Input::getString('description');
-        } catch (Exception $e2) {
-            $errors[] = $e2->getMessage();
-        }
-        try {
-            $ads['price'] = Input::getString('price');
-        } catch (Exception $e3) {
-            $errors[] = $e3->getMessage();
-        }
-        try {// change this to saveUploadedImage()
-            $ads['img_url'] = Input::getString('img_url');
-        } catch (Exception $e4) {
-            $errors[] = $e4->getMessage();
-        }
-        try {
-            $ads['category'] = Input::getString('category');
-        } catch (Exception $e5) {
-            $errors[] = $e5->getMessage();
-        }
-        return [
-            'ads' => $ads,
-            'errors' => $errors
-        ];
-}
-
-function pageControllerAds($dbc)
-{
-    // this gives us the adss and errors variables
-    extract(getAdsFromInput());
-    if (empty($errors)) {
-        Ads::saveAds($dbc, $ads);
-        // header('Location: signup');
-        die();
+        $ads->user_id = 1;
+        $ads->save();
     }
-    return [
-        'ads'   => $ads,
-        'errors' => $errors,
-    ];
-}
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    extract(pageControllerAds($dbc));
-}
+
 ?><!-- END OF PHP -->
 <div class="container" id="container">
 	
@@ -67,11 +27,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		Create Your Super Awesome Ad Here!
 	</div>	
 
-	<form class="form" method="POST" action="#">
+	<form class="form" method="POST" action="#" enctype="multipart/form-data">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 image">
 			    <label class="btn btn-info btn-file">
-				    UPLOAD IMAGE <input type="file" style="display: none;">
+				    UPLOAD IMAGE <input name="img_url" type="file" style="display: none;">
 				</label>
 			</div>
 		</div>
@@ -91,10 +51,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3 price">
 				<div class="btn-group">
-				  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<input type="text" name="category"></input>
+				  <!-- <button type="text" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				    CATEGORY <span class="caret"></span>
 				  </button>
-				  <ul class="dropdown-menu">
+ -->				  <!-- <ul class="dropdown-menu">
 				    <li><a href="#">APPLIANCES</a></li>
 				    <li><a href="#">AUTO</a></li>
 				    <li><a href="#">BOOKS</a></li>
@@ -104,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				    <li><a href="#">TOOLS</a></li>
 				    <li><a href="#">TOYS & GAMES</a></li>
 				  </ul>
-				</div>
+				</div> -->
 			</div>
 		</div>
 
