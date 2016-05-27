@@ -67,7 +67,6 @@ if (!is_null($signupNameField) && !is_null($signupEmailField) && !is_null($signu
 
         <!-- These buttons only show if the user is logged IN -->
         <?php if (isset($_SESSION['IS_LOGGED_IN'])){ ?>
-          <li><a href="/users/account">Account</a></li>
           <li><a href="/ads/create">Post Ad</a></li>   
         <?php } ?> 
         
