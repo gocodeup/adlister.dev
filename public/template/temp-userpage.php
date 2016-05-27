@@ -1,9 +1,9 @@
 
 <?php
 session_start();
-// require_once __DIR__ . '/../bootstrap.php';
+require_once __DIR__ . '/../../bootstrap.php';
+var_dump($users);
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,9 +61,23 @@ session_start();
             </li>
         </ul>
     </div>
-    <a class="waves-effect waves-light btn">Change Profile Picture</a>
     </div>
   </div>
+  <div>     
+            <form method="POST" action="">
+                <div class="file-field input-field">
+                <div class="btn">
+                  <span>Change Profile Pic</span>
+                  <input type="file" name="user_img">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text" name="">
+                </div>
+              </div>
+                        <button class="btn waves-effect waves-light" type="submit">Submit
+          </button>
+            </form>
+        </div>
   <?= require_once "footer.php"; ?>
     <!-- <php require $main_view; ?> -->
 

@@ -1,3 +1,7 @@
+<?php foreach ($users as $user) {
+    if ($user['id'] == $_GET['id']){ ?>
+
+    
 <div class="row">
     <a class="title" href="">USER ACCOUNT</a>
     <div class="row isotope">
@@ -9,7 +13,7 @@
                     </a>
                 </div>
                 <div class="card-content">
-                    <a href=""><span class="card-title activator brown-text text-darken-4">USERNAME</span></a>
+                    <a href=""><span class="card-title activator brown-text text-darken-4"><?= $user['name']?></span></a>
                     <p class="area"><a href="">Location: SAN ANTONIO, TX</a></p>
                 </div>
             </div>
@@ -45,5 +49,8 @@
     <a class="waves-effect waves-light btn">Change Profile Picture</a>
     </div>
   </div><!--Page for user account home-->
+  <?php }} ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+
