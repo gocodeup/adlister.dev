@@ -29,6 +29,8 @@ if (!is_null($signupNameField) && !is_null($signupEmailField) && !is_null($signu
     $newUser->save();
 }
 
+var_dump($_SESSION);
+
 
 // if(isset($_POST['loginUsername']) && isset($_POST['loginPassword'])){
 //   $username = $_POST['loginUsername'];
