@@ -62,3 +62,4 @@ $ads->email = "buymymac@icloud.com";
 $ads->location = "Alamo Heights";
 $ads->img_url = "http://i.ebayimg.com/00/s/MjI1WDMwMA==/z/Ba4AAOSwQItUADCb/\$_35.JPG?set_id=2";
 $ads->save();
+

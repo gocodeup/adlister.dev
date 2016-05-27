@@ -4,6 +4,9 @@
 // PLACE LOG CLASS FILE IN THIS FOLDER
 // require_once 'Log.php';
 require_once '../models/User.php';
+=======
+require_once 'Log.php';
+require_once '../../models/User.php';
 
 class Auth
 {
