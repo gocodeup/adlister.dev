@@ -10,7 +10,7 @@ $query = 'CREATE TABLE ads (
     user_id INT,
     title VARCHAR(50) NOT NULL,
     price DOUBLE PRECISION(6,2) NOT NULL,
-    image_url VARCHAR(255) NOT NULL,
+    image_url VARCHAR(255),
     description text NOT NULL,
     PRIMARY KEY (id)
 )';
