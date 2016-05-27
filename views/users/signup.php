@@ -2,103 +2,71 @@
 
 $_ENV = include __DIR__ . '/../../.env.php';
 require_once '../database/db_connect.php';
-require_once '../models/User.php';
-function pageControllerSignup($dbc) 
-{
-    $message = [];
-    $name = '';
-    $username = '';
-    $email = '';
-    $password = '';
-    $confirm = '';
-    $data = [];
-    $stmt = $dbc->prepare('SELECT * FROM users');
-    $stmt->execute();
-    $data['users'] = $stmt->fetchALL(PDO::FETCH_ASSOC);
+require_once __DIR__ . '/../../models/User.php';
 
-    if (!empty($_POST))
-    {
+function getUsersFromInput(){
 
+    $errors = [];
+    $user = [];
+        var_dump($user);
         try {
-            $name = Input::getString('name',1,150);
+            $user['name'] = Input::getString('name');
+        } catch (Exception $e1) {
+            $errors[] = $e1->getMessage();
         }
-        catch (InvalidArgumentException $e) {
-                $message[] = $e->getMessage();
-        }catch (OutOfRangeException $e) {
-                $message[] = $e->getMessage();
-        }catch (RangeException $e) {
-                $message[] = $e->getMessage();
-        }catch (LengthException $e) {
-                $message[] = $e->getMessage();
-        }
-
         try {
-            $username = Input::getString('username',0,150);
+            $user['username'] = Input::getString('username');
+        } catch (Exception $e2) {
+            $errors[] = $e2->getMessage();
         }
-        catch (InvalidArgumentException $e) {
-                $message[] = $e->getMessage();
-        }catch (OutOfRangeException $e) {
-                $message[] = $e->getMessage();
-        }catch (RangeException $e) {
-                $message[] = $e->getMessage();
-        }catch (LengthException $e) {
-                $message[] = $e->getMessage();
-        }
-
         try {
-            $email = Input::getString('email',0,150);
+            $user['email'] = Input::getString('email');
+        } catch (Exception $e3) {
+            $errors[] = $e3->getMessage();
         }
-        catch (InvalidArgumentException $e) {
-                $message[] = $e->getMessage();
-        }catch (OutOfRangeException $e) {
-                $message[] = $e->getMessage();
-        }catch (RangeException $e) {
-                $message[] = $e->getMessage();
-        }catch (LengthException $e) {
-                $message[] = $e->getMessage();
-        }
-
         try {
-            $password  = Input::getNumber('password',0,150);
+            $user['password'] = Input::getString('password');
+        } catch (Exception $e4) {
+            $errors[] = $e4->getMessage();
         }
-        catch (InvalidArgumentException $e) {
-                $message[] = $e->getMessage();
-        }catch (OutOfRangeException $e) {
-                $message[] = $e->getMessage();
-        }catch (RangeException $e) {
-                $message[] = $e->getMessage();
-        }catch (LengthException $e) {
-                $message[] = $e->getMessage();
-        }
-
         try {
-            $confirm = Input::getString('confirm',10,150);
+            $user['confirm'] = Input::getString('confirm');
+        } catch (Exception $e5) {
+            $errors[] = $e5->getMessage();
         }
-        catch (InvalidArgumentException $e) {
-                $message[] = $e->getMessage();
-        }catch (OutOfRangeException $e) {
-                $message[] = $e->getMessage();
-        }catch (RangeException $e) {
-                $message[] = $e->getMessage();
-        }catch (LengthException $e) {
-                $message[] = $e->getMessage();
-        }
-            if(empty($message)){
-                saveUser($dbc, $user);
-            }
-        } 
-
-    $data['message'] = $message;
-    return $data;
+        return [
+            'user' => $user,
+            'errors' => $errors
+        ];
 }
-extract(pageControllerSignup($dbc));
 
-    function getPost($field) 
-    {
-       return (isset($_POST[$field]) && $_POST[$field] != "" ? $_POST[$field] : "");
+function pageControllerSignup($dbc)
+{
+    // this gives us the users and errors variables
+    extract(getUsersFromInput());
+    if (empty($errors)) {
+        User::saveUser($dbc, $user);
+        // header('Location: signup');
+        die();
     }
-var_dump($_POST);
-?>
+    return [
+        'user'   => $user,
+        'errors' => $errors,
+    ];
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    extract(pageControllerSignup($dbc));
+}
+?><!-- END OF PHP -->
+
+<!-- START OF HTML -->
+<?php if(isset($errors)): ?>
+    <?php foreach($errors as $message):?>
+        <p id="errorMessage"><?= $message ?></p>
+    <?php endforeach; ?>
+<?php endif; ?>
+
 <div class="container">
     <div class="row">
 ​
@@ -133,7 +101,7 @@ var_dump($_POST);
                         </div>
                     </div>
                     <div class="centerdiv">
-                        <input class="btn btn-danger btn-lg sign-up-btn" type="submit" value="SIGN UP!">
+                        <button  class="btn btn-danger btn-lg sign-up-btn" type="submit" id="submit" value="SIGN UP!">SIGN UP!</button>
                     </div>
                 </form>
             </div>
