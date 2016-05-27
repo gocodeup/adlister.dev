@@ -2,8 +2,6 @@
 
 require_once __DIR__ . '/../../models/Ad.php';
 
-// $dbc->exec('TRUNCATE ads');
-
 $ad = new Ad;
 $ad->title = 'Vintage Lawn Chair';
 $ad->image_url = '/../../img/artisanChair.jpg';
