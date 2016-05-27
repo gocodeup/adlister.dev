@@ -67,7 +67,7 @@ class Model {
     /*
      * Persist the object to the database
      */
-    public function save()
+    public function save() 
     {
 
         //Ensure there are attributes before attempting to save
