@@ -48,3 +48,10 @@
     </section>
 
 </div>
+<script>
+    $(function(){
+        $('.carousel').carousel({
+          interval: 3000
+        });
+    });
+</script>
