@@ -79,11 +79,14 @@ body, html{
     text-align: left;
 }
 
-.name, .email, .password, .username{
+.name, .email, .password, .username, .price, .description, .image{
     padding-bottom: 25px;
     padding-top: 0px;
     padding-left: 0px;
     padding-right: 0px;
+}
+.image{
+    padding-top: 50px;
 }
 .sign-up-btn{
     background-color: red;
@@ -98,9 +101,15 @@ body, html{
     padding-bottom: 70px;
 }
 
-
-/* SIDEBAR STYLING */
-
+.super-awesome-ad{
+    font-family: 'Pacifico';
+    font-size: 50px;
+    padding-top: 40px;
+    color: red;
+}
+.edit-price{
+    padding-top: 40px;
+}
 .sidebar-nav{
     float: left;
 }
