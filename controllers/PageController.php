@@ -40,7 +40,7 @@ function pageController()
             break;
 
         case '/ads/edit':
-            $main_view ='../views/ads/create.php';
+            $main_view ='../views/ads/edit.php';
             break;
 
         case '/ads/show':
