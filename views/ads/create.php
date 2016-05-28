@@ -13,10 +13,12 @@ function newUserAd()
 	$ad->description = Input::get('description');
 	$ad->price = Input::get('price');
 	$ad->img_url = Input::get('img_url');
-	$ad->category = Input::get('category');
+	$ad->category = Input::get('category'); 
 	$ad->tags = Input::get('tags');
 	$ad->save();
 
+// redirect user to the new add page using last inserted ID
+	// header("Location: http://adlister.dev/ads/show?id=");
 }
 
 if(Input::has('title')) {    

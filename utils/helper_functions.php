@@ -39,7 +39,7 @@ function saveUploadedImage($input_name)
             }
         }
     } else {
-        return null;
+        return null;   
     }
 }
 
