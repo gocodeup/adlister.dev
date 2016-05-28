@@ -23,6 +23,7 @@
                     <p>
                       Everyone does dolphin encounters, but you want true adventure! Our guides will take you deep into the woods to interact with real, wild bears. Make sure to bring your cameras to this one-of-a-kind experience! Safety not guaranteed. Must sign waiver to attend.
                     </p>
+                    <a href="/ads/show?id=6?>" class="btn btn-primary" role="button">View</a>
                 </div>
             </div>
         </div>
