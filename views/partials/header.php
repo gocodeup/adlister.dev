@@ -1,15 +1,15 @@
 <?php
-// require_once __DIR__ . '/../../utils/Auth.php';
+require_once __DIR__ . '/../../utils/Auth.php';
 
-// require_once __DIR__ . '/../../models/User.php';     
+require_once __DIR__ . '/../../models/User.php';     
 
 // Login Functionality. Works Pretty Well.
 $loginUsername = Input::get('loginUsername');
 $loginPassword = Input::get('loginPassword');
 
 if(Auth::attempt($loginUsername, $loginPassword)) {
-  // header ('Location: /');
-  // exit();
+  header ('Location: /');
+  exit();
 }
 // Signup Functionality. Likely needs to be refactored
 $signupNameField = Input::get('signupNameField');
@@ -24,21 +24,9 @@ if (!is_null($signupNameField) && !is_null($signupEmailField) && !is_null($signu
     $newUser->email = $signupEmailField;
     $newUser->username = $signupUsernameField;
     $newUser->password = $signupConfirmField;
-
     $newUser->save();
 }
 
-// var_dump($_SESSION);
-
-
-// if(isset($_POST['loginUsername']) && isset($_POST['loginPassword'])){
-//   $username = $_POST['loginUsername'];
-//   $password = $_POST['loginPassword'];
-//   if(Auth::attempt($username, $password)) {
-//     header ('Location: index.php');
-//     exit();
-//   }
-// }
 ?>
 
 <!-- Bootstrap CSS cdn-->
@@ -66,7 +54,8 @@ if (!is_null($signupNameField) && !is_null($signupEmailField) && !is_null($signu
         <li class="active"><a href="/ads">Ads <span class="sr-only">(current)</span></a></li>
 
         <!-- These buttons only show if the user is logged IN -->
-        <?php if (isset($_SESSION['IS_LOGGED_IN'])){ ?>
+        <?php 
+        if (isset($_SESSION['IS_LOGGED_IN'])){ ?>
           <li><a href="/ads/create">Post Ad</a></li>   
         <?php } ?> 
         
@@ -107,7 +96,7 @@ if (!is_null($signupNameField) && !is_null($signupEmailField) && !is_null($signu
 
         <!-- These buttons only show if the user is logged IN -->
         <?php if (isset($_SESSION['IS_LOGGED_IN'])){ ?>
-        <a href="auth.logout.php" type="button" class="btn btn-default" id="logout-button">Logout</a>
+        <a href="/auth.logout.php" type="button" class="btn btn-default" id="logout-button">Logout</a>
         <a href="/users/account" type="button" class="btn btn-default" id="profile-button">Profile</a>
         <?php } else { ?>
 

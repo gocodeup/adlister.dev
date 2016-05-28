@@ -9,7 +9,6 @@ class User extends Model {
     // checks if the attribute being saved is password and hashes it if so
     public function __set($name, $value)
     {
-
         if ($name == 'password')
         {
             $value = password_hash($value, PASSWORD_DEFAULT);
@@ -21,7 +20,6 @@ class User extends Model {
     // finds and returns instance of user based on email or username
     public static function findByUsernameOrEmail($username_or_email)
     {
-
         self::dbConnect();
 
         $query = 'SELECT * FROM ' . self::$table . ' WHERE username = :username OR email = :email';
@@ -47,11 +45,15 @@ class User extends Model {
         return $instance;
     }
 
-    // relationship to items owned by user
-    public function items()
+    public static function showUser($id)
     {
-
-        return Item::findAllWithUserId($this->id);
+        self::dbConnect();
+        $user = [];
+        $stmt = self::$dbc->prepare("SELECT * FROM users JOIN ads ON users.id = ads.user_id WHERE users.id = :id");
+        $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $user;
     }
 
 }

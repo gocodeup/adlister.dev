@@ -45,12 +45,12 @@ function pageController()
 
         case '/users/account';
             loggedInOnly();
-            $main_view = '..users/account.php';
+            $main_view = '../views/users/account.php';
             break;
 
         case '/users/edit';
             loggedInOnly();
-            $main_view = '..users/edit.php';
+            $main_view = '../views/users/edit.php';
 
             break;
 
