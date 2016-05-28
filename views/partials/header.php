@@ -4,19 +4,19 @@ require_once __DIR__ . '/../../utils/Auth.php';
 require_once __DIR__ . '/../../models/User.php';     
 
 // Login Functionality. Works Pretty Well.
-$loginUsername = Input::get('loginUsername');
-$loginPassword = Input::get('loginPassword');
+$loginUsername = escape(Input::get('loginUsername'));
+$loginPassword = escape(Input::get('loginPassword'));
 
 if(Auth::attempt($loginUsername, $loginPassword)) {
   header ('Location: /');
   exit();
 }
 // Signup Functionality. Likely needs to be refactored
-$signupNameField = Input::get('signupNameField');
-$signupEmailField = Input::get('signupEmailField');
-$signupUsernameField = Input::get('signupUsernameField');
-$signupPasswordField = Input::get('signupPasswordField');
-$signupConfirmField = Input::get('signupConfirmField');
+$signupNameField = escape(Input::get('signupNameField'));
+$signupEmailField = escape(Input::get('signupEmailField'));
+$signupUsernameField = escape(Input::get('signupUsernameField'));
+$signupPasswordField = escape(Input::get('signupPasswordField'));
+$signupConfirmField = escape(Input::get('signupConfirmField'));
 
 if (!is_null($signupNameField) && !is_null($signupEmailField) && !is_null($signupUsernameField) && !is_null($signupPasswordField) && !is_null($signupConfirmField) && $signupPasswordField === $signupConfirmField) {
     $newUser = new User();
