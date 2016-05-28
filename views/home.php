@@ -17,7 +17,7 @@
     <h3>Featured Items</h3>
         <div class="col-sm-4 col-md-4">
             <div class="thumbnail">
-                <img src="img/bearsMed.jpg" alt="placeholder">
+                <a href="/ads/show?id=6"><img src="img/bearsMed.jpg" alt="placeholder"></a>
                 <div class="caption">
                     <h3><a href="/ads/show?id=6">Bear Encounter</a></h3>
                     <p>
@@ -29,7 +29,7 @@
         </div>
         <div class="col-sm-4 col-md-4">
             <div class="thumbnail">
-                <img src="img/scarySantaMed.jpg" alt="placeholder">
+                <a href="/ads/show?id=7"><img src="img/scarySantaMed.jpg" alt="placeholder"></a>
                 <div class="caption">
                     <h3><a href="/ads/show?id=7">Seasonal Cthulhu Cookies</a></h3>
                     <p>
@@ -41,7 +41,7 @@
         </div>
         <div class="col-sm-4 col-md-4">
             <div class="thumbnail">
-                <img src="img/naturalCandlesMed.jpg" alt="placeholder">
+                <a href="/ads/show?id=8"><img src="img/naturalCandlesMed.jpg" alt="placeholder"></a>
                  <div class="caption">
                     <h3><a href="/ads/show?id=8">Natural Candles</a></h3>
                     <p>
