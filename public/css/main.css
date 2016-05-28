@@ -4,6 +4,16 @@ body {
     color: #15100b;
 }
 
+/*that line between header and content*/
+hr {
+    border-top: 1px solid #c0c6c8;
+}
+
+/*the border around thumbnails*/
+.thumbnail {
+        border: 1px solid #c0c6c8;
+}
+
 /* navbar background */
 .navbar-default {
     background-color: #2f4448;

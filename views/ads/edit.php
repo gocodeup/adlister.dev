@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../../models/Ad.php';
+require_once __DIR__ . "../../../utils/helper_functions.php";
 require_once __DIR__ . '/../../utils/Auth.php';
 
 
@@ -10,7 +11,7 @@ if(!empty($_POST)) {
     $ad->title = Input::get('title');
     $ad->price = Input::get('price');
     $ad->description = Input::get('description');
-    $ad->image_url = Input::get('image_url');
+    $ad->image_url = saveUploadedImage('img_url');
     $ad->save();
     header("Location: /account");
 }
@@ -35,7 +36,7 @@ if(!empty($_POST)) {
     
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
-            <form class="text-center" method="POST">
+            <form enctype="multipart/form-data" class="text-center" method="POST">
                 <div class="form-group">
                     <label for="itemname">Title</label>
                     <input type="text" name="title" class="form-control" value="<?= $ad->title; ?>">
@@ -52,8 +53,8 @@ if(!empty($_POST)) {
                     <img src="<?= $ad->image_url; ?>">
                 </div>
                 <div class="form-group text-left">
-                    <label for="itemPicture">Change Picture</label>
-                    <input name="image_url" type="file" id="itemPicture">
+                    <label for="img_url">Change Picture</label>
+                    <input name="img_url" type="file" id="img_url">
                 </div>
               <button type="submit" class="btn btn-default">Submit Changes</button>
             </form>
