@@ -2,18 +2,78 @@
 
 require_once __DIR__ . '/../models/Ad.php';
 
-$ads = Ad::get3Ads();
+$ads = Ad::getAds(3);
 
 ?>
-<h2>Recent adds</h2>
 
-    <?php foreach($ads as $ad) : ?>
-        <div class="col-md-4">
-            <h3><?= $ad['title'] ?></h3>
-            <a href="/ads/show?id=<?= $ad['id'] ?>" ><img height="200" src="<?= $ad['img_url'] ?>"/></a>
-            <p>$<?= $ad['price'] ?></p>
-        </div>
-    <?php endforeach ?>
+<!-- Image Background Page Header -->
+    
+ 	<!-- Full Width Image Header -->
+	 <div class="jumbotron jumbo-home">
+	 	<div class="container-fluid">
+	 		<div class="row">
+				<img class="col-xs-10 col-md-8 col-md-offset-1 col-lg-6 col-lg-offset-2" id="radlister-head" src="/img/radlister.png">
+			</div>
+			<div class="row col-md-offset-1 col-md-10 col-lg-8 col-lg-offset-2 ">
+				<h2>Home of the Web's
+	        	<span class="text-muted">Gnarliest Classifieds</span>
+	    		</h2>
+	    	</div>
+	    	<div class="row col-md-offset-1 col-md-10 col-lg-8 col-lg-offset-2 ">
+	  			<p>Welcome to Radlister, bruh. We're totally stoked that you're here. To get started, pick a category from the list below or just check out these featured ads.</p>
+	  		</div>
+		</div>
+	</div>
+</div>
+<!-- Page Content -->
+    <div class="home-ads">
+    	<div class="container-fluid">
+			<h2 class="row text-center recent-ads-header">Recent ads</h2>
+			<!-- An ad -->
+			<?php foreach($ads as $ad) : ?>
+			<div class="item-list">
+			    <div class="row col-md-offset-1 col-md-10 col-lg-8 col-lg-offset-2">
+					<div class="col-xs-2 no-padding photobox">
+						<div class="add-image"> 
+							<a href="ads-details.html">
+								<img class="thumbnail no-margin" src="<?= $ad['img_url'] ?>" alt="img">
+							</a> 
+						</div>
+					</div>
+				 
+					<div class="col-xs-7 add-desc-box">
+						<div class="add-details">
+							<h5 class="add-title"> 
+								<a class="content-link" href="ads-details.html"> <?= $ad['description'] ?></a>
+							</h5>
+							<span class="info-row"> 
+								<span class="date">
+									<i class="fa fa-clock-o"> </i> 
+									Today 1:21 pm 
+								</span> 
+								- 
+								<span class="category"><?= $ad['category'] ?> </span>
+								- 
+								<span class="item-location">
+									<i class="fa fa-map-marker"></i> 
+									San Antonio, TX 
+								</span> 
+							</span> 
+						</div>
+					</div>
+				 	
+					<div class="col-xs-3 text-right  price-box">
+						<h2 class="item-price">$<?= $ad['price'] ?></h2>
+						<a class="btn offer-btn  btn-sm">Get more info!</a> 
+					</div>
+				</div> 
+			</div>
+
+	<hr class="ad-divider">
+	<?php endforeach ?>
+		</div>
+	</div>
+
 
 
 

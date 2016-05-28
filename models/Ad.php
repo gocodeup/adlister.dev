@@ -32,15 +32,13 @@ class Ad extends Model {
         return $instance;
     }
 
-    public static function get3Ads()
+    public static function getAds($limit)
     {
         self::dbConnect();
 
-        $adLimit = 3;
-
         $ads = [];
-            $stmt = self::$dbc->prepare("SELECT * FROM ads LIMIT :adLimit");
-            $stmt->bindValue(":adLimit", $adLimit, PDO::PARAM_INT);
+            $stmt = self::$dbc->prepare("SELECT * FROM ads LIMIT :limit");
+            $stmt->bindValue(":limit", $limit, PDO::PARAM_INT);
             $stmt->execute();
             $ads = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

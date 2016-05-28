@@ -13,7 +13,7 @@ require_once __DIR__ . '/../bootstrap.php';
 </head>
 <body>	
 
-    <div class="container">
+    <div class="container-fluid">
 
 		<?php require $main_view; ?> 
 
