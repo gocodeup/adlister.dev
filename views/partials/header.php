@@ -30,6 +30,7 @@ if (!is_null($signupNameField) && !is_null($signupEmailField) && !is_null($signu
 ?>
 
 <!-- Bootstrap CSS cdn-->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 <!-- external css -->
@@ -45,52 +46,21 @@ if (!is_null($signupNameField) && !is_null($signupEmailField) && !is_null($signu
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Home</a>
+      <a class="navbar-brand" href="/"><img src="img/logo.png" id="logo"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/ads">Ads <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="/ads">Ads Directory<span class="sr-only">(current)</span></a></li>
 
         <!-- These buttons only show if the user is logged IN -->
         <?php 
         if (isset($_SESSION['IS_LOGGED_IN'])){ ?>
-          <li><a href="/ads/create">Post Ad</a></li>   
+          <li><a href="/ads/create">Post An Ad</a></li>   
         <?php } ?> 
-        
-<!--         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li> -->
       </ul>
-<!--       <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul> -->
+
       <!-- Login & Signup Buttons -->
        <div class="nav-menu btn-group pull-right" role="group">
 
@@ -123,7 +93,7 @@ if (!is_null($signupNameField) && !is_null($signupEmailField) && !is_null($signu
                     <input name="loginPassword" id="loginPassword" type="password" class="form-control" placeholder="Password">
                 </div>
                 <div id="emailLoginBtnDiv" class="form-group col-sm-10 col-sm-offset-1 text-center">
-                    <button id="loginWithEmailBtn" type="submit" class="btn btn-primary btn-block">CLICK TO LOG IN</button>
+                    <button id="login-button" type="submit" class="btn btn-primary btn-block">CLICK TO LOG IN</button>
                 </div>
               </form>
               <div class="text-center">
@@ -163,7 +133,7 @@ if (!is_null($signupNameField) && !is_null($signupEmailField) && !is_null($signu
                     <label for="signupConfirmField" class="sr-only">Confirm Password</label>
                     <input name='signupConfirmField' id="signupConfirmField" type="password" class="form-control" name="title" maxlength="20" placeholder="Confirm Password"required>
                 </div>
-                <div id="emailsignupBtnDiv" class="form-group col-sm-10 col-sm-offset-1 text-center">
+                <div id="signup-button" class="form-group col-sm-10 col-sm-offset-1 text-center">
                     <button type="submit" class="btn btn-primary btn-block">CLICK TO SIGN UP</button>
                 </div>
               </form>

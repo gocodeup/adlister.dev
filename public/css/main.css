@@ -1,0 +1,70 @@
+body, #logout-button, #profile-button  {
+  font-family: Open Sans;
+}
+
+.jumbo-home {
+  background-color: white;
+  padding-bottom:0px;
+}
+
+.navbar {
+  background-color: white;
+}
+
+.navbar-brand{
+  padding:5px;
+}
+
+#logo {
+  height:40px;
+}
+
+#logout-button, #profile-button, #login-button, #signup-button {
+  margin-top: 7px;
+}
+
+#description {
+  text-align: center;
+  color: grey;
+}
+
+.photobox {
+  padding-left:0px;
+}
+
+.thumbnail {
+  width:95px;
+  margin:0px;
+}
+
+#about {
+  background-color: #f2f2f2
+}
+
+.item-price {
+  margin-top: 0px;
+  color: grey;
+}
+
+.ad-divider {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.content-link {
+  color: rgb(253,63,108);
+  font-weight:bold;
+}
+
+.offer-btn {
+  background-color: rgb(190,222,21);
+  color: black;
+}
+
+.home-ads {
+  background-color: #fafafa;
+}
+
+.recent-ads-header {
+  
+}
