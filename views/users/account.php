@@ -1,4 +1,6 @@
 <?php 
+require_once __DIR__ . '/../../utils/Auth.php';
+require_once __DIR__ . '/../../models/Model.php';
 
 if (isset($_SESSION['LOGGED_IN_ID']))
 {
@@ -11,7 +13,6 @@ $user = User::showUser($userId);
 
 	<div class="row">
 		<div class=" col-xs-12">
-    	 
             <div class="col-sm-12">
                 <div class="col-xs-12 col-sm-4 text-center">
                     <img src="<?= $user['image'] ?>">
