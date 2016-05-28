@@ -61,7 +61,7 @@ var_dump($_POST);
                         </div>
                     </div>
                     <div class="centerdiv">
-                        <button  class="btn btn-danger btn-lg sign-up-btn" type="submit" id="submit" value="SIGN UP!">SIGN UP!</button>
+                        <button class="btn btn-danger btn-lg sign-up-btn" type="submit" id="submit" value="SIGN UP!">SIGN UP!</button>
                     </div>
                 </form>
             </div>

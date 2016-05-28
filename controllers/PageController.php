@@ -36,9 +36,6 @@ function pageController()
         case '/signup':
             $main_view = '../views/users/signup.php';
             break;
-        case '/thankyou':
-            $main_view = '../views/users/thankyou.php';
-            break;
         //ads cases
         case '/items':
             $main_view = '../views/ads/index.php';
