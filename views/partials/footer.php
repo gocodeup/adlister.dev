@@ -1,6 +1,6 @@
 	<footer class="panel-footer">
 	  <div class="container">
-	    <p class="text-muted">Made by Andrew, James and Raj at Codeup. <a href="https://github.com/Rad-Lister/adlister.dev">Code here</a> <span style="float: right"><a href="#top">↑ Go to the top ↑</a></span></p></p>
+	    <p class="text-muted">Made by Andrew, James and Raj at Codeup. <a target="_blank" href="https://github.com/Rad-Lister/adlister.dev">Code here</a> <span style="float: right"><a href="#top">↑ Go to the top ↑</a></span></p></p>
 	  </div>
 	</footer>
  <!-- Bootstrap core JavaScript
