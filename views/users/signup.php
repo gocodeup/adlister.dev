@@ -4,7 +4,7 @@ $_ENV = include __DIR__ . '/../../.env.php';
 require_once '../database/db_connect.php';
 require_once __DIR__ . '/../../bootstrap.php';
 
-var_dump($_POST);
+// var_dump($_POST);
     if(Input::has('name')){
         
         $user = new User();
@@ -30,8 +30,8 @@ var_dump($_POST);
 <div class="container">
     <div class="row">
 ​
-        <div class="col-md-4 col-md-offset-1 gearpic">
-            <img src="/img/gears.png">
+        <div class="col-md-4 col-md-offset-1 boxpic">
+            <img src="/img/boxofpoo.png">
             <div class="gearcontent"> 
                 <p class="gear-line-one">Thanks for stopping by!</p> 
                 <p class="gear-line-two">We hope to see you again soon.</p>
