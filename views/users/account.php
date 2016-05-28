@@ -3,12 +3,15 @@
 require_once __DIR__ . '../../../models/Ad.php';
 require_once __DIR__ . '../../../models/User.php';
 require_once __DIR__ . '/../../utils/Auth.php';
+    
+    if (!Auth::check()) {
+        header('Location: login');
+        exit();
+    }
 
-  $user = User::find(Auth::id());
+    $user = User::find(Auth::id());
 
-
-
-$userAds = Ad::getUserAds($user->id);
+    $userAds = Ad::getUserAds($user->id);
 
 ?>
 
