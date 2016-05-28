@@ -1,3 +1,6 @@
+<?php
+ var_dump($_SESSION);
+?>
 <div class="container" id="container">
 
 	<section id="login">
@@ -17,6 +20,7 @@
                     <p class="success"><?= $_SESSION['SUCCESS_MESSAGE']; ?></p>
                 </div>
                 <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
+
             <?php endif; ?>
 
 			<div class="col-md-6 col-md-offset-3">
@@ -31,7 +35,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12 text-right">
-							<a href="/users/account" type="submit" class="btn btn-danger btn-lg login-btn sign-up-btn">LOGIN</a>
+							<input type="submit" class="btn btn-danger btn-lg login-btn sign-up-btn">
 							<a href="/signup" class="btn btn-danger btn-lg sign-up-btn">GO TO SIGN UP</a>
 						</div>
 					</div>
