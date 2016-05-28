@@ -95,7 +95,7 @@ class Model {
     }
 
     // creates new entry in db
-    protected function insert()
+    protected function insert() 
     {
 
         //After insert, add the id back to the attributes array so the object can properly reflect the id
