@@ -2,62 +2,22 @@
 
 $_ENV = include __DIR__ . '/../../.env.php';
 require_once '../database/db_connect.php';
-require_once __DIR__ . '/../../models/User.php';
+require_once __DIR__ . '/../../bootstrap.php';
 
-function getUsersFromInput(){
+var_dump($_POST);
+    if(Input::has('name')){
+        
+        $user = new User();
+        $user->name = Input::get('name');
+        $user->email = Input::get('email');
+        $user->username = Input::get('username');
+        $user->password = Input::get('password');
+        $user->confirm = Input::get('confirm');
 
-    $errors = [];
-    $user = [];
-        var_dump($user);
-        try {
-            $user['name'] = Input::getString('name');
-        } catch (Exception $e1) {
-            $errors[] = $e1->getMessage();
-        }
-        try {
-            $user['username'] = Input::getString('username');
-        } catch (Exception $e2) {
-            $errors[] = $e2->getMessage();
-        }
-        try {
-            $user['email'] = Input::getString('email');
-        } catch (Exception $e3) {
-            $errors[] = $e3->getMessage();
-        }
-        try {
-            $user['password'] = Input::getString('password');
-        } catch (Exception $e4) {
-            $errors[] = $e4->getMessage();
-        }
-        try {
-            $user['confirm'] = Input::getString('confirm');
-        } catch (Exception $e5) {
-            $errors[] = $e5->getMessage();
-        }
-        return [
-            'user' => $user,
-            'errors' => $errors
-        ];
-}
-
-function pageControllerSignup($dbc)
-{
-    // this gives us the users and errors variables
-    extract(getUsersFromInput());
-    if (empty($errors)) {
-        User::saveUser($dbc, $user);
-        // header('Location: signup');
-        die();
+        $user->save();
     }
-    return [
-        'user'   => $user,
-        'errors' => $errors,
-    ];
-}
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    extract(pageControllerSignup($dbc));
-}
+
 ?><!-- END OF PHP -->
 
 <!-- START OF HTML -->

@@ -10,7 +10,7 @@ class User extends Model {
     public function __set($name, $value)
     {
 
-    	if ($name == 'password')
+    	if ($name == 'password' || $name == 'confirm')
     	{
     		$value = password_hash($value, PASSWORD_DEFAULT);
     	}
