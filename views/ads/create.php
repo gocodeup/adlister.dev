@@ -14,7 +14,9 @@ require_once __DIR__ . "../../../utils/Input.php";
         $ad->image_url = saveUploadedImage('img_url');
         $ad->user_id = $_SESSION['LOGGED_IN_ID'];
         $ad->save();
-        var_dump($ad);
+
+        header('Location: ../ads');
+        exit();
     }
 
 ?>

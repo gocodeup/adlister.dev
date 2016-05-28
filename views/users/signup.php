@@ -2,15 +2,19 @@
 
 require_once '../models/User.php';
 
-if (!empty($_POST))   {  
-$user = new User;
-$user->name = Input::get('name');
-$user->email = Input::get('email');
-$user->password = Input::get('password');
-$user->location = Input::get('location');
-$user->username = Input::get('username');
-$user->save();
+	if (!empty($_POST))   {  
+	$user = new User;
+	$user->name = Input::get('name');
+	$user->email = Input::get('email');
+	$user->password = Input::get('password');
+	$user->location = Input::get('location');
+	$user->username = Input::get('username');
+	$user->save();
+
+	header('Location: login');
+	exit();
 }
+
 ?>
 
 <div class="container">
