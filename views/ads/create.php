@@ -4,6 +4,10 @@ require_once __DIR__ . "../../../models/Ad.php";
 require_once __DIR__ . "../../../utils/helper_functions.php";
 require_once __DIR__ . "../../../utils/Input.php";
 
+    if (!Auth::check()) {
+        header('Location: ../login');
+        exit();
+    }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
