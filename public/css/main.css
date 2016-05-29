@@ -74,6 +74,11 @@ a, a:hover {
     background-color: #f9ede1;
 }
 
+/*to align thumbnails in rows*/
 .small-thumb {
     min-height: 560px;
+}
+
+.med-thumb {
+    min-height: 516px;
 }
