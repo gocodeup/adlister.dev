@@ -17,11 +17,11 @@ $ads = Ad::all();
         <div class="row">
       <?php endif;  ?>
 
-        <div class="thumbnail col-sm-3">
+        <div class="small-thumb thumbnail col-sm-3">
           <img class="img-rounded" src="<?= $ad['image_url']; ?>">
           <div class="caption">
             <h3><?= $ad['title']; ?></h3>
-            <p><?= $ad['price']; ?></p>
+            <p>$<?= $ad['price']; ?></p>
             <p><?= $ad['description']; ?></p>
           </div>
           <p>
