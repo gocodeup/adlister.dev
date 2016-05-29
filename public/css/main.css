@@ -1,0 +1,75 @@
+body {
+	padding-top: 70px;
+    background-color: #f9ede1;
+    color: #15100b;
+}
+
+/*that line between header and content*/
+hr {
+    border-top: 1px solid #c0c6c8;
+}
+
+/*the link and underline*/
+a, a:hover {
+    color: #2f4448;
+    text-decoration-line: #2f4448;
+}
+
+.btn {
+    background-color: #2f4448;
+    border-color: #2f4448;
+}
+
+.btn:hover {
+    background-color: #92482b;
+    border-color: #92482b;
+}
+
+/*the border around thumbnails*/
+.thumbnail {
+        border: 1px solid #c0c6c8;
+}
+
+/* navbar background */
+.navbar-default {
+    background-color: #2f4448;
+}
+
+/* Logo color and link names */
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a {
+    color: #fcf9f6;
+}
+
+/*Logo hover changes*/
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #f1e3d5;
+}
+
+/*color change on hover/focus*/
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #f1e3d5;
+}
+
+/*all below are active cursor events, this one is home button*/
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #2f4448;
+    background-color: #f9ede1;
+}
+
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #2f4448;
+    background-color: #fcf9f6;
+}
+
+/*dropdown menu background color*/
+.navbar-nav>li>.dropdown-menu {
+    background-color: #f9ede1;
+}
+
