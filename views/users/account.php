@@ -13,6 +13,7 @@ require_once __DIR__ . '/../../utils/Auth.php';
 
     $userAds = Ad::getUserAds($user->id);
 
+
 ?>
 
 <div class="container"> 
@@ -21,7 +22,7 @@ require_once __DIR__ . '/../../utils/Auth.php';
             <img src="/img/cornerstore.png">
         </div>
         <div class="col-sm-8 col-md-8 text-left">
-            <h1>Peddler's Corner</h1>
+            <h1 class="header-margin">Peddler's Corner</h1>
         </div>
     </div>
 
@@ -30,37 +31,50 @@ require_once __DIR__ . '/../../utils/Auth.php';
         <div class="col-sm-4 col-sm-offset-3 text-center">
             <h2>User Info</h2>
                 
-            <p><?php echo $user->name; ?></p>
+            <p>Name: <?php echo $user->name; ?></p>
 
-            <p><?php echo $user->username; ?></p>
+            <p>Username: <?php echo $user->username; ?></p>
         
-            <p><?php echo $user->email; ?></p>
+            <p>Email: <?php echo $user->email; ?></p>
 
-            <p><?php echo $user->location; ?></p>
+            <p>Location: <?php echo $user->location; ?></p>
 
             <a href='account/edit' class="btn btn-default" type="submit">Edit Profile</a>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-sm-4 col-sm-offset-3">
-            <h2>Your Ads</h2>
-            <?php foreach ($userAds as  $ad):  ?>
+    <div>
+        <h2 class="text-left">Your Ads</h2>
 
-            <p>
-               <h3><?php echo $ad['title'] ?></h3>
-               <?php echo $ad['description'] ?>
-            </p>
-            <h4><a class="btn btn-default" href="/ads/show?id=<?=$ad['id'] ?>">View Ad</a></h4>
-            <h4><a class="btn btn-default" href="/ads/edit?id=<?=$ad['id'] ?>">Edit Ad</a></h4>
-            <h4><a class="btn btn-default" href="/ads/delete?id=<?=$ad['id'] ?>">Delete Ad</a></h4>
-        <?php endforeach; ?>
-            <div>
-
-            <a href='/ads/create' class="btn btn-default" type="submit">Create Ad</a>
-
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-3">
+                <?php foreach ($userAds as  $ad):  ?>
+                    <div class="small-thumb thumbnail col-sm-3">
+                        <img class="img-rounded" src="<?= $ad['image_url']; ?>">
+                        <div class="caption">
+                            <h3><?= $ad['title'] ?></h3>
+                            <p>$<?= $ad['price']; ?></p>
+                            <p><?= $ad['description']; ?></p>
+                        </div>
+            
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <h4><a class="btn btn-default" href="/ads/show?id=<?=$ad['id'] ?>">View Ad</a></h4>
+                            </div>
+                            <div class="col-sm-4">
+                                <h4><a class="btn btn-default" href="/ads/edit?id=<?=$ad['id'] ?>">Edit Ad</a></h4>
+                            </div>
+                            <div class="col-sm-4">
+                                <h4><a class="btn btn-default" href="/ads/delete?id=<?=$ad['id'] ?>">Delete Ad</a></h4>
+                            </div>   
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </div>
-    </div>
 
+        <div class="row text-center">
+            <a href='/ads/create' class="btn btn-default" type="submit">Create New Ad</a>
+        </div>  
+    </div>
 </div>

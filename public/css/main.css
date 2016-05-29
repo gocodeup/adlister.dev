@@ -9,6 +9,10 @@ hr {
     border-top: 1px solid #c0c6c8;
 }
 
+.header-margin {
+    margin-top: 40px;
+}
+
 /*the link and underline*/
 a, a:hover {
     color: #2f4448;
