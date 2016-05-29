@@ -26,37 +26,40 @@ require_once __DIR__ . '/../../utils/Auth.php';
     </div>
 
     <hr>
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-3 text-center">
+            <h2>User Info</h2>
+                
+            <p><?php echo $user->name; ?></p>
 
-    <div class="col-sm-4 col-sm-offset-3 text-center">
-        <h2>User Info</h2>
-            
-        <p><?php echo $user->name; ?></p>
+            <p><?php echo $user->username; ?></p>
+        
+            <p><?php echo $user->email; ?></p>
 
-        <p><?php echo $user->username; ?></p>
-    
-        <p><?php echo $user->email; ?></p>
+            <p><?php echo $user->location; ?></p>
 
-        <p><?php echo $user->location; ?></p>
-
-        <a href='account/edit' class="btn btn-default" type="submit">Edit Profile</a>
+            <a href='account/edit' class="btn btn-default" type="submit">Edit Profile</a>
+        </div>
     </div>
 
-    <div class="col-sm-4 col-sm-offset-3">
-        <h2>Your Ads</h2>
-        <?php foreach ($userAds as  $ad):  ?>
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-3">
+            <h2>Your Ads</h2>
+            <?php foreach ($userAds as  $ad):  ?>
 
-        <p>
-           <h3><?php echo $ad['title'] ?></h3>
-           <?php echo $ad['description'] ?>
-        </p>
-        <h4><a href="/ads/show?id=<?=$ad['id'] ?>">View Ad</a></h4>
-        <h4><a href="/ads/edit?id=<?=$ad['id'] ?>">Edit Ad</a></h4>
-        <h4><a href="/ads/delete?id=<?=$ad['id'] ?>">Delete Ad</a></h4>
-    <?php endforeach; ?>
-        <div>
+            <p>
+               <h3><?php echo $ad['title'] ?></h3>
+               <?php echo $ad['description'] ?>
+            </p>
+            <h4><a class="btn btn-default" href="/ads/show?id=<?=$ad['id'] ?>">View Ad</a></h4>
+            <h4><a class="btn btn-default" href="/ads/edit?id=<?=$ad['id'] ?>">Edit Ad</a></h4>
+            <h4><a class="btn btn-default" href="/ads/delete?id=<?=$ad['id'] ?>">Delete Ad</a></h4>
+        <?php endforeach; ?>
+            <div>
 
-        <a href='/ads/create' class="btn btn-default" type="submit">Create Ad</a>
+            <a href='/ads/create' class="btn btn-default" type="submit">Create Ad</a>
 
+            </div>
         </div>
     </div>
 
