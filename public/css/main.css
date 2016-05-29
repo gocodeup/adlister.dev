@@ -27,7 +27,8 @@ a, a:hover {
 
 /*the border around thumbnails*/
 .thumbnail {
-        border: 1px solid #c0c6c8;
+    border: 1px solid #c0c6c8;
+    padding: 15px;
 }
 
 /* navbar background */
