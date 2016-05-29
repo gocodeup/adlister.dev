@@ -27,7 +27,8 @@ a, a:hover {
 
 /*the border around thumbnails*/
 .thumbnail {
-        border: 1px solid #c0c6c8;
+    border: 1px solid #c0c6c8;
+    padding: 15px;
 }
 
 /* navbar background */
@@ -73,5 +74,11 @@ a, a:hover {
     background-color: #f9ede1;
 }
 
+/*to align thumbnails in rows*/
+.small-thumb {
+    min-height: 560px;
+}
 
-
+.med-thumb {
+    min-height: 516px;
+}
