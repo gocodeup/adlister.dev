@@ -18,11 +18,13 @@ a, a:hover {
 .btn {
     background-color: #2f4448;
     border-color: #2f4448;
+    color: #fcf9f6;
 }
 
 .btn:hover {
     background-color: #92482b;
     border-color: #92482b;
+    color: #fcf9f6;
 }
 
 /*the border around thumbnails*/
