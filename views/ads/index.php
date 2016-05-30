@@ -18,14 +18,14 @@ $ads = Ad::all();
       <?php endif;  ?>
 
         <div class="small-thumb thumbnail col-sm-3">
-          <img class="img-rounded" src="<?= $ad['image_url']; ?>">
+          <a href="/ads/show?id=<?= $ad['id']?>"><img class="img-rounded" src="<?= $ad['image_url']; ?>"></a>
           <div class="caption">
             <h3><?= $ad['title']; ?></h3>
             <p>$<?= $ad['price']; ?></p>
             <p><?= $ad['description']; ?></p>
           </div>
           <p>
-              <a href="/ads/show?id=<?= $ad['id']?>" class="btn btn-primary" role="button">View</a>
+              <!-- <a href="/ads/show?id=<?= $ad['id']?>" class="btn btn-primary" role="button">View</a> -->
           </p> 
       <?php if($index % 4 == 3) : ?>
         </div> <!-- closes row -->
