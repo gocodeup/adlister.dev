@@ -22,8 +22,8 @@ $user = User::showUser($userId);
                     <h1><?= $user['name'] ?></h1>
                     <p><strong>Location: </strong> San Antonio, TX </p>
                     <p><strong>Contact: </strong> <?= $user['email'] ?></p>
-                    <p><strong>Listings: </strong> 1,584 <strong>Sold: </strong> 1,236 <strong> Seller Rating: </strong> 9.96</p>
-                    <p><strong>Top Categories: </strong>
+                    <p><strong>Listings: </strong> 1,584 <strong>Sold: </strong> 1,236 <strong> Seller rating: </strong> 9.96</p>
+                    <p><strong>Top categories: </strong>
                         <span class="tags">Live Farm Animals, </span> 
                         <span class="tags">Pokemon Cards, </span>
                         <span class="tags">Antique Mannequins, </span>
@@ -35,7 +35,7 @@ $user = User::showUser($userId);
     </div>
 	<div class="row">
 		<div class=" col-xs-12">
-            <h2>Your Latest Items:</h2>
+            <h2>Your latest items:</h2>
             <div class="item-list">
 	            <div class="row">
 					<div class="col-xs-2 no-padding photobox">
