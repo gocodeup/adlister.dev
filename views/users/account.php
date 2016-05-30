@@ -24,8 +24,8 @@ $ads = Ad::findAdByUserId($userId, 3);
                     <h1><?= $user['name'] ?></h1>
                     <p><strong>Location: </strong> San Antonio, TX </p>
                     <p><strong>Contact: </strong> <?= $user['email'] ?></p>
-                    <p><strong>Listings: </strong> 1,584 <strong>Sold: </strong> 1,236 <strong> Seller Rating: </strong> 9.96</p>
-                    <p><strong>Top Categories: </strong>
+                    <p><strong>Listings: </strong> 1,584 <strong>Sold: </strong> 1,236 <strong> Seller rating: </strong> 9.96</p>
+                    <p><strong>Top categories: </strong>
                         <span class="tags">Live Farm Animals, </span> 
                         <span class="tags">Pokemon Cards, </span>
                         <span class="tags">Antique Mannequins, </span>
@@ -35,6 +35,7 @@ $ads = Ad::findAdByUserId($userId, 3);
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 	<div class="home-ads">
     	<div class="container">
 			<h2 class="row text-center recent-ads-header">Your Latest Items</h2>
@@ -76,6 +77,7 @@ $ads = Ad::findAdByUserId($userId, 3);
 								<a class="btn delete-btn  btn-sm">Edit This Ad</a> 
 							</div>
 						</div> 
+>>>>>>> master
 					</div>
 
 					<hr class="ad-divider">

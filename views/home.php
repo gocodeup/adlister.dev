@@ -64,7 +64,7 @@ $ads = Ad::getAds(3);
 				 	
 					<div class="col-xs-3 text-right  price-box">
 						<h2 class="item-price">$<?= $ad['price'] ?></h2>
-						<a class="btn info-btn  btn-sm">Get more info!</a> 
+						<a class="btn info-btn  btn-sm">Get more info!</a>
 					</div>
 				</div> 
 			</div>

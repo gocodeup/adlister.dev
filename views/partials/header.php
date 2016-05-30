@@ -52,12 +52,12 @@ if (!empty($signupNameField) && !empty($signupEmailField) && !empty($signupUsern
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/ads">Ads Directory<span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="/ads">Ads directory<span class="sr-only">(current)</span></a></li>
 
         <!-- These buttons only show if the user is logged IN -->
         <?php 
         if (isset($_SESSION['IS_LOGGED_IN'])){ ?>
-          <li><a href="/ads/create">Post An Ad</a></li>   
+          <li><a href="/ads/create">Post an ad</a></li>   
         <?php } ?> 
       </ul>
 
@@ -71,6 +71,7 @@ if (!empty($signupNameField) && !empty($signupEmailField) && !empty($signupUsern
         <?php } else { ?>
 
         <!-- These buttons only show if the user is logged OUT -->
+
         <button type="button" class="btn btn-default" id="login-modal-button" data-toggle="modal" data-target=".login-modal">Login</button>
         <button type="button" class="btn btn-default" id="signup-modal-button" data-toggle="modal" data-target=".signup-modal">Sign Up</button>
         <?php }?>
