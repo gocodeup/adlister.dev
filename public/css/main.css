@@ -19,6 +19,10 @@ a, a:hover {
     text-decoration-line: #2f4448;
 }
 
+p {
+    font-size: 1.2em;
+}
+
 .btn {
     background-color: #2f4448;
     border-color: #2f4448;
