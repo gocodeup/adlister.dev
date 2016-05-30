@@ -22,11 +22,21 @@ require_once __DIR__ . "../../../utils/Input.php";
         header('Location: ../ads');
         exit();
     }
-
 ?>
 
 <div class="container"> 
-    <h1>Create a New Ad</h1>
+    <div class="row">
+        <div class="col-sm-2 col-md-2">
+            <img src="/img/cornerstore.png">
+        </div>
+
+        <div class="col-sm-8 col-md-8 text-left">
+            <h1 class="section-title header-margin">Create a New Ad</h1>
+        </div>
+    </div>
+
+    <hr>
+
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
 
@@ -51,7 +61,7 @@ require_once __DIR__ . "../../../utils/Input.php";
                 </div>
               <button type="submit" class="btn btn-default">Make My Ad</button>
             </form>
+
         </div>
     </div>
-
 </div>
