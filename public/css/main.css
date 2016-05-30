@@ -42,6 +42,22 @@ a:hover {
     color: #fcf9f6;
 }
 
+.item {
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #c0c6c8;
+    font-size: 1.1em;
+}
+
+.item img {
+    margin: auto;
+    padding-bottom: 20px;
+    width: 300px;
+    border-radius: 10px;
+ 
+}
+
 /*the border around thumbnails*/
 .thumbnail {
     border: 1px solid #c0c6c8;
