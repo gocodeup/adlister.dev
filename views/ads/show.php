@@ -11,9 +11,8 @@ $user_id = $ad->attributes['user_id'];
 
 $user = User::find($user_id);
 
-
 ?>
-<!--Page for single advertisement -->
+
 <div class="container">
 <h1><?= $ad->attributes['title']; ?></h1>
     <div class="row">
