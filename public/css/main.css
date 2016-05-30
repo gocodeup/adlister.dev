@@ -20,7 +20,7 @@ a, a:hover {
     text-decoration-line: #2f4448;
 }
 
-p {
+p, .form-group {
     font-size: 1.4em;
 }
 
@@ -28,6 +28,7 @@ p {
     background-color: #2f4448;
     border-color: #2f4448;
     color: #fcf9f6;
+    font-size: 1.1em;
 }
 
 .btn:hover {

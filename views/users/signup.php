@@ -73,7 +73,7 @@ require_once '../models/User.php';
 					<div class="col-sm-6">
 						<button type="submit" class="btn btn-primary">Signup</button>
 					</div>
-					<div class="col-sm-6 text-right">
+					<div class="col-sm-6">
 						<a href="/login" class="btn btn-success">Go To Login</a>
 					</div>
 				</div>
