@@ -32,17 +32,32 @@ class Ad extends Model {
         return $instance;
     }
 
+    public static function findAdByUserId($user_id, $limit)
+    {
+        self::dbConnect();
+
+        $ads = [];
+        $query = 'SELECT * FROM ads WHERE user_id = :user_id LIMIT :limit';
+        $stmt = self::$dbc->prepare($query);
+        $stmt->bindValue(':user_id', $user_id, PDO::PARAM_STR);
+        $stmt->bindValue(":limit", $limit, PDO::PARAM_INT);
+        $stmt->execute(); 
+        $ads = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $ads;
+    }
+
     public static function getAds($limit)
     {
         self::dbConnect();
 
         $ads = [];
-            $stmt = self::$dbc->prepare("SELECT * FROM ads LIMIT :limit");
-            $stmt->bindValue(":limit", $limit, PDO::PARAM_INT);
-            $stmt->execute();
-            $ads = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt = self::$dbc->prepare("SELECT * FROM ads LIMIT :limit");
+        $stmt->bindValue(":limit", $limit, PDO::PARAM_INT);
+        $stmt->execute();
+        $ads = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            return $ads;
+        return $ads;
     }
 }
 
