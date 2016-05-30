@@ -1,6 +1,7 @@
 <?php 
 require_once __DIR__ . '/../../utils/Auth.php';
 require_once __DIR__ . '/../../models/Model.php';
+require_once __DIR__ . '/../../models/Ad.php';
 
 if (isset($_SESSION['LOGGED_IN_ID']))
 {
@@ -8,6 +9,7 @@ if (isset($_SESSION['LOGGED_IN_ID']))
 }
 
 $user = User::showUser($userId);
+$ads = Ad::findAdByUserId($userId, 3);
 
 ?>
 
@@ -33,50 +35,65 @@ $user = User::showUser($userId);
             </div>
         </div>
     </div>
-	<div class="row">
-		<div class=" col-xs-12">
-            <h2>Your Latest Items:</h2>
-            <div class="item-list">
-	            <div class="row">
-					<div class="col-xs-2 no-padding photobox">
-						<div class="add-image"> 
-							<a href="ads-details.html">
-								<img class="thumbnail no-margin" src="img/antique_mannequin_thumb.jpg" alt="img">
+	<div class="home-ads">
+    	<div class="container">
+			<h2 class="row text-center recent-ads-header">Your Latest Items</h2>
+            <?php if (!empty($ads)) { 
+            	foreach($ads as $ad) { ?>
+					<div class="item-list">
+					    <div class="row col-md-offset-1 col-md-10 col-lg-8 col-lg-offset-2">
+							<div class="col-xs-2 no-padding photobox">
+								<div class="add-image"> 
+									<a href="ads-details.html">
+										<img class="thumbnail no-margin" src="<?= $ad['img_url'] ?>" alt="img">
+									</a> 
+								</div>
+							</div>
+						 
+							<div class="col-xs-7 add-desc-box">
+								<div class="add-details">
+									<h5 class="add-title"> 
+										<a class="content-link" href="ads-details.html"> <?= $ad['description'] ?></a>
+									</h5>
+									<span class="info-row"> 
+										<span class="date">
+											<i class="fa fa-clock-o"> </i> 
+											Today 1:21 pm 
+										</span> 
+										- 
+										<span class="category"><?= $ad['category'] ?> </span>
+										- 
+										<span class="item-location">
+											<i class="fa fa-map-marker"></i> 
+											San Antonio, TX 
+										</span> 
+									</span> 
+								</div>
+							</div>
+						 	
+							<div class="col-xs-3 text-right  price-box">
+								<h2 class="item-price">$<?= $ad['price'] ?></h2>
+								<a class="btn delete-btn  btn-sm">Edit This Ad</a> 
+							</div>
+						</div> 
+					</div>
 
-								<!-- <img class="thumbnail no-margin" src="<?= $user['description'] ?>" alt="img"> -->
-
-								
-							</a> 
-						</div>
-					</div>
-				 
-					<div class="col-xs-7 add-desc-box">
-						<div class="add-details">
-							<h5 class="add-title"> 
-								<a href="ads-details.html"> <?= $user['description'] ?></a>
-							</h5>
-							<span class="info-row"> 
-								<span class="date">
-									<i class="fa fa-clock-o"> </i> 
-									Today 1:21 pm 
-								</span> 
-								- 
-								<span class="category"><?= $user['category'] ?> </span>
-								- 
-								<span class="item-location">
-									<i class="fa fa-map-marker"></i> 
-									San Antonio, TX 
-								</span> 
-							</span> 
-						</div>
-					</div>
-				 	
-					<div class="col-xs-3 text-right  price-box">
-						<h2 class="item-price">$<?= $user['price'] ?></h2>
-						<a class="btn btn-danger  btn-sm">Edit Ad</a> 
-					</div>
-				</div> 
-			</div>         
+					<hr class="ad-divider">
+		
             
+            	<?php } ?>
+        </div>
+	</div>
+            <?php } else { ?>
+	    		<div class="item-list">
+				    <div class="row col-md-offset-1 col-md-10 col-lg-8 col-lg-offset-2">
+						<div class="no-ads">
+							<p>Haven't uploaded any ads!</p>
+						</div>
+					</div> 
+				</div>	
+			<?php } ?>        
+            
+
 		</div>
 	</div>

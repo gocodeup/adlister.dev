@@ -51,20 +51,25 @@ body, #logout-button, #profile-button  {
   margin-bottom: 10px;
 }
 
-.content-link {
+.content-link, #forgotPasswordLink{
   color: rgb(253,63,108);
   font-weight:bold;
 }
 
-.offer-btn {
-  background-color: rgb(190,222,21);
-  color: black;
+.edit-btn {
+  background-color: rgb(255,146,27);
+  color: white;
+}
+
+.info-btn, #login-button, #signup-button {
+  background-color: rgb(23,159,147);
+  color: white;
+}
+
+#signup-button {
+  padding: 0px;
 }
 
 .home-ads {
   background-color: #fafafa;
-}
-
-.recent-ads-header {
-  
 }

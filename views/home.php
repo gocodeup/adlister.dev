@@ -27,9 +27,9 @@ $ads = Ad::getAds(3);
 </div>
 <!-- Page Content -->
     <div class="home-ads">
-    	<div class="container-fluid">
+    	<div class="container">
 			<h2 class="row text-center recent-ads-header">Recent ads</h2>
-			<!-- An ad -->
+			
 			<?php foreach($ads as $ad) : ?>
 			<div class="item-list">
 			    <div class="row col-md-offset-1 col-md-10 col-lg-8 col-lg-offset-2">
@@ -64,13 +64,13 @@ $ads = Ad::getAds(3);
 				 	
 					<div class="col-xs-3 text-right  price-box">
 						<h2 class="item-price">$<?= $ad['price'] ?></h2>
-						<a class="btn offer-btn  btn-sm">Get more info!</a> 
+						<a class="btn info-btn  btn-sm">Get more info!</a> 
 					</div>
 				</div> 
 			</div>
 
-	<hr class="ad-divider">
-	<?php endforeach ?>
+			<hr class="ad-divider">
+			<?php endforeach ?>
 		</div>
 	</div>
 

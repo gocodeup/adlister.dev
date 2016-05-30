@@ -18,7 +18,7 @@ $signupUsernameField = escape(Input::get('signupUsernameField'));
 $signupPasswordField = escape(Input::get('signupPasswordField'));
 $signupConfirmField = escape(Input::get('signupConfirmField'));
 
-if (!is_null($signupNameField) && !is_null($signupEmailField) && !is_null($signupUsernameField) && !is_null($signupPasswordField) && !is_null($signupConfirmField) && $signupPasswordField === $signupConfirmField) {
+if (!empty($signupNameField) && !empty($signupEmailField) && !empty($signupUsernameField) && !empty($signupPasswordField) && !empty($signupConfirmField) && $signupPasswordField === $signupConfirmField) {
     $newUser = new User();
     $newUser->name = $signupNameField;
     $newUser->email = $signupEmailField;
@@ -46,7 +46,7 @@ if (!is_null($signupNameField) && !is_null($signupEmailField) && !is_null($signu
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/"><img src="img/logo.png" id="logo"></a>
+      <a class="navbar-brand" href="/"><img src="/img/logo.png" id="logo"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -71,8 +71,8 @@ if (!is_null($signupNameField) && !is_null($signupEmailField) && !is_null($signu
         <?php } else { ?>
 
         <!-- These buttons only show if the user is logged OUT -->
-        <button type="button" class="btn btn-default" id="login-button" data-toggle="modal" data-target=".login-modal">Login</button>
-        <button type="button" class="btn btn-default" id="signup-button" data-toggle="modal" data-target=".signup-modal">Sign Up</button>
+        <button type="button" class="btn btn-default" id="login-modal-button" data-toggle="modal" data-target=".login-modal">Login</button>
+        <button type="button" class="btn btn-default" id="signup-modal-button" data-toggle="modal" data-target=".signup-modal">Sign Up</button>
         <?php }?>
       </div>
 
