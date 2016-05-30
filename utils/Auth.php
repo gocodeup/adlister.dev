@@ -11,6 +11,8 @@ class Auth
 	// runs login attempt with parameters
 	public static function attempt($username, $password)
 	{
+		echo "username" . $username;
+		echo "password" . $password;
 
 		// makes sure the values passed in are not empty
 		if(($username == '' || $username == null) || ($password == '' || $password == null))

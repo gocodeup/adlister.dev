@@ -1,39 +1,28 @@
 <?php
-//this is starting the session
 
-// edit these once it's merged correctly
+$username= input::has('email') ? input::get('email'): '';
+$password= input::has('password') ? input::get('password'): '';
 
-if (Auth::check()) {
-    header('Location: template/template.php');
-    exit();
-  }
 
-if (!Auth::attempt(Input::get('username'), Input::get('password') )) {
-    if($_POST){
-    echo "Incorrect username or password";
+if (!empty($_POST)){
+    if (Auth::attempt($username, $password)){
+        foreach ($users as $user) {
+            if ($user['email'] == $_POST['email']) {
+                $id = $user['id'];
+                header("Location: /users/account?id=$id");
+                die();
+            }
+        }
     }
-}else{
-    //once the login is correct will direct user to main page
-    header('Location: /template/template.php');
-    exit();
+} else {
+       echo "Denied";
+
 }
-
-
-
 
 
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-    <!-- Compiled and minified JavaScript -->
-<!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script> -->
-             
-</head>
-<body>
+
 
 <div class="container">
   <section id="login">
@@ -52,10 +41,11 @@ if (!Auth::attempt(Input::get('username'), Input::get('password') )) {
                 <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
             <?php endif; ?>
 
+
         <div class="col-md-6 col-md-offset-3">
             <p>Login with your email/userame and password</p>
     <!-- input correct site once logged in -->
-                <form method="POST" action="#">
+                <form method="POST">
                     <div class="container">
                         <div class="row">           
                                 <div class="row">
@@ -69,7 +59,11 @@ if (!Auth::attempt(Input::get('username'), Input::get('password') )) {
                                     </div>
                                 </div>
                                 <div class="center-align">
-                                    <input type="submit" class="waves-effect waves-light btn-large" value="Log in">
+                
+
+                                  <button class="btn waves-effect waves-light" type="submit" >
+                                      Submit
+                                  </button>
                                 </div>
                     
                         </div>
@@ -82,5 +76,4 @@ if (!Auth::attempt(Input::get('username'), Input::get('password') )) {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 </div>
-</body>
-</html>
+
