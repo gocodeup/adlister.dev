@@ -14,14 +14,19 @@ hr {
     margin-top: 40px;
 }
 
+p, .form-group {
+    font-size: 1.4em;
+}
+
 /*the link and underline*/
-a, a:hover {
+a {
     color: #2f4448;
     text-decoration-line: #2f4448;
 }
 
-p, .form-group {
-    font-size: 1.4em;
+a:hover {
+    color: #92482b;
+    text-decoration-line: #92482b;
 }
 
 .btn {
