@@ -8,16 +8,21 @@ if (isset($_SESSION['LOGGED_IN_ID']))
 	$userId = $_SESSION['LOGGED_IN_ID'];
 }
 
+if (isset($_POST['deleteAd']))
+{
+	$deleteId = $_POST['deleteAd'];
+	Ad::deleteAd($deleteId);
+}
+
 $user = User::showUser($userId);
 $ads = Ad::findAdByUserId($userId, 3);
-
 ?>
 
 	<div class="row">
 		<div class=" col-xs-12">
             <div class="col-sm-12">
                 <div class="col-xs-12 col-sm-4 text-center">
-                    <img src="<?= $user['image'] ?>">
+                    <img id="profile-pic" src="<?= $user['image'] ?>">
                     <!-- <button class="col-xs-6 col-xs-offset-3 btn btn-success"><span class="fa fa-plus-circle"></span> Follow </button> -->
                 </div>
                 <div class="col-xs-12 col-sm-8">
@@ -35,8 +40,8 @@ $ads = Ad::findAdByUserId($userId, 3);
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-	<div class="home-ads">
+
+	<div class="profile-ads">
     	<div class="container">
 			<h2 class="row text-center recent-ads-header">Your Latest Items</h2>
             <?php if (!empty($ads)) { 
@@ -74,10 +79,14 @@ $ads = Ad::findAdByUserId($userId, 3);
 						 	
 							<div class="col-xs-3 text-right  price-box">
 								<h2 class="item-price">$<?= $ad['price'] ?></h2>
-								<a class="btn delete-btn  btn-sm">Edit This Ad</a> 
+								<form method="POST">
+				                    <button name="editAd" id="editAd" type="submit" class="btn edit-btn btn-sml">Edit</button>
+					            
+			                    	<button name="deleteAd" id="deleteAd" type="submit" class="btn btn-danger btn-sml" value="<?= $ad{'id'} ?>">Delete</button>
+					            </form>
+								
 							</div>
 						</div> 
->>>>>>> master
 					</div>
 
 					<hr class="ad-divider">
