@@ -7,6 +7,7 @@ $user->name = 'Finn Mertens';
 $user->email = 'finn@fansofbilly.com';
 $user->username = "finn_the_human";
 $user->password = $_ENV['USER_PASS'];
+$user->permissions = 0;
 $user->save();
 
 $user = new User;
@@ -14,6 +15,7 @@ $user->name = 'Jake';
 $user->email = 'jake@fansofbilly.com';
 $user->username = "jake_the_dog";
 $user->password = $_ENV['USER_PASS'];
+$user->permissions = 0;
 $user->save();
 
 $user = new User;
@@ -21,6 +23,7 @@ $user->name = 'Simon Petrikov';
 $user->email = 'iceking@princessaholicanonymous.com';
 $user->username = "ice_king";
 $user->password = $_ENV['USER_PASS'];
+$user->permissions = 1;
 $user->save();
 
 $user = new User;
@@ -28,4 +31,5 @@ $user->name = 'Marceline Abadeer';
 $user->email = 'marceline@vampirequeen.com';
 $user->username = "marceline_abadeer";
 $user->password = $_ENV['USER_PASS'];
+$user->permissions = 0;
 $user->save();
