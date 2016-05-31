@@ -77,7 +77,7 @@ if(isset($_POST['name'])){
                                 <input type="submit" class="waves-effect waves-light btn-large" value="create account">
                             </div>
                 
-                        <p>By creating account you agree to adlisters terms and conditions</p>
+                        <p>By creating account you agree to adlisters <a href="/users/terms">terms and conditions</a></p>
                         <p>Already have an account?<a href="/users/login">Log in</a></p>
                 </form>
             </div>
