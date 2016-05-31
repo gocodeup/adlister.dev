@@ -45,7 +45,7 @@ if(!empty($_POST)) {
                 </div>
                 <div class="form-group">
                     <label for="price">Price</label>
-                    <input type="number" name="price" class="form-control" value="<?= $ad->price; ?>">
+                    <input type="number" min="0" step=".01" name="price" class="form-control" value="<?= $ad->price; ?>">
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
