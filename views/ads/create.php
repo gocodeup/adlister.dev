@@ -12,7 +12,7 @@ function newUserAd()
 	$ad->title = escape(Input::get('title'));
 	$ad->description = escape(Input::get('description'));
 	$ad->price = escape(Input::get('price'));
-	$ad->img_url = escape(Input::get('img_url'));
+	$ad->img_url = saveUploadedImage('adImg');
 	$ad->category = escape(Input::get('category')); 
 	$ad->tags = escape(Input::get('tags'));
 	$ad->save(); 
@@ -28,7 +28,7 @@ if(Input::has('title')) {
 
 ?>
 
-		<form role="form" method="POST">  
+		<form role="form" method="POST" enctype="multipart/form-data">  
 
 			<label>Title</label>
 		    <input name="title" class="form-control entry-fields" id="ad_title" placeholder="characters only" required>
@@ -36,8 +36,8 @@ if(Input::has('title')) {
 		    <label>Price</label>
 		    <input name="price" class="form-control entry-fields" id="ad_price" type="number" min="0" placeholder="numbers only" required>
 	
-		    <label>Image url</label>
-		    <input name="img_url" class="form-control entry-fields" id="ad_img" required>
+		    <label>Select an image to upload</label>
+		    <input type="file" class="form-control" name="adImg" id="adImg" required>
 		    
 		    <label>Category</label>
 		      <select class="form-control entry-fields" id="category" name="category">

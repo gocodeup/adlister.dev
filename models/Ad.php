@@ -1,6 +1,7 @@
 <?php
 
-require_once __DIR__ . '/Model.php';     
+require_once __DIR__ . '/Model.php';
+require_once __DIR__ . '/../utils/helper_functions.php';     
 
 class Ad extends Model {
 
