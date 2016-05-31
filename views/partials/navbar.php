@@ -65,7 +65,6 @@ $user = User::find(Auth::id());
               <li><a href="/ads/create">Create Ad</a></li>
               <li><a href="/logout">Logout</a></li>
             </ul>
-
           </li>
         </ul>
 
