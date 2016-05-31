@@ -29,10 +29,13 @@
             <p> Email: <?= $ad['email']; ?> </p>
             <p> Phone: <?= $ad['phone']; ?> </p>
 <!-- Display only if user is logged in, otherwise hide -->
-            <a class="waves-effect waves-light green btn" href="edit?id=<?=$ad['id']?>">Edit</a>
+            <p> <?php foreach($users as $user){
+                if($ad['user_id'] == $user['id'] && $user['permissions'] == 1){ ?> </p>
+                <a class="waves-effect waves-light green btn" href="edit?id=<?=$ad['id']?>">Edit</a>
 
-<!-- Will eventually reference delete method from Model.php -->
-            <a class="waves-effect waves-light red darken-4 btn">Delete</a>
+                <a class="waves-effect waves-light red darken-4 btn">Delete</a>
+            <p> <?php }} ?> </p>
+
         </div>
     <?php }} ?> 
     </div>
