@@ -24,18 +24,20 @@ $adPrice = escape(Input::get('adPrice'));
 $adImgURL = escape(Input::get('adImgURL'));
 $adCategory = escape(Input::get('adCategory'));
 $adTags = escape(Input::get('adTags'));
+$adId = escape(Input::get('adId'));
 
 if (!empty($adTitle) && !empty($adDescription) && !empty($adPrice) && !empty($adImgURL) && !empty($adCategory) && !empty($adTags)) {
-    $newAd = new Ad();
-    $newAd->title = $adTitle;
-    $newAd->description = $adDescription;
-    $newAd->price = $adPrice;
-    $newAd->img_url = $adImgURL;
-    $newAd->category = $adCategory;
-    $newAd->tags = $adTags;
-    $newAd->user_id = $userId;
-    $newAd->date_listed = date('Y-m-d');
-    $newAd->save();
+    $editAd = Ad::find($adId);
+    $editAd->title = $adTitle;
+    $editAd->description = $adDescription;
+    $editAd->price = $adPrice;
+    $editAd->img_url = $adImgURL;
+    $editAd->category = $adCategory;
+    $editAd->tags = $adTags;
+    $editAd->user_id = $userId;
+    $editAd->date_listed = date('Y-m-d');
+    $editAd->id = $adId;
+    $editAd->save();
 }
 
 ?>
@@ -133,7 +135,7 @@ if (!empty($adTitle) && !empty($adDescription) && !empty($adPrice) && !empty($ad
 
 										    <label class='pull-left'>Tags</label>
 										    <input name="adTags"  class="form-control" placeholder="characters only" required value="<?=$ad['tags'] ?>">
-
+										    <input name="adId"  class="form-control hidden" placeholder="characters only" required value="<?=$ad['id'] ?>">
 								  			<button type="submit" class="btn btn-sml center" id='update-btn'>Update!</button>
 									      </form>
 									    </div>

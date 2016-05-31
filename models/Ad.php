@@ -32,6 +32,26 @@ class Ad extends Model {
         return $instance;
     }
 
+    public static function find($id)
+    {
+        // Get connection to the database
+        self::dbConnect();
+
+        // @TODO: Create select statement using prepared statements
+        $stmt = self::$dbc->prepare('SELECT * FROM ads WHERE id = :id');
+        $stmt->bindValue(':id', $id, PDO::PARAM_STR);
+
+        // @TODO: Store the result in a variable named $result
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        // The following code will set the attributes on the calling object based on the result variable's contents
+        $instance = null;
+        if ($result) {
+            $instance = new static($result);
+        }
+        return $instance;
+    }
+
     public static function findAdByUserId($user_id, $limit)
     {
         self::dbConnect();
