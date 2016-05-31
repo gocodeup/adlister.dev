@@ -102,3 +102,21 @@ body, #logout-button, #profile-button  {
 #adActions {
   margin-bottom:15px;
 }
+
+.form-control {
+  width: 50%;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+#ad_price {
+  width: 18%;
+}
+
+#ad_description {
+  height: 10em;
+}
+
+#category {
+  width: 18%;
+}
