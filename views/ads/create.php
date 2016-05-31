@@ -37,7 +37,7 @@ if(Input::has('title')) {
 		    <input name="price" class="form-control entry-fields" id="ad_price" type="number" min="0" placeholder="numbers only" required>
 	
 		    <label>Select an image to upload</label>
-		    <input type="file" class="form-control" name="adImg" id="adImg" required>
+		    <input type="file" class="form-control entry-fields" name="adImg" id="adImg" required>
 		    
 		    <label>Category</label>
 		      <select class="form-control entry-fields" id="category" name="category">
