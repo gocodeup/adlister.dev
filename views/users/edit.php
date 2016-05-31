@@ -11,6 +11,9 @@ if(!empty($_POST)) {
 	$user->password = Input::get('password');
 	$user->location = Input::get('location');
 	$user->save();
+
+	header('Location: ../account');
+	exit();	
 }
 
 ?>
@@ -49,6 +52,9 @@ if(!empty($_POST)) {
 					</div>
 					<div class="form-group">
 					    <input type="text" class="form-control" id="username" name="username" placeholder="Username" value="<?= $user->username; ?>" data-required>
+					</div>
+					<div class="form-group">
+					    <input type="text" class="form-control" id="password" name="password" placeholder="Password" value="" data-required>
 					</div>
 					<div class="form-group">
 					    <input type="text" class="form-control" id="location" name="location" placeholder="Location" value="<?= $user->location; ?>" data-required>
