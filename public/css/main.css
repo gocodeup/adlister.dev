@@ -109,14 +109,18 @@ body, #logout-button, #profile-button  {
   margin-bottom: 30px;
 }
 
-#ad_price {
-  width: 18%;
+
+#ad_price, #category, #ad_submit {
+  width: 25%;
 }
 
 #ad_description {
   height: 10em;
 }
 
-#category {
-  width: 18%;
+#ad_submit {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-color: rgb(23,159,147);
+  color: white;
 }

@@ -29,7 +29,6 @@ if(Input::has('title')) {
 ?>
 
 		<form role="form" method="POST">  
-			<h2>Make a new ad</h2>
 
 			<label>Title</label>
 		    <input name="title" class="form-control entry-fields" id="ad_title" placeholder="characters only" required>
@@ -53,5 +52,5 @@ if(Input::has('title')) {
 		    <label>Tags</label>
 		    <input name="tags" class="form-control" placeholder="characters only" required>
 
-  			<button type="submit" class="btn btn-default" id="ad_submit" >add</button>
+  			<button type="submit" class="btn btn-default" id="ad_submit" >Create Ad</button>
 		</form>

@@ -73,7 +73,7 @@ if (!empty($adTitle) && !empty($adDescription) && !empty($adPrice) && !empty($ad
 					<div class="item-list">
 					    <div class="row col-md-offset-1 col-md-10 col-lg-8 col-lg-offset-2">
 							<div class="col-xs-2 no-padding photobox">
-								<button type="button" class="btn info-btn btn-small" id="create-modal-button" data-toggle="modal" data-target=".create-modal">Create new ad!</button>
+								<a href="/ads/create" type="button" class="btn info-btn btn-small">Create new ad!</a>
 							</div>
 						</div> 
 					</div>
