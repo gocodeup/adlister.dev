@@ -35,3 +35,18 @@ $ad->category = "live stock";
 $ad->tags = "poltry"; 
 $ad->save();
 
+$ad = new Ad;
+$ad->user_id = '1';
+$ad->date_listed = '2016-01-02';
+$ad->title = 'Luxury Diving Board';
+$ad->description = 'The Best Diving Board';
+$ad->price = '1';
+$ad->img_url = "https://www.luxurypools.com/sites/default/files/styles/pd-big-820x460/public/wooden-diving-board-1_800x600.png?itok=vC4f85kj";
+$ad->category = "diving board supplies";
+$ad->tags = "diving board"; 
+$ad->save();
+
+
+
+
+
