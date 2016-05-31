@@ -71,7 +71,7 @@ if (!empty($_POST)){
                                 </div>
                     
                         </div>
-                        <p>New to adlister? <a href="/users/signup.php">Create account</a></p>
+                        <p>New to adlister? <a href="/users/signup">Create account</a></p>
                     </div>
                 </form>
             </div>
