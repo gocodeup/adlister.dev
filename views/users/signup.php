@@ -1,10 +1,4 @@
 <?php
-// require_once "../../models/User.php";
-// session_start();
-
-// var_dump($_POST);
-
-
 if(isset($_POST['name'])){ 
     $user = new User();
     $user->name = $_POST['name'];
@@ -14,6 +8,8 @@ if(isset($_POST['name'])){
         $user->password = $_POST['password'];
     }
     $user->save();
+    header("Location: /");
+    die();
 }
 
 
@@ -47,7 +43,7 @@ if(isset($_POST['name'])){
                 <?php endif; ?>
 
 <!-- edit the action -->
-                <form method="POST" action="/">
+                <form method="POST" action="/users/signup">
                 <div class="container">
                     <div class="row">
                         
@@ -79,7 +75,6 @@ if(isset($_POST['name'])){
                             </div>
                             <div class="center-align">
                                 <input type="submit" class="waves-effect waves-light btn-large" value="create account">
-                               <!--  <a class="waves-effect waves-light btn-large">Create Account</a> -->
                             </div>
                 
                         <p>By creating account you agree to adlisters terms and conditions</p>
