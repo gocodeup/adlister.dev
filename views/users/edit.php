@@ -13,7 +13,6 @@ if(!Auth::check()) {
 
 if(isset($_POST['name'])){ 
     $user = User::find($_SESSION['LOGGED_IN_ID']);
-    var_dump($_SESSION['LOGGED_IN_ID']);
     $user->name = Input::get('name');
     $user->username = Input::get('username');
     $user->email = Input::get('email');
