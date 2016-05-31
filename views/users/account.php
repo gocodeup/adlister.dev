@@ -186,7 +186,7 @@ if (!empty($adTitle) && !empty($adDescription) && !empty($adPrice) && !empty($ad
 	    		<div class="item-list">
 				    <div class="row col-md-offset-1 col-md-10 col-lg-8 col-lg-offset-2">
 						<div class="no-ads">
-							<p>Haven't uploaded any ads!</p>
+							<p>You haven't uploaded any ads!</p>
 						</div>
 					</div> 
 				</div>	

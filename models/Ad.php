@@ -7,6 +7,20 @@ class Ad extends Model {
 
     protected static $table = 'ads';
 
+    public static function showAd($id)
+    {
+        self::dbConnect();
+        $id = Input::get('id');
+
+        $ad = [];
+
+        $stmt = self::$dbc->prepare("SELECT * FROM ads JOIN users ON ads.user_id = users.id WHERE ads.id = {$id}");
+        $stmt->execute();
+        $ad = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $ad;
+    }
+
     public static function findAdByTitle($title_or_price)
     {
         self::dbConnect();
