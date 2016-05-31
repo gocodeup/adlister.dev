@@ -63,7 +63,7 @@
 	</div>
 </div>
 
-<?php if($_SESSION['signedUp']): ?>
+<?php if(isset($_SESSION['signedUp'])): ?>
 	<?php unset($_SESSION['signedUp']) ?>
 	<script>
 	    $(window).load(function(){
