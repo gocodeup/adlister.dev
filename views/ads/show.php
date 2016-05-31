@@ -30,7 +30,7 @@
             <p> Phone: <?= $ad['phone']; ?> </p>
 <!-- Display only if user is logged in, otherwise hide -->
             <p> <?php foreach($users as $user){
-                if($ad['user_id'] == $user['id'] && $user['permissions'] == 1){ ?> </p>
+                if($ad['user_id'] == $_SESSION['LOGGED_IN_ID']){ ?> </p>
                 <a class="waves-effect waves-light green btn" href="edit?id=<?=$ad['id']?>">Edit</a>
 
                 <a class="waves-effect waves-light red darken-4 btn">Delete</a>
