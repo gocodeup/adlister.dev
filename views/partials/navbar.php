@@ -8,7 +8,7 @@
         <li><a href="/ads">Items</a></li>
         <?php if(Auth::check()) { ?>
         <li><a href="/users/account?id=<?= Auth::id()?>">Profile</a></li>
-        <li><a href="/users/logout">logout</a></li>
+        <li><a href="/users/logout">Logout</a></li>
         <?php }else { ?>
         <li><a href="/users/login">Login</a></li>
         <li><a href="/users/signup">Sign-Up</a></li>
