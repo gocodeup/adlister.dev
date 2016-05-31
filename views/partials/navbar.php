@@ -2,7 +2,8 @@
 <div class="navbar">
   <nav>
     <div class="nav-wrapper">
-      <!-- <a href="#!" class="brand-logo">Logo</a> -->
+      <a href="#!" class="brand-logo"><img height="180" src="/img/uploads/logo.png" class="responsive-img wp-post-image" alt="
+                    ITEM_1" title="item_1" /></a>
       <ul class="right hide-on-med-and-down">
         <li class="active"><a href="/">Home</a></li>
         <li><a href="/ads">Items</a></li>
