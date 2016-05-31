@@ -42,7 +42,7 @@ $ads->price= "4";
 $ads->phone = '210-222-2222';
 $ads->email = "coolmug@codeup.com";
 $ads->location = "San Antonio";
-$ads->img_url = 'http://www.recyclethis.co.uk/wp-content/uploads/2009/05/broken_mug.jpg';
+$ads->img_url = 'http://1.bp.blogspot.com/-7TdSyLIVd9o/UE_UodyEoII/AAAAAAAAA2o/CGehEpV_p4k/s1600/9-11-1.JPG';
 $ads->user_id = "4";
 $ads->save();
 
@@ -65,7 +65,7 @@ $ads->price= "600";
 $ads->phone = "210-999-9999";
 $ads->email = "buymymac@icloud.com";
 $ads->location = "Alamo Heights";
-$ads->img_url = "http://i.ebayimg.com/00/s/MjI1WDMwMA==/z/Ba4AAOSwQItUADCb/\$_35.JPG?set_id=2";
+$ads->img_url = "https://missionrepair.files.wordpress.com/2012/03/dsc_0004.jpg";
 $ads->user_id = "1";
 $ads->save();
 
