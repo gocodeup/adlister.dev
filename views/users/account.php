@@ -9,9 +9,14 @@ require_once __DIR__ . '/../../utils/Auth.php';
         exit();
     }
 
-    $user = User::find(Auth::id());
+    $id = Auth::id();
+
+    $user = User::find($id);
 
     $userAds = Ad::getUserAds($user->id);
+
+    //For Admin login only
+    $ads = Ad::all();
 
 
 ?>
@@ -57,6 +62,37 @@ require_once __DIR__ . '/../../utils/Auth.php';
         </div>  
 
         <div class="row">
+            <?php if ($id == 1) { ?>
+                <?php foreach($ads->attributes as $index => $ad) : ?>
+                    <?php if($index % 4 == 0) : ?>
+                        <div class="row">
+                    <?php endif;  ?>
+                        <div class="small-thumb thumbnail col-sm-3 text-center">
+                            <img class="img-rounded" src="<?= $ad['image_url']; ?>">
+                            <div class="caption">
+                                <h3><?= $ad['title'] ?></h3>
+                                <p>$<?= $ad['price']; ?></p>
+                                <p><?= $ad['description']; ?></p>
+                            </div>
+                
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h4><a class="btn btn-default" href="/ads/show?id=<?=$ad['id'] ?>">View</a></h4>
+                                </div>
+                                <div class="col-sm-3">
+                                    <h4><a class="btn btn-default" href="/ads/edit?id=<?=$ad['id'] ?>">Edit</a></h4>
+                                </div>
+                                <div class="col-sm-3">
+                                    <h4><a class="btn btn-default" href="/ads/delete?id=<?=$ad['id'] ?>">Delete</a></h4>
+                                </div>   
+                            </div>
+                    <?php if($index % 4 == 3) : ?>
+                        </div> <!-- closes row -->
+                    <?php endif; ?>  
+                        </div> <!-- closes thumbnail -->
+                <?php endforeach; ?>
+
+            <?php } else { ?>
                 <?php foreach ($userAds as $index=>$ad):  ?>
                     <?php if($index % 4 == 0) : ?>
                         <div class="row">
@@ -85,6 +121,8 @@ require_once __DIR__ . '/../../utils/Auth.php';
                     <?php endif; ?>  
                         </div> <!-- closes thumbnail -->
                 <?php endforeach; ?>
+            <?php } ?>
+
         </div>
 
     </div>
