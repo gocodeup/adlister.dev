@@ -59,6 +59,26 @@ class Ad extends Model {
 
         return $ads;
     }
+
+    public static function deleteAd($id)
+    {
+        self::dbConnect();
+
+        $ads = [];
+        $stmt = self::$dbc->prepare("DELETE FROM ads WHERE id = :id");
+        $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        ?>
+        <script type="text/javascript">
+        window.location.href = '/users/account';
+        </script>
+        <?php
+        exit();
+        // $ads = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // return $ads;
+    }
 }
 
 ?>

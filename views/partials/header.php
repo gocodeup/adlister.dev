@@ -8,7 +8,7 @@ $loginUsername = escape(Input::get('loginUsername'));
 $loginPassword = escape(Input::get('loginPassword'));
 
 if(Auth::attempt($loginUsername, $loginPassword)) {
-  header ('Location: /');
+  header ('Refresh:0');
   exit();
 }
 // Signup Functionality. Likely needs to be refactored
@@ -61,16 +61,17 @@ if (!empty($signupNameField) && !empty($signupEmailField) && !empty($signupUsern
         <?php } ?> 
       </ul>
 
-      <!-- Login & Signup Buttons -->
        <div class="nav-menu btn-group pull-right" role="group">
 
+        <!-- Logout & Profile Buttons -->
         <!-- These buttons only show if the user is logged IN -->
         <?php if (isset($_SESSION['IS_LOGGED_IN'])){ ?>
         <a href="/auth.logout.php" type="button" class="btn btn-default" id="logout-button">Logout</a>
         <a href="/users/account" type="button" class="btn btn-default" id="profile-button">Profile</a>
         <?php } else { ?>
 
-        <!-- These buttons only show if the user is logged OUT -->
+        <!-- Login & Signup Buttons -->
+        <!-- These only show if the user is logged OUT -->
 
         <button type="button" class="btn btn-default" id="login-modal-button" data-toggle="modal" data-target=".login-modal">Login</button>
         <button type="button" class="btn btn-default" id="signup-modal-button" data-toggle="modal" data-target=".signup-modal">Sign Up</button>

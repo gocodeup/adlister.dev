@@ -19,7 +19,7 @@ body, #logout-button, #profile-button  {
   height:40px;
 }
 
-#logout-button, #profile-button, #login-button, #signup-button {
+#logout-button, #profile-button, #login-modal-button, #signup-modal-button {
   margin-top: 7px;
 }
 
@@ -32,9 +32,18 @@ body, #logout-button, #profile-button  {
   padding-left:0px;
 }
 
+.photobox, .add-desc-box {
+  margin-top:17px;
+  margin-bottom:21px;
+}
+
 .thumbnail {
   width:95px;
   margin:0px;
+}
+
+#profile-pic {
+  max-height: 209px;
 }
 
 #about {
@@ -49,6 +58,7 @@ body, #logout-button, #profile-button  {
 .ad-divider {
   margin-top: 10px;
   margin-bottom: 10px;
+  width: 100%;
 }
 
 .content-link, #forgotPasswordLink{
@@ -61,7 +71,7 @@ body, #logout-button, #profile-button  {
   color: white;
 }
 
-.info-btn, #login-button, #signup-button {
+.info-btn, #login-button, #signup-button, #signup-modal-button, #dont-delete {
   background-color: rgb(23,159,147);
   color: white;
 }
@@ -72,4 +82,23 @@ body, #logout-button, #profile-button  {
 
 .home-ads {
   background-color: #fafafa;
+}
+
+.profile-ads {
+  margin-top: 20px;
+  background-color: #fafafa;
+}
+
+#dont-delete {
+  margin-left:15px;
+  margin-top: 15px;
+}
+
+#deleteAd {
+  margin-right:15px;
+  margin-top: 15px;
+}
+
+#adActions {
+  margin-bottom:15px;
 }
