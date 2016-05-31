@@ -1,22 +1,28 @@
+<?php
+	require_once __DIR__ . '/../../models/Ads.php';
+	require_once __DIR__ . '/../../utils/Input.php';
+
+	$ads = new Ads;
+	$id = Input::get('id');
+	$ad = Ads::find($id);
+	$user_id = $ad->attributes['user_id'];
+	$user = User::find($user_id);
+?>
 <!--Page for single advertisement -->
 <div class="row">
+	<h3><?= $ads['name']; ?></h3>
 	<div class="col-md-4 col-md-offset-2 items single-item">
-	    <img src="http://placehold.it/450x3s50">
+	    <img src="<?= $ads->attributes['img_url']; ?>">
 	</div>
 	<div class="col-md-5 item-info-right">
-		<p>$485,465,466.04</p>
+		<p>$<?= $ads['price']; ?></p>
 		<p>CONTACT: 210.000.000</p>
-		<p>POSTED BY: "USER"</p>
+		<p>POSTED BY: <?= $user->attributes['name']; ?></p>
 	</div>
 </div>
 <div class="row">
 	<div class="col-md-4 col-md-offset-2 item-info-bottom">
-		<p>super cool crap here. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p><?= $ads['description']; ?></p>
 	</div>
 </div>
 <div class="row edit-delete">

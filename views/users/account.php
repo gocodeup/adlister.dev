@@ -1,3 +1,11 @@
+<?php
+require_once __DIR__ . '/../../bootstrap.php';
+
+var_dump($_SESSION);
+
+// Auth::logout();
+
+?>
 <!--Page for user account home-->
 <div class="container" id="container">
 	<div class="row">

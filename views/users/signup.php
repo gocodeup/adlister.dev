@@ -4,7 +4,7 @@ $_ENV = include __DIR__ . '/../../.env.php';
 require_once '../database/db_connect.php';
 require_once __DIR__ . '/../../bootstrap.php';
 
-// var_dump($_POST);
+// var_dump($_SESSION);
     if(Input::has('name')){
         
         $user = new User();
@@ -15,6 +15,8 @@ require_once __DIR__ . '/../../bootstrap.php';
         $user->confirm = Input::get('confirm');
 
         $user->save();
+        header('Location: /users/account');
+
     }
         $_SESSION["signedUp"] = true; //TODO add this inside the if above after the $user->save
 
@@ -62,7 +64,7 @@ require_once __DIR__ . '/../../bootstrap.php';
                         </div>
                     </div>
                     <div class="centerdiv">
-                        <a href="/users/account" class="btn btn-danger btn-lg sign-up-btn" type="submit" id="submit" value="SIGN UP!">SIGN UP!</a>
+                        <input class="btn btn-danger btn-lg sign-up-btn" type="submit" id="submit" value="SIGN UP!">
                     </div>
                 </form>
             </div>

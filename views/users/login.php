@@ -4,17 +4,17 @@ $_ENV = include __DIR__ . '/../../.env.php';
 require_once '../database/db_connect.php';
 require_once __DIR__ . '/../../bootstrap.php';
 
- 
+ if(Input::has('email_user')){
     $email = Input::get('email_user');
     $username = Input::get('email_user');
     $password = Input::get('password');
-
     Auth::attempt($username,$password);
 
     if (Auth::attempt($username,$password)) {
         header('Location: /users/account');
         exit(); 
     } 
+}
 
 ?>
 <div class="container" id="container">
