@@ -2,8 +2,16 @@
 <?php
 
 require __DIR__ . '/../../models/Ad.php';
+require __DIR__ . '/../../database/db_connect.php';
 
 $ads = Ad::all();
+
+$page = Input::has('page') ? Input::get('page') : 1;
+$pagination = Ad::pagination($dbc, $page);
+$stmt = $dbc->prepare('SELECT COUNT(*) FROM ads');
+$stmt->execute();
+$count = $stmt->fetchColumn();
+$totalPages = ceil($count/3);
 
 ?>
 
@@ -11,6 +19,26 @@ $ads = Ad::all();
   <div>
     <h1 class="text-left">All Items</h1>
   </div> 
+
+  <div class="">
+    <?php if($page > 1): ?> 
+        <a href="/ads" class="btn btn-default">First</a>
+    <?php endif; ?>
+
+    <?php if($page >= 2): ?> 
+        <a href="?page=<?= $page - 1 ?>" class="btn btn-default">Previous</a>
+    <?php endif; ?>
+
+    <button class="btn btn-default">Page <?=$page; ?></button>
+    
+    <?php if($page < $totalPages ): ?>
+        <a href="?page=<?= $page + 1 ?>" class="btn btn-default">Next</a>
+    <?php endif; ?>
+
+    <?php if($page < $totalPages ): ?>
+        <a href="?page=<?= $totalPages ?>" class="btn btn-default">Last</a>
+    <?php endif; ?>
+    </div>
 
   <?php foreach($ads->attributes as $index => $ad) : ?>
       <?php if($index % 4 == 0) : ?>
