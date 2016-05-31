@@ -28,7 +28,7 @@
                 </div>
                 <div class="card-content">
                     <a href="/ads/show?id=<?=$ad['id']?>"><span class="card-title activator brown-text text-darken-4"><?= $ad['ad_name']; ?></span></a>
-                    <p class="area"><a href=""><?= $ad['ad_description'] ?></a></p>
+                    <p class="area"><a href="/ads/show?id=<?=$ad['id']?>"><?= $ad['ad_description'] ?></a></p>
                 </div>
             </div>
         </div>
