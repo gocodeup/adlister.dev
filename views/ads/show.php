@@ -35,6 +35,13 @@
             <p> Location: <?= $ad['location']; ?> </p>
 
 <!-- Display only if user is logged in, otherwise hide -->
+            <p> <?php if(!isset($_SESSION['LOGGED_IN_ID'])){
+                    $_SESSION['LOGGED_IN_ID'] = 0;
+                } ?>
+            <p> <?php foreach($users as $user){
+                if($ad['user_id'] == $_SESSION['LOGGED_IN_ID']){ ?> </p>
+            <p> 
+                <?php if($ad['user_id'] == $_SESSION['LOGGED_IN_ID']){ ?> </p>
             <p><?php if($ad['user_id'] == $_SESSION['LOGGED_IN_ID']){ ?> </p>
                 <a class="waves-effect waves-light green btn" href="edit?id=<?=$ad['id']?>">Edit</a>
             <p> <?php } ?> </p>
