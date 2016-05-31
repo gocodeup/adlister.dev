@@ -38,6 +38,12 @@
                 </li>
                 <li class="collection-item avatar">
                     <i class="material-icons circle blue">grade</i>
+                    <p>
+                        <a class="waves-effect waves-light btn" href="/ads/create">Create AD</a>
+                    </p>
+                </li>
+                <li class="collection-item avatar">
+                    <i class="material-icons circle blue">grade</i>
                         <span class="title">VIEW ADS</span>
                 </li>
             </ul>
