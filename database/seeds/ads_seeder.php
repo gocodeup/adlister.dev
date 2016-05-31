@@ -41,7 +41,7 @@ $ad->user_id = 1;
 $ad->name = 'Breathe Freshner';
 $ad->description = 'Try our breathe mints, you\'ll thank us.'; 
 $ad->price = 150.00; 
-$ad->img_url = '/img/breathesmints.jpg';
+$ad->img_url = '/img/breathemints.jpg';
 $ad->save();
 $ad= new Ads; 
 $ad->user_id = 1; 
