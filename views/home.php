@@ -1,15 +1,17 @@
+<?php echo count($ads)-3; ?>
 
 <div class="section card">
     <div class="slider">
         <ul class="slides">
-        <?php foreach($ads as $ad) { ?>
+        <?php foreach($ads as $ad) { 
+            if((count($ads)-2)<$ad['id']){ ?>
             <li>
                 <img src="<?= $ad['img_url']; ?>">
                 <div class="caption center-align">
                     <h3><?= $ad['ad_name']; ?></h3>
                 </div>
             </li>
-        <?php } ?>      
+        <?php }} ?>      
         </ul>
     </div>
 </div>
@@ -17,7 +19,8 @@
 <div class="section">
     <a class="title" href="">FEATURED ITEMS</a>
     <div class="row isotope">
-    <?php foreach($ads as $ad) { ?>
+    <?php foreach($ads as $ad) {
+        if((count($ads)-2)<$ad['id']){ ?>
         <div class="col s12 m12 l4">
             <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
@@ -31,7 +34,7 @@
                 </div>
             </div>
         </div>
-    <?php } ?>  
+    <?php }} ?>  
         
 </div>
 </div>
