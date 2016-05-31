@@ -9,7 +9,7 @@
         </div>
         <div class="col-sm-8 col-md-8 text-left">
             <h1>Peddler's Corner</h1>
-            <h4>Buy and sell your junk here!</h4>
+            <h4>Buy and sell things you can’t find anywhere else!</h4>
         </div>
     </div>
     <hr>
