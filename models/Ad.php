@@ -30,9 +30,9 @@ public static function pagination($dbc, $page)
 
         $data = [];
 
-        $offset = ($page - 1) * 3;
+        $offset = ($page - 1) * 8;
 
-        $stmt = $dbc->prepare('SELECT * FROM ads LIMIT 3 OFFSET :offset');
+        $stmt = $dbc->prepare('SELECT * FROM ads LIMIT 8 OFFSET :offset');
 
         $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
         $stmt->execute();

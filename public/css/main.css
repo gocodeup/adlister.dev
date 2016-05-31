@@ -17,6 +17,10 @@ hr {
     border-top: 1px solid #c0c6c8;
 }
 
+.pagination-bar {
+    margin-bottom: 15px;
+}
+
 .header-margin {
     margin-top: 40px;
 }
@@ -117,7 +121,7 @@ a:hover {
 
 /*to align thumbnails in rows*/
 .small-thumb {
-    min-height: 560px;
+    min-height: 622px;
 }
 
 .med-thumb {
