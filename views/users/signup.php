@@ -15,6 +15,7 @@ require_once __DIR__ . '/../../bootstrap.php';
         $user->confirm = Input::get('confirm');
 
         $user->save();
+        $_SESSION["signedUp"] = true; //TODO add this inside the if above after the $user->save
         if (Auth::attempt(Input::get('username'),Input::get('password'))) {
             header('Location: /users/account');
             exit(); 
@@ -24,7 +25,6 @@ require_once __DIR__ . '/../../bootstrap.php';
         }
 
     }
-        $_SESSION["signedUp"] = true; //TODO add this inside the if above after the $user->save
 
 
 ?><!-- END OF PHP -->

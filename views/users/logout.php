@@ -1,4 +1,4 @@
-session_start();
-session_destroy();
-header('Location: login.php');
-exit;
+<?php
+Auth::logout();
+header('Location: /users/login');
+?>
