@@ -29,6 +29,9 @@
             <p> Email: <?= $ad['email']; ?> </p>
             <p> Phone: <?= $ad['phone']; ?> </p>
 <!-- Display only if user is logged in, otherwise hide -->
+            <p> <?php if(!isset($_SESSION['LOGGED_IN_ID'])){
+                    $_SESSION['LOGGED_IN_ID'] = 0;
+                } ?>
             <p> <?php foreach($users as $user){
                 if($ad['user_id'] == $_SESSION['LOGGED_IN_ID']){ ?> </p>
                 <a class="waves-effect waves-light green btn" href="edit?id=<?=$ad['id']?>">Edit</a>
