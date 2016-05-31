@@ -18,7 +18,7 @@ $ad->save();
 $ad= new Ads; 
 $ad->user_id = 1; 
 $ad->name = 'Helicopter';
-$ad->description = 'Really Big Blackhawk CH-30 Russian Gunship Helicopter.'; 
+$ad->description = 'Really Big Blackhawk CH-30 Russian Gunship Helicopter.'; //sdkgjahsd 
 $ad->price = 1245321.42;
 $ad->img_url = '/img/blackhawk.jpg'; 
 $ad->save();
