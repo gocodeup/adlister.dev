@@ -33,7 +33,7 @@
                 <li class="collection-item avatar">
                     <i class="material-icons circle blue">grade</i>
                     <p>
-                        <a class="waves-effect waves-light btn">Edit Profile</a>
+                        <a class="waves-effect waves-light btn" href="/users/edit">Edit Profile</a>
                     </p>
                 </li>
                 <li class="collection-item avatar">
