@@ -56,7 +56,7 @@ if(isset($_POST['name'])){
                 <?php endif; ?>
 
                 <!-- the action will redirect to the user account -->
-                <form method="POST" action="/users/account.php">
+                <form method="POST" action="/">
                     <div class="container">
                             <div class="row">
                                 <div class="input-field col s12">
