@@ -1,5 +1,3 @@
-<?php echo count($ads)-3; ?>
-
 <div class="section card">
     <div class="slider">
         <ul class="slides">
