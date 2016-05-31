@@ -32,23 +32,23 @@ if(Input::has('title')) {
 			<h2>Make a new ad</h2>
 
 			<label>Title</label>
-		    <input name="title" class="form-control" id="ad_title" placeholder="characters only" required>
+		    <input name="title" class="form-control entry-fields" id="ad_title" placeholder="characters only" required>
 		    
 		    <label>Price</label>
-		    <input name="price" class="form-control" id="ad_price" type="number" min="0" placeholder="numbers only" required>
+		    <input name="price" class="form-control entry-fields" id="ad_price" type="number" min="0" placeholder="numbers only" required>
 	
 		    <label>Image url</label>
-		    <input name="img_url" class="form-control" id="ad_img" required>
+		    <input name="img_url" class="form-control entry-fields" id="ad_img" required>
 		    
 		    <label>Category</label>
-		      <select class="form-control" id="category" name="category">
+		      <select class="form-control entry-fields" id="category" name="category">
 			    <option>Cameras</option>
 			    <option>Live stock</option>
 			    <option>Vehicles</option>
 			  </select>
 
 			<label>Description</label>
-		    <input name="description" class="form-control" id="ad_description" placeholder="characters only" required>
+		    <input name="description" class="form-control entry-fields" id="ad_description" placeholder="characters only" required>
 
 		    <label>Tags</label>
 		    <input name="tags" class="form-control" placeholder="characters only" required>

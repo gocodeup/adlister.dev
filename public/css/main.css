@@ -103,7 +103,7 @@ body, #logout-button, #profile-button  {
   margin-bottom:15px;
 }
 
-.form-control {
+.entry-fields {
   width: 50%;
   margin-top: 5px;
   margin-bottom: 30px;
