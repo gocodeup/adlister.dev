@@ -85,7 +85,7 @@ if (!empty($adTitle) && !empty($adDescription) && !empty($adPrice) && !empty($ad
 					    <div class="row col-md-offset-1 col-md-10 col-lg-8 col-lg-offset-2">
 							<div class="col-xs-2 no-padding photobox">
 								<div class="add-image"> 
-									<a href="ads-details.html">
+									<a href="ads/show?id=<?=$ad['id']?>"">
 										<img class="thumbnail no-margin" src="<?= $ad['img_url'] ?>" alt="img">
 									</a> 
 								</div>
@@ -94,7 +94,7 @@ if (!empty($adTitle) && !empty($adDescription) && !empty($adPrice) && !empty($ad
 							<div class="col-xs-7 add-desc-box">
 								<div class="add-details">
 									<h5 class="add-title"> 
-										<a class="content-link" href="ads-details.html"> <?= $ad['title'] ?></a>
+										<a class="content-link" href="ads/show?id=<?=$ad['id']?>> <?= $ad['title'] ?></a>
 									</h5>
 									<span class="info-row"> 
 										<span class="date">

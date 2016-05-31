@@ -44,7 +44,7 @@ $ads = Ad::getAds(3);
 					<div class="col-xs-7 add-desc-box">
 						<div class="add-details">
 							<h5 class="add-title"> 
-								<a class="content-link" href="ads-details.html"> <?= $ad['title'] ?></a>
+								<a class="content-link" href="ads/show?id=<?=$ad['id']?>> <?= $ad['title'] ?></a>
 							</h5>
 							<span class="info-row"> 
 								<span class="date">
