@@ -16,6 +16,28 @@ if (isset($_POST['deleteAd']))
 $adNum = 0;
 $user = User::showUser($userId);
 $ads = Ad::findAdByUserId($userId, 3);
+$date = date('Y-m-d');
+// Signup Functionality. Likely needs to be refactored
+$adTitle = escape(Input::get('adTitle'));
+$adDescription = escape(Input::get('adDescription'));
+$adPrice = escape(Input::get('adPrice'));
+$adImgURL = escape(Input::get('adImgURL'));
+$adCategory = escape(Input::get('adCategory'));
+$adTags = escape(Input::get('adTags'));
+
+if (!empty($adTitle) && !empty($adDescription) && !empty($adPrice) && !empty($adImgURL) && !empty($adCategory) && !empty($adTags)) {
+    $newAd = new Ad();
+    $newAd->title = $adTitle;
+    $newAd->description = $adDescription;
+    $newAd->price = $adPrice;
+    $newAd->img_url = $adImgURL;
+    $newAd->category = $adCategory;
+    $newAd->tags = $adTags;
+    $newAd->user_id = $userId;
+    $newAd->date_listed = date('Y-m-d');
+    $newAd->save();
+}
+
 ?>
 	<!-- USER INFO -->
 	<div class="row">
@@ -40,6 +62,7 @@ $ads = Ad::findAdByUserId($userId, 3);
             </div>
         </div>
     </div>
+    <!-- END USER INFO -->
 
     <!-- USER'S ADS -->
 	<div class="profile-ads">
@@ -81,9 +104,43 @@ $ads = Ad::findAdByUserId($userId, 3);
 							<div class="col-xs-3 text-right  price-box">
 								<h2 class="item-price">$<?= $ad['price'] ?></h2>
 								<form id="adActions" method="POST">
-				                    <button name="editAd" id="editAd" type="submit" class="btn edit-btn btn-sml">Edit</button>
+				                    <button type="button" class="btn edit-btn btn-small" id="delete-modal-button" data-toggle="modal" data-target=".edit-modal-<?=$adNum?>">Edit</button>
 				                    <button type="button" class="btn btn-danger btn-small" id="delete-modal-button" data-toggle="modal" data-target=".delete-modal-<?=$adNum?>">Delete</button>
 					            </form>
+
+					            <!-- EDIT MODAL -->
+								<div class="modal fade edit-modal-<?=$adNum?>" tabindex="-1" role="dialog" aria-hidden="true">
+									<div class="modal-dialog modal-lg">
+									  <div class="modal-content">
+									    <div class="modal-header">
+									      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+									      <h4 class="modal-title text-center" id="myLargeModalLabel">Let's Fix This Ad!</h4>
+									      <form method="POST">
+									      	<label class='pull-left'>Title</label>
+										    <input name="adTitle" class="form-control" required value="<?= $ad['title'] ?>">
+										   
+										    <label class='pull-left'>Description</label>
+										    <input name="adDescription" class="form-control" required value="<?= $ad['description'] ?>">
+										    
+										    <label class='pull-left'>Price</label>
+										    <input name="adPrice" class="form-control" type="number" min="0" placeholder="numbers only" required value="<?= $ad['price'] ?>">
+									
+										    <label class='pull-left'>Image</label>
+										    <input name="adImgURL" class="form-control" required value="<?=$ad['img_url'] ?>">
+										    
+										    <label class='pull-left'>Category</label>
+										    <input name="adCategory"class="form-control" required value="<?=$ad['category'] ?>">
+
+										    <label class='pull-left'>Tags</label>
+										    <input name="adTags"  class="form-control" placeholder="characters only" required value="<?=$ad['tags'] ?>">
+
+								  			<button type="submit" class="btn btn-sml center" id='update-btn'>Update!</button>
+									      </form>
+									    </div>
+									  </div>
+									</div>
+								</div>
+								<!-- END EDIT MODAL -->
 
 					            <!-- DELETE MODAL -->
 								<div class="modal fade delete-modal-<?=$adNum?>" tabindex="-1" role="dialog" aria-hidden="true">
@@ -124,3 +181,4 @@ $ads = Ad::findAdByUserId($userId, 3);
 
 		</div>
 	</div>
+	<!-- END USER'S ADS -->
