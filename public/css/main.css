@@ -1,0 +1,383 @@
+body, html{
+    font-family: 'Oswald', sans-serif;
+    background-color: #f5f0f0;
+    text-align: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#welcome {
+    margin-top: -175px;
+}
+#features {
+    margin-top: 100px;
+}
+
+#container {
+   min-height:100%;
+}
+
+.container{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+}
+
+.signin{
+    float: right;
+    padding-right: 10px;
+    padding-top: 30px;
+}   
+
+.navbut{
+    background-color: #222222;
+    color: white;
+    border: none;
+    box-shadow: inset 0 0 5px white;
+}
+
+.signinbut{
+    padding-right: 20px;
+    float: right;   
+    padding-top: 30px;  
+}
+
+.navbar{
+    margin: 0;
+    padding: 0px;
+    border-radius: 0px;
+}
+
+.navbardiv{
+    margin: 0px;
+    padding: 0px;
+    border-radius: 0px;
+}
+
+/* unvisited link */
+.nav-home:link {
+    color: white;
+}
+
+/* visited link */
+.nav-home:visited {
+    color: white;
+}
+
+/* mouse over link */
+.nav-home:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* selected link */
+.nav-home:active {
+    color: white;
+}
+.logo{
+    font-family: 'Pacifico', cursive;
+    font-size: 50px;
+    color: white;
+    text-align: left;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    padding-left: 40px;
+}
+
+.username{
+    float: right;
+    padding-right: 30px;
+    padding-top: 30px;
+    color: #999999;
+    font-size: 20px;
+}
+
+.thumbnail-projects img {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.boxpic{
+    padding-top: 50px;
+}
+
+.gear-line-one{
+    font-size: 30px;
+    color: red;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.gear-line-two{
+    text-align: center;
+    font-size: 20px;
+}
+
+.sign-up-text{
+    font-size: 40px;
+    color: red;
+    text-align: left;
+}
+
+.sign-up-free{
+    font-size: 20px;
+    text-align: left;
+}
+
+.name, .email, .password, .username, .price, .description, .image, .item-for-sale{
+    padding-bottom: 25px;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.image{
+    padding-top: 50px;
+}
+
+.sign-up-btn{
+    background-color: red;
+    -moz-box-shadow: inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #000000;
+}
+
+.edit-delete{
+    padding-bottom: 20px;
+}
+
+.centerdiv{
+    padding-bottom: 50px;
+}
+
+.item-for-sale{
+    padding-top: 40px;
+}
+
+.account-welcome{
+    color: red;
+    font-size: 50px;
+    padding-top: 40px;
+}
+
+.account-email{
+    font-size: 20px;
+}
+
+.account-ad-title{
+    padding-top: 150px;
+    font-family: 'Pacifico';
+    font-size: 40px;
+    padding-bottom: 20px;
+}
+
+.super-awesome-ad{
+    font-family: 'Pacifico';
+    font-size: 50px;
+    padding-top: 40px;
+    color: red;
+}
+
+.edit-price{
+    padding-top: 40px;
+}
+
+.sidebar-nav{
+    float: left;
+}
+
+.sidebar{
+    height: 100%;
+    padding-left: 0px;
+}
+
+#sidebar-wrapper {
+    width: 0;
+    height: 100%;
+    overflow-y: auto;
+    background: #222222;
+    margin-right: 0px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.sidebar-nav {
+    list-style: none;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+    line-height: 40px;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+    color: red;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media(min-width:768px) {
+    #sidebar-wrapper {
+        width: 180px;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+}
+
+.items{
+    padding-top: 25px;
+}
+
+.single-item{
+    padding-bottom: 25px;
+}
+
+.item-info-right{
+    padding-top: 140px;
+    font-size: 30px;
+    line-height: 60px;
+    padding-left: 100px;
+    color: red;
+}
+
+.item-info-bottom{
+    padding-bottom: 50px;
+    font-size: 15px;
+}
+
+.item-title{
+    padding: 0px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    margin: 0px;
+}
+
+.item-description{
+    margin: 0px;
+}
+
+.footer{
+    background-color: #222222;
+    text-align: center;
+    color: #999999; 
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+}
+
+.footerinfo{
+    padding-top: 15px;
+    font-size: 15px;
+}
+
+.followinfo{
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+.sell-crap-footer{
+    font-size: 20px;
+    padding-top: 10px;
+    padding-right: 15px;
+    margin-right: 50px;
+}
+
+.copyright-image{
+    height: 10px;
+    width: 10px;
+    margin-bottom: 10px;
+}
+
+.craptastic{
+    padding-right: 10px;
+}
+
+.subscribe-boxes{
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #808080;
+}
+
+#all-items{
+    margin-bottom: 100px;
+}
+
+.modal-title{
+    font-family: 'Pacifico';
+    color: red;
+    padding-bottom: 10px;
+    font-size: 50px;
+}
+
+.second-modal-title{
+    color: #999999;
+}
+
+.modal {
+    cursor: default;
+}
+
+.modal-header {
+    padding:9px 15px;
+    border-bottom:1px solid black;
+    background-color: #222222;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+     text-align: center;
+ }
+
+.modal-body {
+    padding:9px 15px;
+    border: none;
+    font-size: 20px;
+    text-align: center;
+}
+
+.modal-footer {
+    padding:9px 15px;
+    border: none;
+    opacity: 1;
+}
+
+.you-the-poop{
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+}
+
+.close {
+  font-size: 40px;
+  line-height: 18px;
+  color: white;
+  text-decoration: none;
+}
+.close:hover {
+  color: white;
+  text-decoration: none;
+  opacity: 1;
+  cursor: pointer;
+}
+

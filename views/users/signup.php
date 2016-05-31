@@ -1,56 +1,70 @@
+<?php
+
+$_ENV = include __DIR__ . '/../../.env.php';
+require_once '../database/db_connect.php';
+require_once __DIR__ . '/../../bootstrap.php';
+
+// var_dump($_POST);
+    if(Input::has('name')){
+        
+        $user = new User();
+        $user->name = Input::get('name');
+        $user->email = Input::get('email');
+        $user->username = Input::get('username');
+        $user->password = Input::get('password');
+        $user->confirm = Input::get('confirm');
+
+        $user->save();
+    }
+
+
+?><!-- END OF PHP -->
+
+<!-- START OF HTML -->
+<?php if(isset($errors)): ?>
+    <?php foreach($errors as $message):?>
+        <p id="errorMessage"><?= $message ?></p>
+    <?php endforeach; ?>
+<?php endif; ?>
+
 <div class="container">
-
-	<section id="login">
-
-		<div class="row">
-
-			<h1 class="section-title">Signup For OooLister</h1>
-
-			<div class="col-md-6 col-md-offset-3">
-
-				<p>Please fill out the information below so we can create your account.</p>
-				<?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
-	                <div class="alert alert-danger">
-	                    <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
-	                </div>
-	                <?php unset($_SESSION['ERROR_MESSAGE']); ?>
-	            <?php endif; ?>
-	            <?php if (isset($_SESSION['SUCCESS_MESSAGE'])) : ?>
-	                <div class="alert alert-success">
-	                    <p class="success"><?= $_SESSION['SUCCESS_MESSAGE']; ?></p>
-	                </div>
-	                <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
-	            <?php endif; ?>
-
-				<form method="POST" action="" data-validation data-required-message="This field is required">
-
-					<div class="form-group">
-					    <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" data-required>
-					</div>
-					<div class="form-group">
-					    <input type="text" class="form-control" id="email" name="email" placeholder="Email" data-required>
-					</div>
-					<div class="form-group">
-					    <input type="text" class="form-control" id="username" name="username" placeholder="Username" data-required>
-					</div>
-					<div class="form-group">
-					    <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required>
-					</div>
-					<div class="row">
-						<div class="col-sm-6">
-							<button type="submit" class="btn btn-primary">Signup</button>
-						</div>
-						<div class="col-sm-6 text-right">
-							<a href="/login" class="btn btn-success">Go To Login</a>
-						</div>
-					</div>
-
-				</form>
-
-			</div>
-
-		</div>
-
-	</section>
-
+    <div class="row">
+​
+        <div class="col-md-4 col-md-offset-1 boxpic">
+            <img src="/img/boxofpoo.png">
+            <div class="gearcontent"> 
+                <p class="gear-line-one">Thanks for stopping by!</p> 
+                <p class="gear-line-two">We hope to see you again soon.</p>
+            </div>
+        </div>
+        <div class="col-md-4 col-md-offset-2">
+            <p class="sign-up-text">SIGN UP</p>
+            <p class="sign-up-free"> It's always free and always will be.</p>
+​
+            <div class="formdiv">
+                <form class="form" method="POST" action="#">
+                    <div class="row">
+                        <div class="col-xs-12 name">
+                            <input name="name" type="text" placeholder="Name" class="form-control input-lg" id="name">
+                        </div>
+                        <div class="col-xs-12 username">
+                            <input name="username" type="text" placeholder="Username" class="form-control input-lg" id="username">
+                        </div>
+                        <div class="col-xs-12 email">
+                            <input name="email" type="text" placeholder="Email" class="form-control input-lg" id="email">
+                        </div>
+                        <div class="col-xs-12 password">
+                            <input name="password" type="password" placeholder="Password" class="form-control input-lg" id="password">
+                        </div>
+                        <div class="col-xs-12 password">
+                            <input name="confirm" type="password" placeholder="Confirm Password" class="form-control input-lg" id="confirm">
+                        </div>
+                    </div>
+                    <div class="centerdiv">
+                        <button class="btn btn-danger btn-lg sign-up-btn" type="submit" id="submit" value="SIGN UP!">SIGN UP!</button>
+                    </div>
+                </form>
+            </div>
+        </div><!-- end col-md-4 col-md-offset-2 class -->
+    </div> <!-- end row class -->
 </div>
