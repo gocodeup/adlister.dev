@@ -3,7 +3,7 @@ require_once __DIR__ . '/../../bootstrap.php';
 
 var_dump($_SESSION);
 
-// Auth::logout();
+Auth::logout();
 
 ?>
 <!--Page for user account home-->
