@@ -70,6 +70,15 @@ if (!empty($adTitle) && !empty($adDescription) && !empty($adPrice) && !empty($ad
 	<div class="profile-ads">
     	<div class="container">
 			<h2 class="row text-center recent-ads-header">Your Latest Items</h2>
+					<div class="item-list">
+					    <div class="row col-md-offset-1 col-md-10 col-lg-8 col-lg-offset-2">
+							<div class="col-xs-2 no-padding photobox">
+								<button type="button" class="btn info-btn btn-small" id="create-modal-button" data-toggle="modal" data-target=".create-modal">Create new ad!</button>
+							</div>
+						</div> 
+					</div>
+
+					<hr class="ad-divider">
             <?php if (!empty($ads)) { 
             	foreach($ads as $ad) { ?>
 					<div class="item-list">
@@ -85,12 +94,14 @@ if (!empty($adTitle) && !empty($adDescription) && !empty($adPrice) && !empty($ad
 							<div class="col-xs-7 add-desc-box">
 								<div class="add-details">
 									<h5 class="add-title"> 
-										<a class="content-link" href="ads-details.html"> <?= $ad['description'] ?></a>
+										<a class="content-link" href="ads-details.html"> <?= $ad['title'] ?></a>
 									</h5>
 									<span class="info-row"> 
 										<span class="date">
 											<i class="fa fa-clock-o"> </i> 
-											Today 1:21 pm 
+											<?php $estab = strtotime($ad['date_listed']); ?>
+												<?=date("m/d/Y", $estab); ?>
+
 										</span> 
 										- 
 										<span class="category"><?= $ad['category'] ?> </span>
