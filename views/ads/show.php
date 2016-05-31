@@ -1,4 +1,8 @@
 <!--Page for single advertisement -->
+<?php if(!isset($_SESSION['LOGGED_IN_ID'])){
+            $_SESSION['LOGGED_IN_ID'] = 0;
+        } ?>
+
 
 <div class="section">
     <div class="row isotope">
@@ -22,7 +26,7 @@
 
             <p> User: <?php foreach($users as $user){
                 if ($ad['user_id'] == $user['id']){ ?>
-                <a href="../users/account?user_id=<?= $user['id'];?>"> <?= $user['username']; ?> </a> </p>
+                <?= $user['username']; ?> </p>
                 <?php } } ?>
             <p> <?= $ad['ad_description'] ?>  </p>
             <p> Price: <?=$ad['price']; ?> </p>
