@@ -3,6 +3,13 @@
 $username= input::has('email') ? input::get('email'): '';
 $password= input::has('password') ? input::get('password'): '';
 
+if (Auth::check()) {
+    foreach ($users as $user) {
+        $id = $user['id'];
+        header("Location: /users/account?id=$id");
+        die();
+    }
+}
 
 if (!empty($_POST)){
     if (Auth::attempt($username, $password)){
@@ -14,9 +21,6 @@ if (!empty($_POST)){
             }
         }
     }
-} else {
-       echo "Denied";
-
 }
 
 
