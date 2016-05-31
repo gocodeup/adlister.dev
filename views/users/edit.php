@@ -7,7 +7,8 @@
 // require_once "../utils/Input.php";
 
 if(!Auth::check()) {
-    var_dump("You are not logged in!!!");
+    header('Location: /users/login');
+    exit();
 }
 
 if(isset($_POST['name'])){ 
