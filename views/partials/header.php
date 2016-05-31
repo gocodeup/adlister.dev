@@ -25,6 +25,8 @@ if (!empty($signupNameField) && !empty($signupEmailField) && !empty($signupUsern
     $newUser->username = $signupUsernameField;
     $newUser->password = $signupConfirmField;
     $newUser->save();
+    header ('Location: /users/account');
+    exit();
 }
 
 ?>

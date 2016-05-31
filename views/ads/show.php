@@ -1,24 +1,14 @@
 <!-- For testing go to a page like http://adlister.dev/ad.show.php?id=1 -->
 
 <?php 
-
-require_once __DIR__ . '/../../database/db_connect.php';
+require_once __DIR__ . '/../../utils/Auth.php';
+require_once __DIR__ . '/../../models/Model.php';
+require_once __DIR__ . '/../../models/Ad.php';
 require_once '../utils/Input.php';
 
-function showAd($dbc, $id)
-{
-	$id = Input::get('id');
 
-	$ad = [];
 
-	$stmt = $dbc->prepare("SELECT * FROM ads JOIN users ON ads.user_id = users.id WHERE ads.id = {$id}");
-	$stmt->execute();
-	$ad['ad'] = $stmt->fetch(PDO::FETCH_ASSOC);
-
-	return $ad;
-}
-
-extract(showAd($dbc, Input::get('id')));
+$ad = Ad::showAd(Input::get('id'));
 
 ?>
 
