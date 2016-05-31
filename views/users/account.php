@@ -24,11 +24,11 @@ foreach ($users as $user) {
         <div class="col s12 m3">
             <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
-                <?php if($user['user_img'] != Null){ ?>
+                <?php if(!($user['user_img'])){ ?>
                     <img height="180" src="<?= $user['user_img']?>" class="responsive-img wp-post-image" alt="
                     ITEM_1" title="item_1" />
                 <?php }else { ?>
-                    <img height="180" src="img/uploads/user.png" class="responsive-img wp-post-image" alt="
+                    <img height="180" src="/img/uploads/user.png" class="responsive-img wp-post-image" alt="
                     ITEM_1" title="item_1" />
                 <?php } ?>
                 </div>
