@@ -17,6 +17,10 @@ hr {
     border-top: 1px solid #c0c6c8;
 }
 
+.pagination-bar {
+    margin-bottom: 15px;
+}
+
 .header-margin {
     margin-top: 40px;
 }
@@ -115,9 +119,15 @@ a:hover {
     font-size: 1.3em;
 }
 
+.navbar-nav>li>.dropdown-menu>li>a:hover,
+.navbar-nav>li>.dropdown-menu>li>a:focus {
+    color: #92482b;
+    background-color: #fcf9f6;
+}
+
 /*to align thumbnails in rows*/
 .small-thumb {
-    min-height: 560px;
+    min-height: 622px;
 }
 
 .med-thumb {
