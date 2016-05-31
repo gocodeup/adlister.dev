@@ -1,3 +1,23 @@
+<?php
+
+require_once __DIR__ . '/../../models/User.php';
+require_once __DIR__ . '/../../utils/Auth.php';
+
+$user = User::find(Auth::id());
+if(!empty($_POST)) {
+	$user->name = Input::get('name');
+	$user->email = Input::get('email');
+	$user->username = Input::get('username');
+	$user->password = Input::get('password');
+	$user->location = Input::get('location');
+	$user->save();
+
+	header('Location: ../account');
+	exit();	
+}
+
+?>
+
 <div class="container">
 
 	<section id="login">
@@ -22,7 +42,7 @@
 	                <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
 	            <?php endif; ?>
 
-				<form method="POST" action="" data-validation data-required-message="This field is required">
+				<form method="POST" action="edit" data-validation data-required-message="This field is required">
 
 					<div class="form-group">
 					    <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" value="<?= $user->name; ?>" data-required>
@@ -32,6 +52,12 @@
 					</div>
 					<div class="form-group">
 					    <input type="text" class="form-control" id="username" name="username" placeholder="Username" value="<?= $user->username; ?>" data-required>
+					</div>
+					<div class="form-group">
+					    <input type="text" class="form-control" id="password" name="password" placeholder="Password" value="" data-required>
+					</div>
+					<div class="form-group">
+					    <input type="text" class="form-control" id="location" name="location" placeholder="Location" value="<?= $user->location; ?>" data-required>
 					</div>
 					<button type="submit" class="btn btn-primary">Update Account</button>
 
