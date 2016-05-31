@@ -10,23 +10,25 @@
 	// var_dump($ad);
 ?>
 <!--Page for single advertisement -->
-<div class="row">
-	<h1><?= $ads['name']; ?></h1>
-	<div class="col-md-4 col-md-offset-2 items single-item">
-	    <img class="show-image" src="<?= $ads['img_url']; ?>">
+<div class="container" id="container">
+	<div class="row">
+		<h1><?= $ads['name']; ?></h1>
+		<div class="col-md-4 col-md-offset-2 items single-item">
+		    <img class="show-image" src="<?= $ads['img_url']; ?>">
+		</div>
+		<div class="col-md-5 item-info-right">
+			<p>$<?= $ads['price']; ?></p>
+			<p>CONTACT: 210.000.000</p>
+			<p>POSTED BY: <?= $user->attributes['name']; ?></p>
+		</div>
 	</div>
-	<div class="col-md-5 item-info-right">
-		<p>$<?= $ads['price']; ?></p>
-		<p>CONTACT: 210.000.000</p>
-		<p>POSTED BY: <?= $user->attributes['name']; ?></p>
+	<div class="row">
+		<div class="col-md-4 col-md-offset-2 item-info-bottom">
+			<p><?= $ads['description']; ?></p>
+		</div>
 	</div>
-</div>
-<div class="row">
-	<div class="col-md-4 col-md-offset-2 item-info-bottom">
-		<p><?= $ads['description']; ?></p>
+	<div class="row edit-delete">
+		<a href="/ads/edit" class="btn btn-danger sign-up-btn">EDIT</a>
+		<a href="/signup" class="btn btn-danger sign-up-btn">DELETE</a>
 	</div>
-</div>
-<div class="row edit-delete">
-	<a href="/ads/edit" class="btn btn-danger sign-up-btn">EDIT</a>
-	<a href="/signup" class="btn btn-danger sign-up-btn">DELETE</a>
 </div>
