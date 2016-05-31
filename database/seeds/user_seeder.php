@@ -28,7 +28,7 @@ $user->save();
 
 $user = new User;
 $user->name = 'Simon Petrikov';
-$user->email = 'iceking@princessaholicanonymous.com';
+$user->email = 'iceking@princessaholicanon.com';
 $user->username = "ice_king";
 $user->location = 'Austin, TX';
 $user->password = $_ENV['USER_PASS'];
