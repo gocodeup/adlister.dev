@@ -25,7 +25,7 @@ $user = User::find(Auth::id());
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/home">Home</a></li>
+          <li><a href="/home">Home</a></li>
           <li><a href="/ads">Items</a></li>
           <li><a href="/login">Login</a></li>
           <li><a href="/signup">Sign Up</a></li>
@@ -52,7 +52,7 @@ $user = User::find(Auth::id());
       <div id="navbar" class="navbar-collapse collapse">
           
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/home">Home</a></li>
+          <li><a href="/home">Home</a></li>
           <li><a href="/ads">Items</a></li>
         </ul>
           
