@@ -1,6 +1,6 @@
 <?php
 
-// require_once 'Log.php';
+require_once 'Log.php';
 require_once '../models/User.php';
 
 class Auth
@@ -14,7 +14,7 @@ class Auth
 		if(($username == '' || $username == null) || ($password == '' || $password == null))
 		{
 
-			$_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
+			$_SESSION['ERROR_MESSAGE'] = '1. Login information was incorrect';
 			return false;
 		}
 
@@ -25,7 +25,7 @@ class Auth
 		if ($user == null)
 		{
 
-			$_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
+			$_SESSION['ERROR_MESSAGE'] = '2. Login information was incorrect';
 			return false;
 		}
 
@@ -40,7 +40,7 @@ class Auth
 			return true;
 		}
 
-		$_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
+		$_SESSION['ERROR_MESSAGE'] = '3. Login information was incorrect';
 		return false;
 	}
 

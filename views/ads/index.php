@@ -1,3 +1,6 @@
+<?php
+$ad = Ads::all();
+?>
     <div class="col-lg-2 sidebar">
         <div id="sidebar-wrapper">
                 <ul class="sidebar-nav">
@@ -33,7 +36,16 @@
         </div>
 
         <!-- ITEMS -->
-        <div class="col-md-3 items">
+        <?php foreach($ad->attributes as $key => $ads): ?>
+            <div class="col-xs-12 col-sm-12 col-md-3 items thumbnail-projects">
+                <img src="<?= $ads['img_url']; ?>">
+                <h3 class="item-title"><?= $ads['name']; ?></h3>
+                <h4 class="item-description">$<?= $ads['price']; ?></h4>
+                <p class="item-description"><?= $ads['description']; ?></p>
+            </div>
+        <?php endforeach; ?>
+
+<!--         <div class="col-md-3 items">
             <img src="http://placehold.it/250x150">
             <h3 class="item-title">Item for sale</h3>
             <h4 class="item-description">$5</h4>
@@ -87,12 +99,5 @@
             <h3 class="item-title">Item for sale</h3>
             <h4 class="item-description">$5</h4>
             <p class="item-description">super cool crap here</p>
-        </div>
-
-        <div class="col-md-3 items">
-            <img src="http://placehold.it/250x150">
-            <h3 class="item-title">Item for sale</h3>
-            <h4 class="item-description">$5</h4>
-            <p class="item-description">super cool crap here</p>
-        </div>
+        </div> -->
     </div>
