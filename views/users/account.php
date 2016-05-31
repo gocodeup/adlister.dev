@@ -1,11 +1,16 @@
 <?php
-        if (isset($_POST['name_field'])){ 
-            $user = User::find($_GET['id']);
-            $user->user_img = saveUploadedImage('img_url');
-            $user->save();
-        }
-    foreach ($users as $user) {
-        if ($_GET['id'] == $user['id']){ 
+if(!Auth::check()) {
+    header('Location: /users/login');
+    exit();
+}
+
+if (isset($_POST['name_field'])){ 
+    $user = User::find($_GET['id']);
+    $user->user_img = saveUploadedImage('img_url');
+    $user->save();
+}
+foreach ($users as $user) {
+    if ($_GET['id'] == $user['id']){ 
 
 ?> 
 <div class="row">
