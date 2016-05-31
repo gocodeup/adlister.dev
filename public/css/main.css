@@ -93,12 +93,13 @@ body, html{
 }
 
 .thumbnail-projects img {
-    width: 100%;
+    width: 90%;
     height: 250px;
     overflow: hidden;
-    padding-top: 25px;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-top: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 15px;
 }
 
 .item{
@@ -199,16 +200,18 @@ body, html{
 }
 
 .item-info-right{
-    padding-top: 140px;
+    padding-top: 100px;
     font-size: 30px;
     line-height: 60px;
     padding-left: 100px;
     color: red;
+
 }
 
 .item-info-bottom{
     padding-bottom: 50px;
     font-size: 15px;
+
 }
 
 .item-title{
@@ -328,4 +331,12 @@ body, html{
   opacity: 1;
   cursor: pointer;
 }
+.show-image {
+    width: 450px;
+    height: 100%;
+    margin-top: 35px;
+    border-radius: 25px;
+
+}
+
 
