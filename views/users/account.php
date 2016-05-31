@@ -85,12 +85,14 @@ if (!empty($adTitle) && !empty($adDescription) && !empty($adPrice) && !empty($ad
 							<div class="col-xs-7 add-desc-box">
 								<div class="add-details">
 									<h5 class="add-title"> 
-										<a class="content-link" href="ads-details.html"> <?= $ad['description'] ?></a>
+										<a class="content-link" href="ads-details.html"> <?= $ad['title'] ?></a>
 									</h5>
 									<span class="info-row"> 
 										<span class="date">
 											<i class="fa fa-clock-o"> </i> 
-											Today 1:21 pm 
+											<?php $estab = strtotime($ad['date_listed']); ?>
+												<?=date("m/d/Y", $estab); ?>
+
 										</span> 
 										- 
 										<span class="category"><?= $ad['category'] ?> </span>
