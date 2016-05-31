@@ -51,6 +51,17 @@ foreach ($users as $user) {
                     <p>
                         <a class="waves-effect waves-light btn" href="/ads/create">Create AD</a>
                     </p>
+                </li>                
+                <li class="collection-item avatar">
+                    <i class="material-icons circle blue">grade</i>
+                    <p>
+                        <a class="waves-effect waves-light btn" href="">View Your ADS</a><br>
+                        <?php foreach ($ads as $ad) { ?>
+                           <?php if($_SESSION['LOGGED_IN_ID'] == $ad['user_id']){ ?>
+                                <a  href="http://adlister.dev/ads/show?id=<?=$ad['id']?>">Item Name: <?= $ad['ad_name'];?></a><br>
+                                <img height="60" src="<?= $ad['img_url']?>" class="col s2 responsive-img wp-post-image" alt="ITEM_1" title="item_1" /><br>
+                        <?php }}?>
+                    </p>
                 </li>
             </ul>
         </div>
