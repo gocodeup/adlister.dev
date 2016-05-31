@@ -64,6 +64,8 @@ require_once __DIR__ . '/../../utils/Auth.php';
         <div class="row">
             <?php if ($id == 1) { ?>
                 <?php foreach($ads->attributes as $index => $ad) : ?>
+                    <?php $adId = $ad['user_id']; 
+                        $adUser = User::find($adId); ?>
                     <?php if($index % 4 == 0) : ?>
                         <div class="row">
                     <?php endif;  ?>
@@ -72,6 +74,8 @@ require_once __DIR__ . '/../../utils/Auth.php';
                             <div class="caption">
                                 <h3><?= $ad['title'] ?></h3>
                                 <p>$<?= $ad['price']; ?></p>
+                                <p>Username: <?= $adUser->attributes['username']; ?></p>
+                                <p>Email: <?= $adUser->attributes['email']; ?></p>
                                 <p><?= $ad['description']; ?></p>
                             </div>
                 
