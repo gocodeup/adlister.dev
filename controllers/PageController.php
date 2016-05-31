@@ -43,6 +43,10 @@ function pageController()
             $main_view ='../views/ads/edit.php';
             break;
 
+        case '/ads/delete':
+            $main_view ='../views/ads/delete.php';
+            break;
+
         case '/ads/show':
             $main_view ='../views/ads/show.php';
             break;

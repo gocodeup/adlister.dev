@@ -42,10 +42,13 @@
                 if($ad['user_id'] == $_SESSION['LOGGED_IN_ID']){ ?> </p>
             <p> 
                 <?php if($ad['user_id'] == $_SESSION['LOGGED_IN_ID']){ ?> </p>
+            <p><?php if($ad['user_id'] == $_SESSION['LOGGED_IN_ID']){ ?> </p>
                 <a class="waves-effect waves-light green btn" href="edit?id=<?=$ad['id']?>">Edit</a>
-
-                <a class="waves-effect waves-light red darken-4 btn">Delete</a>
             <p> <?php } ?> </p>
+
+            <p><?php if($ad['user_id'] == $_SESSION['LOGGED_IN_ID']){ ?> </p>
+                    <a class="waves-effect waves-light red darken-4 btn" href="delete?id=<?=$ad['id']?>" >Delete</a>
+             <p> <?php } ?> </p>
 
         </div>
     <?php }} ?> 

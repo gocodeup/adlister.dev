@@ -54,7 +54,7 @@ if (!empty($_POST)){
                         <div class="row">           
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input placeholder="Email/Username" id="email" name="email" type="text" class="validate" required>
+                                        <input placeholder="Email" id="email" name="email" type="text" class="validate" required>
                                     </div>
                                 </div>
                                 <div class="row">
