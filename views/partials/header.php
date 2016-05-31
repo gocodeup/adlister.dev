@@ -52,7 +52,7 @@ if (!empty($signupNameField) && !empty($signupEmailField) && !empty($signupUsern
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/ads">Ads directory<span class="sr-only">(current)</span></a></li>
+        <li><a href="/ads">Ads directory<span class="sr-only">(current)</span></a></li>
 
         <!-- These buttons only show if the user is logged IN -->
         <?php 
