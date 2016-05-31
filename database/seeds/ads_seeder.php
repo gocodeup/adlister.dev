@@ -37,15 +37,9 @@ $ad->price = 13.45;
 $ad->img_url = '/img/breakfast.jpg';
 $ad->save();
 $ad= new Ads; 
-<<<<<<< HEAD
 $ad->user_id = 3; 
 $ad->name = 'Breath Freshner';
 $ad->description = 'Try our breath mints, you\'ll thank us.'; 
-=======
-$ad->user_id = 1; 
-$ad->name = 'Breathe Freshner';
-$ad->description = 'Try our breathe mints, you\'ll thank us.'; 
->>>>>>> 557c56683611f19519f02543615dc08822276a45
 $ad->price = 2.22; 
 $ad->img_url = '/img/breathemints.jpg';
 $ad->save();
