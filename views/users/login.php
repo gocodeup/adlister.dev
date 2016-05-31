@@ -1,11 +1,40 @@
-<div class="container">
+<?php 
 
+require_once __DIR__ . "../../../utils/Auth.php";
+require_once __DIR__ . "../../../utils/Input.php";
+
+$username_or_email = Input::get('email_user');
+$password = Input::get('password');
+
+if (Auth::check()) {
+	header('Location: home');
+	exit();
+} 
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+	if (Auth::attempt($username_or_email,$password)) {
+		header('Location: account');
+		exit();	
+	} 
+}
+?>
+
+<div class="container">
 	<section id="login">
 
 		<div class="row">
+            <div class="col-sm-2 col-md-2">
+                <img src="/img/cornerstore.png">
+            </div>
 
-			<h1 class="section-title">Login To OooLister</h1>
+            <div class="col-sm-8 col-md-8 text-left">
+                <h1 class="section-title header-margin">Login to Peddler's Corner</h1>
+            </div>
+        </div>
 
+        <hr>
+
+        <div class="row">
 			<?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
                 <div class="alert alert-danger">
                     <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
@@ -28,23 +57,23 @@
 					<div class="form-group">
 					    <input type="text" class="form-control" id="email_user" name="email_user" placeholder="Email or Username" data-required>
 					</div>
+
 					<div class="form-group">
 					    <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required>
 					</div>
+
 					<div class="row">
 						<div class="col-sm-6">
 							<button type="submit" class="btn btn-primary">Login</button>
 						</div>
+
 						<div class="col-sm-6 text-right">
 							<a href="/signup" class="btn btn-success">Go To Signup</a>
 						</div>
 					</div>
 				</form>
-
 			</div>
-
 		</div>
 
 	</section>
-
 </div>
