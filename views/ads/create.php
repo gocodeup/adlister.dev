@@ -10,8 +10,11 @@ if(isset($_POST['ad_name'])){
     $ads->phone = $_POST['phone'];
     $ads->email = $_POST['email'];
     $ads->location = $_POST['location'];
+    $ads->user_id = $_SESSION['LOGGED_IN_ID'];
     $ads->img_url = saveUploadedImage('img_url');
     $ads->save();
+    header("Location: /");
+    die();
 }
 
 ?>
@@ -23,7 +26,7 @@ if(isset($_POST['ad_name'])){
 <!-- Form for submitting new ad information -->
   <div class="row">
 
-      <form method="POST" action="/" class="col s12" enctype="multipart/form-data">
+      <form method="POST" action="/ads/create" class="col s12" enctype="multipart/form-data">
 
           <div class = "row">
               <div class="input-field col s6">
