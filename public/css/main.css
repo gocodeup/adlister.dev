@@ -1,6 +1,5 @@
 body, html{
     font-family: 'Oswald', sans-serif;
-    background-color: #f5f0f0;
     text-align: center;
     height: 100%;
     margin: 0;
@@ -10,7 +9,8 @@ body, html{
     margin-top: -175px;
 }
 #features {
-    margin-top: 100px;
+    margin-top: 50px;
+    background-color: white;
 }
 
 #container {

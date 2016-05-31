@@ -1,10 +1,10 @@
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
-    <ol class="carousel-indicators">
+    <!-- <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
+    </ol> -->
 
   <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
@@ -27,12 +27,6 @@
 
         <div class="row">
 
-            <div class="col-md-12">
-
-                <h1 class="text-center">Welcome To Sell Your Crap</h1>
-
-            </div>
-
         </div>
 
     </section>
@@ -41,7 +35,7 @@
 
         <div class="row">
 
-            <h3 class="section-title">Our Featured Items</h3>
+            <h1 class="section-title">Our Featured Items</h1>
             <!-- Placeholder for featured items.-->
               <div class="row">
                 <div class="col-xs-12 col-md-4">
