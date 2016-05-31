@@ -2,11 +2,14 @@
 
     <nav class="navbar navbar-default navbar navbar-inverse">
         <div class="form-group signinbut">
-            <a href="/users/login" type="submit" class="btn btn-default navbut">Sign Out</a>
+            <a href="/users/login" type="submit" class="btn btn-default navbut">Log Out</a>
         </div>
 
         <div class="form-group signinbut">
-            <a href="/users/login" type="submit" class="btn btn-default navbut">Sign in</a>
+            <a href="/users/login" type="submit" class="btn btn-default navbut">Log In</a>
+        </div>
+        <div class="form-group signinbut">
+            <a href="/signup" class="btn btn-default navbut">Sign Up!</a>
         </div>
 
         <div class="form-group signinbut">

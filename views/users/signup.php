@@ -4,7 +4,7 @@ $_ENV = include __DIR__ . '/../../.env.php';
 require_once '../database/db_connect.php';
 require_once __DIR__ . '/../../bootstrap.php';
 
-var_dump($_SESSION);
+// var_dump($_SESSION);
     if(Input::has('name')){
         
         $user = new User();
