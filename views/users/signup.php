@@ -83,7 +83,7 @@ if(isset($_POST['name'])){
                             </div>
                 
                         <p>By creating account you agree to adlisters terms and conditions</p>
-                        <p>Already have an account?<a href="/users/login.php">Sign in</a></p>
+                        <p>Already have an account?<a href="/users/login">Log in</a></p>
                 </form>
             </div>
         </div>
