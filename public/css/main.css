@@ -5,6 +5,12 @@ body {
     font-family: 'Goudy Bookletter 1911', serif;
 }
 
+.hello-user {
+    color: #fcf9f6;
+    margin-top: 14px;
+    font-size: 1.2em;
+}
+
 /*that line between header and content*/
 hr {
     border-top: 1px solid #c0c6c8;
