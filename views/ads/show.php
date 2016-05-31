@@ -15,19 +15,21 @@
             </div>
         </div>
         <div class="col s8">
-            <p>ITEM <?=$ad['id']; ?>: <?=$ad['ad_name']; ?></p>
+            <p><strong><?=$ad['ad_name']; ?></strong></p>
             <p><span class="card-title activator brown-text text-darken-4"></span></p>
         </div>
         <div class ="col s8">
 
+            <p> Price: <?=$ad['price']; ?> </p>
+            <p> Description:<?= $ad['ad_description'] ?>  </p>
             <p> User: <?php foreach($users as $user){
                 if ($ad['user_id'] == $user['id']){ ?>
                 <a href="../users/account?user_id=<?= $user['id'];?>"> <?= $user['username']; ?> </a> </p>
                 <?php } } ?>
-            <p> <?= $ad['ad_description'] ?>  </p>
-            <p> Price: <?=$ad['price']; ?> </p>
             <p> Email: <?= $ad['email']; ?> </p>
             <p> Phone: <?= $ad['phone']; ?> </p>
+            <p> Location: <?= $ad['location']; ?> </p>
+
 <!-- Display only if user is logged in, otherwise hide -->
             <p> 
                 <?php if($ad['user_id'] == $_SESSION['LOGGED_IN_ID']){ ?> </p>
