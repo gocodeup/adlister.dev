@@ -61,7 +61,7 @@ class Model {
             self::$dbc = $dbc;
         }
     }
-
+    
 
     /*
      * Persist the object to the database
@@ -73,7 +73,6 @@ class Model {
         //Perform the proper action - if the `id` is set, this is an update, if not it is a insert
         if ( ! empty( $this->attributes ) && isset( $this->attributes['id'] ) )
         {
-
             $this->update( $this->attributes['id'] );
         }
         else
