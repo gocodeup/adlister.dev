@@ -47,7 +47,7 @@ if(isset($_POST['name'])){
                 <?php endif; ?>
 
 <!-- edit the action -->
-                <form method="POST" action="/template/users-signup.php" >
+                <form method="POST" action="/">
                 <div class="container">
                     <div class="row">
                         
@@ -83,7 +83,7 @@ if(isset($_POST['name'])){
                             </div>
                 
                         <p>By creating account you agree to adlisters terms and conditions</p>
-                        <p>Already have an account?<a href="">Sign in</a></p>
+                        <p>Already have an account?<a href="/users/login.php">Sign in</a></p>
                 </form>
             </div>
         </div>

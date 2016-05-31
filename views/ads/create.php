@@ -23,7 +23,7 @@ if(isset($_POST['ad_name'])){
 <!-- Form for submitting new ad information -->
   <div class="row">
 
-      <form method="POST" action="/template/createAdTemplate.php" class="col s12" enctype="multipart/form-data">
+      <form method="POST" action="/" class="col s12" enctype="multipart/form-data">
 
           <div class = "row">
               <div class="input-field col s6">
