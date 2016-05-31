@@ -4,7 +4,7 @@ $_ENV = include __DIR__ . '/../../.env.php';
 require_once '../database/db_connect.php';
 require_once __DIR__ . '/../../bootstrap.php';
 
-// var_dump($_SESSION);
+var_dump($_SESSION);
     if(Input::has('name')){
         
         $user = new User();
@@ -15,7 +15,13 @@ require_once __DIR__ . '/../../bootstrap.php';
         $user->confirm = Input::get('confirm');
 
         $user->save();
-        header('Location: /users/account');
+        if (Auth::attempt(Input::get('username'),Input::get('password'))) {
+            header('Location: /users/account');
+            exit(); 
+        } else {
+            var_dump($user->username);
+            var_dump("That information was incorrect. Please try again");
+        }
 
     }
         $_SESSION["signedUp"] = true; //TODO add this inside the if above after the $user->save
@@ -45,7 +51,7 @@ require_once __DIR__ . '/../../bootstrap.php';
             <p class="sign-up-free"> It's always free and always will be.</p>
 ​
             <div class="formdiv">
-                <form class="form" method="POST" action="#">
+                <form class="form" method="POST" action="/signup">
                     <div class="row">
                         <div class="col-xs-12 name">
                             <input name="name" type="text" placeholder="Name" class="form-control input-lg" id="name">
