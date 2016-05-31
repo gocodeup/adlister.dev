@@ -8,7 +8,7 @@ $loginUsername = escape(Input::get('loginUsername'));
 $loginPassword = escape(Input::get('loginPassword'));
 
 if(Auth::attempt($loginUsername, $loginPassword)) {
-  header ('Refresh:0');
+  header ('Location: /users/account');
   exit();
 }
 // Signup Functionality. Likely needs to be refactored
