@@ -4,6 +4,11 @@ if(!Auth::check()) {
     exit();
 }
 
+if(Auth::id() !== $_GET['id']){
+    header('Location: /');
+    exit();
+}
+
 if (isset($_POST['name_field'])){ 
     $user = User::find($_GET['id']);
     $user->user_img = saveUploadedImage('img_url');
@@ -46,10 +51,6 @@ foreach ($users as $user) {
                     <p>
                         <a class="waves-effect waves-light btn" href="/ads/create">Create AD</a>
                     </p>
-                </li>
-                <li class="collection-item avatar">
-                    <i class="material-icons circle blue">grade</i>
-                        <span class="title">VIEW ADS</span>
                 </li>
             </ul>
         </div>
