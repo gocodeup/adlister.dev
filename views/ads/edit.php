@@ -4,14 +4,16 @@ require_once __DIR__ . '/../../models/Ad.php';
 require_once __DIR__ . "../../../utils/helper_functions.php";
 require_once __DIR__ . '/../../utils/Auth.php';
 
-
-
 $ad = Ad::find(Input::get('id'));
 if(!empty($_POST)) {
     $ad->title = Input::get('title');
     $ad->price = Input::get('price');
     $ad->description = Input::get('description');
-    $ad->image_url = saveUploadedImage('img_url');
+
+        if(!empty(Input::get('image_url'))) {
+            $ad->image_url = saveUploadedImage('image_url');
+        }
+
     $ad->save();
     header("Location: /account");
 }
