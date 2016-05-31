@@ -2,17 +2,18 @@
 	require_once __DIR__ . '/../../models/Ads.php';
 	require_once __DIR__ . '/../../utils/Input.php';
 
-	$ads = new Ads;
 	$id = Input::get('id');
 	$ad = Ads::find($id);
 	$user_id = $ad->attributes['user_id'];
 	$user = User::find($user_id);
+	$ads = $ad->attributes;
+	// var_dump($ad);
 ?>
 <!--Page for single advertisement -->
 <div class="row">
-	<h3><?= $ads['name']; ?></h3>
+	<h1><?= $ads['name']; ?></h1>
 	<div class="col-md-4 col-md-offset-2 items single-item">
-	    <img src="<?= $ads->attributes['img_url']; ?>">
+	    <img class="show-image" src="<?= $ads['img_url']; ?>">
 	</div>
 	<div class="col-md-5 item-info-right">
 		<p>$<?= $ads['price']; ?></p>
