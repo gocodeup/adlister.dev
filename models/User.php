@@ -49,10 +49,11 @@ class User extends Model {
     {
         self::dbConnect();
         $user = [];
-        $stmt = self::$dbc->prepare("SELECT * FROM users JOIN ads ON users.id = ads.user_id WHERE users.id = :id");
+        $stmt = self::$dbc->prepare("SELECT * FROM users LEFT JOIN ads ON users.id = ads.user_id WHERE users.id = :id");
         $stmt->bindValue(":id", $id, PDO::PARAM_INT);
         $stmt->execute();
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
         return $user;
     }
 

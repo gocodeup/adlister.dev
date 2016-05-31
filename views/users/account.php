@@ -47,6 +47,7 @@ if (!empty($adTitle) && !empty($adDescription) && !empty($adPrice) && !empty($ad
             <div class="col-sm-12 col-lg-offset-1">
                 <div class="col-xs-12 col-sm-4 text-center">
                     <img id="profile-pic" src="<?= $user['image'] ?>">
+
                     <!-- <button class="col-xs-6 col-xs-offset-3 btn btn-success"><span class="fa fa-plus-circle"></span> Follow </button> -->
                 </div>
                 <div class="col-xs-12 col-sm-8">
