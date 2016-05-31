@@ -24,6 +24,7 @@ $user = User::find($user_id);
             <div class="row">
                 <div class="col-sm-6">
                     <h2>Price: $<?= $ad->attributes['price']; ?></h2>
+                    <h3>Location: <?= $user->attributes['location']; ?></h3>
                     <h3>Contact Information:</h3> 
                     <p><?= $user->attributes['email']; ?></p>
                 </div>
