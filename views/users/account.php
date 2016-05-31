@@ -56,19 +56,19 @@
 	            	<p>An email has been sent to "user email goes here" with instructions for verifying your account.</p>
 	            </div>
 	            <div class="modal-footer">
-	                 <button type="button" class="btn btn-danger btn-lg" id="yes">OK</button>
+	                 <button type="button" data-dismiss="modal" class="btn btn-danger btn-lg" id="yes">OK</button>
 	            </div>
 	        </div>
 	    </div>
 	</div>
 </div>
 
-<?php 
-var_dump($_SERVER['HTTP_HOST']);
-
-?>
-<script>
-    $(window).load(function(){
-    	$('#dialog').modal('show');
-	});
-</script>
+<?php if($_SESSION['signedUp']): ?>
+	<?php unset($_SESSION['signedUp']) ?>
+	<script>
+	    $(window).load(function(){
+	    		$('#dialog').modal('show');
+		});
+	</script>
+<?php endif; ?>
+    	

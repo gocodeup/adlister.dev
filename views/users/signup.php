@@ -16,6 +16,7 @@ require_once __DIR__ . '/../../bootstrap.php';
 
         $user->save();
     }
+        $_SESSION["signedUp"] = true; //TODO add this inside the if above after the $user->save
 
 
 ?><!-- END OF PHP -->
@@ -61,7 +62,7 @@ require_once __DIR__ . '/../../bootstrap.php';
                         </div>
                     </div>
                     <div class="centerdiv">
-                        <button class="btn btn-danger btn-lg sign-up-btn" type="submit" id="submit" value="SIGN UP!">SIGN UP!</button>
+                        <a href="/users/account" class="btn btn-danger btn-lg sign-up-btn" type="submit" id="submit" value="SIGN UP!">SIGN UP!</a>
                     </div>
                 </form>
             </div>

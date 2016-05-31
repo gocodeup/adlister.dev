@@ -35,7 +35,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12 text-right">
-							<input type="submit" class="btn btn-danger btn-lg login-btn sign-up-btn">
+							<a href="/users/account" type="submit" class="btn btn-danger btn-lg login-btn sign-up-btn">SUBMIT</a>
 							<a href="/signup" class="btn btn-danger btn-lg sign-up-btn">GO TO SIGN UP</a>
 						</div>
 					</div>
