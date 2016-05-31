@@ -15,10 +15,6 @@ require_once __DIR__ . '/../../bootstrap.php';
         header('Location: /users/account');
         exit(); 
     } 
-// var_dump($auth->username);
-// var_dump($auth->password);
-// var_dump($_POST);
-// var_dump($_SESSION);
 
 ?>
 <div class="container" id="container">
