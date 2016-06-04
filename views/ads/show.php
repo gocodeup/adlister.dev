@@ -5,6 +5,7 @@
 
 <div class="section">
     <div class="row isotope">
+        <!-- Loops through ad and finds the ad from GET id. -->
     <?php foreach($ads as $ad) {
         if ($ad['id'] == $_GET['id']){  ?>
 
@@ -21,7 +22,8 @@
             <p><span class="card-title activator brown-text text-darken-4"></span></p>
         </div>
         <div class ="col s8">
-
+            <!-- Finds the user for the ad and displays it from the user -->
+            <!-- and ad user_id. -->
             <p> User: <?php foreach($users as $user){
                 if ($ad['user_id'] == $user['id']){ ?>
                 <?= $user['username']; ?> </p>
@@ -30,8 +32,8 @@
             <p> Price: <?=$ad['price']; ?> </p>
             <p> Email: <?= $ad['email']; ?> </p>
             <p> Phone: <?= $ad['phone']; ?> </p>
-<!-- Display only if user is logged in, otherwise hide -->
-            <p> 
+            <!-- Display delete and edit only if user is logged in, otherwise hide -->
+            <p>
                 <?php if($ad['user_id'] == $_SESSION['LOGGED_IN_ID']){ ?> </p>
                 <a class="waves-effect waves-light green btn" href="edit?id=<?=$ad['id']?>">Edit</a>
 
@@ -39,7 +41,7 @@
             <p> <?php } ?> </p>
 
         </div>
-    <?php }} ?> 
+    <?php }} ?>
     </div>
 
 </div>

@@ -9,22 +9,22 @@ if(Auth::id() !== $_GET['id']){
     exit();
 }
 
-if (isset($_POST['name_field'])){ 
+if (isset($_POST['name_field'])){
     $user = User::find($_GET['id']);
     $user->user_img = saveUploadedImage('img_url');
     $user->save();
 }
 foreach ($users as $user) {
-    if ($_GET['id'] == $user['id']){ 
+    if ($_GET['id'] == $user['id']){
 
-?> 
+?>
 <div class="row">
     <a class="title" href="">ACCOUNT INFO</a>
     <div class="row isotope">
         <div class="col s12 m3">
             <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
-                <?php if(!($user['user_img'])){ ?>
+                <?php if($user['user_img']){ ?>
                     <img height="180" src="<?= $user['user_img']?>" class="responsive-img wp-post-image" alt="
                     ITEM_1" title="item_1" />
                 <?php }else { ?>
@@ -51,7 +51,7 @@ foreach ($users as $user) {
                     <p>
                         <a class="waves-effect waves-light btn" href="/ads/create">Create AD</a>
                     </p>
-                </li>                
+                </li>
                 <li class="collection-item avatar">
                     <i class="material-icons circle blue">grade</i>
                     <p>
@@ -90,5 +90,3 @@ foreach ($users as $user) {
 <?php }} ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-
-
