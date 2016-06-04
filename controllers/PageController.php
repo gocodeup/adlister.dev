@@ -26,6 +26,54 @@ function pageController()
     // switch that will run functions and setup variables dependent on what route was accessed
     switch ($request) {
 
+        
+        case '/':
+             $main_view = "../views/home.php";
+             break;
+
+        case '/ads':
+            $main_view ='../views/ads/index.php';
+            break;
+
+        case '/ads/create':
+            $main_view ='../views/ads/create.php';
+            break;
+
+        case '/ads/edit':
+            $main_view ='../views/ads/edit.php';
+            break;
+
+        case '/ads/delete':
+            $main_view ='../views/ads/delete.php';
+            break;
+
+        case '/ads/show':
+            $main_view ='../views/ads/show.php';
+            break;
+
+        case '/users/logout':
+            $main_view ='../views/users/logout.php';
+            break;
+
+        case '/users/account':
+            $main_view ='../views/users/account.php';
+            break;
+
+        case '/users/edit':
+            $main_view ='../views/users/edit.php';
+            break;
+
+        case '/users/login':
+            $main_view ='../views/users/login.php';
+            break;
+
+        case '/users/signup':
+            $main_view ='../views/users/signup.php';
+            break;
+
+        case '/users/terms':
+            $main_view ='../views/users/terms.html';
+            break;
 
         default:    // displays 404 if route not specified above
             $main_view = '../views/404.php';
@@ -33,6 +81,14 @@ function pageController()
     }
 
     $data['main_view'] = $main_view;
+
+    $ads = Ads::all();
+
+    $data['ads'] = $ads;
+
+    $users = User::all();
+
+    $data['users'] = $users;
 
     return $data;
 }

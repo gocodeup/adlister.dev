@@ -1,3 +1,5 @@
 .env.php
 .env.*.php
 /.idea
+public/css
+public/img

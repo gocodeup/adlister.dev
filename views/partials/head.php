@@ -1,1 +1,3 @@
-<!--Partial for head.  Good place to include things like css files.-->
+<div class="valign-wrapper">
+  <h1 class ="center-block">Welcome to Ad Lister!</h1>
+  </div>
