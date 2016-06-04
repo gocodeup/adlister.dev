@@ -2,7 +2,7 @@
 
 
 // logic for submitting ad information to the database
-if(isset($_POST['ad_name'])){ 
+if(isset($_POST['ad_name'])){
     $ads = new Ads();
     $ads->ad_name = $_POST['ad_name'];
     $ads->ad_description = $_POST['description'];

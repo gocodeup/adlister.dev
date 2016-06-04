@@ -1,11 +1,13 @@
 <?php
-
+// checks if user is logged in. If not it will
+// redirect.
 if(!Auth::check()) {
     header('Location: /users/login');
     exit();
 }
-
-if(isset($_POST['name'])){ 
+// finds user and allows updates to happen if POST data
+// is found on the page.
+if(isset($_POST['name'])){
     $user = User::find($_SESSION['LOGGED_IN_ID']);
     $user->name = Input::get('name');
     $user->username = Input::get('username');
@@ -20,7 +22,7 @@ if(isset($_POST['name'])){
 <head>
     <title>Edit</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-      
+
 </head>
 <body>
 
@@ -34,7 +36,7 @@ if(isset($_POST['name'])){
             <h1 class="section-title">Edit Account</h1>
 
             <div class="col-md-6 col-md-offset-3">
-
+                <!-- This is the error messages -->
                 <p>Please fill out the information below so we can update your account.</p>
                 <?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
                     <!-- <div class="alert alert-danger"> -->
@@ -49,7 +51,7 @@ if(isset($_POST['name'])){
                     <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
                 <?php endif; ?>
 
-                <!-- the action will redirect to the user account -->
+                <!-- the form will redirect home if filled out correctly -->
                 <form method="POST" action="/">
                     <div class="container">
                             <div class="row">
@@ -66,11 +68,10 @@ if(isset($_POST['name'])){
                                 <div class="input-field col s12">
                                     <input placeholder="Username" id="username" type="text" name="username" class="validate">
                                 </div>
-                            </div>    
+                            </div>
 
                              <div class="center-align">
                                 <input type="submit" class="waves-effect waves-light btn-large" value="Update Account">
-                               <!--  <a class="waves-effect waves-light btn-large">Create Account</a> -->
                             </div>
 
                         </form>

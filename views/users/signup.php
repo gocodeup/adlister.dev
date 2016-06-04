@@ -1,5 +1,7 @@
 <?php
-if(isset($_POST['name'])){ 
+
+// This section validates user if signing up.
+if(isset($_POST['name'])){
     $user = new User();
     $user->name = $_POST['name'];
     $user->username = $_POST['username'];
@@ -29,6 +31,7 @@ if(isset($_POST['name'])){
             <h1 class="section-title">Signup For Adlister</h1>
             <div class="col-md-6 col-md-offset-3">
                 <p>Please fill out the information below so we can create your account.</p>
+                <!-- These are the ERROR messages if login is succesful or fails -->
                 <?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
                     <!-- <div class="alert alert-danger"> -->
                         <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
@@ -42,11 +45,11 @@ if(isset($_POST['name'])){
                     <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
                 <?php endif; ?>
 
-<!-- edit the action -->
+                <!-- This is the form for signing up -->
                 <form method="POST" action="/users/signup">
                 <div class="container">
                     <div class="row">
-                        
+
                             <div class="row">
                                 <div class="input-field col s12">
                                     <input placeholder="Name" id="name" type="text"  name="name"class="validate">
@@ -61,7 +64,7 @@ if(isset($_POST['name'])){
                                 <div class="input-field col s12">
                                     <input placeholder="Username" id="username" type="text" name="username" class="validate">
                                 </div>
-                            </div>    
+                            </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <input placeholder="Password" id="password" type="password" name="password" class="validate">
@@ -70,13 +73,12 @@ if(isset($_POST['name'])){
                             <div class="row">
                                 <div class="input-field col s12">
                                     <input placeholder="Confirm Password" id="passwordValidate" type="password" name="passwordValidate" class="validate">
-                                    <!-- <label for="password">Confirm Password</label> -->
                                 </div>
                             </div>
                             <div class="center-align">
                                 <input type="submit" class="waves-effect waves-light btn-large" value="create account">
                             </div>
-                
+
                         <p>By creating account you agree to adlisters <a href="/users/terms">terms and conditions</a></p>
                         <p>Already have an account?<a href="/users/login">Log in</a></p>
                 </form>

@@ -13,6 +13,7 @@ require_once __DIR__ . '/../bootstrap.php';
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 </head>
 <body>
+    <!-- This area requires all the partials to display the data to the pages -->
     <?php require '../views/partials/navbar.php'; ?>
 
     <?php require $main_view; ?>

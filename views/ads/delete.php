@@ -1,10 +1,13 @@
-<?php 
+<?php
+// Checks to see if user is logged in, If not it will
+// reddirect to login.
 if(!Auth::check()) {
     header('Location: /users/login');
     exit();
 }
-
-if(isset($_GET['id'])){ 
+// If logged in and delete is pressed
+// it will delete from database.
+if(isset($_GET['id'])){
     $ads = Ads::find($_GET['id']);
     $ads->delete();
 }
@@ -16,7 +19,7 @@ if(isset($_GET['id'])){
 <head>
     <title>Delete</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-      
+
 </head>
 <body>
     <div class="valign-wrapper">

@@ -1,7 +1,8 @@
-<?php 
+<?php
 
-
-if(isset($_POST['ad_name'])){ 
+// if there is POST data if will find the ad from
+// Database and edit it.
+if(isset($_POST['ad_name'])){
     $ads = Ads::find($_GET['id']);
     $ads->ad_name = $_POST['ad_name'];
     $ads->ad_description = $_POST['description'];
@@ -20,8 +21,8 @@ if(isset($_POST['ad_name'])){
   <h1> Edit Ad Listing </h1>
 
 <div class="row">
-
-      <form method="POST" action="/ads/edit?id=<?= $_GET['id'] ?>" class="col s12" enctype="multipart/form-data">
+        <!-- FORM for editing the ads -->
+        <form method="POST" action="/ads/edit?id=<?= $_GET['id'] ?>" class="col s12" enctype="multipart/form-data">
 
           <div class = "row">
               <div class="input-field col s6">

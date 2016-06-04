@@ -1,4 +1,4 @@
-
+<!-- This is the navbar  -->
 <div class="navbar">
   <nav>
     <div class="nav-wrapper">
@@ -18,4 +18,3 @@
     </div>
   </nav>
 </div>
-
