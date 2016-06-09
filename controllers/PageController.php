@@ -27,9 +27,9 @@ function pageController()
     // switch that will run functions and setup variables dependent on what route was accessed
     switch ($request) {
 
-        // case '/':
-        //     $main_view = '../view/landing.php';
-        //     break
+        case '/':
+            $main_view = '../views/home.php';
+            break;
 
         case '/ads':
             $main_view = '../views/ads/index.php';
