@@ -31,7 +31,6 @@ function saveUploadedImage($input_name)
             {
                 $image_url = '/img/uploads' . $newName . '.' . $extension;
                 move_uploaded_file($tempFile, __DIR__ . '/../public' . $image_url);
-                var_dump($image_url);
                 return $image_url;
             }
             else

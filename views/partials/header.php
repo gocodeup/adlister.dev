@@ -63,7 +63,7 @@ if (!empty($signupNameField) && !empty($signupEmailField) && !empty($signupUsern
         <?php } ?> 
       </ul>
 
-       <div class="nav-menu btn-group pull-right" role="group">
+     <div class="nav-menu btn-group pull-right" role="group">
 
         <!-- Logout & Profile Buttons -->
         <!-- These buttons only show if the user is logged IN -->

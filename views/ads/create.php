@@ -31,10 +31,10 @@ if(Input::has('title')) {
 		<form role="form" method="POST" enctype="multipart/form-data">  
 
 			<label>Title</label>
-		    <input name="title" class="form-control entry-fields" id="ad_title" placeholder="characters only" required>
+		    <input name="title" class="form-control entry-fields" id="ad_title" placeholder="A Title For Your Ad" required>
 		    
 		    <label>Price</label>
-		    <input name="price" class="form-control entry-fields" id="ad_price" type="number" min="0" placeholder="numbers only" required>
+		    <input name="price" class="form-control entry-fields" id="ad_price" type="number" min="0" placeholder="Your Price For The Item" required>
 	
 		    <label>Select an image to upload</label>
 		    <input type="file" class="form-control entry-fields" name="adImg" id="adImg" required>
@@ -47,10 +47,10 @@ if(Input::has('title')) {
 			  </select>
 
 			<label>Description</label>
-		    <input name="description" class="form-control entry-fields" id="ad_description" placeholder="characters only" required>
+		    <textarea name="description" class="form-control entry-fields" id="ad_description"  required> </textarea>
 
 		    <label>Tags</label>
-		    <input name="tags" class="form-control" placeholder="characters only" required>
+		    <input name="tags" class="form-control" placeholder="Pick a few tags for your item. Separate them by commas." required>
 
   			<button type="submit" class="btn btn-default" id="ad_submit" >Create Ad</button>
 		</form>
