@@ -9,11 +9,10 @@ class User extends Model {
     // checks if the attribute being saved is password and hashes it if so
     public function __set($name, $value)
     {
-
-    	if ($name == 'password')
-    	{
-    		$value = password_hash($value, PASSWORD_DEFAULT);
-    	}
+        if ($name == 'password')
+        {
+            $value = password_hash($value, PASSWORD_DEFAULT);
+        }
 
         parent::__set($name, $value);
     }
@@ -21,17 +20,16 @@ class User extends Model {
     // finds and returns instance of user based on email or username
     public static function findByUsernameOrEmail($username_or_email)
     {
+        self::dbConnect();
 
-    	self::dbConnect();
+        $query = 'SELECT * FROM ' . self::$table . ' WHERE username = :username OR email = :email';
 
-    	$query = 'SELECT * FROM ' . self::$table . ' WHERE username = :username OR email = :email';
-
-    	$stmt = self::$dbc->prepare($query);
+        $stmt = self::$dbc->prepare($query);
         $stmt->bindValue(':username', $username_or_email, PDO::PARAM_STR);
         $stmt->bindValue(':email', $username_or_email, PDO::PARAM_STR);
         $stmt->execute();
 
-        //Store the resultset in a variable named $result
+        // @TODO: Store the resultset in a variable named $result
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
 
         // The following code will set the attributes on the calling object based on the result variable's contents
@@ -40,7 +38,6 @@ class User extends Model {
 
         if ( $results )
         {
-
             $instance = new static;
             $instance->attributes = $results;
         }
@@ -48,6 +45,17 @@ class User extends Model {
         return $instance;
     }
 
+    public static function showUser($id)
+    {
+        self::dbConnect();
+        $user = [];
+        $stmt = self::$dbc->prepare("SELECT * FROM users LEFT JOIN ads ON users.id = ads.user_id WHERE users.id = :id");
+        $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $user;
+    }
 
 }
 

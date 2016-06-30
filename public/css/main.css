@@ -1,0 +1,124 @@
+body, #logout-button, #profile-button  {
+  font-family: Open Sans;
+}
+
+.jumbo-home {
+  background-color: white;
+  padding-bottom:0px;
+}
+
+.navbar {
+  background-color: white;
+}
+
+.navbar-brand{
+  padding:5px;
+}
+
+#logo {
+  height:40px;
+}
+
+#logout-button, #profile-button, #login-modal-button, #signup-modal-button {
+  margin-top: 7px;
+}
+
+#description {
+  text-align: center;
+  color: grey;
+}
+
+.photobox {
+  padding-left:0px;
+}
+
+.photobox, .add-desc-box {
+  margin-top:17px;
+  margin-bottom:21px;
+}
+
+.thumbnail {
+  width:95px;
+  margin:0px;
+}
+
+#profile-pic {
+  max-height: 209px;
+}
+
+#about {
+  background-color: #f2f2f2
+}
+
+.item-price {
+  margin-top: 0px;
+  color: grey;
+}
+
+.ad-divider {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.content-link, #forgotPasswordLink{
+  color: rgb(253,63,108);
+  font-weight:bold;
+}
+
+.edit-btn {
+  background-color: rgb(255,146,27);
+  color: white;
+}
+
+.info-btn, #login-button, #signup-button, #signup-modal-button, #dont-delete {
+  background-color: rgb(23,159,147);
+  color: white;
+}
+
+#signup-button {
+  padding: 0px;
+}
+
+.
+
+.profile-ads {
+  margin-top: 20px;
+  background-color: #fafafa;
+}
+
+#dont-delete {
+  margin-left:15px;
+  margin-top: 15px;
+}
+
+#deleteAd {
+  margin-right:15px;
+  margin-top: 15px;
+}
+
+#adActions {
+  margin-bottom:15px;
+}
+
+.entry-fields {
+  width: 50%;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+
+#adImg, #ad_price, #category, #ad_submit {
+  width: 25%;
+}
+
+#ad_description {
+  height: 10em;
+}
+
+#ad_submit {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-color: rgb(23,159,147);
+  color: white;
+}

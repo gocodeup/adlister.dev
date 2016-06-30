@@ -2,7 +2,7 @@
 
 $_ENV = include __DIR__ . '/../.env.php';
 
-class Model {
+class Model { 
 
     protected static $dbc;
     protected static $table;
@@ -58,11 +58,10 @@ class Model {
 
             //Connect to database
             require_once __DIR__ . '/../database/db_connect.php';
-
             self::$dbc = $dbc;
         }
     }
-
+    
 
     /*
      * Persist the object to the database
@@ -74,7 +73,6 @@ class Model {
         //Perform the proper action - if the `id` is set, this is an update, if not it is a insert
         if ( ! empty( $this->attributes ) && isset( $this->attributes['id'] ) )
         {
-
             $this->update( $this->attributes['id'] );
         }
         else
@@ -96,7 +94,7 @@ class Model {
     }
 
     // creates new entry in db
-    protected function insert()
+    protected function insert() 
     {
 
         //After insert, add the id back to the attributes array so the object can properly reflect the id
@@ -218,7 +216,7 @@ class Model {
     /*
      * Find all records in a table
      */
-    public static function all()
+    public static function all()  
     {
 
         self::dbConnect();
