@@ -1,0 +1,15 @@
+
+body{
+	background: url('img/website-background.jpg') no-repeat center center fixed;
+}
+
+/*Create Ad*/
+div.well.well-sm {
+	height: 500px;
+	width: 800px;
+}
+button#button1id.btn.btn-success, button#button2id.btn.btn-danger {
+	margin-top: 15px;
+}
+/*/Create Ad/*/
+
