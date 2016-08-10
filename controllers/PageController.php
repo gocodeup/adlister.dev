@@ -14,7 +14,7 @@ function pageController()
     // if a ? was found, cuts off get variables if not just gives full url
     if ($get_pos !== false)
     {
-
+    //saving to test git
         $request = substr($_SERVER['REQUEST_URI'], 0, $get_pos);
     }
     else
