@@ -29,6 +29,8 @@ function pageController()
 
         default:    // displays 404 if route not specified above
             $main_view = '../views/404.php';
+        case '': 
+            $main_view = '../views/users/login.php';
             break;
     }
 
