@@ -1,7 +1,7 @@
 <?php
-session_start();
-require_once __DIR__ . '/../bootstrap.php';
-
+// session_start();
+// require_once __DIR__ . '/../bootstrap.php';
+$main_view = '';
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,7 +12,7 @@ require_once __DIR__ . '/../bootstrap.php';
 <body>
     <?php require '../views/partials/navbar.php'; ?>
 
-    <?php require $main_view; ?>
+    <?php //require $main_view; ?>
 
     <?php require '../views/partials/common_js.php'; ?>
 </body>
