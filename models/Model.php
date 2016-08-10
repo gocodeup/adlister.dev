@@ -7,16 +7,17 @@ abstract class Model {
     protected static $dbc;
     protected static $table;
 
-    public $attributes = array();
-
+    protected $attributes = array();
 
     /*
      * opens db connection
      */
-    public function __construct()
+    public function __construct(array $attributes = array())
     {
 
         self::dbConnect();
+        $this->attributes = $attributes;
+
     }
 
 
