@@ -1,15 +1,15 @@
 <!--partial view for navbar-->
 <nav class="navbar navbar-dark bg-inverse">
-  <a class="navbar-brand" href="#">Gavlister</a>
+  <a class="navbar-brand" href="/">Gavlister</a>
   <ul class="nav navbar-nav">
     <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Profile<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="/users/account">My Gavlister Account</a></li>
-            <li><a href="/users/account/edit">Edit Account</a></li>
-            <li><a href="/users/account/login">Login</a></li>
+            <li><a href="/account">My Gavlister Account</a></li>
+            <li><a href="/account/edit">Edit Account</a></li>
+            <li><a href="/account/login">Login</a></li>
             <!-- <li role="separator" class="divider"></li> -->
-            <li><a href="/users/account/signup">Signup for Gavlister</a></li>
+            <li><a href="/account/signup">Signup for Gavlister</a></li>
           </ul>
         </li>
     <li class="dropdown">
