@@ -47,6 +47,8 @@ class Model {
     }
 
 
+
+
     /*
      * Connect to the DB
      */
@@ -102,6 +104,7 @@ class Model {
         //After insert, add the id back to the attributes array so the object can properly reflect the id
         //Iterate through all the attributes to build the prepared query
         //Use prepared statements to ensure data security
+
         $columns = '';
         $value_placeholders = '';
 
@@ -147,22 +150,17 @@ class Model {
 
         foreach ($this->attributes as $key => $value)
         {
-
             if ( $key == 'id')
             {
-
                 continue;
             }
-
             if ( $first_value )
             {
-
                 $first_value = false;
                 $query .= $key . ' = :' . $key;
             }
             else
             {
-
                 $query .= ', ' . $key . ' = :' . $key;
             }
         }
@@ -173,7 +171,6 @@ class Model {
 
         foreach ($this->attributes as $key => $value)
         {
-
             $stmt->bindValue(':' . $key, $value, PDO::PARAM_STR);
         }
 
@@ -246,7 +243,6 @@ class Model {
 
         return $instance;
     }
-
 }
 
 ?>
