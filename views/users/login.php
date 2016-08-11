@@ -1,10 +1,10 @@
 <div class="container">
 
-	<section id="login">
+	<section>
 
 		<div class="row">
 
-			<h1 class="section-title">Login To OooLister</h1>
+			<h1 class="header-title">Login To Captain Rainbow Glitter Smash</h1>
 
 			<?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
                 <div class="alert alert-danger">
@@ -19,10 +19,7 @@
                 <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
             <?php endif; ?>
 
-			<div class="col-md-6 col-md-offset-3">
-
-				<p>Login with your email/username and password</p>
-
+			<div class="col-md-6 col-md-offset-3" id="login">
 				<form method="POST" action="" data-validation data-required-message="This field is required">
 
 					<div class="form-group">

@@ -14,3 +14,14 @@
 
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<!-- Font for 404 page -->
+<link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
+
+
+<!-- Site font -->
+<link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+
+<!-- Favicon -->
+<link href="/css/img/favicon.ico" rel="icon" type="image/x-icon" />
