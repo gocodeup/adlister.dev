@@ -3,6 +3,7 @@ body {
    background-repeat: no-repeat;
    background-size: 100% 100%;
    color: white;
+   background-color: black;
 }
 html {
    height: 100%
@@ -17,4 +18,9 @@ button#button1id.btn.btn-success, button#button2id.btn.btn-danger {
 	margin-top: 15px;
 }
 /*/Create Ad/*/
-
+.slide-image {
+	height: 40%;
+	width: 40%;
+	margin-bottom: 20px;
+	margin-left: 30%;
+}
