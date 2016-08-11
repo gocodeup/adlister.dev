@@ -9,6 +9,7 @@
     crossorigin="anonymous"
 >
 <title><?= $title ?> - Gavlister: Gavins For The Masses</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!--[if lt IE 9]>
 <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js">
 </script>
