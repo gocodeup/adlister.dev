@@ -252,4 +252,45 @@
         </div><!-- /#myCarousel -->
 
     </div><!-- /.col-xs-12 -->
+</div>
 
+<nav id="footer">
+    <div class="container">
+        <div id="footer-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li><h5>Sign In</h5></li>
+                            </ul>
+                        </td>                    
+                        <td>
+                            <ul>
+                                <li><h5>Buy</h5></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><h5>Sell</h5></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><h5>Trade</h5></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><h5>Free</h5></li>
+                            </ul>
+                        </td>                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pull-right">
+            <a href="#home" class="page-scroll">Back to Top <span class="fa fa-angle-up"></span></a>
+        </div>
+    </div>
+</nav>
