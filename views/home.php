@@ -9,7 +9,7 @@ html {
 
 body {
   min-height: 3000px;
-  padding-top: 70px;
+  padding-top: 0;
   font-family: 'Open Sans', sans-serif;
   background-image: 
 }
