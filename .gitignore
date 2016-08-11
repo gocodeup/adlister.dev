@@ -1,4 +1,4 @@
 .env.php
 .env.*.php
 /.idea
-.DS_STORE
+.DS_Store
