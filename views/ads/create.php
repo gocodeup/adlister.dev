@@ -23,9 +23,9 @@
 			<div class="form-group">
 				<p>
 					Please choose a picture:<br>
-					<input type="file" name="picture" size="40">
+					<input type="file" name="picture" required size="40">
 				</p>
-			</div?
+			</div>
 
 			<!-- Submit Button -->
 			<div class="form-group">
