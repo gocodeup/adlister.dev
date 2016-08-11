@@ -13,7 +13,7 @@ class Tag extends Model
 
     public function searchTag()
     {
-        $name = Input::get('name');
+        $name = Input::get('tag');
         $searchTag = <<<SEARCHTAG
         SELECT i.name
         FROM items as i
@@ -21,7 +21,7 @@ class Tag extends Model
         ON it.item_id = i.id
         JOIN tags as t
         ON t.id = it.tag_id
-        WHERE t.name LIKE "%$name%"; 
+        WHERE t.name LIKE "%$tag%"; 
 SEARCHTAG;
         return $searchTag;
     }
@@ -29,8 +29,8 @@ SEARCHTAG;
     {
 
     }
-
-
-
 }
+require_once __DIR__ . '/../../misc/tagsclass.php';
+$tag = Tag::searchTag();
+print_r($tag->fetch(PDO::FETCH_ASSOC));
 ?>

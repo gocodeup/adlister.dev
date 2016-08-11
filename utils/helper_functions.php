@@ -27,7 +27,6 @@ function saveUploadedImage($input_name)
     return null;
 }
 
-
 //make function for saving user
 function saveUser()
 {
@@ -40,3 +39,5 @@ function saveUser()
 
 }
 //function redirects to appropiate page after saving
+=======
+>>>>>>> 4badec466800ae998c7184af1f4632e2591c62cf
