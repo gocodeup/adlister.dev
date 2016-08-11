@@ -126,7 +126,6 @@ abstract class Model {
         $query = "INSERT INTO " . static::$table . " ({$columns}) VALUES ({$value_placeholders})";
 
         $stmt = self::$dbc->prepare($query);
-
         foreach ($this->attributes as $column => $value) {
             $stmt->bindValue(':' . $column, $value, PDO::PARAM_STR);
         }
