@@ -1,3 +1,10 @@
+<?php session_start();
+
+require_once '../models/input.php'; 
+
+$_SESSION['username'] = Input::get('username');
+
+?>
 <div class="container">
 
 	<section id="login">
@@ -21,7 +28,9 @@
 	                </div>
 	                <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
 	            <?php endif; ?>
-
+	            <?php if (isset($_SESSION['username'])) : ?>
+	            	<?php require 'successfail.php'; ?>
+	     		<?php endif; ?>
 				<form method="POST" action="" data-validation data-required-message="This field is required">
 
 					<div class="form-group">
