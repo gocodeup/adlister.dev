@@ -26,7 +26,7 @@ class Log
 	}
 
 	//logMessage writes in the file
-	function logMessage($logLevel, $message) {
+	public function logMessage($logLevel, $message) {
 		if (touch($this->filename) && is_writable($this->filename)) {
 			fwrite($this->handle, $this->date . ' ' . $this->time . ' ' . $logLevel . ' ' . $message . PHP_EOL);
 		} else {
@@ -34,11 +34,11 @@ class Log
 		}
 	} 
 
-	function logInfo($message) {	
+	public function logInfo($message) {	
 		$this->logMessage ('INFO', $message);
 	}
 
-	function logError($message) {
+	public function logError($message) {
 		$this->logMessage('ERROR', $message);
 	}
 

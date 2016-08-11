@@ -24,8 +24,9 @@ class Auth
 		// makes sure the instance returned is not empty
 		if ($user == null)
 		{
-
+			$log = new Log();
 			$_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
+			$log->logError($_SESSION['ERROR_MESSAGE']);
 			return false;
 		}
 
