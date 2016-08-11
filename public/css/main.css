@@ -19,8 +19,8 @@ button#button1id.btn.btn-success, button#button2id.btn.btn-danger {
 }
 /*/Create Ad/*/
 .slide-image {
-	height: 40%;
-	width: 40%;
+	height: 30%;
+	width: 30%;
 	margin-bottom: 20px;
 	margin-left: 30%;
 }
