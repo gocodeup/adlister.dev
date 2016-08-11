@@ -6,7 +6,9 @@ require_once __DIR__ . '/../bootstrap.php';
 <!DOCTYPE html>
 <html>
 <head>
+
     <title>GavLister - Gavins For The Masses</title>
+
     <?php require '../views/partials/head.php'; ?>
 </head>
 <body>
