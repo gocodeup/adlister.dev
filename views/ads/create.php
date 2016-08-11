@@ -8,7 +8,7 @@
 			<div class="form-group">
 			  <label class="col-md-4 control-label" for="textinput">Title</label>  
 			  <div class="col-md-4">
-			  <input name="textinput" class="form-control input-md" id="textinput" type="text" required placeholder="Title here"> 
+			  <input name="title" class="form-control input-md" id="textinput" type="text" required placeholder="Title here"> 
 			  </div>
 			</div>
 
@@ -16,7 +16,7 @@
 			<div class="form-group">
 			  <label class="col-md-4 control-label" for="textinput">Description</label>  
 			  <div class="col-md-4"> 
-			  <textarea name="textarea" required placeholder="Ad Description here"></textarea> 
+			  <textarea name="description" required placeholder="Ad Description here"></textarea> 
 			  </div>
 			</div>
 
@@ -30,7 +30,7 @@
 			<!-- Submit Button -->
 			<div class="form-group">
 			  <div class="col-md-8">
-			    <button name="button1id" class="btn btn-success" id="button1id">Submit</button>
+			    <button name="submit button" class="btn btn-success" id="button1id">Submit</button>
 			  </div>
 			</div>
 		</fieldset>
