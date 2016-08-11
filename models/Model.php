@@ -233,12 +233,13 @@ abstract class Model {
 
         //Store the resultset in a variable named $result
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
 
         // The following code will set the attributes on the calling object based on the result variable's contents
 
         $instance = null;
 
-        if ( $results )
+        if ($results)
         {
 
             $instance = new static;

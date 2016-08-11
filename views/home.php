@@ -25,8 +25,7 @@ body {
 }
 
 .jumbotron {
-	opacity: .5;
-	background-color: #99ff99;
+	background-color: #24835B;
 }
 
 
