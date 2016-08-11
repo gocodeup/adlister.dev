@@ -17,7 +17,7 @@
           <ul class="dropdown-menu">
             <li><a href="/ads/create">Create New Gavlisting</a></li>
             <li><a href="/ads/edit">Edit My Gavlistings</a></li>
-            <li><a href="/ads/index">Gavlistings</a></li>
+            <li><a href="/ads">Gavlistings</a></li>
             <!-- <li role="separator" class="divider"></li> -->
             <li><a href="/ads/show">This Gavlisting</a></li>
           </ul>
