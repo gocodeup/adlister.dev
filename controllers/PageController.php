@@ -8,10 +8,10 @@ function pageController()
     $data = [];
     // finds position for ? in url so we can look at the url minus the get variables
     $get_pos = strpos($_SERVER['REQUEST_URI'], '?'); //this checks for a query string
-    // if a ? (query string) was found, cuts off get variables if not just gives full url
+    // if a ? (query string) was found, cuts off to get variables if not just gives full url
     if ($get_pos !== false)
     {   
-        $request = substr($_SERVER['REQUEST_URI'], 0, $get_pos); 
+        $request = substr($_SERVER['REQUEST_URI'], 0, $get_pos); //sets request = to query string
     }
     else
     {
