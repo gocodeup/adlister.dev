@@ -19,7 +19,7 @@
 				<li><a href="/signup">Sign Up</a></li>
 				<li><a href="/login">Login</a></li>
 				<li><a href="#">Logout</a></li>
-				<li><a href="../views/ads/missed_connections.php">Missed Connections</a></li>
+				<li><a href="/pleaseloveme!">Missed Connections</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
