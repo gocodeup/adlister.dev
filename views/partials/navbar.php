@@ -1,13 +1,16 @@
 <style>
 #navbar {
-   background-color: #99ff99;
+   background-color: #72D79E;
+}
+.boldItems {
+  font-weight: bold;
 }
   
 </style>
 
 <!--partial view for navbar-->
 
-<nav class="navbar navbar-default" id="navbar">
+<nav class="navbar" id="navbar">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -17,16 +20,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="../users/home.php">Home</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Items</a></li>
-        <li><a href="#">Sign Up</a></li>
-        <li><a href="#">Log In</a></li>
+        <li class="active"><a href="../ads/index.php">Items<span class="sr-only">(current)</span></a></li>
+        <li><a href="../users/signup.php" class="boldItems">Sign Up</a></li>
+        <li><a href="../users/login.php" class="boldItems" >Log In</a></li>
+  
 
       <form class="navbar-form navbar-left">
         <div class="form-group">
