@@ -19,21 +19,11 @@ button#button1id.btn.btn-success, button#button2id.btn.btn-danger {
 }
 /*/Create Ad/*/
 .slide-image {
-	height: 40%;
-	width: 40%;
+	height: 30%;
+	width: 30%;
 	margin-bottom: 20px;
 	margin-left: 30%;
 }
-<<<<<<< HEAD
-#crgs_title {
-	font-weight: 100px;
-	text-align: center;
-}
-#subtitle {
-	text-align: center;
-}
-=======
-
 .card {
     padding-top: 20px;
     margin: 10px 0 20px 0;
@@ -275,4 +265,38 @@ button#button1id.btn.btn-success, button#button2id.btn.btn-danger {
     margin-bottom: 17px;
 }
 
->>>>>>> a911e5471daa59d3b4d9a111939408118489c87a
+#crgs_title {
+    font-weight: 100px;
+    text-align: center;
+}
+#subtitle {
+    text-align: center;
+}
+
+.center-er {
+    -webkit-align-content: center;
+    align-content: center;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#ad_box {
+    margin-left:10d%;
+    color: grey;
+    height: 100%;
+}
+
+.opacity {
+    padding-top: 20px;
+    margin: 10px 0 20px 0;
+    background-color: rgba(214, 224, 226, 0.2);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.make_white {
+    color: white;
+}
