@@ -12,7 +12,7 @@ session_start();
 <body>
 	<?php require '../views/partials/navbar.php'; ?>
 
-	<?php require $main_view; ?>
+	<?php require "../views/home.php" ?>
 
 	<?php require '../views/partials/common_js.php'; ?>
 </body>
