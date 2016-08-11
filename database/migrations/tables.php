@@ -2,9 +2,13 @@
 
 require_once '../db_connect.php';
 
+$dbc->exec('DROP TABLE IF EXISTS team_members');
+$dbc->exec('DROP TABLE IF EXISTS teams');
+$dbc->exec('DROP TABLE IF EXISTS users');
+
 $query = 'CREATE TABLE IF NOT EXISTS users (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    username VARCHAR(100) NOT NULL,
+    name VARCHAR(100) NOT NULL,
     password VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
 )';
@@ -14,7 +18,7 @@ $dbc->exec($query);
 $query = 'CREATE TABLE IF NOT EXISTS teams (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     user_id INT UNSIGNED NOT NULL,
-    team_name VARCHAR(20) NOT NULL,
+    name VARCHAR(20) NOT NULL,
     logo VARCHAR(200) NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users (id)
