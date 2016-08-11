@@ -15,18 +15,16 @@ function pageController()
 	switch ($request) {
 
 
-		default:    // displays 404 if route not specified above
-			$main_view = '../views/404.php';
-			break;
-		case $request = '': 
-			$main_view = '../views/users/signup.php';
+		
+		case $request = '/': 
+			$main_view = '../views/users/account.php';
 			break;
 		// case (clicked sign up button)
 		// 	$main_view = '../views/users/signup.php';
 		// 	break;
-		// case (clicked login button):
-		// 	$main_view = '../views/users/login.php';
-		// 	break;
+		 case "/login":
+			$main_view = '../views/users/login.php';
+			break;
 		// case (logged in):
 		// 	$main_view = '../views/users/account.php';
 		// 	break;
@@ -38,7 +36,11 @@ function pageController()
 		// 	break;
 		// case (show item):
 		// 	$main_view = '../views/ads/show.php';
-		// 	break;
+		// 	break       '../views/home.php';
+
+		default:    // displays 404 if route not specified above
+			$main_view = '../views/404.php';
+			break;	
 
 
 	}
