@@ -22,28 +22,28 @@ function pageController()
         case '/':
             $main_view = '../views/home.php';
             break;
-        case '/ads/create.php':
+        case '/ads/create':
             $main_view = '../views/ads/create.php';
             break;
-        case '/ads/edit.php':
+        case '/ads/edit':
             $main_view = '../views/ads/edit.php';
             break;
-        case '/ads/index.php':
+        case '/ads/index':
             $main_view = '../views/ads/index.php';
             break;
-        case '/ads/show.php':
+        case '/ads/show':
             $main_view = '../views/ads/show.php';
             break;
-        case '/users/account.php':
+        case '/users/account':
             $main_view = '../views/users/account.php';
             break;
-        case '/users/edit.php':
+        case '/users/edit':
             $main_view = '../views/users/edit.php';
             break;
-        case '/users/login.php':
+        case '/users/login':
             $main_view = '../views/users/login.php';
             break;
-        case '/users/signup.php':
+        case '/users/signup':
             $main_view = '../views/users/signup.php';
             break;
         default:    // displays 404 if route not specified above
