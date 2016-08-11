@@ -8,17 +8,18 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">CRGS</a>
+			<a class="navbar-brand" href="">CRGS</a>
 		</div>
 
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-				<li><a href="#">Items</a></li>
-				<li><a href="#">Create Ad</a></li>
-				<li><a href="#">Sign Up</a></li>
-				<li><a href="#">Login</a></li>
+				<li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
+				<li><a href="/inventory">Items</a></li>
+				<li><a href="/create_ad">Create Ad</a></li>
+				<li><a href="/signup">Sign Up</a></li>
+				<li><a href="/login">Login</a></li>
 				<li><a href="#">Logout</a></li>
+				<li><a href="../views/ads/missed_connections.php">Missed Connections</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
@@ -26,6 +27,7 @@
 					<ul class="dropdown-menu">
 						<li><a href="#">Profile</a></li>
 						<li><a href="#">Create Ad</a></li>
+						<li><a href="#">Edit Missed Connections</a></li>
 						<li><a href="#">Your Ads</a></li>
 						<li><a href="#">Edit Ads</a></li>
 						<li role="separator" class="divider"></li>

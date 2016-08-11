@@ -24,6 +24,15 @@ button#button1id.btn.btn-success, button#button2id.btn.btn-danger {
 	margin-bottom: 20px;
 	margin-left: 30%;
 }
+<<<<<<< HEAD
+#crgs_title {
+	font-weight: 100px;
+	text-align: center;
+}
+#subtitle {
+	text-align: center;
+}
+=======
 
 .card {
     padding-top: 20px;
@@ -266,3 +275,4 @@ button#button1id.btn.btn-success, button#button2id.btn.btn-danger {
     margin-bottom: 17px;
 }
 
+>>>>>>> a911e5471daa59d3b4d9a111939408118489c87a
