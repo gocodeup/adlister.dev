@@ -1,13 +1,11 @@
 <?php
 
-$_ENV = include __DIR__ . '/../.env.php';
-
 class Model {
 
     protected static $dbc;
     protected static $table;
 
-    public $attributes = array();
+    protected $attributes = array();
 
 
     /*
@@ -15,8 +13,12 @@ class Model {
      */
     public function __construct()
     {
-
         self::dbConnect();
+
+    }
+
+    public function setAge($age) {
+        $this->age = $age;
     }
 
 
