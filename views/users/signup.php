@@ -32,18 +32,11 @@ $_SESSION['username'] = Input::get('username');
 	            	<?php require 'successfail.php'; ?>
 	     		<?php endif; ?>
 				<form method="POST" action="" data-validation data-required-message="This field is required">
-
 					<div class="form-group">
-					    <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" data-required>
+					    <input type="text" minlength="3" maxlength="20" class="form-control" id="username" name="username" placeholder="Username" data-required>
 					</div>
 					<div class="form-group">
-					    <input type="text" class="form-control" id="email" name="email" placeholder="Email" data-required>
-					</div>
-					<div class="form-group">
-					    <input type="text" class="form-control" id="username" name="username" placeholder="Username" data-required>
-					</div>
-					<div class="form-group">
-					    <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required>
+					    <input type="password" minlength="5" maxlength="25" class="form-control" id="password" name="password" placeholder="Password" data-required>
 					</div>
 					<div class="row">
 						<div class="col-sm-6">

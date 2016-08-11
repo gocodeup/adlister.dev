@@ -16,12 +16,6 @@ class Model {
         self::dbConnect();
 
     }
-
-    public function setAge($age) {
-        $this->age = $age;
-    }
-
-
     /*
      * Get a value from attributes based on name
      */
@@ -103,9 +97,14 @@ class Model {
     protected function insert()
     {
 
-        //After insert, add the id back to the attributes array so the object can properly reflect the id
-        //Iterate through all the attributes to build the prepared query
-        //Use prepared statements to ensure data security
+        $allEntries = self::allNames();
+        var_dump($allEntries);
+        foreach ($allEntries as $entry => $username) {
+            if ($this->attributes['username'] === $username) {
+                echo "poop";
+                return false;
+            }
+        }
 
         $columns = '';
         $value_placeholders = '';
@@ -244,6 +243,22 @@ class Model {
         }
 
         return $instance;
+    }
+
+    public static function allNames() {
+        self::dbConnect();
+
+        //Learning from the previous method, return all the matching records
+        //Create select statement using prepared statements
+        $query = 'SELECT name FROM ' . static::$table;
+
+        $stmt = self::$dbc->prepare($query);
+        $stmt->execute();
+
+        //Store the resultset in a variable named $result
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $results;
     }
 }
 
