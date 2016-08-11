@@ -5,7 +5,7 @@
 	<title>Sign Up</title>
 </head>
 <body>
-	<?php require '../view/users/signup.php'; ?>
+	<?php require_once '../views/users/signup.php'; ?>
 </body>
 </html>
 
