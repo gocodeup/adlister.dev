@@ -27,3 +27,17 @@ function saveUploadedImage($input_name)
     return null;
 }
 
+//make function for saving user
+function saveUser()
+{
+    $user = new User();
+    $user->name = Input::get('name');
+    $user->name = Input::get('email');
+    $user->name = Input::get('username');
+    $user->name = Input::get('password');
+
+
+}
+//function redirects to appropiate page after saving
+=======
+>>>>>>> 4badec466800ae998c7184af1f4632e2591c62cf
