@@ -23,7 +23,6 @@ function pageController()
             $main_view = '../views/home.php';
             break;
         case '/ads/create.php':
-            // pagecontroller
             $main_view = '../views/ads/create.php';
             break;
         case '/ads/edit.php':
