@@ -98,10 +98,9 @@ class Model {
     {
 
         $allEntries = self::allNames();
-        var_dump($allEntries);
         foreach ($allEntries as $entry => $username) {
-            if ($this->attributes['username'] === $username) {
-                echo "poop";
+            if ($this->attributes['name'] === $username['name']) {
+                echo "Error: The username is already in use. But I don't know how to recover your password, so you're screwed. Sorry.";
                 return false;
             }
         }
@@ -257,7 +256,6 @@ class Model {
 
         //Store the resultset in a variable named $result
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
         return $results;
     }
 }
