@@ -17,6 +17,7 @@ function pageController()
 		case '/': 
 			$main_view = '../views/home.php';
 			break;
+
 		case '/login-successful':
 			$main_view = '../views/users/account.php';
 			break;
@@ -35,6 +36,9 @@ function pageController()
 			break;
 		case '/item': 
 			$main_view = '../views/ads/show.php';
+			break;
+		case '/pleaseloveme!': 
+			$main_view = '../views/ads/missed_connections.php';
 			break;
 		default:    // displays 404 if route not specified above
 			$main_view = '../views/404.php';
