@@ -1,0 +1,20 @@
+body {
+   background-image:url(img/website-background.jpg);
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
+   color: white;
+}
+html {
+   height: 100%
+}
+
+/*Create Ad*/
+div.well.well-sm {
+	height: 500px;
+	width: 800px;
+}
+button#button1id.btn.btn-success, button#button2id.btn.btn-danger {
+	margin-top: 15px;
+}
+/*/Create Ad/*/
+
