@@ -2,6 +2,12 @@
 
 require_once __DIR__ . '/Model.php';
 
+class Team extends Model {
+
+    protected static $table = 'teams';
+    
+}
+
 class User extends Model {
 
     protected static $table = 'users';
@@ -21,7 +27,6 @@ class User extends Model {
     // finds and returns instance of user based on email or username
     public static function findByUsernameOrEmail($username_or_email)
     {
-
     	self::dbConnect();
 
     	$query = 'SELECT * FROM ' . self::$table . ' WHERE username = :username OR email = :email';
