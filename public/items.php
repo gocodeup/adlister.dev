@@ -1,41 +1,52 @@
-<?php  
-
-?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Captain Rainbow Glitter Smash</title>
-	<meta charset="utf-8">
-</head>
-<body>
-	<header>
-	</header>
-	<div>
-		<div class="container">
-		<section id="features">			
-			<div>
-			<h3>Featured Items</h3>
-			</div>
-			<div id="item1">
-				<h4 class="itemName">name</h4>
-				<div class="itemImage">image</div>
-				<div class="item description">description</div>
-				<a href="">More Information</a>
-			</div>
-			<div id="item2">
-				<h4 class="itemName">name</h4>
-				<div class="itemImage">image</div>
-				<div class="item description">description</div>
-				<a href="">More Information</a>
-			</div>
-			<div id="item3">
-				<h4 class="itemName">name</h4>
-				<div class="itemImage">image</div>
-				<div class="item description">description</div>
-				<a href="">More Information</a>
-			</div>
-		</section>
-		</div>
-	</div>
-</body>
-</html>
+<div class="container">
+   <div class="row">
+        <h1 id="crgs_title">Items for sale</h1>
+        <h4 id="subtitle">They are real-ish.</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="list-group">
+                <a href="#" class="list-group-item">Weapons</a>
+                <a href="#" class="list-group-item">Armor</a>
+                <a href="#" class="list-group-item">Missed Connections</a>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <img src="css/img/shield.png" alt="Shield">
+                        <div class="caption">
+                            <h4 class="pull-right">$24.48</h4>
+                            <h4><a href="#">Cap's Shield</a>
+                            </h4>
+                            <p>hail hydra</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <img src="css/img/hammer.png" alt="Hammer">
+                        <div class="caption">
+                            <h4 class="pull-right">$64.99</h4>
+                            <h4><a href="#">Thor's Hammer</a>
+                            </h4>
+                            <p>Makes Thunder</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <img src="css/img/lokis_helmet.png" alt="loki's helmet">
+                        <div class="caption">
+                            <h4 class="pull-right">$74.99</h4>
+                            <h4><a href="#">Loki's Helmet</a>
+                            </h4>
+                            <p>it goes on your head.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -15,32 +15,27 @@ function pageController()
 	switch ($request) {
 
 
+		case '/': 
+			$main_view = '../views/home.php';
+			break;
+		case '/inventory': 
+			$main_view = '../views/ads/index.php';
+			break;
+		case '/create_ad': 
+			$main_view = '../views/ads/create.php';
+			break;
+		case '/signup': 
+			$main_view = '../views/users/signup.php';
+			break;
+		case '/login': 
+			$main_view = '../views/users/login.php';
+			break;
+		case '/item': 
+			$main_view = '../views/ads/show.php';
+			break;
 		default:    // displays 404 if route not specified above
 			$main_view = '../views/404.php';
 			break;
-		case $request = '': 
-			$main_view = '../views/users/signup.php';
-			break;
-		// case (clicked sign up button)
-		// 	$main_view = '../views/users/signup.php';
-		// 	break;
-		// case (clicked login button):
-		// 	$main_view = '../views/users/login.php';
-		// 	break;
-		// case (logged in):
-		// 	$main_view = '../views/users/account.php';
-		// 	break;
-		// case (add item):
-		// 	$main_view = '../views/ads/create.php';
-		// 	break;
-		// case (edit item):
-		// 	$main_view = '../views/ads/edit.php';
-		// 	break;
-		// case (show item):
-		// 	$main_view = '../views/ads/show.php';
-		// 	break;
-
-
 	}
 
 	$data['main_view'] = $main_view;

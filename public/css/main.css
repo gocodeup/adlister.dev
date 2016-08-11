@@ -24,3 +24,10 @@ button#button1id.btn.btn-success, button#button2id.btn.btn-danger {
 	margin-bottom: 20px;
 	margin-left: 30%;
 }
+#crgs_title {
+	font-weight: 100px;
+	text-align: center;
+}
+#subtitle {
+	text-align: center;
+}
