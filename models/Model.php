@@ -135,9 +135,6 @@ class Model {
     protected function update($id)
     {
 
-        //Ensure that update is properly handled with the id key
-        //You will need to iterate through all the attributes to build the prepared query
-        //Use prepared statements to ensure data security
         $query = "UPDATE " . static::$table . " SET ";
         $first_value = true;
 

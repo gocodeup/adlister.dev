@@ -1,36 +1,39 @@
 <?php
-
 class Input
 {
-
     /**
-     * @param $key as a string
-     * @return boolean
+     * Check if a given value was passed in the request
+     *
+     * @param string $key index to look for in request
+     * @return boolean whether value exists in $_POST or $_GET
      */
     public static function has($key)
     {
-        if(isset($_REQUEST[$key])) {
-            return true;
-        } else {
-            return false;
-        }
+        return isset($_REQUEST[$key]);
     }
 
     /**
-     * @return value at $_SESSION[$key] if set, else return null
+     * Get a requested value from either $_POST or $_GET
+     *
+     * @param string $key index to look for in index
+     * @param mixed $default default value to return if key not found
+     * @return mixed value passed in request
      */
     public static function get($key, $default = null)
     {
-        if(isset($_REQUEST[$key])) {
-            return $_REQUEST[$key];
-        } else {
-            return $default;
-        }
+        return self::has($key) ? $_REQUEST[$key] : $default;
     }
 
-    // returns entire array from request super global
-    public static function all()
+    /**
+     * @return bool Returns true if the current request is a POST request
+     */
+    public static function isPost()
     {
-        return $_REQUEST;
+        return $_SERVER['REQUEST_METHOD'] === 'POST';
     }
+
+    /**
+     * Prevent the creation of instances of this class
+     */
+    private function __construct() {}
 }

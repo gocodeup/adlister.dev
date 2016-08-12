@@ -24,25 +24,23 @@
 				<p>Login with your email/username and password</p>
 
 				<form method="POST" action="" data-validation data-required-message="This field is required">
-
 					<div class="form-group">
-					    <input type="text" class="form-control" id="email_user" name="email_user" placeholder="Email or Username" data-required>
+						<p>Username</p>
+					    <input type="text" minlength="3" maxlength="20" class="form-control" id="username" name="username" placeholder="Username" data-required>
 					</div>
-					<div class="form-group">
-					    <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required>
+					<div>
+						<p>Password:</p>
+						<input name="password" minlength="3" maxlength="20" required="required" type="password" id="password" />
 					</div>
 					<div class="row">
 						<div class="col-sm-6">
-							<button type="submit" class="btn btn-primary">Login</button>
+							<button type="submit" class="btn btn-primary">Sign In</button>
 						</div>
-						<div class="col-sm-6 text-right">
-							<a href="/signup" class="btn btn-success">Go To Signup</a>
-						</div>
-					</div>
 				</form>
-
+				<div class="col-sm-6 text-right">
+					<a href="/signup" class="btn btn-success">Go To Signup</a>
+				</div>
 			</div>
-
 		</div>
 
 	</section>
