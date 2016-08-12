@@ -236,16 +236,30 @@ abstract class Model {
 
         // The following code will set the attributes on the calling object based on the result variable's contents
 
-        $instance = null;
+        $instanceArray = [];        
+        foreach ($results as $result) {
+            $instance = null;
 
-        if ($results)
-        {
-
-            $instance = new static;
-            $instance->attributes = $results;
+            if ($result)
+            {
+                $instance = new static;
+                $instance->attributes = $result;
+                $instanceArray [] = $instance;
+            }
         }
+        return $instanceArray;
 
-        return $instance;
+
+        // $instance = null;   
+
+        // if ($results)
+        // {
+
+        //     $instance = new static;
+        //     $instance->attributes = $results;
+        // }
+
+        // return $instance;
     }
 
 }

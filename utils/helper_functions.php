@@ -28,3 +28,4 @@ function saveUploadedImage($input_name)
 //     $user->email = sefl::get();
 //     $user->username = sefl::get();
 // } 
+

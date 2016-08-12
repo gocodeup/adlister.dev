@@ -3,6 +3,7 @@
 require_once __DIR__ . '/../utils/helper_functions.php';
 require_once __DIR__ . '/../utils/Input.php';
 require_once __DIR__ . '/../models/User.php';
+require_once __DIR__ . '/../models/Ad.php';
 
 function pageController()
 {
@@ -53,15 +54,18 @@ function pageController()
             break;
     }
 
-    $user = new User();
-    $user->name = Input::get('name');
-    $user->username = Input::get('username');
-    $user->email = Input::get('email');
-    $data['user->name'] = $user->name;
-    $data['user->username'] = $user->username;
-    $data['user->email'] = $user->email;
+    function newUser(){
+        $user = new User();
+        $user->name = Input::get('name');
+        $user->username = Input::get('username');
+        $user->email = Input::get('email');
+        $data['user->name'] = $user->name;
+        $data['user->username'] = $user->username;
+        $data['user->email'] = $user->email;
+    }
 
-
+    $data['ads'] = Ad::all();
+    // var_dump($data);
 
 
     $data['main_view'] = $main_view;
