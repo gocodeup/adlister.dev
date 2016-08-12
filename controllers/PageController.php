@@ -67,6 +67,8 @@ function pageController()
 		break;
 	}
 	//be able to post to differing tables based on the page they post from
+	// temporarily define variables to call table info here, then put them into a helper function once thgey work
+	$data['ad'] = Items::find(1);
 
 	$data['main_view'] = $main_view;
 
