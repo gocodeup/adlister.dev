@@ -1,4 +1,4 @@
-<?php
+s<?php
 
 require_once __DIR__ . '/../../models/Ad.php';
 
