@@ -50,11 +50,14 @@ function pageController()
             break;
         case '/users/login':
             $main_view = '../views/users/login.php';
-            loginWithInputIfExists();
+            loginUserWithInputIfExists();
             break;
         case '/users/signup':
             $main_view = '../views/users/signup.php';
             break;
+        case '/users/logout':
+            $main_view = '../views/users/logout.php';
+        break;
         default:    // displays 404 if route not specified above
             $main_view = '../views/404.php';
             break;

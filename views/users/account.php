@@ -46,4 +46,9 @@
 
 	</section>
 
+	<div class="col-sm-6 text-center">
+		<a href="/users/logout" class="btn btn-success">Log Out</a>
+	</div>
+	
+
 </div>
