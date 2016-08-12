@@ -1,6 +1,7 @@
 <?php
+
 session_start();
-// require_once __DIR__ . '/../bootstrap.php';
+require_once __DIR__ . '/../bootstrap.php';
 
 
 ?>
@@ -15,7 +16,7 @@ session_start();
 
 
 	<!-- change back to "$main_view" when project is done -->
-	<?php require "../views/home.php" ?>
+	<?php require $main_view; ?>
 
 
 	<?php require '../views/partials/common_js.php'; ?>
