@@ -57,6 +57,9 @@ function pageController()
 		$main_view = '../views/404.php';
 		break;
 	}
+	if($_POST) {
+		saveUser();
+	}
 
 	$data['main_view'] = $main_view;
 
