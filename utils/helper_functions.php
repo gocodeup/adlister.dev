@@ -75,3 +75,5 @@ function tagSave($name)
 
     return $tag;
 }
+
+// the following functions will be used to display items on the page
