@@ -1,13 +1,11 @@
 <?php
 
-$_ENV = include __DIR__ . '/../.env.php';
-
 class Model {
 
     protected static $dbc;
     protected static $table;
 
-    public $attributes = array();
+    protected $attributes = array();
 
 
     /*
@@ -15,11 +13,9 @@ class Model {
      */
     public function __construct()
     {
-
         self::dbConnect();
+
     }
-
-
     /*
      * Get a value from attributes based on name
      */
@@ -101,9 +97,13 @@ class Model {
     protected function insert()
     {
 
-        //After insert, add the id back to the attributes array so the object can properly reflect the id
-        //Iterate through all the attributes to build the prepared query
-        //Use prepared statements to ensure data security
+        $allEntries = self::allNames();
+        foreach ($allEntries as $entry => $username) {
+            if ($this->attributes['name'] === $username['name']) {
+                echo "Error: The username is already in use. But I don't know how to recover your password, so you're screwed. Sorry.";
+                return false;
+            }
+        }
 
         $columns = '';
         $value_placeholders = '';
@@ -242,6 +242,21 @@ class Model {
         }
 
         return $instance;
+    }
+
+    public static function allNames() {
+        self::dbConnect();
+
+        //Learning from the previous method, return all the matching records
+        //Create select statement using prepared statements
+        $query = 'SELECT name FROM ' . static::$table;
+
+        $stmt = self::$dbc->prepare($query);
+        $stmt->execute();
+
+        //Store the resultset in a variable named $result
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
     }
 }
 
