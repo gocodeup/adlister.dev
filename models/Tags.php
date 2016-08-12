@@ -2,15 +2,7 @@
 require_once __DIR__ . '/../utils/Input.php';
 class Tag extends Model
 {
-    public $id;
-    public $name;
-    
-    public function __construct($id, $name)
-    {
-        $this->id  = $id;
-        $this->name = $name;
-    }
-
+    protected static $table = "tags";
     public function searchTag()
     {
         $name = Input::get('tag');

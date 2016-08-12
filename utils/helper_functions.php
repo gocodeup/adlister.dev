@@ -54,4 +54,23 @@ function itemsSave()
 
     $gavin->save();
 
+    $tags = Input::get('tag');
+    $names = explode(',', $tags);
+    $tags = [];
+    foreach ($names as $name) {
+        $tags[] = tagSave($name);
+    }
+
+    $gavin->addTags($tags);
+}
+
+function tagSave($name)
+{
+    $tag = new Tag();
+    $tag->name = trim($name);
+    //change me later!//
+    
+    $tag->save();
+
+    return $tag;
 }
