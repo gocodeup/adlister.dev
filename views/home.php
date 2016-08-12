@@ -1,5 +1,7 @@
 <?php
-require_once __DIR__ . "/partials/navbar.php";
+// require_once __DIR__ . "/partials/navbar.php";
+
+
 
 
 ?>
@@ -26,7 +28,7 @@ require_once __DIR__ . "/partials/navbar.php";
 							<div class="caption">
 							  	<h4><?= $ad->title ?></h4>
 							  	<p><?= $ad->description ?></p>
-							  	<p><a href="#" class="btn btn-info btn-xs" role="button">See more</a></p>
+							  	<p><a href="../ads/show?id=<?= $ad->id; ?>" class="btn btn-info btn-xs" role="button">See more</a></p>
 						  </div>
 						</div>
 					  </div>
