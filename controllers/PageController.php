@@ -30,6 +30,9 @@ function pageController()
 			break;
 		case '/ads/create':
 			$main_view = '../views/ads/create.php';
+			if($_POST) {
+				itemsSave();
+			}
 			break;
 		case '/ads/edit':
 			$main_view = '../views/ads/edit.php';
@@ -51,15 +54,16 @@ function pageController()
 			break;
 		case '/account/signup':
 			$main_view = '../views/users/signup.php';
+			if($_POST) {
+				saveUser();
+			} 
 			//call function from helper functions that saves the user 
 			break;
 		default:    // displays 404 if route not specified above
 		$main_view = '../views/404.php';
 		break;
 	}
-	if($_POST) {
-		saveUser();
-	}
+	//be able to post to differing tables based on the page they post from
 
 	$data['main_view'] = $main_view;
 

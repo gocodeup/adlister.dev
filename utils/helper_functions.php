@@ -30,6 +30,7 @@ function saveUploadedImage($input_name)
 }
 
 //make function for saving user
+//Can aso have the post active at the top of the function if requested.
 function saveUser()
 {
     $user = new User();
@@ -38,5 +39,19 @@ function saveUser()
     $user->username = Input::get('username');
     $user->password = Input::get('password');
     $user->save();
+
+}
+
+function itemsSave()
+{
+    $gavin = new Items();
+    $gavin->name = Input::get('name');
+    $gavin->description = Input::get('description');
+    $gavin->price = Input::get('price');
+    $gavin->image = Input::get('img');
+    //change me later!//
+    $gavin->user_id = 1;
+
+    $gavin->save();
 
 }

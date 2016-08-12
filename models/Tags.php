@@ -30,7 +30,4 @@ SEARCHTAG;
 
     }
 }
-require_once __DIR__ . '/../../misc/tagsclass.php';
-$tag = Tag::searchTag();
-print_r($tag->fetch(PDO::FETCH_ASSOC));
 ?>
