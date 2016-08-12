@@ -1,4 +1,8 @@
 <?php
+require_once __DIR__ . '/../utils/helper_functions.php';
+require_once __DIR__ . '/../utils/Input.php';
+require_once __DIR__ . '/../models/User.php';
+require_once __DIR__ . '/../models/Ad.php';
 // List of helper functions used throughout the application.
 // Primarily used within the PageController function.
 
@@ -29,3 +33,6 @@ function saveUploadedImage($input_name)
 //     $user->username = sefl::get();
 // } 
 
+function callAllAds() {
+    return Ad::all();
+}

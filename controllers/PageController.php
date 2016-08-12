@@ -32,6 +32,7 @@ function pageController()
             $main_view = '../views/ads/edit.php';
             break;
         case '/ads/index':
+            $data['ads'] = callAllAds();
             $main_view = '../views/ads/index.php';
             break;
         case '/ads/show':
@@ -64,10 +65,9 @@ function pageController()
         $data['user->email'] = $user->email;
     }
 
-    $data['ads'] = Ad::all();
-    // var_dump($data);
+    
 
-
+   
     $data['main_view'] = $main_view;
     return $data;
 }
