@@ -20,7 +20,9 @@ function saveUploadedImage($input_name)
         {
 
             $tempFile = $_FILES[$input_name]['tmp_name'];
-            $image_url = '/img/uploads' . $input_name;
+            $extension = pathinfo($_FILES[$input_name]['name'], PATHINFO_EXTENSION);
+            $newName = substr($tempFile, 4);
+            $image_url = '/img/uploads' . $newName . '.' . $extension;
             move_uploaded_file($tempFile, __DIR__ .'/../public' . $image_url);
             return $image_url;
         }
@@ -48,8 +50,7 @@ function itemsSave()
     $gavin->name = Input::get('name');
     $gavin->description = Input::get('description');
     $gavin->price = Input::get('price');
-    $gavin->image = Input::get('img');
-    //change me later!//
+    $gavin->image = saveUploadedImage('image');
     $gavin->user_id = 1;
 
     $gavin->save();

@@ -36,6 +36,9 @@ function pageController()
 			break;
 		case '/ads/edit':
 			$main_view = '../views/ads/edit.php';
+			if($_POST) {
+				itemsSave();
+			}
 			break;
 		case '/ads':
 			$main_view = '../views/ads/index.php';
