@@ -9,23 +9,22 @@ class Auth
 	// runs login attempt with parameters
 	public static function attempt($username, $password)
 	{
-
 		// makes sure the values passed in are not empty
 		if(($username == '' || $username == null) || ($password == '' || $password == null))
 		{
 
-			$_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
+			$_SESSION['ERROR_MESSAGE'] = "Please don't leave fields empty";
 			return false;
 		}
 
 		// gets instance of user model by searching with username or email($username)
 		$user = User::findByUsernameOrEmail($username);
-
+	
 		// makes sure the instance returned is not empty
 		if ($user == null)
 		{
 
-			$_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
+			$_SESSION['ERROR_MESSAGE'] = "Username is null";
 			return false;
 		}
 
@@ -40,8 +39,8 @@ class Auth
 			return true;
 		}
 
-		$_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
-		return false;
+		// $_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
+		// return false;
 	}
 
 	// checks session to see if user is logged in

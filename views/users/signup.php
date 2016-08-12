@@ -1,14 +1,13 @@
 <div class="container">
 
-	<section id="login">
+	<section>
 
 		<div class="row">
 
-			<h1 class="section-title">Signup For OooLister</h1>
+			<h1 class="header-title">Sign Up For Captain Rainbow Glitter Smash!</h1>
 
-			<div class="col-md-6 col-md-offset-3">
+			<div class="col-md-6 col-md-offset-3" id="login">
 
-				<p>Please fill out the information below so we can create your account.</p>
 				<?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
 	                <div class="alert alert-danger">
 	                    <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
@@ -38,7 +37,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-6">
-							<button type="submit" class="btn btn-primary">Signup</button>
+							<button type="submit" class="btn btn-primary">Sign Up!</button>
 						</div>
 						<div class="col-sm-6 text-right">
 							<a href="/login" class="btn btn-success">Go To Login</a>

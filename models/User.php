@@ -1,5 +1,5 @@
 <?php
-
+//piece of shit
 require_once __DIR__ . '/Model.php';
 
 class User extends Model {
@@ -32,9 +32,10 @@ class User extends Model {
         $stmt->execute();
 
         //Store the resultset in a variable named $result
-        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+        $results = $stmt->fetchAll();
 
         // The following code will set the attributes on the calling object based on the result variable's contents
+
 
         $instance = null;
 
