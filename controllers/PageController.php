@@ -27,6 +27,7 @@ function pageController()
 	switch ($request) {
 		case '/':
 			$main_view = '../views/home.php';
+			$data['items'] = Items::featuredItems();
 			break;
 		case '/ads/create':
 			$main_view = '../views/ads/create.php';
@@ -42,6 +43,7 @@ function pageController()
 			break;
 		case '/ads':
 			$main_view = '../views/ads/index.php';
+			$data['items'] = Items::all();
 			break;
 		case '/ads/show':
 			$main_view = '../views/ads/show.php';
@@ -68,7 +70,7 @@ function pageController()
 	}
 	//be able to post to differing tables based on the page they post from
 	// temporarily define variables to call table info here, then put them into a helper function once thgey work
-	$data['ad'] = Items::find(1);
+	// $data['ad'] = Items::find(8);
 
 	$data['main_view'] = $main_view;
 
