@@ -39,7 +39,7 @@ body {
 
 			<div class="col-xs-12">
 
-				<h1 class="text-center">Welcome To Adlister</h1>
+				<h1 class="text-center">Welcome To Fadlister</h1>
 
 			</div>
 
@@ -61,9 +61,9 @@ body {
         
         <div class="col-xs-18 col-sm-6 col-md-4">
           <div class="thumbnail">
-            <img src="http://placehold.it/500x300" alt="">
+            <img src="../img/planking.jpg" alt="planking">
               <div class="caption">
-                <h4>Thumbnail label</h4>
+                <h4>Planking</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
                 <p><a href="#" class="btn btn-info btn-xs" role="button">Button</a> <a href="#" class="btn btn-default btn-xs" role="button">Button</a></p>
             </div>
@@ -72,9 +72,9 @@ body {
 
         <div class="col-xs-18 col-sm-6 col-md-4">
           <div class="thumbnail">
-            <img src="http://placehold.it/500x300" alt="">
+            <img src="../img/pokemon-trespass.jpg" alt="pokemon go">
               <div class="caption">
-                <h4>Thumbnail label</h4>
+                <h4>Pokemon Go</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
                 <p><a href="#" class="btn btn-info btn-xs" role="button">Button</a> <a href="#" class="btn btn-default btn-xs" role="button">Button</a></p>
             </div>
@@ -83,9 +83,9 @@ body {
 
         <div class="col-xs-18 col-sm-6 col-md-4">
           <div class="thumbnail">
-            <img src="http://placehold.it/500x300" alt="">
+            <img src="../img/yolo.png" alt="yolo">
               <div class="caption">
-                <h4>Thumbnail label</h4>
+                <h4>YOLO</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
                 <p><a href="#" class="btn btn-info btn-xs" role="button">Button</a> <a href="#" class="btn btn-default btn-xs" role="button">Button</a></p>
             </div>
