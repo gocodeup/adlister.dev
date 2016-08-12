@@ -1,15 +1,15 @@
 <?php
 
-require_once 'Log.php';
-require_once '../models/User.php';
+// require_once __DIR__ . '/Log.php';
 
 class Auth
 {
-
+	public static function signedUp(){
+		return (isset($_SESSION['IS_SIGNED_UP']));
+	}
 	// runs login attempt with parameters
 	public static function attempt($username, $password)
 	{
-
 		// makes sure the values passed in are not empty
 		if(($username == '' || $username == null) || ($password == '' || $password == null))
 		{
@@ -20,11 +20,10 @@ class Auth
 
 		// gets instance of user model by searching with username or email($username)
 		$user = User::findByUsernameOrEmail($username);
-
+		var_dump($user);
 		// makes sure the instance returned is not empty
 		if ($user == null)
 		{
-
 			$_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
 			return false;
 		}
@@ -34,7 +33,7 @@ class Auth
 		{
 
 			// sets session variables used for logged in user
-			$_SESSION['IS_LOGGED_IN'] = $user->username;
+			$_SESSION['IS_LOGGED_IN'] = $user->name;
 			$_SESSION['LOGGED_IN_ID'] = $user->id;
 
 			return true;
@@ -47,7 +46,6 @@ class Auth
 	// checks session to see if user is logged in
 	public static function check()
 	{
-
 		return (isset($_SESSION['IS_LOGGED_IN']) && $_SESSION['IS_LOGGED_IN'] != '');
 	}
 
