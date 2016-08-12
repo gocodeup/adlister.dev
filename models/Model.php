@@ -97,14 +97,6 @@ class Model {
     protected function insert()
     {
 
-        $allEntries = self::allNames();
-        foreach ($allEntries as $entry => $username) {
-            if ($this->attributes['name'] === $username['name']) {
-                echo "Error: The username is already in use. But I don't know how to recover your password, so you're screwed. Sorry.";
-                return false;
-            }
-        }
-
         $columns = '';
         $value_placeholders = '';
 
@@ -131,6 +123,7 @@ class Model {
 
         foreach ($this->attributes as $column => $value) {
             $stmt->bindValue(':' . $column, $value, PDO::PARAM_STR);
+
         }
 
         $stmt->execute();

@@ -1,9 +1,9 @@
 <?php 
 
-require_once '../views/partials/head.php';
+//require_once '../views/partials/head.php';
 
-$username = Input::get('username');
-$password = Input::get('password');
+//$username = Input::get('username');
+//$password = Input::get('password');
 
 ?>
 <div class="container">
@@ -29,8 +29,8 @@ $password = Input::get('password');
 	                </div>
 	                <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
 	            <?php endif; ?>
-	            <?php if (isset($username)) : ?>
-	            	<?php require '../views/users/signup_check.php'; ?>
+	            <?php if (isset($error)) : ?>
+	            	<?= $error//require '../views/users/signup_check.php'; ?>
 	     		<?php endif; ?>
 				<form method="POST" action="" data-validation data-required-message="This field is required">
 					<div class="form-group">

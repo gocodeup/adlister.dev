@@ -14,6 +14,6 @@ require_once __DIR__ . '/../bootstrap.php';
 
     <?php require $main_view; ?>
 
-    <?php require '../views/partials/common_js.php'; ?>
+    <?php require '../views/partials/scripts.php'; ?>
 </body>
 </html>
