@@ -4,7 +4,7 @@
 
 	<section id="account">
 
-		<h1>Welcome <?= $user->name; ?></h1>
+		<h1>Welcome, <?= $user->name; ?></h1>
 
 		<div class="row">
 

@@ -20,6 +20,8 @@ function pageController()
     {
         $request = $_SERVER['REQUEST_URI'];
     }
+
+
     // switch that will run functions and setup variables dependent on what route was accessed
     switch ($request) {
         case '/':
@@ -40,12 +42,14 @@ function pageController()
             break;
         case '/users/account':
             $main_view = '../views/users/account.php';
+            $data['user'] = Auth::user();
             break;
         case '/users/edit':
             $main_view = '../views/users/edit.php';
             break;
         case '/users/login':
             $main_view = '../views/users/login.php';
+            loginWithInputIfExists();
             break;
         case '/users/signup':
             $main_view = '../views/users/signup.php';

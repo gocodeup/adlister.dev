@@ -36,3 +36,15 @@ function saveUploadedImage($input_name)
 function callAllAds() {
     return Ad::all();
 }
+
+function loginUserWithInputIfExists() {
+    if (!empty($_POST)) {
+        $username = Input::has('email_user') ? Input::get('email_user') : '';
+        $password = Input::has('password') ? Input::get('password') : '';
+        if (Auth::attempt($username, $password)) {
+            session_start();
+            header('Location: /users/account');
+            exit(0);
+        }
+    }
+}
