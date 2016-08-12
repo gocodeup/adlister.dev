@@ -31,45 +31,20 @@ require_once __DIR__ . "/../partials/navbar.php";
 
 			<div class="jumbotron">
 				<div class="container" id="tourpackages-carousel">
-      
-      <div class="row">
-        <?php foreach ($ads as $ad) { ?>
-       
-	        <div class="col-xs-18 col-sm-6 col-md-4">
-	          <div class="thumbnail">
-	            <img src=<?= "../img/{$ad->id}.jpg" ?> alt="">
-	              <div class="caption">
-	                <h4><?= $ad->title ?></h4>
-	                <p><?= $ad->description ?></p>
-	                <p><a href="#" class="btn btn-info btn-xs" role="button">See more</a></p>
-	            </div>
-	          </div>
-	        </div>
-	    <?php  }; ?>
-        <!-- <div class="col-xs-18 col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <img src="../img/pokemon-trespass.jpg" alt="pokemon go">
-              <div class="caption">
-                <h4>Pokemon Go</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
-                <p><a href="#" class="btn btn-info btn-xs" role="button">Button</a> <a href="#" class="btn btn-default btn-xs" role="button">Button</a></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xs-18 col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <img src="../img/yolo.png" alt="yolo">
-              <div class="caption">
-                <h4>YOLO</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
-                <p><a href="#" class="btn btn-info btn-xs" role="button">Button</a> <a href="#" class="btn btn-default btn-xs" role="button">Button</a></p>
-            </div>
-          </div>
-        </div>
- -->
-      
-        </div>
+			      <div class="row">
+			        <?php foreach ($ads as $ad) { ?>
+				    <div class="col-xs-18 col-sm-6 col-md-4">
+				          	<div class="thumbnail">
+				            <img src=<?= "../img/{$ad->id}.jpg" ?> alt="">
+				              	<div class="caption">
+					                <h4><?= $ad->title ?></h4>
+					                <p><?= $ad->description ?></p>
+					                <p><a href="#" class="btn btn-info btn-xs" role="button">See more</a></p>
+				            	</div>
+				          	</div>
+				    	</div>
+				    <?php  } ?>
+        			</div>
         
       </div><!-- End row -->
       
