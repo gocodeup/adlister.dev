@@ -34,9 +34,11 @@
 					    <input type="text" class="form-control" id="price" name="price" placeholder="Price of Gavin" data-required>
 					</div>
 					<div class="form-group">
-						<label for="image">Image Upload</label>
+						<!-- <label for="image">Image Upload</label>
 						<input type="file" id="image" name="image" placeholder="Image of your Gavin">
-						<p>Note: Uploading any image will replace a current image.</p>
+						<p>Note: Uploading any image will replace a current image.</p> -->
+						<label for="image">Image Upload</label>
+						<input type="text" id="image" name="img">
 					    <input type="text" class="form-control" id="tag" name="tag" placeholder="Tag your Gavin" data-required>
 					</div>
 					<div class="row">
