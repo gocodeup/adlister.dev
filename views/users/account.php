@@ -4,7 +4,7 @@
 
 	<section id="account">
 
-		<h1>Welcome <?= $user->name; ?></h1>
+		<h1>Welcome, <?= $user->name; ?></h1>
 
 		<div class="row">
 
@@ -45,5 +45,10 @@
 		</div>
 
 	</section>
+
+	<div class="col-sm-6 text-center">
+		<a href="/users/logout" class="btn btn-success">Log Out</a>
+	</div>
+	
 
 </div>
