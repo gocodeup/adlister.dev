@@ -22,7 +22,7 @@
 	                <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
 	            <?php endif; ?>
 
-				<form method="POST" action="" data-validation data-required-message="This field is required">
+				<form method="POST" action="" data-validation data-required-message="This field is required" enctype="multipart/form-data">
 
 					<div class="form-group">
 					    <input type="text" class="form-control" id="name" name="name" placeholder="Name of Gavin" data-required>
