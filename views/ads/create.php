@@ -34,6 +34,9 @@
 					    <input type="text" class="form-control" id="price" name="price" placeholder="Price of Gavin" data-required>
 					</div>
 					<div class="form-group">
+					    <input type="text" class="form-control" id="tag" name="tag" placeholder="Tag your Gavin" data-required>
+					</div>
+					<div class="form-group">
 					    <input type="text" class="form-control" id="img" name="img" placeholder="Picture of Gavin" data-required>
 					</div>
 					<div class="row">
