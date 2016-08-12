@@ -2,14 +2,26 @@
 // List of helper functions used throughout the application.
 // Primarily used within the PageController function.
 
+function loginController() {
+    $data = ['username' => '', 'password' => ''];
+    $data['error'] = 'This username and password combination does not exist';  
+    if (isset($_POST)) {  
+        $exists = User::findByUsername(Input::get('username'));
+        var_dump($_POST);
+        if (!$exists) {
+            return $data;
+        }
+    }
+    return $data;
+}
+
+
 function signupUserController() {
     $data = ['username' => '', 'password' => ''];
     if (!empty($_POST)) {
-        $exists = User::findByUsernameOrEmail(Input::get('username'));
-        //var_dump($exists);
+        $exists = User::findByUsername(Input::get('username'));
         if ($exists) {
-            $data['error'] = 'error';
-            //var_dump($data);
+            $data['error'] = 'This username already exists!';
             return $data;
         }
 
@@ -23,7 +35,6 @@ function signupUserController() {
 
         $user->save();
 
-        // redirect
         header('Location: /login');
         exit;
     }
