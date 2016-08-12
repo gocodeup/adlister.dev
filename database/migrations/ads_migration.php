@@ -1,10 +1,6 @@
 <?php
 
 
-require_once '../db_connect.php';
-
-$dbc->exec('DROP TABLE IF EXISTS ads');
-
 $query = 'CREATE TABLE ads (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     title VARCHAR(240) NOT NULL,
