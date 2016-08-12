@@ -27,6 +27,7 @@ function pageController()
             $main_view = '../views/home.php';
             break;
         case '/ads/create':
+            $data = createAd();
             $main_view = '../views/ads/create.php';
             break;
         case '/ads/edit':
@@ -49,6 +50,7 @@ function pageController()
             $main_view = '../views/users/login.php';
             break;
         case '/users/signup':
+            $data = newUser();  
             $main_view = '../views/users/signup.php';
             break;
         default:    // displays 404 if route not specified above
@@ -56,15 +58,7 @@ function pageController()
             break;
     }
 
-    function newUser(){
-        $user = new User();
-        $user->name = Input::get('name');
-        $user->username = Input::get('username');
-        $user->email = Input::get('email');
-        $data['user->name'] = $user->name;
-        $data['user->username'] = $user->username;
-        $data['user->email'] = $user->email;
-    }
+    
 
     
 

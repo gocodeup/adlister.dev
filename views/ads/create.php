@@ -1,6 +1,6 @@
 <!--Page for creating new advertisement listings-->
 <div class="container">
-	<form class="form-horizontal">
+	<form method="post" class="form-horizontal">
 		<fieldset>
 			<!-- Form Name -->
 			<legend>Create Ad</legend>

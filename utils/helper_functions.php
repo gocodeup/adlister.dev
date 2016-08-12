@@ -36,3 +36,39 @@ function saveUploadedImage($input_name)
 function callAllAds() {
     return Ad::all();
 }
+
+function newUser(){
+
+    if (Input::has('name')) {
+        //new object user, passing variables from page into user
+        $user = new User();
+        $user->name = Input::get('name');
+        $user->username = Input::get('username');
+        $user->email = Input::get('email');
+        $user->password = Input::get('password');
+        $user->save();
+    }
+
+    // //getting variable to page controller
+    // $data['user->name'] = $user->name;
+    // $data['user->username'] = $user->username;
+    // $data['user->email'] = $user->email;
+    // $data['user->password'] = $user->password;
+    // return $data;
+}
+
+function createAd(){
+    //new object user, passing variables from page into user
+    $user = new Ad();
+    $user->name = Input::get('name');
+    $user->username = Input::get('username');
+    $user->email = Input::get('email');
+    $user->save();
+
+    //getting variable to page controller
+    $data['user->name'] = $user->name;
+    $data['user->username'] = $user->username;
+    $data['user->email'] = $user->email;
+    return $data;
+
+}
