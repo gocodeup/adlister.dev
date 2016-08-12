@@ -1,3 +1,7 @@
+*.DS_Store
+/undeployed
+.gitignore
+
 .env.php
 .env.*.php
 /.idea

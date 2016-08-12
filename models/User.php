@@ -27,7 +27,6 @@ class User extends Model {
 
     	$stmt = self::$dbc->prepare($query);
         $stmt->bindValue(':username', $username_or_email, PDO::PARAM_STR);
-        //$stmt->bindValue(':email', $username_or_email, PDO::PARAM_STR);
         $stmt->execute();
 
         //Store the resultset in a variable named $result
