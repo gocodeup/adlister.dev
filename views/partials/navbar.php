@@ -20,13 +20,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../users/home.php">Home</a>
+      <a class="navbar-brand" href="../users/home.php">Fadlister</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="../ads/index.php">Items<span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="../ads/index.php">Fads<span class="sr-only">(current)</span></a></li>
         <li><a href="../users/signup.php" class="boldItems">Sign Up</a></li>
         <li><a href="../users/login.php" class="boldItems" >Log In</a></li>
   
