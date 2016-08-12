@@ -1,6 +1,8 @@
 <?php
 
 require_once __DIR__ . '/../utils/helper_functions.php';
+require_once __DIR__ . '/../utils/Input.php';
+require_once __DIR__ . '/../models/User.php';
 
 function pageController()
 {
@@ -50,6 +52,18 @@ function pageController()
             $main_view = '../views/404.php';
             break;
     }
+
+    $user = new User();
+    $user->name = Input::get('name');
+    $user->username = Input::get('username');
+    $user->email = Input::get('email');
+    $data['user->name'] = $user->name;
+    $data['user->username'] = $user->username;
+    $data['user->email'] = $user->email;
+
+
+
+
     $data['main_view'] = $main_view;
     return $data;
 }
