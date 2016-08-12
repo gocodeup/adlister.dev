@@ -31,7 +31,8 @@ function pageController()
             break;
 
         case '/login':
-
+            $main_view = '../views/users/login.php';
+            $data += loginController();
             break;
 
         default:    // displays 404 if route not specified above
