@@ -8,7 +8,7 @@ require_once __DIR__ . '/../bootstrap.php';
 <!DOCTYPE html>
 <html>
 <head>
-	<title>OooLister</title>
+	<title>Fadlister</title>
 	<?php require '../views/partials/head.php'; ?>
 </head>
 <body>

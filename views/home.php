@@ -51,7 +51,7 @@ body {
 
 		<div class="row">
 
-			<h3 class="section-title">Featured Items</h3>
+			<h3 class="section-title">Featured Fads</h3>
 			<!-- Placeholder for featured items.-->
 
 			<div class="jumbotron">
