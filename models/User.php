@@ -10,7 +10,7 @@ class User extends Model {
     public function __set($name, $value)
     {
 
-    	if ($name == 'password')
+        if ($name == 'password')
     	{
     		$value = password_hash($value, PASSWORD_DEFAULT);
     	}
@@ -23,7 +23,7 @@ class User extends Model {
     {
     	self::dbConnect();
 
-    	$query = 'SELECT * FROM ' . self::$table . ' WHERE name = :username';
+        $query = 'SELECT * FROM ' . self::$table . ' WHERE name = :username';
 
     	$stmt = self::$dbc->prepare($query);
         $stmt->bindValue(':username', $username, PDO::PARAM_STR);
