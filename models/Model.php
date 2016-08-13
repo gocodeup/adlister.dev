@@ -222,16 +222,16 @@ class Model {
 
         // The following code will set the attributes on the calling object based on the result variable's contents
 
+        foreach ($results as $result) {
         $instance = null;
-
-        if ( $results )
-        {
-
-            $instance = new static;
-            $instance->attributes = $results;
+            if ( $result )
+            {
+                $instance = new static;
+                $instance->attributes = $result;
+            }
+        $instanceArray[] = $instance;
         }
-
-        return $instance;
+        return $instanceArray;
     }
 
     public static function allNames() {
