@@ -4,17 +4,13 @@
 
 function loginController() {
     $data = ['username' => '', 'password' => ''];
-    $data['error'] = 'This username and password combination does not exist';  
     if (isset($_POST)) {  
-        $exists = User::findByUsername(Input::get('username'));
-        var_dump($_POST);
-        if (!$exists) {
-            return $data;
-        }
+        $user = Auth::attempt(Input::get('username'), Input::get('password'));
     }
-    return $data;
+    if ($user) {
+        header('Location: /home');
+    }
 }
-
 
 function signupUserController() {
     $data = ['username' => '', 'password' => ''];
@@ -40,7 +36,6 @@ function signupUserController() {
     }
     return $data;
 }
-
 
 // takes image from form submission and moves it into the uploads directory
 function saveUploadedImage($input_name)

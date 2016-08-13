@@ -4,8 +4,11 @@
 
 class Auth
 {
-	public static function signedUp(){
-		return (isset($_SESSION['IS_SIGNED_UP']));
+
+	// checks to see if user is logged in
+	public static function loggedIn()
+	{
+		return (isset($_SESSION['IS_LOGGED_IN']) && $_SESSION['IS_LOGGED_IN'] != '');
 	}
 	// runs login attempt with parameters
 	public static function attempt($username, $password)
@@ -19,8 +22,7 @@ class Auth
 		}
 
 		// gets instance of user model by searching with username or email($username)
-		$user = User::findByUsernameOrEmail($username);
-		var_dump($user);
+		$user = User::findByUsername($username);
 		// makes sure the instance returned is not empty
 		if ($user == null)
 		{
@@ -41,12 +43,6 @@ class Auth
 
 		$_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
 		return false;
-	}
-
-	// checks session to see if user is logged in
-	public static function check()
-	{
-		return (isset($_SESSION['IS_LOGGED_IN']) && $_SESSION['IS_LOGGED_IN'] != '');
 	}
 
 	// returns id of the currently logged in user
