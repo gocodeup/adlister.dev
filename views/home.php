@@ -17,7 +17,7 @@
 	<section id="features">
 		<div class="row">
 			<h3 class="section-title">Featured Fads</h3>
-			<!-- Placeholder for featured items.-->
+				<!-- Placeholder for featured items.-->
 			<div class="jumbotron">
 				<div class="container" id="tourpackages-carousel">
 				  <div class="row">
@@ -29,15 +29,13 @@
 							  	<h4><?= $ad->title ?></h4>
 							  	<p><?= $ad->description ?></p>
 							  	<p><a href="../ads/show?id=<?= $ad->id; ?>" class="btn btn-info btn-xs" role="button">See more</a></p>
-						  </div>
-						</div>
-					  </div>
-					<?php  }; ?>
-				  </div><!-- End row -->
-				</div><!-- End container -->
+							  </div>
+							</div>
+							<?php  }; ?>
+						</div><!-- End row -->
+					</div><!-- End container -->
+				</div>
 			</div>
 		</div>
-
 	</section>
-
 </div>
