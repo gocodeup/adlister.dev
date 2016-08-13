@@ -11,6 +11,6 @@ $dbc = new PDO('mysql:host=' . $_ENV['DB_HOST'] . ';dbname=' . $_ENV['DB_NAME'],
 // Tell PDO to throw exceptions on error
 $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-echo $dbc->getAttribute(PDO::ATTR_CONNECTION_STATUS) . "\n";
+// echo $dbc->getAttribute(PDO::ATTR_CONNECTION_STATUS) . "\n";
 
 ?>
