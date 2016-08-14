@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="/css/main.css">
 <body>
 
-<nav class="navbar navbar-default navbar-inverse" role="navigation">
+<nav class="navbar">
   <div class="container-fluid">
     <div class="row">
         <div class="col-xs-1">
