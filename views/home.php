@@ -15,6 +15,7 @@
     </section>
 
     <section id="features">
+    <?php var_dump($_SESSION); ?>
 
         <div class="row">
 
@@ -29,11 +30,10 @@
                     <a href="/ads/show/?id=<?= $item['id'] ?>"><img class="img-thumbnail img-responsive featured-image" alt="<?= $item['name']; ?>" src="<?= $item['image']; ?>"></a>
                     <br>
                     <h4><?= $item['name']; ?></h4>
-                    <?= $item['description']; ?>
-                    <br>
                     <strong>$<?= $item['price']; ?></strong>
                 </div>
             <?php endforeach ?>
+            <hr>
         </div>
 
     </section>
