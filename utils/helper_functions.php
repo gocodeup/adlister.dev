@@ -28,7 +28,7 @@ function addTeamMemberController() {
         var_dump($memberArray);
         foreach ($memberArray as $newMember) {
             $team = new TeamMember();
-            $team->user_id = $_SESSION['user_id'];
+            $team->user_id = $_SESSION['LOGGED_IN_ID'];
             $team->new_member = $newMember;
             $team->save();
         }
