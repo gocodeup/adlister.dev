@@ -23,19 +23,17 @@ body {
         <div class="col-xs-3">
           <h1><strong>POKEDOPTION</strong></h1>
         </div>
-        <div class="col-xs-3">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Sign Up</a></li>
-          </ul>
-        </div>
-        <div class="col-xs-5">  
-          <form class="navbar-form navbar" role="signup">
+        <div class="col-xs-8">  
+          <form class="navbar-form navbar-right" role="signup">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Username">
               <input type="text" class="form-control" placeholder="Password">
             <button type="submit" class="btn btn-default">Sign In</button>
             </div>
           </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Sign Up</a></li>
+          </ul>
         </div>  
     </div>
   </div>
