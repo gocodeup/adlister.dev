@@ -2,41 +2,94 @@
 // List of helper functions used throughout the application.
 // Primarily used within the PageController function.
 
-function addTeamController() {    
-    $data = ['user_id' => '', 'team_name' => '', 'logo' => ''];
-    if (!empty($_POST)) {
-        $exists = Team::findByTeamName(Input::get('team_name'));
+function addMemberController() 
+{
+    if (isset($_POST['TEAM_DELETED'])) {
+        deleteTeam();
+    }
+    if (isset($_POST['member'])) {
+        addMember();
+    }
+}
+
+// function showTeamsController()
+// {
+//     $user = new User;
+//     $user->id = $_SESSION['LOGGED_IN_ID'];
+
+//     // foreach (team where user_id = loggedinid)
+//         $user->teams[] = 
+// }
+
+function addTeamController()
+{
+    if (isset($_POST['TEAM_NAME']))
+    {
+        $exists = Team::findByTeamName(Input::get('TEAM_NAME'));
         if ($exists) {
-            $data['error'] = 'This team name already exists!';
-            return $data;
+            $_POST['MESSAGE'] = 'This team name already exists!';
+            return false;
         }
         $team = new Team();
-        $team->team_name = Input::get('team_name');
-        $team->user_id = $_SESSION['user_id'];
-        $team->logo = Input::get('logo');
-        $team->save();
-    }
-}
-
-    
-
-//don't think this is done yet
-function addTeamMemberController() {
-    $data = ['team_id' => '', 'pokemon_id' => []];
-    if (!empty($_POST)) {
-        $memberArray = Input::get('member');
-        var_dump($memberArray);
-        foreach ($memberArray as $newMember) {
-            $team = new TeamMember();
-            $team->user_id = $_SESSION['LOGGED_IN_ID'];
-            $team->new_member = $newMember;
-            $team->save();
+        $team->user_id = $_SESSION['LOGGED_IN_ID'];
+        $team->team_name = $_POST['TEAM_NAME'];
+        if (isset($_POST['IMAGE_URL']))
+        {
+            $team->logo = $_POST['IMAGE_URL'];
+        } else {
+            $team->logo = "../sugimori/25.png";
         }
+        $team->save();
+        $_SESSION['TEAM_ID'] = $team->id;
+        $_POST['MESSAGE'] = "Team Created! Select six members for your team:";
+        header('Location: /add-members');        
+    } else
+    {
+        $_POST['MESSAGE'] = "Please enter a team name:";
     }
 }
 
-function loginController() {
-    $data = ['username' => '', 'password' => ''];
+function deleteTeam() 
+{
+    $deleteArray = Input::get('TEAM_DELETED');
+    if ($deleteArray) 
+    {
+        $team = new Team();
+        $teamMembers = new TeamMember();
+        $team->attributes = Team::findByTeamId($_SESSION['TEAM_ID']);
+        $teamMembers = TeamMember::findByTeamId($_SESSION['TEAM_ID']);
+        foreach ($teamMembers->members as $teamMember)
+        {
+            $member = new TeamMember();
+            $member->id = $teamMember['id'];
+            $member->delete();
+        }
+        $team->delete();
+        $_POST['MESSAGE'] = "This team has been permenantly deleted.";
+        header('Location: /view-teams');
+    }
+}
+
+function addMember()
+{
+    $membersArray = Input::get('member');
+    if ($membersArray) {
+        foreach ($membersArray as $member) 
+        {
+            $pokemon = Pokemon::getPokemon($member);
+            $teamMember = new TeamMember();
+            $teamMember->team_id = $_SESSION['TEAM_ID'];
+            $teamMember->pokedex_id = $pokemon['id'];
+            $teamMember->save();   
+        }
+    $_POST['MESSAGE'] = "Team successfully updated.";
+    } else {
+        $_POST['MESSAGE'] = "Search for Pokemon by Name, or enter Pokedex Number.";
+    }
+}
+
+function loginController() 
+{
     if (isset($_POST)) {  
         $user = Auth::attempt(Input::get('username'), Input::get('password'));
     }
@@ -45,9 +98,10 @@ function loginController() {
     }
 }
 
-function signupUserController() {
+function signupUserController() 
+{
     $data = ['username' => '', 'password' => ''];
-    if (!empty($_POST)) {
+    if (!empty($_POST['username'])) {
         $exists = User::findByUsername(Input::get('username'));
         if ($exists) {
             $data['error'] = 'This username already exists!';

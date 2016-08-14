@@ -234,20 +234,6 @@ class Model {
         return $instanceArray;
     }
 
-    public static function allNames() {
-        self::dbConnect();
-
-        //Learning from the previous method, return all the matching records
-        //Create select statement using prepared statements
-        $query = 'SELECT name FROM ' . static::$table;
-
-        $stmt = self::$dbc->prepare($query);
-        $stmt->execute();
-
-        //Store the resultset in a variable named $result
-        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $results;
-    }
 }
 
 ?>

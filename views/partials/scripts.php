@@ -33,17 +33,20 @@
             //below works, but only one time
             //and never returns properly
             $('.insert-pokemon').each(function() {
-                if ($(this).is(':empty')) {
+                if (!$(this).val()) {
                     console.log("empty");
-                    $(this).text($(insertText));
-                    return;
+                    $(this).val(insertText);
+                    return false;
                 }
             });
         });
     };
+
     addListeners();
+
     //initialize jquery datatable
 	$('#pkmnTable').DataTable();
+
     //add click listeners to each row
     $('#pkmnTable').on("click", function() {
         addListeners();

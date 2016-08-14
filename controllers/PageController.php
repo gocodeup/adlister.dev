@@ -4,7 +4,7 @@ require_once __DIR__ . '/../utils/helper_functions.php';
 
 function pageController()
 {
-
+    $_POST['MESSAGE'] = "";
     // defines array to be returned and extracted for view
     $data = [];
 
@@ -36,7 +36,7 @@ function pageController()
             break;
 
         case '/add-team':
-            $main_view = '../views/users/add-team.php';
+            $main_view = '../views/teams/add-team.php';
             addTeamController();
             break;
 
@@ -46,11 +46,12 @@ function pageController()
             break;
 
         case '/view-teams':
-            $main_view = '../views/view-teams.php';
+            $main_view = '../views/teams/view-teams.php';
             break;
 
-        case '/add-member':
+        case '/add-members':
             $main_view = '../views/teams/add-member.php';
+            addMemberController();
             break;
 
         default:    // displays 404 if route not specified above

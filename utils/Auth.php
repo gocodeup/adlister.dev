@@ -37,6 +37,7 @@ class Auth
 			// sets session variables used for logged in user
 			$_SESSION['IS_LOGGED_IN'] = $user->name;
 			$_SESSION['LOGGED_IN_ID'] = $user->id;
+			$_SESSION['TEAM_ID'] = 1;
 
 			return true;
 		}
@@ -65,7 +66,7 @@ class Auth
 		if (self::check())
 		{
 
-			return User::findByUsernameOrEmail($_SESSION['IS_LOGGED_IN']);
+			return User::findByUsername($_SESSION['IS_LOGGED_IN']);
 		}
 
 		return null;
