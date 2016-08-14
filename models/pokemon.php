@@ -14,35 +14,28 @@ class Pokemon extends Model {
 
 	public static function getPokemon($inputField) 
 	{
-	  $pokemonSearch = findByNameOrNumber($inputField);
-	  $query = createQuery($pokemonSearch['searchBy'], $pokemonSearch['pokemonId']);
-	  $result = Pokemon::executeQuery($query);
-	  return $pokemon;
+		self::dbConnect();
+		$pokemonSearch = self::findByNameOrNumber($inputField);
+		$query = self::createQuery($pokemonSearch['searchBy'], $pokemonSearch['pokemonId']);
+		return self::$dbc->query($query)->fetch(PDO::FETCH_ASSOC);
 	}
 
-    protected static function findByNameOrNumber($inputField) 
+    protected static function findByNameOrNumber($input) 
     {
-	  if (Input::has($inputField)) 
-	  {
-	    $pokemonId = Input::get($inputField);
-	    if (is_numeric($pokemonId)) 
+	    $pokemonId = $input;
+	    if (is_numeric($input))
 	    {
 	      $searchBy = "Pokedex";
 	    } else 
 	    {
 	      $searchBy = "Pokemon";
-	      $pokemonId = "'%" . Input::get($inputField) . "%'";
+	      $pokemonId = "'%" . $input . "%'";
 	      if ($pokemonId === "'%%'") 
 	      {
 	        $pokemonId = '1';
 	        $searchBy = "Pokedex";
 	      }
 	    }
-	  } else 
-	  {
-	    $pokemonId = '1';
-	    $searchBy = "Pokedex";
-	  }
 	  return [
 	    'pokemonId' => $pokemonId,
 	    'searchBy' => $searchBy
