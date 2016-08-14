@@ -8,7 +8,7 @@ function pageController()
 
 	// defines array to be returned and extracted for view
 	$data = [];
-
+	$itemId = Input::get('id');
 	// finds position for ? in url so we can look at the url minus the get variables
 	$get_pos = strpos($_SERVER['REQUEST_URI'], '?');
 
@@ -46,28 +46,40 @@ function pageController()
 			$main_view = '../views/ads/index.php';
 			$data['items'] = Items::all();
 			break;
-		case '/ads/show':
+		case "/ads/show/":
 			$main_view = '../views/ads/show.php';
+			$data['items'] = Items::find($itemId);
+			$data['user'] = Items::itemUser($itemId);
 			break;
-		case '/account':
+		case "/account/":
+			redirectIfNotLoggedIn();
+			checkIfUserIdGiven();
+			$data['user'] = User::find(Input::get('id'));
+			$data['items'] = $data['user']->items();
 			$main_view = '../views/users/account.php';
 			// Auth::user();
 			// print_r(User::findByUsernameOrEmail($_SESSION['IS_LOGGED_IN']);
 			//prints log in info
 
 			break;
-		case '/account/edit':
+		case '/account/edit/':
 			$main_view = '../views/users/edit.php';
+			redirectIfNotLoggedIn();
+			checkIfUserIdGiven();
+			editAccount();
+			$data['user'] = User::find(Input::get('id'));
 			break;
 		case '/account/login':
-			$main_view = '../views/users/login.php';
+			redirectIfLoggedIn();
+			login();
+			$main_view = "../views/users/login.php";
 			break;
 		case '/account/signup':
 			$main_view = '../views/users/signup.php';
-			if($_POST) {
-				saveUser();
-			} 
-			//call function from helper functions that saves the user 
+			saveUser();
+			break;
+		case '/logout':
+			runLogout();
 			break;
 		default:    // displays 404 if route not specified above
 		$main_view = '../views/404.php';
@@ -81,5 +93,5 @@ function pageController()
 
 	return $data;
 }
-
 extract(pageController());
+var_dump($_SESSION);
