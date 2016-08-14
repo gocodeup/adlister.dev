@@ -11,7 +11,7 @@
 <!-- Latest compiled and minified JavaScript -->
 
 <link rel="stylesheet" href="/css/navbar.css">
-
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
 
 
 
