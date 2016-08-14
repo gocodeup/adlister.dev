@@ -1,0 +1,22 @@
+
+h1, h2, h4, a {
+  color: #800000;
+}
+
+h5 {
+	color: white;
+}
+
+.container-fluid {
+	background-color: #777;
+}
+
+
+.sidebar {
+  background-color: #777;
+}
+
+.sidebarImage {
+max-width: 20px;
+}
+
