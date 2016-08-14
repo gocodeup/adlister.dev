@@ -2,8 +2,7 @@
 
 require_once __DIR__ . '/Model.php';
 
-
-class TeamMembers extends Model {
+class TeamMember extends Model {
 
 	protected static $table = 'team_members';
 
