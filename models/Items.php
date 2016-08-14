@@ -46,3 +46,26 @@ class Items extends Model {
       return $instance;
 	}
 }
+
+public static function thisItem()
+{
+	self::dbConnect();
+
+	//MUST FINISH THIS QUERY!!!
+	$query = 'SELECT * FROM ' . static::$table . ' WHERE id ';
+
+	$stmt = self::dbc->prepare($query);
+	$stmt->execute();
+
+	$result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+	$instance = null;
+
+	if ($result) {
+
+		$instance = new static;
+		$instance->attributes = $result;
+	}
+
+	return $instance;
+}
