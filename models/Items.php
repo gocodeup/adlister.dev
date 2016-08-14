@@ -18,5 +18,31 @@ class Items extends Model {
 			$stmt->execute();
 		}
 	}
+	public static function featuredItems()
+	{
+			 // Get connection to the database
+      self::dbConnect();
 
+      //Create select statement using prepared statements
+      $query = 'SELECT * FROM ' . static::$table . ' ORDER BY id DESC LIMIT 3';
+
+      $stmt = self::$dbc->prepare($query);
+      $stmt->execute();
+
+      //Store the resultset in a variable named $result
+      $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+      // The following code will set the attributes on the calling object based on the result variable's contents
+
+      $instance = null;
+
+      if ( $result )
+      {
+
+          $instance = new static;
+          $instance->attributes = $result;
+      }
+
+      return $instance;
+	}
 }

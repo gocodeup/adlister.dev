@@ -23,19 +23,17 @@
         </div>
         <hr>
         <div class="row">
-            <div class="col-xs-4">
-                <a href="#"><img class="img-thumbnail img-responsive" alt="<?= $ad->name ?>" src="<?= $ad->image ?>"></a>
-                <br>
-                <?= $ad->name; ?>
-                <hr>
-                <?= $ad->description; ?>
-            </div>
-            <div class="col-xs-4">
-                Item
-            </div>
-            <div class="col-xs-4">
-                Item
-            </div>
+            <?php foreach ($items->attributes as $item): ?>
+                
+                <div class="col-xs-4">
+                    <a href="#"><img class="img-thumbnail img-responsive featured-image" alt="<?= $item['name']; ?>" src="<?= $item['image']; ?>"></a>
+                    <br>
+                    <h4><?= $item['name']; ?></h4>
+                    <?= $item['description']; ?>
+                    <br>
+                    <strong>$<?= $item['price']; ?></strong>
+                </div>
+            <?php endforeach ?>
         </div>
 
     </section>
