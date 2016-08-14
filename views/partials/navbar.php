@@ -1,17 +1,7 @@
 <!--partial view for navbar-->
 
-<style>
 
-h1 {
-  color: #800020;
-}
-
-body {
-  border: 20px;
-}
-
-</style>
-
+<link rel="stylesheet" href="/css/main.css">
 <body>
 
 <nav class="navbar navbar-default navbar-inverse" role="navigation">
@@ -31,7 +21,7 @@ body {
             <button type="submit" class="btn btn-default">Sign In</button>
             </div>
           </form>
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right" id="signup">
             <li><a href="#">Sign Up</a></li>
           </ul>
         </div>  
