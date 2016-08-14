@@ -43,12 +43,18 @@ function pageController()
         case '/logout':
             $main_view = '../views/home.php';
             Auth::logout();
+            break;
 
         case '/view-teams':
             $main_view = '../views/view-teams.php';
+            break;
+
+        case '/add-member':
+            $main_view = '../views/teams/add-member.php';
+            break;
 
         default:    // displays 404 if route not specified above
-            $main_view = '../views/home.php';
+            $main_view = '../views/404.php';
             break;
     }
 
