@@ -50,6 +50,7 @@ class Items extends Model {
 	{
 		self::dbConnect();
 
+
 		//MUST FINISH THIS QUERY!!!
 		$query = 'SELECT * FROM ' . static::$table . ' WHERE id ';
 
