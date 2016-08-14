@@ -66,7 +66,7 @@ class Auth
 		if (self::check())
 		{
 
-			return User::findByUsernameOrEmail($_SESSION['IS_LOGGED_IN']);
+			return User::findByUsername($_SESSION['IS_LOGGED_IN']);
 		}
 
 		return null;
