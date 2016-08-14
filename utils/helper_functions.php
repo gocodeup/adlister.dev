@@ -18,6 +18,23 @@ function addTeamController() {
     }
 }
 
+    
+
+//don't think this is done yet
+function addTeamMemberController() {
+    $data = ['team_id' => '', 'pokemon_id' => []];
+    if (!empty($_POST)) {
+        $memberArray = Input::get('member');
+        var_dump($memberArray);
+        foreach ($memberArray as $newMember) {
+            $team = new TeamMember();
+            $team->user_id = $_SESSION['user_id'];
+            $team->new_member = $newMember;
+            $team->save();
+        }
+    }
+}
+
 function loginController() {
     $data = ['username' => '', 'password' => ''];
     if (isset($_POST)) {  
