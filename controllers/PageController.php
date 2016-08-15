@@ -67,11 +67,13 @@ function pageController()
 
         case '/visit-team':
             $main_view = '../views/teams/visit-team.php';
-            extract(visitTeamController());
+            $data = extract(visitTeamController()); 
+            $counter = 0;
             break;
 
         case '/view-teams':
             $main_view = '../views/teams/view-teams.php';
+            allTeamsController();
             break;
 
         case '/compare':
