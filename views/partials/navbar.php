@@ -22,7 +22,7 @@
             <li><a href="/ads/show">This Gavlisting</a></li>
           </ul>
         </li>
-        <button class = "btn btn-primary"><a href="/logout">Logout</a></button>
+        <a href="/logout" class="btn btn-primary">Logout</a>
     <li class="nav-item">
       <a class="nav-link" href="#">Pricing</a>
     </li>
