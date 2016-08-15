@@ -34,7 +34,7 @@ class Team extends Model {
             {
 
                 $instance = new static;
-                $instance->team = $results;
+                $instance->attributes = $results;
             }
 
             return $instance;
@@ -81,16 +81,14 @@ class Team extends Model {
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             // The following code will set the attributes on the calling object based on the result variable's contents
-
             $instance = null;
 
             if ( $results )
             {
 
                 $instance = new static;
-                $instance->teams = $results;
+                $instance->attributes = $results;
             }
-
             return $instance;
         }
 
