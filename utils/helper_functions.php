@@ -22,6 +22,16 @@ function myTeamsController()
     $_SESSION['USER_TEAMS'] = $myTeamsById;
 }
 
+function allTeamsController()
+{
+    $teamsArray = Team::all();
+    foreach ($teamsArray as $team)
+    {
+        $allTeamsById[] = $team['id'];
+    }
+    $_SESSION['ALL_TEAMS'] = $allTeamsById;
+}
+
 function displayTeamById($id)
 {
     $selected = Team::findByTeamId($id);
@@ -66,23 +76,14 @@ function displayTeamMembers($id) {
     $teamName = Team::getName($id);
     $fullTeam = TeamMember::findByTeamId($id);
     foreach ($fullTeam->members as $member) {
-        $pokedexEntry = Pokemon::getPokemon($member['id']);
+        $pokedexEntry = Pokemon::getPokemon($member['pokedex_id']);
         $name = $pokedexEntry['Pokemon'];
-        $pokemonStats = Pokemon::selectStats($member['id']);
+        $pokemonStats = Pokemon::selectStats($member['pokedex_id']);
         $allMembers[$name] = $pokemonStats;
     }
     $allMembers['teamName'] = $teamName;
     return $allMembers;
 }
-
-// function allTeamsController()
-// {
-//     $user = new User;
-//     $user->id = $_SESSION['LOGGED_IN_ID'];
-
-//     // foreach (team where user_id = loggedinid)
-//         $user->teams[] = 
-// }
 
 function addTeamController()
 {
