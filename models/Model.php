@@ -1,7 +1,4 @@
 <?php
-
-$_ENV = include __DIR__ . '/../.env.php';
-
 class Model {
 
     protected static $dbc;
@@ -57,8 +54,7 @@ class Model {
         {
 
             //Connect to database
-            require_once __DIR__ . '/../database/db_connect.php';
-
+            require __DIR__ . '/../database/db_connect.php';
             self::$dbc = $dbc;
         }
     }
@@ -104,7 +100,6 @@ class Model {
         //Use prepared statements to ensure data security
         $columns = '';
         $value_placeholders = '';
-
         foreach ($this->attributes as $column => $value)
         {
 
@@ -123,13 +118,11 @@ class Model {
         }
 
         $query = "INSERT INTO " . static::$table . " ({$columns}) VALUES ({$value_placeholders})";
-
         $stmt = self::$dbc->prepare($query);
 
         foreach ($this->attributes as $column => $value) {
             $stmt->bindValue(':' . $column, $value, PDO::PARAM_STR);
         }
-
         $stmt->execute();
 
         $this->attributes['id'] = self::$dbc->lastInsertId();
