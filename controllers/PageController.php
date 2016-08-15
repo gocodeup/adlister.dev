@@ -38,6 +38,7 @@ function pageController()
         case '/login':
             if (Auth::loggedIn()) {
                 $main_view = '../views/teams/view-teams.php';
+                allTeamsController();
                 break;
             } else {
                 loginController();
@@ -48,6 +49,7 @@ function pageController()
         case '/logout':
             $main_view = '../views/teams/view-teams.php';
             Auth::logout();
+            allTeamsController();
             break;
 
         case '/add-members':
