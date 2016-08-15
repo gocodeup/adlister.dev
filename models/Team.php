@@ -7,6 +7,12 @@ class Team extends Model {
 
 	protected static $table = 'teams';
 
+        public static function getName($id)
+        {
+            $team = Team::findByTeamId($id);
+            return $team->team['team_name'];
+        }
+
 	    public static function findByTeamId($teamId)
         {
         	self::dbConnect();
@@ -28,7 +34,7 @@ class Team extends Model {
             {
 
                 $instance = new static;
-                $instance->attributes = $results;
+                $instance->team = $results;
             }
 
             return $instance;
@@ -82,7 +88,7 @@ class Team extends Model {
             {
 
                 $instance = new static;
-                $instance->attributes = $results;
+                $instance->teams = $results;
             }
 
             return $instance;
