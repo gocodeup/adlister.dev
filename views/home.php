@@ -15,7 +15,6 @@
     </section>
 
     <section id="features">
-    <?php var_dump($_SESSION); ?>
 
         <div class="row">
 
