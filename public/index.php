@@ -11,8 +11,8 @@ require_once __DIR__ . '/../bootstrap.php';
 </head>
 <body>
     <?php require '../views/partials/navbar.php'; ?>
-    <div class="container-fluid col-sm-12">
-    	<div class="container col-sm-2">
+    <div class="container-fluid col-sm-12 full-height no-padding">
+    	<div class="container col-sm-2 no-padding full-height sidebar">
     		<?php require '../views/partials/sidebar.php'; ?>
     	</div>
     	<div class="container col-sm-10">
