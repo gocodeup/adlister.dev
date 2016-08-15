@@ -66,7 +66,7 @@ function visitTeamController()
 
 function setTeamNameAndId()
 {
-    $_SESSION['TEAM_ID'] = Input::get('team');
+    $_POST['TEAM_ID'] = Input::get('team');
     $team = Team::findByTeamId(Input::get('team'));    
     $_SESSION['TEAM_NAME'] = $team->team_name;
 }
@@ -133,10 +133,10 @@ function createTeam(){
     {
         $team->logo = $_POST['IMAGE_URL'];
     } else {
-        $team->logo = "/assets/sugimori/25.png";
+        $team->logo = "../assets/sugimori/25.png";
     }
     $team->save();
-    $_SESSION['TEAM_ID'] = $team->id;
+    $_POST['TEAM_ID'] = $team->id;
 }
 
 function deleteTeam() 
@@ -154,8 +154,8 @@ function deleteTeamAndMembers()
 {
     $team = new Team();
     $teamMembers = new TeamMember();
-    $team = Team::findByTeamId($_SESSION['TEAM_ID']);
-    $teamMembers = TeamMember::findByTeamId($_SESSION['TEAM_ID']);
+    $team = Team::findByTeamId($_POST['TEAM_ID']);
+    $teamMembers = TeamMember::findByTeamId($_POST['TEAM_ID']);
     if ($teamMembers)
     {
         foreach ($teamMembers->attributes as $teamMember)
@@ -175,7 +175,7 @@ function addMember()
     {
         saveMembers($inputRecieved);
         $_POST['MESSAGE'] = "Team successfully updated.";
-        header("Location: /visit-team?{$_SESSION['TEAM_ID']}");
+        header("Location: /visit-team?{$_POST['TEAM_ID']}");
     } else {
         $_POST['MESSAGE'] = "Search for Pokemon by Name, or enter Pokedex Number.";
     }
@@ -188,7 +188,7 @@ function saveMembers($membersArray)
     {
         $pokemon = Pokemon::getPokemon($member);
         $teamMember = new TeamMember();
-        $teamMember->team_id = $_SESSION['TEAM_ID'];
+        $teamMember->team_id = $_POST['TEAM_ID'];
         $teamMember->pokedex_id = $pokemon['id'];
         if ($exists) 
         {

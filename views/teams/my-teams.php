@@ -1,5 +1,5 @@
 
-<div class="col-sm-10 text-center">
+<div class="col-sm-12 text-center">
 	<div>
 		<h1>Select a Team to Visit</h1>
 	</div>

@@ -1,4 +1,4 @@
-<div class="col-sm-10 text-center">
+<div class="col-sm-12 text-center">
 	<div>
 		<h1>All Users Saved Teams</h1>
 	</div>

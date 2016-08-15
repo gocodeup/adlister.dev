@@ -54,57 +54,45 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.0/Chart.bundle.min.js">
 </script>
 <script>
-<?php if (isset($leftPokemon)) : ?>
+<?php if (isset($_POST['TEAM_ID'])) : ?>
 
-    //     var ctx = $('#full-team-compare').get(0).getContext("2d");
-    // ctx.canvas.height = 300;
-    // var data = {
-    //   labels: ["HP", "Attack", "Defense", "Special Attack", "Special Defense", "Speed"],
-    //   datasets: [
-    //           {
-    //           label: "",
-    //           backgroundColor: "rgba(255,99,132,0.2)",
-    //           borderColor: "rgba(255,99,132,1)",
-    //           pointBackgroundColor: "rgba(255,99,132,1)",
-    //           pointBorderColor: "#fff",
-    //           pointHoverBackgroundColor: "#fff",
-    //           pointHoverBorderColor: "rgba(255,99,132,1)",
-    //           data: 
-    //       },
-    //       {
-    //           label: "",
-    //           backgroundColor: "rgba(179,181,198,0.2)",
-    //           borderColor: "rgba(179,181,198,1)",
-    //           pointBackgroundColor: "rgba(179,181,198,1)",
-    //           pointBorderColor: "#fff",
-    //           pointHoverBackgroundColor: "#fff",
-    //           pointHoverBorderColor: "rgba(179,181,198,1)",
-    //           data: 
-    //       }
-    //       {
-    //           label: "<?= $rightName ?>",
-    //           backgroundColor: "rgba(179,181,198,0.2)",
-    //           borderColor: "rgba(179,181,198,1)",
-    //           pointBackgroundColor: "rgba(179,181,198,1)",
-    //           pointBorderColor: "#fff",
-    //           pointHoverBackgroundColor: "#fff",
-    //           pointHoverBorderColor: "rgba(179,181,198,1)",
-    //           data: 
-    //       }
-    //   ]
-    // };
-    // new Chart(ctx, {
-    //   type: "radar",
-    //   data: data,
-    //   options: {
-    //           scale: {
-    //               reverse: false,
-    //               ticks: {
-    //                   beginAtZero: true
-    //               }
-    //           }
-    //     }
-    // });
+      var ctx = $('#full-team-compare').get(0).getContext("2d");
+  ctx.canvas.height = 250;
+  var data = {
+    labels: ["HP", "Attack", "Defense", "Special Attack", "Special Defense", "Speed"],
+    datasets: [
+      
+    <?php foreach ($memberNames as $member) : ?>
+      <?php $data = []; foreach ($stats as $name => $stat) : ?>
+        <?php $data[] = $stat; ?>
+      <?php endforeach; ?>
+          {
+          label: "<?= $member ?>",
+          backgroundColor: "rgba(255,99,132,0.2)",
+          borderColor: "rgba(255,99,132,1)",
+          pointBackgroundColor: "rgba(255,99,132,1)",
+          pointBorderColor: "#fff",
+          pointHoverBackgroundColor: "#fff",
+          pointHoverBorderColor: "rgba(255,99,132,1)",
+          data: <?= json_encode($data) ?>
+      },
+      <?php endforeach; ?>
+      ]
+    };
+  new Chart(ctx, {
+    type: "radar",
+    data: data,
+    options: {
+            scale: {  
+                reverse: false,
+                ticks: {
+                    beginAtZero: true
+                }
+            }
+      }
+  });
+  <?php endif; ?>
+  <?php if (isset($leftPokemon)) : ?>
     var ctx = $('#stats-chart').get(0).getContext("2d");
     ctx.canvas.height = 300;
     var data = {
@@ -144,5 +132,5 @@
               }
         }
     });
-<?php endif ?>
+<?php endif; ?>
 </script>

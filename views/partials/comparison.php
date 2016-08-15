@@ -1,5 +1,5 @@
 <?php require_once 'compare_functions.php' ?>
-<div class="container col-sm-11">
+<div class="container col-sm-12">
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-3"></div>

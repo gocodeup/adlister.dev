@@ -21,9 +21,9 @@
 	<?php $counter++; endforeach ?>
 	</div>
 	<div class="col-md-2"></div>
-	<div class="col-xs-6" style="padding:5px;">
+	<div class="col-xs-8" style="padding:5px;">
 		<canvas id="full-team-compare" width="400" height="400"></canvas>
 	</div>
-	<form class="col-xs-12 text-center" method="POST" action="/add-members" data-validation>
+	<form class="col-xs-12 text-center margin-top-10" method="POST" action="/add-members" data-validation>
 		<input class="alert" value="Delete Team" name="TEAM_DELETED" type="submit" onclick="return confirm('Permenantly Delete This Team?')" />
 	</form>
