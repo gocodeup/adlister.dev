@@ -1,4 +1,5 @@
 <!--Page for user account home-->
+<div class="container view">
 <div class="row">
 	<div class="col-md-5 col-md-offset-1">
 		<h3>User Info</h3>
@@ -26,4 +27,5 @@
 		<?php endforeach; ?>
 		<a href="/ads/create" class="btn btn-primary">New Listing</a>
 	</div>
+</div>
 </div>

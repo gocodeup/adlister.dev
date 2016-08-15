@@ -1,5 +1,5 @@
 <!--Page that includes the form to edit an existing ad-->
-<div class="container">
+<div class="container view">
 
 	<section id="edit">
 
