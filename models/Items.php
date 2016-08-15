@@ -48,35 +48,35 @@ class Items extends Model {
 	}
 	
 	public function user()
-    {
-    	return User::find($this->user_id);
-    }
+	{
+		return User::find($this->user_id);
+	}
 
 	public static function findAllWithUserId($id)
-=======
-      self::dbConnect();
+	{
+		self::dbConnect();
 
       //Create select statement using prepared statements
-      $query = 'SELECT * FROM ' . static::$table . ' ORDER BY id DESC LIMIT 3';
+		$query = 'SELECT * FROM ' . static::$table . ' ORDER BY id DESC LIMIT 3';
 
-      $stmt = self::$dbc->prepare($query);
-      $stmt->execute();
+		$stmt = self::$dbc->prepare($query);
+		$stmt->execute();
 
       //Store the resultset in a variable named $result
-      $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
       // The following code will set the attributes on the calling object based on the result variable's contents
 
-      $instance = null;
+		$instance = null;
 
-      if ( $result )
-      {
+		if ( $result )
+		{
 
-          $instance = new static;
-          $instance->attributes = $result;
-      }
+			$instance = new static;
+			$instance->attributes = $result;
+		}
 
-      return $instance;
+		return $instance;
 	}
 
 
@@ -107,7 +107,6 @@ class Items extends Model {
 	}
 
 	public static function itemUser($itemId)
-
 	{
 		self::dbConnect();
 		$query = 'SELECT * FROM ' . static::$table . ' WHERE user_id = :user_id ORDER BY id desc';
@@ -140,6 +139,24 @@ class Items extends Model {
         }
         return $instance;
     }
+
+	public static function findAllWithUserId($id)
+	{
+		self::dbConnect();
+		$query = 'SELECT * FROM ' . static::$table . ' WHERE user_id = :user_id ORDER BY id desc';
+		$stmt = self::$dbc->prepare($query);
+		$stmt->bindValue(':user_id', $id, PDO::PARAM_INT);
+		$stmt->execute();
+		$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		$instance = null;
+		if ( $results )
+		{
+			$instance = new static;
+			$instance->attributes = $results;
+		}
+		return $instance;
+	}
+}
 
 
 
