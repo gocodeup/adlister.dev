@@ -43,9 +43,6 @@
 						<div class="col-sm-6">
 							<button type="submit" class="btn btn-primary">Create</button>
 						</div>
-						<div class="col-sm-6 text-right">
-							<a href="/edit" class="btn btn-success">Go To My Gavlistings</a>
-						</div>
 					</div>
 
 				</form>

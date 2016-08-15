@@ -12,7 +12,11 @@
 		<p>
 		<strong>Email: </strong><?= $user->email ?>
 		</p>
-		<a href="/account/edit/?id=<?= $user->id ?>" class="btn btn-primary">Edit Account</a>
+		<?php if (Auth::id() != Input::get('id')): ?>
+		<a href="/account/edit/?id=<?= $user->id ?>" class="btn btn-primary hidden" >Edit Account</a>
+		<?php else: ?>
+		<a href="/account/edit/?id=<?= $user->id ?>" class="btn btn-primary" >Edit Account</a>
+		<?php endif; ?>
 	</div>
 	<div class="col-md-6">
 		<h3>Your Gavlistings</h3>
@@ -25,7 +29,11 @@
 				<a href="/ads/show/?id=<?= $item['id']; ?>">See More</a>
 			</p>
 		<?php endforeach; ?>
+		<?php if (Auth::id() != Input::get('id')): ?>
+		<a href="/ads/create" class="btn btn-primary hidden">New Listing</a>
+		<?php else: ?>
 		<a href="/ads/create" class="btn btn-primary">New Listing</a>
+		<?php endif; ?>
 	</div>
 </div>
 </div>

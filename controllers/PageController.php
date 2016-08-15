@@ -31,10 +31,14 @@ function pageController()
 			$data['items'] = Items::featuredItems();
 			break;
 		case '/ads/create':
-			$main_view = '../views/ads/create.php';
-			if($_POST) {
-				itemsSave();
-			}
+			//if (Auth::id() == Input::get('id')) {
+				$main_view = '../views/ads/create.php';
+				if($_POST) {
+					itemsSave();
+				}
+			// } else {
+			// 	header("Location: /account/");
+			// }
 			break;
 		case '/ads/edit':
 			$main_view = '../views/ads/edit.php';
@@ -58,11 +62,15 @@ function pageController()
 			$main_view = '../views/users/account.php';
 			break;
 		case '/account/edit/':
-			$main_view = '../views/users/edit.php';
-			redirectIfNotLoggedIn();
-			checkIfUserIdGiven();
-			editAccount();
-			$data['user'] = User::find(Input::get('id'));
+			if (Auth::id() == Input::get('id')) {
+				$main_view = '../views/users/edit.php';
+				redirectIfNotLoggedIn();
+				checkIfUserIdGiven();
+				editAccount();
+				$data['user'] = User::find(Input::get('id'));
+			} else {
+				header("Location: /account/");
+			}
 			break;
 		case '/account/login':
 			redirectIfLoggedIn();
