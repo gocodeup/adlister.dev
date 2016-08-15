@@ -21,6 +21,7 @@ class Items extends Model {
 	public static function featuredItems()
 	{
 			 // Get connection to the database
+
 		self::dbConnect();
 
 			//Create select statement using prepared statements
@@ -77,23 +78,35 @@ class Items extends Model {
 
 		return $instance;
 	}
-	public static function itemUser($itemId)
+
+
+
+	public static function thisItem()
 	{
 		self::dbConnect();
-		$query = 'SELECT * FROM ' . static::$table . ' WHERE user_id = :user_id ORDER BY id desc';
+
+
+		$query = 'SELECT * FROM ' . static::$table . ' WHERE id = ' . Input::get('id');
+
+
 		$stmt = self::$dbc->prepare($query);
-		$stmt->bindValue(':user_id', $id, PDO::PARAM_INT);
 		$stmt->execute();
-		$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+		$result = $stmt->fetch(PDO::FETCH_ASSOC);
+
 		$instance = null;
-		if ( $results )
-		{
+
+
+		if ($result) {
+
 			$instance = new static;
-			$instance->attributes = $results;
+			$instance->attributes = $result;
 		}
+
 		return $instance;
 	}
 }
+
 
 
 
