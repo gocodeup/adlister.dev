@@ -70,6 +70,7 @@ function createAd(){
     $data['user->username'] = $user->username;
     $data['user->email'] = $user->email;
     return $data;
+}
 
 
 function loginUserWithInputIfExists() {
