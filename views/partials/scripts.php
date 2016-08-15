@@ -38,7 +38,6 @@
             //remove all but pokemon name from string
             clickedText = clickedRow.replace(/[0-9]/g, '');
             insertText = $.trim(clickedText);
-            console.log(insertText);
             //insert text from cliked row into input fields above
             $('.insert-pokemon').each(function() {
                 if (!$(this).val()) {
@@ -55,22 +54,37 @@
 </script>
 <script>
 <?php if (isset($_POST['TEAM_ID'])) : ?>
-
+  <?php $colorsArray = [
+  "rgba(255,99,132,0.2)",
+  "rgba(255,99,132,1)",
+  "rgba(159,227,120,1)",
+  "rgba(46,93,19,1)",
+  "rgba(121,127,246,1)",
+  "rgba(13,22,201,1)",
+  "rgba(235,235,5,1)",
+  "rgba(252,245,115,1)",
+  "rgba(235,148,235,1)",
+  "rgba(167,32,167,1)",
+  "rgba(251,160,112,1)",
+  "rgba(213,79,7,1)"
+  ];
+  $counter = 0; 
+  ?>
       var ctx = $('#full-team-compare').get(0).getContext("2d");
   ctx.canvas.height = 250;
   var data = {
     labels: ["HP", "Attack", "Defense", "Special Attack", "Special Defense", "Speed"],
     datasets: [
       
-    <?php foreach ($memberNames as $member) : ?>
-      <?php $data = []; foreach ($stats as $name => $stat) : ?>
+    <?php $incrementer = 0; foreach ($memberNames as $member) : ?>
+      <?php $data = []; foreach ($stats[$incrementer] as $name => $stat) : ?>
         <?php $data[] = $stat; ?>
-      <?php endforeach; ?>
+      <?php endforeach;  $incrementer++;?>
           {
           label: "<?= $member ?>",
-          backgroundColor: "rgba(255,99,132,0.2)",
-          borderColor: "rgba(255,99,132,1)",
-          pointBackgroundColor: "rgba(255,99,132,1)",
+          backgroundColor:  "<?php echo $colorsArray[$counter]; $counter++ ?>",
+          borderColor: "<?php echo $colorsArray[$counter]; $counter++ ?>",
+          pointBackgroundColor: "#fff",
           pointBorderColor: "#fff",
           pointHoverBackgroundColor: "#fff",
           pointHoverBorderColor: "rgba(255,99,132,1)",
