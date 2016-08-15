@@ -58,7 +58,7 @@ function visitTeamController()
     $pokedexIds = getMemberPokedexNumbers($membersNames);
     return [
         'memberNames' => $membersNames,
-        'stats' => $memberStats[0],
+        'stats' => $memberStats,
         'teamName' => $teamName,
         'pokedexId' => $pokedexIds
     ];
@@ -129,14 +129,20 @@ function createTeam(){
     $team = new Team();
     $team->user_id = $_SESSION['LOGGED_IN_ID'];
     $team->team_name = $_POST['TEAM_NAME'];
-    if (isset($_POST['IMAGE_URL']))
+    if (isset($_POST['LOGO']))
     {
-        $team->logo = $_POST['IMAGE_URL'];
+        $logo = getImage($_POST['LOGO']);
+        $team->logo = __DIR__ .'../assets/sugimori/$logo.png';
     } else {
         $team->logo = "../assets/sugimori/25.png";
     }
     $team->save();
-    $_POST['TEAM_ID'] = $team->id;
+}
+
+function getImage($name)
+{
+    $pokemon = Pokemon::getPokemon($name);
+    return $pokemon['Pokemon'];
 }
 
 function deleteTeam() 
@@ -200,7 +206,7 @@ function saveMembers($membersArray)
 
 function getMemberId()
 {
-
+    //find what the existing member's id is
 }
 
 function loginController() 
