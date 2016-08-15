@@ -23,9 +23,8 @@ class TeamMember extends Model {
         {
 
             $instance = new static;
-            $instance->members = $results;
+            $instance->attributes = $results;
         }
-
         return $instance;
     }
 
