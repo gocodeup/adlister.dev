@@ -47,6 +47,7 @@ function pageController()
 			break;
 		case '/ads/show':
 			$main_view = '../views/ads/show.php';
+			$data['item'] = $Items::find(Input::get('id'));
 			break;
 		case '/account':
 			$main_view = '../views/users/account.php';
