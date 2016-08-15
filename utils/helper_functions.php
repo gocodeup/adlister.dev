@@ -15,11 +15,14 @@ function addMemberController()
 function myTeamsController()
 {
     $teamsArray = Team::findByUser($_SESSION['LOGGED_IN_ID']);
-    foreach ($teamsArray->teams as $team) 
+    if ($teamsArray)
     {
-        $myTeamsById[] = $team['id'];                
+        foreach ($teamsArray->attributes as $team) 
+        {
+            $myTeamsById[] = $team['id'];                
+        }
+        $_SESSION['USER_TEAMS'] = $myTeamsById;
     }
-    $_SESSION['USER_TEAMS'] = $myTeamsById;
 }
 
 function allTeamsController()
@@ -35,7 +38,7 @@ function allTeamsController()
 function displayTeamById($id)
 {
     $selected = Team::findByTeamId($id);
-    return $selected->team;
+    return $selected->attributes;
 }
 
 function visitTeamController()
@@ -133,7 +136,6 @@ function deleteTeam()
     $deleteArray = Input::get('TEAM_DELETED');
     if ($deleteArray) 
     {
-    var_dump($deleteArray);
         deleteTeamAndMembers();
         $_POST['MESSAGE'] = "This team has been permenantly deleted.";
         header('Location: /view-teams');
@@ -145,18 +147,22 @@ function deleteTeamAndMembers()
     $team = new Team();
     $teamMembers = new TeamMember();
     $team = Team::findByTeamId($_SESSION['TEAM_ID']);
-    var_dump($team->attributes);
-    $teamMembers = TeamMember::findByTeamId($_SESSION['TEAM_ID']);
-    if (isset($teamMembers))
+    var_dump("delete team and members by ID:");
+    var_dump($_SESSION['TEAM_ID']);
+    $teamMembers = TeamMember::findByTeamId('TEAM_ID');
+    // above line not working!!!!
+    if ($teamMembers)
     {
-        foreach ($teamMembers->members as $teamMember)
+        foreach ($teamMembers->attributes as $teamMember)
         {
             $member = new TeamMember();
             $member->id = $teamMember['id'];
+            var_dump("team member: ");
+            var_dump($member->id);
             $member->delete();
         }
     }
-    $team->delete();
+    // $team->delete();
 }
 
 function addMember()
