@@ -1,9 +1,24 @@
-<?php var_dump($_SESSION) ?>
-
-<div class="container">
-	<div class="row">
-		<div class="col-sm-4">
-			<?= $_POST['MESSAGE']; ?>
-		</div>
+<div class="col-sm-10 text-center">
+	<div>
+		<h1>All User's Teams</h1>
 	</div>
-</div>
+	<hr>
+	<?php foreach ($_SESSION['ALL_TEAMS'] as $teamId) : ?>
+	<?php var_dump($teamId);//extract(displayTeamById($teamId)); ?>
+	<div class="col-sm-4">
+		<a class="team-table" href="visit-team?team=<?= $teamId ?>">
+			<table>
+				<tbody>
+					<tr>
+						<td><h4>Team Name:</h4></td>
+					<tr>
+						<td><h3><?= $team_name ?></h3></td>
+					</tr>
+					<tr>
+						<td><img class="img-responsive team_logo" src="../assets/uploads/<?= $logo ?>"></td>
+					</tr>
+				</tbody>
+			</table>
+		</a>
+	</div>
+	<?php endforeach ?>
