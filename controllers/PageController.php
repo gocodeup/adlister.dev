@@ -49,7 +49,6 @@ function pageController()
 		case "/ads/show/":
 			$main_view = '../views/ads/show.php';
 			$data['items'] = Items::find($itemId);
-			$data['user'] = Items::itemUser($itemId);
 			break;
 		case "/account/":
 			redirectIfNotLoggedIn();
