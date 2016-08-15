@@ -2,10 +2,10 @@
 
 class Model {
 
-    protected static $dbc;
+    public static $dbc;
     protected static $table;
 
-    protected $attributes = array();
+    public $attributes = array();
 
 
     /*
@@ -48,7 +48,7 @@ class Model {
     /*
      * Connect to the DB
      */
-    protected static function dbConnect()
+    public static function dbConnect()
     {
 
         if ( ! self::$dbc )

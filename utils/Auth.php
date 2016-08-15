@@ -13,13 +13,6 @@ class Auth
 	// runs login attempt with parameters
 	public static function attempt($username, $password)
 	{
-		// makes sure the values passed in are not empty
-		if(($username == '' || $username == null) || ($password == '' || $password == null))
-		{
-
-			$_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
-			return false;
-		}
 
 		// gets instance of user model by searching with username or email($username)
 		$user = User::findByUsername($username);
@@ -37,7 +30,6 @@ class Auth
 			// sets session variables used for logged in user
 			$_SESSION['IS_LOGGED_IN'] = $user->name;
 			$_SESSION['LOGGED_IN_ID'] = $user->id;
-			$_SESSION['TEAM_ID'] = 1;
 
 			return true;
 		}

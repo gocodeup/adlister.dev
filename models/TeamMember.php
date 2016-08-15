@@ -16,20 +16,15 @@ class TeamMember extends Model {
         $stmt->bindValue(':team_id', $teamId, PDO::PARAM_STR);
         $stmt->execute();
 
-        //Store the resultset in a variable named $result
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        // The following code will set the attributes on the calling object based on the result variable's contents
-
         $instance = null;
 
         if ( $results )
         {
 
             $instance = new static;
-            $instance->members = $results;
+            $instance->attributes = $results;
         }
-
         return $instance;
     }
 

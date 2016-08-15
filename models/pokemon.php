@@ -12,10 +12,10 @@ class Pokemon extends Model {
 
     }
 
-	public static function getPokemon($inputField) 
+	public static function getPokemon($nameOrNumber) 
 	{
 		self::dbConnect();
-		$pokemonSearch = self::findByNameOrNumber($inputField);
+		$pokemonSearch = self::findByNameOrNumber($nameOrNumber);
 		$query = self::createQuery($pokemonSearch['searchBy'], $pokemonSearch['pokemonId']);
 		return self::$dbc->query($query)->fetch(PDO::FETCH_ASSOC);
 	}
@@ -47,7 +47,7 @@ class Pokemon extends Model {
 	  return self::$dbc->query("SELECT Pokedex, Pokemon, Total, Hp, Attack, Defense, SpAtt, SpDef, Speed FROM pokedex GROUP BY pokedex.pokedex")->fetchAll(PDO::FETCH_ASSOC);
 	}
 
-	protected static function createQuery($searchBy, $pokemonId) 
+	public static function createQuery($searchBy, $pokemonId) 
 	{
   		$sql = <<<SELECTION
 SELECT * FROM pokedex 
@@ -57,16 +57,34 @@ SELECTION;
 		return $sql;
 	}
 
-	public static function selectStats($pokemon) 
+	public static function executeQuery($query)
+  {
+  	self::dbConnect();
+    return self::$dbc->query($query)->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+	public static function selectStats($search, $pokedexAlso = false) 
 	{
-	  return [
-	    'Hp' => $pokemon['Hp'],
-	    'Attack' => $pokemon['Attack'],
-	    'Defense' => $pokemon['Defense'],
-	    'SpAtt' => $pokemon['SpAtt'],
-	    'SpDef' => $pokemon['SpDef'],
-	    'Speed' => $pokemon['Speed']
-	  ];
+		$pokemon = self::getPokemon($search);
+		if ($pokedexAlso) {
+		  return [
+		    'Hp' => $pokemon['Hp'],
+		    'Attack' => $pokemon['Attack'],
+		    'Defense' => $pokemon['Defense'],
+		    'SpAtt' => $pokemon['SpAtt'],
+		    'SpDef' => $pokemon['SpDef'],
+		    'Speed' => $pokemon['Speed'],
+		    'Pokedex' => $pokemon['Pokedex']
+		  ];
+		}
+		return [
+		    'Hp' => $pokemon['Hp'],
+		    'Attack' => $pokemon['Attack'],
+		    'Defense' => $pokemon['Defense'],
+		    'SpAtt' => $pokemon['SpAtt'],
+		    'SpDef' => $pokemon['SpDef'],
+		    'Speed' => $pokemon['Speed']
+		  ];
 	}
 
 	public static function compareTotals($leftTotal, $rightTotal) 

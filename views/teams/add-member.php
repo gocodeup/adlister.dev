@@ -1,4 +1,4 @@
-<?php 
+<?php var_dump($_POST);
 ?>
 <div class="container-fluid col-sm-10">
 	<div class="row text-center">
@@ -30,7 +30,7 @@
 			    <input type="text" class="form-control insert-pokemon" name="member[6]" placeholder="Enter Name or Number" data-required>
 			</div>
 			<div class="text-center">
-				<input type="submit" onclick="return confirm('Update Team with Selected Pokemon?')" />
+				<input type="submit" name=<?= $_POST['TEAM_ID'] ?>onclick="return confirm('Update Team with Selected Pokemon?')" />
 				<(^.^<)
 				<input value="Delete" name="TEAM_DELETED" type="submit" onclick="return confirm('Permenantly Delete This Team?')" />
 			</div>

@@ -7,6 +7,12 @@ class Team extends Model {
 
 	protected static $table = 'teams';
 
+        public static function getName($id)
+        {
+            $team = self::findByTeamId($id);
+            return $team->attributes['team_name'];
+        }
+
 	    public static function findByTeamId($teamId)
         {
         	self::dbConnect();
@@ -75,7 +81,6 @@ class Team extends Model {
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             // The following code will set the attributes on the calling object based on the result variable's contents
-
             $instance = null;
 
             if ( $results )
@@ -84,7 +89,6 @@ class Team extends Model {
                 $instance = new static;
                 $instance->attributes = $results;
             }
-
             return $instance;
         }
 
