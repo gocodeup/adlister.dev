@@ -2,21 +2,22 @@
 
 $_ENV = include __DIR__ . '/../.env.php';
 
-class Model {
+abstract class Model {
 
     protected static $dbc;
     protected static $table;
 
-    public $attributes = array();
-
+    protected $attributes = array();
 
     /*
      * opens db connection
      */
-    public function __construct()
+    public function __construct(array $attributes = array())
     {
 
         self::dbConnect();
+        $this->attributes = $attributes;
+
     }
 
 
@@ -125,7 +126,6 @@ class Model {
         $query = "INSERT INTO " . static::$table . " ({$columns}) VALUES ({$value_placeholders})";
 
         $stmt = self::$dbc->prepare($query);
-
         foreach ($this->attributes as $column => $value) {
             $stmt->bindValue(':' . $column, $value, PDO::PARAM_STR);
         }
@@ -232,19 +232,34 @@ class Model {
 
         //Store the resultset in a variable named $result
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
 
         // The following code will set the attributes on the calling object based on the result variable's contents
 
-        $instance = null;
+        $instanceArray = [];        
+        foreach ($results as $result) {
+            $instance = null;
 
-        if ( $results )
-        {
-
-            $instance = new static;
-            $instance->attributes = $results;
+            if ($result)
+            {
+                $instance = new static;
+                $instance->attributes = $result;
+                $instanceArray [] = $instance;
+            }
         }
+        return $instanceArray;
 
-        return $instance;
+
+        // $instance = null;   
+
+        // if ($results)
+        // {
+
+        //     $instance = new static;
+        //     $instance->attributes = $results;
+        // }
+
+        // return $instance;
     }
 
 }

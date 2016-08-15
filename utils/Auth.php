@@ -13,8 +13,9 @@ class Auth
 		// makes sure the values passed in are not empty
 		if(($username == '' || $username == null) || ($password == '' || $password == null))
 		{
-
-			$_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
+			$log = new Log(); // create new log
+			$_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect'; //set error message
+			$log->logError($_SESSION['ERROR_MESSAGE']); //log error message
 			return false;
 		}
 
@@ -24,8 +25,9 @@ class Auth
 		// makes sure the instance returned is not empty
 		if ($user == null)
 		{
-
-			$_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
+			$log = new Log(); // create new log
+			$_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect'; //set error message
+			$log->logError($_SESSION['ERROR_MESSAGE']); //log error message
 			return false;
 		}
 
@@ -37,10 +39,15 @@ class Auth
 			$_SESSION['IS_LOGGED_IN'] = $user->username;
 			$_SESSION['LOGGED_IN_ID'] = $user->id;
 
+			$log = new Log();
+			$message = "User {$user->username} is logged in";
+			$log->logInfo($message);
 			return true;
 		}
 
+		$log = new Log();
 		$_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
+		$log->logError($_SESSION['ERROR_MESSAGE']);
 		return false;
 	}
 

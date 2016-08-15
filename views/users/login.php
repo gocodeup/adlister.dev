@@ -4,7 +4,7 @@
 
 		<div class="row">
 
-			<h1 class="section-title">Login To OooLister</h1>
+			<h1 class="section-title">Login To Fadlister</h1>
 
 			<?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
                 <div class="alert alert-danger">
@@ -36,7 +36,7 @@
 							<button type="submit" class="btn btn-primary">Login</button>
 						</div>
 						<div class="col-sm-6 text-right">
-							<a href="/signup" class="btn btn-success">Go To Signup</a>
+							<a href="/users/signup" class="btn btn-success">Go To Signup</a>
 						</div>
 					</div>
 				</form>
