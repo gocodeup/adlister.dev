@@ -8,7 +8,7 @@
         <li><a href="/account/edit/?id=<?= Auth::id(); ?>">Edit Account</a></li>
         <li><a href="/ads/create">Create New Gavlisting</a></li>
         <li><a href="/ads/edit">Edit My Gavlistings</a></li>
-        <a class="nav-link" href="#">Logout</a>
+        <a class="nav-link" href="/account/login">Logout</a>
     <?php else: ?>   
       <li><a href="/ads">Gavlistings</a></li>
       <li><a href="/account/login">Login</a></li>
