@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../utils/helper_functions.php';
 
+
 function pageController()
 {
 
@@ -48,7 +49,6 @@ function pageController()
 		case "/ads/show/":
 			$main_view = '../views/ads/show.php';
 			$data['items'] = Items::find($itemId);
-			$data['user'] = Items::itemUser($itemId);
 			break;
 		case "/account/":
 			redirectIfNotLoggedIn();
@@ -56,6 +56,10 @@ function pageController()
 			$data['user'] = User::find(Input::get('id'));
 			$data['items'] = $data['user']->items();
 			$main_view = '../views/users/account.php';
+			// Auth::user();
+			// print_r(User::findByUsernameOrEmail($_SESSION['IS_LOGGED_IN']);
+			//prints log in info
+
 			break;
 		case '/account/edit/':
 			$main_view = '../views/users/edit.php';

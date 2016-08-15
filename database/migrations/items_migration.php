@@ -11,4 +11,4 @@ $query = 'CREATE TABLE items (
     FOREIGN KEY (user_id) REFERENCES users (id)
 )';
 
-$dbc->exec($query);
+$dbc->execute($query);
