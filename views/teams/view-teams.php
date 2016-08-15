@@ -4,9 +4,9 @@
 	</div>
 	<hr>
 	<?php foreach ($_SESSION['ALL_TEAMS'] as $teamId) : ?>
-	<?php var_dump($teamId);//extract(displayTeamById($teamId)); ?>
+	<?php extract(displayTeamById($teamId)); ?>
 	<div class="col-sm-4">
-		<a class="team-table" href="visit-team?team=<?= $teamId ?>">
+		<a class="all-teams-table" href="visit-team?team=<?= $teamId ?>">
 			<table>
 				<tbody>
 					<tr>

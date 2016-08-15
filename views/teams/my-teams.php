@@ -7,13 +7,13 @@
 	<?php foreach ($_SESSION['USER_TEAMS'] as $teamId) : ?>
 	<?php extract(displayTeamById($teamId)); ?>
 	<div class="col-sm-4">
-		<a class="team-table" href="visit-team?team=<?= $teamId ?>">
+		<a href="visit-team?team=<?= $teamId ?>">
 			<table>
 				<tbody>
 					<tr>
-						<td><h4>Team Name:</h4></td>
+						<td><h4 class="margin-top-10">Team Name:</h4></td>
 					<tr>
-						<td><h3><?= $team_name ?></h3></td>
+						<td><h3 class="margin-top-0"><?= $team_name ?></h3></td>
 					</tr>
 					<tr>
 						<td><img class="img-responsive team_logo" src="../assets/uploads/<?= $logo ?>"></td>

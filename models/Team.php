@@ -9,7 +9,7 @@ class Team extends Model {
 
         public static function getName($id)
         {
-            $team = Team::findByTeamId($id);
+            $team = self::findByTeamId($id);
             return $team->team['team_name'];
         }
 

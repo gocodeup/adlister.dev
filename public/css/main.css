@@ -2,16 +2,16 @@ h1, h2, h4, a {
 	color: #800000;
 }
 
-td > h3 {
-	margin-top: 0px;
-}
-
 .team-table:hover {
 	text-decoration: none;
 }
 
-td > h4 {
-	margin-bottom: 5px;
+.margin-top-0 {
+	margin-top: 0px;
+}
+
+.margin-top-10 {
+	margin-top: 10px;
 }
 
 a:hover {

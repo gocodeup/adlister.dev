@@ -67,8 +67,7 @@ function pageController()
 
         case '/visit-team':
             $main_view = '../views/teams/visit-team.php';
-            $data = extract(visitTeamController()); 
-            $counter = 0;
+            $data['counter'] = 0;
             break;
 
         case '/view-teams':

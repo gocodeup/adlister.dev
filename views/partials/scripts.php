@@ -22,6 +22,10 @@
 <script>
     //initialize jquery datatable
   $('#pkmnTable').DataTable();
+      //add click listeners to each row
+    $('#pkmnTable').on("click", function() {
+        addListeners();
+    }); 
   </script>
 
 <script>
@@ -35,12 +39,9 @@
             clickedText = clickedRow.replace(/[0-9]/g, '');
             insertText = $.trim(clickedText);
             console.log(insertText);
-            //above works
-            //below works, but only one time
-            //and never returns properly
+            //insert text from cliked row into input fields above
             $('.insert-pokemon').each(function() {
                 if (!$(this).val()) {
-                    console.log("empty");
                     $(this).val(insertText);
                     return false;
                 }
@@ -53,10 +54,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.0/Chart.bundle.min.js">
 </script>
 <script>
-    //add click listeners to each row
-    $('#pkmnTable').on("click", function() {
-        addListeners();
-    }); 
+<?php if (isset($leftPokemon)) : ?>
 
     //     var ctx = $('#full-team-compare').get(0).getContext("2d");
     // ctx.canvas.height = 300;
@@ -64,24 +62,24 @@
     //   labels: ["HP", "Attack", "Defense", "Special Attack", "Special Defense", "Speed"],
     //   datasets: [
     //           {
-    //           label: "<?= $leftName ?>",
+    //           label: "",
     //           backgroundColor: "rgba(255,99,132,0.2)",
     //           borderColor: "rgba(255,99,132,1)",
     //           pointBackgroundColor: "rgba(255,99,132,1)",
     //           pointBorderColor: "#fff",
     //           pointHoverBackgroundColor: "#fff",
     //           pointHoverBorderColor: "rgba(255,99,132,1)",
-    //           data: <?= json_encode($leftPokemon) ?>
+    //           data: 
     //       },
     //       {
-    //           label: "<?= $rightName ?>",
+    //           label: "",
     //           backgroundColor: "rgba(179,181,198,0.2)",
     //           borderColor: "rgba(179,181,198,1)",
     //           pointBackgroundColor: "rgba(179,181,198,1)",
     //           pointBorderColor: "#fff",
     //           pointHoverBackgroundColor: "#fff",
     //           pointHoverBorderColor: "rgba(179,181,198,1)",
-    //           data: <?= json_encode($rightPokemon) ?>
+    //           data: 
     //       }
     //       {
     //           label: "<?= $rightName ?>",
@@ -91,7 +89,7 @@
     //           pointBorderColor: "#fff",
     //           pointHoverBackgroundColor: "#fff",
     //           pointHoverBorderColor: "rgba(179,181,198,1)",
-    //           data: <?= json_encode($rightPokemon) ?>
+    //           data: 
     //       }
     //   ]
     // };
@@ -107,7 +105,6 @@
     //           }
     //     }
     // });
-
     var ctx = $('#stats-chart').get(0).getContext("2d");
     ctx.canvas.height = 300;
     var data = {
@@ -147,5 +144,5 @@
               }
         }
     });
-
+<?php endif ?>
 </script>

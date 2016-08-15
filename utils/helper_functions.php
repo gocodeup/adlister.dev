@@ -27,7 +27,7 @@ function allTeamsController()
     $teamsArray = Team::all();
     foreach ($teamsArray as $team)
     {
-        $allTeamsById[] = $team['id'];
+        $allTeamsById[] = $team->id;
     }
     $_SESSION['ALL_TEAMS'] = $allTeamsById;
 }
@@ -40,14 +40,22 @@ function displayTeamById($id)
 
 function visitTeamController()
 {
+    $_SESSION['TEAM_ID'] = Input::get('team');
     $teamMembers = displayTeamMembers(Input::get('team'));
     $teamName = $teamMembers['teamName'];
     unset($teamMembers['teamName']);
-    $memberNames = getMemberNames($teamMembers);
-    $pokedexIds = getMemberPokedexNumbers($memberNames);
+    foreach ($teamMembers as $key => $member) 
+    {
+        foreach ($member as $name => $stats)
+        {
+            $membersNames[] = $name;
+            $memberStats[] = $stats;
+        }
+    }
+    $pokedexIds = getMemberPokedexNumbers($membersNames);
     return [
-        'memberNames' => $memberNames,
-        'stats' => $teamMembers,
+        'memberNames' => $membersNames,
+        'stats' => $memberStats[0],
         'teamName' => $teamName,
         'pokedexId' => $pokedexIds
     ];
@@ -55,21 +63,12 @@ function visitTeamController()
 
 function getMemberPokedexNumbers($teamMembers)
 {
-    foreach ($teamMembers as $member)
+    foreach ($teamMembers as $key => $member)
     {
         $data = Pokemon::selectStats($member, true);
         $teamIds[] = $data['Pokedex'];
     }
     return $teamIds;
-}
-
-function getMemberNames($team)
-{
-    foreach ($team as $name => $stat)
-    {
-        $memberNames[] = $name;
-    }
-    return $memberNames;
 }
 
 function displayTeamMembers($id) {
@@ -79,7 +78,7 @@ function displayTeamMembers($id) {
         $pokedexEntry = Pokemon::getPokemon($member['pokedex_id']);
         $name = $pokedexEntry['Pokemon'];
         $pokemonStats = Pokemon::selectStats($member['pokedex_id']);
-        $allMembers[$name] = $pokemonStats;
+        $allMembers[] = [$name => $pokemonStats];
     }
     $allMembers['teamName'] = $teamName;
     return $allMembers;
@@ -122,7 +121,7 @@ function createTeam(){
     {
         $team->logo = $_POST['IMAGE_URL'];
     } else {
-        $team->logo = "../sugimori/25.png";
+        $team->logo = "../assets/sugimori/25.png";
     }
     $team->save();
     $_SESSION['TEAM_ID'] = $team->id;
@@ -134,6 +133,7 @@ function deleteTeam()
     $deleteArray = Input::get('TEAM_DELETED');
     if ($deleteArray) 
     {
+    var_dump($deleteArray);
         deleteTeamAndMembers();
         $_POST['MESSAGE'] = "This team has been permenantly deleted.";
         header('Location: /view-teams');
@@ -143,16 +143,20 @@ function deleteTeam()
 function deleteTeamAndMembers()
 {
     $team = new Team();
-        $teamMembers = new TeamMember();
-        $team->attributes = Team::findByTeamId($_SESSION['TEAM_ID']);
-        $teamMembers = TeamMember::findByTeamId($_SESSION['TEAM_ID']);
+    $teamMembers = new TeamMember();
+    $team = Team::findByTeamId($_SESSION['TEAM_ID']);
+    var_dump($team->attributes);
+    $teamMembers = TeamMember::findByTeamId($_SESSION['TEAM_ID']);
+    if (isset($teamMembers))
+    {
         foreach ($teamMembers->members as $teamMember)
         {
             $member = new TeamMember();
             $member->id = $teamMember['id'];
             $member->delete();
         }
-        $team->delete();
+    }
+    $team->delete();
 }
 
 function addMember()
