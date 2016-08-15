@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container view">
 
 	<section id="login">
 

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container view">
 	<section>
 		<h1 class="section-title">All Gavlistings</h1>
 		<br>

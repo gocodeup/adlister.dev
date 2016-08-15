@@ -1,4 +1,5 @@
 <!--Page for single advertisement -->
+<div class="container view">
 <div class="col-md-5">
 	<div class="row">
 		<img class="img-thumbnail img-responsive" alt="<?= $items->name ?>" src="<?= $items->image ?>">
@@ -14,7 +15,6 @@
 		<h3>Posted By:</h3>
 		<h4><a href="/account/?id=<?= $items->user()->id ?>"><?= $items->user()->username ?></a></h4>
 	</div>
-		
 	</div>
 	<hr>
 	<div class="row">
@@ -23,4 +23,5 @@
 	<div class="row">
 		<p><?= $items->description ?></p>
 	</div>
+</div>
 </div>
