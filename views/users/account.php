@@ -21,7 +21,7 @@
 			</div>
 
 			<div class="col-sm-6 text-center">
-				<a href="/edit" class="btn btn-success">Edit Profile</a>
+				<a href="/users/edit" class="btn btn-success">Edit Profile</a>
 			</div>
 
 		</div>
@@ -39,7 +39,7 @@
 			</div>
 
 			<div class="col-sm-6 text-center">
-				<a href="/..ads/create" class="btn btn-success">Create Ad</a>
+				<a href="/ads/create" class="btn btn-success">Create Ad</a>
 			</div>
 
 		</div>
