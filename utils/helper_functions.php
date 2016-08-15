@@ -57,10 +57,6 @@ function createAd(){
     $data['user->email'] = $user->email;
     return $data;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 6bb4dc89efad669ee6fc2080759732eafd804875
 
 function loginUserWithInputIfExists() {
     if (!empty($_POST)) {
