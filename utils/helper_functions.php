@@ -26,13 +26,6 @@ function saveUploadedImage($input_name)
     return null;
 }
 
-// function getUserDetails () {
-//     $user = new User();
-//     $user->name = sefl::get();
-//     $user->email = sefl::get();
-//     $user->username = sefl::get();
-// } 
-
 function callAllAds() {
     return Ad::all();
 }
@@ -48,13 +41,6 @@ function newUser(){
         $user->password = Input::get('password');
         $user->save();
     }
-
-    // //getting variable to page controller
-    // $data['user->name'] = $user->name;
-    // $data['user->username'] = $user->username;
-    // $data['user->email'] = $user->email;
-    // $data['user->password'] = $user->password;
-    // return $data;
 }
 
 function createAd(){
@@ -71,6 +57,10 @@ function createAd(){
     $data['user->email'] = $user->email;
     return $data;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6bb4dc89efad669ee6fc2080759732eafd804875
 
 function loginUserWithInputIfExists() {
     if (!empty($_POST)) {
