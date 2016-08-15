@@ -5,6 +5,7 @@ require __DIR__ . '/../database/db_connect.php';
 require_once __DIR__ . '/../utils/Input.php';
 
 
+
 // takes image from form submission and moves it into the uploads directory
 function saveUploadedImage($input_name)
 {

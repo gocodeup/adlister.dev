@@ -14,6 +14,7 @@
 		<h3>Posted By:</h3>
 		<h4><a href="/account/?id=<?= $items->user()->id ?>"><?= $items->user()->username ?></a></h4>
 	</div>
+		<?php var_dump($user); ?>
 	</div>
 	<hr>
 	<div class="row">
