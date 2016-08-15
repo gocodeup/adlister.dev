@@ -12,7 +12,70 @@ function addMemberController()
     }
 }
 
-// function showTeamsController()
+function myTeamsController()
+{
+    $teamsArray = Team::findByUser($_SESSION['LOGGED_IN_ID']);
+    foreach ($teamsArray->teams as $team) 
+    {
+        $myTeamsById[] = $team['id'];                
+    }
+    $_SESSION['USER_TEAMS'] = $myTeamsById;
+}
+
+function displayTeamById($id)
+{
+    $selected = Team::findByTeamId($id);
+    return $selected->team;
+}
+
+function visitTeamController()
+{
+    $teamMembers = displayTeamMembers(Input::get('team'));
+    $teamName = $teamMembers['teamName'];
+    unset($teamMembers['teamName']);
+    $memberNames = getMemberNames($teamMembers);
+    $pokedexIds = getMemberPokedexNumbers($memberNames);
+    return [
+        'memberNames' => $memberNames,
+        'stats' => $teamMembers,
+        'teamName' => $teamName,
+        'pokedexId' => $pokedexIds
+    ];
+}
+
+function getMemberPokedexNumbers($teamMembers)
+{
+    foreach ($teamMembers as $member)
+    {
+        $data = Pokemon::selectStats($member, true);
+        $teamIds[] = $data['Pokedex'];
+    }
+    return $teamIds;
+}
+
+function getMemberNames($team)
+{
+    foreach ($team as $name => $stat)
+    {
+        $memberNames[] = $name;
+    }
+    return $memberNames;
+}
+
+function displayTeamMembers($id) {
+    $teamName = Team::getName($id);
+    $fullTeam = TeamMember::findByTeamId($id);
+    foreach ($fullTeam->members as $member) {
+        $pokedexEntry = Pokemon::getPokemon($member['id']);
+        $name = $pokedexEntry['Pokemon'];
+        $pokemonStats = Pokemon::selectStats($member['id']);
+        $allMembers[$name] = $pokemonStats;
+    }
+    $allMembers['teamName'] = $teamName;
+    return $allMembers;
+}
+
+// function allTeamsController()
 // {
 //     $user = new User;
 //     $user->id = $_SESSION['LOGGED_IN_ID'];
@@ -25,28 +88,44 @@ function addTeamController()
 {
     if (isset($_POST['TEAM_NAME']))
     {
-        $exists = Team::findByTeamName(Input::get('TEAM_NAME'));
-        if ($exists) {
-            $_POST['MESSAGE'] = 'This team name already exists!';
-            return false;
-        }
-        $team = new Team();
-        $team->user_id = $_SESSION['LOGGED_IN_ID'];
-        $team->team_name = $_POST['TEAM_NAME'];
-        if (isset($_POST['IMAGE_URL']))
-        {
-            $team->logo = $_POST['IMAGE_URL'];
-        } else {
-            $team->logo = "../sugimori/25.png";
-        }
-        $team->save();
-        $_SESSION['TEAM_ID'] = $team->id;
-        $_POST['MESSAGE'] = "Team Created! Select six members for your team:";
-        header('Location: /add-members');        
+        attemptTeamCreation();        
     } else
     {
         $_POST['MESSAGE'] = "Please enter a team name:";
     }
+}
+function attemptTeamCreation()
+{
+    $exists = ifExists();
+    if ($exists)
+    {    
+        $_POST['MESSAGE'] = "Team Created! Select six members for your team:";
+    }
+    createTeam();
+}
+
+function ifExists() 
+{
+    $exists = Team::findByTeamName(Input::get('TEAM_NAME'));
+    if ($exists) {
+        $_POST['MESSAGE'] = 'This team name already exists!';
+        return true;
+    }
+}
+
+function createTeam(){
+    $team = new Team();
+    $team->user_id = $_SESSION['LOGGED_IN_ID'];
+    $team->team_name = $_POST['TEAM_NAME'];
+    if (isset($_POST['IMAGE_URL']))
+    {
+        $team->logo = $_POST['IMAGE_URL'];
+    } else {
+        $team->logo = "../sugimori/25.png";
+    }
+    $team->save();
+    $_SESSION['TEAM_ID'] = $team->id;
+    header('Location: /add-members');
 }
 
 function deleteTeam() 
@@ -54,7 +133,15 @@ function deleteTeam()
     $deleteArray = Input::get('TEAM_DELETED');
     if ($deleteArray) 
     {
-        $team = new Team();
+        deleteTeamAndMembers();
+        $_POST['MESSAGE'] = "This team has been permenantly deleted.";
+        header('Location: /view-teams');
+    }
+}
+
+function deleteTeamAndMembers()
+{
+    $team = new Team();
         $teamMembers = new TeamMember();
         $team->attributes = Team::findByTeamId($_SESSION['TEAM_ID']);
         $teamMembers = TeamMember::findByTeamId($_SESSION['TEAM_ID']);
@@ -65,9 +152,6 @@ function deleteTeam()
             $member->delete();
         }
         $team->delete();
-        $_POST['MESSAGE'] = "This team has been permenantly deleted.";
-        header('Location: /view-teams');
-    }
 }
 
 function addMember()
@@ -98,27 +182,29 @@ function loginController()
     }
 }
 
-function signupUserController() 
+function signupController() 
 {
-    $data = ['username' => '', 'password' => ''];
-    if (!empty($_POST['username'])) {
+    if (!empty($_POST['new_user'])) {
+        $_POST['username'] = Input::get('new_user');
         $exists = User::findByUsername(Input::get('username'));
         if ($exists) {
-            $data['error'] = 'This username already exists!';
-            return $data;
+            $_SESSION['SIGNUP_ERROR'] = 'This username already exists!';
+            return false;
         }
-
-        $user = new User();
-
-        $user->name = Input::get('username');
-        $user->password = Input::get('password');
-
-        $user->save();
-
-        header('Location: /login');
-        exit;
+        createAccount();
     }
-    return $data;
+}
+
+function createAccount()
+{
+    $user = new User();
+
+    $user->name = Input::get('new_user');
+    $user->password = Input::get('password');
+
+    $user->save();
+    $_SESSION['SUCCESS_MESSAGE'] = 'Account created! Please log in below.';
+    header('Location: /login');
 }
 
 // takes image from form submission and moves it into the uploads directory
