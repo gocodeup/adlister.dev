@@ -14,5 +14,7 @@
               <img src="purple.gif" class="img-responsive sidebarImage">
               <h4><a href="/pokedex">View All Pokemon</a><h4></li>
               <img src="bluething.png" class="img-responsive sidebarImage">
+              <h4><a href="/compare">Compare Two Pokemon</a><h4></li>
+
     </div>
 </body>
