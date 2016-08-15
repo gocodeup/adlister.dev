@@ -46,29 +46,65 @@ class Items extends Model {
       return $instance;
 	}
 
-	// public static function thisItem()
-	// {
-	// 	self::dbConnect();
+
+	public static function thisItem()
+	{
+		self::dbConnect();
 
 
-	// 	//MUST FINISH THIS QUERY!!!
-	// 	$query = 'SELECT * FROM ' . static::$table . ' WHERE id ';
+		$query = 'SELECT * FROM ' . static::$table . ' WHERE id = ' . Input::get('id');
 
-	// 	$stmt = self::$dbc->prepare($query);
-	// 	$stmt->execute();
 
-	// 	$result = $stmt->fetch(PDO::FETCH_ASSOC);
+		$stmt = self::$dbc->prepare($query);
+		$stmt->execute();
 
-	// 	$instance = null;
+		$result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-	// 	if ($result) {
+		$instance = null;
 
-	// 		$instance = new static;
-	// 		$instance->attributes = $result;
-	// 	}
 
-	// 	return $instance;
-	// }
+		if ($result) {
+
+			$instance = new static;
+			$instance->attributes = $result;
+		}
+
+		return $instance;
+	}
+	public static function itemUser($itemId)
+	{
+		$query = 'SELECT * FROM users AS u JOIN items as i ON i.user_id = u.id';
+		$stmt = self::$dbc->prepare($query);
+		$stmt->execute();
+
+		$result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+		$instance = null;
+
+		if ($result) {
+
+			$instance = new static;
+			$instance->attributes = $result;
+		}
+
+		return $instance;
+	}
+	public static function findAllWithUserId($id)
+    {
+        self::dbConnect();
+        $query = 'SELECT * FROM ' . static::$table . ' WHERE user_id = :user_id ORDER BY id desc';
+        $stmt = self::$dbc->prepare($query);
+        $stmt->bindValue(':user_id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $instance = null;
+        if ( $results )
+        {
+            $instance = new static;
+            $instance->attributes = $results;
+        }
+        return $instance;
+    }
 }
 
 
