@@ -1,3 +1,4 @@
 .env.php
 .env.*.php
 /.idea
+.DS_Store

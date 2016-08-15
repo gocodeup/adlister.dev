@@ -48,7 +48,10 @@ class User extends Model {
         return $instance;
     }
 
-
+    public function items()
+    {
+        return Items::findAllWithUserId($this->id);
+    }
 }
 
 ?>
