@@ -12,8 +12,9 @@
 	</div>
 	<div class="col-md-6">
 		<h3>Posted By:</h3>
-		<h4><a href="/account"><?= $user->username ?></a></h4>
+		<h4><a href="/account/?id=<?= $items->user()->id ?>"><?= $items->user()->username ?></a></h4>
 	</div>
+		<?php var_dump($user); ?>
 	</div>
 	<hr>
 	<div class="row">

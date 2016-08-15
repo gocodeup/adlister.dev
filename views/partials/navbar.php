@@ -15,14 +15,6 @@
       <li><a href="/account/signup">Signup for Gavlister</a></li>
     <?php endif; ?>
 
-      
-      <li class="nav-item">
-      
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">About</a>
-    </li>
-  </ul>
   <form class="form-inline pull-xs-right">
     <input class="form-control" type="text" placeholder="Search">
     <button class="btn btn-outline-danger" type="submit">Search</button>
