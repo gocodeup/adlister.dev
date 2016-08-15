@@ -1,3 +1,5 @@
+
+
 <script   src="http://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
 </script>
@@ -18,8 +20,12 @@
 </script>
 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
 <script>
+    //initialize jquery datatable
+  $('#pkmnTable').DataTable();
+  </script>
 
-    
+<script>
+
     //add click listeners to each row
     function addListeners() {
         $('#pkmnTable tbody tr').off();
@@ -43,13 +49,103 @@
     };
 
     addListeners();
-
-    //initialize jquery datatable
-	$('#pkmnTable').DataTable();
-
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.0/Chart.bundle.min.js">
+</script>
+<script>
     //add click listeners to each row
     $('#pkmnTable').on("click", function() {
         addListeners();
     }); 
+
+    //     var ctx = $('#full-team-compare').get(0).getContext("2d");
+    // ctx.canvas.height = 300;
+    // var data = {
+    //   labels: ["HP", "Attack", "Defense", "Special Attack", "Special Defense", "Speed"],
+    //   datasets: [
+    //           {
+    //           label: "<?= $leftName ?>",
+    //           backgroundColor: "rgba(255,99,132,0.2)",
+    //           borderColor: "rgba(255,99,132,1)",
+    //           pointBackgroundColor: "rgba(255,99,132,1)",
+    //           pointBorderColor: "#fff",
+    //           pointHoverBackgroundColor: "#fff",
+    //           pointHoverBorderColor: "rgba(255,99,132,1)",
+    //           data: <?= json_encode($leftPokemon) ?>
+    //       },
+    //       {
+    //           label: "<?= $rightName ?>",
+    //           backgroundColor: "rgba(179,181,198,0.2)",
+    //           borderColor: "rgba(179,181,198,1)",
+    //           pointBackgroundColor: "rgba(179,181,198,1)",
+    //           pointBorderColor: "#fff",
+    //           pointHoverBackgroundColor: "#fff",
+    //           pointHoverBorderColor: "rgba(179,181,198,1)",
+    //           data: <?= json_encode($rightPokemon) ?>
+    //       }
+    //       {
+    //           label: "<?= $rightName ?>",
+    //           backgroundColor: "rgba(179,181,198,0.2)",
+    //           borderColor: "rgba(179,181,198,1)",
+    //           pointBackgroundColor: "rgba(179,181,198,1)",
+    //           pointBorderColor: "#fff",
+    //           pointHoverBackgroundColor: "#fff",
+    //           pointHoverBorderColor: "rgba(179,181,198,1)",
+    //           data: <?= json_encode($rightPokemon) ?>
+    //       }
+    //   ]
+    // };
+    // new Chart(ctx, {
+    //   type: "radar",
+    //   data: data,
+    //   options: {
+    //           scale: {
+    //               reverse: false,
+    //               ticks: {
+    //                   beginAtZero: true
+    //               }
+    //           }
+    //     }
+    // });
+
+    var ctx = $('#stats-chart').get(0).getContext("2d");
+    ctx.canvas.height = 300;
+    var data = {
+      labels: ["HP", "Attack", "Defense", "Special Attack", "Special Defense", "Speed"],
+      datasets: [
+              {
+              label: "<?= $leftName ?>",
+              backgroundColor: "rgba(255,99,132,0.2)",
+              borderColor: "rgba(255,99,132,1)",
+              pointBackgroundColor: "rgba(255,99,132,1)",
+              pointBorderColor: "#fff",
+              pointHoverBackgroundColor: "#fff",
+              pointHoverBorderColor: "rgba(255,99,132,1)",
+              data: <?= json_encode($leftPokemon) ?>
+          },
+          {
+              label: "<?= $rightName ?>",
+              backgroundColor: "rgba(179,181,198,0.2)",
+              borderColor: "rgba(179,181,198,1)",
+              pointBackgroundColor: "rgba(179,181,198,1)",
+              pointBorderColor: "#fff",
+              pointHoverBackgroundColor: "#fff",
+              pointHoverBorderColor: "rgba(179,181,198,1)",
+              data: <?= json_encode($rightPokemon) ?>
+          }
+      ]
+    };
+    new Chart(ctx, {
+      type: "radar",
+      data: data,
+      options: {
+              scale: {
+                  reverse: false,
+                  ticks: {
+                      beginAtZero: true
+                  }
+              }
+        }
+    });
 
 </script>
