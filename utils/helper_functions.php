@@ -32,7 +32,7 @@ function allTeamsController()
     {
         $allTeamsById[] = $team->id;
     }
-    $_SESSION['ALL_TEAMS'] = $allTeamsById;
+    $_POST['ALL_TEAMS'] = $allTeamsById;
 }
 
 function displayTeamById($id)
@@ -42,8 +42,8 @@ function displayTeamById($id)
 }
 
 function visitTeamController()
-{
-    $_SESSION['TEAM_ID'] = Input::get('team');
+{   
+    setTeamNameAndId();
     $teamMembers = displayTeamMembers(Input::get('team'));
     $teamName = $teamMembers['teamName'];
     unset($teamMembers['teamName']);
@@ -64,6 +64,13 @@ function visitTeamController()
     ];
 }
 
+function setTeamNameAndId()
+{
+    $_SESSION['TEAM_ID'] = Input::get('team');
+    $team = Team::findByTeamId(Input::get('team'));    
+    $_SESSION['TEAM_NAME'] = $team->team_name;
+}
+
 function getMemberPokedexNumbers($teamMembers)
 {
     foreach ($teamMembers as $key => $member)
@@ -77,7 +84,7 @@ function getMemberPokedexNumbers($teamMembers)
 function displayTeamMembers($id) {
     $teamName = Team::getName($id);
     $fullTeam = TeamMember::findByTeamId($id);
-    foreach ($fullTeam->members as $member) {
+    foreach ($fullTeam->attributes as $member) {
         $pokedexEntry = Pokemon::getPokemon($member['pokedex_id']);
         $name = $pokedexEntry['Pokemon'];
         $pokemonStats = Pokemon::selectStats($member['pokedex_id']);
@@ -91,7 +98,7 @@ function addTeamController()
 {
     if (isset($_POST['TEAM_NAME']))
     {
-        attemptTeamCreation();        
+        attemptTeamCreation();
     } else
     {
         $_POST['MESSAGE'] = "Please enter a team name:";
@@ -99,19 +106,21 @@ function addTeamController()
 }
 function attemptTeamCreation()
 {
-    $exists = ifExists();
+    $exists = ifTeamExists();
     if ($exists)
     {    
-        $_POST['MESSAGE'] = "Team Created! Select six members for your team:";
+        $_POST['MESSAGE'] = 'This team name already exists!';
+        return false;
     }
+    $_POST['MESSAGE'] = "Team Created! Select six members for your team:";
     createTeam();
+    header('Location: /add-members');
 }
 
-function ifExists() 
+function ifTeamExists() 
 {
     $exists = Team::findByTeamName(Input::get('TEAM_NAME'));
     if ($exists) {
-        $_POST['MESSAGE'] = 'This team name already exists!';
         return true;
     }
 }
@@ -124,11 +133,10 @@ function createTeam(){
     {
         $team->logo = $_POST['IMAGE_URL'];
     } else {
-        $team->logo = "../assets/sugimori/25.png";
+        $team->logo = "/assets/sugimori/25.png";
     }
     $team->save();
     $_SESSION['TEAM_ID'] = $team->id;
-    header('Location: /add-members');
 }
 
 function deleteTeam() 
@@ -147,40 +155,52 @@ function deleteTeamAndMembers()
     $team = new Team();
     $teamMembers = new TeamMember();
     $team = Team::findByTeamId($_SESSION['TEAM_ID']);
-    var_dump("delete team and members by ID:");
-    var_dump($_SESSION['TEAM_ID']);
-    $teamMembers = TeamMember::findByTeamId('TEAM_ID');
-    // above line not working!!!!
+    $teamMembers = TeamMember::findByTeamId($_SESSION['TEAM_ID']);
     if ($teamMembers)
     {
         foreach ($teamMembers->attributes as $teamMember)
         {
             $member = new TeamMember();
             $member->id = $teamMember['id'];
-            var_dump("team member: ");
-            var_dump($member->id);
             $member->delete();
         }
     }
-    // $team->delete();
+    $team->delete();
 }
 
 function addMember()
 {
-    $membersArray = Input::get('member');
-    if ($membersArray) {
-        foreach ($membersArray as $member) 
-        {
-            $pokemon = Pokemon::getPokemon($member);
-            $teamMember = new TeamMember();
-            $teamMember->team_id = $_SESSION['TEAM_ID'];
-            $teamMember->pokedex_id = $pokemon['id'];
-            $teamMember->save();   
-        }
-    $_POST['MESSAGE'] = "Team successfully updated.";
+    $inputRecieved = Input::get('member');
+    if ($inputRecieved) 
+    {
+        saveMembers($inputRecieved);
+        $_POST['MESSAGE'] = "Team successfully updated.";
+        header("Location: /visit-team?{$_SESSION['TEAM_ID']}");
     } else {
         $_POST['MESSAGE'] = "Search for Pokemon by Name, or enter Pokedex Number.";
     }
+}
+
+function saveMembers($membersArray)
+{
+    $exists = ifTeamExists() ;
+    foreach ($membersArray as $member) 
+    {
+        $pokemon = Pokemon::getPokemon($member);
+        $teamMember = new TeamMember();
+        $teamMember->team_id = $_SESSION['TEAM_ID'];
+        $teamMember->pokedex_id = $pokemon['id'];
+        if ($exists) 
+        {
+            $teamMember->id = getMemberId();
+        }
+        $teamMember->save();   
+    }
+}
+
+function getMemberId()
+{
+
 }
 
 function loginController() 
