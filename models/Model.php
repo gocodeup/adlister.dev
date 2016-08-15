@@ -5,7 +5,7 @@ class Model {
     protected static $dbc;
     protected static $table;
 
-    protected $attributes = array();
+    public $attributes = array();
 
 
     /*
