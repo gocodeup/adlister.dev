@@ -27,7 +27,7 @@ function pageController()
     switch ($request) {
         case '/signup':
             if (Auth::loggedIn()) {
-                $main_view = '../views/home.php';
+                $main_view = '../views/teams/view-teams.php';
                 break;
             } else {
                 signupController();
@@ -37,7 +37,7 @@ function pageController()
 
         case '/login':
             if (Auth::loggedIn()) {
-                $main_view = '../views/home.php';
+                $main_view = '../views/teams/view-teams.php';
                 break;
             } else {
                 loginController();
@@ -46,7 +46,7 @@ function pageController()
             }
 
         case '/logout':
-            $main_view = '../views/home.php';
+            $main_view = '../views/teams/view-teams.php';
             Auth::logout();
             break;
 
@@ -80,7 +80,7 @@ function pageController()
             break;
 
         default:    // displays 404 if route not specified above
-            $main_view = '../views/404.php';
+            $main_view = '../views/teams/view-teams.php';
             break;
         }
     $data['main_view'] = $main_view;
