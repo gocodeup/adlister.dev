@@ -2,10 +2,10 @@
 
 return array(
 
-    'DB_HOST' => '',
-    'DB_NAME' => '',
-    'DB_USER' => '',
-    'DB_PASS' => '',
+    'DB_HOST' => '127.0.0.1',
+    'DB_NAME' => 'adlister_db',
+    'DB_USER' => 'nico',
+    'DB_PASS' => 'codeup',
 
-    'USER_PASS' => '',
+    'USER_PASS' => 'vagrant',
 );
