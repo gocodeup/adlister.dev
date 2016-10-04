@@ -1,6 +1,6 @@
 <?php
 
-$_ENV = include __DIR__ . '/../.env.php';
+$_ENV = include __DIR__ . '/../env.template.php';
 
 class Model {
 

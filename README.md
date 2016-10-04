@@ -36,7 +36,7 @@ database/
 		user_seeder.php
 
 models/ 
-	Ad.php
+	Ad.php 							// need this
 	Model.php
 	User.php
 
@@ -44,17 +44,19 @@ public/
 	index.php //marketing homepage
 	css/
 		main.css //site styles
-	img/ 
+	img/ 							// need this
 		logo.png
-	js/
+	js/								// need this
 		main.js //site javascript
+
 	ads.create.php //ad creation form
 	ads.edit.php //ad editing form
 	ads.index.php //listing of all ads
 	ads.show.php //view of individual ad
-	auth.login.php //login form
-	auth.logout.php //logout action
-	￼users.create.php //user signup
+
+	auth.login.php //login form 		
+	auth.logout.php //logout action 	
+	users.create.php //user signup		
 	users.edit.php //user editing form
 	users.show.php //user profile
 
