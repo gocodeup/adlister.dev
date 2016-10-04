@@ -3,9 +3,9 @@
 return array(
 
     'DB_HOST' => '',
-    'DB_NAME' => '',
-    'DB_USER' => '',
-    'DB_PASS' => '',
+    'DB_NAME' => 'adlister_db',
+    'DB_USER' => 'adlister_user',
+    'DB_PASS' => 'dr00993874',
 
     'USER_PASS' => '',
 );
