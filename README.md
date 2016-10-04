@@ -22,7 +22,7 @@ Schematic Diagram of Model, View, Controller (MVC) paradigm:
 
 (hint: MVC components are in bolded in the list above)
 
-After each step, you will need to provide a demo to an instructor so they can approve the work and review your code.
+<!-- After each step, you will need to provide a demo to an instructor so they can approve the work and review your code. -->
 
 ##Step 1: Clone the existing site.
 It looks like the Elbonians have already set up most of the files you’ll need. Start by cloning the existing repository onto your local machine. Explore the files that are already there and look at what still needs to be completed. Some items in the file tree below are existing in the cloned repository and some can be copied from previous class exercises. `//` denotes a comment. 
