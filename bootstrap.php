@@ -1,6 +1,6 @@
 <?php
 
-// require models
+require models
 require_once __DIR__ . '/models/User.php';
 
 
