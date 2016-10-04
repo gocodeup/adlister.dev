@@ -45,8 +45,8 @@ _________________________________________________________ -->
                         <div class="navbar-header">
 
                             <a class="navbar-brand home" href="index.html">
-                                <img src="img/logo.png" alt="Universal logo" class="hidden-xs hidden-sm">
-                                <img src="img/logo-small.png" alt="Universal logo" class="visible-xs visible-sm"><span class="sr-only">Universal - go to homepage</span>
+                                <img src="../img/logo.png" alt="Universal logo" class="hidden-xs hidden-sm">
+                                <img src="../img/logo-small.png" alt="Universal logo" class="visible-xs visible-sm"><span class="sr-only">Universal - go to homepage</span>
                             </a>
                             <div class="navbar-buttons">
                                 <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -426,7 +426,7 @@ _________________________________________________________ -->
                         <div class="product">
                             <div class="image">
                                 <a href="shop-detail.html">
-                                    <img src="img/product1.jpg" alt="" class="img-responsive image1">
+                                    <img src="../img/product1.jpg" alt="" class="img-responsive image1">
                                 </a>
                             </div>
                             <!-- /.image -->
