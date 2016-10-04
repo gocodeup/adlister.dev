@@ -18,7 +18,7 @@ Schematic Diagram of Model, View, Controller (MVC) paradigm:
 5. Implement add creation with image upload.
 6. Implement user login.
 7. Protect sensitive configuration. 
-8. Implement a front **controller**.
+8. Implement a front **controller**..
 
 (hint: MVC components are in bolded in the list above)
 

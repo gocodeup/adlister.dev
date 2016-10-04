@@ -11,7 +11,12 @@ $query = 'CREATE TABLE users (
     email VARCHAR(240) NOT NULL,
     username VARCHAR(100) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    PRIMARY KEY (id)
+    role_id INT NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY(role_id) REFERENCES roles(id),
+    UNIQUE (username, email)
 )';
+
+
 
 $dbc->exec($query);
