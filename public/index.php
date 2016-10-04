@@ -11,8 +11,23 @@ session_start();
 </head>
 <body>
     <?php require __DIR__ .'/../views/partials/navbar.php'; ?>
+    <div class="container">
 
-    <!-- <?php require $main_view; ?> -->
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="jumbotron">
+                    <h1>Welcome to Kitchen Kingdom!
+                    </h1>
+                    <p>Your source for all the unique kitchen gadgets you never knew you needed</p>
+                </div>
+            </div>
+
+        </div>
+
+        <hr>
+
+    <?php require $main_view; ?>
 
     <?php require __DIR__ .'/../views/partials/common_js.php'; ?>
 </body>

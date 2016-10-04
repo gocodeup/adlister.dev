@@ -49,3 +49,64 @@ body {
 
 
 }
+/*Body Styles*/
+
+.jumbotron {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    color: inherit;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid black;
+    border-radius: 2%;
+}
+
+h1.page-header {
+    color: black;
+}
+small {
+    color: white !important;
+}
+
+.item-description {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid black;
+    border-radius: 2%;
+    margin-top: 15px;
+    text-align: center;
+
+}
+h3 > a {
+    color: black;
+}
+/* 404 Page Styles */
+
+.welcome {
+    font-size: 75px;
+}
+
+/* Footer Styles */
+
+footer {
+    margin: 50px 0;
+}
+
+/* Responsive Styles */
+
+@media(max-width:991px) {
+    .customer-img,
+    .img-related {
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width:767px) {
+    .img-portfolio {
+        margin-bottom: 15px;
+    }
+
+    header.carousel .carousel {
+        height: 70%;
+    }
+}
