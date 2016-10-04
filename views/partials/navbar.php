@@ -8,7 +8,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand page-scroll" href="#page-top">Home</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -16,16 +16,16 @@
                 <ul class="nav navbar-nav">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                     <li class="hidden">
-                        <a class="page-scroll" href="#page-top"></a>
+                        <a class="page-scroll, pipe" href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll, pipe" href="#about">Items</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Services</a>
+                        <a class="page-scroll, pipe" href="#services">Login</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll, pipe" href="#contact">Signup</a>
                     </li>
                 </ul>
             </div>
