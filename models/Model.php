@@ -1,10 +1,8 @@
 <?php
 
-$_ENV = include __DIR__ . '/../.env.php';
-
 class Model {
 
-    protected static $dbc;
+    public static $dbc;
     protected static $table;
 
     public $attributes = array();
@@ -15,11 +13,9 @@ class Model {
      */
     public function __construct()
     {
-
         self::dbConnect();
+
     }
-
-
     /*
      * Get a value from attributes based on name
      */
@@ -47,10 +43,12 @@ class Model {
     }
 
 
+
+
     /*
      * Connect to the DB
      */
-    protected static function dbConnect()
+    public static function dbConnect()
     {
 
         if ( ! self::$dbc )
@@ -99,9 +97,6 @@ class Model {
     protected function insert()
     {
 
-        //After insert, add the id back to the attributes array so the object can properly reflect the id
-        //Iterate through all the attributes to build the prepared query
-        //Use prepared statements to ensure data security
         $columns = '';
         $value_placeholders = '';
 
@@ -128,6 +123,7 @@ class Model {
 
         foreach ($this->attributes as $column => $value) {
             $stmt->bindValue(':' . $column, $value, PDO::PARAM_STR);
+
         }
 
         $stmt->execute();
@@ -139,30 +135,22 @@ class Model {
     protected function update($id)
     {
 
-        //Ensure that update is properly handled with the id key
-        //You will need to iterate through all the attributes to build the prepared query
-        //Use prepared statements to ensure data security
         $query = "UPDATE " . static::$table . " SET ";
         $first_value = true;
 
         foreach ($this->attributes as $key => $value)
         {
-
             if ( $key == 'id')
             {
-
                 continue;
             }
-
             if ( $first_value )
             {
-
                 $first_value = false;
                 $query .= $key . ' = :' . $key;
             }
             else
             {
-
                 $query .= ', ' . $key . ' = :' . $key;
             }
         }
@@ -173,7 +161,6 @@ class Model {
 
         foreach ($this->attributes as $key => $value)
         {
-
             $stmt->bindValue(':' . $key, $value, PDO::PARAM_STR);
         }
 
@@ -235,16 +222,16 @@ class Model {
 
         // The following code will set the attributes on the calling object based on the result variable's contents
 
+        foreach ($results as $result) {
         $instance = null;
-
-        if ( $results )
-        {
-
-            $instance = new static;
-            $instance->attributes = $results;
+            if ( $result )
+            {
+                $instance = new static;
+                $instance->attributes = $result;
+            }
+        $instanceArray[] = $instance;
         }
-
-        return $instance;
+        return $instanceArray;
     }
 
 }
