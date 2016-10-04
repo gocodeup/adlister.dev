@@ -22,63 +22,54 @@ Schematic Diagram of Model, View, Controller (MVC) paradigm:
 
 (hint: MVC components are in bolded in the list above)
 
-After each step, you will need to provide a demo to an instructor so they can approve the work and review your code.
-
 ##Step 1: Clone the existing site.
-It looks like the Elbonians have already set up most of the files you’ll need. Start by cloning the existing repository onto your local machine. Explore the files that are already there and look at what still needs to be completed. Some items in the file tree below are existing in the cloned repository and some can be copied from previous class exercises. `//` denotes a comment. 
+It looks like the Elbonians have already set up most of the files you’ll need. Start by cloning the existing repository onto your local machine. Explore the files that are already there and look at what still needs to be completed. Some items in the file tree below are existing in the cloned repository and some can be copied from previous class exercises.
 
 ```￼
-database/ 
-	db_connect.php
-	migration/
-		user_migration.php
-	seeder/
-		user_seeder.php
+adlister.dev
+├── README.md
+├── bootstrap.php
+├── controllers
+│   └── PageController.php
+├── database
+│   ├── db_connect.php
+│   ├── migrations
+│   │   └── user_migration.php
+│   └── seeds
+│       └── user_seeder.php
+├── env.template.php
+├── models
+│   ├── Model.php
+│   └── User.php
+├── mvc-diagram.png
+├── public
+│   ├── css
+│   │   └── main.css
+│   └── index.php
+├── utils
+│   ├── Auth.php
+│   ├── Input.php
+│   └── helper_functions.php
+├── views
+│   ├── 404.php
+│   ├── ads
+│   │   ├── create.php
+│   │   ├── edit.php
+│   │   ├── index.php
+│   │   └── show.php
+│   ├── home.php
+│   ├── partials
+│   │   ├── common_js.php
+│   │   ├── head.php
+│   │   └── navbar.php
+│   └── users
+│       ├── account.php
+│       ├── edit.php
+│       ├── login.php
+│       └── signup.php
+└── wireframes.pdf
 
-models/ 
-	Ad.php
-	Model.php
-	User.php
-
-public/ 
-	index.php //marketing homepage
-	css/
-		main.css //site styles
-	img/ 
-		logo.png
-	js/
-		main.js //site javascript
-	ads.create.php //ad creation form
-	ads.edit.php //ad editing form
-	ads.index.php //listing of all ads
-	ads.show.php //view of individual ad
-	auth.login.php //login form
-	auth.logout.php //logout action
-	￼users.create.php //user signup
-	users.edit.php //user editing form
-	users.show.php //user profile
-
-utils/ 
-	Auth.php
-	Input.php 
-	Logger.php
-	helper_functions.php //function for file uploads
-
-views/ 
-	partials/
-		header.php 
-		footer.php 
-		navbar.php
-		
-controllers/
-	PageController.php 
-
-bootstrap.php //site initialization
-env.template.php //sensitive site configuration env template
-
-README.md //exercise instructions
-wireframes.pdf //exercise instructions, template for views
-mvc-diagram.png //exercise instructions
+12 directories, 29 files
 
 ```
 consider other files not listed above (e.g. README.md) as instructional files 
