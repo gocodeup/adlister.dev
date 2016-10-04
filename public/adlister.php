@@ -14,27 +14,13 @@
 
         <div class="container front">
             <div class="nbar">
-                <div class="nav">Log in</div>
+                <button class="nav">Hamburger</button>
             </div>
             <div class="sideBar"></div>
             <div class="banner">
                 <img src="/img/placeholder.png" class="bannerImg">
             </div>
         </div>
-
-        <!-- <div class="container main">
-            <tr class="row rowOne">
-                <div class="items">
-                    <img src="/img/placeholder-small.png" class="itemsImg">
-                </div>
-                <div class="items">
-                    <img src="/img/placeholder-small.png" class="itemsImg">
-                </div>
-                <div class="items">
-                    <img src="/img/placeholder-small.png" class="itemsImg">
-                </div>
-            </div>
-        </div> -->
 
         <div class="container-fluid main">
             <table>
