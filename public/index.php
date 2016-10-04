@@ -1,6 +1,9 @@
 <?php
 session_start();
+
 // require_once __DIR__ . '/../bootstrap.php';
+
+require_once (__DIR__ . '/../controllers/PageController.php');
 
 ?>
 <!DOCTYPE html>
@@ -10,11 +13,9 @@ session_start();
     <?php require __DIR__.'/../views/partials/head.php'; ?>
 </head>
 <body>
-    <h1>INDEX PAGE</h1>
 	<!-- <?php require __DIR__.'/../views/partials/navbar.php'; ?> -->
 
-	<!-- <?php require $main_view; ?> -->
-
+	<?php require $main_view; ?>
 
     <?php require __DIR__.'/../views/partials/common_js.php'; ?>
 </body>
