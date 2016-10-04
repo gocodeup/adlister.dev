@@ -39,7 +39,7 @@ $ads = [
         'user_id' => 1,
         'name' => 'Picture 5',
         'image_url' => '/img/placeholder-small.png',
-        'description' => 'Beaten up but does the trick! ;).', 
+        'description' => 'Beaten up.', 
         'price' => 350.00,
         'date_posted'=>'2004-12-12'
     	]
