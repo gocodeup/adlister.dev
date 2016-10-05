@@ -24,7 +24,8 @@ require_once __DIR__ . '/../bootstrap.php';
         <script src="/js/ps_animations.js"></script>
         <!-- variables from php -->
         <script>
-            var val = <?= ($login) ? 'true' : 'false' ?>;
+            var loggedIn = <?= ($login) ? 'true' : 'false' ?>;
+            console.log("logged in? "+ loggedIn);
         </script>
         <script type="text/javascript" src="/js/userValidation.js"></script>
         
