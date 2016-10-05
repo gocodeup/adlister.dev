@@ -91,6 +91,27 @@ h3 > a {
     font-size: 75px;
 }
 
+/*item show page style*/
+.show-item-header {
+    text-align: center;
+}
+
+.show-item-img {
+    text-align: center;
+}
+
+.show {
+    margin-top: 25px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.button-center {
+    text-align: center;
+}
+
 /* Footer Styles */
 
 footer {

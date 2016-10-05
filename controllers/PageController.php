@@ -44,6 +44,12 @@ function pageController()
         case '/ads/edit':
             $main_view = '../views/ads/edit.php';
             break;
+        case '/ads/index':
+            $main_view = '../views/ads/index.php';
+            break;
+        case '/ads/show':
+            $main_view = '../views/ads/show.php';
+            break;
         //the following edit page is not doing much yet, we will find out in the future what it's for..I hope
         case '/users/edit':
             $main_view = '../views/users/edit.php';
