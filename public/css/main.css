@@ -80,6 +80,12 @@ small {
 h3 > a {
     color: black;
 }
+
+/*featured item styles*/
+.featured {
+    column-width: 150px;
+    text-align: center;
+}
 /* 404 Page Styles */
 
 .welcome {
