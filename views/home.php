@@ -27,6 +27,12 @@
 <div class="container">
 
     <section id="features">
+    
+    <div class="features-head">
+
+        <h3>Featured Items</h3>
+        
+    </div>
 
     <!-- featured items row -->
        <div class="row">
