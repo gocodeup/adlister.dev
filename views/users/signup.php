@@ -1,4 +1,11 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign up</title>
+	 <?php require __DIR__ .'/../views/partials/head.php'; ?>
+</head>
+<body>
+    <?php require __DIR__ .'/../views/partials/navbar.php'; ?>
 
 <div class="container">
 
@@ -56,3 +63,5 @@
 	</section>
 
 </div>
+</body>
+</html>
