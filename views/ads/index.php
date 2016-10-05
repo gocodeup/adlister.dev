@@ -3,163 +3,211 @@
 <div class="container">
 
     <section id="ads-index">
-    
+
     <div class="index-head">
 
         <h1>Shop Kitchen Kingdom!</h1>
-        
+
     </div>
 
     <!-- items row 1 -->
-       <div class="row">
-           
-           <div class="col-sm-3">
-               
-               <img class="image-responsive" src="http://placehold.it/150x150">
-               
-               <h4>Item Name</h4>
+    <div class="row">
 
-               <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-               tempor incididunt ut labore et dolore magna aliqua.</p>
-           
-           </div>
+        <div class="col-sm-3">
 
-           <div class="col-sm-3">
-               
-               <img class="image-responsive" src="http://placehold.it/150x150">
-               
-               <h4>Item Name</h4>
-               
-               <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-               tempor incididunt ut labore et dolore magna aliqua.</p>
-           
-           </div>
+            <img class="image-responsive" src="http://placehold.it/150x150">
 
-           <div class="col-sm-3">
-               
-               <img class="image-responsive" src="http://placehold.it/150x150">
-               
-               <h4>Item Name</h4>
-               
-               <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-               tempor incididunt ut labore et dolore magna aliqua.</p>
-           
-           </div>
+            <a href="/ads/show?id=#">
 
-           <div class="col-sm-3">
-               
-               <img class="image-responsive" src="http://placehold.it/150x150">
-               
-               <h4>Item Name</h4>
-               
-               <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-               tempor incididunt ut labore et dolore magna aliqua.</p>
-           
-           </div>
+                <h4>Item Name</h4>
 
-       </div>
-       <!-- close items row 1 -->
+            </a>
 
-       <!-- items row 2 -->
-       <div class="row">
-           
-           <div class="col-sm-3">
-               
-               <img class="image-responsive" src="http://placehold.it/150x150">
-               
-               <h4>Item Name</h4>
+            <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
 
-               <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-               tempor incididunt ut labore et dolore magna aliqua.</p>
-           
-           </div>
+        </div>
 
-           <div class="col-sm-3">
-               
-               <img class="image-responsive" src="http://placehold.it/150x150">
-               
-               <h4>Item Name</h4>
-               
-               <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-               tempor incididunt ut labore et dolore magna aliqua.</p>
-           
-           </div>
+        <div class="col-sm-3">
 
-           <div class="col-sm-3">
-               
-               <img class="image-responsive" src="http://placehold.it/150x150">
-               
-               <h4>Item Name</h4>
-               
-               <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-               tempor incididunt ut labore et dolore magna aliqua.</p>
-           
-           </div>
+            <img class="image-responsive" src="http://placehold.it/150x150">
 
-           <div class="col-sm-3">
-               
-               <img class="image-responsive" src="http://placehold.it/150x150">
-               
-               <h4>Item Name</h4>
-               
-               <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-               tempor incididunt ut labore et dolore magna aliqua.</p>
-           
-           </div>
+            <a href="/ads/show?id=#">
 
-       </div>
-       <!-- close items row 2 -->
+                <h4>Item Name</h4>
 
-       <!-- items row 3 -->
-       <div class="row">
-           
-           <div class="col-sm-3">
-               
-               <img class="image-responsive" src="http://placehold.it/150x150">
-               
-               <h4>Item Name</h4>
+            </a>
 
-               <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-               tempor incididunt ut labore et dolore magna aliqua.</p>
-           
-           </div>
+            <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
 
-           <div class="col-sm-3">
-               
-               <img class="image-responsive" src="http://placehold.it/150x150">
-               
-               <h4>Item Name</h4>
-               
-               <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-               tempor incididunt ut labore et dolore magna aliqua.</p>
-           
-           </div>
+        </div>
 
-           <div class="col-sm-3">
-               
-               <img class="image-responsive" src="http://placehold.it/150x150">
-               
-               <h4>Item Name</h4>
-               
-               <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-               tempor incididunt ut labore et dolore magna aliqua.</p>
-           
-           </div>
+        <div class="col-sm-3">
 
-           <div class="col-sm-3">
-               
-               <img class="image-responsive" src="http://placehold.it/150x150">
-               
-               <h4>Item Name</h4>
-               
-               <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-               tempor incididunt ut labore et dolore magna aliqua.</p>
-           
-           </div>
+            <img class="image-responsive" src="http://placehold.it/150x150">
 
-       </div>
-       <!-- close items row 3 -->
-   </section>
-   <!-- close index section -->
+            <a href="/ads/show?id=#">
+
+                <h4>Item Name</h4>
+
+            </a>
+
+            <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
+
+        </div>
+
+        <div class="col-sm-3">
+
+            <img class="image-responsive" src="http://placehold.it/150x150">
+
+            <a href="/ads/show?id=#">
+
+                <h4>Item Name</h4>
+
+            </a>
+
+            <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
+
+        </div>
+
+    </div>
+    <!-- close items row 1 -->
+
+    <!-- items row 2 -->
+    <div class="row">
+
+        <div class="col-sm-3">
+
+            <img class="image-responsive" src="http://placehold.it/150x150">
+
+            <a href="/ads/show?id=#">
+
+                <h4>Item Name</h4>
+
+            </a>
+
+            <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
+
+        </div>
+
+        <div class="col-sm-3">
+
+            <img class="image-responsive" src="http://placehold.it/150x150">
+
+            <a href="/ads/show?id=#">
+
+                <h4>Item Name</h4>
+
+            </a>
+
+            <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
+
+        </div>
+
+        <div class="col-sm-3">
+
+            <img class="image-responsive" src="http://placehold.it/150x150">
+
+            <a href="/ads/show?id=#">
+
+                <h4>Item Name</h4>
+
+            </a>
+
+            <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
+
+        </div>
+
+        <div class="col-sm-3">
+
+            <img class="image-responsive" src="http://placehold.it/150x150">
+
+            <a href="/ads/show?id=#">
+
+                <h4>Item Name</h4>
+
+            </a>
+
+            <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
+
+        </div>
+
+    </div>
+    <!-- close items row 2 -->
+
+    <!-- items row 3 -->
+    <div class="row">
+
+        <div class="col-sm-3">
+
+            <img class="image-responsive" src="http://placehold.it/150x150">
+
+            <a href="/ads/show?id=#">
+
+                <h4>Item Name</h4>
+
+            </a>
+
+            <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
+
+        </div>
+
+        <div class="col-sm-3">
+
+            <img class="image-responsive" src="http://placehold.it/150x150">
+
+            <a href="/ads/show?id=#">
+
+                <h4>Item Name</h4>
+
+            </a>
+
+            <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
+
+        </div>
+
+        <div class="col-sm-3">
+
+            <img class="image-responsive" src="http://placehold.it/150x150">
+
+            <a href="/ads/show?id=#">
+
+                <h4>Item Name</h4>
+
+            </a>
+
+            <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
+
+        </div>
+
+        <div class="col-sm-3">
+
+            <img class="image-responsive" src="http://placehold.it/150x150">
+
+            <a href="/ads/show?id=#">
+
+                <h4>Item Name</h4>
+
+            </a>
+
+            <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
+
+        </div>
+
+    </div>
+    <!-- close items row 3 -->
+    </section>
+    <!-- close index section -->
 </div>
 <!-- close index container -->
