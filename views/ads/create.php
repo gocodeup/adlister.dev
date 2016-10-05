@@ -22,7 +22,6 @@
 					<div class="form-group">
 						<label for="image">Image Upload</label>
 						<input type="file" id="image" name="image" placeholder="Image of your Listing">
-					    <input type="text" class="form-control" id="tag" name="tag" placeholder="Tag your Gavin" data-required>
 					</div>
 					<div class="row">
 						<div class="col-sm-6">
