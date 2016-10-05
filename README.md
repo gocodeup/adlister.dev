@@ -2,7 +2,7 @@
 Congratulations! You’ve just gotten your first web development job. Ad Lister LLC had originally hired an Elbonian subcontractor to build their Craigslist clone but the project was never finished. Now they’ve hired you and another junior developer or two (your classmates) to come in and finish the project.
 You’ll need all of the topics you’ve learned so far in class including HTML, CSS, JavaScript, and PHP. You will be working on this project in teams of two to three.
 ##Here are the primary goals of the project:
-1. Gain experience in building a well-designed, vanilla PHP site using an Model, View, Controller (MVC) paradigm. 
+1. Gain experience in building a well-designed, vanilla PHP site using a Model, View, Controller (MVC) paradigm. 
 2. Learn how to use Git in a team environment.
 3. Test your resourcefulness in solving problems.
 
@@ -23,7 +23,7 @@ Schematic Diagram of Model, View, Controller (MVC) paradigm:
 (hint: MVC components are in bolded in the list above)
 
 ##Step 1: Clone the existing site.
-<!-- It looks like the Elbonians have already set up most of the files you’ll need. Start by cloning the existing repository onto your local machine. --> Explore the files that are already there and look at what still needs to be completed. Some items in the file tree below are existing in the cloned repository and some can be copied from previous class exercises. `//` denotes a comment. 
+<!-- It looks like the Elbonians have already set up most of the files you’ll need. Start by cloning the existing repository onto your local machine. --> Explore the files that are already there and look at what still needs to be completed. Some items in the file tree below are existing in the cloned repository and some can be copied from previous class exercises. `//` denotes a comment. (Not all the files we will need are already here).
 
 ```￼
 database/ 
