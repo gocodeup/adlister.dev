@@ -84,7 +84,7 @@ h3 > a {
 /*featured item styles*/
 .featured {
     column-width: 150px;
-    text-align: center;
+
 }
 /* 404 Page Styles */
 
@@ -95,7 +95,7 @@ h3 > a {
 /* Footer Styles */
 
 footer {
-    margin: 50px 0;
+    margin: 0 25px;
 }
 
 /* Responsive Styles */
