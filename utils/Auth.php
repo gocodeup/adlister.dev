@@ -13,14 +13,13 @@ class Auth
 		// makes sure the values passed in are not empty
 		if(($username == '' || $username == null) || ($password == '' || $password == null))
 		{
-
+			
 			$_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
 			return false;
 		}
 
 		// gets instance of user model by searching with username or email($username)
 		$user = User::findByUsernameOrEmail($username);
-
 		// makes sure the instance returned is not empty
 		if ($user == null)
 		{

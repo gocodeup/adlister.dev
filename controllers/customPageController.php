@@ -1,6 +1,7 @@
 <?php
 function pageController(){
 	$data=[];
+	$data['login'] = logInFunction();
 	
 
 

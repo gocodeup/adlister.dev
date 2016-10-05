@@ -7,6 +7,9 @@
         </div>
         <div class="logIn">
             <form method="POST">
+                <p class="errorMessage" hidden>
+                    Username or Email not found.
+                </p>
                 <input type:="text" name="email" placeholder="Email" class="inputs">
                 <input type:="password" name="password" placeholder="Password" class="inputs">
                 <button type="submit" class="logInBtn">Log in</button>
