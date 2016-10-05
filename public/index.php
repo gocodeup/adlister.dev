@@ -30,6 +30,10 @@ session_start();
 <!--     <?php require $main_view; ?> -->
 	<?php require __DIR__ . '/../views/partials/footer.php'; ?>
 
+    </div>
+<!-- /.container -->
+
+
     <?php require __DIR__ . '/../views/partials/common_js.php'; ?>
 </body>
 </html>
