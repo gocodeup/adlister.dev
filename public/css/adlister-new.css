@@ -51,6 +51,7 @@ button:hover {
 
 .nbar {
 	position: fixed;
+	top: 0px;
 	background-color: #000;
 	height: 50px;
 	width: 100%;
@@ -61,11 +62,15 @@ button:hover {
 	position: relative;
 	text-align: center;
 	margin: auto;
+	margin-top: 50px;
 }
 
 .bannerImg {
+	position: absolute;
+	top: 0px;
+	left: 0px;
 	width: 100%;
-	height: 400px;
+	height: 100vh;
 }
 
 .itemsImg {
@@ -79,29 +84,29 @@ button:hover {
 }
 
 .logInContainer {
-	position: fixed;
-	left: 50%;
-	transform: translate(-50%, 0);
+	position: relative;
+	/*transform: translate(-50%, 0);*/
 	top: 20%;
-	width: 300px;
+	width: 100%;
 	height: 300px;
+	border: 1px solid blue;
+	text-align: center;
 }
 
 .logInParent {
-	position: fixed;
+	position: relative;
 	border-radius: 10px;
-	left: 50%;
-	transform: translate(-50%, 0);
+	left: 0px;
+	/*transform: translate(-50%, 0);*/
 	top: 20%;
-	width: 200px;
-	height: 300px;
+	width: 350px;
+	height: 350px;
 	background-color: #fff;
 	opacity: 1;
 	border: 2px solid #888;
 	text-align: center;
 	padding-top: 10px;
-	opacity: 0;
-	display: none;
+	margin: auto;
 }
 
 .logIn {
