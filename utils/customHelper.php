@@ -4,7 +4,6 @@ function logInFunction(){
 	
 	$username = Input::get('email');	
 	$password = Input::get('password');
-
 	// $location = "/authorized.php";
 	// $errorMessage="";
 	if(Auth::attempt($username, $password)){
@@ -17,6 +16,14 @@ function logInFunction(){
 	else if(Input::has('username') || Input::has('password')){
 		return  false;
 	}
+}
+
+
+function getPhotos(){
+	$posts = new Post();
+	$arrayOfPosts = $posts->getAllPosts();
+	$content ='';
+	
 }
 
 ?>

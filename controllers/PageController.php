@@ -33,8 +33,13 @@ function pageController()
     }
 
     $data['main_view'] = $main_view;
-
+    //returns true or false if user logged in
     $data['login'] = logInFunction();
+    //get the table for the photos
+    $data['tablePhotos'] = getPhotos();
+    
+
+    
 
     return $data;
 }
