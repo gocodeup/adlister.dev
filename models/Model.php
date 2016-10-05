@@ -75,7 +75,7 @@ class Model {
         if ( ! empty( $this->attributes ) && isset( $this->attributes['id'] ) )
         {
 
-            $this->update( $this->attributes['id'] );
+            $this->update();
         }
         else
         {
@@ -136,7 +136,7 @@ class Model {
     }
 
     // updates existing entry in db
-    protected function update($id)
+    protected function update()
     {
 
         //Ensure that update is properly handled with the id key
