@@ -39,7 +39,7 @@
            
            <div class="col-sm-4">
                
-               <img class="image-responsive" src="http://placehold.it/150x150">
+               <img class="image-responsive" src="http://placehold.it/225x225">
                
                <h4>Item Name</h4>
 
@@ -50,7 +50,7 @@
 
            <div class="col-sm-4">
                
-               <img class="image-responsive" src="http://placehold.it/150x150">
+               <img class="image-responsive" src="http://placehold.it/225x225">
                
                <h4>Item Name</h4>
                
@@ -61,7 +61,7 @@
 
            <div class="col-sm-4">
                
-               <img class="image-responsive" src="http://placehold.it/150x150">
+               <img class="image-responsive" src="http://placehold.it/225x225">
                
                <h4>Item Name</h4>
                
