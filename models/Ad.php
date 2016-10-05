@@ -36,6 +36,35 @@ class Ad extends Model {
         return $instance;
     }
 
+        public static function findFeaturedItem()
+    {
+
+        self::dbConnect();
+
+        $featured = 1;
+
+        $query = 'SELECT * FROM ' . self::$table . ' WHERE featured = :featured';
+
+        $stmt = self::$dbc->prepare($query);
+        $stmt->bindValue(':featured', $featured, PDO::PARAM_STR);
+        $stmt->execute();
+
+        //Store the resultset in a variable named $result
+        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // The following code will set the attributes on the calling object based on the result variable's contents
+
+        $instance = null;
+
+        if ( $results )
+        {
+
+            $instance = new static;
+            $instance->attributes = $results;
+        }
+
+        return $instance;
+    }
 
 }
 
