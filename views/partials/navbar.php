@@ -7,9 +7,9 @@
                 <div class="navbar navbar-default yamm" role="navigation" id="navbar">
                     <div class="container">
                         <div class="navbar-header">
-                            <a class="navbar-brand home" href="index.html">
-                                <img src="img/gaglister-logo.png" alt="Universal logo" class="hidden-xs hidden-sm">
-                                <img src="img/gaglister-logo.png" alt="Universal logo" class="visible-xs visible-sm"><span class="sr-only">Gaglister</span>
+                            <a class="navbar-brand home" href="/">
+                                <img src="/img/gaglister-logo.png" alt="Universal logo" class="hidden-xs hidden-sm">
+                                <img src="/img/gaglister-logo.png" alt="Universal logo" class="visible-xs visible-sm"><span class="sr-only">Gaglister</span>
                             </a>
                             <div class="navbar-buttons">
                                 <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
