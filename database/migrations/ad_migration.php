@@ -12,6 +12,7 @@ $query = 'CREATE TABLE ads (
     price decimal(10,2) NOT NULL,
     url VARCHAR(255),
     image_url VARCHAR(255),
+    featured TINYINT NOT NULL,
     PRIMARY KEY (id)
 )';
 
