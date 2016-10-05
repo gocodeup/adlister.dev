@@ -31,6 +31,7 @@ function pageController()
         case '/users/signup': 
             $main_view = '../views/users/signup.php';
             break;
+    
 
 
         default:    // displays 404 if route not specified above
