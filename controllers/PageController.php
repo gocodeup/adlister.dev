@@ -21,11 +21,13 @@ function pageController()
     {
 
         $request = $_SERVER['REQUEST_URI'];
+
     }
 
+    print_r($request);
     // switch that will run functions and setup variables dependent on what route was accessed
     switch ($request) {
-        case '/home':
+        case '/':
             $main_view = include __DIR__.'/../views/home.php';
             break;
         case '/ads':
