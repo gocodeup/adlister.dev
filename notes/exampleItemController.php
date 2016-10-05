@@ -1,13 +1,15 @@
 <?php
 
-	// require itemmodel
+require_once __DIR__ "/exampleModel.php";
 
-	class ItemController {
+	class ItemController extends ItemModel {
+		// static variable created to represent current table we wish to manipulate
+		protected static $table = 'items';
 
 		createItem($item){
 			//Validate item
-
 			// Create user in db
+			$stmt = self::$dbc->prepare('INSERT INTO users (name, email, password, items) VALUES (:name, :email, :password, :items)');
 
 		}
 
