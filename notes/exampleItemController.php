@@ -1,19 +1,67 @@
 <?php
 
-	// require itemmodel
+	require __DIR__ . "/exampleItemModel.php";
+	require __DIR__ . "/../models/Model.php";
 
-	class ItemController {
+	class ItemController extends ItemModel {
 
-		createItem($item){
+		createItem($item)
+		{
 			//Validate item
-
 			// Create user in db
+			$stmt = self::$dbc->prepare('INSERT INTO items (name, description, price, url, email) VALUES (:name, :description, :price, :url, :email)');
+
+       	 // iterate through all the attributes to build the prepared query
+			foreach ($this->attributes as $column => $value) {
+            	$stmt->bindValue(':' . $column, $value, PDO::PARAM_STR);
+        	}
+
+		// After the insert, add the id back to the attributes array so the object properly represents a DB record
+			$this->attributes['id'] = self::$dbc->lastInsertId();
 
 		}
 
-		updateItem($item){
+		updateItem($item)
+		{
 			//Verify the id exists
 			//Update the db
+
+        	$query = "UPDATE table SET ";
+        	$first_value = true;
+
+        	foreach ($this->attributes as $key => $value)
+        	{
+
+           		if ( $key == 'id')
+            	{
+
+                	continue;
+            	}
+
+            	if ( $first_value )
+            	{
+
+                	$first_value = false;
+                	$query .= $key . ' = :' . $key;
+            	}
+            	else
+            	{
+
+                	$query .= ', ' . $key . ' = :' . $key;
+           		}
+        }
+
+        $query .= ' WHERE id = :id';
+
+        $stmt = self::$dbc->prepare($query);
+
+        foreach ($this->attributes as $key => $value)
+        {
+
+            $stmt->bindValue(':' . $key, $value, PDO::PARAM_STR);
+        }
+
+        $stmt->execute();
 		}
 
 		deleteItem($item){

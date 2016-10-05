@@ -2,8 +2,8 @@
 
 class ItemModel{
 
-	private $name=;
 	private $id=:
+	private $name=;
 	private $description=;
 	private $price=;
 	private $url=;
