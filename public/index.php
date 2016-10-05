@@ -6,7 +6,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>OooLister</title>
+    <title>Kitchen Kingdom</title>
     <?php require __DIR__ .'/../views/partials/head.php'; ?>
 </head>
 <body>

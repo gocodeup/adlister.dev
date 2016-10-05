@@ -29,13 +29,23 @@ function pageController()
         case '/':
             $main_view = '../views/home.php';
             break;
+        case '/users/profile':
+            $main_view = '../views/users/account.php';
+            break;
         case '/users/signup': 
             $main_view = '../views/users/signup.php';
             break;
         case '/users/login':
             $main_view = '../views/users/login.php';
             break;
-        case '/users/edit/':
+        case '/ads/create':
+            $main_view = '../views/ads/create.php';
+            break;
+        case '/ads/edit':
+            $main_view = '../views/ads/edit.php';
+            break;
+        //the following edit page is not doing much yet, we will find out in the future what it's for..I hope
+        case '/users/edit':
             $main_view = '../views/users/edit.php';
             break;
 
