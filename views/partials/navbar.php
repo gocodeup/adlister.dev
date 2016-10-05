@@ -8,24 +8,33 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Home</a>
+                <a class="navbar-brand page-scroll" href="/">Home</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a class="page-scroll, pipe" href="#page-top"></a>
+                    <li>
+                        <a class="page-scroll, pipe" href="items">Items</a>
                     </li>
                     <li>
-                        <a class="page-scroll, pipe" href="#about">Items</a>
+                        <a class="page-scroll, pipe" href="login">Login</a>
                     </li>
                     <li>
-                        <a class="page-scroll, pipe" href="#services">Login</a>
+                        <a class="page-scroll, pipe" href="signUp">Signup</a>
                     </li>
                     <li>
-                        <a class="page-scroll, pipe" href="#contact">Signup</a>
+                        <a class="page-scroll, pipe" href="show">Item</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll, pipe" href="userAccount">Account</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll, pipe" href="createAd">Create Ad</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll, pipe" href="editItem">Edit Ad</a>
                     </li>
                 </ul>
             </div>

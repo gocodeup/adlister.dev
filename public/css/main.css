@@ -3,5 +3,7 @@ body {
 }
 .featuredItem {
 	width:304px;
-	height:228px;
+}
+.navbar {
+	height: 60px;
 }

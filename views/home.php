@@ -6,7 +6,7 @@
 
             <div class="col-xs-12">
               
-                <h1 class="text-center">Welcome To Adlister</h1>
+                <!-- <h1 class="text-center">Welcome To Adlister</h1> -->
 
             </div>
 
@@ -22,13 +22,25 @@
             <h3 class="section-title">Featured Items</h3>
             <!-- Placeholder for featured items.-->
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <img src="../img/predator.jpg" alt="Predator">
+                    <p><a href="">LED Predator Costume</a></p>
                     <p class="featuredItem">Bring one of cinema’s most feared villains to life in a stunning way by dressing up in this LED predator costume. Composed of over 2,500 LEDs, this eye-catching ensemble is wireless and comes with a small controller that lets you control the lighting sequence.</p>
+                    
                 </div>
-                <div class="col-sm-6">Featured Item 2
-
+                <div class="col-sm-4">
+                    <img src="../img/predator.jpg" alt="Predator">
+                    <p><a href="">LED Predator Costume</a></p>
+                    <p class="featuredItem">Bring one of cinema’s most feared villains to life in a stunning way by dressing up in this LED predator costume. Composed of over 2,500 LEDs, this eye-catching ensemble is wireless and comes with a small controller that lets you control the lighting sequence.</p>
+                    
                 </div>
+                <div class="col-sm-4">
+                    <img src="../img/predator.jpg" alt="Predator">
+                    <p><a href="">LED Predator Costume</a></p>
+                    <p class="featuredItem">Bring one of cinema’s most feared villains to life in a stunning way by dressing up in this LED predator costume. Composed of over 2,500 LEDs, this eye-catching ensemble is wireless and comes with a small controller that lets you control the lighting sequence.</p>
+                    
+                </div>
+                
             </div>
         </div>
 
