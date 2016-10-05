@@ -25,6 +25,13 @@ function pageController()
 
     // switch that will run functions and setup variables dependent on what route was accessed
     switch ($request) {
+        case '/':
+            $main_view = '../views/home.php';
+            break;
+        case '/users/signup': 
+            $main_view = '../views/users/signup.php';
+            break;
+    
 
 
         default:    // displays 404 if route not specified above
