@@ -14,7 +14,8 @@ $query = 'CREATE TABLE users (
     role_id INT NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY(role_id) REFERENCES roles(id),
-    UNIQUE (username, email)
+    UNIQUE (username),
+    UNIQUE (email)
 )';
 
 
