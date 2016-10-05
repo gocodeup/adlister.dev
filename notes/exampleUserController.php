@@ -6,7 +6,6 @@
 
 		createUser($user){
 			//Validate user
-
 			// Create user in db
 			$stmt = self::$dbc->prepare('INSERT INTO users (name, email, password, items) VALUES (:name, :email, :password, :items)');
 		}
