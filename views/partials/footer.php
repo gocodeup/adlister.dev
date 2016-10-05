@@ -7,5 +7,3 @@
         </div>
     </footer>
 
-</div>
-<!-- /.container -->

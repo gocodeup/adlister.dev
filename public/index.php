@@ -27,8 +27,13 @@ session_start();
 
         <hr>
 
-    <?php require $main_view; ?>
+<!--     <?php require $main_view; ?> -->
+	<?php require __DIR__ . '/../views/partials/footer.php'; ?>
 
-    <?php require __DIR__ .'/../views/partials/common_js.php'; ?>
+    </div>
+<!-- /.container -->
+
+
+    <?php require __DIR__ . '/../views/partials/common_js.php'; ?>
 </body>
 </html>
