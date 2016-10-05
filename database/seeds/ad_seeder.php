@@ -3,8 +3,8 @@
 require_once __DIR__ . '/../../models/Ad.php';
 
 $ad = new Ad;
-$ad->name = 'placeHolder';
-$ad->description = 'placeHolder';
+$ad->name = 'name';
+$ad->description = 'fasldfjasfasfdfasdfasdfasdflkjl;jlj;lkjl;jljl;j;lj;lj;ljl;kjljlk;jl;jl;j;ljlkjl;kj;ljl;';
 $ad->price = 100.00;
 $ad->url = "https://www.royalcanin.com/";
 $ad->image_url = "https://www.royalcanin.com/~/media/Royal-Canin/Product-Categories/cat-adult-landing-hero.ashx";
@@ -13,8 +13,8 @@ $ad->user_id = 1;
 $ad->save();
 
 $ad = new Ad;
-$ad->name = 'placeHolder';
-$ad->description = 'placeHolder';
+$ad->name = 'name';
+$ad->description = 'fasldfjasfasfdfasdfasdfasdflkjl;jlj;lkjl;jljl;j;lj;lj;ljl;kjljlk;jl;jl;j;ljlkjl;kj;ljl;';
 $ad->price = 100.00;
 $ad->url = "https://www.royalcanin.com/";
 $ad->image_url = "https://www.royalcanin.com/~/media/Royal-Canin/Product-Categories/cat-adult-landing-hero.ashx";
@@ -24,8 +24,8 @@ $ad->save();
 
 
 $ad = new Ad;
-$ad->name = 'placeHolder';
-$ad->description = 'placeHolder';
+$ad->name = 'name';
+$ad->description = 'fasldfjasfasfdfasdfasdfasdflkjl;jlj;lkjl;jljl;j;lj;lj;ljl;kjljlk;jl;jl;j;ljlkjl;kj;ljl;';
 $ad->price = 100.00;
 $ad->url = "https://www.royalcanin.com/";
 $ad->image_url = "https://www.royalcanin.com/~/media/Royal-Canin/Product-Categories/cat-adult-landing-hero.ashx";
@@ -35,8 +35,8 @@ $ad->save();
 
 
 $ad = new Ad;
-$ad->name = 'placeHolder';
-$ad->description = 'placeHolder';
+$ad->name = 'name';
+$ad->description = 'fasldfjasfasfdfasdfasdfasdflkjl;jlj;lkjl;jljl;j;lj;lj;ljl;kjljlk;jl;jl;j;ljlkjl;kj;ljl;';
 $ad->price = 100.00;
 $ad->url = "https://www.royalcanin.com/";
 $ad->image_url = "https://www.royalcanin.com/~/media/Royal-Canin/Product-Categories/cat-adult-landing-hero.ashx";

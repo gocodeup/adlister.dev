@@ -18,32 +18,31 @@ var_dump($ads);
 
  <div class="container">
      <div class="row">
-        <div class="col-lg-12">
-            <table class="table table-striped table-bordered">
-                <tr>
-                    <th>Image</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                    <th>Url</th>
-                </tr>
+    
+ 
+
 
         <?php foreach ($ads->attributes as $attribute=>$value): ?>
-          <tr>
-            <td><img src="<?= $value['image_url']   ?>" height='100' width='125'></td>
-            <td><?= $value['name']; ?></td>
-            <td><?= $value['description']; ?></td>
-            <td><?= $value['price']; ?></td>
-            <td> <a href="<?= $value['url'] ?>"><?= $value['url'] ?></a></td>
-          </tr>
+        
+        <div class="col-sm-6">
+            <img src="<?= $value['image_url']   ?>" height='100' width='125'>
+            <br>
+            <p><?= $value['name']; ?></p>
+            <p class="featurdItem"><?= $value['description']; ?></p>
+            <p><?= $value['price']; ?></p>
+            <br>    
+            <a href="<?= $value['url'] ?>"><?= $value['url'] ?></a>
+
+        </div>
+
         <?php endforeach;?>
 
 
 
 
-            </table>
 
 
-        </div>            
+
+                    
     </div>
 </div>
