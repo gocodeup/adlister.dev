@@ -32,13 +32,17 @@ $user->username = "marceline_abadeer";
 $user->password = $_ENV['USER_PASS'];
 $user->save();
 
+// //////////////////////////////////////////////////////
+// LISTING DATA BEGINS HERE
+// /////////////////////////////////////////////
 
-$listing = new Listing;
+$listing = new Listing();
 $listing->item_name = 'Nintendo';
 $listing->item_description = 'Retro Game Console';
 $listing->item_price = '100.00';
 $listing->item_location_city ='San Antonio';
 $listing->item_location_state ='TX';
+$listing->item_image = 'http://cdn2.bigcommerce.com/n-pktq5q/ymgqt/products/31167/images/27500/NES_Mario123Acc_Quad__43099.1430492763.500.500.jpg?c=2';
 $listing->user_id = 1;
 $listing->save();
 
@@ -48,6 +52,7 @@ $listing->item_description = 'The car received a dual-stage repaint in the corre
 $listing->item_price = '24000.00';
 $listing->item_location_city ='San Antonio';
 $listing->item_location_state ='TX';
+$listing->item_image = 'https://cdn.classiccars.com/wp-content/uploads/2016/10/unnamed-4-1024x698.jpg?1e17bc';
 $listing->user_id = 2;
 $listing->save();
 
@@ -57,6 +62,7 @@ $listing->item_description = 'Tractor would make a super cute gift for the littl
 $listing->item_price = '100.00';
 $listing->item_location_city ='San Antonio';
 $listing->item_location_state ='TX';
+$listing->item_image = 'https://images.craigslist.org/00R0R_iWcNSU37qAa_600x450.jpg';
 $listing->user_id = 4;
 $listing->save();
 
@@ -66,6 +72,7 @@ $listing->item_description = 'Great everyday Tag Heuer watch.  Swiss made with a
 $listing->item_price = '650.00';
 $listing->item_location_city ='Austin';
 $listing->item_location_state ='TX';
+$listing->item_image = 'https://images.craigslist.org/00z0z_249PLujTxP4_600x450.jpg';
 $listing->user_id = 3;
 $listing->save();
 
@@ -82,6 +89,7 @@ $listing->item_description = 'Hot DC Comics for Sale!  Green Arrow: The Longbow 
 $listing->item_price = '250.00';
 $listing->item_location_city ='San Antonio';
 $listing->item_location_state ='TX';
+$listing->item_image = 'https://images.craigslist.org/01717_ijhwzfi4zwy_50x50c.jpg';
 $listing->user_id = 1;
 $listing->save();
 
@@ -91,6 +99,7 @@ $listing->item_description = 'Tonka Steel Toughest Mighty Dump Truck..built Tonk
 $listing->item_price = '30';
 $listing->item_location_city ='San Antonio';
 $listing->item_location_state ='TX';
+$listing->item_image = 'https://images.craigslist.org/00e0e_jm8RTLUIan9_600x450.jpg';
 $listing->user_id = 4;
 $listing->save();
 
@@ -100,5 +109,6 @@ $listing->item_description = '2008 Honda CBR 600, 15k miles Very well maintained
 $listing->item_price = '5300';
 $listing->item_location_city ='San Antonio';
 $listing->item_location_state ='TX';
+$listing->item_image = 'https://images.craigslist.org/00707_2euMN95xyEi_600x450.jpg';
 $listing->user_id = 2;
 $listing->save();
