@@ -44,7 +44,7 @@ class User extends Model {
             $instance = new static;
             $instance->attributes = $results;
         }
-
+        
         return $instance;
     }
 
