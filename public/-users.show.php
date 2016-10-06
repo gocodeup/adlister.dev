@@ -1,5 +1,8 @@
 <?php 
+require_once __DIR__ . '/../utils/Auth.php';
+require_once __DIR__ . '/../models/Model.php';
 
+session_start();
 if (isset($_SESSION['LOGGED_IN_ID']))
 {
 	$userId = $_SESSION['LOGGED_IN_ID'];
@@ -8,7 +11,13 @@ if (isset($_SESSION['LOGGED_IN_ID']))
 $user = User::showUser($userId);
 
 ?>
-
+<!DOCTYPE html>
+<html>
+<head>
+	<title>An ad</title>
+	<?php require '../views/partials/header.php'; ?>
+</head>
+<div class="container">
 	<div class="row">
 		<div class=" col-xs-12">
     	 
@@ -79,3 +88,6 @@ $user = User::showUser($userId);
             
 		</div>
 	</div>
+</div>
+
+<?php require '../views/partials/footer.php'; ?>

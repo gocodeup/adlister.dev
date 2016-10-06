@@ -1,10 +1,8 @@
-<!--Page for creating new advertisement listings-->
-
 <?php 
-//require_once '../../utils/Auth.php';
-//require_once '../../utils/Input.php';
+require_once '../utils/Auth.php';
+require_once '../utils/Input.php';
 require_once '../models/Ad.php';
-//require_once '../../models/Model.php';
+require_once '../models/Model.php';
 
 function newUserAd()
 
@@ -34,6 +32,16 @@ if(Input::has('title')) {
 
 ?>
 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add an ad</title>
+	
+    <?php require '../views/partials/header.php'; ?>
+   
+</head>
+<body>
+	<div class="container">  
 		<form role="form" method="POST">  
 			<h2>Make a new ad</h2>
 
@@ -56,4 +64,8 @@ if(Input::has('title')) {
 		    <input name="tags" class="form-control" placeholder="characters only" required>
 
   			<button type="submit" class="btn btn-default">add</button>
-		</form>
+		</form>  
+	</div>
+
+	
+	<?php require '../views/partials/footer.php'; ?>
