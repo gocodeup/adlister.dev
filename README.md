@@ -142,11 +142,11 @@ the relations in your application.
 ## Step 4: Implement site models.
 
 Now that we have some data in the database, it is time to make that accessible
-via PHP. To do so, we will use the BaseModel class provided.
+via PHP. To do so, we will use the Model class provided.
 
 While the Elbonians left you a model for the Users, you will need at least one
 more for the Ad. (hint: see previous step for a sample of date returned from the
-ads model). Your Ad model will be a class that inherits from the BaseModel that
+ads model). Your Ad model will be a class that inherits from the Model that
 provides much of the reusable functionality.
 
 When complete, test the models by using the PHP interactive shell or by writing
