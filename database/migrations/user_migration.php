@@ -29,6 +29,7 @@ $query = 'CREATE TABLE listing (
     item_price DECIMAL(65) NOT NULL,
     item_location_city VARCHAR(255) NOT NULL,
     item_location_state VARCHAR(2) NOT NULL,
+    item_image VARCHAR(500) NULL,
     user_id INT UNSIGNED NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id),
  	PRIMARY KEY (id)
