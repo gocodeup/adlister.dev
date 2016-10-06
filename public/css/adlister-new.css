@@ -1,0 +1,164 @@
+table {
+	margin: auto;
+	margin-bottom: 20px;
+}
+
+td {
+	padding: 2px;
+}
+
+button:hover {
+	opacity: 0.7;
+}
+
+.nbar {
+	padding: 10px;
+}
+
+.title {
+	display: inline-block;
+	color: #ddd;
+	font-size: 1.2em;
+}
+
+.search {
+	display: inline-block;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.showUsername {
+	display: inline-block;
+	color: #ddd;
+}
+
+.showPost {
+	background-color: #eee;
+	margin-left: 15px;
+	margin-right: 15px;
+	border: 2px solid #888;
+	border-radius: 5px;
+	width: 100px;
+	outline: none;
+}
+
+.front {
+	position: relative;
+	width: 100%;
+	padding: 0px;
+	margin-bottom: 20px;
+}
+
+.nbar {
+	position: fixed;
+	top: 0px;
+	background-color: #000;
+	height: 50px;
+	width: 100%;
+	z-index: 1;
+}
+
+.main {
+	position: relative;
+	text-align: center;
+	margin: auto;
+	margin-top: 50px;
+}
+
+.bannerImg {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100vh;
+}
+
+.itemsImg {
+	max-width: 100%;
+	min-width: 50%;
+	height: auto;
+}
+
+.items {
+	display: inline-block;
+}
+
+.logInContainer {
+	position: relative;
+	/*transform: translate(-50%, 0);*/
+	top: 20%;
+	width: 100%;
+	height: 300px;
+	border: 1px solid blue;
+	text-align: center;
+}
+
+.logInParent {
+	position: relative;
+	border-radius: 10px;
+	left: 0px;
+	/*transform: translate(-50%, 0);*/
+	top: 20%;
+	width: 350px;
+	height: 350px;
+	background-color: #fff;
+	opacity: 1;
+	border: 2px solid #888;
+	text-align: center;
+	padding-top: 10px;
+	margin: auto;
+}
+
+.logIn {
+	
+}
+
+.signUp {
+	opacity: 0;
+
+}
+
+.inputs {
+	border: 2px solid #888;
+	border-radius: 5px;
+	width: 90%;
+	padding: 10px;
+	margin: 10px;
+}
+
+.showLogIn {
+	background-color: #eee;
+	margin-left: 15px;
+	border: 2px solid #888;
+	border-radius: 5px;
+	width: 100px;
+	outline: none;
+}
+
+.logInBtn {
+	border: 2px solid #888;
+	border-radius: 5px;
+	width: 100px;
+	outline: none;
+}
+
+.logInExit {
+	position: absolute;
+	right: -15px;
+	top: 40px;
+	width: 40px;
+	height: 40px;
+	border: 2px solid #888;
+	border-radius: 20px;
+	opacity: 0;
+	outline: none;
+	z-index: 1;
+}
+
+
+
+
+
+
+
+
