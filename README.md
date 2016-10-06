@@ -255,7 +255,7 @@ So many places! If you have time, try one of the following (or invent your own!)
 8. Implement an admin user that can moderate ads and remove them.
 9. Implement a user feedback system.
 10. Implement a forgot-password feature.
-11. Once nice feature for a user of the Ad Lister app would be to create some
+11. One nice feature for a user of the Ad Lister app would be to create some
     ads in a CSV and then do a bulk upload. Implement this feature, but don't
     worry about the image upload.
 12. Be creative, and most of all have fun!
