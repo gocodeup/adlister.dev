@@ -10,10 +10,10 @@ class User extends Model {
     public function __set($name, $value)
     {
 
-    	if ($name == 'password')
-    	{
-    		$value = password_hash($value, PASSWORD_DEFAULT);
-    	}
+        if ($name == 'password')
+        {
+            $value = password_hash($value, PASSWORD_DEFAULT);
+        }
 
         parent::__set($name, $value);
     }
@@ -22,11 +22,11 @@ class User extends Model {
     public static function findByUsernameOrEmail($username_or_email)
     {
 
-    	self::dbConnect();
+        self::dbConnect();
 
-    	$query = 'SELECT * FROM ' . self::$table . ' WHERE username = :username OR email = :email';
+        $query = 'SELECT * FROM ' . self::$table . ' WHERE username = :username OR email = :email';
 
-    	$stmt = self::$dbc->prepare($query);
+        $stmt = self::$dbc->prepare($query);
         $stmt->bindValue(':username', $username_or_email, PDO::PARAM_STR);
         $stmt->bindValue(':email', $username_or_email, PDO::PARAM_STR);
         $stmt->execute();

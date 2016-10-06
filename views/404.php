@@ -1,9 +1,9 @@
 <div class="container">
 
-	<section>
+    <section>
 
-		<h1 class="section-title">404 Error</h1>
+        <h1 class="section-title">404 Error</h1>
 
-	</section>
+    </section>
 
 </div>
