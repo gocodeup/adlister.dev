@@ -37,12 +37,9 @@ function getPhotos(){
 		$content .= $posts['description'];
 		$content .= $posts['price'] ."</td>";
 
-
-		
 		$i++;
 	
 	}
-
 
 	$content .= '</table>';
 	var_dump($content);
