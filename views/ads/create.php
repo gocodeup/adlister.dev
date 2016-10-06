@@ -1,7 +1,7 @@
 <div class="container view">
 	<section id="create">
 		<div class="row">
-			<h1 class="section-title">Create Alisting!</h1>
+			<center><h1 class="section-title">Create Alisting!</h1></center>
 			<div class="col-md-6 col-md-offset-3">
 				<form method="POST" action="" data-validation data-required-message="This field is required" enctype="multipart/form-data">
 					<div class="form-group">
@@ -27,3 +27,5 @@
 		</div>
 	</section>
 </div>
+
+

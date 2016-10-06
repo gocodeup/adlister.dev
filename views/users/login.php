@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container view">
 	<section id="login">
 		<div class="row">
-			<h1 class="section-title">Login To KirkZay</h1>
+			<center><h1 class="section-title">Login To KirkZay</h1></center>
 			<div class="col-md-6 col-md-offset-3">
 				<p>Login with your email/username and password</p>
 				<form method="POST" action="" data-validation data-required-message="This field is required">
@@ -13,10 +13,10 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-6">
-							<button type="submit" class="btn btn-primary">Login</button>
+							<button type="submit" class="btn btn-warning">Login</button>
 						</div>
 						<div class="col-sm-6 text-right">
-							<a href="/account/signup" class="btn btn-success">Go To Signup</a>
+							<button href="/account/signup" class="btn btn-success">Go To Signup</button>
 						</div>
 					</div>
 				</form>

@@ -4,13 +4,13 @@
 	<div class="col-md-5 col-md-offset-1">
 		<h3>User Info</h3>
 		<p>
-		<strong>Name: </strong>
+		<bold>Name: </bold>
 		</p>
 		<p>
-		<strong>Username: </strong>
+		<bold>Username: </bold>
 		</p>
 		<p>
-		<strong>Email: </strong>
+		<bold>Email: </bold>
 		</p>
 		<a href="/account/edit/" class="btn btn-primary hidden" >Edit Account</a>
 		<a href="/account/edit/" class="btn btn-primary" >Edit Account</a>
