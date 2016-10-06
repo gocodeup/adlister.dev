@@ -1,46 +1,41 @@
-<div class="container">
+<?php 
+
+require_once '../views/partials/head.php';
+
+?>
+<div class="container col-sm-10">
 
 	<section id="login">
 
-		<div class="row">
+		<div class="row text-center">
 
-			<h1 class="section-title">Signup For OooLister</h1>
-
+			<h1 class="section-title">Signup For a PokéDoption account!</h1>
+			<h3>Please write down your password and keep it in a safe place. 
+				<br>We do not offer account recovery services.</h3>
 			<div class="col-md-6 col-md-offset-3">
+				<hr>
 
-				<p>Please fill out the information below so we can create your account.</p>
-				<?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
+				<p>Fill out the information below so we can create your account.</p>
+ 				<?php if (isset($_SESSION['SIGNUP_ERROR'])) : ?>
 	                <div class="alert alert-danger">
-	                    <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
+	                    <p class="error"><?= $_SESSION['SIGNUP_ERROR']; ?></p>
 	                </div>
-	                <?php unset($_SESSION['ERROR_MESSAGE']); ?>
+	                <?php unset($_SESSION['SIGNUP_ERROR']); ?>
 	            <?php endif; ?>
-	            <?php if (isset($_SESSION['SUCCESS_MESSAGE'])) : ?>
-	                <div class="alert alert-success">
-	                    <p class="success"><?= $_SESSION['SUCCESS_MESSAGE']; ?></p>
-	                </div>
-	                <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
-	            <?php endif; ?>
-
 				<form method="POST" action="" data-validation data-required-message="This field is required">
-
 					<div class="form-group">
-					    <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" data-required>
-					</div>
-					<div class="form-group">
-					    <input type="text" class="form-control" id="email" name="email" placeholder="Email" data-required>
-					</div>
-					<div class="form-group">
-					    <input type="text" class="form-control" id="username" name="username" placeholder="Username" data-required>
-					</div>
-					<div class="form-group">
-					    <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required>
+						<p>Username</p>
+					    <input type="text" minlength="3" maxlength="20" class="form-control" name="new_user" placeholder="Username" data-required>
 					</div>
 					<div class="row">
-						<div class="col-sm-6">
-							<button type="submit" class="btn btn-primary">Signup</button>
-						</div>
+						<input name="password" minlength="3" maxlength="20" required="required" type="password" placeholder="Password"/>
+						<input name="password_confirm" minlength="3" maxlength="20" required="required" type="password" oninput="check(this)" placeholder="Confirm Password" />
+					</div>
+					<div class="row">
 						<div class="col-sm-6 text-right">
+							<button type="submit" class="btn btn-primary">Signup Now</button>
+						</div>
+						<div class="col-sm-6 text-left">
 							<a href="/login" class="btn btn-success">Go To Login</a>
 						</div>
 					</div>
@@ -54,3 +49,4 @@
 	</section>
 
 </div>
+<?php require_once '../views/partials/scripts.php'; ?>
