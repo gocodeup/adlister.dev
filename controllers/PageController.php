@@ -8,20 +8,7 @@ function pageController()
     // defines array to be returned and extracted for view
     $data = [];
 
-    // finds position for ? in url so we can look at the url minus the get variables
-    $get_pos = strpos($_SERVER['REQUEST_URI'], '?');
-
-    // if a ? was found, cuts off get variables if not just gives full url
-    if ($get_pos !== false)
-    {
-
-        $request = substr($_SERVER['REQUEST_URI'], 0, $get_pos);
-    }
-    else
-    {
-
-        $request = $_SERVER['REQUEST_URI'];
-    }
+    $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
     // switch that will run functions and setup variables dependent on what route was accessed
     switch ($request) {
