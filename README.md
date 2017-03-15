@@ -40,6 +40,7 @@ files that are already there and look at what still needs to be completed. Some
 items in the file tree below are existing in the cloned repository and some can
 be copied from previous class exercises.
 
+
 ```￼
 adlister.dev
 ├── README.md
@@ -142,11 +143,11 @@ the relations in your application.
 ## Step 4: Implement site models.
 
 Now that we have some data in the database, it is time to make that accessible
-via PHP. To do so, we will use the BaseModel class provided.
+via PHP. To do so, we will use the Model class provided.
 
 While the Elbonians left you a model for the Users, you will need at least one
 more for the Ad. (hint: see previous step for a sample of date returned from the
-ads model). Your Ad model will be a class that inherits from the BaseModel that
+ads model). Your Ad model will be a class that inherits from the Model that
 provides much of the reusable functionality.
 
 When complete, test the models by using the PHP interactive shell or by writing
@@ -255,7 +256,7 @@ So many places! If you have time, try one of the following (or invent your own!)
 8. Implement an admin user that can moderate ads and remove them.
 9. Implement a user feedback system.
 10. Implement a forgot-password feature.
-11. Once nice feature for a user of the Ad Lister app would be to create some
+11. One nice feature for a user of the Ad Lister app would be to create some
     ads in a CSV and then do a bulk upload. Implement this feature, but don't
     worry about the image upload.
 12. Be creative, and most of all have fun!
