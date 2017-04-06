@@ -2,13 +2,13 @@
 
 class Input
 {
-
     /**
      * @param $key as a string
      * @return boolean
      */
     public static function has($key)
     {
+        // TODO refactor this
         if(isset($_REQUEST[$key])) {
             return true;
         } else {
@@ -21,6 +21,7 @@ class Input
      */
     public static function get($key, $default = null)
     {
+        // TODO refactor to use the the has method and a ternary
         if(isset($_REQUEST[$key])) {
             return $_REQUEST[$key];
         } else {
