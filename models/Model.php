@@ -184,17 +184,12 @@ class Model {
         //Store the resultset in a variable named $result
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // TODO fix this
-        // we should return an array of model objects
-
-        $instance = null;
-
-        if ($results) {
+        // turn each associative array into an instance of the model subclass
+        return array_map(function($result) {
             $instance = new static;
-            $instance->attributes = $results;
-        }
-
-        return $instance;
+            $instance->attributes = $result;
+            return $instance;
+        }, $results);
     }
 
 }
