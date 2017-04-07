@@ -3,33 +3,26 @@
 class Input
 {
     /**
-     * @param $key as a string
-     * @return boolean
+     * @param string $key
+     * @return boolean whether or not the key exists in the input
      */
     public static function has($key)
     {
-        // TODO refactor this
-        if(isset($_REQUEST[$key])) {
-            return true;
-        } else {
-            return false;
-        }
+        return isset($_REQUEST[$key]);
     }
 
     /**
-     * @return value at $_SESSION[$key] if set, else return null
+     * @return mixed the value associated with the given key,
+     *               or the default value (defaults to null)
      */
     public static function get($key, $default = null)
     {
-        // TODO refactor to use the the has method and a ternary
-        if(isset($_REQUEST[$key])) {
-            return $_REQUEST[$key];
-        } else {
-            return $default;
-        }
+        return self::has($key) ? $_REQUEST[$key] : $default;
     }
 
-    // returns entire array from request super global
+    /**
+     * @return array the entire input array
+     */
     public static function all()
     {
         return $_REQUEST;
