@@ -5,7 +5,16 @@ require_once '../models/User.php';
 
 class Auth
 {
-    // runs login attempt with parameters
+    /**
+     * attempt to log in a user
+     *
+     * if the username and password combination are valid, set the
+     * appropriate keys in the session
+     *
+     * @param string $username
+     * @param string $password
+     * @return boolean whether or not the attempt was successful
+     */
     public static function attempt($username, $password)
     {
         // makes sure the values passed in are not empty
@@ -36,13 +45,21 @@ class Auth
         return false;
     }
 
-    // checks session to see if user is logged in
+    /**
+     * check if a user is logged in
+     *
+     * @return boolean whether or not a user is logged in
+     */
     public static function check()
     {
         return (isset($_SESSION['IS_LOGGED_IN']) && $_SESSION['IS_LOGGED_IN'] != '');
     }
 
-    // returns id of the currently logged in user
+    /**
+     * get the id of the logged in user
+     *
+     * @return int
+     */
     public static function id()
     {
         if (Auth::check()) {
@@ -51,7 +68,11 @@ class Auth
         return null;
     }
 
-    // returns instance of the user model for the user that is currently logged in
+    /**
+     * get the logged in user object
+     *
+     * @return User
+     */
     public static function user()
     {
         if (self::check()) {
@@ -60,7 +81,11 @@ class Auth
         return null;
     }
 
-    // clears session variables(logs out user)
+    /**
+     * clear out and regenerate the session
+     *
+     * @return boolean true
+     */
     public static function logout()
     {
         // clear $_SESSION array
