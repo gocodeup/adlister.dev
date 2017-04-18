@@ -4,19 +4,9 @@
 ?>
 
 <body>
-    <div id="header">
-        <ul>
-    
-            <li class="welcomeLi"><h3>Welcome To Adlister</h3></li>
-            <li>Log In</li>
-            <li>Search</li>
-            <li>Categories</li>
-        </ul>
-    </div>
-
-            <center><h2 class="section-title">Check Out Our Featured Items</h2></center>
     
         <div id="featuredItemsContainer">
+            <center><h2 class="section-title">Check Out Our Featured Items</h2></center>
             <div class="featuredItemsInnerContainer">
               
                <!--  <span class=" arrowLeft glyphicon glyphicon-chevron-left"></span> -->
@@ -48,4 +38,7 @@
         </section>
 
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+
    </body>
