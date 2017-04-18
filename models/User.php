@@ -9,8 +9,10 @@ class User extends Model {
     // given key is not a password, just call the parent method
     public function __set($name, $value)
     {
-        if ($name == 'password' && $value != "") {
+        if ($name == 'password' && $value !== "") {
             $value = password_hash($value, PASSWORD_DEFAULT);
+        } else if($name == 'password' && $value === "") {
+            throw new Exception("Please enter a password");
         }
         parent::__set($name, $value);
     }
@@ -21,25 +23,43 @@ class User extends Model {
      * @param string $usernameOrEmail
      * @return User|null returns null if no matching record is found
      */
-    public static function findByUsernameOrEmail($usernameOrEmail)
+    public static function findByUsername($username)
     {
         self::dbConnect();
 
-        $query = 'SELECT * FROM ' . self::$table . ' WHERE username = :username OR email = :email';
+        $query = 'SELECT * FROM ' . self::$table . ' WHERE username = :username';
 
-        $stmt = self::$dbc->prepare($query);
-        $stmt->bindValue(':username', $usernameOrEmail, PDO::PARAM_STR);
-        $stmt->bindValue(':email', $usernameOrEmail, PDO::PARAM_STR);
-        $stmt->execute();
+        $connection = self::$dbc->prepare($query);
+        $connection->bindValue(':username', $username, PDO::PARAM_STR);
+        $connection->execute();
 
-        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+        $results = $connection->fetch(PDO::FETCH_ASSOC);
 
         $instance = null;
         if ($results) {
             $instance = new static;
             $instance->attributes = $results;
         }
+        return $instance;
+    }
 
+    public static function findByEmail($email)
+    {
+        self::dbConnect();
+
+        $query = 'SELECT * FROM ' . self::$table . ' WHERE email = :email';
+
+        $connection = self::$dbc->prepare($query);
+        $connection->bindValue(':email', $email, PDO::PARAM_STR);
+        $connection->execute();
+
+        $results = $connection->fetch(PDO::FETCH_ASSOC);
+
+        $instance = null;
+        if ($results) {
+            $instance = new static;
+            $instance->attributes = $results;
+        }
         return $instance;
     }
 
