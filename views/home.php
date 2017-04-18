@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container-fluid">
 
     <section id="welcome">
 
         <div class="row">
 
-            <div class="col-xs-12">
+            <div class="col">
 
                 <h1 class="text-center">Welcome To Adlister</h1>
 
