@@ -1,6 +1,8 @@
 <?php
 
 require_once __DIR__ . '/../utils/helper_functions.php';
+require_once __DIR__ . '/../utils/Auth.php';
+require_once __DIR__ . '/../utils/Input.php';
 
 function pageController()
 {
@@ -46,9 +48,12 @@ function pageController()
             break;
     }
 
-    $data['mainView'] = $mainView;
-
-    return $data;
-}
-
-extract(pageController());
+    $data['message'] = "";
+    
+    if (Input::has('email_user') && Input::has('password')) {
+        Auth::attempt(Input::get('email_user'), Input::get('password'));
+        $data['message'] = "Either username or password were incorrect";
+    } else if (Auth::check()) {
+        header("Location: /index.php");
+        exit;
+    }
