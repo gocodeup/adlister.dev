@@ -1,0 +1,81 @@
+<?php
+
+
+ ?>
+
+ <!DOCTYPE html>
+
+ <html>
+ <head>
+     <meta charset="utf-8">
+     <meta content="ie=edge" http-equiv="x-ua-compatible">
+     <meta content="" name="description">
+     <meta content="width=device-width, initial-scale=1" name="viewport">
+
+     <title>Items</title>
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+     <link href="css/font-awesome.min.css" rel="stylesheet">
+     <link href="" rel="stylesheet" type="text/css">
+ </head>
+
+ <body>
+   <div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><a href="#" style="color: white">ITEM</a></div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Brief description</div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><a href="#" style="color: white">ITEM</a></div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Brief description</div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><a href="#" style="color: white">ITEM</a></div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Brief description</div>
+      </div>
+    </div>
+  </div>
+</div><br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><a href="#" style="color: white">ITEM</a></div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Brief description</div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><a href="#" style="color: white">ITEM</a></div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Brief description</div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><a href="#" style="color: white">ITEM</a></div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Brief description</div>
+      </div>
+    </div>
+  </div>
+</div><br><br>
+
+
+
+
+
+     <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ </body>
+ </html>
