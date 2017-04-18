@@ -26,6 +26,9 @@ function pageController()
         case '/show' :
             $mainView = '../views/ads/show.php';
             break;
+        case '/items' :
+            $mainView = '../views/ads/index.php';
+            break;
         case '/account' :
             $mainView = '../views/users/account.php';
             break;
