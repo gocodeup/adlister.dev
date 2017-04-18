@@ -64,7 +64,7 @@ abstract class Model {
      */
     protected static function dbConnect()
     {
-        if (! self::$dbc) {
+        if (!self::$dbc) {
             //Connect to database
             require __DIR__ . '/../database/db_connect.php';
 
@@ -80,7 +80,7 @@ abstract class Model {
      */
     public function save()
     {
-        if (! empty($this->attributes) && isset($this->attributes['id'])) {
+        if (!empty($this->attributes) && isset($this->attributes['id'])) {
             $this->update();
         } else {
             $this->insert();

@@ -1,17 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Adlister Home</title>
-    <meta charset="utf-8">  
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
-    <link rel="stylesheet" href="css/WebDEVPhillip.css">    
-</head>
-<body>
-    <div class="container">
+<?php
+
+if(!empty($_POST)) {
+    $user = new User();
+
+    $errors = [];
+    
+    $user->name = User::getString('name');
+    $user->email = User::getString('email');
+    $user->username = User::getString('username');
+    $user->password = User::getString('password');
+
+    var_dump($user);
+}
+
+?>
+<div class="container">
 
         <section id="login">
 
