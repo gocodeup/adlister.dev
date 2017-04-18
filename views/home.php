@@ -14,11 +14,11 @@
 
     </section>
 
-    <section id="features">
+    <section id="categories">
 
         <div class="row">
 
-            <h3 class="section-title">Featured Items</h3>
+            <h3 class="section-title">Categories</h3>
             <!-- Placeholder for featured items.-->
         </div>
 
