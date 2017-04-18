@@ -41,7 +41,7 @@ if(!empty($_POST)) {
     if(empty($errors))
     {
         $user->insert();
-        echo "Inserted!";
+        header("Location: /login");
     }
 }
 

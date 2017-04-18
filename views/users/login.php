@@ -18,24 +18,11 @@
 
             <div class="row">
 
-                <h1 class="section-title">Login To OooLister</h1>
-
-                <?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
-                    <div class="alert alert-danger">
-                        <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
-                    </div>
-                    <?php unset($_SESSION['ERROR_MESSAGE']); ?>
-                <?php endif; ?>
-                <?php if (isset($_SESSION['SUCCESS_MESSAGE'])) : ?>
-                    <div class="alert alert-success">
-                        <p class="success"><?= $_SESSION['SUCCESS_MESSAGE']; ?></p>
-                    </div>
-                    <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
-                <?php endif; ?>
+                <h1 class="section-title"><center>Login To OooLister</center></h1>
 
                 <div class="col-md-6 col-md-offset-3">
 
-                    <p>Login with your email/username and password</p>
+                    <p style="text-align: center;">Login with your email/username and password</p>
 
                     <form method="POST" action="" data-validation data-required-message="This field is required">
 
