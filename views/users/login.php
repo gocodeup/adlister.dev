@@ -1,5 +1,8 @@
 <?php
 
+// remove Auth::logout() to never show this page if logged in
+Auth::logout();
+
 if(isset($_SESSION['LOGGED_IN_ID'])) {
     header("Location: /");
 }
@@ -8,15 +11,12 @@ if(isset($_POST['submit'])) {
     $authorize = new Auth();
     $errors = [];
 
-    $validated = $authorize::attempt($_POST['username'], $_POST['password']);
-
-    if($validated) {
-        header("Location: /");
+    try {
+        $validated = $authorize::attempt($_POST['username'], $_POST['password']);
+    } catch (Exception $e) {
+        $errors['error'] = $e->getMessage();
     }
 }
-
-
-
 
 
 ?>
@@ -49,6 +49,15 @@ if(isset($_POST['submit'])) {
                     <form method="POST" action="" data-validation data-required-message="This field is required">
 
                         <div class="form-group">
+                        <?php
+                        if(isset($_POST['submit'])) {
+                            if(empty($errors)) {
+                                header("Location: /");
+                            } else {
+                                echo '<div class="alert alert-danger"><p class="error">' . $errors['error'] . '</p></div>';
+                            }
+                        }
+                        ?>
                             <input type="text" class="form-control" id="email_user" name="username" placeholder="Username" data-required>
                         </div>
                         <div class="form-group">

@@ -4,7 +4,12 @@
 ?>
 
 <body>
-    
+        <?php if(isset($_SESSION['LOGGED_IN_ID'])) {
+            echo "Hello " . ucwords(Auth::user()->name);
+        } else {
+            echo "Hello guest!";
+        }
+        ?>
         <div id="featuredItemsContainer">
             <center><h2 class="section-title">Check Out Our Featured Items</h2></center>
             <div class="featuredItemsInnerContainer">
