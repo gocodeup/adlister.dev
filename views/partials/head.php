@@ -11,10 +11,9 @@
 
     <title>Template Example</title>
 
-	<?php include_once "styleLinks.php" ?>
-
 	<!-- Custom stylesheet -->
-	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
 
 
 </head>
