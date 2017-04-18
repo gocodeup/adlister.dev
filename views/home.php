@@ -22,6 +22,7 @@
 
         <div class="recentlyAdded">
             <h1 class="section-title latestPosts">Latest Posts</h1>
+            <hr>
             <div class="recentlyAddedCategories"></div>
             <div class="recentlyAddedCategories"></div>
             <div class="recentlyAddedCategories"></div>
@@ -30,6 +31,10 @@
             <div class="recentlyAddedCategories"></div>
             <div class="recentlyAddedCategories"></div>
             <div class="recentlyAddedCategories"></div>
+        </div>
+        <div class="adsContainer">
+            <div id="ads">Insert Add Here</div>
+            <div id="ads">Insert Add Here</div>
         </div>
 
         <section id="features">
