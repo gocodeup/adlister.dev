@@ -60,16 +60,27 @@ function pageController()
             $mainView = '../views/users/account.php';
             break;
         case '/user/edit/':
-            $mainView = /*isset($_SESSION['logged_in_user_id']) ? */'../views/users/edit.php'/* . $_SESSION['logged_in_user_id'] : ERROR NOT LOGGED IN*/;
+            if (isset($_SESSION['logged_in_user_id'])) {
+                $mainView = '../views/users/edit.php' .  $_SESSION['logged_in_user_id']
+            } else {
+                $mainView = '';    // need to display "not logged in" page
+            }
             break;
         case '/login/':
-            $mainView = /*isset($_SESSION['logged_in_user_id']) ? PREVIOUS PAGE : */'../views/users/login.php';
+            if (!isset($_SESSION['logged_in_user_id'])) {
+                $mainView = '../views/users/login.php';
+            } else {
+                header('adlister.dev');
+            }
             break;
         case '/signup/':
-            $mainView = /*isset($_SESSION['logged_in_user_id']) ? PREVIOUS PAGE : */'../views/users/signup.php';
+            if (!isset($_SESSION['logged_in_user_id'])) {
+                $mainView = '../views/users/signup.php';
+            } else {
+                header('adlister.dev');
+            }
             break;
         default:    // displays 404 if route not specified above
-            error404:
             $mainView = '../views/404.php';
             break;
     }
