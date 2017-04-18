@@ -14,6 +14,9 @@ function pageController()
     // switch that will run functions and setup variables dependent on what route was accessed
     switch ($request) {
         // TODO: put routes here
+        case (preg_match('/adlister.dev$/',$request)):
+            $mainView = '../views/home.php';
+            break;
         default:    // displays 404 if route not specified above
             $mainView = '../views/home.php';
             break;
