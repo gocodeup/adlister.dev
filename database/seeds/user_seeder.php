@@ -1,10 +1,12 @@
 <?php
 
+require '../db_connect.php';
+
 require_once __DIR__ . '/../../models/User.php';
 
-// $query = 'delete from national_parks';
+$query = 'delete from ads';
 
-// $dbc->exec($query);
+$dbc->exec($query);
 
 $user = new User;
 $user->name = 'Finn Mertens';
