@@ -94,9 +94,9 @@ abstract class Model {
     {
         $query = 'DELETE FROM ' . static::$table . ' WHERE id = :id';
 
-        $stmt = self::$dbc->prepare($query);
-        $stmt->bindValue(':id', $this->attributes['id'], PDO::PARAM_INT);
-        $stmt->execute();
+        $connection = self::$dbc->prepare($query);
+        $connection->bindValue(':id', $this->attributes['id'], PDO::PARAM_INT);
+        $connection->execute();
     }
 
     /**
@@ -108,7 +108,7 @@ abstract class Model {
      * after the insert is performed the `id` attribute of the model
      * will be set to the newly generated id
      */
-    protected function insert()
+    protected function inserted()
     {
         $columns = '';
         $valuePlaceholders = '';
@@ -124,15 +124,17 @@ abstract class Model {
         }
 
         $query = "INSERT INTO " . static::$table . " ({$columns}) VALUES ({$valuePlaceholders})";
-
-        $stmt = self::$dbc->prepare($query);
+        $connection = self::$dbc->prepare($query);
 
         foreach ($this->attributes as $column => $value) {
-            $stmt->bindValue(':' . $column, $value, PDO::PARAM_STR);
+            $connection->bindValue(':' . $column, $value, PDO::PARAM_STR);
         }
-
-        $stmt->execute();
+        $connection->execute();
         $this->attributes['id'] = self::$dbc->lastInsertId();
+    }
+
+    public function insert() {
+        return self::inserted();
     }
 
     /**
@@ -164,13 +166,12 @@ abstract class Model {
 
         $query .= ' WHERE id = :id';
 
-        $stmt = self::$dbc->prepare($query);
+        $connection = self::$dbc->prepare($query);
 
         foreach ($this->attributes as $key => $value) {
-            $stmt->bindValue(':' . $key, $value, PDO::PARAM_STR);
+            $connection->bindValue(':' . $key, $value, PDO::PARAM_STR);
         }
-
-        $stmt->execute();
+        $connection->execute();
     }
 
     /**
@@ -190,12 +191,12 @@ abstract class Model {
         //Create select statement using prepared statements
         $query = 'SELECT * FROM ' . static::$table . ' WHERE id = :id';
 
-        $stmt = self::$dbc->prepare($query);
-        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-        $stmt->execute();
+        $connection = self::$dbc->prepare($query);
+        $connection->bindValue(':id', $id, PDO::PARAM_INT);
+        $connection->execute();
 
         //Store the resultset in a variable named $result
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $result = $connection->fetch(PDO::FETCH_ASSOC);
 
         $instance = null;
         // if we have a result, create a new instance
@@ -221,11 +222,11 @@ abstract class Model {
 
         $query = 'SELECT * FROM ' . static::$table;
 
-        $stmt = self::$dbc->prepare($query);
-        $stmt->execute();
+        $connection = self::$dbc->prepare($query);
+        $connection->execute();
 
         //Store the resultset in a variable named $result
-        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $results = $connection->fetchAll(PDO::FETCH_ASSOC);
 
         // turn each associative array into an instance of the model subclass
         return array_map(function($result) {
