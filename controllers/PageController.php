@@ -10,13 +10,13 @@ function pageController()
 
     // get the part of the request after the domain name
     $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-
+var_dump ($request);
     // switch that will run functions and setup variables dependent on what route was accessed
     switch ($request) {
-        default:
+        case '/':  // TODO: put routes here
             $mainView = '../views/home.php';
-            break;// TODO: put routes here
-        case   // displays 404 if route not specified above
+            break;
+        default:   // displays 404 if route not specified above
             $mainView = '../views/404.php';
             break;
     }
