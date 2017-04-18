@@ -5,7 +5,7 @@
 		<div id="navBar">
 			<ul>
 			    <li class="welcomeLi"><h3>Welcome To Adlister</h3></li>
-			    <!-- <li>Log In</li>
+			<!--     <li>Log In</li>
 			    <li>Search</li> -->
 			<div class="dropdown">
 			<button onclick="myFunction()" class="dropbtn">Search Categories</button>
