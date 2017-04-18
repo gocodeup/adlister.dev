@@ -23,23 +23,23 @@
             <h4 class="section-title">Photo + Video</h4>
             <!-- Placeholder for featured items.-->
             <div class="row">
-                <div class="col-xs-6 col-sm-4"><img class="img-responsive" src="/images/pic08.jpg"><p>SAMPLE</p></div>
-                <div class="col-xs-6 col-sm-4"><img class="img-responsive" src="images/pic08.jpg">SAMPLE</div>
-                <div class="col-xs-6 col-sm-4"><img class="img-responsive" src="images/pic08.jpg">SAMPLE</div>
+                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="/images/pic08.jpg"></a>SAMPLE</div>
+                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="images/pic08.jpg"></a>SAMPLE</div>
+                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="images/pic08.jpg"></a>SAMPLE</div>
             </div>
 
             <h4 class="section-title">Movies</h4>
             <div class="row">
-                <div class="col-xs-6 col-sm-4"><img class="img-responsive" src="/images/pic08.jpg">SAMPLE</div>
-                <div class="col-xs-6 col-sm-4"><img class="img-responsive" src="/images/pic08.jpg">SAMPLE</div>
-                <div class="col-xs-6 col-sm-4"><img class="img-responsive" src="/images/pic08.jpg">SAMPLE</div>
+                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="/images/pic08.jpg"></a>SAMPLE</div>
+                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="/images/pic08.jpg"></a>SAMPLE</div>
+                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="/images/pic08.jpg"></a>SAMPLE</div>
             </div>
 
             <h4 class="section-title">Games</h4>
             <div class="row">
-                <div class="col-xs-6 col-sm-4"><img class="img-responsive" src="/images/pic08.jpg">SAMPLE</div>
-                <div class="col-xs-6 col-sm-4"><img class="img-responsive" src="/images/pic08.jpg">SAMPLE</div>
-                <div class="col-xs-6 col-sm-4"><img class="img-responsive" src="/images/pic08.jpg">SAMPLE</div>
+                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="/images/pic08.jpg"></a>SAMPLE</div>
+                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="/images/pic08.jpg"></a>SAMPLE</div>
+                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="/images/pic08.jpg"></a>SAMPLE</div>
             </div>
 
         </div>
