@@ -23,7 +23,7 @@ class Auth
         }
 
         // gets instance of user model by searching with username or email($username)
-        $user = User::findByUsernameOrEmail($username);
+        $user = User::findByUsername($username);
 
         // makes sure the instance returned is not empty
         if ($user == null) {
@@ -75,7 +75,7 @@ class Auth
     public static function user()
     {
         if (self::check()) {
-            return User::findByUsernameOrEmail($_SESSION['IS_LOGGED_IN']);
+            return User::findByUsername($_SESSION['IS_LOGGED_IN']);
         }
         return null;
     }
@@ -91,6 +91,7 @@ class Auth
         session_unset();
         // delete session data on the server and send the client a new cookie
         session_regenerate_id(true);
+        header("Location: /register/");
         return true;
     }
 }

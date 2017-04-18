@@ -1,3 +1,26 @@
+<?php
+
+if(isset($_SESSION['LOGGED_IN_ID'])) {
+    header("Location: /");
+}
+
+if(isset($_POST['submit'])) {
+    $authorize = new Auth();
+    $errors = [];
+
+    $validated = $authorize::attempt($_POST['username'], $_POST['password']);
+
+    if($validated) {
+        header("Location: /");
+    }
+}
+
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +34,6 @@
     <link rel="stylesheet" href="css/WebDEVPhillip.css">    
 </head>
 <body>
-
     <div class="container">
 
         <section id="login">
@@ -27,14 +49,14 @@
                     <form method="POST" action="" data-validation data-required-message="This field is required">
 
                         <div class="form-group">
-                            <input type="text" class="form-control" id="email_user" name="email_user" placeholder="Email or Username" data-required>
+                            <input type="text" class="form-control" id="email_user" name="username" placeholder="Username" data-required>
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required>
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
-                                <button type="submit" class="btn btn-primary">Login</button>
+                                <button type="submit" name="submit" class="btn btn-primary">Login</button>
                             </div>
                             <div class="col-sm-6 text-right">
                                 <a href="/signup" class="btn btn-success">Go To Signup</a>
