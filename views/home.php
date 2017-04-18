@@ -7,6 +7,8 @@
             <div class="col">
 
                 <h1 class="text-center">Welcome To Adlister</h1>
+                <button type="submit" for="submit" class="btn btn-outline-primary">Submit</button>
+
 
             </div>
 

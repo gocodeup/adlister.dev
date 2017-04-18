@@ -6,5 +6,6 @@
 
 
 ?>
-<link rel="main" href="/public/css/bootstrap.min.css">
-<link rel="main" href="/public/css/main.css">
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+
