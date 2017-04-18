@@ -5,6 +5,14 @@ require_once '../db_connect.php';
 
 $dbc->exec('DROP TABLE IF EXISTS users');
 
+$ads = 'CREATE TABLE ads (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    name VARCHAR(240) NOT NULL,
+    description VARCHAR (1000) NOT NULL,
+    username VARCHAR(240) NOT NULL,
+    PRIMARY KEY (id)
+)';
+
 $query = 'CREATE TABLE users (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     name VARCHAR(240) NOT NULL,
