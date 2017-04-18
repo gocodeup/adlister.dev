@@ -15,13 +15,35 @@ function pageController()
     // get the part of the request after the domain name
     $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
+    $adId = 'potato';
+    $userId = 'hippopotomonstrosesquippedaliophobia';
+
     // switch that will run functions and setup variables dependent on what route was accessed
     switch ($request) {
         case '/':
             $mainView = '../views/home.php';
             break;
-        // case '/ads/edit/' . $id . '/':
-        //     $mainView = '../views/ads/edit.php?id=' . $id;
+        case '/ads/':
+            $mainView = '../views/ads/index.php';
+            break;
+        case '/ads/create/':
+            $mainView = '../views/ads/create.php';
+            break;
+        case '/ads/edit/':
+            $mainView = '../views/ads/edit.php'; // TODO: set up to work with query string
+            break;
+        case '/ads/show/':
+            $mainView = '../views/ads/show.php'; // TODO: set up to work with query string
+            break;
+        case '/user/':
+            $mainView = '../views/users/account.php'; // TODO: set up to work with query string
+            break;
+        case '/user/edit/':
+            $mainView = '../views/users/edit.php'; // TODO: set up to work with query string
+            break;
+        case '/login/':
+            $mainView = '../views/users/login.php';
+            break;
         default:    // displays 404 if route not specified above
             $mainView = '../views/404.php';
             break;
