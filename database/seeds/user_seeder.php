@@ -2,6 +2,10 @@
 
 require_once __DIR__ . '/../../models/User.php';
 
+// $query = 'delete from national_parks';
+
+// $dbc->exec($query);
+
 $user = new User;
 $user->name = 'Finn Mertens';
 $user->email = 'finn@fansofbilly.com';
