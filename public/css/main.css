@@ -1,3 +1,79 @@
-#categories {
-	background-color: pink; 
+body {
+	background-color: white;
+	font-family: 'BenchNine', sans-serif;
+	font-size: 1em;
+	font-weight: 500px;
 }
+
+h1 {
+	font-size: 7em;
+	font-family: 'Satisfy', cursive;
+	text-align: center;
+	margin-top: -55px
+}
+
+h2, h3 {
+	/*margin-top: -1px;*/
+	font-family: 'BenchNine', sans-serif;
+	font-size: 3em;
+	text-align: center;	
+}
+
+.intro {
+	font-family: 'BenchNine', sans-serif;
+	font-size: 1.5em;
+	font-weight: 500px;
+	margin-top: -100px;
+	text-align: center;
+}
+
+#categories_section {
+	
+}
+
+#categories {
+	text-align: center;
+}
+
+.column-center {
+	display: inline-block;
+	overflow: hidden;
+	width: 30%;
+	height: 500px;
+	text-align: center;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 37px;
+	margin: 0px 37px 0px 37px;
+
+}
+
+.column-left {
+	float: left;
+	width: 30%;
+	height: 500px;
+	text-align: center;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 37px;
+	margin: 0px 0px 0px 20px;
+}
+
+.column-right {
+	float: right;
+	width: 30%;
+	height: 500px;
+	text-align: center;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 37px;
+	margin: 0px 20px 0px 0px;
+}
+
+.see_all {
+	text-align: center;
+	font-size: 1.5em;
+	margin-top: -45px;
+}
+
+
