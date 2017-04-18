@@ -1,6 +1,6 @@
 <?php
 
-$_ENV = include __DIR__ . '/../.env.php';
+$_ENV = require_once '../env.php';
 
 /**
  * Note that this class is abstract and must be extended. The child
