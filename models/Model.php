@@ -1,6 +1,6 @@
 <?php
 
-$_ENV = include __DIR__ . '/../.env.php';
+$_ENV = include __DIR__ . '/.env.php';
 
 /**
  * Note that this class is abstract and must be extended. The child
@@ -15,11 +15,11 @@ $_ENV = include __DIR__ . '/../.env.php';
  * is not necessary in instance methods.
  */
 abstract class Model {
-    /** @var PDO|null the connection to the database */ 
+    /** @var PDO|null the connection to the database */
     protected static $dbc;
     /** @var string the name of the table */
     protected static $table;
-    
+
     /** @var array the attributes of this instance */
     protected $attributes = [];
 
