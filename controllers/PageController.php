@@ -7,6 +7,28 @@ require_once __DIR__ . '/../utils/helper_functions.php';
 // --             INNER JOIN users u ON u.id = p.post_userid
 // --             WHERE `p.post_userid` = '" . $id;
 
+function parseRequest($request)
+{
+    $matches = [];
+
+    switch (preg_match('#(?i:(?<uri>^(?:\/\w+)*\/(?:ads|user)(?:\/edit)?))\/(?<id>\d+)\b#', $request, $matches)) {
+        case '0':
+            $matches['uri'] = $request;
+            $matches['id'] = '';
+            break;
+        case '1':
+            $matches['id'] = '?id=' . $matches['id'];
+            break;
+        case false:
+            throw new Exception('Error processing request.');
+            break;
+    }
+
+    $matches['uri'] .= substr($matches['uri'], -1) === '/' ? '' : '/';
+
+    return $matches;
+}
+
 function pageController()
 {
     // defines array to be returned and extracted for view
@@ -15,11 +37,10 @@ function pageController()
     // get the part of the request after the domain name
     $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-    $adId = 'potato';
-    $userId = 'hippopotomonstrosesquippedaliophobia';
+    extract(parseRequest($request));
 
     // switch that will run functions and setup variables dependent on what route was accessed
-    switch ($request) {
+    switch ($uri) {
         case '/':
             $mainView = '../views/home.php';
             break;
@@ -30,29 +51,32 @@ function pageController()
             $mainView = '../views/ads/create.php';
             break;
         case '/ads/edit/':
-            $mainView = '../views/ads/edit.php'; // TODO: set up to work with query string
-            break;
-        case '/ads/show/':
-            $mainView = '../views/ads/show.php'; // TODO: set up to work with query string
+            $mainView = '../views/ads/edit.php';
             break;
         case '/user/':
-            $mainView = '../views/users/account.php'; // TODO: set up to work with query string
+            if (empty($id)) {
+                $id = isset($_SESSION['logged_in_user_id']) ? $_SESSION['logged_in_user_id'] : '?id=0';
+            }
+            $mainView = '../views/users/account.php';
             break;
         case '/user/edit/':
-            $mainView = '../views/users/edit.php'; // TODO: set up to work with query string
+            $mainView = /*isset($_SESSION['logged_in_user_id']) ? */'../views/users/edit.php'/* . $_SESSION['logged_in_user_id'] : ERROR NOT LOGGED IN*/;
             break;
         case '/login/':
-            $mainView = '../views/users/login.php';
+            $mainView = /*isset($_SESSION['logged_in_user_id']) ? PREVIOUS PAGE : */'../views/users/login.php';
             break;
         case '/signup/':
-            $mainView = '../views/users/signup.php';
+            $mainView = /*isset($_SESSION['logged_in_user_id']) ? PREVIOUS PAGE : */'../views/users/signup.php';
             break;
         default:    // displays 404 if route not specified above
+            error404:
             $mainView = '../views/404.php';
             break;
     }
 
     $data['mainView'] = $mainView;
+
+    $data['query'] = $id;
 
     return $data;
 }
