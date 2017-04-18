@@ -61,7 +61,7 @@ function pageController()
             break;
         case '/user/edit/':
             if (isset($_SESSION['logged_in_user_id'])) {
-                $mainView = '../views/users/edit.php' .  $_SESSION['logged_in_user_id']
+                $mainView = '../views/users/edit.php' .  $_SESSION['logged_in_user_id'];
             } else {
                 $mainView = '';    // need to display "not logged in" page
             }
