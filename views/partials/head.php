@@ -12,8 +12,8 @@
     <title>Template Example</title>
 
 	<!-- Custom stylesheet -->
-	<link rel="stylesheet" type="text/css" href="/css/main.css">
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
 
 
 </head>
