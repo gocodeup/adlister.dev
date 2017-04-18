@@ -18,8 +18,9 @@ function pageController()
 		break;
 		case "/index": $mainView = '../views/home.php';
 		break;
-        case "/items": $mainView = '../views/partials/items.php';
-        break;
+        case "/items": $data['adListings'] = Ads::all();
+            $mainView = '../views/partials/items.php';
+            break;
 		case "/login": $mainView = '../views/users/login.php';
         break;
 		case "/signup": $mainView = '../views/users/signup.php';
@@ -30,9 +31,7 @@ function pageController()
     }
 
     $data['mainView'] = $mainView;
-
     return $data;
 }
 
 extract(pageController());
-require $mainView;
