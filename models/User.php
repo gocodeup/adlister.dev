@@ -9,7 +9,7 @@ class User extends Model {
     // given key is not a password, just call the parent method
     public function __set($name, $value)
     {
-        if ($name == 'password') {
+        if ($name == 'password' && $value != "") {
             $value = password_hash($value, PASSWORD_DEFAULT);
         }
         parent::__set($name, $value);
@@ -41,5 +41,33 @@ class User extends Model {
         }
 
         return $instance;
+    }
+
+    public static function getNumber($key) {
+        $value = self::getValue($key);
+        if(!is_numeric($value)) {
+            throw new Exception("Input must be a number.");
+        }
+        return $value;
+    }
+
+    public static function getString($key) {
+        $value = self::getValue($key);
+        if(!is_string($value)) {
+            throw new Exception("Input must be a string.");
+        }
+        return $value;
+    }
+
+    public static function hasKey($key) {
+        return isset($_REQUEST[$key]);
+    }
+
+    public static function getValue($key, $default = null) {
+        if(self::hasKey($key)) {
+            return $_REQUEST[$key];
+        } else {
+            return $default;
+        }
     }
 }

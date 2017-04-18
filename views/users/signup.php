@@ -1,3 +1,19 @@
+<?php
+
+if(!empty($_POST)) {
+    $user = new User();
+
+    $errors = [];
+    
+    $user->name = User::getString('name');
+    $user->email = User::getString('email');
+    $user->username = User::getString('username');
+    $user->password = User::getString('password');
+
+    var_dump($user);
+}
+
+?>
 <div class="container">
 
     <section id="login">
