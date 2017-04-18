@@ -35,4 +35,3 @@ function pageController()
 }
 
 extract(pageController());
-require $mainView;
