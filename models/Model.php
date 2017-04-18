@@ -70,6 +70,7 @@ abstract class Model {
 
             self::$dbc = $dbc;
         }
+         return self::$dbc;
     }
 
     /*
