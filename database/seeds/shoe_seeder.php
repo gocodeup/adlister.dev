@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../../models/User.php';
+require_once __DIR__ . '/../../models/Shoes.php';
 
 $shoe = new Shoe;
 $shoe->title = 'MAN SHOES 4 SALE';
