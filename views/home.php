@@ -1,3 +1,4 @@
+<body>
 <div class="container">
 
     <section id="welcome">
@@ -6,7 +7,7 @@
 
             <div class="col-xs-12">
 
-                <h1 class="text-center">Welcome To Adlister</h1>
+                <h1 class="text-center">Welcome To Ooolister</h1>
 
             </div>
 
@@ -47,3 +48,4 @@
     </section>
 
 </div>
+</body>
