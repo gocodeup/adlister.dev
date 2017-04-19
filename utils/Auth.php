@@ -33,11 +33,10 @@ class Auth
         }
 
         // checks password submitted against hashed password
-        if ($password == 'matt') {
+        if (password_verify($password, $user->password)) {
             // sets session variables used for logged in user
             $_SESSION['IS_LOGGED_IN'] = $user->username;
             $_SESSION['LOGGED_IN_ID'] = $user->id;
-            $_SESSION['SUCCESS_MESSAGE'] = 'Login successful!';
             return true;
         }
 
