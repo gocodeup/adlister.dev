@@ -85,7 +85,6 @@
                 </div><!-- @end #w -->
             </div>
 
-
         <hr class="style13">
         </div>
         <div class="recentlyAdded">
@@ -95,7 +94,7 @@
             <div class="recentlyAddedCategories"></div>
             <div class="recentlyAddedCategories"></div>
             <div class="recentlyAddedCategories"></div>
-            <div class="recentlyAddedCategories AddedCatErrorFix"></div>
+            <div class="recentlyAddedCategories"></div>
             <div class="recentlyAddedCategories"></div>
             <div class="recentlyAddedCategories"></div>
             <div class="recentlyAddedCategories"></div>
@@ -116,7 +115,6 @@
             </div>
             <div class="emptyLayoutLarge">
                 <!-- add in a section after each user closes out a listing with radio buttons asking if the user made the sale or not - have a "rewards Program" if the seller is the top seller for the month (I.E. Free $10 amazon gift card OR Free $10 credit towards their next purchase the site)
-
                 Pay Pal needs to be set up in order for "SELLER OF THE MONTH" to get credited $10 towards their next purchase -->
                 <center><h3>Seller Of The Month</h3></center>
             </div>
