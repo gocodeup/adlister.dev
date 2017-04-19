@@ -25,5 +25,5 @@ $ads->name = 'Marceline Abadeer';
 $ads->description = 'product description';
 $ads->user_id = 4;
 $ads->save();
- 
+	 
  ?>
