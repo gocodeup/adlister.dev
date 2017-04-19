@@ -3,8 +3,6 @@
 $_ENV = include __DIR__ . '/../../.env.php';
 require_once '../db_connect.php';
 
-$dbc->exec('DROP TABLE IF EXISTS ads');
-
 $query = 'CREATE TABLE ads (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     name VARCHAR(240) NOT NULL,
@@ -13,7 +11,9 @@ $query = 'CREATE TABLE ads (
     price DECIMAL(10,2) NOT NULL,
     description TEXT NOT NULL,
     photodir VARCHAR(240),
-    PRIMARY KEY (id)
+    user_id INT UNSIGNED NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (user_id) REFERENCES users(id)
 )';
 
 $dbc->exec($query);
