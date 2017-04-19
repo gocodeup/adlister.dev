@@ -1,6 +1,7 @@
 <?php
-session_start();
-require_once __DIR__ . '/../bootstrap.php';
+    session_start();
+    require_once __DIR__ . '/../bootstrap.php';
+    $loggedIn = isset($_SESSION['LOGGED_IN_ID']);
 ?>
 <!DOCTYPE html>
 <html>
