@@ -1,6 +1,12 @@
 <?php
 
+require '../db_connect.php';
+
 require_once __DIR__ . '/../../models/User.php';
+
+$query = 'delete from ads';
+
+$dbc->exec($query);
 
 $user = new User;
 $user->name = 'Finn Mertens';
