@@ -23,8 +23,7 @@ function pageController()
         case '/login': 
             $mainView = '../views/users/login.php';
             $data['message'] = "";
-<<<<<<< HEAD
-<<<<<<< HEAD
+
             
             if(!empty($_POST)) {
                 if (Input::has('email_user') && Input::has('password')) {
@@ -32,13 +31,9 @@ function pageController()
                     $data['message'] = "Either username/email or password were incorrect";
                 } else if (Auth::check()) {
                     header("Location: /account");
-=======
-=======
-            
->>>>>>> edf96c20b6e6caf7d28f123674b1381a622769f2
+
             if (Auth::check()) {
                     header("Location: /");
->>>>>>> a1977dc13cf6307a611ff7a5d0aaec41b50e9cfd
                     exit;
             }
 
