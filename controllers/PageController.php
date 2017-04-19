@@ -31,6 +31,8 @@ function pageController()
 		break;
 		case "/post": $mainView = '../views/ads/create.php';
 		break;
+		case "/show": $mainView = '../views/ads/show.php';
+		break;
         default:    // displays 404 if route not specified above
             $mainView = '../views/404.php';
             break;
