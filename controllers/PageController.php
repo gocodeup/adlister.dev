@@ -24,21 +24,22 @@ function pageController()
         case '/login': 
             $mainView = '../views/users/login.php';
             $data['message'] = "";
-            
-            if(!empty($_POST)) {
-                if (Input::has('email_user') && Input::has('password')) {
-                    Auth::attempt(Input::get('email_user'), Input::get('password'));
-                    $data['message'] = "Either username/email or password were incorrect";
-                } else if (Auth::check()) {
+            if (Auth::check()) {
                     header("Location: /");
                     exit;
-                }   
+            }
+            if(!empty($_POST)) {
+                if (Auth::attempt(Input::get('email_user'), Input::get('password'))){
+                    header("Location: /account");
+                } else {
+                    $data['message'] = "Either username/email or password were incorrect";
+                }
             }
             break;
 
         case '/logout':
-            Auth::logout();
             $mainView = '/';
+            Auth::logout();
             break;
 
         case '/signup':
