@@ -31,8 +31,8 @@
         </button>
         <div class="dropdown-menu dropdown-menu-right">
             <a class="dropdown-item" href="/account">View Profile</a>
-            <a class="dropdown-item" href="/edit">Edit Profile</a>
-            <a class="dropdown-item" href="#">View Your Ads</a>
+            <a class="dropdown-item" href="edit-user">Edit Profile</a>
+            <a class="dropdown-item" href="/create">Create Ad</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Logout</a>
         </div>

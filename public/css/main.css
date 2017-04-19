@@ -1,6 +1,9 @@
 body {
   background: #efefef; }
 
+.container {
+  margin-top: 20px; }
+
 .cover {
   background: url(../img/cover.jpg) center center;
   width: 100%;
@@ -15,6 +18,11 @@ body {
   line-height: 50px;
   color: #636363;
   margin-bottom: 20px; }
+
+.card {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px; }
 
 .sideBar {
   background: white;
