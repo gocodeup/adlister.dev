@@ -14,6 +14,7 @@
 	<!-- Custom stylesheet -->
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Walter+Turncoat" rel="stylesheet">
 
 	<style>
 	/*#E8D0A9 #B7AFA3 #C1DAD6 #F5FAFA #ACD1E9 #6D929B*/
@@ -22,8 +23,22 @@
 		background-color: #F5FAFA;
 	}
 
+	h1, h2, h3, h4 {
+
+		font-family: 'Walter Turncoat', sans-serif;
+	}
+
 	.navbar {
 		background-color: #ACD1E9;
+		font-family: 'Walter Turncoat', sans-serif;
+	}
+	.navbar-default .navbar-brand:hover {
+		font-size: 200%;
+	}
+	.navbar-default .navbar-nav>li:hover {
+    font-size: 150%;
+    color: #F5FAFA;
+    background-color: #6D929B;
 	}
 	</style>
 
