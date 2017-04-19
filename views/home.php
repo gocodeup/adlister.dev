@@ -7,7 +7,7 @@
 
             <div class="col-xs-12">
 
-                <h1 class="text-center">Welcome To Ooolister</h1>
+                <h1 class="text-center">Welcome To Ooolister!</h1>
 
             </div>
 
