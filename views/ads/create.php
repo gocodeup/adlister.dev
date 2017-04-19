@@ -1,7 +1,7 @@
 <!--Page for creating new advertisement listings-->
 <div class="container">
     <div class="row">
-        <div class="col-6 offset-3">
+        <div class="col-sm offset-sm-0 col-md-6 offset-md-3">
             <form>
                 <div class="form-group row">
                     <label for="example-text-input" class="col-2 col-form-label">Name:</label>

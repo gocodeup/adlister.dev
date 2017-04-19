@@ -7,7 +7,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-6 offset-3">
+        <div class="col-sm offset-sm-0 col-md-6 offset-md-3">
             <h3>Profile Info:</h3>
             <ul class="list-group">
                 <li class="list-group-item">Cras justo odio</li>
@@ -20,7 +20,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-6 offset-3">
+        <div class="col-sm offset-sm-0 col-md-6 offset-md-3">
             <h3>Your Ads:</h3>
             <div class="list-group">
                   <a href="/edit" class="list-group-item list-group-item-action">Cras justo odio</a>

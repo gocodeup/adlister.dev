@@ -1,5 +1,5 @@
 <!--Page for an index of advertisements-->
-<link rel="stylesheet" href="../css/items_styles.css">
+
 <div class='container-fluid'>
     <div class="row">
     <div class="card" style="width: 20rem;">
