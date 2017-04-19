@@ -14,7 +14,7 @@ $ad->location = 'San Antonio';
 $ad->price = '10';
 $ad->description = 'Rubber ducky with codeup logo';
 $ad->username = 'finn_the_human';
-$ad->image = 'rubbery_ducky.png';
+$ad->image = 'rubber_ducky.png';
 $ad->save();
 
 $ad = new Ads;
