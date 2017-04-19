@@ -30,7 +30,7 @@ function pageController()
                     Auth::attempt(Input::get('email_user'), Input::get('password'));
                     $data['message'] = "Either username/email or password were incorrect";
                 } else if (Auth::check()) {
-                    header("Location: /");
+                    header("Location: /account");
                     exit;
                 }   
             }

@@ -8,3 +8,6 @@ if(Auth::check() !== true) {
 }
 
 ?>
+<body>
+	<h1>Account Page</h1>
+</body>
