@@ -1,24 +1,4 @@
 <body>
-<<<<<<< HEAD
-        <div class="grey">
-        <?php if(isset($_SESSION['LOGGED_IN_ID'])) {
-            echo "Hello " . ucwords(Auth::user()->name);
-        } else {
-            echo "Hello guest!";
-        }
-        ?>
-        <div id="featuredItemsBox">
-            <center><h2 class="section-title">Check Out Our Featured Items</h2></center>
-            <div class="leftArrow"></div>
-            <div class="rightArrow"></div>
-            <div class="featuredItemsInnerContainer">
-                <div class="featuredItems featuredItem1"></div>
-                <div class="featuredItems"></div>
-                <div class="featuredItems"></div>
-            </div>
-        </div>
-        </div>
-=======
         <div class="background-grey">
         <?php
         if($loggedIn) {
@@ -105,7 +85,7 @@
                 </div><!-- @end #w -->
             </div>
 
->>>>>>> master
+
         <hr class="style13">
         </div>
         <div class="recentlyAdded">
@@ -144,9 +124,6 @@
 
     <section class="footer"></section>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<<<<<<< HEAD
-
-=======
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/responsiveCarousel.min.js"></script>
     <script type="text/javascript">
@@ -163,5 +140,4 @@
     });
     });
     </script>
->>>>>>> master
    </body>

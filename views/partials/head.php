@@ -7,13 +7,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Muli:200,300,400" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Muli|Open+Sans+Condensed:300" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
+
 	<link rel="shortcut icon" href="http://static.tmimgcdn.com/img/favicon.ico">
   	<link rel="icon" href="http://static.tmimgcdn.com/img/favicon.ico">
-	<link rel="stylesheet" href="./css/main.css">
-</head>
-=======
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
 </head>
->>>>>>> master
+
