@@ -20,6 +20,7 @@ function pageController()
             $mainView = '../views/home.php';
             break;
 
+        //Login Logic
         case '/login': 
             $mainView = '../views/users/login.php';
             $data['message'] = "";
