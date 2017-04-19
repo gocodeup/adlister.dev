@@ -16,8 +16,14 @@
 			<ul class="nav navbar-nav">
 				<li><a href="/index">Home</a></li>
 				<li><a href="/items">Items</a></li>
-				<li><a href="/login">Login</a></li>
-				<li><a href="/signup">Signup</a></li>
+				<?php if (Auth::check()):?>
+					<li><a href="/account">Account</a></li>
+					<li><a href="/logout">Logout</a></li>
+					<li><a href="/post">Post Ad</a></li>
+				<?php else: ?>
+					<li><a href="/login">Login</a></li>
+					<li><a href="/signup">Signup</a></li>
+				<?php endif;?>
 			</ul>
 			<form class="navbar-form navbar-right">
 				<div class="form-group">
