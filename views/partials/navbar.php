@@ -4,12 +4,12 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand logoGreen" href="#">pie piper</a>
+    <a class="navbar-brand logoGreen" href="/">pie piper</a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <form class="form-inline my-2 my-lg-0 mr-auto">
             <input class="form-control mr-sm-2 searchbar" type="text" placeholder="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" id="searchButton" type="submit">Search</button>
+            <button class="btn btn-success my-2 my-sm-0" id="searchButton" type="submit">Search</button>
         </form>
     <!-- Shop Button -->
     <div class="btn-group">
@@ -17,10 +17,10 @@
         Shop
         </button>
         <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="#">Software</a>
-            <a class="dropdown-item" href="#">Hardware</a>
-            <a class="dropdown-item" href="#">Military Stuff</a>
-            <a class="dropdown-item" href="#">Other</a>
+            <a class="dropdown-item" href="/items">Software</a>
+            <a class="dropdown-item" href="/items">Hardware</a>
+            <a class="dropdown-item" href="/items">Military Stuff</a>
+            <a class="dropdown-item" href="/items">Other</a>
         </div>
     </div>
     <!-- Profile Button -->
@@ -30,8 +30,8 @@
         Profile
         </button>
         <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="#">View Profile</a>
-            <a class="dropdown-item" href="#">Edit Profile</a>
+            <a class="dropdown-item" href="/account">View Profile</a>
+            <a class="dropdown-item" href="/edit">Edit Profile</a>
             <a class="dropdown-item" href="#">View Your Ads</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Logout</a>
