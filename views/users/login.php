@@ -23,7 +23,7 @@
 
                 <p>Login with your email/username and password</p>
 
-                <form method="POST" action="" data-validation data-required-message="This field is required">
+                <form method="POST" action="/login" data-validation data-required-message="This field is required">
 
                     <div class="form-group">
                         <input type="text" class="form-control" id="email_user" name="email_user" placeholder="Email or Username" data-required>
