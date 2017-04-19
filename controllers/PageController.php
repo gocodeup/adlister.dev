@@ -31,7 +31,7 @@ function pageController()
 		break;
 		case "/post": $mainView = '../views/ads/create.php';
 		break;
-		case "/show": $mainView = '../views/ads/show.php';
+		case "/show": $data['showItem'] = Ads::find(Input::get('id')); $mainView = '../views/ads/show.php';
 		break;
         default:    // displays 404 if route not specified above
             $mainView = '../views/404.php';
