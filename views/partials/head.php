@@ -15,5 +15,17 @@
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
 
+	<style>
+	/*#E8D0A9 #B7AFA3 #C1DAD6 #F5FAFA #ACD1E9 #6D929B*/
+
+	body {
+		background-color: #F5FAFA;
+	}
+
+	.navbar {
+		background-color: #ACD1E9;
+	}
+	</style>
+
 
 </head>
