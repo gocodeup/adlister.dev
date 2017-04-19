@@ -7,3 +7,30 @@
 .card-text {
     text-align: center;
 }
+.section-title {
+    text-align: center;
+    margin-bottom: 1em;
+}
+.form-group {
+    text-align: center;
+}
+.card-block {
+    text-align: center;
+}
+.card-img-single {
+    display: block;
+    margin: auto;
+}
+#form-description {
+    text-align: center;
+    margin-bottom: 3em;
+}
+#single-item-card {
+    margin-left: 25em;
+}
+#single-item {
+    text-align: center;
+}
+#single-button {
+    margin-top: 1em;
+}
