@@ -27,4 +27,9 @@ class Input
     {
         return $_REQUEST;
     }
+
+    public static function escape($str)
+    {
+        return htmlspecialchars(strip_tags($str));
+    }
 }

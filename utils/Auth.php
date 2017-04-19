@@ -1,6 +1,6 @@
 <?php
 
-require_once '../models/User.php';
+require_once __DIR__ . '/../models/User.php';
 
 class Auth
 {
@@ -17,20 +17,16 @@ class Auth
     public static function attempt($username, $password)
     {
         // makes sure the values passed in are not empty
-        if(($username == '' || $username == null)) {
-            throw new Exception("Please enter a username");
-            return false;
-        } else if(($password == '' || $password == null)) {
-            throw new Exception("Please enter a password");
+        if (($username == '' || $username == null) || ($password == '' || $password == null)) {
+            $_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
             return false;
         }
-
         // gets instance of user model by searching with username or email($username)
-        $user = User::findByUsername($username);
+        $user = User::findByUsernameOrEmail($username);
 
         // makes sure the instance returned is not empty
         if ($user == null) {
-            throw new Exception("That username was not found");
+            $_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
             return false;
         }
 
@@ -39,10 +35,11 @@ class Auth
             // sets session variables used for logged in user
             $_SESSION['IS_LOGGED_IN'] = $user->username;
             $_SESSION['LOGGED_IN_ID'] = $user->id;
+
             return true;
         }
 
-        throw new Exception("Login information was incorrect");
+        $_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
         return false;
     }
 
@@ -77,7 +74,7 @@ class Auth
     public static function user()
     {
         if (self::check()) {
-            return User::findByUsername($_SESSION['IS_LOGGED_IN']);
+            return User::findByUsernameOrEmail($_SESSION['IS_LOGGED_IN']);
         }
         return null;
     }
@@ -93,7 +90,6 @@ class Auth
         session_unset();
         // delete session data on the server and send the client a new cookie
         session_regenerate_id(true);
-        // header("Location: /");
         return true;
     }
 }
