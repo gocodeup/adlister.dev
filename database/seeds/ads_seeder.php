@@ -14,7 +14,7 @@ $ad->location = 'San Antonio';
 $ad->price = '10';
 $ad->description = 'Rubber ducky with codeup logo';
 $ad->username = 'finn_the_human';
-$ad->image = '../../public/img/rubbery_ducky.png';
+$ad->image = 'rubbery_ducky.png';
 $ad->save();
 
 $ad = new Ads;
@@ -23,7 +23,7 @@ $ad->location = 'San Antonio';
 $ad->price = '5';
 $ad->description = 'Blue water bottle - super cool';
 $ad->username = 'jake_the_dog';
-$ad->image = '../../public/img/water_bottle.png';
+$ad->image = 'water_bottle.png';
 $ad->save();
 
 $ad = new Ads;
@@ -32,7 +32,7 @@ $ad->location = 'San Antonio';
 $ad->price = '3.50';
 $ad->description = 'The Alamo is for sale';
 $ad->username = 'ice_king';
-$ad->image = '../../public/img/alamo.png';
+$ad->image = 'alamo.png';
 $ad->save();
 
 $ad = new Ads;
@@ -41,6 +41,6 @@ $ad->location = 'San Antonio';
 $ad->price = '17500';
 $ad->description = 'Become a web developer';
 $ad->username = 'marceline_abadeer';
-$ad->image = '../../public/img/codeup.png';
+$ad->image = 'codeup.png';
 $ad->save();
 
