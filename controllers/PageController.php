@@ -29,6 +29,7 @@ function pageController()
                     exit;
             }
 
+            // login logic
             if(!empty($_POST)) {
                 if (Auth::attempt(Input::get('email_user'), Input::get('password'))){
                     header("Location: /account");
