@@ -19,7 +19,7 @@ function pageController()
 		case "/index": $mainView = '../views/home.php';
 		break;
         case "/items": $data['adListings'] = Ads::all();
-            $mainView = '../views/partials/items.php';
+            $mainView = '../views/ads/items.php';
             break;
 		case "/login": $mainView = '../views/users/login.php';
         break;
