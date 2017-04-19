@@ -20,10 +20,10 @@ function pageController()
             $mainView = '../views/home.php';
             break;
 
-        //Login Logic
         case '/login': 
             $mainView = '../views/users/login.php';
             $data['message'] = "";
+<<<<<<< HEAD
 <<<<<<< HEAD
             
             if(!empty($_POST)) {
@@ -33,11 +33,15 @@ function pageController()
                 } else if (Auth::check()) {
                     header("Location: /account");
 =======
+=======
+            
+>>>>>>> edf96c20b6e6caf7d28f123674b1381a622769f2
             if (Auth::check()) {
                     header("Location: /");
 >>>>>>> a1977dc13cf6307a611ff7a5d0aaec41b50e9cfd
                     exit;
             }
+
             if(!empty($_POST)) {
                 if (Auth::attempt(Input::get('email_user'), Input::get('password'))){
                     header("Location: /account");
