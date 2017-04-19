@@ -30,7 +30,8 @@ function pageController()
         break;
 		case "/account": $mainView = '../views/users/account.php';
 		break;
-		case "/logout": Auth::logout(); $mainView = '../views/home.php';
+		case "/logout": Auth::logout(); $data['selectThree'] = Ads::selectThree();
+            $mainView = '../views/home.php';
 		break;
 		case "/post": $mainView = '../views/ads/create.php';
 		break;

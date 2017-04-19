@@ -259,7 +259,7 @@ abstract class Model {
                 $statement->bindValue(':name', Input::get('name'), PDO::PARAM_STR);
                 $statement->bindValue(':email', Input::get('email'), PDO::PARAM_STR);
                 $statement->bindValue(':username', Input::get('username'), PDO::PARAM_STR);
-                $statement->bindValue(':password', Input::get('password'), PDO::PARAM_STR);
+                $statement->bindValue(':password', password_hash(Input::get('password'), PASSWORD_DEFAULT), PDO::PARAM_STR);
                 $statement->execute();
                 header("location: /login");
             }
