@@ -24,14 +24,6 @@ function pageController()
             $mainView = '../views/users/login.php';
             $data['message'] = "";
 
-            
-            if(!empty($_POST)) {
-                if (Input::has('email_user') && Input::has('password')) {
-                    Auth::attempt(Input::get('email_user'), Input::get('password'));
-                    $data['message'] = "Either username/email or password were incorrect";
-                } else if (Auth::check()) {
-                    header("Location: /account");
-
             if (Auth::check()) {
                     header("Location: /");
                     exit;
