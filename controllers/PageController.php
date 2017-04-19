@@ -59,9 +59,29 @@ function pageController()
                 exit;
             }
             break;
+        
+        case '/account/favorites':
+            $mainView = '../views/users/favorites.php';
+            if(!Auth::check()) {
+                header('Location: /login');
+                exit;
+            }
+            break;
 
         case '/ads':
             $mainView = '../views/ads/index.php';
+            break;
+        
+        case '/ads/photovideo':
+            $mainView = '../views/ads/photovideo.php';
+            break;
+
+        case '/ads/movies':
+            $mainView = '../views/ads/movies.php';
+            break;
+
+        case '/ads/games':
+            $mainView = '../views/ads/games.php';
             break;
 
         case '/ads?id={n}':
@@ -76,6 +96,7 @@ function pageController()
             }
             break;
 
+        // user can edit posted ads. redirected if not logged in.
         case '/ads/edit?id={n}':
             $mainView = '../views/ads/edit.php';
             if(!Auth::check()) {
