@@ -3,11 +3,15 @@ body
 	background-color: #FFF;
 }
 
+.background-grey {
+	background-color: #E5E4E1;
+}
+
 .style13 {
-	height: 10px;
+	background-color: #E5E4E1;
+	height: 30px;
 	border: 0;
-/*	width: 865px;*/
-	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+	box-shadow: 0 -10px 10px -10px #333 inset;
 }
 
 .welcomeLi
@@ -17,6 +21,7 @@ body
 	position: relative;
 	text-align: center;
 	font-family: 'Muli', sans-serif;
+	padding: 20px;
 
 }
 
@@ -55,7 +60,7 @@ h3
 }
 #navBar 
 {
-	height: 40px;
+	height: 100px;
 	/*width: 100%;*/
 	background-color: #00a4e8;
 	padding-top: 5px;
@@ -83,7 +88,6 @@ h3
 #featuredItemsBox
 {
 	margin-top: 10px;
-	height: 350px;
 	margin-left: 38px;
 	margin-right: 38px;
 	background-color: #FFF;
@@ -94,8 +98,8 @@ h3
 
 .recentlyAdded
 {
-/*	width: 880px;
-*/	height: 500px;
+	width: 80%;
+	height: 500px;
 	margin-bottom: 100px;
 	margin-left: 21px;
 	margin-top: 15px;
@@ -194,7 +198,7 @@ h3
     background-color: #00a4e8;
 }
 #myInput {
-    border-box: box-sizing;
+    /*border-box: box-sizing;*/
     background-image: url('searchicon.png');
     background-position: 14px 12px;
     background-repeat: no-repeat;
@@ -206,7 +210,11 @@ h3
 
 .dropdown {
     /*position: relative;*/
-    display: inline-block;
+    float: right;
+	padding-top: 22px;
+	padding-right: 50px;
+	padding-bottom: 20px;
+	padding-left: 20px;
 }
 
 .dropdown-content {
@@ -272,3 +280,48 @@ h3
 }
 
 /*carousel*/
+
+
+
+/*=========================================*/
+
+
+.create-ad {
+	background-color: white;
+	margin: 0 auto;
+	width: 600px;
+}
+.create-ad-input-container {
+	text-align: center;
+	margin-top: 4px;
+	width: 600px;
+	padding-top: 40px;
+	padding-right: 150px;
+	padding-bottom: 50px;
+	padding-left: 150px;
+	background-color: #f1f1f1;
+}
+.create-ad-input-header {
+	text-align: center;
+	margin-top: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 600px;
+	background-color: #f1f1f1;
+}
+input.create-ad-input {
+	width: 300px;
+	margin-bottom: 14px;
+	border: 0px solid;
+	padding: 7px;
+}
+select.create-ad-select {
+	width: 300px;
+	margin-bottom: 14px;
+	border: 0px solid;
+	padding: 7px;
+}
+button.submit-ad {
+	float: right;
+	margin-bottom: 10px;
+}

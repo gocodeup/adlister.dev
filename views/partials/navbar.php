@@ -4,7 +4,7 @@
 	<body>
 		<div id="navBar">
 			<ul>
-			    <li class="welcomeLi"><h3>Welcome To Adlister</h3></li>
+			    <li class="welcomeLi"><h3>Adlister</h3></li>
 			<!--     <li>Log In</li>
 			    <li>Search</li> -->
 			<div class="dropdown">
@@ -45,14 +45,5 @@
 			}
 			</script>
 		</div>
-		  <!--   <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-        <div id="myDropdown" class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-        </div>
-    </div> -->
-
 	</body>
 </html>
