@@ -125,7 +125,7 @@ abstract class Model {
         }
 
         $query = "INSERT INTO " . static::$table . " ({$columns}) VALUES ({$valuePlaceholders})";
-
+        var_dump($query);
         $stmt = self::$dbc->prepare($query);
 
         foreach ($this->attributes as $column => $value) {

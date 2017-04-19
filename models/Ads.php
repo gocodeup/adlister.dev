@@ -49,6 +49,7 @@ class Ads extends Model {
             $ad->price = $row['price'];
             $ad->description = $row['description'];
             $ad->username = $row['username'];
+            $ad->username = $row['image'];
             array_push($array, $ad);
         }
         return $array;
@@ -98,29 +99,10 @@ class Ads extends Model {
             $ad->price = $row['price'];
             $ad->description = $row['description'];
             $ad->username = $row['username'];
+            $ad->image = $row['image'];
             array_push($array, $ad);
         }
         return $array;
     }
 
-    public $id;
-    public $title;
-    public $location;
-    public $price;
-    public $description;
-    public $username;
-
-    public function insertAd($title, $location, $price, $description, $username) {
-        $connection = self::dbConnect();
-        $query = "INSERT INTO ads (title, location, price, description, username) VALUES (:title, :location, :price, :description, :username)";
-        $statement = $connection->prepare($query);
-        $statement->bindValue(':title', $title, PDO::PARAM_STR);
-        $statement->bindValue(':location', $location, PDO::PARAM_STR);
-        $statement->bindValue(':price', $price, PDO::PARAM_STR);
-        $statement->bindValue(':description', $description, PDO::PARAM_INT);
-        $statement->bindValue(':username', $username, PDO::PARAM_STR);
-        $statement->execute();
-        $id = $db->lastInsertId();
-        return $id;
-    }
 }
