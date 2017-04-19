@@ -20,14 +20,15 @@ function pageController()
             $mainView = '../views/home.php';
             break;
 
-        //Login Logic
         case '/login': 
             $mainView = '../views/users/login.php';
             $data['message'] = "";
+            
             if (Auth::check()) {
                     header("Location: /");
                     exit;
             }
+
             if(!empty($_POST)) {
                 if (Auth::attempt(Input::get('email_user'), Input::get('password'))){
                     header("Location: /account");
