@@ -11,7 +11,7 @@ require_once __DIR__ . '/../bootstrap.php';
 <!DOCTYPE html>
 <html>
 <head>
-    <title>OooLister</title>
+    <title>Pie Piper</title>
     <?php include_once __DIR__ . '/../views/partials/head.php'; ?>
 </head>
 <body>
