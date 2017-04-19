@@ -11,20 +11,24 @@ function parseRequest($request)
 {
     $matches = [];
 
-    switch (preg_match('#(?i:(?<uri>^(?:\/\w+)*\/(?:ads|user)(?:\/edit)?))\/(?<id>\d+)\b#', $request, $matches)) {
+    switch (preg_match('#(?i:(?<uri>^.*(?:\/(?!\d*(?:\W*|\W{2,}.*)$)\w+)+\/?))(?:\b(?<id>\d+)\b)?#', $request, $matches)) {
         case '0':
             $matches['uri'] = $request;
-            $matches['id'] = '';
-            break;
         case '1':
-            $matches['id'] = '?id=' . $matches['id'];
+            $matches['id'] = isset($matches['id']) ? '?id=' . $matches['id'] : '';
             break;
         case false:
             throw new Exception('Error processing request.');
             break;
     }
 
-    $matches['uri'] .= substr($matches['uri'], -1) === '/' ? '' : '/';
+    $matches['uri'] = preg_replace('#([^\/])$#', '$1/', $matches['uri']);
+
+    $requestTest = preg_replace('#([^\/])$#', '$1/', $matches['uri'] . $matches['id']);
+
+    if ($requestTest !== $request) {
+        header("Location: $requestTest");
+    }
 
     return $matches;
 }
@@ -53,27 +57,30 @@ function pageController()
         case '/ads/edit/':
             $mainView = '../views/ads/edit.php';
             break;
+        case '/user':
+            header('Location: /user/');
+            break;
         case '/user/':
             if (empty($id)) {
                 $id = isset($_SESSION['logged_in_user_id']) ? $_SESSION['logged_in_user_id'] : '?id=0';
             }
             $mainView = '../views/users/account.php';
             break;
-        case '/user/edit/':
+        case '/user/edit':
             if (isset($_SESSION['logged_in_user_id'])) {
                 $mainView = '../views/users/edit.php' .  $_SESSION['logged_in_user_id'];
             } else {
                 $mainView = '';    // need to display "not logged in" page
             }
             break;
-        case '/login/':
+        case '/login':
             if (!isset($_SESSION['logged_in_user_id'])) {
                 $mainView = '../views/users/login.php';
             } else {
                 header('adlister.dev');
             }
             break;
-        case '/signup/':
+        case '/signup':
             if (!isset($_SESSION['logged_in_user_id'])) {
                 $mainView = '../views/users/signup.php';
             } else {
