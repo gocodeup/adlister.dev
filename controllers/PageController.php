@@ -46,6 +46,45 @@ function pageController()
 
         case '/signup':
             $mainView = '../views/users/signup.php';
+
+            // Signup Logic
+            $data['errors'] = [];
+
+            if(!empty($_POST)) {
+                $user = new User();
+
+                try {
+                    $user->name = Input::getString('name');
+                } catch (Exception $e) {
+                    $data['errors']['name'] = $e->getMessage();
+                }
+                try {
+                    $user->email = Input::getString('email');
+                } catch (Exception $e) {
+                    $data['errors']['email'] = $e->getMessage();
+                }
+                try {
+                    $user->username = Input::getString('username');
+                } catch (Exception $e) {
+                    $data['errors']['username'] = $e->getMessage();
+                }
+
+                try {
+                    $user->password = Input::getString('password');
+                } catch (Exception $e) {
+                    $data['errors']['password'] = $e->getMessage();
+                }
+                if(Input::get('password') !== Input::get('passwordConfirm')) {
+                    $data['errors']['passwordConfirm'] = "Password does not match.";
+                }
+                
+                if(empty($data['errors'])) {
+                    $user->save();
+                    Auth::attempt($user->username, Input::get('password'));
+                    header('Location: /');
+                }
+            }
+
             break;
 
         case '/account':

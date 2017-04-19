@@ -27,4 +27,16 @@ class Input
     {
         return $_REQUEST;
     }
+
+    public static function getString($key) {
+        $input = self::get($key);
+        if(empty($input) || is_numeric($input) || !is_string($input)) {
+            throw new Exception("Must enter valid $key");
+        }
+        return $input;
+    }
+
+    public static function escape($input) {
+        return htmlspecialchars(strip_tags($input));
+    }
 }
