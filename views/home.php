@@ -1,13 +1,7 @@
-<?php
-
-
-?>
-
 <body>
-        <?php if(isset($_SESSION['LOGGED_IN_ID'])) {
-            echo "Hello " . ucwords(Auth::user()->name);
-        } else {
-            echo "Hello guest!";
+        <?php
+        if($loggedIn) {
+            echo "Hello " . ucwords(Auth::user()->name) . "!";
         }
         ?>
         <div id="featuredItemsContainer">
