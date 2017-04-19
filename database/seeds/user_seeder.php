@@ -1,6 +1,10 @@
 <?php
 
 require_once __DIR__ . '/../../models/User.php';
+require '../db_connect.php';
+
+$dbc->exec('TRUNCATE table ads');
+$dbc->exec('TRUNCATE table users');
 
 $user = new User;
 $user->name = 'Finn Mertens';
