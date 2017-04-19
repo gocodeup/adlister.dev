@@ -4,11 +4,11 @@ body
 }
 
 .background-grey {
-	background-color: #E5E4E1;
+	background-color: #FFF;
 }
 
 .style13 {
-	background-color: #E5E4E1;
+	background-color: #FFF;
 	height: 30px;
 	border: 0;
 	box-shadow: 0 -10px 10px -10px #333 inset;
@@ -91,9 +91,6 @@ h3
 	margin-left: 38px;
 	margin-right: 38px;
 	background-color: #FFF;
-	box-shadow:2px 2px 10px 5px #F7F7F7;
-    -webkit-box-shadow:2px 2px 10px 5px #F7F7F7;
-    -moz-box-shadow:2px 2px 10px 5px #F7F7F7;
 }
 
 .recentlyAdded
