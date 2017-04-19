@@ -12,18 +12,18 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/account">Ads <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
+        <li class="active"><a href="/ads">Ads <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Specials</a></li>
         <li class="dropdown">
-          <a href="/ads" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Account <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Account <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="/ads">View Account</a></li>
-            <li><a href="/ads/create">Edit Account</a></li>
+            <li><a href="/account">View Account</a></li>
+            <li><a href="/account/edit">Edit Account</a></li>
             <li><a href="/ads/edit?id={n}">Favorites</a></li>
             <li class="divider"></li>
-            <li><a href="#">Sign Up</a></li>
+            <li><a href="/signup">Sign Up</a></li>
             <li class="divider"></li>
-            <li><a href="#">Posted Ads</a></li>
+            <li><a href="/ads/edit?id={n}">Posted Ads</a></li>
           </ul>
         </li>
       </ul>
@@ -35,8 +35,14 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li>
+            <?php if(Auth::check()): ?>
+                <a href="/logout">Logout</a>
+            <?php endif; ?>
+
+            <?php if(!Auth::check()): ?>
                 <a href="/login">Login</a>
-        </li></li>
+            <?php endif; ?>
+        </li>
       </ul>
     </div>
   </div>
