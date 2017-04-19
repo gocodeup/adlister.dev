@@ -112,12 +112,12 @@ class Ads extends Model {
 
     public function insertAd($title, $location, $price, $description, $username) {
         $connection = self::dbConnect();
-        $query = "INSERT INTO national_parks (title, location, price, description, username) VALUES (:title, :location, :date_established, :area_in_acres, :username)";
+        $query = "INSERT INTO ads (title, location, price, description, username) VALUES (:title, :location, :price, :description, :username)";
         $statement = $connection->prepare($query);
         $statement->bindValue(':title', $title, PDO::PARAM_STR);
         $statement->bindValue(':location', $location, PDO::PARAM_STR);
-        $statement->bindValue(':date_established', $price, PDO::PARAM_STR);
-        $statement->bindValue(':area_in_acres', $description, PDO::PARAM_INT);
+        $statement->bindValue(':price', $price, PDO::PARAM_STR);
+        $statement->bindValue(':description', $description, PDO::PARAM_INT);
         $statement->bindValue(':username', $username, PDO::PARAM_STR);
         $statement->execute();
         $id = $db->lastInsertId();
