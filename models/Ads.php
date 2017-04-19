@@ -49,7 +49,7 @@ class Ads extends Model {
             $ad->price = $row['price'];
             $ad->description = $row['description'];
             $ad->username = $row['username'];
-            $ad->username = $row['image'];
+            $ad->image = $row['image'];
             array_push($array, $ad);
         }
         return $array;
