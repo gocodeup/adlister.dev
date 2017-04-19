@@ -35,6 +35,7 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li>
+            <!-- Logout/Login -->
             <?php if(Auth::check()): ?>
                 <a href="/logout">Logout</a>
             <?php endif; ?>
