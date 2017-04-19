@@ -1,9 +1,11 @@
 <?php
 
 require_once __DIR__ . '/../utils/helper_functions.php';
+require_once __DIR__ . '/../utils/Auth.php';
 
 function pageController()
 {
+
 
     // defines array to be returned and extracted for view
     $data = [];
@@ -17,8 +19,27 @@ function pageController()
         case '/':
             $mainView = '../views/home.php';
             break;
-        case '/login':
+        case '/login': 
             $mainView = '../views/users/login.php';
+
+            /////////////////////////////////
+            //       Login Section         //
+            /////////////////////////////////
+            $data['message'] = "";
+            
+
+            // check if the form was submitted
+            if (Input::has('email_user') && Input::has('password')) {
+                Auth::attempt(Input::get('email_user'), Input::get('password'));
+                $data['message'] = "Either username or password were incorrect";
+            } else if (Auth::check()) {
+                header('Location: /');
+                exit;
+            } 
+            break;
+        case '/logout':
+            Auth::logout();
+            $mainView = '/';
             break;
         case '/signup':
             $mainView = '../views/users/signup.php';
@@ -28,6 +49,10 @@ function pageController()
             break;
         case '/account/edit':
             $mainView = '../views/users/edit.php';
+            if(!Auth::check()) {
+                header('Location: /login.php');
+                exit;
+            }
             break;
         case '/ads':
             $mainView = '../views/ads/index.php';
@@ -37,9 +62,17 @@ function pageController()
             break;
         case '/ads/create':
             $mainView = '../views/ads/create.php';
+            if(!Auth::check()) {
+                header('Location: /login.php');
+                exit;
+            }
             break;
         case '/ads/edit?id={n}':
             $mainView = '../views/ads/edit.php';
+            if(!Auth::check()) {
+                header('Location: /login.php');
+                exit;
+            }   
             break;
         default:    // displays 404 if route not specified above
             $mainView = '../views/404.php';
