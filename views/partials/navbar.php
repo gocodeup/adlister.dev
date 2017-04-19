@@ -35,8 +35,14 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li>
+            <?php if(Auth::check()): ?>
+                <a href="/logout">Logout</a>
+            <?php endif; ?>
+
+            <?php if(!Auth::check()): ?>
                 <a href="/login">Login</a>
-        </li></li>
+            <?php endif; ?>
+        </li>
       </ul>
     </div>
   </div>
