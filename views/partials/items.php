@@ -2,7 +2,6 @@
 require_once __DIR__ . '/../../controllers/PageController.php';
 
  ?>
- 
 <div class="container">
 	<div class="row">
 		<?php foreach($adListings as $ad) { ?>
