@@ -235,4 +235,34 @@ abstract class Model {
         }, $results);
     }
 
+    public static function selectThree()
+    {
+        self::dbConnect();
+
+        $query = 'SELECT * FROM ' . static::$table . ' order by rand() limit 3';
+
+        $stmt = self::$dbc->prepare($query);
+        $stmt->execute();
+
+        //Store the resultset in a variable named $result
+        $results = $stmt->fetchAll(PDO::FETCH_OBJ);
+        return $results;
+    }
+
+    public static function signUp() 
+    {
+        self::dbConnect();
+
+        if($_POST) {
+            $insert = "insert into users (name, email, username, password) values (:name, :email, :username, :password)";
+                $statement = self::$dbc->prepare($insert);
+                $statement->bindValue(':name', Input::get('name'), PDO::PARAM_STR);
+                $statement->bindValue(':email', Input::get('email'), PDO::PARAM_STR);
+                $statement->bindValue(':username', Input::get('username'), PDO::PARAM_STR);
+                $statement->bindValue(':password', Input::get('password'), PDO::PARAM_STR);
+                $statement->execute();
+                header("location: /login");
+            }
+    }
+
 }
