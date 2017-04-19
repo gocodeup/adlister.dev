@@ -14,16 +14,19 @@ function pageController()
 
     // switch that will run functions and setup variables dependent on what route was accessed
     switch ($request) {
-		case "/": $mainView = '../views/home.php';
+		case "/": $data['selectThree'] = Ads::selectThree();
+            $mainView = '../views/home.php';
 		break;
-		case "/index": $mainView = '../views/home.php';
+		case "/index": $data['selectThree'] = Ads::selectThree();
+            $mainView = '../views/home.php';
 		break;
         case "/items": $data['adListings'] = Ads::all();
             $mainView = '../views/ads/items.php';
             break;
 		case "/login": $mainView = '../views/users/login.php';
         break;
-		case "/signup": $mainView = '../views/users/signup.php';
+		case "/signup": Ads::signUp();
+            $mainView = '../views/users/signup.php';
         break;
 		case "/account": $mainView = '../views/users/account.php';
 		break;
@@ -31,7 +34,7 @@ function pageController()
 		break;
 		case "/post": $mainView = '../views/ads/create.php';
 		break;
-		case "/show": $mainView = '../views/ads/show.php';
+		case "/show": $data['showItem'] = Ads::find(Input::get('id')); $mainView = '../views/ads/show.php';
 		break;
         default:    // displays 404 if route not specified above
             $mainView = '../views/404.php';

@@ -1,12 +1,13 @@
+
 <!--Page for single advertisement -->
 <div class="container">
 	<div class="row">
 		<div class="col-sm-4">
 			<div class="panel panel-primary">
-				<div class="panel-heading" style="color: white">ITEM</div>
-				<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-				<div class="panel-footer">Full Description</div>
-				<a href="/account">Posted by</a> <!-- can be put anywhere you want -->
+					<div class="panel-heading"><a href="/show?id=<?= $showItem->id ?>" style="color: white"><?= $showItem->title ?><div class="pull-right"><?= "$" . $showItem->price ?></div></a></div>
+					<div class="panel-body"><img src=<?= "/img/$showItem->image" ?> class="img-responsive" style="width:100%; height:250px" alt="Image"></div>
+					<div class="panel-footer"><?= $showItem->description ?></div>
+				<a href="/account">Posted by <?= $showItem->username ?></a> <!-- can be put anywhere you want -->
 			</div>
 		</div>
 	</div><!-- ends row -->
