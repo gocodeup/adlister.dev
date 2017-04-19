@@ -30,7 +30,7 @@ function pageController()
         break;
 		case "/account": $mainView = '../views/users/account.php';
 		break;
-		case "/logout": $mainView = '../views/home.php';
+		case "/logout": Auth::logout(); $mainView = '../views/home.php';
 		break;
 		case "/post": $mainView = '../views/ads/create.php';
 		break;
@@ -41,6 +41,14 @@ function pageController()
             break;
     }
 
+    if(!empty($_POST)) {
+        $username = Input::get("email_user");
+        $password = Input::get("password");
+        if(Auth::attempt($username, $password)) {
+            return;  
+        } 
+    } 
+    
     $data['mainView'] = $mainView;
     return $data;
 }
