@@ -7,7 +7,7 @@ VALUES  ("iPhone 8", "Hardware", "Apple", 699.99,"A smartphone manufactured by A
     ("Payments", "Software", "Stripe", 19.99, "A service for web developers to easily integrate online payments", "", "1"),
     ("Falcon 9", "Rockets", "SpaceX", 60000000.00,"A rocket to carry humans to the planet Mars", "", "1"),
     ("Compression", "Software","Pied Piper", 199.99,"A fast software compression service by the best business in the valley", "", "1"),
-    ("Nucleas", "Software", "Hooli", 174.99,"A crappy Pied Piper clone", "", "1");
+    ("Nucleas", "Software", "Hooli", 174.99,"A crappy Pied Piper clone", "", "1"),
     ("Yo", "Software", "Or Arbel", 0.99, "An app to send people the word Yo", "", "1"),
     ("EndFrame", "Software", "EndFrame Corporation", 135.00, "Pied Pipers tech, stolen and rebraned", "", "1"),
     ("Aviato Aggregation", "Software", "AVIATO", 29.99, "An airline booking aggregator", "", "1"),
