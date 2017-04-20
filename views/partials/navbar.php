@@ -18,7 +18,7 @@
 				<li><a href="/items">Items</a></li>
 				<?php if (Auth::check()):?>
 					<li><a href="/account">Account</a></li>
-					<li><a href="/post">Post Ad</a></li>
+					<li><a href="/create">Create Ad</a></li>
 					<li><a href="/logout">Logout</a></li>
 				<?php else: ?>
 					<li><a href="/signup">Signup</a></li>
