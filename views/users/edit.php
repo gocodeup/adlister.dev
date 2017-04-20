@@ -22,19 +22,23 @@
                     <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
                 <?php endif; ?>
 
-                <form method="POST" action="" data-validation data-required-message="This field is required">
+                <form method="POST" action="" data-validation required-message="This field is required">
 
                     <div class="form-group">
                         <label>Full Name</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" value="<?= Auth::user()->name; ?>" data-required>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" value="<?= Auth::user()->name; ?>" required>
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" value="<?= Auth::user()->email; ?>" data-required>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?= Auth::user()->email; ?>" required>
                     </div>
                     <div class="form-group">
                         <label>Username</label>
-                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" value="<?= Auth::user()->username; ?>" data-required>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" value="<?= Auth::user()->username; ?>" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" value="<?= Auth::user()->password; ?>" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Update Account</button>
 
