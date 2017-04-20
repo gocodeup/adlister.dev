@@ -23,8 +23,15 @@ function pageController()
 		case "/items": $data['adListings'] = Ads::all();
 			$mainView = '../views/ads/items.php';
 			break;
-		case "/login": $mainView = '../views/users/login.php';
-		break;
+		case "/login": 
+			if(!empty($_POST)) {
+				if(Auth::attempt(input::get('email_user'), input::get('password')) == true) {
+					header("location: /index");
+					die();
+				} 
+			}
+			$mainView = '../views/users/login.php';
+			break;
 		case "/signup": Ads::signUp();
 			$mainView = '../views/users/signup.php';
 		break;
@@ -32,7 +39,6 @@ function pageController()
 		break;
 		case "/logout": Auth::logout(); $data['selectThree'] = Ads::selectThree();
 			$mainView = '../views/home.php';
-		break;
 		break;
 		case "/post": $mainView = '../views/ads/create.php';
 		break;

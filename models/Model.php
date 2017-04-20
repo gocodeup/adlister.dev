@@ -264,5 +264,4 @@ abstract class Model {
                 header("location: /login");
             }
     }
-
 }
