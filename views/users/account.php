@@ -1,6 +1,8 @@
 <!--Page for user account home-->
 <?php
-require_once '../utils/Auth.php';
+
+require_once __DIR__ . '/../../utils/Auth.php';
+require_once __DIR__ . '/../../models/User.php';
 
 if(Auth::check() !== true) {
 	header("Location: http://adlister.dev/login");
@@ -42,17 +44,6 @@ if(Auth::check() !== true) {
 	  <div class="panel-body">
 	  <?php foreach($emails as $email) { ?>
         <?php echo $email ?>
-            <?php }; ?>
-	  </div>
-	</div>
-
-	<div class="panel panel-default">
-	  <div class="panel-heading">
-	    <h3 class="panel-title">User Since</h3>
-	  </div>
-	  <div class="panel-body">
-	   <?php foreach($tenures as $tenure) { ?>
-          <?php echo $tenure ?>
             <?php }; ?>
 	  </div>
 	</div>
