@@ -7,7 +7,7 @@
 
             <div class="col-xs-12">
 
-                <h1 class="text-center">Welcome To Adlister</h1>
+                <h1 id="homeTitle" class="text-center">Welcome To Adlister</h1>
 
             </div>
 
@@ -19,7 +19,7 @@
 
         <div class="row">
 
-            <h3 class="section-title">Featured Items</h3>
+            <h2 class="section-title text-center">Featured Items</h2>
             <!-- Placeholder for featured items.-->
         </div>
 
@@ -38,5 +38,6 @@
             <?php } ?>
         </div>
     </div><!-- ends container -->
+    <a href="/items" id="homeViewAll" style="margin-left: 45%" class="btn btn-primary">View All Items</a>
 
 </div>
