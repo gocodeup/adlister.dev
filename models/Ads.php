@@ -7,7 +7,7 @@ class Ads extends Model {
 
     public static function count() {
         self::dbConnect();
-        $query = self::$dbc->query("SELECT COUNT(*) FROM $table")->fetchColumn();
+        $query = self::$dbc->query("SELECT COUNT(*) FROM " . static::$table)->fetchColumn();
 
         return $query;
     }
@@ -17,7 +17,7 @@ class Ads extends Model {
         $limit = $resultsPerPage;
         $offset = ($pageNo * $limit) - $limit;
 
-        $stmt = self::$dbc->prepare("SELECT * FROM $table LIMIT :limit OFFSET :offset");
+        $stmt = self::$dbc->prepare("SELECT * FROM " . static::$table . " LIMIT :limit OFFSET :offset");
         $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
         $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
         $stmt->execute();
