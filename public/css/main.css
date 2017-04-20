@@ -3,10 +3,17 @@ body
 	background-color: #FFF;
 }
 
-.background-grey {
+.background-grey
+{
 	background-color: #FFF;
 }
 
+.style13 {
+ 	background-color: #FFF;
+ 	height: 30px;
+ 	border: 0;
+ 	box-shadow: 0 -10px 10px -10px #333 inset;
+ }
 
 .welcomeLi
 {
