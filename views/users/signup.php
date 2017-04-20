@@ -1,115 +1,69 @@
-<?php
+<?php 
 
-if(!empty($_POST)) {
-    $user = new User();
-    $errors = [];
+function showErrorMsg($key)
+{
+    $errorMsg = '';
 
-    try {
-        $user->name = User::getString('name');
-    } catch (Exception $e) {
-        $errors['name'] = $e->getMessage();
-    }
-    try {
-        $user->email = User::getString('email');
-        $emailFound = User::findByEmail($user->email);
-        if($emailFound) {
-            throw new Exception("That email is already in use.");
-        }
-    } catch (Exception $e) {
-        $errors['email'] = $e->getMessage();
-    }
-    try {
-        $user->username = User::getString('username');
-        $usernameFound = User::findByUsername($user->username);
-        if($usernameFound) {
-            throw new Exception("That username is already in use.");
-        }
-    } catch (Exception $e) {
-        $errors['username'] = $e->getMessage();
-    }
-    try {
-        $user->password = User::getString('password');
-    } catch (Exception $e) {
-        $errors['password'] = $e->getMessage();
+    if (isset($_SESSION['ERROR_MESSAGES'][$key])) {
+        $errorMsg = <<<HTML
+        <div class="alert alert-danger">
+            <p class="error">
+                {$_SESSION['ERROR_MESSAGES'][$key]}
+            </p>
+        </div>
+HTML;
+        unset($_SESSION['ERROR_MESSAGES'][$key]);
     }
 
-    foreach($_REQUEST as $key => $value) {
-        if(($value === "" || $value == null) && $key != 'submit') {
-            $errors[$key] = "Please fill in your " . str_replace('_', ' ', $key);
-        }
-    }
-    if(empty($errors))
-    {
-        $user->insert();
-        header("Location: /login");
-    }
+    return $errorMsg;
 }
-
-$Name = (isset($_POST['submit'])) ? $value = $user->name : $value = "";
-$Email = (isset($_POST['submit'])) ? $value = $user->email : $value = "";
-$Username = (isset($_POST['submit'])) ? $value = $user->username : $value = "";
-$Password = (isset($_POST['submit'])) ? $value = $user->password : $value = "";
 
 ?>
 
 <div class="container">
 
-        <section id="login">
+    <section id="login">
 
-            <div class="row">
+        <div class="row">
 
-                <h1 class="section-title"><center>Signup For OooLister</center></h1>
+            <h1 class="section-title text-center">Signup For OooLister</h1>
 
-                <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-6 col-md-offset-3">
 
-                <p style="text-align: center;">Please fill out the information below so we can create your account.</p>
+                <p class="text-center">Please fill out the information below so we can create your account.</p>
 
-                <form method="POST" action="" data-validation data-required-message="This field is required">
+                <form method="POST" action="">
 
-                    <?php
-                    if(isset($_POST['submit']) && !empty($errors['name'])) {
-                        echo '<div class="alert alert-danger"><p class="error">' . $errors['name'] . '</p></div>';
-                    }
-                    ?>
+                    <?php echo showErrorMsg('name'); ?>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="name" value="<?php echo $Name ?>" name="name" placeholder="Full Name" data-required>
+                        <input type="text" class="form-control input-required" id="name" value="" name="name" placeholder="Full Name" required>
                     </div>
-                    <?php
-                    if(isset($_POST['submit']) && !empty($errors['email'])) {
-                        echo '<div class="alert alert-danger"><p class="error">' . $errors['email'] . '</p></div>';
-                    }
-                    ?>
+                    <?php echo showErrorMsg('email'); ?>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="email" value="<?php echo $Email ?>" name="email" placeholder="Email" data-required>
+                        <input type="text" class="form-control input-required" id="email" value="" name="email" placeholder="Email" required>
                     </div>
-                    <?php
-                    if(isset($_POST['submit']) && !empty($errors['username'])) {
-                        echo '<div class="alert alert-danger"><p class="error">' . $errors['username'] . '</p></div>';
-                    }
-                    ?>
+                    <?php echo showErrorMsg('username'); ?>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="username" value="<?php echo $Username ?>" name="username" placeholder="Username" data-required>
+                        <input type="text" data-min-length="<?php echo User::getMinimum('username'); ?>" class="form-control input-required" id="username" value="" name="username" placeholder="Username" required>
                     </div>
-                    <?php
-                    if(isset($_POST['submit']) && !empty($errors['password'])) {
-                        echo '<div class="alert alert-danger"><p class="error">' . $errors['password'] . '</p></div>';
-                    }
-                    ?>
+                    <?php echo showErrorMsg('password'); ?>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="password" value="<?php echo $Username ?>" name="password" placeholder="Password" data-required>
+                        <input type="password" data-min-length="<?php echo User::getMinimum('password'); ?>" class="form-control input-required" id="password" name="password" placeholder="Password" required>
                     </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <button type="submit" name="submit" class="btn btn-primary">Signup</button>
-                            </div>
-                            <div class="col-sm-6 text-right">
-                                <a href="/login" class="btn btn-success">Go To Login</a>
-                            </div>
+                    <?php echo showErrorMsg('password-confirm'); ?>
+                    <div class="form-group">
+                        <input type="password" class="form-control input-required" id="password-confirm" name="password-confirm" placeholder="Confirm Password" required>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
                         </div>
-                    </form>
-                </div>
+                        <div class="col-sm-6 text-right">
+                            <a href="/login/" class="btn btn-success">Log In</a>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </section>
-    </div>
-</body>
-</html>
+        </div>
+    </section>
+</div>

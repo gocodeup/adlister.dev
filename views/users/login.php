@@ -1,50 +1,44 @@
+    <section id="login">
 
-<body>
-    <div class="container">
+        <div class="row">
 
-        <section id="login">
+            <h1 class="section-title text-center">Log In To OooLister</h1>
 
-            <div class="row">
+            <div class="col-md-6 col-md-offset-3">
 
-                <h1 class="section-title">Login To OooLister</h1>
+                <p class="text-center">Log in with your email/username and password</p>
 
-                <?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
-                    <div class="alert alert-danger">
-                        <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
-                    </div>
-                    <?php unset($_SESSION['ERROR_MESSAGE']); ?>
-                <?php endif; ?>
-                <?php if (isset($_SESSION['SUCCESS_MESSAGE'])) : ?>
-                    <div class="alert alert-success">
-                        <p class="success"><?= $_SESSION['SUCCESS_MESSAGE']; ?></p>
-                    </div>
-                    <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
-                <?php endif; ?>
+                <form method="POST" action="">
 
-                <div class="col-md-6 col-md-offset-3">
-
-                    <p>Login with your email/username and password</p>
-
-                    <form method="POST" action="" data-validation data-required-message="This field is required">
-
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="email_user" name="email_user" placeholder="Email or Username" data-required>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <button type="submit" class="btn btn-primary">Login</button>
+                    <div class="form-group">
+                        <?php if (isset($_SESSION['ERROR_MESSAGE'])): ?>
+                            <div class="alert alert-danger">
+                                <p class="error">
+                                    <?php echo $_SESSION['ERROR_MESSAGE']; ?>
+                                </p>
                             </div>
-                            <div class="col-sm-6 text-right">
-                                <a href="/signup" class="btn btn-success">Go To Signup</a>
+                        <?php endif; ?>
+                        <?php if (isset($_SESSION['SUCCESS_MESSAGE'])) : ?>
+                            <div class="alert alert-success">
+                                <p class="success"><?= $_SESSION['SUCCESS_MESSAGE']; ?></p>
                             </div>
+                            <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
+                        <?php endif; ?>
+                        <input type="text" class="form-control input-required" id="email_user" name="username" placeholder="Username or Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control input-required" id="password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <button type="submit" class="btn btn-primary">Log In</button>
                         </div>
-                    </form>
-                </div>
+                        <div class="col-sm-6 text-right">
+                            <a href="/signup/" class="btn btn-success">Sign Up</a>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </section>
-    </div>
-</body>
-</html>
+        </div>
+    </section>
+</div>
