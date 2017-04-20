@@ -57,21 +57,21 @@
 
                 <?php if(empty($errors['password'])): ?>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required value="<?= Input::escape(Input::get('password')); ?>">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required>
                     </div>
                 <?php else: ?>
                     <div class="form-group has-error">
-                        <input type="password" class="form-control" id="password" name="password" placeholder="<?= Input::escape($errors['password']); ?>" data-required>
+                        <input type="password" class="form-control" id="password" name="password" placeholder=Password data-required>
                     </div>
                 <?php endif; ?>
 
                 <?php if(empty($errors['passwordConfirm'])): ?>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm Password" data-required value="<?= Input::escape(Input::get('passwordConfirm')); ?>">
+                        <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm Password" data-required>
                     </div>
                 <?php else: ?>
                     <div class="form-group has-error">
-                        <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" placeholder="<?= Input::escape($errors['passwordConfirm']); ?>" data-required>
+                        <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm Password" data-required>
                     </div>
                 <?php endif; ?>                
 
@@ -93,4 +93,3 @@
     </section>
 
 </div>
-git 
