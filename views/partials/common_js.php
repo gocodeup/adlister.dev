@@ -5,7 +5,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script>
     $(document).ready(function() {
-        console.log($('.input-required'));
         $('.input-required').on('invalid', function() {
             this.setCustomValidity(' ');
             $(this).css('background-color', '#FFA09C');
