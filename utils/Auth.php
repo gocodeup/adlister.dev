@@ -18,7 +18,7 @@ class Auth
     public static function attempt($username, $password)
     {
         // makes sure the values passed in are not empty
-        if(($username == '' || $username == null) || ($password == '' || $password == null)) {
+        if((!empty($_POST)) && ($username == '' || $username == null) || ($password == '' || $password == null)) {
             $_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
             return false;
         }
