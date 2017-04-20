@@ -25,6 +25,8 @@ function pageController()
             break;
         case '/show' :
             $mainView = '../views/ads/show.php';
+            //need to output: info on the topic, choose by id from database,
+
             break;
         case '/items' :
             $mainView = '../views/ads/index.php';
