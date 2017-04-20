@@ -37,6 +37,8 @@ function pageController()
 
     $data['requiredJS'] = [];
 
+    $data['title'] = 'Adlister - ';
+
     // get the part of the request after the domain name
     $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -46,6 +48,8 @@ function pageController()
     switch ($uri) {
         case '/':
             $mainView = '../views/home.php';
+            $data['title'] .= 'Home';
+            $data['requiredJS'][] = './js/responsiveCarousel.min.js';
             break;
         case '/ads/':
             if (isset($pageId)) {
@@ -55,21 +59,26 @@ function pageController()
             }
             break;
         case '/ads/create/':
+            $data['title'] .= 'Create Ad';
             $mainView = '../views/ads/create.php';
             break;
         case '/ads/edit/':
+            $data['title'] .= 'Edit Ad';
             $mainView = '../views/ads/edit.php';
             break;
         case '/user/':
+            $data['title'] .= 'User Profile';
             if (!isset($pageId)) {
                 if (isset($_SESSION['LOGGED_IN_ID'])) {
                     header("Location: /user/{$_SESSION['LOGGED_IN_ID']}/");
                     die;
                 } else {
                     // TODO: display "user not found" page
-                    break;
+                    die;
                 }
             }
+
+            $data['title'] .= "- $pageId";
 
             $data['user'] = User::find($pageId);
 
@@ -82,9 +91,10 @@ function pageController()
 
             break;
         case '/user/edit/':
+            $data['title'] .= 'Edit Profile';
             if (!isset($_SESSION['LOGGED_IN_ID'])) {
                 // TODO: display "not logged in" page
-                break;
+                die;
             }
 
             if (!isset($pageId)) {
@@ -94,13 +104,16 @@ function pageController()
 
             if ($_SESSION['LOGGED_IN_ID'] !== $pageId and $_SESSION['LOGGED_IN_ID'] !== 'ADMIN ID HERE') {
                 // TODO: display "access denied" page
-                break;
+                die;
             }
+
+            $data['title'] .= "- $pageId";
 
             $data['user'] = User::find($pageId);
 
             $mainView = '../views/users/edit.php';
         case '/login/':
+            $data['title'] .= 'Log In';
             if (isset($_SESSION['LOGGED_IN_ID'])) {
                 header('Location: /');
                 die;
@@ -117,6 +130,7 @@ function pageController()
 
             break;
         case '/signup/':
+            $data['title'] .= 'Sign Up';
             if (isset($_SESSION['LOGGED_IN_ID'])) {
                 header('Location: /');
                 die;
@@ -140,6 +154,7 @@ function pageController()
 
             break;
         default:    // displays 404 if route not specified above
+            $data['title'] .= 'Not Found';
             $mainView = '../views/404.php';
             break;
     }

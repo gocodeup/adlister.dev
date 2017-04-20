@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>OooLister</title>
+    <title><?php echo $title ?></title>
     <?php require '../views/partials/head.php'; ?>
 </head>
 <body>
