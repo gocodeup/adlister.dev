@@ -81,6 +81,14 @@ function pageController()
                     $data['errors']['passwordConfirm'] = "Password does not match.";
                 }
                 
+                if(User::findByUsernameOrEmail($user->username) !== null) {
+                    $data['errors']['username'] = "Username is already taken";
+                }
+
+                if(User::findByUsernameOrEmail($user->email) !== null) {
+                    $data['errors']['email'] = "Email is already taken";
+                }
+
                 if(empty($data['errors'])) {
                     $user->save();
                     Auth::attempt($user->username, Input::get('password'));
