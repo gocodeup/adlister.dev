@@ -37,11 +37,11 @@
                         <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required>
                     </div>
                     <div class="row">
-                        <div class="col-sm-6">
-                            <button type="submit" class="btn btn-primary">Signup</button>
+                        <div class="col-sm-6 ">
+                            <a href="/login" class="btn btn-primary">Go To Login</a>
                         </div>
                         <div class="col-sm-6 text-right">
-                            <a href="/login" class="btn btn-success">Go To Login</a>
+                            <button type="submit" class="btn btn-success">Signup</button>
                         </div>
                     </div>
 
