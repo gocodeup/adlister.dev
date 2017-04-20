@@ -133,6 +133,7 @@ function pageController()
             break;
 
         case '/ads':
+            $data['adListings'] = Ad::all();
             $mainView = '../views/ads/index.php';
             break;
         

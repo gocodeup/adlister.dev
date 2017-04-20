@@ -2,7 +2,7 @@
 
 <?php 
 
-
+require_once __DIR__ . "/../../controllers/PageController.php";
 
  ?>
  <table class="table table-bordered table-striped">
@@ -12,20 +12,15 @@
                 <th>Title</th>
                 <th>Price</th>
                 <th>Description</th>
-                <th>Image</th>
             </tr>
         </thead>
 
-
-
-        <?php foreach($ads as $ad): ?>
-    
+        <?php foreach($adListings as $ad): ?>
             <tbody>
                 <tr>
-                    <td ><?= $ad['title'] ?></td>
-                    <td><?= $ad['price'] ?></td>
-                    <td><?= $ad['description'] ?></td>
-                    <td><?= $ad['image'] ?></td>
+                    <td ><?= $ad->title ?></td>
+                    <td><?= $ad->price ?></td>
+                    <td><?= $ad->description ?></td>
                 </tr>
             </tbody>
         <?php endforeach; ?>
