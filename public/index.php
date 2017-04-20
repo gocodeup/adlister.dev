@@ -18,6 +18,7 @@ require_once __DIR__ . '/../bootstrap.php';
     <?php include_once __DIR__ . '/../views/partials/navbar.php'; ?>
 
     <?php include_once $mainView; ?>
+    <?php include_once __DIR__ . '/../views/partials/footer.php'; ?>
 
     <?php include_once __DIR__  .'/../views/partials/common_js.php'; ?>
 </body>
