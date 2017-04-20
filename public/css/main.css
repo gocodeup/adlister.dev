@@ -7,12 +7,6 @@ body
 	background-color: #FFF;
 }
 
-.style13 {
-	background-color: #FFF;
-	height: 30px;
-	border: 0;
-	box-shadow: 0 -10px 10px -10px #333 inset;
-}
 
 .welcomeLi
 {
@@ -105,7 +99,7 @@ h3
 
 .latestPosts
 {	
-	width: 849.5px;
+	width: 935px;
 	height: 70px;
 	background-color: white;
 	margin-left: 19px;
@@ -208,6 +202,79 @@ h3
 	background-color: #FFF;
 }
 
+#postContainer
+{
+	width: 800px;
+	height: 70px;
+	margin-top: 10px;
+	margin-left: 50px;
+	background-color: #E5E4E1;
+	border: 1px solid black;
+}
+
+.postThumbnail
+{
+	height: 60px;
+	width: 60px;
+	float: left;
+	margin-top: 4px;
+	margin-left: 15px;
+	border: 1px solid black;
+}
+/****TAKE OUT WIDTH ONCE TABLE INSERT IS GENERATED***/
+.postTitle
+{
+	height: 30px;
+	width: 300px;
+	margin-top: 4px;
+	margin-left: 15px;
+	float: left;
+	border: 1px solid black;
+}
+
+.postDescription
+{
+	height: 30px;
+	width: 300px;
+	margin-top: 4px;
+	margin-left: 15px;
+	float: left;
+	border: 1px solid black;
+}
+
+.postCondition
+{
+	height: 30px;
+	width: 300px;
+	margin-top: 4px;
+	margin-left: 15px;
+	float: left;
+	border: 1px solid black;
+}
+
+.postDate
+{
+	height: 30px;
+	width: 40px;
+	margin-top: 4px;
+	margin-left: 15px;
+	float: left;
+	clear: right;
+	border: 1px solid black;
+}
+
+.usersRating
+{
+	height: 30px;
+	width: 300px;
+	margin-top: 4px;
+	margin-left: 15px;
+	float: left;
+	clear: right;
+	border: 1px solid black;
+}
+
+
 .adsContainer
 {
 	width: 300px;
@@ -215,10 +282,11 @@ h3
 	float: right;
 	margin-right: 0px;
 	background-color: #FFF;
-	/*border: 1px solid black;*/
 	position: relative;
 	bottom: 600px;
 }
+
+
 #ads
 {
 	width: 232px;
@@ -231,8 +299,8 @@ h3
 
 .recentlyAddedCategories
 {
-	width: 200px;
-	height: 200px;
+	width: 900px;
+	height: 430px;
 	margin-left: 20px;
 	margin-top: 30px;
 	float: left;

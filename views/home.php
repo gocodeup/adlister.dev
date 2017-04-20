@@ -89,20 +89,28 @@
         <div class="recentlyAdded">
             <h1 class="section-title latestPosts">Latest Posts</h1>
             
-            <div class="recentlyAddedCategories"></div>
-            <div class="recentlyAddedCategories"></div>
-            <div class="recentlyAddedCategories"></div>
-            <div class="recentlyAddedCategories"></div>
-            <div class="recentlyAddedCategories"></div>
-            <div class="recentlyAddedCategories"></div>
-            <div class="recentlyAddedCategories"></div>
-            <div class="recentlyAddedCategories"></div>
+            <div class="recentlyAddedCategories">
+                <div id="postContainer">
+                    <div class="postThumbnail">IMG</div>
+                    <div class="postTitle">TITLE</div>
+                    <div class="postCondition">Condition</div>
+                    <div class="postDate">DATE</div>
+                    <div class="postDescription">Description</div>
+                    <div class="usersRating">Sellers Rating</div>
+
+                </div>
+            </div>
+            
+
+
         </div>
+       
+
         <div class="adsContainer">
             <div id="ads">Insert Add Here</div>
             <div id="ads">Insert Add Here</div>
         </div>
-       <!--  <hr class="style13"> -->
+       
 
         <div class="emptyClass">
             <div class="emptyLayout">
