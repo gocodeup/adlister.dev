@@ -21,26 +21,26 @@
 
             <h3 class="featured">Featured Items</h3>
             
-            <h4 class="section-title">Photo + Video</h4>
+            <a href="/ads/photovideo"><h4 class="section-title">Photo + Video</h4></a>
             <!-- Placeholder for featured items.-->
             <div class="row">
-                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="/images/pic08.jpg"></a>SAMPLE</div>
-                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="images/pic08.jpg"></a>SAMPLE</div>
-                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="images/pic08.jpg"></a>SAMPLE</div>
+                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="/images/pic08.jpg"></a><input type="checkbox">SAMPLE</div>
+                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="/images/pic08.jpg"></a><input type="checkbox">SAMPLE</div>
+                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="/images/pic08.jpg"></a><input type="checkbox">SAMPLE</div>
             </div>
 
-            <h4 class="section-title">Movies</h4>
+            <a href="/ads/movies"><h4 class="section-title">Movies</h4></a>
             <div class="row">
-                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="/images/pic08.jpg"></a>SAMPLE</div>
-                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="/images/pic08.jpg"></a>SAMPLE</div>
-                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="/images/pic08.jpg"></a>SAMPLE</div>
+                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="/images/pic08.jpg"></a><input type="checkbox">SAMPLE</div>
+                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="/images/pic08.jpg"></a><input type="checkbox">SAMPLE</div>
+                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="/images/pic08.jpg"></a><input type="checkbox">SAMPLE</div>
             </div>
 
-            <h4 class="section-title">Games</h4>
+            <a href="/ads/games"><h4 class="section-title">Games</h4></a>
             <div class="row">
-                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="/images/pic08.jpg"></a>SAMPLE</div>
-                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="/images/pic08.jpg"></a>SAMPLE</div>
-                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="/images/pic08.jpg"></a>SAMPLE</div>
+                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="/images/pic08.jpg"></a><input type="checkbox">SAMPLE</div>
+                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="/images/pic08.jpg"></a><input type="checkbox">SAMPLE</div>
+                <div class="col-xs-6 col-sm-4"><a href="/ads"><img class="img-responsive" src="/images/pic08.jpg"></a><input type="checkbox">SAMPLE</div>
             </div>
 
         </div>

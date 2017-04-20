@@ -1,9 +1,16 @@
 <?php
 
 require_once __DIR__ . '/../../models/User.php';
+<<<<<<< HEAD
 require_once '../db_connect.php';
 
 $dbc->exec('DELETE FROM users');
+=======
+require '../db_connect.php';
+
+$dbc->exec('TRUNCATE table ads');
+$dbc->exec('TRUNCATE table users');
+>>>>>>> 170ee5d244486ea0abd4108c96be27e285f51171
 
 $user = new User;
 $user->name = 'Finn Mertens';
