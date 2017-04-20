@@ -19,11 +19,12 @@
           <ul class="dropdown-menu" role="menu">
             <li><a href="/account">View Account</a></li>
             <li><a href="/account/edit">Edit Account</a></li>
+            <li><a href="/ads/create">Create Ad</a></li>
             <li><a href="/account/favorites">Favorites</a></li>
             <li class="divider"></li>
             <li><a href="/signup">Sign Up</a></li>
             <li class="divider"></li>
-            <li><a href="/ads/edit?id={n}">Posted Ads</a></li>
+            <li><a href="/ads?id={n}">Posted Ads</a></li>
           </ul>
         </li>
       </ul>

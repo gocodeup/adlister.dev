@@ -12,7 +12,7 @@ class Favorites extends Model
         $query = 'SELECT * FROM ' . self::$table . ' WHERE account_id = :account_id';
 
         $stmt = self::$dbc->prepare($query);
-        $stmt->bindValue(':account_id', $user_id, PDO::PARAM_INT;
+        $stmt->bindValue(':account_id', $user_id, PDO::PARAM_INT);
         $stmt->execute();
 
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -25,7 +25,6 @@ class Favorites extends Model
 
         return $instance;
     }
-	 }
 }
 
  ?>
