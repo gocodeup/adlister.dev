@@ -1,6 +1,9 @@
 <?php
 
 require_once __DIR__ . '/../../models/User.php';
+require_once '../db_connect.php';
+
+$dbc->exec('DELETE FROM users');
 
 $user = new User;
 $user->name = 'Finn Mertens';
