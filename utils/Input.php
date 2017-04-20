@@ -32,4 +32,9 @@ class Input
     {
         return htmlspecialchars(strip_tags($str));
     }
+
+    public static function hasTags($str)
+    {
+        return strip_tags($str) !== $str;
+    }
 }
