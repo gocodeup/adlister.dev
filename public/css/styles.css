@@ -131,18 +131,52 @@ h1 {
   margin-bottom: 5px;
 }
 
-.slidernav a {
+
+#navbtns > a.previous {
   display: inline-block;
   padding: 5px 8px;
   margin-right: 8px;
+  float: left;
+ top: 300px;
+  z-index: 1;
   font-size: 1.4em;
-  background: #fff;
-  color: #666;
+  background: #00A4EB;
+  color: #FFF;
   text-decoration: none;
   -webkit-box-shadow: 2px 2px 0px rgba(0,0,0,0.2);
   -moz-box-shadow: 2px 2px 0px rgba(0,0,0,0.2);
   box-shadow: 2px 2px 0px rgba(0,0,0,0.2);
 }
+
+#navbtns > a.next {
+  display: inline-block;
+  padding: 5px 8px;
+  margin-right: 8px;
+  float: right;
+  position: relative;
+  font-size: 1.4em;
+  background: #00A4EB;
+  color: #FFF;
+  text-decoration: none;
+  -webkit-box-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+}
+
+
+.slidernav a.next {
+  display: inline-block;
+  padding: 5px 8px;
+  margin-right: 8px;
+  font-size: 1.4em;
+  background: #00A4EB;
+  color: #FFF;
+  text-decoration: none;
+  -webkit-box-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+}
+
 .slidernav a:active {
   -webkit-box-shadow: 1px 1px 0 rgba(0,0,0,0.2);
   -moz-box-shadow: 1px 1px 0 rgba(0,0,0,0.2);
@@ -158,7 +192,14 @@ h1 {
 }
 
 /** clearfix **/
-.clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+.clearfix:after 
+{ content: "."; 
+display: block; 
+clear: both; 
+visibility: hidden; 
+line-height: 0; 
+height: 0; 
+}
 .clearfix { display: inline-block; }
  
 html[xmlns] .clearfix { display: block; }

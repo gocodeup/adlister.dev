@@ -12,52 +12,51 @@
                     <div class="crsl-wrap">
                         <div class="crsl-item">
                         <div class="thumbnail">
-                            <img src="img/thumb01.jpg" alt="nyc subway">
+                            <img src="img/sportingGoods.jpg" alt="Sports">
                             <span class="postdate">Feb 16, 2014</span>
                         </div>
                         
-                        <h3><a href="#">Lorem Ipsum Dolor Sit</a></h3>
+                        <h3><a href="#">Sporting Goods</a></h3>
                         
-                        <p>Suspendisse laoreet eu tortor vel dapibus. Etiam auctor nisl mattis, ornare nibh eu, lobortis leo. Sed congue mi eget velit dictum, id dictum massa tempus. Cras lobortis lectus neque. Fusce aliquet mauris ac bibendum pharetra.</p>
+                        <p>Insert Content Here</p>
                         
                         <p class="readmore"><a href="#">Read More &raquo;</a></p>
                         </div><!-- post #1 -->
                         
                         <div class="crsl-item">
                         <div class="thumbnail">
-                            <img src="img/thumb02.jpg" alt="danny antonucci">
+                            <img src="img/auto.jpg" alt="Automotive">
                             <span class="postdate">Feb 19, 2014</span>
                         </div>
                         
-                        <h3><a href="#">A Look Back over A.K.A Cartoon</a></h3>
-                        
-                        <p>Vestibulum in venenatis velit. Praesent commodo eget purus sed interdum. Curabitur faucibus purus ut erat fermentum posuere. Suspendisse blandit viverra sagittis. Nullam cursus scelerisque lorem ut ornare.</p>
+                        <h3><a href="#">Automotive
+                        <p>Insert Content Here</p>
                         
                         <p class="readmore"><a href="#">Read More &raquo;</a></p>
                         </div><!-- post #2 -->
                         
                         <div class="crsl-item">
                         <div class="thumbnail">
-                            <img src="img/thumb03.jpg" alt="watercolor paints">
+                            <img src="img/outdoors.jpeg" alt="outdoors">
                             <span class="postdate">Feb 23, 2014</span>
                         </div>
                         
-                        <h3><a href="#">Watercoloring for Beginners</a></h3>
+                        <h3><a href="#">Hunting/Outdoors</a></h3>
                         
-                        <p>Cras eget interdum nunc. Nam suscipit congue augue, id interdum risus adipiscing nec. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla non diam id nisi tempus sodales.</p>
+                        <p>Insert Content Here</p>
                         
                         <p class="readmore"><a href="#">Read More &raquo;</a></p>
                         </div><!-- post #3 -->
                         
                         <div class="crsl-item">
                         <div class="thumbnail">
-                            <img src="img/thumb04.jpg" alt="apple ipod classic photo">
+                            <img src="img/electronics.jpg" alt="apple ipod classic photo">
                             <span class="postdate">Mar 02, 2014</span>
                         </div>
                         
-                        <h3><a href="#">Classic iPods are Back!</a></h3>
+                        <h3><a href="#">Electronics</a></h3>
                         
-                        <p>Phasellus condimentum enim nisl, volutpat dapibus turpis euismod nec. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec id elit lorem. Vivamus at eros elit. Nullam cursus euismod purus.</p>
+                        <p>Insert Content Here</p>
                         
                         <p class="readmore"><a href="#">Read More &raquo;</a></p>
                         </div><!-- post #4 -->
@@ -70,7 +69,7 @@
                         
                         <h3><a href="#">The 10 Best Web Design Magazines</a></h3>
                         
-                        <p>Morbi quis tempus leo, eget vestibulum quam. Pellentesque ac orci urna. Proin vitae neque vel metus pulvinar luctus vitae eu nulla.</p>
+                        <p>Insert Content Here</p>
                         
                         <p class="readmore"><a href="#">Read More &raquo;</a></p>
                         </div><!-- post #5 -->
@@ -115,13 +114,18 @@
             </div>
             <div class="emptyLayoutLarge">
                 <!-- add in a section after each user closes out a listing with radio buttons asking if the user made the sale or not - have a "rewards Program" if the seller is the top seller for the month (I.E. Free $10 amazon gift card OR Free $10 credit towards their next purchase the site)
-
                 Pay Pal needs to be set up in order for "SELLER OF THE MONTH" to get credited $10 towards their next purchase -->
                 <center><h3>Seller Of The Month</h3></center>
             </div>
         </div>
 
-    <section class="footer"></section>
+        <section class="footer">
+            <div class="contactContainer">
+                <div id="email"></div>
+                <div id="phone"></div>
+                <div id="location"></div>
+            </div>
+        </section>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/responsiveCarousel.min.js"></script>
