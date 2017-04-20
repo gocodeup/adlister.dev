@@ -49,7 +49,7 @@ if(!empty($_POST)) {
 
  <div class="container">
  	<div class="row">
- 		<div class="col-md-8 col-md-offset-4">
+ 		<div class="col-md-4 col-md-offset-4">
  			<form method="post" enctype="multipart/form-data">
  				<div class="form-group">
  					<label class="formBoxTitle" for="titleInput">Title</label>
@@ -74,7 +74,7 @@ if(!empty($_POST)) {
  					<textarea class="form-control" id="description" name="description" placeholder="Enter your item description here" rows="5"></textarea>
  				</div>
 
- 				<div class="control-group ">
+ 				<div class="control-group">
  					<!-- start of image -->
  					<label class="control-label">Image</label>
 
@@ -86,21 +86,18 @@ if(!empty($_POST)) {
 								</div>
 
  								<div>
- 									<span class="btn btn-file"><span class="fileupload-new"></span>
-
+ 									<span class="btn-primary btn-file"><span class="fileupload-new"></span>
+									<button class="btn btn-primary pull-right" style="margin-bottom: 50px;" type="submit"><i class="icon-user icon-white"></i> Submit</button>
  									<input type="hidden" name="MAX_FILE_SIZE" value="1024000000" />
  									<input type="file" name="image" id="image" />
  									</span>
 
- 								</div>
+ 							   </div>
  							</div>
  							<!--end of file upload -->
  				</div>
  				<!-- end of image -->
 
- 				<div class="col-md-4 text-center">
- 					<button class="btn btn-primary" type="submit"><i class="icon-user icon-white"></i> Submit</button>
- 				</div>
  			</form>
  		</div>
  	</div>
