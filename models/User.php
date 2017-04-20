@@ -37,15 +37,11 @@ class User extends Model {
     {
         self::dbConnect();
 
-        $query = <<<SQL
-        SELECT *
-        FROM {self::$table}
-        WHERE username = :username
-           OR email = :email
-SQL;
+        $query = "SELECT * FROM " . self::$table . " WHERE username = :username OR email = :email";
 
         $statement = self::$dbc->prepare($query);
-        $statement->bindValue(':username', $username, PDO::PARAM_STR);
+        $statement->bindValue(':username', $usernameOrEmail, PDO::PARAM_STR);
+        $statement->bindValue(':email', $usernameOrEmail, PDO::PARAM_STR);
         $statement->execute();
 
         $results = $statement->fetch(PDO::FETCH_ASSOC);
@@ -77,12 +73,6 @@ SQL;
             }
         }
 
-        $statement = self::$dbc->prepare($query);
-        $statement->bindValue(':email', $email, PDO::PARAM_STR);
-        $statement->execute();
-
-        $results = $statement->fetch(PDO::FETCH_ASSOC);
-
         foreach ($this->attributes as $name => $attribute) {
             if (!isset($_SESSION['ERROR_MESSAGES'][$name])) {
                 continue;
@@ -99,8 +89,7 @@ SQL;
         if (!isset($_SESSION['ERROR_MESSAGES']['username']) and is_numeric($this->attributes['username'])) {
             $_SESSION['ERROR_MESSAGES']['username'] = 'username cannot consist entirely of numbers';
         }
-        return $instance;
-    }
+        // return $instance;
     
         if (!isset($_SESSION['ERROR_MESSAGES']['username']) and static::findByUsernameOrEmail($this->attributes['username'])) {
             $_SESSION['ERROR_MESSAGES']['username'] = 'username already exists';

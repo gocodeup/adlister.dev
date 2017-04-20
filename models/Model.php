@@ -138,10 +138,6 @@ abstract class Model {
         $this->attributes['id'] = self::$dbc->lastInsertId();
     }
 
-        $stmt->execute();
-        $this->attributes['id'] = self::$dbc->lastInsertId();
-    }
-
     /**
      * update an existing record in the database
      *
