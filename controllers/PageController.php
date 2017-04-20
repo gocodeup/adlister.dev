@@ -50,7 +50,7 @@ function pageController()
 			$data['selectThree'] = Ads::selectThree();
 			$mainView = '../views/home.php';
 			break;
-		case "/post": 
+		case "/create": 
 			$mainView = '../views/ads/create.php';
 			break;
 		case "/show": 
