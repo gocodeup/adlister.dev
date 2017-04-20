@@ -1,0 +1,24 @@
+/*************** MOBILE STYLES ****************/
+a#homeViewAll{
+	margin-left: 5%;
+} 
+
+
+/*************** TABLET STYLES ****************/
+@media (min-width: 768px){
+
+}
+
+
+/*************** DESKTOP STYLES ****************/
+@media (min-width:940px) { 
+
+	#homeTitle{ 
+		font-size: 5em; 
+	}
+	
+	a#homeViewAll{
+		margin-left: 45%;
+	}
+
+}
