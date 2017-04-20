@@ -3,7 +3,7 @@
 $_ENV = include __DIR__ . '/../../.env.php';
 require_once '../db_connect.php';
 
-$dbc->exec('TRUNCTATE TABLE IF EXISTS ads');
+$dbc->exec('DROP TABLE IF EXISTS ads');
 
 $ads = 'CREATE TABLE IF NOT EXISTS ads (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
