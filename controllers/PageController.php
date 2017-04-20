@@ -60,7 +60,19 @@ function pageController()
 			$mainView = '../views/ads/show.php';
 			break;
 		case "/update": 
+			if(!empty($_POST)) {
+				$existingUser = User::find(Auth::id());
+				$existingUser->name = Input::get('name');
+				$existingUser->email = Input::get('email');
+				$existingUser->username = Input::get('username');
+				$existingUser->password = Input::get('password');
+					header("location: /account");
+				$existingUser->save();
+			}
 			$mainView = '../views/users/edit.php';
+			break;
+		case "/delete": 
+			$mainView = '../views/users/account.php';
 			break;
 		case "/edit": 
 			$mainView = '../views/ads/edit.php';
