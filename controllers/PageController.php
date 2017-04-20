@@ -59,6 +59,45 @@ function pageController()
             }
             break;
         case '/ads/create/':
+            if(isset($_POST['submit_ad'])) {
+                $post = new Post();
+                $post->user_id = Auth::id();
+                $errors = [];
+                try {
+                    $post->category = Input::getString('category');
+                } catch (Exception $e) {
+                    $errors['category'] = $e->getMessage();
+                }
+                try {
+                    $post->product_name = Input::getString('product_name');
+                } catch (Exception $e) {
+                    $errors['product_name'] = $e->getMessage();
+                }
+                try {
+                    $post->description = Input::getString('description');
+                } catch (Exception $e) {
+                    $errors['description'] = $e->getMessage();
+                }
+                try {
+                    $post->price = Input::getNumber('price');
+                } catch (Exception $e) {
+                    $errors['price'] = $e->getMessage();
+                }
+                try {
+                    $post->phone = Input::getString('phone');
+                } catch (Exception $e) {
+                    $errors['phone'] = $e->getMessage();
+                }
+                try {
+                    $post->email = Input::getString('email');
+                } catch (Exception $e) {
+                    $errors['email'] = $e->getMessage();
+                }
+                $_SESSION['errors'] = $errors;
+                if(empty($_SESSION['errors'])) {
+                    $post->save();
+                }
+            }
             $data['title'] .= 'Create Ad';
             $mainView = '../views/ads/create.php';
             break;
