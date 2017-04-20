@@ -16,6 +16,8 @@ CREATE TABLE IF NOT EXISTS users (
 );
 SQL;
 
+$dbc->exec('DROP TABLE IF EXISTS posts');
+
 $query2 = <<<SQL
 CREATE TABLE IF NOT EXISTS `posts` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -28,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `email` varchar(120) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
-  CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+  FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 SQL;
 
