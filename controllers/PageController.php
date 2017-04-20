@@ -49,15 +49,6 @@ function pageController()
 			break;
 	}
 	
-	if(!empty($_POST)) {
-		$username = Input::get("email_user");
-		$password = Input::get("password");
-		if(Auth::attempt($username, $password)) {
-			header("Location: http://adlister.dev/index");
-			return;  
-		} 
-	} 
-
 	$data['mainView'] = $mainView;
 	return $data;
 }
