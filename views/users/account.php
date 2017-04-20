@@ -20,9 +20,7 @@ if(Auth::check() !== true) {
 	<div class="panel panel-default">
 	  <div class="panel-heading">Name</div>
 	  <div class="panel-body">
-	   <?php foreach($names as $name) { ?>
-        <?php echo $name ?>
-            <?php }; ?>
+        <?php echo $user->name ?>
 	  </div>
 	</div>
 
@@ -31,9 +29,7 @@ if(Auth::check() !== true) {
 	    <h3 class="panel-title">Username</h3>
 	  </div>
 	  <div class="panel-body">
-	  <?php foreach($usernames as $username) { ?>
-		<?php echo $fav ?>
-            <?php }; ?>
+		<?php echo $user->username ?>
 	  </div>
 	</div>
 
@@ -42,20 +38,7 @@ if(Auth::check() !== true) {
 	    <h3 class="panel-title">Email</h3>
 	  </div>
 	  <div class="panel-body">
-	  <?php foreach($emails as $email) { ?>
-        <?php echo $email ?>
-            <?php }; ?>
-	  </div>
-	</div>
-
-	<div class="panel panel-default">
-	  <div class="panel-heading">
-	    <h3 class="panel-title">Active Ads</h3>
-	  </div>
-	  <div class="panel-body">
-		<?php foreach($ads as $ad) { ?>
-           <?php echo $ad ?>
-            <?php }; ?>
+        <?php echo $user->email ?>
 	  </div>
 	</div>
 </body>

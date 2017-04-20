@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../utils/helper_functions.php';
 require_once __DIR__ . '/../utils/Auth.php';
 require_once __DIR__ . '/../models/Ad.php';
-require_once __DIR__ . '/../models/Favorites.php';
+// require_once __DIR__ . '/../models/Favorites.php';
 
 function pageController()
 {
@@ -100,6 +100,8 @@ function pageController()
 
         case '/account':
             $mainView = '../views/users/account.php';
+            $user = User::find(Auth::id());
+            $data['user'] = $user;
             break;
 
         case '/account/edit':
