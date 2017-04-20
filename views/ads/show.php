@@ -14,6 +14,6 @@
 </div><!-- ends container -->
 
 <?php if (Auth::id()): ?>
-	<button style="margin:5%" type="submit" class="btn btn-primary">Edit Ad</button>
-	<button style="margin:5%" type="submit" class="btn btn-primary pull-right">Delete Ad</button>
+	<a style="margin:5%" href="/edit" class="btn btn-primary">Edit Ad</a>
+	<a style="margin:5%" href="/delete" class="btn btn-primary pull-right">Delete Ad</a>
 <?php endif; ?>
