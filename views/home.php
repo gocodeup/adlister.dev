@@ -1,27 +1,39 @@
-<div class="container">
-
+<div class="cover">
+    <div id="jobsText">
+        <h1 id="">Shop like Jobs... Steve Jobs</h1>
+    </div>
+</div>
+<div class="grayBox">Featured items in the United States</div>
+<div class="container-fluid">
     <section id="welcome">
-
         <div class="row">
-
-            <div class="col-xs-12">
-
-                <h1 class="text-center">Welcome To Adlister</h1>
-
+            <div class="card" style="width: 20rem;">
+                <a href="#"><img class="card-img-top" src="https://images-cdn.9gag.com/photo/aGwd2jn_700b.jpg" alt="Card image cap" style="width: 100%"></a>
+                <div class="card-block">
+                    <a href="#"><h4 class="card-title">Card title</h4></a>
+                    <p class="card-text">Leverage agile frameworks to provide a robust synopsis for high level overviews.
+             Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.
+             Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
+                </div>
             </div>
-
+            <div class="card" style="width: 20rem;">
+                <a href="#"><img class="card-img-top" src="https://images-cdn.9gag.com/photo/aGwd2jn_700b.jpg" alt="Card image cap" style="width: 100%"></a>
+                <div class="card-block">
+                    <a href="#"><h4 class="card-title">Card title</h4></a>
+                    <p class="card-text">Leverage agile frameworks to provide a robust synopsis for high level overviews.
+             Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.
+             Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
+                </div>
+            </div>
+            <div class="card" style="width: 20rem;">
+                <a href="#"><img class="card-img-top" src="https://images-cdn.9gag.com/photo/aGwd2jn_700b.jpg" alt="Card image cap" style="width: 100%"></a>
+                <div class="card-block">
+                    <a href="#"><h4 class="card-title">Card title</h4></a>
+                    <p class="card-text">Leverage agile frameworks to provide a robust synopsis for high level overviews.
+             Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.
+             Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
+                </div>
+            </div>
         </div>
-
     </section>
-
-    <section id="features">
-
-        <div class="row">
-
-            <h3 class="section-title">Featured Items</h3>
-            <!-- Placeholder for featured items.-->
-        </div>
-
-    </section>
-
 </div>

@@ -1,3 +1,5 @@
 .env.php
 .env.*.php
 /.idea
+.DS_Store
+public/css/sass/.sass-cache/
