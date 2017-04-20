@@ -29,11 +29,11 @@ class User extends Model {
 
         $query = 'SELECT * FROM ' . self::$table . ' WHERE username = :username';
 
-        $connection = self::$dbc->prepare($query);
-        $connection->bindValue(':username', $username, PDO::PARAM_STR);
-        $connection->execute();
+        $statement = self::$dbc->prepare($query);
+        $statement->bindValue(':username', $username, PDO::PARAM_STR);
+        $statement->execute();
 
-        $results = $connection->fetch(PDO::FETCH_ASSOC);
+        $results = $statement->fetch(PDO::FETCH_ASSOC);
 
         $instance = null;
         if ($results) {
@@ -49,11 +49,11 @@ class User extends Model {
 
         $query = 'SELECT * FROM ' . self::$table . ' WHERE email = :email';
 
-        $connection = self::$dbc->prepare($query);
-        $connection->bindValue(':email', $email, PDO::PARAM_STR);
-        $connection->execute();
+        $statement = self::$dbc->prepare($query);
+        $statement->bindValue(':email', $email, PDO::PARAM_STR);
+        $statement->execute();
 
-        $results = $connection->fetch(PDO::FETCH_ASSOC);
+        $results = $statement->fetch(PDO::FETCH_ASSOC);
 
         $instance = null;
         if ($results) {
@@ -62,32 +62,5 @@ class User extends Model {
         }
         return $instance;
     }
-
-    public static function getNumber($key) {
-        $value = self::getValue($key);
-        if(!is_numeric($value)) {
-            throw new Exception("Input must be a number.");
-        }
-        return $value;
-    }
-
-    public static function getString($key) {
-        $value = self::getValue($key);
-        if(!is_string($value)) {
-            throw new Exception("Input must be a string.");
-        }
-        return $value;
-    }
-
-    public static function hasKey($key) {
-        return isset($_REQUEST[$key]);
-    }
-
-    public static function getValue($key, $default = null) {
-        if(self::hasKey($key)) {
-            return $_REQUEST[$key];
-        } else {
-            return $default;
-        }
-    }
+    
 }

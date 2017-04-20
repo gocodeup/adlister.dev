@@ -11,11 +11,12 @@ $_ENV = require_once '../env.php';
  *
  * Any static methods will need to call `dbConnect` because in a
  * static context, we are not gauranteed to have an existing
- * connection. Because `dbConnect` is called in the constructor, this
+ * statement. Because `dbConnect` is called in the constructor, this
  * is not necessary in instance methods.
  */
+
 abstract class Model {
-    /** @var PDO|null the connection to the database */ 
+    /** @var PDO|null the statement to the database */ 
     protected static $dbc;
     /** @var string the name of the table */
     protected static $table;
@@ -24,7 +25,7 @@ abstract class Model {
     protected $attributes = [];
 
     /**
-     * opens db connection
+     * opens db statement
      */
     public function __construct()
     {
@@ -53,21 +54,24 @@ abstract class Model {
      * @param string $name
      * @param mixed $value
      */
+
     public function __set($name, $value)
     {
         // Store name/value pair in attributes array
         $this->attributes[$name] = $value;
+        if($value === "") {
+            throw new Exception("Please enter a value");
+        }
     }
 
     /*
-     * create the database connection if we don't have one
+     * create the database statement if we don't have one
      */
     protected static function dbConnect()
     {
         if (!self::$dbc) {
             //Connect to database
             require __DIR__ . '/../database/db_connect.php';
-
             self::$dbc = $dbc;
         }
     }
@@ -94,9 +98,9 @@ abstract class Model {
     {
         $query = 'DELETE FROM ' . static::$table . ' WHERE id = :id';
 
-        $connection = self::$dbc->prepare($query);
-        $connection->bindValue(':id', $this->attributes['id'], PDO::PARAM_INT);
-        $connection->execute();
+        $statement = self::$dbc->prepare($query);
+        $statement->bindValue(':id', $this->attributes['id'], PDO::PARAM_INT);
+        $statement->execute();
     }
 
     /**
@@ -124,12 +128,12 @@ abstract class Model {
         }
 
         $query = "INSERT INTO " . static::$table . " ({$columns}) VALUES ({$valuePlaceholders})";
-        $connection = self::$dbc->prepare($query);
+        $statement = self::$dbc->prepare($query);
 
         foreach ($this->attributes as $column => $value) {
-            $connection->bindValue(':' . $column, $value, PDO::PARAM_STR);
+            $statement->bindValue(':' . $column, $value, PDO::PARAM_STR);
         }
-        $connection->execute();
+        $statement->execute();
         $this->attributes['id'] = self::$dbc->lastInsertId();
     }
 
@@ -166,12 +170,12 @@ abstract class Model {
 
         $query .= ' WHERE id = :id';
 
-        $connection = self::$dbc->prepare($query);
+        $statement = self::$dbc->prepare($query);
 
         foreach ($this->attributes as $key => $value) {
-            $connection->bindValue(':' . $key, $value, PDO::PARAM_STR);
+            $statement->bindValue(':' . $key, $value, PDO::PARAM_STR);
         }
-        $connection->execute();
+        $statement->execute();
     }
 
     /**
@@ -185,18 +189,18 @@ abstract class Model {
      */
     public static function find($id)
     {
-        // Get connection to the database
+        // Get statement to the database
         self::dbConnect();
 
         //Create select statement using prepared statements
         $query = 'SELECT * FROM ' . static::$table . ' WHERE id = :id';
 
-        $connection = self::$dbc->prepare($query);
-        $connection->bindValue(':id', $id, PDO::PARAM_INT);
-        $connection->execute();
+        $statement = self::$dbc->prepare($query);
+        $statement->bindValue(':id', $id, PDO::PARAM_INT);
+        $statement->execute();
 
         //Store the resultset in a variable named $result
-        $result = $connection->fetch(PDO::FETCH_ASSOC);
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
 
         $instance = null;
         // if we have a result, create a new instance
@@ -204,7 +208,6 @@ abstract class Model {
             $instance = new static;
             $instance->attributes = $result;
         }
-
         // return either the found instance or null
         return $instance;
     }
@@ -222,11 +225,11 @@ abstract class Model {
 
         $query = 'SELECT * FROM ' . static::$table;
 
-        $connection = self::$dbc->prepare($query);
-        $connection->execute();
+        $statement = self::$dbc->prepare($query);
+        $statement->execute();
 
         //Store the resultset in a variable named $result
-        $results = $connection->fetchAll(PDO::FETCH_ASSOC);
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
         // turn each associative array into an instance of the model subclass
         return array_map(function($result) {
@@ -235,5 +238,4 @@ abstract class Model {
             return $instance;
         }, $results);
     }
-
 }
