@@ -105,4 +105,25 @@ class Ads extends Model {
         return $array;
     }
 
+    public static function search($a)
+    {
+        self::dbConnect();
+
+        $query = 'SELECT * FROM ' . static::$table . ' where title like :keyword or description like :keyword ';
+        $stmt = self::$dbc->prepare($query);
+        $stmt->bindValue(':keyword', "%$a%", PDO::PARAM_STR);
+
+        $stmt->execute();
+
+        //Store the resultset in a variable named $result
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // turn each associative array into an instance of the model subclass
+        return array_map(function($result) {
+            $instance = new static;
+            $instance->attributes = $result;
+            return $instance;
+        }, $results);
+    }
+
 }
