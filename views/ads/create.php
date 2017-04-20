@@ -5,7 +5,7 @@ require_once __DIR__ . '/../../utils/Input.php';
 
 $errors = [];
 
-if(!empty($_POST) && validateInput()) {
+if(!empty($_POST)) {
 	$ad = new Ad();
 
 	try {
@@ -15,7 +15,7 @@ if(!empty($_POST) && validateInput()) {
 	}
 
 	try {
-		$ad->price = Input::getFloat('price');
+		$ad->price = Input::getNumber('price');
 	} catch (Exception $e) {
 		$errors[] = $e->getMessage();
 	}
@@ -28,12 +28,14 @@ if(!empty($_POST) && validateInput()) {
 		$errors[] = $e->getMessage();
 	}
 
-	$ad->image = saveUploadedImage('image');
-	die;
+	// $ad->image = saveUploadedImage('image');
+	// die;
 
 	if(empty($errors)) {
 		$ad->save();
 	}
+var_dump($errors);
+var_dump($ad);
 }
 
 function validateInput() {
@@ -43,6 +45,7 @@ function validateInput() {
 		return true;
 	}
 }
+
 
 ?>
 
@@ -54,27 +57,25 @@ function validateInput() {
     	<div class="form-group col-lg-10 col-lg-offset-2">
     		<label for="title" class="col-lg-2 control-label">Posting Title</label>
     		<div class="col-lg-10">
-        	<input type="text" class="form-control" id="title" placeholder="Posting Title">
+        	<input name="title" type="text" class="form-control" id="title" placeholder="Posting Title">
     		</div>
     	</div>
 
     	<div class="form-group col-lg-10 col-lg-offset-2">
       		<label for="price" class="col-lg-2 control-label">Price</label>
       		<div class="col-lg-10">
-        	<input type="text" class="form-control" id="price" placeholder="0.00">
+        	<input name="price" type="text" class="form-control" id="price" placeholder="0.00">
       		</div>
     	</div>
     
     	<div class="form-group col-lg-10 col-lg-offset-2">
       		<label for="description" class="col-lg-2 control-label">Description</label>
       		<div class="col-lg-10">
-        	<textarea class="form-control" rows="4" id="description" style="resize: none;"></textarea>
+        	<textarea name="description"class="form-control" rows="4" id="description" style="resize: none;"></textarea>
       		</div>
     	</div>
 	</fieldset>
-</form>
 
-<form action="/ads/show" enctype="multipart/form-data" method="POST">
  	<div class="form-group col-lg-10 col-lg-offset-2">
  		Select image to upload:
  		<input id="fileToUpload" name="fileToUpload" type="file">
