@@ -186,13 +186,14 @@ and pass the relevant information to the corresponding view.
 
 Build out the following routes for your application:
 
-    Request Method | Route | Description
-    GET | /ads | View all the ads
-    GET | /ads?id={n} | View an individual ad (where `{n}` is the database id of the ad)
-    GET | /ads/create | View the form for creating an ad
-    GET | /ads/edit?id={n} | View the form for editing an individual ad
-    POST | /ads/create | Create an ad
-    POST | /ads/edit?id={n} | update an existing ad
+| Request Method  |       Route        |                           Description                            |
+| --------------- |      -------       |                           ------------                           |
+|       GET       |       `/ads`       |                         View all the ads                         |
+|       GET       |   `/ads?id={n}`    | View an individual ad (where `{n}` is the database id of the ad) |
+|       GET       |   `/ads/create`    |                 View the form for creating an ad                 |
+|       GET       | `/ads/edit?id={n}` |            View the form for editing an individual ad            |
+|      POST       |   `/ads/create`    |                           Create an ad                           |
+|      POST       | `/ads/edit?id={n}` |                      update an existing ad                       |
 
 Implement User Login
 --------------------
