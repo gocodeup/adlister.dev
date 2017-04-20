@@ -101,6 +101,7 @@ abstract class Model {
         $statement = self::$dbc->prepare($query);
         $statement->bindValue(':id', $this->attributes['id'], PDO::PARAM_INT);
         $statement->execute();
+
     }
 
     /**
@@ -112,7 +113,7 @@ abstract class Model {
      * after the insert is performed the `id` attribute of the model
      * will be set to the newly generated id
      */
-    protected function inserted()
+    protected function insert()
     {
         $columns = '';
         $valuePlaceholders = '';
@@ -137,8 +138,8 @@ abstract class Model {
         $this->attributes['id'] = self::$dbc->lastInsertId();
     }
 
-    public function insert() {
-        return self::inserted();
+        $stmt->execute();
+        $this->attributes['id'] = self::$dbc->lastInsertId();
     }
 
     /**
@@ -193,7 +194,11 @@ abstract class Model {
         self::dbConnect();
 
         //Create select statement using prepared statements
-        $query = 'SELECT * FROM ' . static::$table . ' WHERE id = :id';
+        $query = <<<SQL
+        SELECT *
+        FROM {static::$table}
+        WHERE id = :id
+SQL;
 
         $statement = self::$dbc->prepare($query);
         $statement->bindValue(':id', $id, PDO::PARAM_INT);

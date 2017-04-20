@@ -3,16 +3,17 @@ body
 	background-color: #FFF;
 }
 
-.background-grey {
+.background-grey
+{
 	background-color: #FFF;
 }
 
 .style13 {
-	background-color: #FFF;
-	height: 30px;
-	border: 0;
-	box-shadow: 0 -10px 10px -10px #333 inset;
-}
+ 	background-color: #FFF;
+ 	height: 30px;
+ 	border: 0;
+ 	box-shadow: 0 -10px 10px -10px #333 inset;
+ }
 
 .welcomeLi
 {
@@ -25,16 +26,71 @@ body
 
 }
 
-li
+#navBar > ul > li.welcomeLi > h3
 {
 	list-style: none;
 	float: right;
 	position: relative;
 	text-align: center;
 	font-family: 'Muli', sans-serif;
-	margin-top: 7px;
 	margin-right: 10px;
-	font-size: 15px;
+	
+}
+#navBar > ul > li:nth-child(2)
+{
+	list-style: none;
+	float: right;
+	top: 6px;
+	position: relative;
+	text-align: center;
+	font-family: 'Muli', sans-serif;
+	bottom: 15px;
+	margin-right: 15px;
+	font-size: 18px;
+}
+
+
+#navBar > ul > li:nth-child(3)
+{
+	list-style: none;
+	float: right;
+	top: 6px;
+	position: relative;
+	text-align: center;
+	font-family: 'Muli', sans-serif;
+	bottom: 15px;
+	margin-right: 20px;
+	font-size: 18px;
+}
+
+#navBar > ul > li:nth-child(4)
+{
+	list-style: none;
+	float: right;
+	position: relative;
+	text-align: center;
+	font-family: 'Muli', sans-serif;
+	margin-right: 20px;
+	top: 6px;
+	font-size: 18px;
+}
+
+#navBar > ul > div
+{
+	margin-top: 0px;
+	bottom: 15px;
+}
+#navBar > ul > li:nth-child(5)
+{
+	list-style: none;
+	float: right;
+	position: relative;
+	text-align: center;
+	font-family: 'Muli', sans-serif;
+	margin-right: 20px;
+	display: inline-block;
+	bottom: 15px;
+	font-size: 18px;	
 }
 
 h3
@@ -50,7 +106,7 @@ h3
 
 .latestPosts
 {	
-	width: 849.5px;
+	width: 935px;
 	height: 70px;
 	background-color: white;
 	margin-left: 19px;
@@ -87,14 +143,62 @@ h3
 
 #featuredItemsBox
 {
-	margin-top: 10px;
-	margin-left: 38px;
-	margin-right: 38px;
 	background-color: #FFF;
+}
+
+.contactContainer
+{
+
+	height: 100px;
+	width: 400px;
+	margin-left: 450px;
+	top: 100px;
+	position: relative;
+	
+}
+
+#email
+{	
+	height: 40px;
+	width: 40px;
+	float: left;
+	margin-top: 30px;
+	margin-left: 80px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;	
+	background-image: url('../img/email.png');
+}
+
+#phone
+{	
+	height: 40px;
+	width: 40px;
+	float: left;
+	margin-top: 30px;
+	margin-left: 56px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;	
+	background-image: url('../img/phone.png');
+}
+
+#location
+{
+	height: 52px;
+	width: 52px;
+	float: right;
+	margin-top: 20px;
+	margin-right: 80px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;		
+	background-image: url('../img/location.png');
 }
 
 .recentlyAdded
 {
+
 	width: 80%;
 	height: 500px;
 	margin-bottom: 100px;
@@ -105,6 +209,79 @@ h3
 	background-color: #FFF;
 }
 
+#postContainer
+{
+	width: 800px;
+	height: 70px;
+	margin-top: 10px;
+	margin-left: 50px;
+	background-color: #E5E4E1;
+	border: 1px solid black;
+}
+
+.postThumbnail
+{
+	height: 60px;
+	width: 60px;
+	float: left;
+	margin-top: 4px;
+	margin-left: 15px;
+	border: 1px solid black;
+}
+/****TAKE OUT WIDTH ONCE TABLE INSERT IS GENERATED***/
+.postTitle
+{
+	height: 30px;
+	width: 300px;
+	margin-top: 4px;
+	margin-left: 15px;
+	float: left;
+	border: 1px solid black;
+}
+
+.postDescription
+{
+	height: 30px;
+	width: 300px;
+	margin-top: 4px;
+	margin-left: 15px;
+	float: left;
+	border: 1px solid black;
+}
+
+.postCondition
+{
+	height: 30px;
+	width: 300px;
+	margin-top: 4px;
+	margin-left: 15px;
+	float: left;
+	border: 1px solid black;
+}
+
+.postDate
+{
+	height: 30px;
+	width: 40px;
+	margin-top: 4px;
+	margin-left: 15px;
+	float: left;
+	clear: right;
+	border: 1px solid black;
+}
+
+.usersRating
+{
+	height: 30px;
+	width: 300px;
+	margin-top: 4px;
+	margin-left: 15px;
+	float: left;
+	clear: right;
+	border: 1px solid black;
+}
+
+
 .adsContainer
 {
 	width: 300px;
@@ -112,10 +289,11 @@ h3
 	float: right;
 	margin-right: 0px;
 	background-color: #FFF;
-	/*border: 1px solid black;*/
 	position: relative;
 	bottom: 600px;
 }
+
+
 #ads
 {
 	width: 232px;
@@ -128,8 +306,8 @@ h3
 
 .recentlyAddedCategories
 {
-	width: 200px;
-	height: 200px;
+	width: 900px;
+	height: 430px;
 	margin-left: 20px;
 	margin-top: 30px;
 	float: left;
@@ -156,24 +334,6 @@ h3
 	margin-top: 4px;
 	border-right: 1.5px solid grey;
 	border-left: 1.5px solid grey;
-}
-
-.arrowLeft
-{
-	height: 20px;
-	width: 20px;
-	float: left;
-	position: absolute;
-	border: 1px solid black;
-}
-
-.arrowRight
-{
-	height: 20px;
-	width: 20px;
-	float: right;
-	margin-left: 40px;
-	border: 1px solid black;
 }
 
 /*Drop Down In Nav Bar */
@@ -209,7 +369,7 @@ h3
     /*position: relative;*/
     float: right;
 	padding-top: 22px;
-	padding-right: 50px;
+	padding-right: 8px;
 	padding-bottom: 20px;
 	padding-left: 20px;
 }
@@ -327,4 +487,10 @@ select.create-ad-select {
 button.submit-ad {
 	float: right;
 	margin-bottom: 10px;
+}
+
+.previous2
+{
+	float: left;
+	position: absolute;
 }

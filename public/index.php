@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>OooLister</title>
+    <title><?php echo $title ?></title>
     <?php require '../views/partials/head.php'; ?>
 </head>
 <body>
@@ -14,7 +14,11 @@
 
     <?php require $mainView; ?>
 
-    <?php require '../views/partials/common_js.php'; ?>
+    <?php //require '../views/partials/common_js.php'; ?>
+
+    <?php //foreach ($requiredJS as $file): ?>
+    	<?php //require_once $file; ?>
+    <?php //endforeach; ?>
 
 </body>
 </html>
