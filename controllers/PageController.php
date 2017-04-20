@@ -20,6 +20,7 @@ function pageController()
         
         case '/':
             $data['ads'] = Ad::all();
+            $data['favorites'] = Favorites::getFavorites(Auth::id());
             $mainView = '../views/home.php';
             break;
 
