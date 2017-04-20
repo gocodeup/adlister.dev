@@ -26,52 +26,52 @@
                     
                 <?php if(empty($errors['name'])): ?>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" data-required value="<?= Input::get('name'); ?>">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" data-required value="<?= Input::escape(Input::get('name')); ?>">
                     </div>
 
                 <?php else: ?>
                     <div class="form-group has-error">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="<?php Input::escape($errors['name']); ?>" data-required >
+                        <input type="text" class="form-control" id="name" name="name" placeholder="<?= Input::escape($errors['name']); ?>" data-required >
                     </div>
                 <?php endif; ?>
 
                 <?php if(empty($errors['email'])): ?>
                     <div class="form-group">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" data-required value="<?= Input::get('email'); ?>">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" data-required value="<?= Input::escape(Input::get('email')); ?>">
                     </div>
                 <?php else: ?>
                     <div class="form-group has-error">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" data-required value="<?= Input::get('email'); ?>">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="<?= Input::escape($errors['email']); ?>" data-required>
                     </div>
                 <?php endif; ?>
 
                 <?php if(empty($errors['username'])): ?>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" data-required value="<?= Input::get('username'); ?>">
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" data-required value="<?= Input::escape(Input::get('username')); ?>">
                     </div>
                 <?php else: ?>
                     <div class="form-group has-error">
-                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" data-required value="<?= Input::get('username'); ?>">
+                        <input type="text" class="form-control" id="username" name="username" placeholder="<?= Input::escape($errors['username']); ?>" data-required >
                     </div>
                 <?php endif; ?>
 
                 <?php if(empty($errors['password'])): ?>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required value="<?= Input::get('password'); ?>">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required value="<?= Input::escape(Input::get('password')); ?>">
                     </div>
                 <?php else: ?>
                     <div class="form-group has-error">
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required value="<?= Input::get('password'); ?>">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="<?= Input::escape($errors['password']); ?>" data-required>
                     </div>
                 <?php endif; ?>
 
                 <?php if(empty($errors['passwordConfirm'])): ?>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm Password" data-required value="<?= Input::get('passwordConfirm'); ?>">
+                        <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm Password" data-required value="<?= Input::escape(Input::get('passwordConfirm')); ?>">
                     </div>
                 <?php else: ?>
                     <div class="form-group has-error">
-                        <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm Password" data-required value="<?= Input::get('passwordConfirm'); ?>">
+                        <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" placeholder="<?= Input::escape($errors['passwordConfirm']); ?>" data-required>
                     </div>
                 <?php endif; ?>                
 
@@ -93,3 +93,4 @@
     </section>
 
 </div>
+git 
