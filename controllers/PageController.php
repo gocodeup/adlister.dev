@@ -45,6 +45,10 @@ function pageController()
 		case "/account": 
 			$mainView = '../views/users/account.php';
 			break;
+		case "/search": 
+			$data['adListings'] = Ads::search($_GET['search']);
+			$mainView = '../views/ads/items.php';
+			break;
 		case "/logout": 
 			Auth::logout(); 
 			$data['selectThree'] = Ads::selectThree();
