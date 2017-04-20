@@ -15,5 +15,9 @@ require_once __DIR__ . '/../bootstrap.php';
 
     <?php require '../views/partials/common_js.php'; ?>
 
+    <?php foreach ($requiredJS as $file): ?>
+    	<?php require_once $file; ?>
+    <?php endforeach; ?>
+
 </body>
 </html>
