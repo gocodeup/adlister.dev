@@ -25,6 +25,14 @@ function pageController()
             break;
         case '/show' :
             $mainView = '../views/ads/show.php';
+            //need to output: info on the topic, choose by id from database,
+            if (Input::has("id")){
+                $data['id'] = Input::get("id");
+            }
+
+            $ads = new Ads();
+            $data["results"] = $ads::find($data['id']);
+            var_dump($data["results"]);
             break;
         case '/items' :
             $mainView = '../views/ads/index.php';
