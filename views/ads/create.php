@@ -3,7 +3,6 @@
 require_once __DIR__ . '/../../controllers/PageController.php';
 require_once __DIR__ . '/../../utils/Input.php';
 
-
 $errors = [];
 
 if(!empty($_POST)) {
@@ -28,7 +27,7 @@ if(!empty($_POST)) {
 		$errors[] = $e->getMessage();
 	}
 
-	$ad->username = "John";
+	$ad->user_id = AUTH::id();
 
 	try {
 		$ad->description = Input::getString('description');

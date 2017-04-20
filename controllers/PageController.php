@@ -24,6 +24,9 @@ function pageController()
 			break;
 		case "/items": 
 			$data['adListings'] = Ads::all();
+			foreach($data['adListings'] as $ad) {
+				// var_dump($ad->image);
+			}
 			$mainView = '../views/ads/items.php';
 			break;
 		case "/login": 
@@ -51,7 +54,9 @@ function pageController()
 			$mainView = '../views/ads/create.php';
 			break;
 		case "/show": 
-			$data['showItem'] = Ads::find(Input::get('id')); 
+			$ad = Ads::find(Input::get('id')); 
+			$data['showItem'] = $ad;
+			$data['user'] = user::find($ad->user_id);
 			$mainView = '../views/ads/show.php';
 			break;
 		case "/update": 
