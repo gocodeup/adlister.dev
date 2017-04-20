@@ -28,6 +28,32 @@ function pageController()
             break;
         case '/items' :
             $mainView = '../views/ads/index.php';
+            $data['page'] = 1;
+
+            if (Input::has("page")) {
+                $data['page'] = Input::get("page");
+            }else{
+                $data['page'] = 1;
+            }
+
+            $ads = new Ads();
+            //Outputs Results 
+            $data['results'] = ($ads::paginate($data['page']));
+            //Total Count of avaliable records
+            $data['totalResults'] = ($ads::count());
+
+            //Calculate total # of pages
+            $data['total'] = $ads::count();
+            $data['pages'] = ceil($data['total'] / 10);
+
+            //Prevents overflow of pages
+            if ($data['page'] >= $data['pages']) {
+                $data['page'] = $data['pages'];
+            }
+
+            var_dump($data['results']);
+
+
             break;
         case '/account' :
             $mainView = '../views/users/account.php';
@@ -47,6 +73,7 @@ function pageController()
     }
 
     $data['mainView'] = $mainView;
+
 
     return $data;
 }
