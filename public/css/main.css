@@ -74,6 +74,9 @@ body {
   text-align: center;
   line-height: 15px; }
 
+.centerText {
+  text-align: center; }
+
 @font-face {
   font-family: "mermaid";
   src: url(../fonts/Mermaid.ttf); }

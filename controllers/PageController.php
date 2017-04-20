@@ -51,8 +51,6 @@ function pageController()
                 $data['page'] = $data['pages'];
             }
 
-            var_dump($data['results']);
-
 
             break;
         case '/account' :
