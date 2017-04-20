@@ -4,8 +4,17 @@ $_ENV = include __DIR__ . '/../../.env.php';
 require_once '../db_connect.php';
 
 $dbc->exec('DROP TABLE IF EXISTS users');
+$dbc->exec('DROP TABLE IF EXISTS ads');
 
-$query = 'CREATE TABLE users (
+$ads = 'CREATE TABLE IF NOT EXISTS ads (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    name VARCHAR(240) NOT NULL,
+    description VARCHAR (1000) NOT NULL,
+    username VARCHAR(240) NOT NULL,
+    PRIMARY KEY (id)
+)';
+
+$query = 'CREATE TABLE IF NOT EXISTS users (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     name VARCHAR(240) NOT NULL,
     email VARCHAR(240) NOT NULL,
@@ -15,3 +24,4 @@ $query = 'CREATE TABLE users (
 )';
 
 $dbc->exec($query);
+$dbc->exec($ads);
