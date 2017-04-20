@@ -36,6 +36,14 @@ class Input
         return $input;
     }
 
+    public static function getNumber($key) {
+        $input = self::get($key);
+        if(!is_numeric($input)) {
+            throw new Exception("Input for $key must be a number.");
+        }
+        return $input;
+    }
+
     public static function escape($input) {
         return htmlspecialchars(strip_tags($input));
     }
