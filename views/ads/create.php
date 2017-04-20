@@ -36,7 +36,6 @@ if(!empty($_POST)) {
 	}
 
 	$ad->image = saveUploadedImage('image');
-// var_dump ($ad); die;
 
 	if(empty($errors)) {
 		$ad->save();
@@ -75,40 +74,27 @@ if(!empty($_POST)) {
  					<textarea class="form-control" id="description" name="description" placeholder="Enter your item description here" rows="5"></textarea>
  				</div>
 
-
- 				<!-- <div class="form-group">
- 					<form action="upload.php" enctype="multipart/form-data" method="post">
- 						Select image to upload:
- 						<input id="fileToUpload" name="fileToUpload" type="file">
- 						<input name="submit" type="submit" value="Upload Image">
- 					</form>
- 				</div> -->
-
  				<div class="control-group ">
  					<!-- start of image -->
  					<label class="control-label">Image</label>
- 					<div class="controls">
- 						<div class="input-prepend">
- 							<span class="add-on"><i class="icon-camera"></i></span>
 
  							<!-- file upload-->
  							<div class="fileupload fileupload-new" data-provides="fileupload">
 
- 								<div class="fileupload-preview thumbnail" style="width: 200px; height: 150px;"><img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" />
- 								</div>
  								<div>
- 									<span class="btn btn-file"><span class="fileupload-new">Select image</span>
- 									<span class="fileupload-exists">Change</span>
+									<img class="img-thumbnail thumbnail" id="preview" style="width: 200px; height: 150px;"/>
+								</div>
+
+ 								<div>
+ 									<span class="btn btn-file"><span class="fileupload-new"></span>
+
  									<input type="hidden" name="MAX_FILE_SIZE" value="1024000000" />
  									<input type="file" name="image" id="image" />
  									</span>
- 									<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+
  								</div>
  							</div>
  							<!--end of file upload -->
-
- 						</div>
- 					</div>
  				</div>
  				<!-- end of image -->
 
@@ -119,3 +105,20 @@ if(!empty($_POST)) {
  		</div>
  	</div>
  </div>
+
+<!--JS to render image thumbnail-->
+
+ <script type="text/javascript">
+ document.getElementById("image").onchange = function () {
+	 var reader = new FileReader();
+
+	 reader.onload = function (e) {
+		 // get loaded data and render thumbnail.
+		 document.getElementById("preview").src = e.target.result;
+	 };
+
+	 // read the image file as a data URL.
+	 reader.readAsDataURL(this.files[0]);
+
+ };
+ </script>
