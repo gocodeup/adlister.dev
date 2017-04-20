@@ -1,6 +1,17 @@
 body
 {
-	background-color: #F7F7F7;
+	background-color: #FFF;
+}
+
+.background-grey {
+	background-color: #FFF;
+}
+
+.style13 {
+	background-color: #FFF;
+	height: 30px;
+	border: 0;
+	box-shadow: 0 -10px 10px -10px #333 inset;
 }
 
 .welcomeLi
@@ -10,19 +21,75 @@ body
 	position: relative;
 	text-align: center;
 	font-family: 'Muli', sans-serif;
+	padding: 20px;
 
 }
 
-li
+#navBar > ul > li.welcomeLi > h3
 {
 	list-style: none;
 	float: right;
 	position: relative;
 	text-align: center;
 	font-family: 'Muli', sans-serif;
-	margin-top: 7px;
 	margin-right: 10px;
-	font-size: 15px;
+	
+}
+#navBar > ul > li:nth-child(2)
+{
+	list-style: none;
+	float: right;
+	top: 6px;
+	position: relative;
+	text-align: center;
+	font-family: 'Muli', sans-serif;
+	bottom: 15px;
+	margin-right: 15px;
+	font-size: 18px;
+}
+
+
+#navBar > ul > li:nth-child(3)
+{
+	list-style: none;
+	float: right;
+	top: 6px;
+	position: relative;
+	text-align: center;
+	font-family: 'Muli', sans-serif;
+	bottom: 15px;
+	margin-right: 20px;
+	font-size: 18px;
+}
+
+#navBar > ul > li:nth-child(4)
+{
+	list-style: none;
+	float: right;
+	position: relative;
+	text-align: center;
+	font-family: 'Muli', sans-serif;
+	margin-right: 20px;
+	top: 6px;
+	font-size: 18px;
+}
+
+#navBar > ul > div
+{
+	margin-top: 0px;
+	bottom: 15px;
+}
+#navBar > ul > li:nth-child(5)
+{
+	list-style: none;
+	float: right;
+	position: relative;
+	text-align: center;
+	font-family: 'Muli', sans-serif;
+	margin-right: 20px;
+	display: inline-block;
+	bottom: 15px;
+	font-size: 18px;	
 }
 
 h3
@@ -48,8 +115,8 @@ h3
 }
 #navBar 
 {
-	height: 40px;
-	width: 100%;
+	height: 100px;
+	/*width: 100%;*/
 	background-color: #00a4e8;
 	padding-top: 5px;
 	color: #FFF;
@@ -58,7 +125,7 @@ h3
 #search 
 {
 	height: 60px;
-	width: 100%;
+	/*width: 100%;*/
 	margin: auto 0;
 	background-color: #00a4e8;
 	color: #FFF;
@@ -73,29 +140,72 @@ h3
     -moz-box-shadow:2px 2px 10px 5px #888888;
 }
 
-#featuredItemsContainer
+#featuredItemsBox
 {
-	margin-top: 10px;
-	height: 350px;
-	margin-left: 38px;
-	margin-right: 0px;
-	width: 1200px;
 	background-color: #FFF;
-	box-shadow:2px 2px 10px 5px #F7F7F7;
-    -webkit-box-shadow:2px 2px 10px 5px #F7F7F7;
-    -moz-box-shadow:2px 2px 10px 5px #F7F7F7;
+}
+
+.contactContainer
+{
+
+	height: 100px;
+	width: 400px;
+	margin-left: 450px;
+	top: 100px;
+	position: relative;
+	
+}
+
+#email
+{	
+	height: 40px;
+	width: 40px;
+	float: left;
+	margin-top: 30px;
+	margin-left: 80px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;	
+	background-image: url('../img/email.png');
+}
+
+#phone
+{	
+	height: 40px;
+	width: 40px;
+	float: left;
+	margin-top: 30px;
+	margin-left: 56px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;	
+	background-image: url('../img/phone.png');
+}
+
+#location
+{
+	height: 52px;
+	width: 52px;
+	float: right;
+	margin-top: 20px;
+	margin-right: 80px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;		
+	background-image: url('../img/location.png');
 }
 
 .recentlyAdded
 {
-	width: 880px;
+
+	width: 80%;
 	height: 500px;
 	margin-bottom: 100px;
 	margin-left: 21px;
 	margin-top: 15px;
 	border-top: 1px solid black;
 	border-top: 2px;
-	background-color: #F7F7F7;
+	background-color: #FFF;
 }
 
 .adsContainer
@@ -103,8 +213,9 @@ h3
 	width: 300px;
 	height: 572px;
 	float: right;
-	margin-right: 41px;
+	margin-right: 0px;
 	background-color: #FFF;
+	/*border: 1px solid black;*/
 	position: relative;
 	bottom: 600px;
 }
@@ -133,13 +244,10 @@ h3
 
 .featuredItemsInnerContainer
 {
-	width: 910px;
 	height: 280px;
 	margin-top: 50px;
 	margin-left: 147px;
 	position: relative;
-
-
 }
 
 .featuredItems
@@ -151,24 +259,6 @@ h3
 	margin-top: 4px;
 	border-right: 1.5px solid grey;
 	border-left: 1.5px solid grey;
-}
-
-.arrowLeft
-{
-	height: 20px;
-	width: 20px;
-	float: left;
-	position: absolute;
-	border: 1px solid black;
-}
-
-.arrowRight
-{
-	height: 20px;
-	width: 20px;
-	float: right;
-	margin-left: 40px;
-	border: 1px solid black;
 }
 
 /*Drop Down In Nav Bar */
@@ -190,7 +280,7 @@ h3
     background-color: #00a4e8;
 }
 #myInput {
-    border-box: box-sizing;
+    /*border-box: box-sizing;*/
     background-image: url('searchicon.png');
     background-position: 14px 12px;
     background-repeat: no-repeat;
@@ -202,7 +292,11 @@ h3
 
 .dropdown {
     /*position: relative;*/
-    display: inline-block;
+    float: right;
+	padding-top: 22px;
+	padding-right: 8px;
+	padding-bottom: 20px;
+	padding-left: 20px;
 }
 
 .dropdown-content {
@@ -225,4 +319,97 @@ h3
 
 .dropdown a:hover {background-color: #ddd}
 
-.show {display:block;}
+.show 
+{
+	display:block;
+}
+
+.emptyClass
+{
+	height: 500px;
+	border-top: 2px;
+	border-bottom: 2px;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;;
+	background-color: #E5E4E1;
+}
+
+.emptyLayout
+{
+ height: 250px;
+ width: 250px;
+ float: left;
+ border: 1px solid #FFF;
+ margin-left: 80px;
+ margin-top: 120px
+ /*font-family: 'Muli', sans-serif;*/
+}
+
+.emptyLayoutLarge
+{
+ height: 450px;
+ width: 450px;
+ margin-top: 25px;
+ margin-left: 760px;
+ position: absolute;
+ border: 1px solid #FFF;
+}
+
+.footer
+{
+	height: 300px;
+	background-color: #00a4e8;
+
+}
+
+/*carousel*/
+
+
+
+/*=========================================*/
+
+
+.create-ad {
+	background-color: white;
+	margin: 0 auto;
+	width: 600px;
+}
+.create-ad-input-container {
+	text-align: center;
+	margin-top: 4px;
+	width: 600px;
+	padding-top: 40px;
+	padding-right: 150px;
+	padding-bottom: 50px;
+	padding-left: 150px;
+	background-color: #f1f1f1;
+}
+.create-ad-input-header {
+	text-align: center;
+	margin-top: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 600px;
+	background-color: #f1f1f1;
+}
+input.create-ad-input {
+	width: 300px;
+	margin-bottom: 14px;
+	border: 0px solid;
+	padding: 7px;
+}
+select.create-ad-select {
+	width: 300px;
+	margin-bottom: 14px;
+	border: 0px solid;
+	padding: 7px;
+}
+button.submit-ad {
+	float: right;
+	margin-bottom: 10px;
+}
+
+.previous2
+{
+	float: left;
+	position: absolute;
+}

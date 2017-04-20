@@ -4,9 +4,10 @@
 	<body>
 		<div id="navBar">
 			<ul>
-			    <li class="welcomeLi"><h3>Welcome To Adlister</h3></li>
-			<!--     <li>Log In</li>
-			    <li>Search</li> -->
+			    <li class="welcomeLi"><h3>Adlister</h3></li>
+			    <li>Log In</li>
+			    <li>Create An Account</li>
+			    <li>Contact Us</li>
 			<div class="dropdown">
 			<button onclick="myFunction()" class="dropbtn">Search Categories</button>
 			  <div id="myDropdown" class="dropdown-content">
@@ -45,14 +46,5 @@
 			}
 			</script>
 		</div>
-		  <!--   <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-        <div id="myDropdown" class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-        </div>
-    </div> -->
-
 	</body>
 </html>

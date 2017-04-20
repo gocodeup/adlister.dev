@@ -1,5 +1,3 @@
-<div class="container">
-
     <section id="login">
 
         <div class="row">
@@ -19,6 +17,12 @@
                                     <?php echo $_SESSION['ERROR_MESSAGE']; ?>
                                 </p>
                             </div>
+                        <?php endif; ?>
+                        <?php if (isset($_SESSION['SUCCESS_MESSAGE'])) : ?>
+                            <div class="alert alert-success">
+                                <p class="success"><?= $_SESSION['SUCCESS_MESSAGE']; ?></p>
+                            </div>
+                            <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
                         <?php endif; ?>
                         <input type="text" class="form-control input-required" id="email_user" name="username" placeholder="Username or Email" required>
                     </div>
