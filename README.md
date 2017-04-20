@@ -214,25 +214,22 @@ Where to go from here...
 So many places! If you have time, try one of the following (or invent
 your own!):
 
--   Implement delete functionality for ads.
--   Implement image upload for ads (there is an existing helper function
-    for this)
--   Allow a user to edit their profile, update their password, etc.
--   Allow users to delete ads that they have created.
--   Implement a user dashboard view where they will have quick access to
--   all their ads.
--   Use composer to pull in a third party libraries for things like
--   email (SwiftMailer), generating fake data (Faker), or any other
--   feature you may want.
--   Send emails on important events like user signup.
--   Allow users to mark their "favorite" ads and make these show up on
--   the dashboard.
--   Implement a "flagging" feature where users can mark ads as
--   inappropriate.
--   Implement an admin user that can moderate ads and remove them.
--   Implement a user feedback system.
--   Implement a forgot-password feature.
--   One nice feature for a user of the Ad Lister app would be to create
-    some ads in a CSV and then do a bulk upload.
--   Be creative, and most of all have fun!
+- Implement image upload for ads (there is an existing helper function for this)
+- Allow a user to edit their profile, update their password, etc.
+- Allow users to delete ads that they have created.
+- Implement a user dashboard view where they will have quick access to all their
+  ads.
+- Research and use [composer](https://getcomposer.org/) to pull in a third party
+  libraries for things like email (SwiftMailer), generating fake data (Faker),
+  or any other feature you may want.
+- Send emails on important events like user signup.
+- Allow users to mark their "favorite" ads and make these show up on the
+  dashboard.
+- Implement a "flagging" feature where users can mark ads as inappropriate.
+- Implement an admin user that can moderate ads and remove them.
+- Implement a user feedback system.
+- Implement a forgot-password feature.
+- One nice feature for a user of the Ad Lister app would be to create some ads
+  in a CSV and then do a bulk upload.
+- Be creative, and most of all have fun!
 
