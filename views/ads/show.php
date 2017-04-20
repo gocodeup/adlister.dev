@@ -53,7 +53,6 @@
 								<?=$showItem->description?>
 							</div>
 						</div>
-
 						<div class="modal-footer">
 							<a href="/delete" type="submit" class="btn btn-default btn-success">Confirm Delete</a>
 							<button type="submit" data-dismiss="modal" class="btn btn-default btn-danger">Cancel</button>
