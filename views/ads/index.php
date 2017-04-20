@@ -1,30 +1,33 @@
 <!--Page for an index of advertisements-->
 
-<div class="container">
-	<section id="welcome">
+<?php 
 
-        <div class="row">
 
-            <div class="col-xs-12">
 
-                <h1 class="text-center">Categories</h1>
+ ?>
+ <table class="table table-bordered table-striped">
 
-            </div>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Image</th>
+            </tr>
+        </thead>
 
-        </div>
-    </section>
 
-        <section id="categories">
-        	<div class="container-fluid">
-        		<div class="row">
-        			<div class="col-xs-6 col-sm-4"><a href="/ads/photovideo"><h4>Photo + Video</h4><img class="img-responsive" src="/images/pic08.jpg"></a></div>
-                	<div class="col-xs-6 col-sm-4"><a href="/ads/movies"><h4>Movies</h4><img class="img-responsive" src="images/pic08.jpg"></a></div>
-                	<div class="col-xs-6 col-sm-4"><a href="/ads/games"><h4>Games</h4><img class="img-responsive" src="images/pic08.jpg"></a></div>
-        		</div>
-        	</div>
 
-        	<div class="create-ad">
-        		<center><a href="/ads/create">Create an Ad</a></center>
-        	</div>
-        </section>
-</div>
+        <?php foreach($ads as $ad): ?>
+    
+            <tbody>
+                <tr>
+                    <td ><?= $ad['title'] ?></td>
+                    <td><?= $ad['price'] ?></td>
+                    <td><?= $ad['description'] ?></td>
+                    <td><?= $ad['image'] ?></td>
+                </tr>
+            </tbody>
+        <?php endforeach; ?>
+
+    </table>
