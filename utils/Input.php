@@ -27,4 +27,14 @@ class Input
     {
         return $_REQUEST;
     }
+
+    public static function escape($str)
+    {
+        return htmlspecialchars(strip_tags($str));
+    }
+
+    public static function hasTags($str)
+    {
+        return strip_tags($str) !== $str;
+    }
 }
