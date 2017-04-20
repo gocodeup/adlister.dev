@@ -12,8 +12,7 @@
 		</div>
 	</div><!-- ends row -->
 </div><!-- ends container -->
-
-<?php if (Auth::id()): ?>
+<?php if (Auth::id() == $showItem->user_id): ?>
 	<a style="margin:5%" href="/edit" class="btn btn-primary">Edit Ad</a>
 	<a style="margin:5%" href="/delete" class="btn btn-primary pull-right">Delete Ad</a>
 <?php endif; ?>
