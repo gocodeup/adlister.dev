@@ -2,6 +2,8 @@
 
 require_once __DIR__ . '/../utils/helper_functions.php';
 require_once __DIR__ . '/../utils/Auth.php';
+require_once __DIR__ . '/../models/Ad.php';
+require_once __DIR__ . '/../models/Favorites.php';
 
 function pageController()
 {
@@ -17,6 +19,7 @@ function pageController()
     switch ($request) {
         
         case '/':
+            $data['ads'] = Ad::all();
             $mainView = '../views/home.php';
             break;
 
@@ -100,11 +103,22 @@ function pageController()
             break;
         
         case '/account/favorites':
+            $favorite = Auth::id();
+            
             $mainView = '../views/users/favorites.php';
             if(!Auth::check()) {
                 header('Location: /login');
                 exit;
             }
+            break;
+        case '/account/addtofavorites':
+            $ad = input::get('ad_id');
+            $user = Auth::id();
+            $favorites = new Favorites;
+            $favorites->ad_id = $ad;
+            $favorites->account_id = $user;
+            $favorites->save();
+            exit;
             break;
 
         case '/ads':
