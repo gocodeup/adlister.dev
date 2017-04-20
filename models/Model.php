@@ -187,7 +187,11 @@ abstract class Model {
         self::dbConnect();
 
         //Create select statement using prepared statements
-        $query = 'SELECT * FROM ' . static::$table . ' WHERE id = :id';
+        $query = <<<SQL
+        SELECT *
+        FROM {static::$table}
+        WHERE id = :id
+SQL;
 
         $stmt = self::$dbc->prepare($query);
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
