@@ -28,6 +28,7 @@ class Ad extends Model
             $ad->description = $result['description'];
             $ad->user_id = $result['user_id'];
             $ad->image = $result['image'];
+            $ad->id = $result['id'];
             array_push($models, $ad);
   
         }
@@ -35,6 +36,7 @@ class Ad extends Model
         // turn each associative array into an instance of the model subclass
         return $models;
     }
+
 }
 
  ?>

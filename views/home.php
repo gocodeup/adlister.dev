@@ -23,14 +23,18 @@
             
             <!-- Placeholder for featured items.-->
             <div class="row">
-                <?php foreach($ads as $ad) :?>
-                
+                <?php foreach($ads as $ad) : ?>                
                 <div class="col-xs-6 col-sm-4">
                     
                     <div>
                         <p><a href="/ads/show?id=<?=$ad->id?>"><img src="<?= $ad->image ?>"><p>
                         <p><a href="/ads/show?id=<?=$ad->id?>"><?= $ad->title?><p>
                     </div>
+
+                    <form action="/ads/delete">
+                        <input type="hidden" name="id" value="<?=$ad->id?>">
+                        <button id="delete">Delete</button>
+                    </form>
 
                 </div>
         <?php endforeach; ?>
