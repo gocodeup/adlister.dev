@@ -6,6 +6,10 @@ body {
   background: #efefef;
   margin: 0 0 50px; }
 
+img {
+  width: 100%;
+  height: auto; }
+
 .container {
   margin-top: 20px; }
 
@@ -23,6 +27,33 @@ body {
   line-height: 50px;
   color: #636363;
   margin-bottom: 20px; }
+
+.whiteBox {
+  background: white;
+  width: 100%;
+  padding: 30px;
+  border-radius: 5px;
+  margin: 20px; }
+
+.adAbout {
+  text-align: center; }
+
+.adPrice {
+  color: green;
+  font-family: "ralewayRegular"; }
+
+.adDesc {
+  font-family: "ralewayRegular"; }
+
+.adBrand {
+  font-family: "ralewayBold"; }
+
+.adName {
+  font-family: "ralewayThin"; }
+
+.adAbout {
+  font-family: "ralewayThin";
+  font-size: 15px; }
 
 .card {
   margin: 0 auto;
@@ -77,9 +108,6 @@ body {
 .centerText {
   text-align: center; }
 
-@font-face {
-  font-family: "mermaid";
-  src: url(../fonts/Mermaid.ttf); }
 #jobsText {
   position: absolute;
   margin: 390px auto;
@@ -104,5 +132,21 @@ body {
 
 #shopButton {
   border-radius: 5px 0px 0px 5px; }
+
+@font-face {
+  font-family: "mermaid";
+  src: url(../fonts/Mermaid.ttf); }
+@font-face {
+  font-family: "ralewayRegular";
+  src: url(../fonts/Raleway-Regular.ttf); }
+@font-face {
+  font-family: "ralewayBold";
+  src: url(../fonts/Raleway-Bold.ttf); }
+@font-face {
+  font-family: "ralewayBlack";
+  src: url(../fonts/Raleway-Black.ttf); }
+@font-face {
+  font-family: "ralewayThin";
+  src: url(../fonts/Raleway-Thin.ttf); }
 
 /*# sourceMappingURL=main.css.map */

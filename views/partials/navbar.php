@@ -19,7 +19,7 @@
         <div class="dropdown-menu dropdown-menu-right">
             <a class="dropdown-item" href="/items">Software</a>
             <a class="dropdown-item" href="/items">Hardware</a>
-            <a class="dropdown-item" href="/items">Military Stuff</a>
+            <a class="dropdown-item" href="/items">Rockets</a>
             <a class="dropdown-item" href="/items">Other</a>
         </div>
     </div>
