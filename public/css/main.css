@@ -6,6 +6,10 @@ body {
   background: #efefef;
   margin: 0 0 50px; }
 
+img {
+  width: 100%;
+  height: auto; }
+
 .container {
   margin-top: 20px; }
 
@@ -23,6 +27,16 @@ body {
   line-height: 50px;
   color: #636363;
   margin-bottom: 20px; }
+
+.whiteBox {
+  background: white;
+  width: 100%;
+  padding: 30px;
+  border-radius: 5px;
+  margin: 20px; }
+
+.adAbout {
+  text-align: center; }
 
 .card {
   margin: 0 auto;
