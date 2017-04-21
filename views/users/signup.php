@@ -22,23 +22,62 @@
                     <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
                 <?php endif; ?>
 
-                <form method="POST" action="" data-validation data-required-message="This field is required">
+                <form method="POST" action="/signup" data-validation data-required-message="This field is required">
+                    
+                <?php if(empty($errors['name'])): ?>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" data-required value="<?= Input::escape(Input::get('name')); ?>">
+                    </div>
 
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" data-required>
+                <?php else: ?>
+                    <div class="form-group has-error">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="<?= Input::escape($errors['name']); ?>" data-required >
                     </div>
+                <?php endif; ?>
+
+                <?php if(empty($errors['email'])): ?>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" data-required>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" data-required value="<?= Input::escape(Input::get('email')); ?>">
                     </div>
+                <?php else: ?>
+                    <div class="form-group has-error">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="<?= Input::escape($errors['email']); ?>" data-required>
+                    </div>
+                <?php endif; ?>
+
+                <?php if(empty($errors['username'])): ?>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" data-required>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" data-required value="<?= Input::escape(Input::get('username')); ?>">
                     </div>
+                <?php else: ?>
+                    <div class="form-group has-error">
+                        <input type="text" class="form-control" id="username" name="username" placeholder="<?= Input::escape($errors['username']); ?>" data-required >
+                    </div>
+                <?php endif; ?>
+
+                <?php if(empty($errors['password'])): ?>
                     <div class="form-group">
                         <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required>
                     </div>
+                <?php else: ?>
+                    <div class="form-group has-error">
+                        <input type="password" class="form-control" id="password" name="password" placeholder=Password data-required>
+                    </div>
+                <?php endif; ?>
+
+                <?php if(empty($errors['passwordConfirm'])): ?>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm Password" data-required>
+                    </div>
+                <?php else: ?>
+                    <div class="form-group has-error">
+                        <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm Password" data-required>
+                    </div>
+                <?php endif; ?>                
+
                     <div class="row">
                         <div class="col-sm-6">
-                            <button type="submit" class="btn btn-primary">Signup</button>
+                            <button type="submit" class="btn btn-primary" value="signup">Signup</button>
                         </div>
                         <div class="col-sm-6 text-right">
                             <a href="/login" class="btn btn-success">Go To Login</a>

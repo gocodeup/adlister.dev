@@ -17,7 +17,7 @@ class Input
      */
     public static function get($key, $default = null)
     {
-        return self::has($key) ? $_REQUEST[$key] : $default;
+        return self::has($key) ? trim($_REQUEST[$key]) : $default;
     }
 
     /**
@@ -26,5 +26,25 @@ class Input
     public static function all()
     {
         return $_REQUEST;
+    }
+
+    public static function getString($key) {
+        $input = self::get($key);
+        if(empty($input) || is_numeric($input) || !is_string($input)) {
+            throw new Exception("Must enter valid $key");
+        }
+        return $input;
+    }
+
+    public static function getNumber($key) {
+        $input = self::get($key);
+        if(!is_numeric($input)) {
+            throw new Exception("Input for $key must be a number.");
+        }
+        return $input;
+    }
+
+    public static function escape($input) {
+        return htmlspecialchars(strip_tags($input));
     }
 }

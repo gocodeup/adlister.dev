@@ -92,6 +92,8 @@ class Auth
         session_unset();
         // delete session data on the server and send the client a new cookie
         session_regenerate_id(true);
+        // redirect to homepage
+        header('Location: /');
         return true;
     }
 }
