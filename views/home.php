@@ -1,4 +1,4 @@
-<body>
+
 <div class="container">
 
     <section id="welcome">
@@ -25,10 +25,17 @@
             <div class="row">
                 <?php foreach($ads as $ad) :?>
                 
-                <div class="col-xs-6 col-sm-4"><a href="/ads">
-                    <img class="img-responsive" src="/images/pic08.jpg"></a>
-                    <input type="checkbox" value="<?= $ad->id ?>">SAMPLE</div>
-                <?php endforeach?>
+                <div class="col-xs-6 col-sm-4">
+                    
+                    <div>
+                        <p><img src= "/<?= $ad->image ?>"></p>
+                        <p><?= $ad->title ?></p>
+                        <p><?= $ad->price ?></p>
+                        <p><?= $ad->description ?></p>
+                    </div>
+
+                </div>
+        <?php endforeach; ?>
                 
             </div>
     </section>
@@ -64,4 +71,3 @@ $('input').on('change', function() {
 
 });
 </script>
-</body>

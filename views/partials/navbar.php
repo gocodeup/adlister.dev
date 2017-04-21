@@ -13,14 +13,11 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="/ads">Ads <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Community</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Account <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="/account">View Account</a></li>
-            <li><a href="/account/edit">Edit Account</a></li>
             <li><a href="/ads/create">Create Ad</a></li>
-            <li><a href="/account/favorites">Favorites</a></li>
             <li class="divider"></li>
             <li><a href="/signup">Sign Up</a></li>
             <li class="divider"></li>

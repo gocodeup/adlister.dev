@@ -229,7 +229,7 @@ abstract class Model {
 
         $models = [];
         foreach($results as $result) {
-            $ads = new Ad();
+            $instance = new static();
             $instance->attributes = $result;
             $models[] = $instance;
         }
@@ -237,5 +237,46 @@ abstract class Model {
         // turn each associative array into an instance of the model subclass
         return $models;
     }
+
+    public static function paginate($pageNo, $resultsPerPage = 9) {
+        self::dbConnect();
+        // TODO: call dbConnect to ensure we have a database connection
+        // TODO: calculate the limit and offset needed based on the passed
+        //       values
+        // TODO: use the $dbc static property to query the database with the
+        //       calculated limit and offset
+        // TODO: return an array of the found Park objects
+        $c = self::count();
+        $numPages = ceil($c / $resultsPerPage);
+        $o = ($pageNo -1) * $resultsPerPage;
+
+        $stmt = self::$dbc->prepare('SELECT * FROM ' . static::$table . ' ORDER BY id DESC LIMIT :limit OFFSET :offset');
+        $stmt->bindValue(':limit', $resultsPerPage, PDO::PARAM_INT);
+        $stmt->bindValue(':offset', $o, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $models = [];
+        foreach($results as $result) {
+            $instance = new static();
+            $instance->attributes = $result;
+            $models[] = $instance;
+        }
+
+        return $models;
+
+    }
+
+    public static function count() {
+        self::dbConnect();
+        // TODO: call dbConnect to ensure we have a database connection
+        $c = self::$dbc->query('SELECT count(*) FROM ads');
+        $count = $c->fetch()[0]; 
+        return $count;
+        // TODO: use the $dbc static property to query the database for the
+        //       number of existing park records
+    }
+
 
 }
