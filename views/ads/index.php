@@ -12,9 +12,12 @@
                 </div>
             </div>
         <?PHP endforeach; ?>
-
-
-        
         <!-- Only one row. -->
     </div>
+    <!-- Create Buttons Below -->
+    <!-- <div class="row">
+        <div class="col-md-6 offset-md-3 col-sm offset-sm-0">
+            
+        </div>
+    </div> -->
 </div>

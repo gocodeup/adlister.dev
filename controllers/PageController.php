@@ -16,6 +16,9 @@ function pageController()
     switch ($request) {
         case '/' :
             $mainView = '../views/home.php';
+            $ads = new Ads();
+            //Outputs Most Recent three results
+            $data['results'] = ($ads::latest());
             break;
 
         case '/create' :

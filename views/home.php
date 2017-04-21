@@ -3,37 +3,19 @@
         <h1 id="">Shop like Jobs... Steve Jobs</h1>
     </div>
 </div>
-<div class="grayBox">Featured items in the United States</div>
+<div class="grayBox">Latest items in the United States</div>
 <div class="container-fluid">
     <section id="welcome">
         <div class="row">
+            <?PHP foreach ($results as $result) : ?>
             <div class="card" style="width: 20rem;">
-                <a href="#"><img class="card-img-top" src="https://images-cdn.9gag.com/photo/aGwd2jn_700b.jpg" alt="Card image cap" style="width: 100%"></a>
+                <a href="http://adlister.dev/show?id=<?= $result['id']?>&cat=<?=$result['category']?>"><img class="card-img-top" src="https://images-cdn.9gag.com/photo/aGwd2jn_700b.jpg" alt="Card image cap" style="width: 100%"></a>
                 <div class="card-block">
-                    <a href="#"><h4 class="card-title">Card title</h4></a>
-                    <p class="card-text">Leverage agile frameworks to provide a robust synopsis for high level overviews.
-             Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.
-             Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
+                    <a href="http://adlister.dev/show?id=<?= $result['id']?>&cat=<?=$result['category']?>"><h4 class="card-title"><?=htmlspecialchars(strip_tags($result['name'])) ?></h4></a>
+                    <p class="card-text"><?=htmlspecialchars(strip_tags($result['description'])) ?></p>
                 </div>
             </div>
-            <div class="card" style="width: 20rem;">
-                <a href="#"><img class="card-img-top" src="https://images-cdn.9gag.com/photo/aGwd2jn_700b.jpg" alt="Card image cap" style="width: 100%"></a>
-                <div class="card-block">
-                    <a href="#"><h4 class="card-title">Card title</h4></a>
-                    <p class="card-text">Leverage agile frameworks to provide a robust synopsis for high level overviews.
-             Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.
-             Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
-                </div>
-            </div>
-            <div class="card" style="width: 20rem;">
-                <a href="#"><img class="card-img-top" src="https://images-cdn.9gag.com/photo/aGwd2jn_700b.jpg" alt="Card image cap" style="width: 100%"></a>
-                <div class="card-block">
-                    <a href="#"><h4 class="card-title">Card title</h4></a>
-                    <p class="card-text">Leverage agile frameworks to provide a robust synopsis for high level overviews.
-             Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.
-             Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
-                </div>
-            </div>
+        <?PHP endforeach; ?>
         </div>
     </section>
 </div>

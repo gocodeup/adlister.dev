@@ -26,4 +26,14 @@ class Ads extends Model {
         return($results);
     }
 
+    public static function latest() {
+        self::dbConnect();
+
+        $stmt = self::$dbc->prepare("SELECT * FROM " . static::$table . " ORDER BY id DESC LIMIT 3");
+        $stmt->execute();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return($results);
+    }
+
 }
