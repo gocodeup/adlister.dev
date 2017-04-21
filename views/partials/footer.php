@@ -1,4 +1,4 @@
-<footer class="text-center">
+<footer class="text-center navbar-fixed-bottom clear-fix">
 	<div class="footer-below">
 		<div class="container">
 			<div class="row">
