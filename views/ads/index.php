@@ -6,6 +6,8 @@ require_once __DIR__ . "/../../controllers/PageController.php";
 
  ?>
 
+<div class="container-fluid">
+
 <h1>All Ads</h1>
     <div class="row">
         <?php foreach($adListings as $ad): ?>
@@ -16,5 +18,13 @@ require_once __DIR__ . "/../../controllers/PageController.php";
                    <p><?= $ad->description ?><p>
                 </div>
         <?php endforeach; ?>
+        
     </div>
-
+        <?php if($page > 1): ?>
+            <a href="?page=<?= $page - 1 ?>"><span class="glyphicon glyphicon-chevron-left">Previous</span></a>
+        <?php endif; ?>
+                
+        <?php if($page < $lastPage): ?> 
+            <a class="pull-right" href="?page=<?= $page + 1 ?>"><span class="glyphicon glyphicon-chevron-right">Next</span></a>
+        <?php endif; ?>
+</div>

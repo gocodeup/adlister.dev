@@ -5,6 +5,23 @@ require_once __DIR__ . '/../utils/Auth.php';
 require_once __DIR__ . '/../models/Ad.php';
 require_once __DIR__ . '/../models/Favorites.php';
 
+function getLastPage($limit) {
+    $count = Ad::count(); // to get the count
+    $lastPage = ceil($count / $limit);
+    return $lastPage;
+}
+
+function handleOutOfRangeRequests($page, $lastPage) {
+    // protect from looking at negative pages, too high pages, and non-numeric pages
+    if($page < 1 || !is_numeric($page)) {
+        header("location: ?page=1");
+        die;
+    } else if($page > $lastPage) {
+        header("location: ?page=$lastPage");
+        die;
+    }
+}
+
 function pageController()
 {
 
@@ -114,7 +131,13 @@ function pageController()
             break;
 
         case '/ads':
-            $data['adListings'] = Ad::paginate(1);
+            $limit = 9;
+            $page = Input::get('page', 1);
+            $lastPage = getLastPage($limit);
+            handleOutOfRangeRequests($page, $lastPage);
+            $data['adListings'] = Ad::paginate($page, $limit);
+            $data['page'] = $page;
+            $data['lastPage'] = $lastPage;
             $mainView = '../views/ads/index.php';
             break;
 
