@@ -14,7 +14,7 @@
 	<!-- Custom stylesheet -->
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
-	<link href="https://fonts.googleapis.com/css?family=Walter+Turncoat" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato|Oswald|Palanquin+Dark|Raleway" rel="stylesheet">
 
 	<style>
 	/*#E8D0A9 #B7AFA3 #C1DAD6 #F5FAFA #ACD1E9 #6D929B*/
@@ -27,7 +27,12 @@
 
 	h1, h2, h3, h4 {
 
-		font-family: 'Walter Turncoat', sans-serif;
+		font-family: 'Palanquin Dark', sans-serif;
+	}
+
+	img {
+		width: 350px;
+		height: 200px;
 	}
 
 	.footer-bottom {
