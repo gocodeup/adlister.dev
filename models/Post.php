@@ -28,13 +28,12 @@ class Post extends Model {
         $query = 'SELECT * FROM ' . self::$table . ' LIMIT ' . $limit;
         $statement = self::$dbc->prepare($query);
         $statement->execute();
-        $rows = $statement->fetch(PDO::FETCH_ASSOC);
+        $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        $instance = null;
-        if ($rows) {
+        return array_map(function($row) {
             $instance = new static;
-            $instance->attributes = $rows;
-        }
-        return $instance;
+            $instance->attributes = $row;
+            return $instance;
+        }, $rows);
     }
 }
