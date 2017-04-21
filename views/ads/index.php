@@ -29,8 +29,6 @@ require_once __DIR__ . "/../../controllers/PageController.php";
                 <div class="col-xs-6 col-sm-4">
                    <p><a href="/ads/show?id=<?=$ad->id?>"><img src="<?= $ad->image ?>"><p>
                    <p><a href="/ads/show?id=<?=$ad->id?>"><?= $ad->title?><p>
-                   <p><?= $ad->price ?><p>
-                   <p><?= $ad->description ?><p>
                 </div>
         <?php endforeach; ?>
         
