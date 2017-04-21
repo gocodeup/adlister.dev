@@ -243,6 +243,9 @@ h3
 {
 	height: 30px;
 	width: 300px;
+		font-family: 'Muli', sans-serif;
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-align: center;
 	margin-top: 4px;
 	margin-left: 15px;
 	float: left;
@@ -252,7 +255,10 @@ h3
 .postCategory
 {
 	height: 30px;
-	width: 300px;
+		font-family: 'Muli', sans-serif;
+	font-family: 'Open Sans Condensed', sans-serif;
+	width: 100px;
+	text-align: center;
 	margin-top: 4px;
 	margin-left: 15px;
 	float: left;
@@ -263,6 +269,9 @@ h3
 {
 	height: 30px;
 	width: 40px;
+		font-family: 'Muli', sans-serif;
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-align: center;
 	margin-top: 4px;
 	margin-left: 15px;
 	float: left;

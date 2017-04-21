@@ -95,16 +95,15 @@ var_dump(Post::allRows(1)->category);
         
         <div class="recentlyAddedCategories">
             <div id="postContainer">
-            <?php foreach ($posts as $post): ?>
-                    
+            
                 <!-- <div class="postThumbnail">IMG</div> -->
-                <div class="postTitle"><?php echo $post['product_name']; ?></div>
-                <div class="postCategory"><?php echo $post['category']; ?></div>
-                <div class="postPrice"><?php echo $post['price']; ?></div>
-                <div class="postDescription"><?php echo $post['description']; ?></div>
+                <div class="postTitle"><?php echo Post::allRows(1)->product_name; ?></div>
+                <div class="postCategory"><?php echo Post::allRows(1)->category; ?></div>
+                <div class="postPrice"><?php echo Post::allRows(1)->price; ?></div>
+                <div class="postDescription"><?php echo Post::allRows(1)->description; ?></div>
                 <!-- <div class="usersRating">Sellers Rating</div> -->
                 
-            <?php endforeach ?>
+     
 
             </div>
         </div>
