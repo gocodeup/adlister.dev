@@ -13,7 +13,7 @@
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
+			<ul class="nav navbar-nav" id="navbar">
 				<li><a href="/index">Home</a></li>
 				<li><a href="/items">Items</a></li>
 				<?php if (Auth::check()):?>
@@ -25,11 +25,11 @@
 					<li><a href="/login">Login</a></li>
 				<?php endif;?>
 			</ul>
-			<form class="navbar-form navbar-right" method="get" action="/search">
+			<form class="navbar-form navbar-right" id="search" method="get" action="/search">
 				<div class="form-group">
 					<input type="text" name="search" class="form-control" placeholder="Search">
+					<button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
 				</div>
-				<button type="submit" class="btn btn-default">Submit</button>
 			</form>
 		</div><!-- /.navbar-collapse -->
 	</div><!-- /.container-fluid -->
