@@ -3,7 +3,7 @@
 $_ENV = include '../../env.php';
 require_once '../db_connect.php';
 
-// $dbc->exec('DROP TABLE IF EXISTS users');
+$dbc->exec('DROP TABLE IF EXISTS users');
 
 $query = "
 CREATE TABLE IF NOT EXISTS users (
