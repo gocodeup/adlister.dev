@@ -14,7 +14,7 @@ class FileUploadException extends Exception { }
  * @return string the path to the uploaded file, relative to the
  *                public directory
  */
-function saveUploadedImage($inputName) {
+	function saveUploadedImage($inputName) {
     $maxUploadSize = 1024000000;
     $validFileExtensions = ['jpg', 'jpeg', 'png', 'gif'];
     $uploadsDirectory = 'img/uploads';
@@ -26,7 +26,7 @@ function saveUploadedImage($inputName) {
 
     $uploadedFile = $_FILES[$inputName];
 
-    if (! isset($uploadedFile['size']) || $uploadedFile['size'] <= 0) {
+    if (! isset($uploadedFile['size'])) {
         throw new FileUploadException("input: '$inputName' is not a file or is empty!");
     }
 
@@ -54,7 +54,7 @@ function saveUploadedImage($inputName) {
     $newName = substr($tempName, $positionOfLastSlash);
 
     // move image to uploads directory
-    $imagePath = $uploadsDirectory . '/' . $newName . '.' . $fileExtension;
+    $imagePath = $uploadsDirectory . $newName . '.' . $fileExtension;
     move_uploaded_file($tempName, __DIR__ .'/../public/' . $imagePath);
 
     // return the path to the image relative to our public folder

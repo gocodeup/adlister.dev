@@ -1,0 +1,106 @@
+/*************** MOBILE STYLES ****************/
+
+.navbar-default .navbar-nav>li>a {
+	text-align: center;
+}
+
+#navbar>li {
+	border-bottom: 1px solid #e7e7e7;
+}
+
+#navbar>li:nth-child(1) {
+	border-top: 1px solid #e7e7e7;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	border: none;
+}
+
+#search .form-control {
+	float: left;
+	width: 86%;
+}
+
+#homeItemPanel {
+	text-decoration: none;
+	color: black;
+}
+
+#homeItemImage, #showItemImage, #itemsImages {
+	width: 100%; 
+	height: 17em;
+}
+
+#homeViewAll {
+	margin: auto;
+	margin-bottom: 20%;
+	display: block;
+	width: 50%;
+}
+
+#itemsPage {
+	margin-bottom: 20%;
+}
+
+#items {
+	text-decoration: none; 
+	color: black;
+}
+
+#showUserInfo {
+	margin-bottom: 20%;
+}
+
+#showAuthButtons {
+	margin: 5%;
+}
+
+footer {
+	background-color: white;
+}
+
+
+
+/*************** TABLET STYLES ****************/
+@media (min-width: 768px) {
+
+	#navbar>li {
+		border: none;
+	}
+
+	#homeTitle { 
+		font-size: 5em; 
+	}
+
+	#homeItemImage, #showItemImage, #itemsImages {
+		height: 12em;
+	}
+
+	#homeViewAll {
+		width: 25%;
+	}
+
+	#search .form-control {
+		width: 50%;
+	}
+
+}
+
+
+
+/*************** DESKTOP STYLES ****************/
+@media (min-width:940px) { 
+
+	#search .form-control {
+		width: 80%;
+	}
+
+	#homeItemImage, #showItemImage, #itemsImages {
+		height: 20em;
+	}
+
+	#homeViewAll {
+		width: 10%;
+	}
+
+}
