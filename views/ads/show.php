@@ -72,7 +72,7 @@
 							</div>
 						</div>
 						<div class="modal-footer">
-							<a href="/delete" type="submit" class="btn btn-default btn-success">Confirm Delete</a>
+							<button type="submit" class="btn btn-default btn-success">Confirm Delete</button>
 							<button type="submit" data-dismiss="modal" class="btn btn-default btn-danger">Cancel</button>
 						</div>
 					</form>
@@ -98,33 +98,33 @@
 						<div class="row control-group">
 							<div class="form-group col-xs-12 floating-label-form-group controls">
 								<label>Title: </label>
-								<input value="<?=$showItem->title?>" type="text" class="form-control" placeholder="Title" required data-validation-required-message="Please enter the ad title.">
+								<input value="<?=$showItem->title?>" name="title" type="text" class="form-control" placeholder="Title" required data-validation-required-message="Please enter the ad title.">
 								<p class="help-block text-danger"></p>
 							</div>
 						</div>
 						<div class="row control-group">
 							<div class="form-group col-xs-12 floating-label-form-group controls">
 								<label>Location: </label>
-								<input value="<?=$showItem->location?>" type="text" class="form-control" placeholder="Location" required data-validation-required-message="Please enter the ad location.">
+								<input value="<?=$showItem->location?>" name="location" type="text" class="form-control" placeholder="Location" required data-validation-required-message="Please enter the ad location.">
 								<p class="help-block text-danger"></p>
 							</div>
 						</div>
 						<div class="row control-group">
 							<div class="form-group col-xs-12 floating-label-form-group controls">
 								<label>Price ($US Dollars): </label>
-								<input value="<?=$showItem->price?>" type="text" class="form-control" placeholder="ex: 1111.11" required data-validation-required-message="Please enter the ad's price.">
+								<input value="<?=$showItem->price?>" name="price" type="text" class="form-control" placeholder="ex: 1111.11" required data-validation-required-message="Please enter the ad's price.">
 								<p class="help-block text-danger"></p>
 							</div>
 						</div>
 						<div class="row control-group">
 							<div class="form-group col-xs-12 floating-label-form-group controls">
 								<label>Description: </label>
-								<textarea rows="4" class="form-control" placeholder="Description" required data-validation-required-message="Please enter a description of the ad."><?=$showItem->description?></textarea>
+								<textarea rows="4" class="form-control" name="description" placeholder="Description" required data-validation-required-message="Please enter a description of the ad."><?=$showItem->description?></textarea>
 								<p class="help-block text-danger"></p>
 							</div>
 						</div>
 						<div class="modal-footer">
-							<a href="/delete" type="submit" class="btn btn-default btn-success">Update Ad</a>
+							<button type="submit" class="btn btn-default btn-success">Update Ad</button>
 							<button type="submit" data-dismiss="modal" class="btn btn-default btn-danger">Cancel</button>
 						</div>
 					</form>

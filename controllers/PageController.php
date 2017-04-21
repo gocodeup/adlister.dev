@@ -43,6 +43,8 @@ function pageController()
 			$mainView = '../views/users/signup.php';
 			break;
 		case "/account": 
+			$user = User::find(Auth::id());
+			$data['adListings'] = Ads::userPosts($user->id);
 			$mainView = '../views/users/account.php';
 			break;
 		case "/search": 
@@ -58,6 +60,18 @@ function pageController()
 			$mainView = '../views/ads/create.php';
 			break;
 		case "/show": 
+			$a = Ads::find(Input::get('id'));
+			var_dump($a->id);
+			if(!empty($_POST)) {
+				$existingPost = Ads::find(Input::get('id')); 
+				$existingPost->title = Input::get('title');
+				$existingPost->location = Input::get('location');
+				$existingPost->price = Input::get('price');
+				$existingPost->description = Input::get('description');
+					header("location: /items");
+				$existingPost->save();
+				die();
+			}
 			$ad = Ads::find(Input::get('id')); 
 			$data['showItem'] = $ad;
 			$data['user'] = user::find($ad->user_id);
@@ -70,7 +84,7 @@ function pageController()
 				$existingUser->email = Input::get('email');
 				$existingUser->username = Input::get('username');
 				$existingUser->password = Input::get('password');
-					header("location: /account");
+					header("location: /show");
 				$existingUser->save();
 			}
 			$mainView = '../views/users/edit.php';

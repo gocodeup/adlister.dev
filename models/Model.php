@@ -265,4 +265,30 @@ abstract class Model {
             }
     }
 
+    public static function userPosts($id)
+    {
+        // Get connection to the database
+        self::dbConnect();
+
+        //Create select statement using prepared statements
+        $query = 'SELECT * FROM ' . static::$table . ' WHERE user_id = :id';
+
+        $stmt = self::$dbc->prepare($query);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        //Store the resultset in a variable named $result
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $instance = null;
+        // if we have a result, create a new instance
+        if ($result) {
+            $instance = new static;
+            $instance->attributes = $result;
+        }
+
+        // return either the found instance or null
+        return $instance;
+    }
+
 }
