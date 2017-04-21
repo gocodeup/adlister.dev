@@ -14,6 +14,7 @@
 
     <?php require $mainView; ?>
 
+    <!-- Added by Cameron to include all necessary JS files // Do not remove -->
     <?php require_once '../public/js/js_files.php'; ?>
 
     <?php foreach ($requiredJS as $file): ?>

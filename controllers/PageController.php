@@ -162,7 +162,7 @@ function pageController()
             $username = Input::get('username');
             $password = Input::get('password');
             
-            if (!empty($_POST) and Auth::attempt($username, $password)) {
+            if (isset($_POST['login']) and !empty($_POST) and Auth::attempt($username, $password)) {
                 header('Location: /');
                 die;
             }

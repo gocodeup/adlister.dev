@@ -33,7 +33,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
-                            <button type="submit" class="btn btn-primary">Log In</button>
+                            <button type="submit" name="login" class="btn btn-primary">Log In</button>
                         </div>
                         <div class="col-sm-6 text-right">
                             <a href="/signup/" class="btn btn-success">Sign Up</a>
