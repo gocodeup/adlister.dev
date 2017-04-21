@@ -238,7 +238,7 @@ abstract class Model {
         return $models;
     }
 
-    public static function paginate($pageNo, $resultsPerPage = 9) {
+    public static function paginate($pageNo, $resultsPerPage = 6) {
         self::dbConnect();
         // TODO: call dbConnect to ensure we have a database connection
         // TODO: calculate the limit and offset needed based on the passed
