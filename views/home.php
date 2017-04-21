@@ -3,7 +3,7 @@
 	<section id="welcome">
 		<div class="row">
 			<div class="col-xs-12">
-				<h1 id="homeTitle" class="text-center">Welcome To Adlister</h1>
+				<h1 id="homeTitle" class="text-center">Welcome To SnapList</h1>
 			</div>
 		</div>
 	</section>
