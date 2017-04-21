@@ -1,16 +1,16 @@
 <!--Page for user account home-->
 <div class="text-center" id="userInfo">
-	<h2 style="font-size: 3em">User Info</h2>
-	<p style="font-size: 1.5em"><strong>Full Name:</strong> <?= Auth::user()->name ?></p>
-	<p style="font-size: 1.5em"><strong>Username:</strong> <?= Auth::user()->username ?></p>
-	<p style="font-size: 1.5em"><strong>Email:</strong> <?= Auth::user()->email ?></p>
+	<h2>User Info</h2>
+		<p><strong>Full Name:</strong> <?= Auth::user()->name ?></p>
+		<p><strong>Username:</strong> <?= Auth::user()->username ?></p>
+		<p><strong>Email:</strong> <?= Auth::user()->email ?></p>
 	<br>
 	<a href="/update" class="btn btn-primary">Update Account</a>
 	<a href="/create" class="btn btn-primary">Create New Ad</a>
 </div>
 
-<div class="text-center">
-	<h2>Your Ads</h2>
+<div>
+	<h2 class="text-center">Your Ads</h2>
 	<div class="container">
 		<div class="row" id="itemsPage">
 			<?php foreach($adListings as $ad) : ?>
