@@ -1,0 +1,152 @@
+html {
+  min-height: 100%;
+  position: relative; }
+
+body {
+  background: #efefef;
+  margin: 0 0 50px; }
+
+img {
+  width: 100%;
+  height: auto; }
+
+.container {
+  margin-top: 20px; }
+
+.cover {
+  background: url(../img/cover.jpg) center center;
+  width: 100%;
+  height: 400px; }
+
+.grayBox {
+  background: #d8d8d8;
+  width: 100%;
+  height: 50px;
+  background: #c6c6c6;
+  text-align: center;
+  line-height: 50px;
+  color: #636363;
+  margin-bottom: 20px; }
+
+.whiteBox {
+  background: white;
+  width: 100%;
+  padding: 30px;
+  border-radius: 5px;
+  margin: 20px; }
+
+.adAbout {
+  text-align: center; }
+
+.adPrice {
+  color: green;
+  font-family: "ralewayRegular"; }
+
+.adDesc {
+  font-family: "ralewayRegular"; }
+
+.adBrand {
+  font-family: "ralewayBold"; }
+
+.adName {
+  font-family: "ralewayThin"; }
+
+.adAbout {
+  font-family: "ralewayThin";
+  font-size: 15px; }
+
+.card {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px; }
+
+.sideBar {
+  background: white;
+  width: 300px;
+  border: 1px solid transparent;
+  border-radius: 8px; }
+  .sideBar p {
+    margin-left: 10px;
+    margin-bottom: 5px; }
+  .sideBar a:link {
+    color: #4c4c4c; }
+  .sideBar a:visited {
+    color: #4c4c4c; }
+  .sideBar a:hover {
+    color: black;
+    text-decoration: none; }
+
+.line {
+  width: 280px;
+  background: #b2b2b2;
+  height: 1px;
+  margin-left: 10px;
+  margin-bottom: 10px; }
+
+.searchbar {
+  width: 35em !important;
+  margin-right: 0 !important;
+  border-radius: 5px 0px 0px 5px;
+  border-right: 0 transparent; }
+
+.logoGreen {
+  color: #08ff00 !important;
+  font-family: mermaid; }
+
+.topMargin {
+  margin-top: 20px; }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: #C6C6C6;
+  text-align: center;
+  line-height: 15px; }
+
+.centerText {
+  text-align: center; }
+
+#jobsText {
+  position: absolute;
+  margin: 390px auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50px;
+  width: 630px; }
+
+#jobsText h1 {
+  font-size: 50px;
+  color: #D7F171;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: black; }
+
+#searchButton {
+  border-radius: 0px 5px 5px 0px; }
+
+#profileButton {
+  border-radius: 0px 5px 5px 0px; }
+
+#shopButton {
+  border-radius: 5px 0px 0px 5px; }
+
+@font-face {
+  font-family: "mermaid";
+  src: url(../fonts/Mermaid.ttf); }
+@font-face {
+  font-family: "ralewayRegular";
+  src: url(../fonts/Raleway-Regular.ttf); }
+@font-face {
+  font-family: "ralewayBold";
+  src: url(../fonts/Raleway-Bold.ttf); }
+@font-face {
+  font-family: "ralewayBlack";
+  src: url(../fonts/Raleway-Black.ttf); }
+@font-face {
+  font-family: "ralewayThin";
+  src: url(../fonts/Raleway-Thin.ttf); }
+
+/*# sourceMappingURL=main.css.map */
