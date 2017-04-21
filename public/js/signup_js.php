@@ -14,8 +14,7 @@
                 $username
                 .css('background-color', '#F2BB6E')
                 .get(0)
-                    .setCustomValidity(' ');
-                .end();
+                .setCustomValidity(' ');
             }
         });
 
@@ -24,8 +23,7 @@
                 $password
                     .css('background-color', '#F2BB6E')
                     .get(0)
-                        .setCustomValidity(' ')
-                    .end();
+                    .setCustomValidity(' ');
             }
         }).off('input')
             // overriding the default input event set in common_js.php
@@ -34,8 +32,7 @@
                 .val('')
                 .css('background-color', '')
                 .get(0)
-                    .setCustomValidity('')
-                .end();
+                .setCustomValidity('');
 
             // if it's already invalid because the password's too short, don't mess with it
             if ($password.is(':invalid') && $password.val() && $password.val().length < $password.attr('data-min-length')) {
@@ -48,8 +45,7 @@
             $password
                 .css('background-color', '')
                 .get(0)
-                    .setCustomValidity('')
-                .end();
+                .setCustomValidity('');
         });
 
         $passwordConfirm.change(function() {
@@ -65,8 +61,7 @@
                 $passwordConfirm
                     .css('background-color', '#F2BB6E')
                     .get(0)
-                        .setCustomValidity(' ')
-                    .end();
+                    .setCustomValidity(' ');
             }
         }).keypress(function(e) {
             // no need for the user to input anything if password is empty/invalid, so why let them?
@@ -89,8 +84,7 @@
             // reset validity
             $passwordConfirm
                 .get(0)
-                    .setCustomValidity('')
-                .end();
+                .setCustomValidity('');
 
             // this is here in case someone copies and pastes, as the previous event won't fire in that situation
             if (!$password.val() || $password.is(':invalid')) {

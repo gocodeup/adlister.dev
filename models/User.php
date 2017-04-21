@@ -88,7 +88,7 @@ SQL;
         }
 
         if (!isset($_SESSION['ERROR_MESSAGES']['username']) and strlen($this->attributes['username']) < static::$minUser) {
-            $_SESSION['ERROR_MESSAGES']['username'] = "username must be at least $minUser characters";
+            $_SESSION['ERROR_MESSAGES']['username'] = "username must be at least {static::$minUser} characters";
         }
 
         if (!isset($_SESSION['ERROR_MESSAGES']['username']) and is_numeric($this->attributes['username'])) {
@@ -100,10 +100,10 @@ SQL;
         }
 
         if (!isset($_SESSION['ERROR_MESSAGES']['password']) and strlen($this->attributes['password']) < static::$minPass) {
-            $_SESSION['ERROR_MESSAGES']['password'] = "password must be at least $minPass characters";
+            $_SESSION['ERROR_MESSAGES']['password'] = "password must be at least {static::$minPass} characters";
         }
 
-        if (!isset($_SESSION['ERROR_MESSAGES']['password']) and $this->attributes['password'] !== Input::get('password-confirm')) {
+        if (!isset($_SESSION['ERROR_MESSAGES']['password']) and !password_verify($this->attributes['passwordConfirm'], $this->attributes['password'])) {
             $_SESSION['ERROR_MESSAGES']['password-confirm'] = 'password did not match confirmation';
         }
 

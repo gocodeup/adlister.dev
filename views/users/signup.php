@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+var_dump(Input::get('password') === Input::get('password-confirm'));
 
 function showErrorMsg($key)
 {
@@ -36,15 +38,15 @@ HTML;
 
                     <?php echo showErrorMsg('name'); ?>
                     <div class="form-group">
-                        <input type="text" class="form-control input-required" id="name" value="" name="name" placeholder="Full Name" required>
+                        <input type="text" class="form-control input-required" id="name" value="<?php echo $name ?>" name="name" placeholder="Full Name" required>
                     </div>
                     <?php echo showErrorMsg('email'); ?>
                     <div class="form-group">
-                        <input type="text" class="form-control input-required" id="email" value="" name="email" placeholder="Email" required>
+                        <input type="text" class="form-control input-required" id="email" value="<?php echo $email ?>" name="email" placeholder="Email" required>
                     </div>
                     <?php echo showErrorMsg('username'); ?>
                     <div class="form-group">
-                        <input type="text" data-min-length="<?php echo User::getMinimum('username'); ?>" class="form-control input-required" id="username" value="" name="username" placeholder="Username" required>
+                        <input type="text" data-min-length="<?php echo User::getMinimum('username'); ?>" class="form-control input-required" id="username" value="<?php echo $username ?>" name="username" placeholder="Username" required>
                     </div>
                     <?php echo showErrorMsg('password'); ?>
                     <div class="form-group">

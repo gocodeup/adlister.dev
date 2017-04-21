@@ -131,21 +131,34 @@ function pageController()
             break;
         case '/signup/':
             $data['title'] .= 'Sign Up';
+            $data['name'] = '';
+            $data['username'] = '';
+            $data['email'] = '';
+
             if (isset($_SESSION['LOGGED_IN_ID'])) {
                 header('Location: /');
                 die;
             }
 
-            $newUser = new User();
-            $newUser->name = Input::get('name');
-            $newUser->email = Input::get('email');
-            $newUser->username = Input::get('username');
-            $newUser->password = Input::get('password');
+            if (!empty($_POST)) {
+                $newUser = new User();
+                $newUser->name = Input::get('name');
+                $newUser->email = Input::get('email');
+                $newUser->username = Input::get('username');
+                $newUser->password = Input::get('password');
+                $newUser->passwordConfirm = Input::get('password-confirm');
 
-            if ($newUser->save()) {
-                unset($_SESSION['ERROR_MESSAGES']);
-                header('Location: /login/');    // TODO: change this to a page displaying a simple message that the account was created successfully
-                die;
+                if ($newUser->save()) {
+                    unset($_SESSION['ERROR_MESSAGES']);
+                    header('Location: /login/');    // TODO: change this to a page displaying a simple message that the account was created successfully
+                    $_SESSION['SUCCESS_MESSAGE'] = 'Account successfully created.';
+                    die;
+                } else {
+                    $data['name'] = $newUser->name;
+                    $data['email'] = $newUser->email;
+                    $data['username'] = $newUser->username;
+                    unset($newUser);
+                }
             }
 
             $mainView = '../views/users/signup.php';
