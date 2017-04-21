@@ -141,8 +141,10 @@ function pageController()
             $mainView = '../views/ads/index.php';
             break;
 
-        case '/ads?id={n}':
+        case '/ads/show':
             $mainView = '../views/ads/show.php';
+            $id = Input::get('id');
+            $data['ad'] = Ad::find($id);
             break;
 
         case '/ads/create':
