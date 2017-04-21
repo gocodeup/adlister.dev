@@ -3,6 +3,8 @@
 $_ENV = include '../../env.php';
 require_once '../db_connect.php';
 
+$dbc->exec('DROP TABLE IF EXISTS users');
+
 $query = "CREATE TABLE `posts` (
   `id` SMALLINT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `user_id` INT(10) UNSIGNED NOT NULL,
