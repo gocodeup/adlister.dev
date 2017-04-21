@@ -27,8 +27,11 @@ if(!empty($_POST)) {
 	} catch (Exception $e) {
 		$errors[] = $e->getMessage();
 	}
-
-	$ad->image = saveUploadedImage('image');
+	try {
+		$ad->image = saveUploadedImage('image');
+	} catch (Exception $e) {
+		$ad->image = '/images/default.jpeg';
+	}
 
 	if(empty($errors)) {
 		$ad->save();

@@ -15,13 +15,14 @@ class Ad extends Model
         $stmt = self::$dbc->prepare($query);
         $stmt->execute();
 
-        //Store the resultset in a variable named $result
+        //Store the result set in a variable named $result
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $models = [];
 
         foreach($results as $result) {
             $ad = new Ad();
+            $ad->id =$result['id'];
             $ad->title = $result['title'];
             $ad->price = $result['price'];
             $ad->description = $result['description'];

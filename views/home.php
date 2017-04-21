@@ -28,7 +28,7 @@
                 <div class="col-xs-6 col-sm-4">
                     
                     <div>
-                        <p><a href="/ads/show?id="><img src="/<?= $ad->image ?>"><p>
+                        <p><a href="/ads/show?id=<?=$ad->id?>"><img src="<?= $ad->image ?>"><p>
                         <p><a href="/ads/show?id=<?=$ad->id?>"><?= $ad->title?><p>
                     </div>
 
@@ -39,7 +39,6 @@
     </section>
 
 </div>
-
 <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
