@@ -12,12 +12,13 @@
 			</div>
 		<?php endforeach; ?>
 
-		<form method="GET">	
+		<form method="GET" id="pageButtons">	
 			<ul class="pagination">
-				<li><a <?php if ($page <= 1): ?>style="color: grey;"<?php endif; ?> href="/items?page=<?=$page-1?>">Previous</a><li>
-				<li><a <?php if ($page >= $lastPage): ?>style="color: grey;"<?php endif; ?> href="/items?page=<?=$page+1?>">Next</a><li>
+				<li><a <?php if ($page <= 1): ?>style="color: grey;"<?php endif; ?> href="/items?page=<?=$page-1?>">Previous</a></li>
+				<li><a <?php if ($page >= $lastPage): ?>style="color: grey;"<?php endif; ?> href="/items?page=<?=$page+1?>">Next</a></li>
 			</ul>
 		</form>
+
 
 	</div>
 </div>
