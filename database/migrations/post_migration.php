@@ -1,5 +1,8 @@
 <?php
 
+$_ENV = include '../../env.php';
+require_once '../db_connect.php';
+
 $query = "CREATE TABLE `posts` (
   `id` SMALLINT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `user_id` INT(10) UNSIGNED NOT NULL,
