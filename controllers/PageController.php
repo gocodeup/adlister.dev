@@ -49,7 +49,6 @@ function pageController()
         case '/':
             $mainView = '../views/home.php';
             $data['title'] .= 'Home';
-            $data['requiredJS'][] = './js/responsiveCarousel.min.js';
             break;
         case '/ads/':
             if (isset($pageId)) {
@@ -162,7 +161,7 @@ function pageController()
             $username = Input::get('username');
             $password = Input::get('password');
             
-            if (!empty($_POST) and Auth::attempt($username, $password)) {
+            if (isset($_POST['login']) and !empty($_POST) and Auth::attempt($username, $password)) {
                 header('Location: /');
                 die;
             }
@@ -188,9 +187,7 @@ function pageController()
             }
 
             $mainView = '../views/users/signup.php';
-
             $data['requiredJS'][] = './js/signup_js.php';
-
             break;
         default:    // displays 404 if route not specified above
             $data['title'] .= 'Not Found';
