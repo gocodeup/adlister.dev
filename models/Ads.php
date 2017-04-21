@@ -109,6 +109,8 @@ class Ads extends Model {
     {
         self::dbConnect();
 
+        error_reporting(0);
+
         $query = 'SELECT * FROM ' . static::$table . ' where title like :keyword or description like :keyword ';
         $stmt = self::$dbc->prepare($query);
         $stmt->bindValue(':keyword', "%$a%", PDO::PARAM_STR);

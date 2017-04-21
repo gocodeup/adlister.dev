@@ -94,6 +94,11 @@ footer {
 	background-color: white;
 }
 
+#pageButtons {
+	margin-left: 43%;
+	display: inline-flex;
+}
+
 
 
 /*************** TABLET STYLES ****************/
