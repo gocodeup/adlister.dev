@@ -84,6 +84,22 @@ function pageController()
 
         case '/login' :
             $mainView = '../views/users/login.php';
+            $user = new User;
+
+            if(Input::has("email_user")) {
+                $attempt = $user::attempt(Input::get("email_user"), Input::get("password"));
+
+                if($attempt === true) {
+                    echo("YAY");
+                }else{
+                    echo("NOOO");
+                }
+            }
+
+
+            
+
+
             break;
 
         case '/signup' :

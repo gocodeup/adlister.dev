@@ -1,8 +1,6 @@
 <!--Page for an index of advertisements-->
-
 <div class='container-fluid topMargin'>
     <div class="row">
-    
         <?PHP foreach ($results as $result) : ?>
             <div class="card" style="width: 20rem;">
                 <a href="http://adlister.dev/show?id=<?= $result['id']?>&cat=<?=$result['category']?>"><img class="card-img-top" src="https://images-cdn.9gag.com/photo/aGwd2jn_700b.jpg" alt="Card image cap" style="width: 100%"></a>
