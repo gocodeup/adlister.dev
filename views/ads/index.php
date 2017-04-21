@@ -19,10 +19,10 @@ require_once __DIR__ . "/../../controllers/PageController.php";
         <?php foreach($adListings as $ad): ?>
             <tbody>
                 <tr>
-                    <td ><?= $ad->title ?></td>
+                    <td><a href="/ads/show?id=<?=$ad->id?>"><?= $ad->title?></td>
                     <td><?= $ad->price ?></td>
                     <td><?= $ad->description ?></td>
-                    <td><img src="/<?= $ad->image ?>"></td>
+                    <td><a href="/ads/show?id="><img src="/<?= $ad->image ?>"></td>
                 </tr>
             </tbody>
         <?php endforeach; ?>
