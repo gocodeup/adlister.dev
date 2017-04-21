@@ -26,6 +26,7 @@ class Ad extends Model
             $ad->price = $result['price'];
             $ad->description = $result['description'];
             $ad->user_id = $result['user_id'];
+            $ad->image = $result['image'];
             array_push($models, $ad);
   
         }

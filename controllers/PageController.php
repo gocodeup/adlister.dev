@@ -20,7 +20,7 @@ function pageController()
         
         case '/':
             $data['ads'] = Ad::all();
-            $data['favorites'] = Favorites::getFavorites(Auth::id());
+            // $data['favorites'] = Favorites::getFavorites(Auth::id());
             $mainView = '../views/home.php';
             break;
 
@@ -137,17 +137,17 @@ function pageController()
             $mainView = '../views/ads/index.php';
             break;
         
-        case '/ads/photovideo':
-            $mainView = '../views/ads/photovideo.php';
-            break;
+        // case '/ads/photovideo':
+        //     $mainView = '../views/ads/photovideo.php';
+        //     break;
 
-        case '/ads/movies':
-            $mainView = '../views/ads/movies.php';
-            break;
+        // case '/ads/movies':
+        //     $mainView = '../views/ads/movies.php';
+        //     break;
 
-        case '/ads/games':
-            $mainView = '../views/ads/games.php';
-            break;
+        // case '/ads/games':
+        //     $mainView = '../views/ads/games.php';
+        //     break;
 
         case '/ads?id={n}':
             $mainView = '../views/ads/show.php';
