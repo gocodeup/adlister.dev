@@ -17,10 +17,11 @@
         Shop
         </button>
         <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="/items">Software</a>
-            <a class="dropdown-item" href="/items">Hardware</a>
-            <a class="dropdown-item" href="/items">Rockets</a>
-            <a class="dropdown-item" href="/items">Other</a>
+            <a class="dropdown-item" href="/items">All</a>
+            <a class="dropdown-item" href="http://adlister.dev/items?cat=Software">Software</a>
+            <a class="dropdown-item" href="http://adlister.dev/items?cat=Hardware">Hardware</a>
+            <a class="dropdown-item" href="http://adlister.dev/items?cat=Rockets">Rockets</a>
+            <a class="dropdown-item" href="http://adlister.dev/items?cat=Other">Other</a>
         </div>
     </div>
     <!-- Profile Button -->

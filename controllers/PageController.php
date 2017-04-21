@@ -17,12 +17,15 @@ function pageController()
         case '/' :
             $mainView = '../views/home.php';
             break;
+
         case '/create' :
             $mainView = '../views/ads/create.php';
             break;
+
         case '/edit' :
             $mainView = '../views/ads/edit.php';
             break;
+
         case '/show' :
             $mainView = '../views/ads/show.php';
             //need to output: info on the topic, choose by id from database,
@@ -34,9 +37,17 @@ function pageController()
             //Grab specific Ad by ID
             $data["results"] = $ads::find($data['id']);
             break;
+
         case '/items' :
             $mainView = '../views/ads/index.php';
             $data['page'] = 1;
+            $data['cat'] = "";
+
+            if (Input::has("cat")){
+                $value = Input::get("cat");
+                $data['cat'] = " WHERE category = '$value'";
+
+            }
 
             if (Input::has("page")) {
                 $data['page'] = Input::get("page");
@@ -46,7 +57,7 @@ function pageController()
 
             $ads = new Ads();
             //Outputs Results 
-            $data['results'] = ($ads::paginate($data['page']));
+            $data['results'] = ($ads::paginate($data['page'], $data['cat']));
             //Total Count of avaliable records
             $data['totalResults'] = ($ads::count());
 
@@ -58,21 +69,24 @@ function pageController()
             if ($data['page'] >= $data['pages']) {
                 $data['page'] = $data['pages'];
             }
-
-
             break;
+
         case '/account' :
             $mainView = '../views/users/account.php';
             break;
+
         case '/edit-user' :
             $mainView = '../views/users/edit.php';
             break;
+
         case '/login' :
             $mainView = '../views/users/login.php';
             break;
+
         case '/signup' :
             $mainView = '../views/users/signup.php';
             break;
+
         default:    // displays 404 if route not specified above
             $mainView = '../views/404.php';
             break;
