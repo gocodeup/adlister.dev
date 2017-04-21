@@ -1,56 +1,61 @@
 <div class="container">
 
-    <section id="login">
+        <section id="login">
 
-        <div class="row">
+            <div class="row">
 
-            <h1 class="section-title">Signup For OooLister</h1>
+                <h1 class="section-title"><center>Signup For OooLister</center></h1>
 
-            <div class="col-md-6 col-md-offset-3">
+                <div class="col-md-6 col-md-offset-3">
 
-                <p>Please fill out the information below so we can create your account.</p>
-                <?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
-                    <div class="alert alert-danger">
-                        <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
-                    </div>
-                    <?php unset($_SESSION['ERROR_MESSAGE']); ?>
-                <?php endif; ?>
-                <?php if (isset($_SESSION['SUCCESS_MESSAGE'])) : ?>
-                    <div class="alert alert-success">
-                        <p class="success"><?= $_SESSION['SUCCESS_MESSAGE']; ?></p>
-                    </div>
-                    <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
-                <?php endif; ?>
+                <p style="text-align: center;">Please fill out the information below so we can create your account.</p>
 
                 <form method="POST" action="" data-validation data-required-message="This field is required">
 
+                    <?php
+                    if(isset($_POST['submit']) && !empty($_SESSION['signup_errors']['name'])) {
+                        echo '<div class="alert alert-danger"><p class="error">' . $_SESSION['signup_errors']['name'] . '</p></div>';
+                    }
+                    ?>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" data-required>
+                        <input type="text" class="form-control" id="name" value="" name="name" placeholder="Full Name" data-required>
                     </div>
+                    <?php
+                    if(isset($_POST['submit']) && !empty($_SESSION['signup_errors']['email'])) {
+                        echo '<div class="alert alert-danger"><p class="error">' . $_SESSION['signup_errors']['email'] . '</p></div>';
+                    }
+                    ?>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" data-required>
+                        <input type="text" class="form-control" id="name" value="" name="email" placeholder="Email" data-required>
                     </div>
+                    <?php
+                    if(isset($_POST['submit']) && !empty($_SESSION['signup_errors']['username'])) {
+                        echo '<div class="alert alert-danger"><p class="error">' . $_SESSION['signup_errors']['username'] . '</p></div>';
+                    }
+                    ?>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" data-required>
+                        <input type="text" class="form-control" id="username" value="" name="username" placeholder="Username" data-required>
                     </div>
+                    <?php
+                    if(isset($_POST['submit']) && !empty($_SESSION['signup_errors']['password'])) {
+                        echo '<div class="alert alert-danger"><p class="error">' . $_SESSION['signup_errors']['password'] . '</p></div>';
+                    }
+                    ?>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required>
+                        <input type="password" class="form-control" id="password" value="" name="password" placeholder="Password" data-required>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <button type="submit" class="btn btn-primary">Signup</button>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <button type="submit" name="submit" class="btn btn-primary">Signup</button>
+                            </div>
+                            <div class="col-sm-6 text-right">
+                                <a href="/login" class="btn btn-success">Go To Login</a>
+                            </div>
                         </div>
-                        <div class="col-sm-6 text-right">
-                            <a href="/login" class="btn btn-success">Go To Login</a>
-                        </div>
-                    </div>
-
-                </form>
-
+                    </form>
+                </div>
             </div>
-
-        </div>
-
-    </section>
-
-</div>
+        </section>
+    </div>
+</body>
+</html>
