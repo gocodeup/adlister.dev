@@ -4,7 +4,7 @@
 
         <div class="row">
 
-            <h1 class="section-title">Signup For SnapList</h1>
+            <h1 class="section-title text-center">Signup For SnapList</h1>
 
             <div class="col-md-6 col-md-offset-3">
 
