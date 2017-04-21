@@ -1,6 +1,5 @@
 <?php
 
-require_once 'Log.php';
 require_once '../models/User.php';
 
 class Auth
