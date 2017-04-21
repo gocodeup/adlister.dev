@@ -1,0 +1,27 @@
+USE adlister_db;
+TRUNCATE ads;
+INSERT INTO ads (name, category, brand, price, description, photodir, user_id)
+VALUES  ("iPhone 8", "Hardware", "Apple", 699.99,"A smartphone manufactured by Apple", "", "1"),
+    ("Galaxy S8", "Hardware", "Samsung", 599.99,"A smartphone manufactured by Samsung", "", "1"),
+    ("Google Pixel", "Hardware", "Google", 499.99,"A smartphone manufactured by Google", "", "1"),
+    ("Microsoft Office", "Software", "Microsoft", 159.99, "A software solution for writing word documents", "", "1"),
+    ("Docker Enterprise", "Software", "Docker", 99.99, "A service for compartmentalizing software you build", "", "1"),
+    ("Stripe Payments", "Software", "Stripe", 19.99, "A service for web developers to easily integrate online payments", "", "1"),
+    ("Falcon 9", "Rockets", "SpaceX", 60000000.00,"A rocket to carry humans to the planet Mars", "", "1"),
+    ("Atlas V", "Rockets", "ULA", 40000000.00,"A rocket to carry supplies to the ISS", "", "1"),
+    ("SLS", "Rockets", "Boeing", 12000000.00,"A rocket to transport humans and supplies throughout the solar system", "", "1"),
+    ("Pied Piper Compression", "Software","Pied Piper", 199.99,"A fast software compression service by the best business in the valley", "", "1"),
+    ("Nucleus", "Software", "Hooli", 174.99,"A crappy Pied Piper clone", "", "1"),
+    ("Yo", "Software", "Or Arbel", 0.99, "An app to send people the word Yo", "", "1"),
+    ("EndFrame", "Software", "EndFrame Corporation", 135.00, "Pied Pipers tech, stolen and rebraned", "", "1"),
+    ("AVIATO", "Software", "Aviato Aggregation", 29.99, "An airline booking aggregator", "", "1"),
+    ("Flutterbeam", "Software", "Photo Sharing", 0.99, "A photo sharing platform", "", "1"),
+    ("GoolyBib", "Software", "Gooly", 119.99, "Integrated multi platform functionality", "", "1"),
+    ("Raviga", "Investment", "Venture Capital", 49.99, "Series A and seed function venture capital", "", "1"),
+    ("Founders Fund", "Investment", "Venture Capital", 49.99, "A fund that invests primarily in science and technology companies", "", "1"),
+    ("Seqouia Capital", "Investment", "Venture Capital", 49.99, "A firm mainly focusing on the technology industry.", "", "1"),
+    ("Accel Partners", "Investment", "Venture Capital", 49.99, "Accel partners with unique breakthrough ideas", "", "1"),
+    ("Altos Ventures", "Investment", "Venture Capital", 49.99, "Invests in founder led bootstrapped companies", "", "1"),
+    ("Draper Fisher Jurvetson", "Investment", "Venture Capital", 49.99, "Invests in early round tech startups with large potential", "", "1"),
+    ("Andreessen Horowitz", "Investment", "Venture Capital", 49.99, "A Silicon Valley-based venture capital firm with $2.7 billion under management. They invest from seed to growth.", "", "1"),
+    ("Floodgate", "Investment", "Venture Capital", 49.99, "A venture capital fund that specializes in marketing and product management", "", "1");

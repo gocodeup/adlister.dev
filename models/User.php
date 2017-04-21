@@ -42,4 +42,50 @@ class User extends Model {
 
         return $instance;
     }
+
+
+
+    public static function attempt($username, $password) {
+        $userInfo = self::findByUsernameOrEmail($username);
+        if ($userInfo !== null) {
+            if (($username === $userInfo->username || $username === $userInfo->email) && (password_verify($password, $userInfo->password))) { 
+                $log = new Log();
+                $log->info("User $username logged in.");
+                $_SESSION['LOGGED_IN_USER'] = "guest";
+            return true;
+            }else{
+                $log = new Log();
+                $log->error("User $username failed to log in!");
+                return false;
+            }
+        }else{
+            return false;
+        }
+
+        
+    }
+    public static function check() {
+        if(isset($_SESSION['LOGGED_IN_USER'])) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    // public static function user() {
+    //     if(Auth::check() === true) {
+    //         return $_SESSION['LOGGED_IN_USER']; 
+    //     }else {
+    //         return null;
+    //     } 
+    // }
+
+    public static function logout() {
+        session_unset();
+        session_regenerate_id();
+        session_destroy();
+        session_start();
+    }
+
+
 }
