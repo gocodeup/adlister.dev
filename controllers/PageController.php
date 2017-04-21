@@ -31,8 +31,8 @@ function pageController()
             }
 
             $ads = new Ads();
+            //Grab specific Ad by ID
             $data["results"] = $ads::find($data['id']);
-            var_dump($data["results"]);
             break;
         case '/items' :
             $mainView = '../views/ads/index.php';
