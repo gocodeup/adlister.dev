@@ -17,11 +17,11 @@
             <div class="adDetails whiteBox">
                 <h1 class="adName"><?=$results->name?></h1>
                 <h2 class="adBrand"><?=$results->brand?></h2>
-                <h3 class="adDesc"><?=$results->description?></h3>
+                <p class="adDesc"><?=$results->description?></p>
                 <h2 class="adPrice">$<?=$results->price?></h2>
                 <button type="button" class="btn btn-success btn-lg btn-block">Contact Seller</button>
             </div>
-            <div class="adAbout">About the seller</div>
+            <div class="adAbout">ABOUT THE SELLER</div>
             <div class="adUser whiteBox">
                 <h1>Test User</h1>
             </div>
