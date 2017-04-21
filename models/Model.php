@@ -1,6 +1,6 @@
 <?php
 
-$_ENV = include __DIR__ . '/../.env.php';
+$_ENV = require_once '../env.php';
 
 /**
  * Note that this class is abstract and must be extended. The child
@@ -64,7 +64,7 @@ abstract class Model {
      */
     protected static function dbConnect()
     {
-        if (! self::$dbc) {
+        if (!self::$dbc) {
             //Connect to database
             require __DIR__ . '/../database/db_connect.php';
 
@@ -80,7 +80,7 @@ abstract class Model {
      */
     public function save()
     {
-        if (! empty($this->attributes) && isset($this->attributes['id'])) {
+        if (!empty($this->attributes) && isset($this->attributes['id'])) {
             $this->update();
         } else {
             $this->insert();
@@ -167,9 +167,8 @@ abstract class Model {
         $stmt = self::$dbc->prepare($query);
 
         foreach ($this->attributes as $key => $value) {
-            $stmt->bindValue(':' . $key, $value, PDO::PARAM_STR);
+            $connection->bindValue(':' . $key, $value, PDO::PARAM_STR);
         }
-
         $stmt->execute();
     }
 
@@ -188,7 +187,11 @@ abstract class Model {
         self::dbConnect();
 
         //Create select statement using prepared statements
-        $query = 'SELECT * FROM ' . static::$table . ' WHERE id = :id';
+        $query = <<<SQL
+        SELECT *
+        FROM {static::$table}
+        WHERE id = :id
+SQL;
 
         $stmt = self::$dbc->prepare($query);
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
