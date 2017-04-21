@@ -1,14 +1,16 @@
+<link rel="stylesheet" href="/../css/items_styles.css">
+
 <div class="container">
 
     <section id="login">
 
+        <h1 class="section-title">Signup For Pie Piper</h1>
         <div class="row">
 
-            <h1 class="section-title">Signup For OooLister</h1>
 
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-sm-6 offset-sm-0 col-md-6 offset-md-3">
 
-                <p>Please fill out the information below so we can create your account.</p>
+                <p id="form-description">Please fill out the information below so we can create your account.</p>
                 <?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
                     <div class="alert alert-danger">
                         <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
