@@ -35,3 +35,45 @@ $user->email = 'marceline@vampirequeen.com';
 $user->username = "marceline_abadeer";
 $user->password = $_ENV['USER_PASS'];
 $user->save();
+
+$user = new User;
+$user->name = 'Bill';
+$user->email = 'bill@codeup.com';
+$user->username = "billy_the_kid";
+$user->password = $_ENV['USER_PASS'];
+$user->save();
+
+$user = new User;
+$user->name = 'Bob';
+$user->email = 'bob@codeup.com';
+$user->username = "Bobbyyyy";
+$user->password = $_ENV['USER_PASS'];
+$user->save();
+
+$user = new User;
+$user->name = 'Joe';
+$user->email = 'joe@codeup.com';
+$user->username = "Joe_E";
+$user->password = $_ENV['USER_PASS'];
+$user->save();
+
+$user = new User;
+$user->name = 'Mark';
+$user->email = 'mark@codeup.com';
+$user->username = "Mountain_DEW";
+$user->password = $_ENV['USER_PASS'];
+$user->save();
+
+$user = new User;
+$user->name = 'Johnny';
+$user->email = 'johnny@codeup.com';
+$user->username = "Johnny_Boy";
+$user->password = $_ENV['USER_PASS'];
+$user->save();
+
+$user = new User;
+$user->name = 'Red';
+$user->email = 'red@codeup.com';
+$user->username = "Big_Red";
+$user->password = $_ENV['USER_PASS'];
+$user->save();
