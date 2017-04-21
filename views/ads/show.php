@@ -3,7 +3,7 @@
     <div class="row">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/items">All</a></li>
-            <li class="breadcrumb-item"><a href="#"><?=$results->category?></a></li>
+            <li class="breadcrumb-item"><a href="http://adlister.dev/items?cat=<?=$results->category?>"><?=$results->category?></a></li>
             <li class="breadcrumb-item active"><?=$results->name?></li>
         </ol>
     </div>
