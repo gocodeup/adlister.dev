@@ -5,11 +5,27 @@
 require_once __DIR__ . "/../../controllers/PageController.php";
 
  ?>
+<div class="container">
 
-<div class="container-fluid">
+    <section id="welcome">
 
-<h1>All Ads</h1>
-    <div class="row">
+        <div class="row">
+
+            <div class="col-xs-12">
+
+                <h1 class="text-center">All Ads</h1>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="all_ads">
+
+        <div class="container-fluid">
+
+     <div class="row">
         <?php foreach($adListings as $ad): ?>
                 <div class="col-xs-6 col-sm-4">
                    <p><a href="/ads/show?id="><img src="/<?= $ad->image ?>"><p>
@@ -27,4 +43,6 @@ require_once __DIR__ . "/../../controllers/PageController.php";
         <?php if($page < $lastPage): ?> 
             <a class="pull-right" href="?page=<?= $page + 1 ?>"><span class="glyphicon glyphicon-chevron-right">Next</span></a>
         <?php endif; ?>
+</div>
+</section>
 </div>

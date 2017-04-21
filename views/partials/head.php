@@ -35,6 +35,10 @@
 		height: 200px;
 	}
 
+	#all_ads {
+		position: relative;
+	}
+
 	.footer-bottom {
 		position: fixed;
 		background-color: #ACD1E9;

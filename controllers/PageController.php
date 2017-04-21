@@ -131,7 +131,7 @@ function pageController()
             break;
 
         case '/ads':
-            $limit = 9;
+            $limit = 6;
             $page = Input::get('page', 1);
             $lastPage = getLastPage($limit);
             handleOutOfRangeRequests($page, $lastPage);
