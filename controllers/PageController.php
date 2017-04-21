@@ -61,6 +61,9 @@ function pageController()
             if(isset($_POST['submit_ad'])) {
                 $post = new Post();
                 $post->user_id = Auth::id();
+                $post->date_added = date('Y-m-d H:i:s');
+                $post->image_filename = "n/a";
+
                 $errors = [];
                 try {
                     $post->category = Input::getString('category');
