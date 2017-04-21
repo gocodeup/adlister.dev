@@ -17,7 +17,7 @@
 						<div class="col-sm-4">
 							<a href="/show?id=<?= $ad->id ?>" id="homeItemPanel" >
 								<div class="panel panel-primary">
-									<div class="panel-heading"><?= $ad->title ?><div class="pull-right"><?= "$" . $ad->price ?></div></div>
+									<div class="panel-heading" id="itemsPanelColor"><?= $ad->title ?><div class="pull-right"><?= "$" . $ad->price ?></div></div>
 									<div class="panel-body"><img src=<?= "$ad->image" ?> class="img-responsive" id="homeItemImage" alt="Image"></div>
 									<div class="panel-footer"><?= substr($ad->description, 0, 25) . "..." ?></div>
 								</div>
@@ -29,6 +29,6 @@
 		</div>
 	</section>
 
-	<a href="/items" id="homeViewAll" class="btn btn-primary">View All Items</a>
+	<a href="/items" id="homeViewAll" class="btn btn-primary" id="itemsPanelColor">View All Items</a>
 	
 </div>
