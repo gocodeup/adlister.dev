@@ -23,10 +23,24 @@ function pageController()
 			$mainView = '../views/home.php';
 			break;
 		case "/items":
-			$data['adListings'] = Ads::all();
-			foreach($data['adListings'] as $ad) {
-				// var_dump($ad->image);
+			function handleOutOfRangeRequests($page, $lastPage) {
+				// protect from looking at negative pages, too high pages, and non-numeric pages
+				if($page < 1 || !is_numeric($page)) {
+					header("location: items?page=1");
+					die;
+				} else if($page > $lastPage) {
+					header("location: items?page=$lastPage");
+					die;
+				}
 			}
+			$data['adListings'] = Ads::all();
+			$limit = 6;
+			$page = Input::get('page', 1);
+			$lastPage = Ads::getLastPage($limit);
+			handleOutOfRangeRequests($page, $lastPage);
+			$data['adListings'] = Ads::returnResults($limit);
+			$data['page'] = $page;
+			$data['lastPage'] = $lastPage;
 			$mainView = '../views/ads/items.php';
 			break;
 		case "/login":
