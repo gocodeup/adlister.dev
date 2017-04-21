@@ -5,5 +5,5 @@
 <meta content="width=device-width, initial-scale=1" name="viewport">
 
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-<link href="css/font-awesome.min.css" rel="stylesheet">
-<link href="" rel="stylesheet" type="text/css">
+<link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet" type="text/css">
