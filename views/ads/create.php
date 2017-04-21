@@ -53,19 +53,19 @@ if(!empty($_POST)) {
  			<form method="post" enctype="multipart/form-data">
  				<div class="form-group">
  					<label class="formBoxTitle" for="titleInput">Title</label>
- 					<input class="form-control" id="title" name="title" placeholder="Title" type="text">
+ 					<input class="form-control" id="title" name="title" placeholder="Title" type="text" required>
  				</div>
 
 
  				<div class="form-group">
  					<label class="formBoxTitle" for="locationInput">Location</label>
- 					<input class="form-control" id="location" name="location" placeholder="Location" type="text">
+ 					<input class="form-control" id="location" name="location" placeholder="Location" type="text" required>
  				</div>
 
 
  				<div class="form-group">
  					<label class="formBoxTitle" for="priceInput">Price</label>
- 					<input class="form-control" id="price" name="price" placeholder="1.99" type="text">
+ 					<input class="form-control" id="price" name="price" placeholder="1.99" type="text" required>
  				</div>
 
 
@@ -88,8 +88,8 @@ if(!empty($_POST)) {
  								<div>
  									<span class="btn-primary btn-file"><span class="fileupload-new"></span>
 									<button class="btn btn-primary pull-right" style="margin-bottom: 50px;" type="submit"><i class="icon-user icon-white"></i> Submit</button>
- 									<input type="hidden" name="MAX_FILE_SIZE" value="1024000000" />
- 									<input type="file" name="image" id="image" />
+ 									<input type="hidden" name="MAX_FILE_SIZE" value="1024000000" required/>
+ 									<input type="file" name="image" id="image" required/>
  									</span>
 
  							   </div>
