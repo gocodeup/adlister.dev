@@ -19,7 +19,7 @@ function pageController()
     switch ($request) {
         
         case '/':
-            $data['ads'] = Ad::all();
+            $data['ads'] = Ad::newest();
             // $data['favorites'] = Favorites::getFavorites(Auth::id());
             $mainView = '../views/home.php';
             break;
@@ -112,42 +112,11 @@ function pageController()
                 exit;
             }
             break;
-        
-        case '/account/favorites':
-            $favorite = Auth::id();
-            
-            $mainView = '../views/users/favorites.php';
-            if(!Auth::check()) {
-                header('Location: /login');
-                exit;
-            }
-            break;
-        case '/account/addtofavorites':
-            $ad = input::get('ad_id');
-            $user = Auth::id();
-            $favorites = new Favorites;
-            $favorites->ad_id = $ad;
-            $favorites->account_id = $user;
-            $favorites->save();
-            exit;
-            break;
 
         case '/ads':
-            $data['adListings'] = Ad::all();
+            $data['adListings'] = Ad::paginate(1);
             $mainView = '../views/ads/index.php';
             break;
-        
-        // case '/ads/photovideo':
-        //     $mainView = '../views/ads/photovideo.php';
-        //     break;
-
-        // case '/ads/movies':
-        //     $mainView = '../views/ads/movies.php';
-        //     break;
-
-        // case '/ads/games':
-        //     $mainView = '../views/ads/games.php';
-        //     break;
 
         case '/ads?id={n}':
             $mainView = '../views/ads/show.php';

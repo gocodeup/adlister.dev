@@ -6,11 +6,11 @@ class Ad extends Model
 {
 	protected static $table = 'ads';
     
-    public static function all()
+    public static function newest()
     {
         self::dbConnect();
 
-        $query = 'SELECT * FROM ' . static::$table;
+        $query = 'SELECT * FROM ' . static::$table . ' ORDER BY id DESC LIMIT 3';
 
         $stmt = self::$dbc->prepare($query);
         $stmt->execute();
