@@ -59,12 +59,16 @@ function pageController()
             break;
         case '/ads/create/':
             if(isset($_POST['submit_ad'])) {
+                $errors = [];
                 $post = new Post();
                 $post->user_id = Auth::id();
                 $post->date_added = date('Y-m-d H:i:s');
-                $post->image_filename = "n/a";
 
-                $errors = [];
+                try {
+                    $post->image_filename = "n/a";
+                } catch (Exception $e) {
+                    $errors['image_filename'] = $e->getMessage();
+                }
                 try {
                     $post->category = Input::getString('category');
                 } catch (Exception $e) {
@@ -220,7 +224,7 @@ function pageController()
                 $_SESSION['signup_errors'] = $errors;
                 if(empty($_SESSION['signup_errors']))
                 {
-                    $user->insert();
+                    $user->save();
                     echo "Inserted!";
                 }
             }
