@@ -30,8 +30,6 @@ if(!empty($_POST)) {
 
 	$ad->image = saveUploadedImage('image');
 
-	var_dump($ad);
-
 	if(empty($errors)) {
 		$ad->save();
 	}
