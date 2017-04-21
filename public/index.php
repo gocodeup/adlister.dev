@@ -16,9 +16,9 @@
 
     <?php require_once '../public/js/js_files.php'; ?>
 
-    <?php //foreach ($requiredJS as $file): ?>
-    	<?php //require_once $file; ?>
-    <?php //endforeach; ?>
+    <?php foreach ($requiredJS as $file): ?>
+    	<?php require_once $file; ?>
+    <?php endforeach; ?>
 
 </body>
 </html>

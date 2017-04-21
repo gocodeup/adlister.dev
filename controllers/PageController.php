@@ -188,9 +188,7 @@ function pageController()
             }
 
             $mainView = '../views/users/signup.php';
-
             $data['requiredJS'][] = './js/signup_js.php';
-
             break;
         default:    // displays 404 if route not specified above
             $data['title'] .= 'Not Found';
