@@ -33,6 +33,7 @@ class User extends Model {
      * @param string $usernameOrEmail
      * @return User|null returns null if no matching record is found
      */
+
     public static function findByUsernameOrEmail($usernameOrEmail)
     {
         self::dbConnect();

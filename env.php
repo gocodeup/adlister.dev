@@ -8,5 +8,5 @@ return [
     'DB_PASS' => 'password',
 
     // password for users in the seeder
-    'USER_PASS' => 'password',
+    'USER_PASS' => 'password'
 ];
