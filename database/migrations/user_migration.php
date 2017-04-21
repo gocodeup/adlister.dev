@@ -3,9 +3,9 @@
 $_ENV = include '../../env.php';
 require_once '../db_connect.php';
 
-$dbc->exec('DROP TABLE IF EXISTS users');
+// $dbc->exec('DROP TABLE IF EXISTS users');
 
-$query = <<<SQL
+$query = "
 CREATE TABLE IF NOT EXISTS users (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
     name VARCHAR(240) NOT NULL,
@@ -13,13 +13,11 @@ CREATE TABLE IF NOT EXISTS users (
     username VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
-);
-SQL;
+)";
 
-$dbc->exec('DROP TABLE IF EXISTS posts');
+// $dbc->exec('DROP TABLE IF EXISTS posts');
 
-$query2 = <<<SQL
-CREATE TABLE IF NOT EXISTS `posts` (
+$query2 = "CREATE TABLE IF NOT EXISTS `posts` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(10) unsigned NOT NULL,
   `product_name` varchar(70) NOT NULL,
@@ -31,8 +29,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
-SQL;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8";
 
 $dbc->exec($query);
 $dbc->exec($query2);

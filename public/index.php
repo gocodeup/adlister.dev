@@ -14,7 +14,7 @@
 
     <?php require $mainView; ?>
 
-    <?php //require '../views/partials/common_js.php'; ?>
+    <?php include '../public/js/js_files.php'; ?>
 
     <?php //foreach ($requiredJS as $file): ?>
     	<?php //require_once $file; ?>
