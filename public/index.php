@@ -1,19 +1,25 @@
 <?php
-session_start();
+
+if(!isset($_SESSION)) {
+    session_start();
+}
+
+
 require_once __DIR__ . '/../bootstrap.php';
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>OooLister</title>
-    <?php require '../views/partials/head.php'; ?>
+    <title>Pie Piper</title>
+    <?php include_once __DIR__ . '/../views/partials/head.php'; ?>
 </head>
 <body>
-    <?php require '../views/partials/navbar.php'; ?>
+    <?php include_once __DIR__ . '/../views/partials/navbar.php'; ?>
 
-    <?php require $mainView; ?>
+    <?php include_once $mainView; ?>
+    <?php include_once __DIR__ . '/../views/partials/footer.php'; ?>
 
-    <?php require '../views/partials/common_js.php'; ?>
+    <?php include_once __DIR__  .'/../views/partials/common_js.php'; ?>
 </body>
 </html>
