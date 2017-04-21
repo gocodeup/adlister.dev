@@ -1,7 +1,7 @@
 <div class="container">
 	<section id="login">
 		<div class="row">
-			<h1 class="section-title">Login To SnapList</h1>
+			<h1 class="section-title text-center">Login To SnapList</h1>
 
 			<?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
 				<div class="alert alert-danger">
