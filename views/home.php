@@ -6,7 +6,9 @@ if($loggedIn) {
     echo "Hello guest!";
 }
 
-var_dump(Post::allRows(1)->category);
+// foreach(Post::allRows(2) as $key) {
+//     $key->product_name;
+// }
 
 ?>
     <div id="featuredItemsBox">
@@ -95,15 +97,13 @@ var_dump(Post::allRows(1)->category);
         
         <div class="recentlyAddedCategories">
             <div id="postContainer">
-            
-                <!-- <div class="postThumbnail">IMG</div> -->
-                <div class="postTitle"><?php echo Post::allRows(1)->product_name; ?></div>
-                <div class="postCategory"><?php echo Post::allRows(1)->category; ?></div>
-                <div class="postPrice"><?php echo Post::allRows(1)->price; ?></div>
-                <div class="postDescription"><?php echo Post::allRows(1)->description; ?></div>
-                <!-- <div class="usersRating">Sellers Rating</div> -->
                 
-     
+                <div class="postThumbnail">IMG</div>
+                <div class="postTitle">TITLE</div>
+                <div class="postCondition">Condition</div>
+                <div class="postDate">DATE</div>
+                <div class="postDescription">Description</div>
+                <div class="usersRating">Sellers Rating</div>
 
             </div>
         </div>
