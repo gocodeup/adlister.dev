@@ -28,10 +28,8 @@
                 <div class="col-xs-6 col-sm-4">
                     
                     <div>
-                        <p><img src= "/<?= $ad->image ?>"></p>
-                        <p><?= $ad->title ?></p>
-                        <p><?= $ad->price ?></p>
-                        <p><?= $ad->description ?></p>
+                        <p><a href="/ads/show?id="><img src="/<?= $ad->image ?>"><p>
+                        <p><a href="/ads/show?id=<?=$ad->id?>"><?= $ad->title?><p>
                     </div>
 
                 </div>
