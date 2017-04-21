@@ -20,4 +20,21 @@ class Post extends Model {
         }
         return $instance;
     }
+
+    public static function allRows($limit)
+    {
+        self::dbConnect();
+
+        $query = 'SELECT * FROM ' . self::$table . ' LIMIT ' . $limit;
+        $statement = self::$dbc->prepare($query);
+        $statement->execute();
+        $rows = $statement->fetch(PDO::FETCH_ASSOC);
+
+        $instance = null;
+        if ($rows) {
+            $instance = new static;
+            $instance->attributes = $rows;
+        }
+        return $instance;
+    }
 }

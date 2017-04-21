@@ -1,9 +1,3 @@
-<?php
-// $Name = (isset($value)) ? $value = $user->name : $value = "";
-// $Email = (isset($value)) ? $value = $user->email : $value = "";
-// $Username = (isset($value)) ? $value = $user->username : $value = "";
-// $Password = (isset($value)) ? $value = $user->password : $value = "";
-?>
 <div class="container">
 
         <section id="login">

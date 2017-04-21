@@ -5,6 +5,9 @@ if($loggedIn) {
 } else {
     echo "Hello guest!";
 }
+
+var_dump(Post::allRows(1)->category);
+
 ?>
     <div id="featuredItemsBox">
         <center><h2 class="section-title">Check Out Our Featured Items</h2></center>
