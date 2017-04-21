@@ -113,7 +113,7 @@ abstract class Model {
      * after the insert is performed the `id` attribute of the model
      * will be set to the newly generated id
      */
-    protected function inserted()
+    protected function insert()
     {
         $columns = '';
         $valuePlaceholders = '';
@@ -136,10 +136,6 @@ abstract class Model {
         }
         $statement->execute();
         $this->attributes['id'] = self::$dbc->lastInsertId();
-    }
-
-    public function insert() {
-        return $this->inserted();
     }
 
     /**
