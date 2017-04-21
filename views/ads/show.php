@@ -1,19 +1,18 @@
-
 <!--Page for single advertisement -->
 <div class="container">
 	<div class="row">
 		<div class="col-sm-4">
 			<div class="panel panel-primary">
 					<div class="panel-heading"><?= $showItem->title ?><div class="pull-right"><?= "$" . $showItem->price ?></div></div>
-					<div class="panel-body"><img src=<?= "$showItem->image" ?> class="img-responsive" style="width:100%; height:250px" alt="Image"></div>
+					<div class="panel-body"><img src=<?= "$showItem->image" ?> class="img-responsive" id="showItemImage" alt="Image"></div>
 					<div class="panel-footer"><?= $showItem->description ?></div>
 			</div>
 			<?php if (Auth::id() == $showItem->user_id): ?>
-				<a style="margin:5%" href="" class="btn btn-primary" data-toggle="modal" data-target="#editAd">Edit Ad</a>
-				<a style="margin:5%" class="btn btn-primary pull-right" href="" data-toggle="modal" data-target="#deleteAd">Delete Ad</a>
+				<a id="showAuthButtons" href="" class="btn btn-primary" data-toggle="modal" data-target="#editAd">Edit Ad</a>
+				<a id="showAuthButtons" class="btn btn-primary pull-right" href="" data-toggle="modal" data-target="#deleteAd">Delete Ad</a>
 			<?php endif; ?>
 		</div>
-		<div class="col-sm-4">
+		<div id="showUserInfo" class="col-sm-4">
 			<?php if (Auth::id() != $showItem->user_id): ?>
 				<h3><strong>Posted By <?= $user->name ?></strong></h3>
 
