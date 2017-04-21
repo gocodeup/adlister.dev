@@ -1,4 +1,16 @@
 /*************** MOBILE STYLES ****************/
+#logo {
+	height: 2.5em; 
+	width: 2.5em; 
+	float: left; 
+	margin-right: 1em; 
+	margin-top: 0.5em;
+}
+
+#snapListName {
+	font-family: 'Anton', sans-serif; 
+	font-size: 2em;
+}
 
 .navbar-default .navbar-nav>li>a {
 	text-align: center;
@@ -44,6 +56,18 @@
 
 #itemsPage {
 	margin-bottom: 20%;
+}
+
+#itemsPanelColor {
+	background-color: #3139A8;
+}
+
+.btn-primary {
+	background-color: #3139A8;
+}
+
+.panel-primary {
+	border-color: #3139A8;
 }
 
 #items {

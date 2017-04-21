@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-sm-4">
 			<div class="panel panel-primary">
-					<div class="panel-heading"><?= $showItem->title ?><div class="pull-right"><?= "$" . $showItem->price ?></div></div>
+					<div class="panel-heading" id="itemsPanelColor"><?= $showItem->title ?><div class="pull-right"><?= "$" . $showItem->price ?></div></div>
 					<div class="panel-body"><img src=<?= "$showItem->image" ?> class="img-responsive" id="showItemImage" alt="Image"></div>
 					<div class="panel-footer"><?= $showItem->description ?></div>
 			</div>

@@ -8,7 +8,8 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/index">SnapList</a>
+			<img src="img/uploads/SL.ico" id="logo">
+			<a class="navbar-brand" href="/index" id="snapListName">SnapList</a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
