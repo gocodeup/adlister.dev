@@ -1,28 +1,27 @@
 <?php
 
-require_once 'Log.php';
-require_once '../models/User.php';
+require_once __DIR__ . '/../models/User.php';
 
 class Auth
 {
     /**
-     * attempt to log in a user
-     *
-     * if the username and password combination are valid, set the
-     * appropriate keys in the session
-     *
-     * @param string $username
-     * @param string $password
-     * @return boolean whether or not the attempt was successful
-     */
+    * attempt to log in a user
+    *
+    * if the username and password combination are valid, set the
+    * appropriate keys in the session
+    *
+    * @param string $username
+    * @param string $password
+    * @return boolean whether or not the attempt was successful
+    */
+
     public static function attempt($username, $password)
     {
         // makes sure the values passed in are not empty
-        if(($username == '' || $username == null) || ($password == '' || $password == null)) {
+        if (($username == '' || $username == null) || ($password == '' || $password == null)) {
             $_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
             return false;
         }
-
         // gets instance of user model by searching with username or email($username)
         $user = User::findByUsernameOrEmail($username);
 
@@ -46,20 +45,20 @@ class Auth
     }
 
     /**
-     * check if a user is logged in
-     *
-     * @return boolean whether or not a user is logged in
-     */
+    * check if a user is logged in
+    *
+    * @return boolean whether or not a user is logged in
+    */
     public static function check()
     {
         return (isset($_SESSION['IS_LOGGED_IN']) && $_SESSION['IS_LOGGED_IN'] != '');
     }
 
     /**
-     * get the id of the logged in user
-     *
-     * @return int
-     */
+    * get the id of the logged in user
+    *
+    * @return int
+    */
     public static function id()
     {
         if (Auth::check()) {
@@ -69,10 +68,10 @@ class Auth
     }
 
     /**
-     * get the logged in user object
-     *
-     * @return User
-     */
+    * get the logged in user object
+    *
+    * @return User
+    */
     public static function user()
     {
         if (self::check()) {
@@ -82,10 +81,10 @@ class Auth
     }
 
     /**
-     * clear out and regenerate the session
-     *
-     * @return boolean true
-     */
+    * clear out and regenerate the session
+    *
+    * @return boolean true
+    */
     public static function logout()
     {
         // clear $_SESSION array
