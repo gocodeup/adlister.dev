@@ -46,7 +46,7 @@
 					<h4 class="modal-title">Deleting Ad</h4>
 				</div>
 				<div class="modal-body">
-					<form  method="POST">
+					<form  method="POST" action="/delete">
 						<div class="row control-group">
 							<div class="form-group col-xs-12 floating-label-form-group controls">
 								<label>Title: </label>
@@ -72,6 +72,7 @@
 							</div>
 						</div>
 						<div class="modal-footer">
+							<input type=hidden name="id" value= "<?=$showItem->id?>">
 							<button type="submit" class="btn btn-default btn-success">Confirm Delete</button>
 							<button type="submit" data-dismiss="modal" class="btn btn-default btn-danger">Cancel</button>
 						</div>
