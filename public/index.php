@@ -8,6 +8,8 @@ require_once __DIR__ . '/../bootstrap.php';
 <head>
     <title>SnapList</title>
     <?php require '../views/partials/head.php'; ?>
+    <link rel="shortcut icon" href="/img/uploads/sl.ico" type="image/x-icon">
+    <link rel="icon" href="/img/uploads/sl.ico" type="image/x-icon">
 </head>
 <body>
     <?php require '../views/partials/navbar.php'; ?>
