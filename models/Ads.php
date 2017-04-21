@@ -126,4 +126,28 @@ class Ads extends Model {
         }, $results);
     }
 
+    public static function userPosts($id)
+    {
+        // Get connection to the database
+        self::dbConnect();
+
+        //Create select statement using prepared statements
+        $query = 'SELECT * FROM ' . static::$table . ' WHERE user_id = :id';
+
+        $stmt = self::$dbc->prepare($query);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+
+        $stmt->execute();
+
+        //Store the resultset in a variable named $result
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // turn each associative array into an instance of the model subclass
+        return array_map(function($result) {
+            $instance = new static;
+            $instance->attributes = $result;
+            return $instance;
+        }, $results);
+    }
+
 }
