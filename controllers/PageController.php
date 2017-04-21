@@ -61,6 +61,9 @@ function pageController()
             if(isset($_POST['submit_ad'])) {
                 $post = new Post();
                 $post->user_id = Auth::id();
+                $post->date_added = date('Y-m-d H:i:s');
+                $post->image_filename = "n/a";
+
                 $errors = [];
                 try {
                     $post->category = Input::getString('category');
@@ -160,16 +163,16 @@ function pageController()
             $mainView = '../views/users/login.php';
             $username = Input::get('username');
             $password = Input::get('password');
-            
+
             if (isset($_POST['login']) and !empty($_POST) and Auth::attempt($username, $password)) {
                 header('Location: /');
                 die;
             }
-
             break;
         case '/logout/':
             $data['title'] .= 'Log Out';
             $mainView = '../views/users/logout.php';
+            header("Location: /login/");
             break;
         case '/signup/':
             $data['title'] .= 'Sign Up';
