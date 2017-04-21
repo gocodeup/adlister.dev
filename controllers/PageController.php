@@ -167,6 +167,10 @@ function pageController()
             }
 
             break;
+        case '/logout/':
+            $data['title'] .= 'Log Out';
+            $mainView = '../views/users/logout.php';
+            break;
         case '/signup/':
             $data['title'] .= 'Sign Up';
             if (isset($_SESSION['LOGGED_IN_ID'])) {
@@ -174,20 +178,52 @@ function pageController()
                 die;
             }
 
-            $newUser = new User();
-            $newUser->name = Input::get('name');
-            $newUser->email = Input::get('email');
-            $newUser->username = Input::get('username');
-            $newUser->password = Input::get('password');
-
-            if ($newUser->save()) {
-                unset($_SESSION['ERROR_MESSAGES']);
-                header('Location: /login/');    // TODO: change this to a page displaying a simple message that the account was created successfully
-                die;
+            if(!empty($_POST)) {
+                $user = new User();
+                $errors = [];
+                try {
+                    $user->name = Input::getString('name');
+                } catch (Exception $e) {
+                    $errors['name'] = $e->getMessage();
+                }
+                try {
+                    $user->email = Input::getString('email');
+                    $emailFound = User::findByUsernameOrEmail($user->email);
+                    if($emailFound) {
+                        throw new Exception("That email is already in use.");
+                    }
+                } catch (Exception $e) {
+                    $errors['email'] = $e->getMessage();
+                }
+                try {
+                    $user->username = Input::getString('username');
+                    $usernameFound = User::findByUsernameOrEmail($user->username);
+                    if($usernameFound) {
+                        throw new Exception("That username is already in use.");
+                    }
+                } catch (Exception $e) {
+                    $errors['username'] = $e->getMessage();
+                }
+                try {
+                    $user->password = Input::getString('password');
+                } catch (Exception $e) {
+                    $errors['password'] = $e->getMessage();
+                }
+                foreach($_REQUEST as $key => $value) {
+                    if(($value === "" || $value == null) && $key != 'submit') {
+                        $errors[$key] = "Please fill in your " . str_replace('_', ' ', $key);
+                    }
+                }
+                $_SESSION['signup_errors'] = $errors;
+                if(empty($_SESSION['signup_errors']))
+                {
+                    $user->insert();
+                    echo "Inserted!";
+                }
             }
 
             $mainView = '../views/users/signup.php';
-            $data['requiredJS'][] = './js/signup_js.php';
+            // $data['requiredJS'][] = './js/signup_js.php';
             break;
         default:    // displays 404 if route not specified above
             $data['title'] .= 'Not Found';
