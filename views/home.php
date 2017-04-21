@@ -6,7 +6,9 @@ if($loggedIn) {
     echo "Hello guest!";
 }
 
-var_dump(Post::allRows(1)->category);
+// foreach(Post::allRows(2) as $key) {
+//     $key->product_name;
+// }
 
 ?>
     <div id="featuredItemsBox">
@@ -101,7 +103,6 @@ var_dump(Post::allRows(1)->category);
                 <div class="postDate">DATE</div>
                 <div class="postDescription">Description</div>
                 <div class="usersRating">Sellers Rating</div>
-
             </div>
         </div>
         
