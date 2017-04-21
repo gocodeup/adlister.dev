@@ -9,7 +9,7 @@ if(!empty($_POST)) {
 	$ad = new Ad();
 
 	try {
-		$ad->name = Input::getString('title');
+		$ad->title = Input::getString('title');
 	} catch (Exception $e) {
 		$errors[] = $e->getMessage();
 	}
@@ -20,7 +20,7 @@ if(!empty($_POST)) {
 		$errors[] = $e->getMessage();
 	}
 
-	$ad->user_is = AUTH::id();
+	$ad->user_id = AUTH::id();
 
 	try {
 		$ad->description = Input::getString('description');
@@ -34,8 +34,6 @@ if(!empty($_POST)) {
 	if(empty($errors)) {
 		$ad->save();
 	}
-var_dump($errors);
-var_dump($ad);
 }
 
 function validateInput() {
@@ -76,11 +74,11 @@ function validateInput() {
     	</div>
 	</fieldset>
 
- 	<div class="form-group col-lg-10 col-lg-offset-2">
+<!--  	<div class="form-group col-lg-10 col-lg-offset-2">
  		Select image to upload:
  		<input id="fileToUpload" name="fileToUpload" type="file">
  		<input name="submit" type="submit" value="Upload Image">
- 	</div>
+ 	</div> -->
  	<div class="form-group">
     	<div class="col-lg-10 col-lg-offset-2">
         	<button type="reset" class="btn btn-default">Cancel</button>

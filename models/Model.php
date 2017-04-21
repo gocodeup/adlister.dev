@@ -229,7 +229,7 @@ abstract class Model {
 
         $models = [];
         foreach($results as $result) {
-            $instance = new static;
+            $ads = new Ad();
             $instance->attributes = $result;
             $models[] = $instance;
         }
