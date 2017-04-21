@@ -27,6 +27,7 @@
     </div>
     <!-- Profile Button -->
     <!-- If statement needed here to determine if user is logged in, if not show only login -->
+    <?PHP if(isset($_SESSION['LOGGED_IN_USER'])) : ?>
     <div class="btn-group">
         <button id="profileButton" type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Profile
@@ -36,9 +37,11 @@
             <a class="dropdown-item" href="edit-user">Edit Profile</a>
             <a class="dropdown-item" href="/create">Create Ad</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Logout</a>
+            <a class="dropdown-item" href="/logout">Logout</a>
         </div>
     </div>
-
+    <?PHP else : ?>
+        <a href="/login" class="btn btn-outline-success" role="button" aria-disabled="true">Login</a>
+    <?PHP endif; ?>
     </div>
 </nav>
