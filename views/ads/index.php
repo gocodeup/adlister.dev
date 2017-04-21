@@ -12,6 +12,7 @@ require_once __DIR__ . "/../../controllers/PageController.php";
                 <th>Title</th>
                 <th>Price</th>
                 <th>Description</th>
+                <th>Image</th>
             </tr>
         </thead>
 
@@ -21,6 +22,7 @@ require_once __DIR__ . "/../../controllers/PageController.php";
                     <td ><?= $ad->title ?></td>
                     <td><?= $ad->price ?></td>
                     <td><?= $ad->description ?></td>
+                    <td><img src="/<?= $ad->image ?>"></td>
                 </tr>
             </tbody>
         <?php endforeach; ?>

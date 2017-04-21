@@ -11,6 +11,7 @@ $ads = 'CREATE TABLE IF NOT EXISTS ads (
     price INT(50) NOT NULL,
     description VARCHAR (1000) NOT NULL,
     user_id INT UNSIGNED NOT NULL,
+    image VARCHAR (255) NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(id)
 )';

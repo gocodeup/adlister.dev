@@ -20,7 +20,7 @@ if(!empty($_POST)) {
 		$errors[] = $e->getMessage();
 	}
 
-	$ad->user_id = AUTH::id();
+	$ad->user_id = Auth::id();
 
 	try {
 		$ad->description = Input::getString('description');
@@ -28,8 +28,9 @@ if(!empty($_POST)) {
 		$errors[] = $e->getMessage();
 	}
 
-	// $ad->image = saveUploadedImage('image');
-	// die;
+	$ad->image = saveUploadedImage('image');
+
+	var_dump($ad);
 
 	if(empty($errors)) {
 		$ad->save();
@@ -49,7 +50,7 @@ function validateInput() {
 
 <h1 class="text-center">Create an Ad</h1>
 
-<form class="form-horizontal" method="POST">
+<form class="form-horizontal" method="POST" action="/ads/create" enctype="multipart/form-data">
 	<fieldset>
 
     	<div class="form-group col-lg-10 col-lg-offset-2">
@@ -72,17 +73,19 @@ function validateInput() {
         	<textarea name="description"class="form-control" rows="4" id="description" style="resize: none;"></textarea>
       		</div>
     	</div>
-	</fieldset>
+		
+		<div class="form-group col-lg-10 col-lg-offset-2">
+		    <label for="image" class="col-lg-2 control-label">Select image to upload</label>
+		    <div class="col-lg-10">
+		    	<input type="file" name="image" id="image">
+		    </div>
+		</div>
 
-<!--  	<div class="form-group col-lg-10 col-lg-offset-2">
- 		Select image to upload:
- 		<input id="fileToUpload" name="fileToUpload" type="file">
- 		<input name="submit" type="submit" value="Upload Image">
- 	</div> -->
- 	<div class="form-group">
-    	<div class="col-lg-10 col-lg-offset-2">
-        	<button type="reset" class="btn btn-default">Cancel</button>
-        	<button type="submit" class="btn btn-primary">Create Ad</button>
-      	</div>
-    </div>
+	 	<div class="form-group">
+	    	<div class="col-lg-10 col-lg-offset-2">
+	        	<button type="reset" class="btn btn-default">Cancel</button>
+	        	<button type="submit" class="btn btn-primary">Create Ad</button>
+	      	</div>
+	    </div>
+	</fieldset>
 </form>
