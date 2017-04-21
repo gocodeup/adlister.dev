@@ -1,61 +1,67 @@
-<?php 
-
-function showErrorMsg($key)
-{
-    $errorMsg = '';
-
-    if (isset($_SESSION['ERROR_MESSAGES'][$key])) {
-        $errorMsg = <<<HTML
-        <div class="alert alert-danger">
-            <p class="error">
-                {$_SESSION['ERROR_MESSAGES'][$key]}
-            </p>
-        </div>
-HTML;
-        unset($_SESSION['ERROR_MESSAGES'][$key]);
-    }
-
-    return $errorMsg;
-}
-
+<?php
+// $Name = (isset($value)) ? $value = $user->name : $value = "";
+// $Email = (isset($value)) ? $value = $user->email : $value = "";
+// $Username = (isset($value)) ? $value = $user->username : $value = "";
+// $Password = (isset($value)) ? $value = $user->password : $value = "";
 ?>
-
 <div class="container">
-    <div class="row">
-        <h1 class="section-title text-center">Signup For OooLister</h1>
-        <div class="col-md-6 col-md-offset-3">
-            <p class="text-center">Please fill out the information below so we can create your account.</p>
-            <form method="POST" action="">
 
-                <?php echo showErrorMsg('name'); ?>
-                <div class="form-group">
-                    <input type="text" class="form-control input-required" id="name" value="" name="name" placeholder="Full Name" required>
-                </div>
-                <?php echo showErrorMsg('email'); ?>
-                <div class="form-group">
-                    <input type="text" class="form-control input-required" value="" name="email" placeholder="Email" required>
-                </div>
-                <?php echo showErrorMsg('username'); ?>
-                <div class="form-group">
-                    <input type="text" data-min-length="<?php echo User::getMinimum('username'); ?>" class="form-control input-required" id="username" value="" name="username" placeholder="Username" required>
-                </div>
-                <?php echo showErrorMsg('password'); ?>
-                <div class="form-group">
-                    <input type="password" data-min-length="<?php echo User::getMinimum('password'); ?>" class="form-control input-required" id="password" name="password" placeholder="Password" required>
-                </div>
-                <?php echo showErrorMsg('password-confirm'); ?>
-                <div class="form-group">
-                    <input type="password" class="form-control input-required" id="password-confirm" name="password-confirm" placeholder="Confirm Password" required>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <button type="submit" class="btn btn-primary">Sign Up</button>
+        <section id="login">
+
+            <div class="row">
+
+                <h1 class="section-title"><center>Signup For OooLister</center></h1>
+
+                <div class="col-md-6 col-md-offset-3">
+
+                <p style="text-align: center;">Please fill out the information below so we can create your account.</p>
+
+                <form method="POST" action="" data-validation data-required-message="This field is required">
+
+                    <?php
+                    if(isset($_POST['submit']) && !empty($_SESSION['signup_errors']['name'])) {
+                        echo '<div class="alert alert-danger"><p class="error">' . $_SESSION['signup_errors']['name'] . '</p></div>';
+                    }
+                    ?>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" value="" name="name" placeholder="Full Name" data-required>
                     </div>
-                    <div class="col-sm-6 text-right">
-                        <a href="/login/" class="btn btn-success">Log In</a>
+                    <?php
+                    if(isset($_POST['submit']) && !empty($_SESSION['signup_errors']['email'])) {
+                        echo '<div class="alert alert-danger"><p class="error">' . $_SESSION['signup_errors']['email'] . '</p></div>';
+                    }
+                    ?>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" value="" name="email" placeholder="Email" data-required>
                     </div>
+                    <?php
+                    if(isset($_POST['submit']) && !empty($_SESSION['signup_errors']['username'])) {
+                        echo '<div class="alert alert-danger"><p class="error">' . $_SESSION['signup_errors']['username'] . '</p></div>';
+                    }
+                    ?>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="username" value="" name="username" placeholder="Username" data-required>
+                    </div>
+                    <?php
+                    if(isset($_POST['submit']) && !empty($_SESSION['signup_errors']['password'])) {
+                        echo '<div class="alert alert-danger"><p class="error">' . $_SESSION['signup_errors']['password'] . '</p></div>';
+                    }
+                    ?>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password" value="" name="password" placeholder="Password" data-required>
+                    </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <button type="submit" name="submit" class="btn btn-primary">Signup</button>
+                            </div>
+                            <div class="col-sm-6 text-right">
+                                <a href="/login" class="btn btn-success">Go To Login</a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </form>
-        </div>
+            </div>
+        </section>
     </div>
-</div>
+</body>
+</html>
