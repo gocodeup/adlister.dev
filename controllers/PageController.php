@@ -61,7 +61,6 @@ function pageController()
 			break;
 		case "/show": 
 			$a = Ads::find(Input::get('id'));
-			var_dump($a->id);
 			if(!empty($_POST)) {
 				$existingPost = Ads::find(Input::get('id')); 
 				$existingPost->title = Input::get('title');
