@@ -99,6 +99,10 @@ footer {
 	display: inline-flex;
 }
 
+#userInfo {
+	margin-bottom: 5%;
+}
+
 
 
 /*************** TABLET STYLES ****************/
