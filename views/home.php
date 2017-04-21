@@ -92,24 +92,25 @@ if($loggedIn) {
         
         <div class="recentlyAddedCategories">
             <div id="postContainer">
-                <div class="postThumbnail">IMG</div>
-                <div class="postTitle">TITLE</div>
-                <div class="postCondition">Condition</div>
-                <div class="postDate">DATE</div>
-                <div class="postDescription">Description</div>
-                <div class="usersRating">Sellers Rating</div>
+            <?php foreach ($posts as $post): ?>
+                    
+                <!-- <div class="postThumbnail">IMG</div> -->
+                <div class="postTitle"><?php echo $post['product_name']; ?></div>
+                <div class="postCategory"><?php echo $post['category']; ?></div>
+                <div class="postPrice"><?php echo $post['price']; ?></div>
+                <div class="postDescription"><?php echo $post['description']; ?></div>
+                <!-- <div class="usersRating">Sellers Rating</div> -->
+                
+            <?php endforeach ?>
 
             </div>
         </div>
-        
-
-
     </div>
     
 
     <div class="adsContainer">
-        <div id="ads">Insert Add Here</div>
-        <div id="ads">Insert Add Here</div>
+        <div id="ads1"></div>
+        <div id="ads2"></div>
     </div>
     
 

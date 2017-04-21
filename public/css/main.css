@@ -249,7 +249,7 @@ h3
 	border: 1px solid black;
 }
 
-.postCondition
+.postCategory
 {
 	height: 30px;
 	width: 300px;
@@ -259,7 +259,7 @@ h3
 	border: 1px solid black;
 }
 
-.postDate
+.postPrice
 {
 	height: 30px;
 	width: 40px;
@@ -294,14 +294,30 @@ h3
 }
 
 
-#ads
+#ads1
 {
 	width: 232px;
 	height: 250px;
-	border: 1px solid black;
+	background-image: url('../img/ad1.gif');
+	background-size: 232px 250px;
+	background-repeat: no-repeat;
+	background-position: center center;	
 	margin-top: 24px;
 	margin-left: 33px;
-	background-color: #FFF;
+	
+}
+
+#ads2
+{
+	background-image: url('../img/burger.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;	
+	border: 1px solid black;
+	width: 232px;
+	height: 250px;
+	margin-top: 24px;
+	margin-left: 33px;
 }
 
 .recentlyAddedCategories
