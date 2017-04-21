@@ -94,16 +94,23 @@ function pageController()
                 }else{
                     echo("NOOO");
                 }
+                if($user::check()){
+                    header("Location: http://adlister.dev"); 
+                    die();
+                }
             }
-
-
-            
-
-
             break;
 
         case '/signup' :
             $mainView = '../views/users/signup.php';
+            break;
+
+        case '/logout' :
+            $user = new User;
+            $user::logout();
+            header("Location: http://adlister.dev/");
+
+
             break;
 
         default:    // displays 404 if route not specified above

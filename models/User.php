@@ -49,13 +49,13 @@ class User extends Model {
         $userInfo = self::findByUsernameOrEmail($username);
         if ($userInfo !== null) {
             if (($username === $userInfo->username || $username === $userInfo->email) && (password_verify($password, $userInfo->password))) { 
-                // $log = new Log();
-                // $log->info("User $username logged in.");
+                $log = new Log();
+                $log->info("User $username logged in.");
                 $_SESSION['LOGGED_IN_USER'] = "guest";
             return true;
             }else{
-                // $log = new Log();
-                // $log->error("User $username failed to log in!");
+                $log = new Log();
+                $log->error("User $username failed to log in!");
                 return false;
             }
         }else{
@@ -64,13 +64,13 @@ class User extends Model {
 
         
     }
-    // public static function check() {
-    //     if(isset($_SESSION['LOGGED_IN_USER'])) {
-    //         return true;
-    //     }else{
-    //         return false;
-    //     }
-    // }
+    public static function check() {
+        if(isset($_SESSION['LOGGED_IN_USER'])) {
+            return true;
+        }else{
+            return false;
+        }
+    }
     
     // public static function user() {
     //     if(Auth::check() === true) {
@@ -80,14 +80,12 @@ class User extends Model {
     //     } 
     // }
 
-    // public static function logout() {
-    //     $log = new Log();
-    //     $log->info("User $username logged out.");
-    //     session_unset();
-    //     session_regenerate_id();
-    //     session_destroy();
-    //     session_start();
-    // }
+    public static function logout() {
+        session_unset();
+        session_regenerate_id();
+        session_destroy();
+        session_start();
+    }
 
 
 }
