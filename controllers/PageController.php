@@ -49,7 +49,6 @@ function pageController()
         case '/':
             $mainView = '../views/home.php';
             $data['title'] .= 'Home';
-            $data['requiredJS'][] = './js/responsiveCarousel.min.js';
             break;
         case '/ads/':
             if (isset($pageId)) {
