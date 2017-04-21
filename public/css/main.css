@@ -103,6 +103,13 @@ footer {
 	margin-bottom: 5%;
 }
 
+#userInfo h2 {
+	font-size: 3em;
+}
+
+#userInfo p {
+	font-size: 1.5em;
+}
 
 
 /*************** TABLET STYLES ****************/
