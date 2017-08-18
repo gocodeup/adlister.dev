@@ -17,6 +17,30 @@ function pageController()
         case ('/'):
             $mainView = '../views/home.php';
             break;
+        case ('/create'):
+            $mainView = '../views/ads/create.php';
+            break;
+        case ('/edit_ads'):
+            $mainView = '../views/ads/edit.php';
+            break;
+        case ('/index'):
+            $mainView = '../views/ads/index.php';
+            break;
+        case ('/show'):
+            $mainView = '../views/show/edit.php';
+            break;
+        case ('/account'):
+            $mainView = '../views/users/account.php';
+            break;
+        case ('/edit_users'):
+            $mainView = '../views/users/edit.php';
+            break;
+        case ('/login'):
+            $mainView = '../views/users/login.php';
+            break;
+        case ('/signup'):
+            $mainView = '../views/users/signup.php';
+            break;
         default:    // displays 404 if route not specified above
             $mainView = '../views/404.php';
             break;
