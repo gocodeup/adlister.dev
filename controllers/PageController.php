@@ -7,15 +7,21 @@ function pageController()
     $allUsers = User::all();
     $allAds = Ad::all();
 
-    if(Input::get('name')!=="" && Input::get('password')!=="" && Input::get('email')!=="" && Input::get('username')!==""){
-        
-        $user = new User();
-        $user->name = Input::get('name');
-        $user->password = Input::get('password');
-        $user->email = Input::get('email');
-        $user->username = Input::get('username');
-        
-        $user->save();
+    if(Input::get('name')!="" && Input::get('password')!="" && Input::get('email')!="" && Input::get('username')!=""){
+
+        if((User::findByUsernameOrEmail(Input::get('username'))== null ) && (User::findByUsernameOrEmail(Input::get('email'))==null)){
+            $user = new User();
+            $user->name = Input::get('name');
+            $user->password = Input::get('password');
+            $user->email = Input::get('email');
+            $user->username = Input::get('username');
+            
+            $user->save();
+            // die();
+            header("Location:/Users/Login");
+        } else {
+            echo "fuck you russian!";
+        }
     }
 
 
