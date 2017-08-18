@@ -5,7 +5,7 @@ require_once '../db_connect.php';
 
 $connection->exec("TRUNCATE armor");
 
-$statement = "INSERT INTO armor (user_id, name, date_posted, sub_category, price, description, availability) VALUES (:user_id, :name, :date_posted, :sub_category, :price, description, :availability)";
+$statement = "INSERT INTO armor (user_id, name, sub_category) VALUES (:user_id, :name, :sub_category)";
 
 $preparedStatement = $connection->prepare($statement);
 

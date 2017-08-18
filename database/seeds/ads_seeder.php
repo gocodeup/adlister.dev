@@ -3,9 +3,9 @@
 $_ENV = include __DIR__ . '/../env.php';
 require_once '../db_connect.php';
 
-$connection->exec("TRUNCATE torture");
+$connection->exec("TRUNCATE ads");
 
-$statement = "INSERT INTO torture (user_id, name, date_posted, sub_category, price, description, availability) VALUES (:user_id, :name, :date_posted, :sub_category, :price, description, :availability)";
+$statement = "INSERT INTO ads (user_id, username, date_posted, product_name, category, sub_category, price, description, availability_status, pick_up_location, location_city, location_state, date_sold, contact_info, image) VALUES (:user_id, :username, :date_posted, :product_name, :category, :sub_category, :price, description, :availability_status, :pick_up_location, :location_city, :location_state, :date_sold, :contact_info, :image)";
 
 $preparedStatement = $connection->prepare($statement);
 
