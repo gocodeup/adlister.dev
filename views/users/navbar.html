@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Adlister Navbar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Josefin+Sans" rel="stylesheet">
+  <!-- font-family: 'Amatic SC', cursive;
+  font-family: 'Josefin Sans', sans-serif; -->
+
+  <!-- FONT AWESOME ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+
+
+    /*/////////////////////////////////////////////*/
+    /*CSS for Mobile Responsive Navigation Bar */
+    /*/////////////////////////////////////////////*/
+
+
+    /* 1. General Links */
+    img {
+      width: 100%;
+      display: block; /* To remove background color under images */
+    }
+
+    li {
+      list-style-type: none;
+    }
+
+    a,
+    a:link,
+    a:visited {
+      color: white;
+      display: block;
+      font-size: 1.25em;
+      font-weight: 500;
+      padding: 1em;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus,
+    a:active {
+      background: #ffd800;
+    }
+
+    /* Removes border around images in menu for IE10 */
+    a img {
+      border: 0;
+    }
+
+    /* 2. Desktop Nav Menu */
+    .desktop-menu {
+      background: #3E6617;
+      margin: 0;
+      padding: .50em 0;
+      position: absolute; /* Prevents parent ul from collapsing because of floated children li's. Alternative to overflow: auto/none; */
+      top: 0;
+      width: 100%;
+      z-index: 1; /* Allows desktop menu to show over slider */
+      font-family: 'Josefin Sans', sans-serif;
+    }
+
+    .desktop-link {
+      float: left;
+      margin-top: 1.75em;
+      text-align: center;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+
+      /* 2.1 Desktop Home Link */
+      #home {
+        border: 1px solid white;
+        float: left;
+        font-size: 1em;
+        margin: .5em 1em .5em 1em;
+        padding: .75em;
+      }
+
+      #home,
+      #home:link,
+      #home:visited,
+      #home:hover,
+      #home:focus,
+      #home:active {
+        color: white;
+        background: none;
+      }
+
+      .yonsei-logo {
+        margin: -.5em auto .5em auto;
+        width: 4em;
+      }
+
+      /* 2.2 Desktop Dropdown-menu */
+      a.caret,
+      #mobile-menu,
+      .dropdown-menu {
+        display: none; /* Removes mobile menu, caret links, and dropdown menu (when menu items are not hovered) on large screens */
+      }
+
+      .desktop-link:hover .dropdown-menu {
+        display: block; /* Shows dropdown menu when menu items are hovered */
+      }
+
+      .dropdown-menu {
+        background: white;
+        box-shadow: 2px 2px 10px white;
+        font-size: .7em;
+        padding: 0;
+        position: absolute;
+        text-align: left;
+        width: 20em;
+        font-family: 'Josefin Sans', sans-serif;
+      }
+
+      .dropdown-menu a,
+      .dropdown-menu a:link,
+      .dropdown-menu a:visited {
+        border-top: 1px solid #ffd800;
+        color: #ffd800;
+        font-size: 1.5em;
+        font-weight: 600;
+      }
+
+      .dropdown-menu a:hover,
+      .dropdown-menu a:focus,
+      .dropdown-menu a:active {
+        color: white;
+      }
+
+      /*//////////////////////////////
+      /MOBILE RESPONSIVENESS SECTION/
+      //////////////////////////////*/
+
+      @media screen and (max-width: 1024px) {
+        body {
+          padding-top: 5.9em; /*  is not covered by menu bar */
+        }
+
+        .desktop-menu {
+          padding: 0; /* Stops mobile nav from jumping up when mobile icon is clicked */
+        }
+
+        .desktop-link {
+          text-align: left;
+        }
+
+        #mobile-menu {
+          background: #3E6617;
+          display: block; /* Shows mobile-menu on small screen menu */
+          position: absolute;
+          width: 100%;
+        }
+
+        #mobile-icon-container {
+          background: none;
+          float: right;
+          width: .35em;
+        }
+
+          /* 3.1 Tablet/Mobile Home2 Link */
+          #home {
+            display: none; /* 연세대학교 desktop-link disappears from small screen menu */
+          }
+           #mobile-menu #home2 { /* Inherits from "Styles for mobile menu icon" */
+            background: none;
+            border: 1px solid white;
+            font-size: .8em;
+            left: 1em;
+            position: absolute;
+            top: 1em;
+          }
+
+          .yonsei-logo {
+            float: left;
+            margin-bottom: -.5em;
+            margin-left: -.5em;
+            margin-right: .5em;
+          }
+
+          #logo-text {
+            font-size: 1.25em;
+            position: relative;
+            top: .5em;
+            font-family: 'Rochester', cursive;
+          }
+
+          #mobile-icon {
+            height: 3.5em;
+            margin-top: -.75em;
+            position: relative;
+            right: 1em;
+            top: .35em;
+            width: 2.5em;
+          }
+
+          /* 3.2 Tablet/Mobile Dropdown Menu  */
+          a.caret { /* a.caret to beat specificity of styles for general a links */
+            background: #ffd800;
+            border-bottom: 1px solid #ffd800;
+            border-left: 1px solid #ffd800;
+            bottom: 0;
+            color: white;
+            display: block; /* Shows caret link on small screen menu */
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+
+          .caret:hover,
+          .caret:focus,
+          .caret:active {
+            background: #ffd800;
+          }
+
+          .desktop-link {
+            border-top: 1px solid #3E6617;
+            display: none; /* Javascript menu is removed when mobile menu is inactive */
+            font-size: .85em;
+            margin-top: 0;
+          }
+
+          .desktop-link:hover .dropdown-menu {
+            display: none; /* Makes dropdown menu disappear on small screens. AFFECTS ".desktop-link:hover .caretDropdown" ! */
+          }
+
+          #last-desktop-link {
+            border-bottom: 1px solid #3E6617;
+          }
+
+          /* 3.3 Tablet/Mobile Javascript Onclick Menu */
+          .responsive {
+            padding: 0;
+            position: absolute; /* Allows scrolling */
+          }
+
+          .responsive .desktop-link {
+            background: #3E6617;
+            display: block; /* Javascript menu is shown when mobile menu is active */
+            width: 100%;
+            position: relative;
+            top: 7em; /* Vertically aligns menu items */
+            z-index: 1; /* Allows mobile menu to show over slider */
+          }
+
+          .caretDropdown {
+            display: block;
+            width: 100%;
+            position: relative;
+          }
+
+          .desktop-link:hover .caretDropdown {
+            display: block; /* Allows dropdown menu to remain on screen when other mobile menu items are hovered. AFFECTED BY ".desktop-link:hover .dropdown-menu"! */
+
+          }
+</style>
+</head>
+<body>
+
+<!-- ///////////////////////////////////////
+Mobile Responsive Navigation Bar
+///////////////////////////////////////  -->
+
+<nav>
+    <ul class="desktop-menu" id="desktopMenu">
+
+      <li>
+        <a id="home" href="#">
+        <img src="broccolilogo.png" class="yonsei-logo">VEGGIE LIST</a>
+      </li>
+
+      <li class="desktop-link">
+        <a href="#">HOME</a>
+
+
+      <li class="desktop-link">
+        <a href="#">VEGGIES FOR SALE</a>
+      </li>
+
+      <li class="desktop-link">
+        <a href="#">SIGN-UP</a>
+      </li>
+
+      <li class="desktop-link">
+        <a href="#">LOGIN</a>
+      </li>
+
+      <!-- <li class="desktop-link">
+        <a href="regulations.html">SERVICES</a>
+      </li>
+
+      <li class="desktop-link">
+        <a href="regulations.html">CONTACT</a>
+      </li>
+
+      <li class="desktop-link">
+        <a href="regulations.html">BLOG</a>
+      </li>
+ -->
+      <li id="mobile-menu">
+        <a id="home2" href="index.html">
+         <img src="broccolilogo.png" class="yonsei-logo"></a>
+
+          
+        </a>
+
+        <a id="mobile-icon-container" href="#" onclick="responsiveMenu(); return false;">
+          <img id="mobile-icon" src="https://eliya33.github.io/church/images/mobile-menu-icon-125x125.png" alt="Mobile Menu Icon">
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <!-- /////////////////////
+  Java Script Section
+  /////////////////////
+
+  /*Mobile Responsive Nav Bar */ -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script type="text/javascript">
+  /* Toggle between adding and removing the "responsive" class to main menu when mobile menu icon is clicked */
+    function responsiveMenu() {
+    var x = document.getElementById("desktopMenu");
+    if (x.className === "desktop-menu") {
+      x.className += " responsive";
+    } else {
+      x.className = "desktop-menu";
+    }
+  }
+
+  /* Toggle between adding and removing the "caretDropdown" class to mobile menu links when caret link are clicked */
+  function caretDropdownOne() {
+    var caretDropdown1 = document.getElementById("caretDropdownOne");
+    if (caretDropdown1.className === "dropdown-menu") {
+      caretDropdown1.className += " caretDropdown";
+    } else {
+      caretDropdown1.className = "dropdown-menu";
+    }
+  }
+
+  function caretDropdownTwo() {
+    var caretDropdown2 = document.getElementById("caretDropdownTwo");
+    if (caretDropdown2.className === "dropdown-menu") {
+      caretDropdown2.className += " caretDropdown";
+    } else {
+      caretDropdown2.className = "dropdown-menu";
+    }
+  }
+
+  function caretDropdownThree() {
+    var caretDropdown3 = document.getElementById("caretDropdownThree");
+    if (caretDropdown3.className === "dropdown-menu") {
+      caretDropdown3.className += " caretDropdown";
+    } else {
+      caretDropdown3.className = "dropdown-menu";
+    }
+  }
+
+  function caretDropdownFour() {
+    var caretDropdown4 = document.getElementById("caretDropdownFour");
+    if (caretDropdown4.className === "dropdown-menu") {
+      caretDropdown4.className += " caretDropdown";
+    } else {
+      caretDropdown4.className = "dropdown-menu";
+    }
+  }
+
+  function caretDropdownFive() {
+    var caretDropdown5 = document.getElementById("caretDropdownFive");
+    if (caretDropdown5.className === "dropdown-menu") {
+      caretDropdown5.className += " caretDropdown";
+    } else {
+      caretDropdown5.className = "dropdown-menu";
+    }
+  }
+</script>
+
+</body>
+</html>

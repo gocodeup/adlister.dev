@@ -1,3 +1,4 @@
+include'navbarhome.html';
 <div class="container">
 
     <section id="welcome">
