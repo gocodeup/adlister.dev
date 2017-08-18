@@ -40,6 +40,7 @@ function pageController()
             break;
         case ('/signup'):
             $mainView = '../views/users/signup.php';
+            signUp($_POST);
             break;
         default:    // displays 404 if route not specified above
             $mainView = '../views/404.php';
