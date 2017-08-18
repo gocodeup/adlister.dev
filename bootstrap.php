@@ -2,7 +2,7 @@
 
 // require models
 require_once __DIR__ . '/models/User.php';
-
+require_once __DIR__ . '/models/Ad.php';
 
 // require helper classes
 require_once __DIR__ . '/utils/Auth.php';
