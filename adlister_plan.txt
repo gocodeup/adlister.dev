@@ -7,18 +7,27 @@ SECTIONS:
 	model - 
 	user - 
 2. Build out utilities
-3. Migration file
-	Items for sale:
-	 * ads (link to users by user table id or username)
-	 * users - add onto existing table
+3. Migration files for each table
+	Tables:
+	 * users 
 	 * categories
-	 	- armor
-	 	- weapons
-	 	- tools
-	 	- torture devices
-	 	- livestock
+	 	-- table structure: id, item, subcategory
+	 	-- option to update the category/subcategory table if does not exist
+		 	Items to include in main category
+		 	- armor
+		 		-- shields
 
-	 * products table
+		 	- weapons
+		 	- tools
+		 	- beverges
+		 	- torture devices
+		 		-- 
+		 	- livestock
+		 		-- horses
+		 		-- chickens
+		 		-- oxen
+
+	 * ads/products table structure: (link to users by user table id or username)
 	 	- id
 	 	- product name
 	 	- category 
@@ -32,8 +41,6 @@ SECTIONS:
 	 All tables will need to be linked possibly by user id
 
 
-
-
-4. Seeder file
+4. Seeder file for each table
 5. Page contoller
 6. Views: HTML & CSS Design
