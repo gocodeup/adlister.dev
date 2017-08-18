@@ -1,11 +1,11 @@
 <?php
 
 $_ENV = include __DIR__ . '/../../.env.php';
-require_once '../db_connect.php';
+require_once __DIR__ . '/../db_connect.php';
 
-$dbc->exec('DROP TABLE IF EXISTS users');
+$dbc->exec('DROP TABLE IF EXISTS user');
 
-$query = 'CREATE TABLE users (
+$query = 'CREATE TABLE user (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     name VARCHAR(240) NOT NULL,
     email VARCHAR(240) NOT NULL,
