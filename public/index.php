@@ -1,7 +1,11 @@
 <?php
 if(!isset($_SESSION)){
 	session_start();
+
+	var_dump(session_id());
 }
+
+var_dump($_POST['name']);
 
 require_once __DIR__ . '/../bootstrap.php';
 
