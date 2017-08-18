@@ -1,0 +1,39 @@
+==== ADLISTER PROJECT PLAN === 
+
+
+SECTIONS:
+
+1. Build out classes
+	model - 
+	user - 
+2. Build out utilities
+3. Migration file
+	Items for sale:
+	 * ads (link to users by user table id or username)
+	 * users - add onto existing table
+	 * categories
+	 	- armor
+	 	- weapons
+	 	- tools
+	 	- torture devices
+	 	- livestock
+
+	 * products table
+	 	- id
+	 	- product name
+	 	- category 
+	 	- price
+	 	- description
+	 	- availability (have a function for viewing based on status)
+	 	- pick-up location (maps API to)
+	 	- city & state
+	 	- images - use filestack
+
+	 All tables will need to be linked possibly by user id
+
+
+
+
+4. Seeder file
+5. Page contoller
+6. Views: HTML & CSS Design
