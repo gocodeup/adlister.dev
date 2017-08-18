@@ -18,13 +18,13 @@
             <li><a href="" >Ent</a></li>
           </ul>
         </li>
-		<li><a href="Users" >Account</a></li>
-        <li><a href="Ads"  >Ads</a></li>
-        <li><a href=""  >Post ad</a></li>
+		<li><a href="/Users" >Account</a></li>
+        <li><a href="/Ads"  >Ads</a></li>
+        <li><a href="/Ads/Create"  >Post Ad</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="/Users/Signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/Users/Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
   </div>
