@@ -1,0 +1,59 @@
+* {
+	font-family: 'Permanent Marker', cursive;
+	color: #DF2726;
+	font-size: 15px;
+}
+
+body {
+	background-image: url(/img/ooo.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+}
+
+section {
+	background: rgba(255,255,255,.6);
+	border-radius: 10px;
+	text-align: justify;
+	padding: 15px 25px;
+	margin: 25px 0;
+}
+
+.section-title {
+	text-decoration: underline;
+	margin-bottom: 25px;
+	text-align: center;
+}
+
+.custom-error-message,
+.error {
+	color: red;
+}
+
+.has-error {
+	border-color: red;
+}
+
+.success {
+	color: green;
+}
+
+.navbar>.container-fluid .navbar-brand,
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>span>a,
+.navbar-default .navbar-nav>.navbar-text {
+	color: #DF2726;
+}
+
+.navbar-default {
+	opacity: .8;
+}
+
+.container {
+	margin-top: 50px;
+}
+
+i.fa {
+	color: #fff;
+}

@@ -1,6 +1,17 @@
 <div class="container">
 
-    <section id="account">
+    <section id="for-sale">
+
+        <div class="row">
+
+            <div class="col-xs-12">
+
+                <h1 class="section-title">Items For Sale In Adlister</h1>
+
+            </div>
+
+
+        </div>
 
         <div class="row">
 
@@ -16,39 +27,6 @@
                 </div>
                 <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
             <?php endif; ?>
-
-            <h1 class="section-title">User Info</h1>
-
-            <p class="text-center">Name: <?= $user->name; ?></p>
-            <p class="text-center">Username: <?= $user->username; ?></p>
-            <p class="text-center">Email: <?= $user->email; ?></p>
-
-            <?php if($user->id == Auth::id()) : ?>
-            <div class="col-sm-12 text-center">
-
-                <a href="/users/account/edit?id=<?= $user->id; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i> Edit Profile</a>
-
-            </div>
-            <?php endif; ?>
-
-        </div>
-
-    </section>
-
-    <section id="for-sale">
-
-        <div class="row">
-
-            <div class="col-xs-12">
-
-                <h1 class="section-title">Items You Have For Sale</h1>
-
-            </div>
-
-
-        </div>
-
-        <div class="row">
 
             <?php foreach($items->attributes as $key => $item) : ?>
             <div class="col-md-4">
@@ -71,7 +49,7 @@
             <?php endif; ?>
             <?php endforeach; ?>
         </div>
-        <?php if($user->id == Auth::id()) : ?>
+        <?php if (Auth::check()) : ?>
             <div class="row text-center">
                 <a href="/items/create" class="btn btn-success">Create Post</a>
             </div>
