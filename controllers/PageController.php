@@ -20,7 +20,7 @@ function pageController()
             // die();
             header("Location:/Users/Login");
         } else {
-            echo "Username or email exists!";
+            echo "Username or email exists!!";
         }
     }
     var_dump(Auth::attempt(Input::get('email_user'), Input::get('password')));
