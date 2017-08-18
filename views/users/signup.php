@@ -4,7 +4,7 @@
 
         <div class="row">
 
-            <h1 class="section-title">Signup For OooLister</h1>
+            <h1 class="section-title text-center">Signup For SnapList</h1>
 
             <div class="col-md-6 col-md-offset-3">
 
@@ -25,23 +25,23 @@
                 <form method="POST" action="" data-validation data-required-message="This field is required">
 
                     <div class="form-group">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" data-required>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" data-required>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" data-required>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                     </div>
                     <div class="row">
-                        <div class="col-sm-6">
-                            <button type="submit" class="btn btn-primary">Signup</button>
+                        <div class="col-sm-6 ">
+                            <a href="/login" class="btn btn-primary">Go To Login</a>
                         </div>
                         <div class="col-sm-6 text-right">
-                            <a href="/login" class="btn btn-success">Go To Login</a>
+                            <button type="submit" class="btn btn-success">Signup</button>
                         </div>
                     </div>
 

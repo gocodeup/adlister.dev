@@ -1,0 +1,158 @@
+/*************** MOBILE STYLES ****************/
+#logo {
+	height: 2.5em; 
+	width: 2.5em; 
+	float: left; 
+	margin-right: 1em; 
+	margin-top: 0.5em;
+}
+
+#snapListName {
+	font-family: 'Anton', sans-serif; 
+	font-size: 2em;
+	color: black;
+}
+
+.navbar-default .navbar-nav>li>a {
+	text-align: center;
+}
+
+#navbar>li {
+	border-bottom: 1px solid #e7e7e7;
+}
+
+.navbarIcon {
+	width: 10px;
+}
+
+#navbar>li:nth-child(1) {
+	border-top: 1px solid #e7e7e7;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	border: none;
+}
+
+#search .form-control {
+	float: left;
+	width: 86%;
+}
+
+#homeItemPanel {
+	text-decoration: none;
+	color: black;
+}
+
+#homeItemImage, #showItemImage, #itemsImages {
+	width: 100%;
+	height: 17em;
+}
+
+#homeViewAll {
+	margin: auto;
+	margin-bottom: 20%;
+	display: block;
+	width: 50%;
+}
+
+#itemsPage {
+	margin-bottom: 20%;
+}
+
+#itemsPanelColor {
+	background-color: #3139A8;
+}
+
+.btn-primary {
+	background-color: #3139A8;
+}
+
+.panel-primary {
+	border-color: #3139A8;
+}
+
+#items {
+	text-decoration: none;
+	color: black;
+}
+
+#showUserInfo {
+	margin-bottom: 20%;
+}
+
+#showAuthButtons {
+	margin: 5%;
+}
+
+h1, h2, h3 {
+	font-family: 'Anton', sans-serif;
+}
+
+
+
+footer {
+	font-family: 'Anton', sans-serif;
+	background-color: white;
+}
+
+#pageButtons {
+	margin-left: 43%;
+	display: inline-flex;
+}
+
+#userInfo {
+	margin-bottom: 5%;
+}
+
+#userInfo h2 {
+	font-size: 3em;
+}
+
+#userInfo p {
+	font-size: 1.5em;
+}
+
+
+/*************** TABLET STYLES ****************/
+@media (min-width: 768px) {
+
+	#navbar>li {
+		border: none;
+	}
+
+	#homeTitle {
+		font-size: 5em;
+	}
+
+	#homeItemImage, #showItemImage, #itemsImages {
+		height: 12em;
+	}
+
+	#homeViewAll {
+		width: 25%;
+	}
+
+	#search .form-control {
+		width: 50%;
+	}
+
+}
+
+
+
+/*************** DESKTOP STYLES ****************/
+@media (min-width:940px) {
+
+	#search .form-control {
+		width: 80%;
+	}
+
+	#homeItemImage, #showItemImage, #itemsImages {
+		height: 20em;
+	}
+
+	#homeViewAll {
+		width: 10%;
+	}
+
+}

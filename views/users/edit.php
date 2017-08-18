@@ -4,7 +4,7 @@
 
         <div class="row">
 
-            <h1 class="section-title">Edit Account</h1>
+            <h1 class="section-title text-center">Updating Account</h1>
 
             <div class="col-md-6 col-md-offset-3">
 
@@ -22,18 +22,25 @@
                     <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
                 <?php endif; ?>
 
-                <form method="POST" action="" data-validation data-required-message="This field is required">
+                <form method="POST" action="" data-validation required-message="This field is required">
 
                     <div class="form-group">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" value="<?= $user->name; ?>" data-required>
+                        <label>Full Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" value="<?= Auth::user()->name; ?>" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" value="<?= $user->email; ?>" data-required>
+                        <label>Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?= Auth::user()->email; ?>" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" value="<?= $user->username; ?>" data-required>
+                        <label>Username</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" value="<?= Auth::user()->username; ?>" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Update Account</button>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" value="<?= Auth::user()->password; ?>" required>
+                    </div>
+                    <button type="submit" class="btn btn-success">Update Account</button>
 
                 </form>
 
