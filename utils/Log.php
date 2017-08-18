@@ -1,6 +1,7 @@
 <?php
 class Log
 {
+
 	public $filename;
 	public $handle;
 
