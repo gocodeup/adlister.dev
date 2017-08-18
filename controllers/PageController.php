@@ -20,7 +20,7 @@ function pageController()
             // die();
             header("Location:/Users/Login");
         } else {
-            echo "fuck you russian!";
+            echo "Username or email exists!";
         }
     }
 
