@@ -23,7 +23,18 @@ function pageController()
             echo "Username or email exists!!";
         }
     }
-    var_dump(Auth::attempt(Input::get('email_user'), Input::get('password')));
+
+    if(Auth::attempt(Input::get('email_user'), Input::get('password'))){
+        $sessionId = session_id();
+        var_dump($_SESSION);
+        var_dump($sessionId);
+
+    };
+
+    if(Input::has('logout')){
+        Auth::logout();
+        var_dump($_SESSION);
+    };
 
     // defines array to be returned and extracted for view
     $data = [];
