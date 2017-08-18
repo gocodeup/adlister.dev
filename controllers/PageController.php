@@ -20,10 +20,10 @@ function pageController()
             // die();
             header("Location:/Users/Login");
         } else {
-            echo "fuck you russian!";
+            echo "Username or email exists!!";
         }
     }
-
+    var_dump(Auth::attempt(Input::get('email_user'), Input::get('password')));
 
     // defines array to be returned and extracted for view
     $data = [];
