@@ -1,3 +1,4 @@
+
 <div class="container">
 
     <section id="login">
@@ -22,19 +23,19 @@
                     <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
                 <?php endif; ?>
 
-                <form method="POST" action="" data-validation data-required-message="This field is required">
+                <form method="POST" action="/signup" data-validation data-required-message="This field is required">
 
                     <div class="form-group">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" data-required>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" required><!-- <?= $nameErrorMessage ?> -->
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" data-required>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" required><!-- <?= $emailErrorMessage ?> -->
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" data-required>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" required><!-- <?= $usernameErrorMessage ?> -->
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required><!-- <?= $passwordErrorMessage ?> -->
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
