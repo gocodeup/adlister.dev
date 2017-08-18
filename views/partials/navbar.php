@@ -19,7 +19,7 @@
           </ul>
         </li>
 		<li><a href="" target="_blank">Account</a></li>
-        <li><a href="" target="_blank" >Items</a></li>
+        <li><a href="/Ads/index.php" target="_blank" >Items</a></li>
         <li><a href="" target="_blank" >Post ad</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
