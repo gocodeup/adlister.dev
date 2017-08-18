@@ -23,7 +23,7 @@ function pageController()
             echo "Username or email exists!";
         }
     }
-
+    var_dump(Auth::attempt(Input::get('email_user'), Input::get('password')));
 
     // defines array to be returned and extracted for view
     $data = [];
