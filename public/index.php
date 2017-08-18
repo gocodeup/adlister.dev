@@ -122,7 +122,7 @@
                     <div class="flip-overlay"></div>
                 </div>
                 <div class='square2' data-image="http://titanicthemes.com/files/flipbox/kallyas-bundle.png">
-                    <div class="square-container2">
+                    <div class ="square-container2">
                         <div class="align-center"></div>
                         <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View Demos</a>
                     </div>
