@@ -1,0 +1,22 @@
+.navbar-nav {
+	padding-top: 10px;
+}
+.navbar-nav > li > a {
+	padding-right: 25px;
+}
+#search {
+	float:right;
+}
+
+#sticky {
+  width:100%;
+  padding:20px;
+  padding-bottom:16px;
+  text-align:center;
+  position:fixed; 
+  bottom:0;   
+  left:0; 
+  color: #999;       
+}
+
+	
