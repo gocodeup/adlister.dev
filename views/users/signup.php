@@ -41,7 +41,7 @@
                             <button type="submit" class="btn btn-primary">Signup</button>
                         </div>
                         <div class="col-sm-6 text-right">
-                            <a href="/login" class="btn btn-success">Go To Login</a>
+                            <a href="/Users/Login" class="btn btn-success">Go To Login</a>
                         </div>
                     </div>
 
