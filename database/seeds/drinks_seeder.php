@@ -10,7 +10,7 @@ $statement = "INSERT INTO drinks (user_id, name, sub_category) VALUES
 ('5', 'Absinthe', 'Wine'),
 ('5', 'Hemlock For The Weary', 'Ale'),
 ('3', 'Ye Olde Malt', 'Beer'),
-('4', 'Athlete\s Boot', 'Wine'),
+('4', 'Athlete\s Boot (NOT THE CONDITION)', 'Wine'),
 ('1', 'Venom', 'Mead'),
 ('1', 'Hopped', 'Beer'),
 ('4', 'Serf Brew', 'Ale')" ;
