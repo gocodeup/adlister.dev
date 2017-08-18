@@ -1,6 +1,6 @@
 <?php
 
-$_ENV = include __DIR__ . '/../../.env.php';
+$_ENV = include __DIR__ . '/../env.php';
 require_once '../db_connect.php';
 
 $connection->exec('DROP TABLE IF EXISTS users');
