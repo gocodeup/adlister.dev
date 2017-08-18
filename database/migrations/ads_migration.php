@@ -20,7 +20,7 @@ $query = 'CREATE TABLE ads (
     location_city VARCHAR(255) NOT NULL,
     location_state VARCHAR(255) NOT NULL,
     date_sold DATE,
-    contact VARCHAR(255) NOT NULL,
+    contact_info VARCHAR(255) NOT NULL,
     image blob NOT NULL,
     PRIMARY KEY (id)
 )';
