@@ -14,13 +14,13 @@
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="">Categories<span class="caret"></span></a>
           <ul class="dropdown-menu">
-          	<li><a href="" target="_blank">Tech</a></li>
-            <li><a href="" target="_blank">Ent</a></li>
+          	<li><a href="" >Tech</a></li>
+            <li><a href="" >Ent</a></li>
           </ul>
         </li>
-		<li><a href="" target="_blank">Account</a></li>
-        <li><a href="/Ads/index.php" target="_blank" >Items</a></li>
-        <li><a href="" target="_blank" >Post ad</a></li>
+		<li><a href="Users" >Account</a></li>
+        <li><a href="Ads"  >Ads</a></li>
+        <li><a href=""  >Post ad</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

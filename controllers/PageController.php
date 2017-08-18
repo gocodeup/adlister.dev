@@ -31,16 +31,16 @@ function pageController()
             $mainView = '../views/users/edit.php';
         break;
         case '/Ads':
-            $mainView = '../Ads/index.php';
+            $mainView = '../views/ads/index.php';
         break;
         case '/Ads/Create':
-            $mainView = '../Ads/create.php';
+            $mainView = '../views/ads/create.php';
         break;
         case '/Ads/Edit':
-            $mainView = '../Ads/edit.php';
+            $mainView = '../views/ads/edit.php';
         break;
         case '/Ads/Show':
-            $mainView = '../Ads/show.php';
+            $mainView = '../views/ads/show.php';
         break;
         // TODO: put routes here
         default:    // displays 404 if route not specified above
