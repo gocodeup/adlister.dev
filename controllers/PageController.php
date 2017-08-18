@@ -27,7 +27,7 @@ function pageController()
             $mainView = '../views/ads/index.php';
             break;
         case ('/show'):
-            $mainView = '../views/show/edit.php';
+            $mainView = '../views/ads/show.php';
             break;
         case ('/account'):
             $mainView = '../views/users/account.php';
