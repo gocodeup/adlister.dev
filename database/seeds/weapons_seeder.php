@@ -5,28 +5,18 @@ require_once '../db_connect.php';
 
 $connection->exec("TRUNCATE weapons");
 
-$contents = file_get_contents("weapons.csv");
+// $statement = "INSERT INTO weapons (user_id, name, sub_category) VALUES (:user_id, :name, :sub_category)";
 
-$weapons = explode("\n", trim($contents));
+$statement = "INSERT INTO weapons (user_id, name, sub_category) VALUES 
+('1', 'Kingslayer', 'Sword'),
+('2', 'Heartpiercer', 'Spear'),
+('3', 'Kylrugh\'r', 'Mace'),
+('4', 'Old Claymore', 'Sword'),
+('2', 'Rogue\'s Delight', 'Dagger'),
+('1', 'Elderwood Bow', 'Bow'),
+('5', 'Dragonbreath', 'Cannon'),
+('2', 'Soul Harvest', 'Mace')" ;
 
-array_shift($weapons);
-
-$weapons = array_map("trim", $weapons);
-
-$statement = "INSERT INTO weapons (user_id, name, sub_category) VALUES (:user_id, :name, :sub_category)";
-
-$preparedStatement = $connection->prepare($statement);
-
-foreach ($weapons as $weapon) {
-	$weapon = explode(",", $weapon);
-
-	$newWeapon = new weapon();
-	$newWeapon->name = $weapon[0];
-	$newWeapon->location = $weapon[1];
-	$newWeapon->dateEstablished = $weapon[2];
-	$newWeapon->areaInAcres = $weapon[3];
-	$newWeapon->description = $weapon[4];
-	$newWeapon->insert();
-}
+$connection->exec($statement);
 
 echo "values added".PHP_EOL;
