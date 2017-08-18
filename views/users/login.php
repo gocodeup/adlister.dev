@@ -1,3 +1,17 @@
+<?php
+    if(!empty($_POST)){
+        var_dump('firing');
+        $username = Input::has('email_user')? escape(Input::get('email_user')): '';
+        $password = Input::has('password')? escape(Input::get('password')): '';
+        var_dump($username);
+        var_dump($password);
+        Auth::attempt($username, $password);
+        if(Auth::check()) {
+            header('Location:/index');
+            die;
+        }
+    }
+?>
 <div class="container">
 
     <section id="login">
@@ -23,13 +37,13 @@
 
                 <p>Login with your email/username and password</p>
 
-                <form method="POST" action="" data-validation data-required-message="This field is required">
+                <form method="POST" action="/login" data-validation data-required-message="This field is required">
 
                     <div class="form-group">
-                        <input type="text" class="form-control" id="email_user" name="email_user" placeholder="Email or Username" data-required>
+                        <input type="text" class="form-control" id="email_user" name="email_user" placeholder="Email or Username" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">

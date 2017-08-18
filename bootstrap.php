@@ -11,3 +11,5 @@ require_once __DIR__ . '/utils/Input.php';
 
 // require front controller
 require_once __DIR__ . '/controllers/PageController.php';
+
+require_once __DIR__ . '/utils/functions.php';
