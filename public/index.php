@@ -26,7 +26,7 @@
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
-                <div class='square2' data-image="http://titanicthemes.com/files/flipbox/kallyas-bundle.png">
+                <div class='square2' data-image="img/armor-flip.png">
                     <div class="square-container2">
                         <div class="align-center"></div>
                         <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View Demos</a>
@@ -45,7 +45,7 @@
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
-                <div class='square2' data-image="http://titanicthemes.com/files/flipbox/kallyas-bundle.png">
+                <div class='square2' data-image="img/weapons-flip.png">
                     <div class="square-container2">
                         <div class="align-center"></div>
                         <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View Demos</a>
@@ -64,7 +64,7 @@
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
-                <div class='square2' data-image="http://titanicthemes.com/files/flipbox/kallyas-bundle.png">
+                <div class='square2' data-image="img/tools-flip.png">
                     <div class="square-container2">
                         <div class="align-center"></div>
                         <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View Demos</a>
@@ -73,17 +73,17 @@
                 </div>
             </div>
             <div class="square-flip">
-                <div class='square' data-image="http://titanicthemes.com/files/flipbox/kallyas-bundle.png">
+                <div class='square' data-image="img/tort-back.png">
                     <div class="square-container">
                         <div class="align-center">
-                            <img src="http://titanicthemes.com/files/flipbox/kallyas.png" class="boxshadow" alt="">
+                            <img src="img/tort.png" class="boxshadow" alt="">
                         </div>
                         <h2 class="textshadow">Torture Devices</h2>
                         <h3 class="textshadow">"teaching lessons"</h3>
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
-                <div class='square2' data-image="http://titanicthemes.com/files/flipbox/kallyas-bundle.png">
+                <div class='square2' data-image="img/tort-flip.png">
                     <div class="square-container2">
                         <div class="align-center"></div>
                         <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View Demos</a>
@@ -92,17 +92,17 @@
                 </div>
             </div>
             <div class="square-flip">
-                <div class='square' data-image="http://titanicthemes.com/files/flipbox/kallyas-bundle.png">
+                <div class='square' data-image="img/livestock-back.png">
                     <div class="square-container">
                         <div class="align-center">
-                            <img src="http://titanicthemes.com/files/flipbox/kallyas.png" class="boxshadow" alt="">
+                            <img src="img/livestock.png" class="boxshadow" alt="">
                         </div>
                         <h2 class="textshadow">Livestock</h2>
                         <h3 class="textshadow">"all the sheeples"</h3>
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
-                <div class='square2' data-image="http://titanicthemes.com/files/flipbox/kallyas-bundle.png">
+                <div class='square2' data-image="img/livestock-flip.png">
                     <div class="square-container2">
                         <div class="align-center"></div>
                         <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View Demos</a>
@@ -111,17 +111,17 @@
                 </div>
             </div>
             <div class="square-flip">
-                <div class='square' data-image="http://titanicthemes.com/files/flipbox/kallyas-bundle.png">
+                <div class='square' data-image="img/ales-back.png">
                     <div class="square-container">
                         <div class="align-center">
-                            <img src="http://titanicthemes.com/files/flipbox/kallyas.png" class="boxshadow" alt="">
+                            <img src="img/ales.png" class="boxshadow" alt="">
                         </div>
                         <h2 class="textshadow">Ales</h2>
                         <h3 class="textshadow">"only the best meads"</h3>
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
-                <div class='square2' data-image="http://titanicthemes.com/files/flipbox/kallyas-bundle.png">
+                <div class='square2' data-image="img/ales-flip.png">
                     <div class ="square-container2">
                         <div class="align-center"></div>
                         <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View Demos</a>
