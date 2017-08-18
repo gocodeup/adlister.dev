@@ -2,11 +2,11 @@
 
 return [
     // database config
-    'DB_HOST' => '',
-    'DB_NAME' => '',
-    'DB_USER' => '',
-    'DB_PASS' => '',
+    'DB_HOST' => '127.0.0.1',
+    'DB_NAME' => 'turboadlister_db',
+    'DB_USER' => 'admin',
+    'DB_PASS' => 'mypa$$',
 
     // password for users in the seeder
-    'USER_PASS' => '',
+    'USER_PASS' => 'mypa$$',
 ];
