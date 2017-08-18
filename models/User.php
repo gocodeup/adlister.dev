@@ -42,4 +42,10 @@ class User extends Model {
 
         return $instance;
     }
+    public function items()
+    {
+        return Item::findAllWithUserId($this->id);
+    }
+}
+?>
 }

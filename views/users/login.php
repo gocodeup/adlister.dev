@@ -1,10 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <title>Adlister</title>
+<body>
 <div class="container">
 
     <section id="login">
 
         <div class="row">
 
-            <h1 class="section-title">Login To OooLister</h1>
+            <h1 class="section-title">Login To AdLister</h1>
 
             <?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
                 <div class="alert alert-danger">
@@ -48,3 +52,5 @@
     </section>
 
 </div>
+</body>
+</html>
