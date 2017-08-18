@@ -3,7 +3,7 @@
 $_ENV = include __DIR__ . '/../env.php';
 require_once '../db_connect.php';
 
-$connection->exec('DROP TABLE IF EXISTS users');
+$connection->exec('DROP TABLE IF EXISTS weapons');
 
 $query = 'CREATE TABLE weapons (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,

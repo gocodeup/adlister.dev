@@ -3,9 +3,9 @@
 $_ENV = include __DIR__ . '/../env.php';
 require_once '../db_connect.php';
 
-$connection->exec('DROP TABLE IF EXISTS drinks');
+$connection->exec('DROP TABLE IF EXISTS tools');
 
-$query = 'CREATE TABLE drinks (
+$query = 'CREATE TABLE tools (
    	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     user_id INT NOT NULL,
     name VARCHAR(240) NOT NULL,
