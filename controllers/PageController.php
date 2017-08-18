@@ -11,7 +11,7 @@ function pageController()
     // get the part of the request after the domain name
     $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     
-    
+    $allAds = Ad::all();
 
     // switch that will run functions and setup variables dependent on what route was accessed
     switch ($request) {
@@ -49,6 +49,7 @@ function pageController()
     }
 
     $data['mainView'] = $mainView;
+    $data['allAds'] = $allAds;
 
     return $data;
 }
