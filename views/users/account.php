@@ -16,10 +16,10 @@ require_once"/../Auth.php";
  function pageController()
 {
     $data = [];
-
-    $user_id = Input::get('user_id');
-    $username = Input::get('username');
-    $email = Input::get('email');
+    // 
+    // $user_id = Input::get('user_id');
+    // $username = Input::get('username');
+    // $email = Input::get('email');
 
 findByUsernameOrEmail($usernameOrEmail)
 }
