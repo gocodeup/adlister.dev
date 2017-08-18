@@ -15,7 +15,7 @@ $query = 'CREATE TABLE ads (
     sub_category VARCHAR(100) NOT NULL,
     price FLOAT (12) NOT NULL,
     description VARCHAR(255) NOT NULL,
-    availability VARCHAR(100) NOT NULL,
+    availability_status VARCHAR(100) NOT NULL,
     pick_up_location VARCHAR(255)NOT NULL,
     location_city VARCHAR(255) NOT NULL,
     location_state VARCHAR(255) NOT NULL,
