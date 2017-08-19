@@ -1,21 +1,35 @@
-		.square-flip{
-		-webkit-perspective: 1000;
-		-moz-perspective: 1000;
-		-ms-perspective: 1000;
-		perspective: 1000;
 
-		-webkit-transform: perspective(1000px);
-		-moz-transform: perspective(1000px);
-		-ms-transform: perspective(1000px);
-		transform: perspective(1000px);
+@media screen and (max-width:1200) {
 
-		-webkit-transform-style: preserve-3d; 
-		-moz-transform-style: preserve-3d; 
-		-ms-transform-style: preserve-3d; 
-		transform-style: preserve-3d; 
+	.square-flip{
+		width: 100%;
+	}
+}
+
+@media screen and (max-width:640) {
+
+	.square-flip{
+		width: 100%;
+	}
+}
+.square-flip{
+-webkit-perspective: 1000;
+-moz-perspective: 00;
+-ms-perspective: 900;
+perspective: 900;
+
+-webkit-transform: perspective(900px);
+-moz-transform: perspective(900px);
+-ms-transform: perspective(900px);
+transform: perspective(900px);
+
+		-webkit-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;
+		-ms-transform-style: preserve-3d;
+		transform-style: preserve-3d;
 
 		/*border:1px solid #efefef;*/
-		
+
 		position:relative;
 		float:left;
 		margin:20px;
@@ -43,7 +57,7 @@
 			top:0;
 
 
-			-webkit-backface-visibility: hidden; 
+			-webkit-backface-visibility: hidden;
 			backface-visibility: hidden;
 		}
 		.square-flip .square{
@@ -78,7 +92,7 @@
 			position:absolute;
 			top:0;
 
-			-webkit-backface-visibility: hidden; 
+			-webkit-backface-visibility: hidden;
 			backface-visibility: hidden;
 		}
 		.square-flip .square2{
@@ -110,7 +124,7 @@
 			    transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
 			    -webkit-transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
 
-		
+
 			-webkit-transform: translateY(-50%) translateX(0px)  scale(1);
 			-ms-transform: translateY(-50%) translateX(0px)  scale(1);
 	transform: translateY(-50%) translateX(0px)  scale(1);
@@ -118,7 +132,7 @@
 			z-index:2;
 		}
 		.square-flip:hover .square-container{
-			
+
 			-webkit-transform: translateY(-50%) translateX(-650px)  scale(.88);
 			-ms-transform: translateY(-50%) translateX(-650px)  scale(.88);
       transform: translateY(-50%) translateX(-650px)  scale(.88);
@@ -136,7 +150,7 @@
 			    transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
 			    -webkit-transition: transform 0.60s cubic-bezier(.5,.3,.3,1);
 
-			
+
 			-webkit-transform: translateY(-50%) translateX(650px) translateZ(60px) scale(.88);
 			-ms-transform: translateY(-50%) translateX(650px) translateZ(60px) scale(.88);
       transform: translateY(-50%) translateX(650px) translateZ(60px) scale(.88);
@@ -145,7 +159,7 @@
 			z-index:2;
 		}
 		.square-flip:hover .square-container2{
-			
+
 			-webkit-transform: translateY(-50%) translateX(0px) translateZ(0px) scale(1);
 			-ms-transform: translateY(-50%) translateX(0px) translateZ(0px) scale(1);
 			transform: translateY(-50%) translateX(0px) translateZ(0px) scale(1);
@@ -196,7 +210,7 @@
 			background: #ffa067; /* Old browsers */
 			background: -moz-linear-gradient(-45deg,  #ffa067 0%, #ff2959 49%, #ff2024 100%); /* FF3.6-15 */
 			background: -webkit-linear-gradient(-45deg,  #ffa067 0%,#ff2959 49%,#ff2024 100%); /* Chrome10-25,Safari5.1-6 */
-			background: linear-gradient(135deg,  #ffa067 0%,#ff2959 49%,#ff2024 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			background: linear-gradient(135deg, #ff2024 0%,#a30125 49%,#680204 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa067', endColorstr='#ff2024',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 		}
 
@@ -241,7 +255,7 @@
 			box-shadow: 24px 42px 58px -8px rgba(0,0,0,0.3);
 		}
 
-		
+
 		/*You can delete this style*/
 		.centerflipcards{
       display:block;

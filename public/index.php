@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+<!doctype>
 <html>
     <head>
         <title>OooLister</title>
         <!--Partial for head.  Good place to include things like css files.-->
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <!--partial view for navbar-->
@@ -26,16 +27,16 @@
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
-                <div class='square2' data-image="img/armor-flip.png">
+                <div class='square2' data-image="img/armor-flip.jpg">
                     <div class="square-container2">
                         <div class="align-center"></div>
-                        <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View Demos</a>
+                        <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View More</a>
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
             </div>
             <div class="square-flip">
-                <div class='square' data-image="img/weapons-back.png">
+                <div class='square' data-image="img/weapons-back.jpg">
                     <div class="square-container">
                         <div class="align-center">
                             <img src="img/weapons.png" class="boxshadow" alt="">
@@ -45,16 +46,16 @@
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
-                <div class='square2' data-image="img/weapons-flip.png">
+                <div class='square2' data-image="img/weapons-flip.jpg">
                     <div class="square-container2">
                         <div class="align-center"></div>
-                        <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View Demos</a>
+                        <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View More</a>
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
             </div>
             <div class="square-flip">
-                <div class='square' data-image="img/tools-back.png">
+                <div class='square' data-image="img/tools-back.jpg">
                     <div class="square-container">
                         <div class="align-center">
                             <img src="img/tools.png" class="boxshadow" alt="">
@@ -64,16 +65,16 @@
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
-                <div class='square2' data-image="img/tools-flip.png">
+                <div class='square2' data-image="img/tools-flip.jpg">
                     <div class="square-container2">
                         <div class="align-center"></div>
-                        <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View Demos</a>
+                        <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View More</a>
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
             </div>
             <div class="square-flip">
-                <div class='square' data-image="img/tort-back.png">
+                <div class='square' data-image="img/tort-back.jpg">
                     <div class="square-container">
                         <div class="align-center">
                             <img src="img/tort.png" class="boxshadow" alt="">
@@ -83,16 +84,16 @@
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
-                <div class='square2' data-image="img/tort-flip.png">
+                <div class='square2' data-image="img/tort-flip.jpg">
                     <div class="square-container2">
                         <div class="align-center"></div>
-                        <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View Demos</a>
+                        <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View More</a>
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
             </div>
             <div class="square-flip">
-                <div class='square' data-image="img/livestock-back.png">
+                <div class='square' data-image="img/livestock-back.jpg">
                     <div class="square-container">
                         <div class="align-center">
                             <img src="img/livestock.png" class="boxshadow" alt="">
@@ -102,16 +103,16 @@
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
-                <div class='square2' data-image="img/livestock-flip.png">
+                <div class='square2' data-image="img/livestock-flip.jpg">
                     <div class="square-container2">
                         <div class="align-center"></div>
-                        <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View Demos</a>
+                        <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View More</a>
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
             </div>
             <div class="square-flip">
-                <div class='square' data-image="img/ales-back.png">
+                <div class='square' data-image="img/ales-back.jpg">
                     <div class="square-container">
                         <div class="align-center">
                             <img src="img/ales.png" class="boxshadow" alt="">
@@ -121,10 +122,10 @@
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
-                <div class='square2' data-image="img/ales-flip.png">
+                <div class='square2' data-image="img/ales-flip.jpg">
                     <div class ="square-container2">
                         <div class="align-center"></div>
-                        <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View Demos</a>
+                        <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View More</a>
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
