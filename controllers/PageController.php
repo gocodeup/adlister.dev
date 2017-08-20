@@ -110,6 +110,9 @@ function pageController()
         case '/Ads':
             $mainView = '../views/ads/index.php';
         break;
+        case '/AllAds':
+            $mainView = '../views/ads/allads.php';
+        break;
         case '/Ads/Create':
             $mainView = '../views/ads/create.php';
         break;
