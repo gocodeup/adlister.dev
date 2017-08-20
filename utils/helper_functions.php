@@ -89,3 +89,18 @@ function signUp ($_Post)
     }
 
 }
+function logIn ()
+{
+    if(!empty($_POST)){
+        var_dump('firing');
+        $username = Input::has('email_user')? escape(Input::get('email_user')): '';
+        $password = Input::has('password')? escape(Input::get('password')): '';
+        var_dump($username);
+        var_dump($password);
+        Auth::attempt($username, $password);
+        if(Auth::check()) {
+            header('Location:/index');
+            die;
+        }
+    }
+}
