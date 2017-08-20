@@ -25,7 +25,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/Users/Signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="/Users/Login"><span class="glyphicon glyphicon-log-in"></span>Log In</a></li>
-        <li><form><button type="submit" name="logout"><span class="glyphicon glyphicon-log-out"></span>Log Out</button></form></li>
+        <li id="logoutLi"><form class="navbar-form"><button id="logoutButton" type="submit" name="logout"><span class="glyphicon glyphicon-log-out"></span>Log Out</button></form></li>
       </ul>
     </div>
   </div>
