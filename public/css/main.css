@@ -24,6 +24,10 @@ h1 {
 }
 
 #logoutLi {
-	padding-top: 4px;
+	padding-top: 5px;
 	background-color: #222;
+}
+
+#accountButton {
+	border-left:1px solid grey;
 }

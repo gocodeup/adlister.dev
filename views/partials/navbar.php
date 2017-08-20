@@ -18,14 +18,14 @@
             <li><a href="" >Ent</a></li>
           </ul>
         </li>
-		<li><a href="/Users" >Account</a></li>
-        <li><a href="/Ads"  >Ads</a></li>
+		    <li><a id="accountButton" href="/Users" >Account</a></li>
+        <li><a href="/Ads"  >Your Ads</a></li>
         <li><a href="/Ads/Create"  >Post Ad</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/Users/Signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="/Users/Login"><span class="glyphicon glyphicon-log-in"></span>Log In</a></li>
-        <li id="logoutLi"><form class="navbar-form"><button id="logoutButton" type="submit" name="logout"><span class="glyphicon glyphicon-log-out"></span>Log Out</button></form></li>
+        <li><a href="/Users/Login"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+        <li id="logoutLi"><form class="navbar-form"><button id="logoutButton" type="submit" name="logout"><span class="glyphicon glyphicon-log-out"></span> Log Out</button></form></li>
       </ul>
     </div>
   </div>

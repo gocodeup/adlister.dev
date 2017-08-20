@@ -49,6 +49,7 @@ function pageController()
 {
     $allUsers = User::all();
     $allAds = Ad::all();
+    $allUsersAds = User::usersAds();
 
     addNewUser();
     addNewAd();
@@ -56,8 +57,7 @@ function pageController()
     if(Auth::attempt(Input::get('email_user'), Input::get('password'))){
         $sessionId = session_id();
         var_dump($_SESSION);
-        var_dump($sessionId);
-
+        // var_dump($sessionId);
     };
 
     if(Input::has('logout')){
@@ -110,7 +110,7 @@ function pageController()
 
     $data['mainView'] = $mainView;
     $data['allAds'] = $allAds;
-
+    $data['allUsersAds'] = $allUsersAds;
     return $data;
 }
 
