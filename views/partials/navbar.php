@@ -18,8 +18,8 @@
             <li><a href="" >Ent</a></li>
           </ul>
         </li>
-		<li><a href="/Users" >Account</a></li>
-        <li><a href="/Ads"  >Ads</a></li>
+		    <li><a id="accountButton" href="/Users" >Account</a></li>
+        <li><a href="/Ads"  >Your Ads</a></li>
         <li><a href="/Ads/Create"  >Post Ad</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

@@ -9,7 +9,6 @@
 
                 <h1 class="text-center">Welcome To Adlister</h1>
 
-
             </div>
 
         </div>
