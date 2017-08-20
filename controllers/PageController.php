@@ -22,13 +22,36 @@ function addNewUser()
     }
 }
 
+
+//work on adding new add function
+function addNewAd()
+{
+    if(Input::get('title')!="" && Input::get('description')!="" && Input::get('img')!="" && Input::get('categories')!=""){
+
+        if(Ad::findByTitle(Input::get('title'))== null){
+            $ad = new Ad();
+            $ad->title = Input::get('title');
+            $ad->description = Input::get('description');
+            $ad->img = Input::get('img');
+            $ad->categories = Input::get('categories');
+            $ad->username = $_SESSION['IS_LOGGED_IN'];
+            $ad->date_create = date("Y-m-d H-i-s");
+            $ad->save();
+            // die();
+            header("Location:/Ads/Show");
+        } else {
+            echo "Title for ad already exists!!";
+        }
+    }
+}
+
 function pageController()
 {
     $allUsers = User::all();
     $allAds = Ad::all();
 
-    addNewUser(); 
-
+    addNewUser();
+    addNewAd();
     
     if(Auth::attempt(Input::get('email_user'), Input::get('password'))){
         $sessionId = session_id();
