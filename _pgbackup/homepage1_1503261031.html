@@ -9,6 +9,7 @@
 	  font-family: 'Josefin Sans', sans-serif; -->
         <!-- FONT AWESOME ICONS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     </head>
     <style>/*Collumn Settings*/
         .column.whole {width: 100%;}
@@ -177,195 +178,179 @@
   	  	text-align: center;
     }
 
-    /*//////////////////
-    Featured Products
-    //////////////////*/
   
-      .featuredProducts {
-        background-color: white;
-        text-align: center;
-      }
+.featuredProducts {
+  background-color: white;
+  text-align: center;
+}
 
-      #fP {
-        color: #293127;
-        font-size: 90px;
-        font-family: 'Amatic SC', cursive;
-      }
-          * {
-        box-sizing: border-box;
-      }
+#fP {
+  color: #293127;
+  font-size: 90px;
+  font-family: 'Amatic SC', cursive;
+}
+    * {
+  box-sizing: border-box;
+}
 
-      body {
-        font-family: Avenir, Arial, sans-serif;
-        margin: 2%;
-      }
+body {
+  font-family: Avenir, Arial, sans-serif;
+  margin: 2%;
+}
 
-      div.flip-3d {
-        perspective: 1200px;
-        width: 28%;
-        display: inline-block;
-        margin: 2%;
-      }
+div.flip-3d {
+  perspective: 1200px;
+  width: 28%;
+  display: inline-block;
+  margin: 2%;
+}
 
-      div.flip-3d figure {
-        position: relative;
-        transform-style: preserve-3d;
-        transition: 1s transform;
-        font-size: 1.6rem;
-      }
+div.flip-3d figure {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 1s transform;
+  font-size: 1.6rem;
+}
 
-      div.flip-3d figure img {
-        width: 100%;
-        height: auto;
-      }
+div.flip-3d figure img {
+  width: 100%;
+  height: auto;
+}
 
-      div.flip-3d figure figcaption {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        transform: rotateY(.5turn) translateZ(1px);
-        background: rgba(255, 255, 255, 0.9);
-        text-align: center;
-        padding-top: 45%;
-        opacity: 0.6;
-        transition: 1s .5s opacity;
-      }
+div.flip-3d figure figcaption {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  transform: rotateY(.5turn) translateZ(1px);
+  background: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  padding-top: 45%;
+  opacity: 0.6;
+  transition: 1s .5s opacity;
+}
 
-      div.flip-3d:hover figure,div.flip-3d.pg-state-hover figure {
-        transform: rotateY(.5turn);
-      }
+div.flip-3d:hover figure,div.flip-3d.pg-state-hover figure {
+  transform: rotateY(.5turn);
+}
 
-      div.flip-3d:hover figure figcaption,div.flip-3d.pg-state-hover figure figcaption {
-        opacity: 1;
-      }
+div.flip-3d:hover figure figcaption,div.flip-3d.pg-state-hover figure figcaption {
+  opacity: 1;
+}
 
-      div.flip-3d figure:after {
-        content: " ";
-        display: block;
-        height: 8vw;
-        width: 100%;
-        transform: rotateX(90deg);
-        background-image: radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
-      }
+div.flip-3d figure:after {
+  content: " ";
+  display: block;
+  height: 8vw;
+  width: 100%;
+  transform: rotateX(90deg);
+  background-image: radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
+}
 
-      @media screen and (max-width: 800px) {
-        div#flip-3d {
-          perspective-origin: center top;
-        }
-        div#flip-3d figure {
-          display: block;
-          width: 50%;
-          margin: 0 auto;
-          margin-bottom: 12vw;
-        }
-        div#flip-3d figure:last-child {
-          display: none;
-        }
-      }
+@media screen and (max-width: 800px) {
+  div#flip-3d {
+    perspective-origin: center top;
+  }
+  div#flip-3d figure {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 12vw;
+  }
+  div#flip-3d figure:last-child {
+    display: none;
+  }
+}
 
-        .fPbutton {
-          background-color: #C4E661;
-          border: none;
-          color: white;
-          padding: 10px 27px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 13px;
-          margin: 4px 2px;
-          cursor: pointer;
-          font-family: 'Josefin Sans', sans-serif;
-        }
-      
-    /*/////////////////
-     Testimonials
-    /////////////////*/
+  .fPbutton {
+    background-color: #C4E661;
+    border: none;
+    color: white;
+    padding: 10px 27px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: 'Josefin Sans', sans-serif;
+  }
 
 
-      #testimonials{
-        background-color: #F8FEE9;
-      }
+  .testContainer
+{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60em;
+  *zoom: 1
+  background-color: #D5F6B8;
+}
+.grid-testimonials
+{
+  overflow: hidden;
+  padding-top: 3.125em
+  font-family: 'Josefin Sans', sans-serif;
+}
+.grid-testimonials li
+{
+  float: left;
+  list-style-type: none;
+  padding-bottom: 3.125em
+}
+.grid-testimonials p
+{
+  line-height: 1.5em;
+  margin: 0
+}
+.grid-testimonials-citation
+{
+  color: #656262;
+  display: block;
+  font-size: 1.125em;
+  font-weight: 700;
+  margin-top: 2em;
+  text-transform: uppercase;
+  text-align: center
+}
+.grid-testimonials li div
+{
+  border: 10px solid #ebebeb;
+  padding: 2.125em 7.638888888888889%;
+  position: relative
+}
+.grid-testimonials .quote-arrow
+{
+  background: #fff;
+  border-right:10px solid #ebebeb;
+  border-bottom:10px solid #ebebeb;
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -32px;
+  left: 50%;
+  margin-left: -25px;
+  width: 40px;
+  height: 40px;
+  -moz-transform:rotate(45deg);
+  -webkit-transform:rotate(45deg);
+}
+@media screen and (min-width: 50em) 
+{
+  .grid-testimonials li
+  {
+    margin-right: 5%;
+    width: 30%
+  }
+  .grid-testimonials li:nth-child(3n)
+  {
+    margin-right: 0
+  }
+}
 
-        .testContainer
-      {
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 60em;
-        *zoom: 1;
-        background-color: #F8FEE9;
-      }
-      .grid-testimonials
-      {
-        overflow: hidden;
-        padding-top: 3.125em;
-        font-family: 'Josefin Sans', sans-serif
-      }
-      .grid-testimonials li
-      {
-        float: left;
-        list-style-type: none;
-        padding-bottom: 3.125em
-      }
-      .grid-testimonials p
-      {
-        line-height: 1.5em;
-        margin: 0
-      }
-      .grid-testimonials-citation
-      {
-        color: #656262;
-        display: block;
-        font-size: 1.125em;
-        font-weight: 700;
-        margin-top: 2em;
-        text-transform: uppercase;
-        text-align: center
-      }
-      .grid-testimonials li div
-      {
-        border: 10px solid #3E6617;
-        padding: 2.125em 7.638888888888889%;
-        position: relative
-      }
-      .grid-testimonials .quote-arrow
-      {
-        background: #fff;
-        border-right:10px solid #3E6617;
-        border-bottom:10px solid #3E6617;
-        content: '';
-        display: block;
-        position: absolute;
-        bottom: -32px;
-        left: 50%;
-        margin-left: -25px;
-        width: 40px;
-        height: 40px;
-        -moz-transform:rotate(45deg);
-        -webkit-transform:rotate(45deg);
-      }
-      @media screen and (min-width: 50em) 
-      {
-        .grid-testimonials li
-        {
-          margin-right: 5%;
-          width: 30%
-        }
-        .grid-testimonials li:nth-child(3n)
-        {
-          margin-right: 0
-        }
-      }
-
-      footer {
-        background-color: #3E6617;
-        max-width: 100%;
-        height: 100px;
-      }
-
-          
-}</style>
+    
+}
+</style>
     <body>
         <!-- ///////////////////////////////////////
 Mobile Responsive Navigation Bar
@@ -413,24 +398,20 @@ Mobile Responsive Navigation Bar
                 </ul>
             </nav>
         </div>
-    <!-- //////////////////
+        <!-- //////////////////
      Welcome Hero
     ////////////////// -->
-      <section>
+        <section>
             <div id='container'> 
                 <div id="farmersMktGif" style="margin-top: 133px">
                     <div>
-                        <h1 id="veggieConnectH" style="align-self: center;font-size: 120px"> Veggie Connect</h1>
-                        <p id="veggieConnectP" style="font-size: 25px;margin-top: -100px">We connect you with local farmers and vendors offering<br>&nbsp;&nbsp;fruits, veggies, fresh plants, honey and jams.</p>
+                        <h1 id="veggieConnectH" style="align-self: center;font-size: 70px;padding-top: 30px"> Veggie Connect</h1>
+                        <p id="veggieConnectP" style="font-size: 25px;margin-top: -20px">We connect you with local farmers and vendors offering<br>&nbsp;&nbsp;fruits, veggies, fresh plants, honey and jams.</p>
                     </div>
                 </div>
                 <h1></h1>
             </div>
-        </section>  
-
-   <!--  ////////////////////
-    Featured Products
-    //////////////////// -->
+        </section>
         <div class='featuredProducts'>
             <h1 id='fP' style="margin-top: -170px">Featured Products</h1>
             <div class="flip-3d">
@@ -455,47 +436,32 @@ Mobile Responsive Navigation Bar
                 <a href="#" class="fPbutton">EXPLORE</a>
             </div>
         </div>
-        <div id='testimonials' style="margin-top: -10px;padding-top: 10px">
-            <h1 class="testimonials" style="text-align: center;font-family: 'Amatic SC', cursive;font-size: 90px;color: 293127;;;;">Customer Testimonials</h1>
-            <div class="testContainer">
-                <ul class="grid-testimonials" style="background-color: F8FEE9">
-                    <li style="color: 293127">
-                        <div>
-                            <p style="color: 293127;text-align: center">“Veggie Connect has made it so easy to find fresh produce and products to feed my family!”</p>
-                            <span class="quote-arrow"></span>
-                        </div>
-                        <span class="grid-testimonials-citation">DANNY TARGARYEN</span>
-                    </li>
-                    <li style="color: 293127">
-                        <div>
-                            <p style="text-align: center;color: #293127">“My vegan lifestyle is so much easier to keep up with in the winter thanks to Veggie Connect!”</p>
-                            <span class="quote-arrow"></span>
-                        </div>
-                        <span class="grid-testimonials-citation">JON SNOW</span>
-                    </li>
-                    <li style="color: 293127">
-                        <div>
-                            <p style="color: 293127;text-align: center">“Eat your veggies if you want to grow big up and strong.”</p>
-                            <span class="quote-arrow"></span>
-                        </div>
-                        <span class="grid-testimonials-citation">TYRION LANNISTER</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-
-  <!-- /////////////
-  Footer
-  ///////////// -->
-        <footer style="font-size: 15px;margin-top: -15px;padding-top: 15px"> 
-            <p style="text-align: center;color: #f8fee9;font-family: 'Josefin Sans', sans-serif;;"> Chloe Adams and David Newton</p>
-            <p style="color: F8FEE9;text-align: center;font-family: 'Josefin Sans', sans-serif;;"> Ad-Lister Project : 2017 </p>
-        </footer>
 
 
 
- <!-- /////////////////////
+
+<div class="testContainer">
+        <ul class="grid-testimonials">
+            <li>
+                <div><p>&ldquo;Veggie Connect has made it so easy to find fresh produce and products to feed my family!&rdquo;</p><span class="quote-arrow"></span></div>
+                <span class="grid-testimonials-citation">DANNY TARGARYEN</span>
+            </li>
+            <li>
+                <div><p>&ldquo;My vegan lifestyle is so much easier to keep up with in the winter thanks to Veggie Connect!&rdquo;</p><span class="quote-arrow"></span></div>
+                <span class="grid-testimonials-citation">JON SNOW</span>
+            </li>
+            <li>
+                <div><p>&ldquo;Eat your veggies if yopu want to grow big anf strong.&rdquo;</p><span class="quote-arrow"></span></div>
+                <span class="grid-testimonials-citation">TYRION LANNISTER</span>
+            </li>
+                                                   
+        </ul>
+    </div>
+
+
+
+        
+        <!-- /////////////////////
   Java Script Section
   /////////////////////
 
@@ -579,9 +545,9 @@ Mobile Responsive Navigation Bar
   });
 });
 
-  /////////////////
-  ///Testimonials
-  ////////////////
+
+
+
 
   (function(){
   
