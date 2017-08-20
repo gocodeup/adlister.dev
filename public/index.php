@@ -4,6 +4,7 @@
       <meta charset="utf-8">
       <link rel="stylesheet" type="text/css" href="css/menu.css">
       <link rel="stylesheet" type="text/css" href="css/main.css">
+      <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
       <title></title>
    </head>
    <body>
