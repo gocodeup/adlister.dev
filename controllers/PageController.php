@@ -130,5 +130,6 @@ function pageController()
     $data['allUsersAds'] = $allUsersAds;
     return $data;
 }
+var_dump($_SESSION);
 
 extract(pageController());

@@ -18,14 +18,22 @@
             <li><a href="" >Ent</a></li>
           </ul>
         </li>
+        <?php if (isset($_SESSION['LOGGED_IN_USER'])) { ?>
 		    <li><a id="accountButton" href="/Users" >Account</a></li>
+        <?php } ?>
+        <?php if (isset($_SESSION['LOGGED_IN_USER'])) { ?>
         <li><a href="/Ads"  >Your Ads</a></li>
+        <?php } ?>
+        <?php if (isset($_SESSION['LOGGED_IN_USER'])) { ?>
         <li><a href="/Ads/Create"  >Post Ad</a></li>
+        <?php } ?>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/Users/Signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="/Users/Login"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+        <?php if (isset($_SESSION['LOGGED_IN_USER'])) { ?>
         <li id="logoutLi"><form class="navbar-form"><button id="logoutButton" type="submit" name="logout"><span class="glyphicon glyphicon-log-out"></span> Log Out</button></form></li>
+        <?php } ?>
       </ul>
     </div>
   </div>
