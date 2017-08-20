@@ -51,9 +51,6 @@ function pageController()
     $allAds = Ad::all();
     $allUsersAds = User::usersAds();
 
-    var_dump($allUsersAds);
-
-
     addNewUser();
     addNewAd();
     
@@ -113,7 +110,7 @@ function pageController()
 
     $data['mainView'] = $mainView;
     $data['allAds'] = $allAds;
-
+    $data['allUsersAds'] = $allUsersAds;
     return $data;
 }
 
