@@ -49,11 +49,12 @@ class User extends Model {
     {
         self::dbConnect();
 
-        $loggedInUser = $_SESSION['IS_LOGGED_IN'];
-        $query = "SELECT * FROM ads WHERE username = '{$_SESSION['IS_LOGGED_IN']}'";
-        $stmt = self::$dbc->prepare($query);
-        $stmt->execute();
-
+        if(isset($_SESSION['IS_LOGGED_IN'])){
+            $loggedInUser = $_SESSION['IS_LOGGED_IN'];
+            $query = "SELECT * FROM ads WHERE username = '{$_SESSION['IS_LOGGED_IN']}'";
+            $stmt = self::$dbc->prepare($query);
+            $stmt->execute();
+        
         //Store the resultset in a variable named $result
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         // turn each associative array into an instance of the model subclass
@@ -62,6 +63,7 @@ class User extends Model {
             $instance->attributes = $result;
             return $instance;
         }, $results);
+    }
     }
 
 }

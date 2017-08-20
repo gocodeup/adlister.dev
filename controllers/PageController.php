@@ -47,16 +47,24 @@ function addNewAd()
 
 function pageController()
 {
+
     $allUsers = User::all();
     $allAds = Ad::all();
     $allUsersAds = User::usersAds();
 
-    addNewUser();
+
+    if (isset($_SESSION['IS_LOGGED_IN'])){
     addNewAd();
-    
+    }
+    else{
+    addNewUser();
+    }
+
     if(Auth::attempt(Input::get('email_user'), Input::get('password'))){
         $sessionId = session_id();
+        // $mainView = 'Users/Ads';
         var_dump($_SESSION);
+        header('adlister.dev/Ads');
         // var_dump($sessionId);
     };
 
@@ -70,7 +78,12 @@ function pageController()
 
     // get the part of the request after the domain name
     $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    var_dump($request);
 
+    if($request == "/Users/Login" && isset($_SESSION['IS_LOGGED_IN'])){
+        $request = "/Ads";
+        var_dump('Hey');
+    }
     //defining all users and ads in db
 
     // switch that will run functions and setup variables dependent on what route was accessed
