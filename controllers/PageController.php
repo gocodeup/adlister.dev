@@ -11,7 +11,7 @@ function pageController()
 
     // get the part of the request after the domain name
     $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-    var_dump($request);
+    // var_dump($request);
     // switch that will run functions and setup variables dependent on what route was accessed
     switch ($request) {
         // TODO: put routes here
