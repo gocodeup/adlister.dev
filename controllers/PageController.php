@@ -80,8 +80,12 @@ function pageController()
     $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     var_dump($request);
 
-    if($request == "/Users/Login" && isset($_SESSION['IS_LOGGED_IN'])){
+    if(($request == "/Users/Login" || $request == "/Users/Signup") && isset($_SESSION['IS_LOGGED_IN'])){
         $request = "/Ads";
+        var_dump('Hey');
+    }
+    if(($request == "/Users" || $request == "/Ads" || $request == "/Ads/Create") && !isset($_SESSION['IS_LOGGED_IN'])){
+        $request = "/Users/Login";
         var_dump('Hey');
     }
     //defining all users and ads in db
