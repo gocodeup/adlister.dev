@@ -2,11 +2,8 @@
 
 require_once __DIR__ . '/../utils/helper_functions.php';
 
-function pageController()
+function addNewUser()
 {
-    $allUsers = User::all();
-    $allAds = Ad::all();
-
     if(Input::get('name')!="" && Input::get('password')!="" && Input::get('email')!="" && Input::get('username')!=""){
 
         if((User::findByUsernameOrEmail(Input::get('username'))== null ) && (User::findByUsernameOrEmail(Input::get('email'))==null)){
@@ -23,7 +20,16 @@ function pageController()
             echo "Username or email exists!!";
         }
     }
+}
 
+function pageController()
+{
+    $allUsers = User::all();
+    $allAds = Ad::all();
+
+    addNewUser(); 
+
+    
     if(Auth::attempt(Input::get('email_user'), Input::get('password'))){
         $sessionId = session_id();
         var_dump($_SESSION);
