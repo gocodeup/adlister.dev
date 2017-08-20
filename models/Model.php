@@ -15,11 +15,11 @@ $_ENV = require __DIR__ . '/../env.php';
  * is not necessary in instance methods.
  */
 abstract class Model {
-    /** @var PDO|null the connection to the database */ 
+    /** @var PDO|null the connection to the database */
     protected static $connection;
     /** @var string the name of the table */
     protected static $table;
-    
+
     /** @var array the attributes of this instance */
     protected $attributes = [];
 

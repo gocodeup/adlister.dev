@@ -1,3 +1,12 @@
+<?php
+require_once "/../db_connect.php"
+require_once "/../Input.php";
+require_once"/../Auth.php";
+
+
+ ?>
+
+
 <div class="container">
 
     <section id="login">
