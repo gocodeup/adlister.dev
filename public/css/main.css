@@ -11,8 +11,19 @@
 .avery-class{
 	display:none;
 }
+body {
+	color: white;
+}
+canvas {
+    background-color: #22313F;
+    z-index: -1;
+    position: absolute;
+  }
 h1 {
 	text-align: center;
+}
+#beaker{
+	display:none;
 }
 
 #logoutButton {

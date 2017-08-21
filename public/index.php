@@ -14,7 +14,10 @@ require_once __DIR__ . '/../bootstrap.php';
    	
 </head>
 <body>
+   	<canvas></canvas>
+	<img id ="beaker" src ="../imgs/beaker.png"/>
     <?php require '../views/partials/navbar.php'; ?>
+
 
     <?php require $mainView; ?>
 
