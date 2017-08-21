@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../../models/User.php';
+require_once '../db_connect.php';
 
 $user = new User;
 $user->name = 'Finn Mertens';
@@ -29,3 +30,26 @@ $user->email = 'marceline@vampirequeen.com';
 $user->username = "marceline_abadeer";
 $user->password = $_ENV['USER_PASS'];
 $user->save();
+
+$user = new User;
+$user->name = 'Jen Ayala';
+$user->email = 'jenayala1@email.com';
+$user->username = "pandoran_elf";
+$user->password = $_ENV['USER_PASS'];
+$user->save();
+
+$user = new User;
+$user->name = 'Gonzolo Rodriguez';
+$user->email = 'gonzolo@email.com';
+$user->username = "vlad_the_impossible";
+$user->password = $_ENV['USER_PASS'];
+$user->save();
+
+$user = new User;
+$user->name = 'Emmanuelle Maher';
+$user->email = 'emmanuelle@email.com';
+$user->username = "the_iron_maiden";
+$user->password = $_ENV['USER_PASS'];
+$user->save();
+
+// echo "users added".PHP_EOL;
