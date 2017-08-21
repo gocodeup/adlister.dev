@@ -1,6 +1,6 @@
 <?php
 
-require_once '../../models/Ad.php';
+require_once __DIR__ .  '/../../models/Ad.php';
 
 $ad = new Ad;
 $ad->name = "Finn's old shoes";

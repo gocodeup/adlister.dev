@@ -70,7 +70,7 @@ function signUp ()
     $passwordError = '';
 
     if(!empty($_POST)){
-        $user = User::findByUsernameOrEmail(Input::get('username'));
+        $userInfo = User::findByUsernameOrEmail(Input::get('username'));
         if(Input::get('name') === '') {
             return $fullNameError =  'Please enter a name.'.PHP_EOL;
         } 
@@ -83,10 +83,10 @@ function signUp ()
         if(Input::get('password') === '') {
             return $passwordError = 'Please enter a password.'.PHP_EOL;
         }
-        if($user !== null && ($user->email === Input::get('email'))) {
+        if($user !== null && ($userInfo->email === Input::get('email'))) {
             return $emailError = 'The email you have chosen is already associated with another user. Please choose another email.';
         }
-        if($user !== null && ($user->username === Input::get('username'))) {
+        if($user !== null && ($userInfo->username === Input::get('username'))) {
             return $usernameError = 'That username is already in use. Please choose a unique username.';
         } else if((Input::has('name') && Input::has('email') && Input::has('username') && Input::has('password')) && (User::findByUsernameOrEmail(Input::get('username')) === null) && (User::findByUsernameOrEmail(Input::get('email')) === null)) {
             $user = new User();
