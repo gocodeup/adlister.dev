@@ -1,6 +1,46 @@
 <?php
 require_once __DIR__ . "../../../bootstrap.php";
 
+function newPost($connection)
+{
+	$name = Input::escape(Input::get("name"));
+	$category = Input::escape(Input::get("category"));
+	$sub_category = Input::escape(Input::get("sub_category"));
+	$price = Input::escape(Input::get("price"));
+	$description = Input::escape(Input::get("description"));
+	$pick_up_location = Input::escape(Input::get("pick_up_location"));
+	$location_city = Input::escape(Input::get("location_city"));
+	$image = Input::escape(Input::get("image"));
+
+	if(!is_numeric($price)) {
+		echo "Price must be numeric!";
+		return;
+	}
+
+	//info pulled from somewhere else
+	$user_id = $__SESSION["user_id"];
+	$username = $__SESSION["username"];
+	$date_posted = date("Y-m-d");
+
+	$newPost = new Ads();
+	$newPost->user_id = $user_id;
+	$newPost->username = $username;
+	$newPost->date_posted = $date_posted;
+	$newPost->name = $name;
+	$newPost->category = $category;
+	$newPost->sub_category = $sub_category;
+	$newPost->price = $price;
+	$newPost->description = $description;
+	$newPost->availability_status = "available"
+	$newPost->pick_up_location = $pick_up_location;
+	$newPost->location_city = $location_city;
+	$newPost->image = $image;
+	$newPost->insertAd();
+
+
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +60,7 @@ require_once __DIR__ . "../../../bootstrap.php";
 	<div class="container">
 		<h1>Create an ad</h1>
 		<div class= "col-md-6 col-md-offset-3">
+			<h3>Posting as <?= $__SESSION["username"] ?>. </h3>
 			<form method="POST" action="" enctype="multipart/form-data">
 				<div class="name">
 					<label for="name">Name:</label>
