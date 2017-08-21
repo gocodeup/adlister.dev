@@ -24,6 +24,8 @@
                 <?php 
                 if(!empty($allUsersAds)){
                 foreach($allUsersAds as $ad) : ?>
+                <div>
+                    <img src=<?= $ad->img ?>>
                     <ul class="col col-xs-4">
                     <li><?= $ad->title ?></li>
                     <li><?= $ad->description ?></li>
@@ -31,6 +33,7 @@
                     <li><?= $ad->date_create ?></li>
                     <li><?= $ad->categories ?></li>
                     </ul>
+                </div>
                 <?php endforeach; } ?>
         </div>
 

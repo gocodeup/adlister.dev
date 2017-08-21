@@ -23,8 +23,6 @@ function addNewUser()
     }
 }
 
-
-//work on adding new add function
 function addNewAd()
 {
     if(Input::get('title')!="" && Input::get('description')!="" && Input::get('img')!="" && Input::get('categories')!=""){
@@ -78,9 +76,6 @@ function pageController()
             header('Location:/Ads');
         };
     }
-
-
-    // get the part of the request after the domain name
 
     //defining all users and ads in db
     if(($request == "/Users/Login" || $request == "/Users/Signup") && isset($_SESSION['IS_LOGGED_IN'])){
