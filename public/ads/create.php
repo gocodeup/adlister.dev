@@ -1,7 +1,9 @@
 <?php
 require_once __DIR__ . "../../../bootstrap.php";
 
-function newPost($connection)
+session_start();
+
+function newPost()
 {
 	$name = Input::escape(Input::get("name"));
 	$category = Input::escape(Input::get("category"));
@@ -18,28 +20,29 @@ function newPost($connection)
 	}
 
 	//info pulled from somewhere else
-	$user_id = $__SESSION["user_id"];
-	$username = $__SESSION["username"];
+	// $user_id = $__SESSION["user_id"];
+	// $username = $__SESSION["username"];
 	$date_posted = date("Y-m-d");
 
 	$newPost = new Ads();
-	$newPost->user_id = $user_id;
-	$newPost->username = $username;
+	// $newPost->user_id = $user_id;
+	// $newPost->username = $username;
 	$newPost->date_posted = $date_posted;
 	$newPost->name = $name;
 	$newPost->category = $category;
 	$newPost->sub_category = $sub_category;
 	$newPost->price = $price;
 	$newPost->description = $description;
-	$newPost->availability_status = "available"
+	$newPost->availability_status = "available";
 	$newPost->pick_up_location = $pick_up_location;
 	$newPost->location_city = $location_city;
 	$newPost->image = $image;
 	$newPost->insertAd();
 
-
+var_dump($image);
 
 }
+newPost();
 
 ?>
 
