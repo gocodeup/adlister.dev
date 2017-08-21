@@ -27,9 +27,11 @@ function pageController()
             break;
         case ('/index'):
             $mainView = '../views/ads/index.php';
+            $ads = Ad::all();
             break;
         case ('/show'):
             $mainView = '../views/ads/show.php';
+            $ad = Ad::find($_GET['ad']);
             break;
         case ('/account'):
             $mainView = '../views/users/account.php';
@@ -61,6 +63,8 @@ function pageController()
     $data['mainView'] = $mainView;
     $data['errorMessage'] = signup();
     $data['user'] = Auth::user();
+    $data['ads'] = Ad::all();
+    $data['ad'] = $ad;
     return $data;
 }
 
