@@ -1,6 +1,5 @@
 <?php
 
-require_once '../views/users/login.php';
 require_once '../models/User.php';
 
 class Auth

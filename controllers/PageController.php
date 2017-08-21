@@ -25,7 +25,7 @@ function pageController()
             $data['items'] = Item::featured();
             $main_view = '../views/home.php';
             break;
-        case '/login':  
+        case '/login':
             redirectIfLoggedIn();
             processLoginInputIfExists();
             $main_view = '../views/users/login.php';

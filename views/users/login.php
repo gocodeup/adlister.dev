@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <title>Adlister</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Josefin+Sans" rel="stylesheet">
-    <!-- font-family: 'Amatic SC', cursive;
-        font-family: 'Josefin Sans', sans-serif; -->
-    <!-- FONT AWESOME ICONS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- CSS Sheet -->
-    <link rel="stylesheet" href="login.css">
-    <body>
+
         <div class="container">
             <section id="login">
                 <div class="row">
-                    <h1 class="section-title">Login To Veggie Connect</h1>
+                    <h1 class="section-title">Welcome to Adlister</h1>
                     <div id="veggieLogo"><img src="broccolilogo.png" class="yonsei-logo"></div>
                     <?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
                         <div class="alert alert-danger">
@@ -50,5 +38,4 @@
                 </div>
             </section>
         </div>
-    </body>
-</html>
+
