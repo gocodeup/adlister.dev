@@ -8,13 +8,18 @@
 <script type="text/javascript">
   var client = filestack.init('A5gY0fZEnTzWuvzsVI5Ttz');
  
-  client.pick({
-  accept: 'image/*',
-  maxFiles: 5,
-  imageMax: [1024, 1024]
-}).then(function(result) {
-  console.log(JSON.stringify(result.filesUploaded[0].url));
-});
+ $('#filestackButton').click(function(){
+    client.pick({
+      accept: 'image/*',
+      maxFiles: 5,
+      imageMax: [1024, 1024]
+    }).then(function(result){
+      console.log(JSON.stringify(result.filesUploaded[0].url));
+      var $imageUrl = JSON.stringify(result.filesUploaded[0].url);
+      console.log($imageUrl);
+    $('#img').val($imageUrl);  
+  });
+})
 
 
 </script>

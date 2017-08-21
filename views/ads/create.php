@@ -13,8 +13,9 @@
 				<input type="text" name="description" id="description" class="form-control" required>
 			</div>
 			<div class="form-group">
-				<label for="img">Image</label>
-				<input type="text" name="img" id="img" class="form-control" required>
+				<label for="img">Image Hosting Filestack</label>
+				<input type="text" name="img" id="img" class="form-control">
+				<button id="filestackButton" class="btn btn-primary">Filestack Hosting</button>
 			</div>
 			<div class="form-group">
 				<label for="categories">Categories</label>
