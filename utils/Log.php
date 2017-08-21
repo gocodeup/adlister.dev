@@ -11,7 +11,7 @@ class Log
 		if (!is_string($prefix)){
 			$prefix = "log";
 		}
-		
+
 		$this->filename = "{$prefix}-".date("Y-m-d").".log";
 		$this->handle = fopen($this->filename, "a");
 
@@ -26,17 +26,16 @@ class Log
 
 	public function info($message)
 	{
-		$this->logMessage("INFO", $message);	
+		$this->logMessage("INFO", $message);
 	}
 
 	public function error($message)
 	{
 		$this->logMessage("ERROR", $message);
 	}
-	
+
 
 	public function __destruct(){
 		fclose($this->handle);
 	}
 }
-
