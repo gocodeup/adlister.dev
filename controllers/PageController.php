@@ -14,8 +14,9 @@ function addNewUser()
             $user->username = Input::get('username');
             
             $user->save();
-            // die();
+            
             header("Location:/Users/Login");
+            
         } else {
             $_SESSION['ERROR_MESSAGE'] = "Username or email exists!!";
         }
@@ -37,8 +38,9 @@ function addNewAd()
             $ad->username = $_SESSION['IS_LOGGED_IN'];
             $ad->date_create = date("Y-m-d H-i-s");
             $ad->save();
-            // die();
+            
             header("Location:/Ads/Show");
+            var_dump($_POST);
         } else {
             echo "Title for ad already exists!!";
         }
@@ -53,27 +55,23 @@ function pageController()
     $allUsersAds = User::usersAds();
 
 
-    if (isset($_SESSION['IS_LOGGED_IN'])){
+    if (isset($_SESSION['IS_LOGGED_IN']) && !empty($_POST['title'])){
     addNewAd();
+    
     }
-    else if (!empty($_POST)){
+    if (!empty($_POST['name'])){
     addNewUser();
-    var_dump($_POST);
     }
 
-    if(Auth::attempt(Input::get('email_user'), Input::get('password'))){
-        $sessionId = session_id();
-        // $mainView = 'Users/Ads';
-
-
-        var_dump($_SESSION);
-        header('adlister.dev/Ads');
-        // var_dump($sessionId);
-    };
-
-    if(Input::has('logout')){
+    if(isset($_POST['email_user'])){
+        if(Auth::attempt(Input::get('email_user'), Input::get('password'))){
+            $sessionId = session_id();
+            header('adlister.dev/Ads');
+        var_dump($_POST);
+        };
+    }
+    if(Input::has('logout') && isset($_SESSION['IS_LOGGED_IN'])){
         Auth::logout();
-        var_dump($_SESSION);
     };
 
     // defines array to be returned and extracted for view
@@ -85,6 +83,7 @@ function pageController()
     if(($request == "/Users/Login" || $request == "/Users/Signup") && isset($_SESSION['IS_LOGGED_IN'])){
         $request = "/Ads";
     }
+        var_dump($request);
     if(($request == "/Users" || $request == "/Ads" || $request == "/Ads/Create") && !isset($_SESSION['IS_LOGGED_IN'])){
         $request = "/Users/Login";
     }
