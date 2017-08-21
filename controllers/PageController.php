@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../utils/helper_functions.php';
 require_once __DIR__ . '/../utils/functions.php';
+require_once __DIR__ . '/../models/User.php';
 
 function pageController()
 {
@@ -41,8 +42,12 @@ function pageController()
             logIn();
             break;
         case ('/signup'):
-            $mainView = '../views/users/signup.php';
             signUp($_POST);
+            $mainView = '../views/users/signup.php';
+            break;
+        case ('/update'):
+            $mainView = '../views/users/update.php';
+            updateUser();
             break;
         default:    // displays 404 if route not specified above
             $mainView = '../views/404.php';
@@ -50,8 +55,10 @@ function pageController()
     }
 
     $data['mainView'] = $mainView;
+    $data['user'] = Auth::user();
 
     return $data;
 }
 
+// var_dump($_SESSION);
 extract(pageController());
