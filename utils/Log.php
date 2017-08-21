@@ -1,6 +1,6 @@
 <?php
 
-<<<<<<< HEAD
+
 class Log
 {
 	private $filename;
@@ -39,13 +39,4 @@ class Log
 		fclose($this->handle);
 	}
 }
-=======
-require_once '../../models/User.php';
 
-class Log
-{
-
-
-
-}
->>>>>>> c07a5f0e8411d8f011e8f9db7db579aa6835c604
