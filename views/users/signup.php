@@ -4,13 +4,16 @@
 
         <div class="row">
 
-            <h1 class="section-title">Signup For OooLister</h1>
+            <h1 class="section-title">Signup For Inventor Center</h1>
 
             <div class="col-md-6 col-md-offset-3">
 
                 <p>Please fill out the information below so we can create your account.</p>
                 <?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
-                    <div class="alert alert-danger">
+                    <div class="alert alert-danger  <?php 
+                if(empty($_POST)){
+                    echo "avery-class";
+                    }?>">
                         <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
                     </div>
                     <?php unset($_SESSION['ERROR_MESSAGE']); ?>
@@ -41,7 +44,7 @@
                             <button type="submit" class="btn btn-primary">Signup</button>
                         </div>
                         <div class="col-sm-6 text-right">
-                            <a href="/login" class="btn btn-success">Go To Login</a>
+                            <a href="/Users/Login" class="btn btn-success">Go To Login</a>
                         </div>
                     </div>
 

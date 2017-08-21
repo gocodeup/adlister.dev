@@ -1,0 +1,67 @@
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: rgba(0,0,0,.5);
+  text-align: center;
+  color:white;
+}
+.avery-class{
+	display:none;
+}
+
+body {
+	color: white;
+}
+canvas {
+    background-color: #22313F;
+    z-index: -1;
+    position: absolute;
+  }
+
+.ads-background{
+	border: 1px solid black;
+	background-color: rgb(3,220,232);
+	border-radius: 30px;
+	min-height: 150px;
+	min-width: 50px; 
+}
+
+
+h1 {
+	text-align: center;
+}
+#beaker{
+	display:none;
+}
+
+#logoutButton {
+	background-color: #222;
+	border: none;
+	color: #9d9d9d;
+}
+#logoutButton:hover {
+	background-color: #222;
+	border: none;
+	color: white;
+}
+
+#logoutLi {
+	padding-top: 5px;
+	background-color: #222;
+}
+
+#accountButton {
+	border-left:1px solid grey;
+}
+
+#githubIconSizer {
+	height:2em;
+}
+
+span {
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+}

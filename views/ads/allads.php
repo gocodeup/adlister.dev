@@ -1,4 +1,3 @@
-
 <div class="container">
 
     <section id="welcome">
@@ -7,7 +6,7 @@
 
             <div class="col-xs-12">
 
-                <h1 class="text-center">Welcome To Adlister</h1>
+                <h1 class="text-center">All Ads</h1>
 
             </div>
 
@@ -22,13 +21,15 @@
             <h3 class="section-title">Featured Items</h3>
             <!-- Placeholder for featured items.-->
                 <?php foreach($allAds as $ad) : ?>
-                    <ul class="col col-xs-4">
-                    <li><?= $ad->title ?></li>
+                    <a href="/Ads/Show?id=<?= $ad->id ?>">
+                    <div class="col col-xs-4 ads-background">
+                    <h5 style="color:black;" ="black"><?= $ad->title ?></h5>
+                    <img src=<?= $ad->img?>>
+                    <ul>
                     <li><?= $ad->description ?></li>
-                    <li><?= $ad->username ?></li>
                     <li><?= $ad->date_create ?></li>
-                    <li><?= $ad->categories ?></li>
                     </ul>
+                    </div></a>
                 <?php endforeach ?>
         </div>
 

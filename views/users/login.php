@@ -4,10 +4,13 @@
 
         <div class="row">
 
-            <h1 class="section-title">Login To OooLister</h1>
+            <h1 class="section-title">Login To Inventor Center</h1>
 
             <?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
-                <div class="alert alert-danger">
+                <div class="alert alert-danger <?php 
+                if(empty($_POST)){
+                    echo "avery-class";
+                    }?>"">
                     <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
                 </div>
                 <?php unset($_SESSION['ERROR_MESSAGE']); ?>
@@ -24,7 +27,6 @@
                 <p>Login with your email/username and password</p>
 
                 <form method="POST" action="" data-validation data-required-message="This field is required">
-
                     <div class="form-group">
                         <input type="text" class="form-control" id="email_user" name="email_user" placeholder="Email or Username" data-required>
                     </div>
@@ -36,7 +38,7 @@
                             <button type="submit" class="btn btn-primary">Login</button>
                         </div>
                         <div class="col-sm-6 text-right">
-                            <a href="/signup" class="btn btn-success">Go To Signup</a>
+                            <a href="/Users/Signup" class="btn btn-success">Go To Signup</a>
                         </div>
                     </div>
                 </form>

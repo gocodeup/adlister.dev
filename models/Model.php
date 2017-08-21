@@ -208,6 +208,32 @@ abstract class Model {
         return $instance;
     }
 
+     public static function findAdById($id)
+    {
+        // Get connection to the database
+        self::dbConnect();
+
+        //Create select statement using prepared statements
+        $query = 'SELECT * FROM ' . "ads" . ' WHERE id = :id';
+
+        $stmt = self::$dbc->prepare($query);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        //Store the resultset in a variable named $result
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $instance = null;
+        // if we have a result, create a new instance
+        if ($result) {
+            
+            $instance = $result;
+        }
+
+        // return either the found instance or null
+        return $instance;
+    }
+
 
     /**
      * Find all records in a table
