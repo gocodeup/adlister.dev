@@ -58,6 +58,7 @@ function pageController()
     if(Input::has('logout')){
         Auth::logout();
         var_dump($_SESSION);
+        header("Location:/Users/Login");
     };
 
     if (isset($_SESSION['IS_LOGGED_IN'])){
@@ -71,6 +72,8 @@ function pageController()
         echo "this fired";
         header("Location:/Ads");
     };
+
+   
 
 
 
@@ -127,7 +130,7 @@ function pageController()
     $data['allAds'] = $allAds;
     $data['allUsersAds'] = $allUsersAds;
     return $data;
-var_dump($_SESSION);
+    var_dump($_SESSION);
 }
 
 extract(pageController());
