@@ -2,26 +2,14 @@
 require_once "/../db_connect.php"
 require_once "/../Input.php";
 require_once"/../Auth.php";
+require_once __DIR__ . '/../utils/helper_functions.php';
 
-// function createAd()
-// {
-//
-// }
-//
-// function viewAds()
-// {
-//
-// }
-//
  function pageController()
 {
     $data = [];
-    // 
-    // $user_id = Input::get('user_id');
-    // $username = Input::get('username');
-    // $email = Input::get('email');
 
-findByUsernameOrEmail($usernameOrEmail)
+
+    findByUsernameOrEmail($usernameOrEmail)
 }
 
 extract(pageController());
