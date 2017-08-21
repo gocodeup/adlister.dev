@@ -5,6 +5,7 @@ require_once __DIR__ . '/Model.php';
 class User extends Model {
     protected static $table = 'users';
 
+
     // override the __set method so that we can hash passwords. if the
     // given key is not a password, just call the parent method
     public function __set($name, $value)
@@ -21,15 +22,15 @@ class User extends Model {
      * @param string $usernameOrEmail
      * @return User|null returns null if no matching record is found
      */
-    public static function findByUsernameOrEmail($usernameOrEmail)
+    public static function findByUsernameOrEmail($username, $email)
     {
         self::dbConnect();
 
         $query = 'SELECT * FROM ' . self::$table . ' WHERE username = :username OR email = :email';
 
         $stmt = self::$connection->prepare($query);
-        $stmt->bindValue(':username', $usernameOrEmail, PDO::PARAM_STR);
-        $stmt->bindValue(':email', $usernameOrEmail, PDO::PARAM_STR);
+        $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+        $stmt->bindValue(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
 
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -62,7 +63,7 @@ class User extends Model {
     {
         $stmt = self::$connection->prepare('INSERT INTO users (name, email, username, password) VALUES (:name, :email, :username, :password)');
         $stmt->bindValue(':name', Input::sanitize($_POST['name']), PDO::PARAM_STR);
-        $stmt->bindValue(':email', Input::sanitize($_POST['signupEmail']), PDO::PARAM_STR);
+        $stmt->bindValue(':email', Input::sanitize($_POST['email']), PDO::PARAM_STR);
         $stmt->bindValue(':username', Input::sanitize($_POST['username']), PDO::PARAM_STR);
         $stmt->bindValue(':password', password_hash($_POST['password'], PASSWORD_DEFAULT), PDO::PARAM_STR);
         $stmt->execute();
