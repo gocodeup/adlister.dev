@@ -20,9 +20,9 @@ require_once __DIR__ . ' /../utils/helper_functions.php';
          <?php include_once 'assets/menu.php' ?>
         <div class="container">
             <?php include_once 'assets/header.php' ?>
+            <h1 class="section-title">Signup For Antiquitas Lost!</h1>
             <section id="login">
                 <div class="row">
-                    <h1 class="section-title">Signup For OooLister</h1>
                     <div class="col-md-6 col-md-offset-3">
                         <p>Please fill out the information below so we can create your account.</p>
                         <?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
