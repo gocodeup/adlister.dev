@@ -5,7 +5,11 @@
 			<div class="well text-center col-md-6">
 				<h4><?= $ad->name ?></h4>
 				<p>Description: <?= $ad->description ?></p>
+        <img class="ad-img" src=<?= $ad->image ?>>
 			</div>
 		</a>
 	<?php endforeach; ?>
 </div>
+
+<br>
+<br>
