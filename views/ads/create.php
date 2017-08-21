@@ -1,10 +1,16 @@
 <!--Page for creating new advertisement listings-->
 <?php
 
-if (isset($_POST)){
-    $picture = Input::get('image');
-    saveUploadedImage($picture);
-    var_dump($_FILES);
+if (isset($_POST) && isset($_FILES['image'])){
+    $picture = saveUploadedImage('image');
+    $ad = new Ad();
+    $ad->name = Input::get('name');
+    $ad->description = Input::get('description');
+    $ad->seller_id = Auth::id();
+    $ad->image = $picture;
+
+    $ad->save();
+
 }
 
  ?>
@@ -26,18 +32,18 @@ if (isset($_POST)){
                     <button type="button" name="button">Submit</button>
                 </form> -->
 
-                <form method='post' action="/create">
+                <form method='post' action="/create" enctype="multipart/form-data">
                   <div class="form-group">
                     <label for="name">Ad Title</label>
                     <input name='name' type="text" class="form-control" placeholder="Title">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Item Description</label>
-                    <input type="textarea" class="form-control" placeholder="Description">
+                    <label for="description">Item Description</label>
+                    <input name='description' type="textarea" class="form-control" placeholder="Description">
                   </div>
                   <div class="form-group">
-                    <label for="InputFile">File input</label>
-                    <input name='image' type="file" id="InputFile">
+                    <label for="image">File input</label>
+                    <input name='image' type="file" id="image">
                     <p class="help-block">Add an image of your item.</p>
                   </div>
 

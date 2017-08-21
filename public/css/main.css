@@ -13,10 +13,13 @@
   padding:20px;
   padding-bottom:16px;
   text-align:center;
-  position:fixed; 
-  bottom:0;   
-  left:0; 
-  color: #999;       
+  position:fixed;
+  bottom:0;
+  left:0;
+  color: #999;
 }
 
-	
+.ad-img {
+	width:100%;
+	height:auto;
+}

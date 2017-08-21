@@ -16,7 +16,7 @@ class FileUploadException extends Exception { }
  */
 function saveUploadedImage($inputName) {
     $maxUploadSize = 1024000000;
-    $validFileExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+    $validFileExtensions = ['jpg', 'jpeg', 'png', 'gif', 'JPG'];
     $uploadsDirectory = 'img/uploads';
 
     // make sure the input exists and is a file
@@ -54,7 +54,7 @@ function saveUploadedImage($inputName) {
     $newName = substr($tempName, $positionOfLastSlash);
 
     // move image to uploads directory
-    $imagePath = $uploadsDirectory . '/' . $newName . '.' . $fileExtension;
+    $imagePath = $uploadsDirectory . $newName . '.' . $fileExtension;
     move_uploaded_file($tempName, __DIR__ .'/../public/' . $imagePath);
 
     // return the path to the image relative to our public folder
@@ -69,13 +69,13 @@ function signUp ($_Post)
     if(!empty($_POST)){
         if(Input::get('name') === '') {
             $nameErrorMessage =  'Please enter a name.'.PHP_EOL;
-        } 
+        }
         if(Input::get('email') === '') {
             $emailErrorMessage = 'Please enter an email.'.PHP_EOL;
-        } 
+        }
         if(Input::get('username') === '') {
             $usernameErrorMessage = 'Please enter a username.'.PHP_EOL;
-        } 
+        }
         if(Input::get('password') === '') {
             $passwordErrorMessage = 'Please enter a password.'.PHP_EOL;
         } else if(Input::has('name') && Input::has('email') && Input::has('username') && Input::has('password')) {

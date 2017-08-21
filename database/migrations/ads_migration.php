@@ -10,6 +10,7 @@ $query = 'CREATE TABLE ads (
     name VARCHAR(240) NOT NULL,
     description TEXT,
 	seller_id INT UNSIGNED,
+    image VARCHAR(240),
     PRIMARY KEY (id)
 )';
 
