@@ -48,48 +48,42 @@ function addNewAd()
 function pageController()
 {
 
+
+    $data = [];
     $allUsers = User::all();
     $allAds = Ad::all();
     $allUsersAds = User::usersAds();
-
-
-    if (isset($_SESSION['IS_LOGGED_IN'])){
-    addNewAd();
-    }
-    else if (!empty($_POST)){
-    addNewUser();
-    var_dump($_POST);
-    }
-
-    if(Auth::attempt(Input::get('email_user'), Input::get('password'))){
-        $sessionId = session_id();
-        // $mainView = 'Users/Ads';
-
-
-        var_dump($_SESSION);
-        header('adlister.dev/Ads');
-        // var_dump($sessionId);
-    };
+    $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
     if(Input::has('logout')){
         Auth::logout();
         var_dump($_SESSION);
     };
 
-    // defines array to be returned and extracted for view
-    $data = [];
+    if (isset($_SESSION['IS_LOGGED_IN'])){
+        addNewAd();
+    } else if (!empty($_POST)){
+        addNewUser();
+    }
+
+    if(Auth::attempt(Input::get('email_user'), Input::get('password'))){
+        $sessionId = session_id();
+        echo "this fired";
+        header("Location:/Ads");
+    };
+
+
 
     // get the part of the request after the domain name
-    $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
+    //defining all users and ads in db
     if(($request == "/Users/Login" || $request == "/Users/Signup") && isset($_SESSION['IS_LOGGED_IN'])){
         $request = "/Ads";
     }
+
     if(($request == "/Users" || $request == "/Ads" || $request == "/Ads/Create") && !isset($_SESSION['IS_LOGGED_IN'])){
         $request = "/Users/Login";
     }
-    //defining all users and ads in db
-
     // switch that will run functions and setup variables dependent on what route was accessed
     switch ($request) {
         case '/':
@@ -128,11 +122,12 @@ function pageController()
             break;
     }
 
+
     $data['mainView'] = $mainView;
     $data['allAds'] = $allAds;
     $data['allUsersAds'] = $allUsersAds;
     return $data;
-}
 var_dump($_SESSION);
+}
 
 extract(pageController());
