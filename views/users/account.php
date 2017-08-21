@@ -1,15 +1,3 @@
-<?php
-
-	
-$usernameOrEmail = "finn_the_human";
-$user = User::findByUsernameOrEmail($usernameOrEmail);
-
-$name = $user->name;
-$email = $user->email;
-$username = $user->username;
-
-?>
-
 <div class="container">
 
     <section id="accountinfo">
@@ -21,11 +9,11 @@ $username = $user->username;
             
             <div class="col-xs-6 col-xs-offset-3">
 
-            	<h3>Name: <?php echo $name; ?></h3>
-            	<h3>Email: <?php echo $email; ?></h3>
-            	<h3>Username: <?php echo $username; ?></h3>
+            	<h3>Name: <?php echo $user->name; ?></h3>
+            	<h3>Email: <?php echo $user->email; ?></h3>
+            	<h3>Username: <?php echo $user->username; ?></h3>
 
-                <a href="">Edit</a>
+                <a href="/update">Edit</a>
                 <a href="">Change password</a>
 
                 
