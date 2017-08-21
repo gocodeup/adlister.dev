@@ -10,17 +10,12 @@ $query = 'CREATE TABLE ads (
     user_id INT NOT NULL,
     username VARCHAR(100) NOT NULL,
     date_posted DATE,
-    product_name VARCHAR(240) NOT NULL,
     category VARCHAR(240) NOT NULL,
-    sub_category VARCHAR(100) NOT NULL,
     price FLOAT (12) NOT NULL,
     description VARCHAR(255) NOT NULL,
     availability_status VARCHAR(100) NOT NULL,
     pick_up_location VARCHAR(255)NOT NULL,
     location_city VARCHAR(255) NOT NULL,
-    location_state VARCHAR(255) NOT NULL,
-    date_sold DATE,
-    contact_info VARCHAR(255) NOT NULL,
     image blob NOT NULL,
     PRIMARY KEY (id)
 )';
