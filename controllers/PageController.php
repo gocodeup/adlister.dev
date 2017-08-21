@@ -42,7 +42,7 @@ function pageController()
             break;
         case ('/signup'):
             $mainView = '../views/users/signup.php';
-            signUp($_POST);
+            signUp();
             break;
         case ('/logout'):
             $mainView = '../views/home.php';
@@ -54,7 +54,7 @@ function pageController()
     }
 
     $data['mainView'] = $mainView;
-
+    $data['errorMessage'] = signup();
     return $data;
 }
 

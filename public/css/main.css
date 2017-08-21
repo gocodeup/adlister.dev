@@ -18,5 +18,8 @@
   left:0; 
   color: #999;       
 }
+#error_message {
+  color: red;
+}
 
 	
