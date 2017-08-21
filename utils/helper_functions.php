@@ -1,4 +1,5 @@
 <?php
+
 class FileUploadException extends Exception { }
 
 /**
@@ -60,35 +61,48 @@ function saveUploadedImage($inputName) {
     // return the path to the image relative to our public folder
     return $imagePath;
 }
-function signUp ($_Post)
+function signUp ()
 {
-    $nameErrorMessage = '';
-    $emailErrorMessage = '';
-    $usernameErrorMessage = '';
-    $passwordErrorMessage = '';
+    
+    $fullNameError = '';
+    $emailError = '';
+    $usernameError = '';
+    $passwordError = '';
+
     if(!empty($_POST)){
+        $userInfo = User::findByUsernameOrEmail(Input::get('username'));
         if(Input::get('name') === '') {
-            $nameErrorMessage =  'Please enter a name.'.PHP_EOL;
-        }
+            return $fullNameError =  'Please enter a name.'.PHP_EOL;
+        } 
         if(Input::get('email') === '') {
-            $emailErrorMessage = 'Please enter an email.'.PHP_EOL;
-        }
+            return $emailError = 'Please enter an email.'.PHP_EOL;
+        } 
         if(Input::get('username') === '') {
-            $usernameErrorMessage = 'Please enter a username.'.PHP_EOL;
-        }
+            return $usernameError = 'Please enter a username.'.PHP_EOL;
+        } 
         if(Input::get('password') === '') {
-            $passwordErrorMessage = 'Please enter a password.'.PHP_EOL;
-        } else if(Input::has('name') && Input::has('email') && Input::has('username') && Input::has('password')) {
+            return $passwordError = 'Please enter a password.'.PHP_EOL;
+        }
+        if($user !== null && ($userInfo->email === Input::get('email'))) {
+            return $emailError = 'The email you have chosen is already associated with another user. Please choose another email.';
+        }
+        if($user !== null && ($userInfo->username === Input::get('username'))) {
+            return $usernameError = 'That username is already in use. Please choose a unique username.';
+        } else if((Input::has('name') && Input::has('email') && Input::has('username') && Input::has('password')) && (User::findByUsernameOrEmail(Input::get('username')) === null) && (User::findByUsernameOrEmail(Input::get('email')) === null)) {
             $user = new User();
             $user->name = Input::get('name');
             $user->email = Input::get('email');
             $user->username = Input::get('username');
             $user->password = Input::get('password');
             $user->save();
+            header('Location:/login');
+            die();
+
         }
     }
 
 }
+
 function logIn ()
 {
     if(!empty($_POST)){
@@ -103,4 +117,23 @@ function logIn ()
             die;
         }
     }
+}
+
+function updateUser()
+{
+
+    $user = Auth::user();
+
+    if (!empty($_POST))
+    {
+    $user->name = Input::get('name');
+    $user->email = Input::get('email');
+
+    $user->save();
+    header("Location: /account");
+
+    }
+
+
+
 }

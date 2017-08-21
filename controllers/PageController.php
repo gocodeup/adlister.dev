@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../utils/helper_functions.php';
 require_once __DIR__ . '/../utils/functions.php';
+require_once __DIR__ . '/../models/User.php';
 
 function pageController()
 {
@@ -26,9 +27,11 @@ function pageController()
             break;
         case ('/index'):
             $mainView = '../views/ads/index.php';
+            $ads = Ad::all();
             break;
         case ('/show'):
             $mainView = '../views/ads/show.php';
+            $ad = Ad::find($_GET['ad']);
             break;
         case ('/account'):
             $mainView = '../views/users/account.php';
@@ -42,7 +45,11 @@ function pageController()
             break;
         case ('/signup'):
             $mainView = '../views/users/signup.php';
-            signUp($_POST);
+            signUp();
+            break;
+        case ('/update'):
+            $mainView = '../views/users/update.php';
+            updateUser();
             break;
         case ('/logout'):
             $mainView = '../views/home.php';
@@ -54,8 +61,12 @@ function pageController()
     }
 
     $data['mainView'] = $mainView;
-
+    $data['errorMessage'] = signup();
+    $data['user'] = Auth::user();
+    $data['ads'] = Ad::all();
+    $data['ad'] = $ad;
     return $data;
 }
 
+// var_dump($_SESSION);
 extract(pageController());
