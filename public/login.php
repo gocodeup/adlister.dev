@@ -1,49 +1,42 @@
 <?php
-   require_once __DIR__ .  '/../database/db_connect.php';
+	session_start();
    require_once __DIR__ .  '/../database/db_connect.php';
    require_once "../utils/Input.php";
    require_once "../utils/Auth.php";
-   require_once __DIR__ . ' /../utils/helper_functions.php';
+   require_once __DIR__ . " /../utils/helper_functions.php";
 
+   function attempt($usernameOrEmail)
+    {
+        // makes sure the values passed in are not empty
+        if(($username == '' || $username == null) || ($password == '' || $password == null)) {
+            $_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
+            return false;
+        }
+        // gets instance of user model by searching with username or email($username)
+        $user = User::findByUsernameOrEmail($usernameOrEmail);
 
-   function pageController()
-   {
-       $data = [];
-       if(isset($_SESSION['logged_in_user'])) {
-       header("Location: /account.php");
-       die();
-       }
+        // makes sure the instance returned is not empty
+        if ($user == null) {
+            $_SESSION['ERROR_MESSAGE'] = 'Login information isincorrect';
+            return false;
+        }
+        // checks password submitted against hashed password
+        if (password_verify($password, $user->password)) {
+            // sets session variables used for logged in user
+            $_SESSION['IS_LOGGED_IN'] = $user->username;
+            $_SESSION['LOG_IN_EMAIL'] = $user->email;
+            $_SESSION['LOGGED_IN_ID'] = $user->id;
+            header("Location: /account.php");
+            die();
+            return true;
+        }
 
-       $username = (isset($_REQUEST['username'])) ? $_REQUEST['username'] : "undefined";
-       $password = (isset($_REQUEST['password'])) ? $_REQUEST['password'] : "undefined";
-       $message = "";
+        $_SESSION['ERROR_MESSAGE'] = 'Login information is incorrect';
+        return false;
+    }
 
-       $data = [
-           'username' => $username,
-           'password' => $password,
-           'message' => $message
-       ];
-
-       if (!empty($_POST)) {
-           if ($username == "guest" && $password == "password") {
-           $_SESSION['logged-in-user'] = $username;
-           header("Location:/account.php");
-           die();
-
-           } else {
-               echo $message = "Invalid Login";
-           }
-       }
-
-       if(isset($_GET['logout'])) {
-               logout();
-               header("Location:/logout.php");
-               die();
-       }
-       return $data;
-   }
-       extract(pageController());
     ?>
+
 <!DOCTYPE html>
 <html>
    <head>
