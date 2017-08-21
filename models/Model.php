@@ -234,5 +234,4 @@ abstract class Model {
             return $instance;
         }, $results);
     }
-
 }

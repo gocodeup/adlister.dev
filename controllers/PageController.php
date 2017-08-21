@@ -50,9 +50,18 @@ function addNewAd()
 function pageController()
 {
 
+
+    $data = [];
     $allUsers = User::all();
     $allAds = Ad::all();
     $allUsersAds = User::usersAds();
+    $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+    if(Input::has('logout')){
+        Auth::logout();
+        var_dump($_SESSION);
+        header("Location:/Users/Login");
+    };
 
 
     if (isset($_SESSION['IS_LOGGED_IN']) && !empty($_POST['title'])){
@@ -66,29 +75,21 @@ function pageController()
     if(isset($_POST['email_user'])){
         if(Auth::attempt(Input::get('email_user'), Input::get('password'))){
             $sessionId = session_id();
-            header('adlister.dev/Ads');
-        var_dump($_POST);
+            header('Location:/Ads');
         };
     }
-    if(Input::has('logout') && isset($_SESSION['IS_LOGGED_IN'])){
-        Auth::logout();
-    };
 
-    // defines array to be returned and extracted for view
-    $data = [];
 
     // get the part of the request after the domain name
-    $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
+    //defining all users and ads in db
     if(($request == "/Users/Login" || $request == "/Users/Signup") && isset($_SESSION['IS_LOGGED_IN'])){
         $request = "/Ads";
     }
-        var_dump($request);
+
     if(($request == "/Users" || $request == "/Ads" || $request == "/Ads/Create") && !isset($_SESSION['IS_LOGGED_IN'])){
         $request = "/Users/Login";
     }
-    //defining all users and ads in db
-
     // switch that will run functions and setup variables dependent on what route was accessed
     switch ($request) {
         case '/':
@@ -127,11 +128,12 @@ function pageController()
             break;
     }
 
+
     $data['mainView'] = $mainView;
     $data['allAds'] = $allAds;
     $data['allUsersAds'] = $allUsersAds;
     return $data;
+    var_dump($_SESSION);
 }
-var_dump($_SESSION);
 
 extract(pageController());
