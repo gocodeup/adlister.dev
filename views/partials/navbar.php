@@ -13,13 +13,23 @@
       <li class="nav-item">
         <a class="nav-link" href="/index">Items</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="/login">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="/signup">Signup</a>
-      </li>
-      </ul>
+      <?php if(!Auth::check()): ?>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="/signup">Signup</a>
+        </li>
+      <?php endif ?>
+      <?php if(Auth::check()): ?>
+          <li class="nav-item active">
+             <a class="nav-link" href="/account">Account<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+             <a class="nav-link" href="/logout">Logout<span class="sr-only">(current)</span></a>
+          </li>
+      <?php endif ?>
+    </ul>
 
     <form id="search" class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">

@@ -44,6 +44,10 @@ function pageController()
             $mainView = '../views/users/signup.php';
             signUp($_POST);
             break;
+        case ('/logout'):
+            $mainView = '../views/home.php';
+            Auth::logout();
+            break;
         default:    // displays 404 if route not specified above
             $mainView = '../views/404.php';
             break;
