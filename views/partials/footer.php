@@ -1,2 +1,10 @@
 
-<div class="footer">This footer will always be positioned at the bottom of the page, but <strong>not fixed</strong>.</div>
+<div class="footer">
+	<img id="githubIconSizer" src="/imgs/ghIcon.png">
+
+		<span class="footerNames">Emmett Peters</span>
+		<span class="footerNames">Cody Hastings</span>
+		<span class="footerNames">Avery Hankins</span>
+	<img id="githubIconSizer" src="/imgs/ghIcon.png">
+
+</div>
