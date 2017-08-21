@@ -10,7 +10,10 @@
 
                 <p>Please fill out the information below so we can create your account.</p>
                 <?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
-                    <div class="alert alert-danger">
+                    <div class="alert alert-danger  <?php 
+                if(empty($_GET)){
+                    echo "avery-class";
+                    }?>">
                         <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
                     </div>
                     <?php unset($_SESSION['ERROR_MESSAGE']); ?>
