@@ -4,3 +4,17 @@
   crossorigin="anonymous">
 </script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://static.filestackapi.com/v3/filestack.js"></script>
+<script type="text/javascript">
+  var client = filestack.init('A5gY0fZEnTzWuvzsVI5Ttz');
+ 
+  client.pick({
+  accept: 'image/*',
+  maxFiles: 5,
+  imageMax: [1024, 1024]
+}).then(function(result) {
+  console.log(JSON.stringify(result.filesUploaded[0].url));
+});
+
+
+</script>
