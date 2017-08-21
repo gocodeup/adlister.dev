@@ -128,4 +128,4 @@ function pageController()
     return $data;
 }
 
-    extract(pageController());
+extract(pageController());
