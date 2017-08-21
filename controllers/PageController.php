@@ -17,7 +17,7 @@ function addNewUser()
             // die();
             header("Location:/Users/Login");
         } else {
-            echo "Username or email exists!!";
+            $_SESSION['ERROR_MESSAGE'] = "Username or email exists!!";
         }
     }
 }
@@ -56,8 +56,9 @@ function pageController()
     if (isset($_SESSION['IS_LOGGED_IN'])){
     addNewAd();
     }
-    else{
+    else if (!empty($_GET)){
     addNewUser();
+    var_dump($_GET);
     }
 
     if(Auth::attempt(Input::get('email_user'), Input::get('password'))){
