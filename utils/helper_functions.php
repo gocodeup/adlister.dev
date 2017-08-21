@@ -1,4 +1,5 @@
 <?php
+
 class FileUploadException extends Exception { }
 
 /**
@@ -116,3 +117,32 @@ function logIn ()
         }
     }
 }
+
+function updateUser()
+{
+
+    $user = Auth::user();
+
+    if (!empty($_POST))
+    {
+    $user->name = Input::get('name');
+    $user->email = Input::get('email');
+    $user->username = Input::get('username');
+
+    $user->save();
+    header("Location: /account");
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
