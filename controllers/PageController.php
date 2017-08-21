@@ -14,8 +14,9 @@ function addNewUser()
             $user->username = Input::get('username');
             
             $user->save();
-            // die();
+            
             header("Location:/Users/Login");
+            
         } else {
             $_SESSION['ERROR_MESSAGE'] = "Username or email exists!!";
         }
@@ -37,8 +38,9 @@ function addNewAd()
             $ad->username = $_SESSION['IS_LOGGED_IN'];
             $ad->date_create = date("Y-m-d H-i-s");
             $ad->save();
-            // die();
+            
             header("Location:/Ads/Show");
+            var_dump($_POST);
         } else {
             echo "Title for ad already exists!!";
         }
@@ -61,20 +63,21 @@ function pageController()
         header("Location:/Users/Login");
     };
 
-    if (isset($_SESSION['IS_LOGGED_IN'])){
-        addNewAd();
-    } else if (!empty($_POST)){
-        addNewUser();
+
+    if (isset($_SESSION['IS_LOGGED_IN']) && !empty($_POST['title'])){
+    addNewAd();
+    
+    }
+    if (!empty($_POST['name'])){
+    addNewUser();
     }
 
-    if(Auth::attempt(Input::get('email_user'), Input::get('password'))){
-        $sessionId = session_id();
-        echo "this fired";
-        header("Location:/Ads");
-    };
-
-   
-
+    if(isset($_POST['email_user'])){
+        if(Auth::attempt(Input::get('email_user'), Input::get('password'))){
+            $sessionId = session_id();
+            header('Location:/Ads');
+        };
+    }
 
 
     // get the part of the request after the domain name

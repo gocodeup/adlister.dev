@@ -30,7 +30,7 @@
         <li><a href="/Users/Login"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
         <?php } ?>
         <?php if (Auth::check()) { ?>
-        <li id="logoutLi"><form class="navbar-form"><button id="logoutButton" type="submit" name="logout"><span class="glyphicon glyphicon-log-out"></span> Log Out</button></form></li>
+        <li id="logoutLi"><form class="navbar-form" type="POST"><button id="logoutButton" type="submit" name="logout"><span class="glyphicon glyphicon-log-out"></span> Log Out</button></form></li>
         <?php } ?>
       </ul>
     </div>
