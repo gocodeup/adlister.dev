@@ -47,7 +47,7 @@ function addNewAd()
 
 function pageController()
 {
-
+    
 
     $data = [];
     $allUsers = User::all();
