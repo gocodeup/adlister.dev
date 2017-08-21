@@ -32,6 +32,10 @@
                     <li><?= $ad->username ?></li>
                     <li><?= $ad->date_create ?></li>
                     <li><?= $ad->categories ?></li>
+                    <a href="/Ads/Edit?title=<?php 
+                    $title = explode(" ", $ad->title);
+                    $title = implode("_",$title);
+                    echo $title; ?>"><button class="btn-primary btn">Edit</button></a>
                     </ul>
                 </div>
                 <?php endforeach; } ?>
