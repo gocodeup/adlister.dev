@@ -22,15 +22,15 @@ class User extends Model {
      * @param string $usernameOrEmail
      * @return User|null returns null if no matching record is found
      */
-    public static function findByUsernameOrEmail($username, $email)
+    public static function findByUsernameOrEmail($usernameOrEmail)
     {
         self::dbConnect();
 
         $query = 'SELECT * FROM ' . self::$table . ' WHERE username = :username OR email = :email';
 
         $stmt = self::$connection->prepare($query);
-        $stmt->bindValue(':username', $username, PDO::PARAM_STR);
-        $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+        $stmt->bindValue(':username', $usernameOrEmail, PDO::PARAM_STR);
+        $stmt->bindValue(':email', $usernameOrEmail, PDO::PARAM_STR);
         $stmt->execute();
 
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
