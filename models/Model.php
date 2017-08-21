@@ -1,6 +1,6 @@
 <?php
 
-$_ENV = include __DIR__ . '/../.env.php';
+$_ENV = require __DIR__ . '/../env.php';
 
 /**
  * Note that this class is abstract and must be extended. The child
@@ -15,11 +15,11 @@ $_ENV = include __DIR__ . '/../.env.php';
  * is not necessary in instance methods.
  */
 abstract class Model {
-    /** @var PDO|null the connection to the database */ 
-    protected static $dbc;
+    /** @var PDO|null the connection to the database */
+    protected static $connection;
     /** @var string the name of the table */
     protected static $table;
-    
+
     /** @var array the attributes of this instance */
     protected $attributes = [];
 
@@ -64,11 +64,11 @@ abstract class Model {
      */
     protected static function dbConnect()
     {
-        if (! self::$dbc) {
+        if (! self::$connection) {
             //Connect to database
             require __DIR__ . '/../database/db_connect.php';
 
-            self::$dbc = $dbc;
+            self::$connection = $connection;
         }
     }
 
@@ -94,7 +94,7 @@ abstract class Model {
     {
         $query = 'DELETE FROM ' . static::$table . ' WHERE id = :id';
 
-        $stmt = self::$dbc->prepare($query);
+        $stmt = self::$connection->prepare($query);
         $stmt->bindValue(':id', $this->attributes['id'], PDO::PARAM_INT);
         $stmt->execute();
     }
@@ -125,14 +125,14 @@ abstract class Model {
 
         $query = "INSERT INTO " . static::$table . " ({$columns}) VALUES ({$valuePlaceholders})";
 
-        $stmt = self::$dbc->prepare($query);
+        $stmt = self::$connection->prepare($query);
 
         foreach ($this->attributes as $column => $value) {
             $stmt->bindValue(':' . $column, $value, PDO::PARAM_STR);
         }
 
         $stmt->execute();
-        $this->attributes['id'] = self::$dbc->lastInsertId();
+        $this->attributes['id'] = self::$connection->lastInsertId();
     }
 
     /**
@@ -163,9 +163,7 @@ abstract class Model {
         }
 
         $query .= ' WHERE id = :id';
-
-        $stmt = self::$dbc->prepare($query);
-
+        $stmt = self::$connection->prepare($query);
         foreach ($this->attributes as $key => $value) {
             $stmt->bindValue(':' . $key, $value, PDO::PARAM_STR);
         }
@@ -189,8 +187,7 @@ abstract class Model {
 
         //Create select statement using prepared statements
         $query = 'SELECT * FROM ' . static::$table . ' WHERE id = :id';
-
-        $stmt = self::$dbc->prepare($query);
+        $stmt = self::$connection->prepare($query);
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
 
@@ -220,8 +217,7 @@ abstract class Model {
         self::dbConnect();
 
         $query = 'SELECT * FROM ' . static::$table;
-
-        $stmt = self::$dbc->prepare($query);
+        $stmt = self::$connection->prepare($query);
         $stmt->execute();
 
         //Store the resultset in a variable named $result
