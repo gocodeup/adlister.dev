@@ -73,21 +73,24 @@ height:100%;
 	float:left;
   text-align:center;
 }
-.footer h3{
-	font-family: 'Helvetica';
-	font-size: 30px;
-	font-weight: 100;
-	margin-top:70px;
+.footer h5{
+
+	font-size: 9px;
+
+	margin-bottom: :70px;
 	margin-left:40px;
 }
 
+.dark-mode{
+	color: white;
+}
 
 /*-----footer-----*/
 
 
 
 .center-div{
-    width:50%;
+    width:75%;
     margin:0 auto;
     text-align:center;
 }

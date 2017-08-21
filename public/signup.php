@@ -17,13 +17,16 @@ require_once __DIR__ . ' /../utils/helper_functions.php';
        <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
     </head>
     <body>
-         <?php include_once 'assets/menu.php' ?>
-        <div class="container">
-            <?php include_once 'assets/header.php' ?>
-            <h1 class="section-title">Signup For Antiquitas Lost!</h1>
+      <?php include 'assets/menu.php';?>
+  <!-- menu panel -->
+  <div id="content">
+     <div class="menu-trigger"></div>
+     <?php include 'assets/header.php' ?>
+     <div class="container center-div">
+            <h1 class="section-title">Signup to sell your goods!</h1>
             <section id="login">
                 <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
+                    <div class="center-div">
                         <p>Please fill out the information below so we can create your account.</p>
                         <?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
                             <div class="alert alert-danger">
@@ -62,6 +65,7 @@ require_once __DIR__ . ' /../utils/helper_functions.php';
                     </div>
                 </div>
             </section>
+            <?php include 'assets/footer.php' ?>
         </div>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
