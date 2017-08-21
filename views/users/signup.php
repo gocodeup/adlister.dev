@@ -10,6 +10,7 @@
             <div class="col-md-6 col-md-offset-3">
 
                 <p>Please fill out the information below so we can create your account.</p>
+                <p id='error_message'><?= $errorMessage ?></p>
                 <?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
                     <div class="alert alert-danger">
                         <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
@@ -26,16 +27,16 @@
                 <form method="POST" action="/signup" data-validation data-required-message="This field is required">
 
                     <div class="form-group">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" required><!-- <?= $nameErrorMessage ?> -->
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" <?php if(!empty($_POST)): ?> value='<?= $_POST['name']?>' <?php endif ?> required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" required><!-- <?= $emailErrorMessage ?> -->
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" <?php if(!empty($_POST)): ?> value='<?= $_POST['email']?>' <?php endif ?> required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" required><!-- <?= $usernameErrorMessage ?> -->
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" <?php if(!empty($_POST)): ?> value='<?= $_POST['username']?>' <?php endif ?>  required>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required><!-- <?= $passwordErrorMessage ?> -->
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">

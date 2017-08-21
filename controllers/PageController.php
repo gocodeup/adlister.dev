@@ -42,8 +42,8 @@ function pageController()
             logIn();
             break;
         case ('/signup'):
-            signUp($_POST);
             $mainView = '../views/users/signup.php';
+            signUp();
             break;
         case ('/update'):
             $mainView = '../views/users/update.php';
@@ -59,8 +59,8 @@ function pageController()
     }
 
     $data['mainView'] = $mainView;
+    $data['errorMessage'] = signup();
     $data['user'] = Auth::user();
-
     return $data;
 }
 
