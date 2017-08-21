@@ -1,13 +1,9 @@
 <?php
 require_once __DIR__ . '/../database/db_connect.php';
-require_once "../utils/Input.php";
-require_once "../utils/Log.php";
-require_once "../utils/Auth.php";
-require_once __DIR__ . ' /../utils/helper_functions.php';
+require_once __DIR__ .  '/bootstrap.php';
 
 function pageController()
 {
-
     $data = [];
     if(isset($_SESSION['logged_in_user'])) {
     header("Location: /account.php");
@@ -40,12 +36,9 @@ function pageController()
             header("Location:/logout.php");
             die();
     }
-
     return $data;
-
-
-extract(pageController());
-
+}
+    extract(pageController());
  ?>
 
  <!DOCTYPE html>

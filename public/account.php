@@ -1,13 +1,11 @@
 <?php
 require_once __DIR__ . '/../database/db_connect.php';
-require_once "../utils/Input.php";
-require_once "../utils/Auth.php";
-require_once __DIR__ . ' /../utils/helper_functions.php';
+require_once __DIR__ . ' /bootstrap.php';
 
  function pageController()
 {
-$data = [];
-
+    $data = [];
+    if(isset($_SESSION['l']))
 
 }
 extract(pageController());
