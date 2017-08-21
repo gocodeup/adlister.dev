@@ -60,3 +60,47 @@ function saveUploadedImage($inputName) {
     // return the path to the image relative to our public folder
     return $imagePath;
 }
+function signUp ($_Post)
+{
+    $nameErrorMessage = '';
+    $emailErrorMessage = '';
+    $usernameErrorMessage = '';
+    $passwordErrorMessage = '';
+    if(!empty($_POST)){
+        if(Input::get('name') === '') {
+            $nameErrorMessage =  'Please enter a name.'.PHP_EOL;
+        } 
+        if(Input::get('email') === '') {
+            $emailErrorMessage = 'Please enter an email.'.PHP_EOL;
+        } 
+        if(Input::get('username') === '') {
+            $usernameErrorMessage = 'Please enter a username.'.PHP_EOL;
+        } 
+        if(Input::get('password') === '') {
+            $passwordErrorMessage = 'Please enter a password.'.PHP_EOL;
+        } else if(Input::has('name') && Input::has('email') && Input::has('username') && Input::has('password')) {
+            $user = new User();
+            $user->name = Input::get('name');
+            $user->email = Input::get('email');
+            $user->username = Input::get('username');
+            $user->password = Input::get('password');
+            $user->save();
+        }
+    }
+
+}
+function logIn ()
+{
+    if(!empty($_POST)){
+        var_dump('firing');
+        $username = Input::has('email_user')? escape(Input::get('email_user')): '';
+        $password = Input::has('password')? escape(Input::get('password')): '';
+        var_dump($username);
+        var_dump($password);
+        Auth::attempt($username, $password);
+        if(Auth::check()) {
+            header('Location:/index');
+            die;
+        }
+    }
+}
