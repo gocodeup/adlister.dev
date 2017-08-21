@@ -1,8 +1,50 @@
 <?php
 require_once __DIR__ . '/../database/db_connect.php';
 require_once "../utils/Input.php";
+require_once "../utils/Log.php";
 require_once "../utils/Auth.php";
 require_once __DIR__ . ' /../utils/helper_functions.php';
+
+function pageController()
+{
+
+    $data = [];
+    if(isset($_SESSION['logged_in_user'])) {
+    header("Location: /account.php");
+    die();
+    }
+
+    $username = (isset($_REQUEST['username'])) ? $_REQUEST['username'] : "undefined";
+    $password = (isset($_REQUEST['password'])) ? $_REQUEST['password'] : "undefined";
+    $message = "";
+
+    $data = [
+        'username' => $username,
+        'password' => $password,
+        'message' => $message
+    ];
+
+    if (!empty($_POST)) {
+        if ($username == "guest" && $password == "password") {
+        $_SESSION['logged-in-user'] = $username;
+        header("Location:/account.php");
+        die();
+
+        } else {
+            echo $message = "Invalid Login";
+        }
+    }
+
+    if(isset($_GET['logout'])) {
+            logout();
+            header("Location:/logout.php");
+            die();
+    }
+
+    return $data;
+
+
+extract(pageController());
 
  ?>
 
@@ -17,9 +59,9 @@ require_once __DIR__ . ' /../utils/helper_functions.php';
          <?php include_once 'assets/header.php' ?>
         <div class="container">
             <?php include_once 'assets/header.php' ?>
+                <h1 class="section-title">Login To Antiquitas Lost </h1>
             <section id="login">
                 <div class="row">
-                    <h1 class="section-title">Login To Antiquitas Lost </h1>
                     <?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
                         <div class="alert alert-danger">
                             <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
