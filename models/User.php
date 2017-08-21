@@ -5,7 +5,6 @@ require_once __DIR__ . '/Model.php';
 class User extends Model {
     protected static $table = 'users';
 
-
     // override the __set method so that we can hash passwords. if the
     // given key is not a password, just call the parent method
     public function __set($name, $value)
