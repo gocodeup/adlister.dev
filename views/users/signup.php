@@ -11,7 +11,7 @@
                 <p>Please fill out the information below so we can create your account.</p>
                 <?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
                     <div class="alert alert-danger  <?php 
-                if(empty($_GET)){
+                if(empty($_POST)){
                     echo "avery-class";
                     }?>">
                         <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
@@ -25,7 +25,7 @@
                     <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
                 <?php endif; ?>
 
-                <form method="GET" action="" data-validation data-required-message="This field is required">
+                <form method="POST" action="" data-validation data-required-message="This field is required">
 
                     <div class="form-group">
                         <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" data-required>
