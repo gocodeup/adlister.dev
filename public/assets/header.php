@@ -1,4 +1,6 @@
 <!-- header -->
 <a href="http://adlister.dev">
-<img class= "" src="img/banner.png" alt="banner" width="100%" height="">
+
+<img class= "" src="img/logo.png" alt="banner" align="center" width=auto height=40% hspace="100">
+
 </a>

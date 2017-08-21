@@ -17,7 +17,7 @@
     <li><img class= "menu-icon" src="img/livestock.png" alt="Livestock" width="28" height="28"><a href="http://adlister.dev">Livestock</a></li>
     <li><img class= "menu-icon" src="img/ales.png" alt="Ales" width="28" height="28"><a href="http://adlister.dev">Ales</a></li>
 		<li class="sep"></li>
-		<li class="settings"><a href="http://adlister.dev">Acount</a></li>
+		<li class="settings"><a href="/login.php">Acount</a></li>
     <li class="logout"><a href="http://adlister.dev">Logout</a></li>
     <img class= "nav-background" src="img/nav-back.png">
 	</ul>
