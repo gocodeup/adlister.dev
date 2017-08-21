@@ -11,12 +11,49 @@
     <!-- CSS Sheet -->
     <link rel="stylesheet" href="login.css">
     <body>
+        <!-- /////////////////////////////////
+             Navigation Bar
+    ///////////////////////////////// -->
+        <div id='navContainer'>
+            <nav>
+                <ul class="desktop-menu" id="desktopMenu">
+                    <li>
+                        <a id="home" href="#">
+                            <img src="broccolilogo.png" class="yonsei-logo">VEGGIE CONNECT
+                        </a>
+                    </li>
+                    <li class="desktop-link">
+                        <a href="#">HOME</a>
+                        <li class="desktop-link">
+                            <a href="#">VEGGIES FOR SALE</a>
+                        </li>
+                        <li class="desktop-link">
+                            <a href="#">SIGN-UP</a>
+                        </li>
+                        <li class="desktop-link">
+                            <a href="#">LOGIN</a>
+                        </li>
+                        <li id="mobile-menu">
+                            <a id="home2" href="index.html">
+                                <img src="broccolilogo.png" class="yonsei-logo">
+                            </a>
+                        </a>
+                        <a id="mobile-icon-container" href="#" onclick="responsiveMenu(); return false;">
+                            <img id="mobile-icon" src="https://eliya33.github.io/church/images/mobile-menu-icon-125x125.png" alt="Mobile Menu Icon">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!--     /////////////////////////////////
+                   Login Form
+        ///////////////////////////////// -->
         <div class="container">
             <section id="login">
-                <div class="row">
+                <div class="row" style="padding-top: 100px">
                     <h1 class="section-title">Login To Veggie Connect</h1>
-                    <div id="veggieLogo"><img src="broccolilogo.png" class="yonsei-logo"></div>
-                    <?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
+                    <!-- <div id="veggieLogo"><img src="broccolilogo.png" class="yonsei-logo"></div> -->
+                    <!-- <?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
                         <div class="alert alert-danger">
                             <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
                         </div>
@@ -27,9 +64,9 @@
                             <p class="success"><?= $_SESSION['SUCCESS_MESSAGE']; ?></p>
                         </div>
                         <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
-                    <?php endif; ?>
+                    <?php endif; ?> -->
                     <div class="col-md-6 col-md-offset-3">
-                        <p>Login with your email/username and password</p>
+                        <p id="login">Login with your email/username and password.</p>
                         <form method="POST" action="" data-validation data-required-message="This field is required">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="email_user" name="email_user" placeholder="Email or Username" data-required>
