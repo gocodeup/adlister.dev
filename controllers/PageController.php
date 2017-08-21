@@ -18,6 +18,8 @@ function pageController()
         // TODO: put routes here
         case ('/'):
             $mainView = '../views/home.php';
+            $ads = Ad::order('clicks');
+            $data['ads'] = $ads;
             break;
         case ('/create'):
             $mainView = '../views/ads/create.php';
@@ -28,10 +30,14 @@ function pageController()
         case ('/index'):
             $mainView = '../views/ads/index.php';
             $ads = Ad::all();
+            $data['ads'] = $ads;
             break;
         case ('/show'):
             $mainView = '../views/ads/show.php';
             $ad = Ad::find($_GET['ad']);
+            $data['ad'] = $ad;
+            $ad->clicks+= 1;
+            $ad->save();
             break;
         case ('/account'):
             $mainView = '../views/users/account.php';
@@ -63,8 +69,6 @@ function pageController()
     $data['mainView'] = $mainView;
     $data['errorMessage'] = signup();
     $data['user'] = Auth::user();
-    $data['ads'] = Ad::all();
-    $data['ad'] = $ad;
     return $data;
 }
 
