@@ -14,9 +14,17 @@ require_once __DIR__ . "../../../bootstrap.php";
 <h1>Create an ad</h1>
 	<div class= "col-md-6 col-md-offset-3">
 		<form method="POST" action="">
+			<div class="name">
+				<label for="name">Name:</label>
+				<input type="text" id="name"></input>
+			</div>
 			<div class="form-group">
 				<label for="category">Category:</label>
 				<input type="text" id="category"></input>
+			</div>
+			<div class="form-group">
+				<label for="sub_category">Sub-Category:</label>
+				<input type="text" id="sub_category"></input>
 			</div>
 			<div class="form-group">
 				<label for="price">Price:</label>
