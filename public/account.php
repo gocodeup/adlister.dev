@@ -8,7 +8,7 @@ require_once __DIR__ . ' /../utils/helper_functions.php';
 {
 $data = [];
 
-    return findByUsernameOrEmail($usernameOrEmail);
+
 }
 extract(pageController());
  ?>
@@ -22,9 +22,9 @@ extract(pageController());
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     </head>
     <body>
+            <?php include_once 'assets/menu.php' ?>
         <h1> Account Settings </h1>
-        <!--partial view for navbar-->
-
+            <?php include_once 'assets/header.php' ?>
         <div class="container">
             <h4> User Id <?=$user->user_id; ?>/h4>
             <h4> User Name <?=$user->username; ?>/h4>
