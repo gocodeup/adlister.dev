@@ -62,9 +62,9 @@ class User extends Model {
     public static function createUser()
     {
         $stmt = self::$connection->prepare('INSERT INTO users (name, email, username, password) VALUES (:name, :email, :username, :password)');
-        $stmt->bindValue(':name', Input::sanitize($_POST['name']), PDO::PARAM_STR);
-        $stmt->bindValue(':email', Input::sanitize($_POST['email']), PDO::PARAM_STR);
-        $stmt->bindValue(':username', Input::sanitize($_POST['username']), PDO::PARAM_STR);
+        $stmt->bindValue(':name', Input::escape($_POST['name']), PDO::PARAM_STR);
+        $stmt->bindValue(':email', Input::escape($_POST['email']), PDO::PARAM_STR);
+        $stmt->bindValue(':username', Input::escape($_POST['username']), PDO::PARAM_STR);
         $stmt->bindValue(':password', password_hash($_POST['password'], PASSWORD_DEFAULT), PDO::PARAM_STR);
         $stmt->execute();
 
