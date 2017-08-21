@@ -15,11 +15,11 @@ $_ENV = require __DIR__ . '/../env.php';
  * is not necessary in instance methods.
  */
 abstract class Model {
-    /** @var PDO|null the connection to the database */ 
+    /** @var PDO|null the connection to the database */
     protected static $connection;
     /** @var string the name of the table */
     protected static $table;
-    
+
     /** @var array the attributes of this instance */
     protected $attributes = [];
 
@@ -163,9 +163,7 @@ abstract class Model {
         }
 
         $query .= ' WHERE id = :id';
-
         $stmt = self::$connection->prepare($query);
-
         foreach ($this->attributes as $key => $value) {
             $stmt->bindValue(':' . $key, $value, PDO::PARAM_STR);
         }
@@ -189,7 +187,6 @@ abstract class Model {
 
         //Create select statement using prepared statements
         $query = 'SELECT * FROM ' . static::$table . ' WHERE id = :id';
-
         $stmt = self::$connection->prepare($query);
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
@@ -220,7 +217,6 @@ abstract class Model {
         self::dbConnect();
 
         $query = 'SELECT * FROM ' . static::$table;
-
         $stmt = self::$connection->prepare($query);
         $stmt->execute();
 
