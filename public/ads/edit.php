@@ -1,6 +1,11 @@
 <?php
 require_once __DIR__ . "../../../bootstrap.php";
 
+function editAd()
+{
+	
+}
+
 ?>
 
 <!DOCTYPE html>

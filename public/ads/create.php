@@ -3,6 +3,10 @@ require_once __DIR__ . "../../../bootstrap.php";
 
 session_start();
 
+if (isset($_POST["upload"])){
+	$target = "/../img/.basename($_FILES["image"])"
+}
+
 function newPost()
 {
 	$name = Input::escape(Input::get("name"));
@@ -20,13 +24,13 @@ function newPost()
 	}
 
 	//info pulled from somewhere else
-	// $user_id = $__SESSION["user_id"];
-	// $username = $__SESSION["username"];
+	$user_id = "1";
+	$username = "Finn Mertens";
 	$date_posted = date("Y-m-d");
 
 	$newPost = new Ads();
-	// $newPost->user_id = $user_id;
-	// $newPost->username = $username;
+	$newPost->user_id = $user_id;
+	$newPost->username = $username;
 	$newPost->date_posted = $date_posted;
 	$newPost->name = $name;
 	$newPost->category = $category;
@@ -62,8 +66,9 @@ newPost();
 	<?php include '../assets/header.php' ?>
 	<div class="container">
 		<h1>Create an ad</h1>
+		<?= var_dump($image) ?>
 		<div class= "col-md-6 col-md-offset-3">
-			<h3>Posting as <?= $__SESSION["username"] ?>. </h3>
+			<h3>Posting as <?= "placeholder" ?>. </h3>
 			<form method="POST" action="" enctype="multipart/form-data">
 				<div class="name">
 					<label for="name">Name:</label>

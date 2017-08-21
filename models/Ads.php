@@ -95,18 +95,19 @@ class Ads extends Model
 		return $adsArray;
 	}
 
-    public static function insertAd() {
+    public function insertAd() {
 		self::dbConnect();
-		$stmt = self::$connection->prepare('INSERT INTO ads (user_id, username, date_posted,  category, price, description, availability_status, pick_up_location, location_city) VALUES (:user_id, :username, :date_posted,  :category, :price, :description, :availability_status, :pick_up_location, :location_city, )');
-    	$stmt->bindValue(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
-        $stmt->bindValue(':username', $_SESSION['username'], PDO::PARAM_STR);
-        $stmt->bindValue(':date_posted', date("Y-m-d"), PDO::PARAM_STR);
-		$stmt->bindValue(':category', Input::escape($_POST['category']), PDO::PARAM_STR);
-		$stmt->bindValue(':price', Input::escape($_POST['price']), PDO::PARAM_INT);
-		$stmt->bindValue(':description', Input::escape($_POST['description']), PDO::PARAM_STR);
-		$stmt->bindValue(':availability_status', Input::escape($_POST['availability_status']), PDO::PARAM_STR);
-        $stmt->bindValue(':pick_up_location', Input::escape($_POST['pick_up_location']), PDO::PARAM_STR);
-        $stmt->bindValue(':location_city', Input::escape($_POST['location_city']), PDO::PARAM_STR);
+		$stmt = self::$connection->prepare('INSERT INTO ads (user_id, username, date_posted,  category, price, description, availability_status, pick_up_location, location_city, image) VALUES (:user_id, :username, :date_posted,  :category, :price, :description, :availability_status, :pick_up_location, :location_city, :image)');
+    	$stmt->bindValue(':user_id', Input::escape($this->user_id), PDO::PARAM_INT);
+        $stmt->bindValue(':username', Input::escape($this->username), PDO::PARAM_STR);
+        $stmt->bindValue(':date_posted', Input::escape($this->date_posted), PDO::PARAM_STR);
+		$stmt->bindValue(':category', Input::escape($this->category), PDO::PARAM_STR);
+		$stmt->bindValue(':price', Input::escape($this->price), PDO::PARAM_INT);
+		$stmt->bindValue(':description', Input::escape($this->description), PDO::PARAM_STR);
+		$stmt->bindValue(':availability_status', Input::escape($this->availability_status), PDO::PARAM_STR);
+        $stmt->bindValue(':pick_up_location', Input::escape($this->pick_up_location), PDO::PARAM_STR);
+        $stmt->bindValue(':location_city', Input::escape($this->location_city), PDO::PARAM_STR);
+        $stmt->bindValue(':image', Input::escape($this->image), PDO::PARAM_STR);
 		$stmt->execute();
 
 	}
