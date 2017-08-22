@@ -34,7 +34,7 @@ function processLoginInputIfExists()
 {
     if (hasInput('POST') && Auth::attempt(Input::get('email_user'), Input::get('password')))
     {
-        header('Location: /utils/log');
+        header('Location: /users/account');
         die();
     }
 }

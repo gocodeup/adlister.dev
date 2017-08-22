@@ -19,6 +19,8 @@
 
             <h1 class="section-title">User Info</h1>
 
+
+
             <!-- Filestack -->
             <!-- <img class="profileImage" src="https://cdn.filestackcontent.com/2h25ZGRHTfmQ2DBEt3yR" alt="Image uploaded with Filestack" title="Image uploaded with Filestack">
             
@@ -29,6 +31,7 @@
             <p class="text-center userInfo">USERNAME: <?= $user->username; ?></p>
             <p class="text-center userInfo">EMAIL: <?= $user->email; ?></p>
             </div>
+
 
             <?php if($user->id == Auth::id()) : ?>
             <div class="col-sm-12 text-center">

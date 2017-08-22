@@ -13,12 +13,13 @@ require_once __DIR__ . '/../bootstrap.php';
 <body>
     <?php require '../views/partials/navbar.php'; ?>
 
-   	<?php require $main_view; ?> 
+      <?php require $main_view; ?>
 
-    <?php require '../views/partials/common_js.php'; ?>
+   <?php require '../views/partials/common_js.php'; ?>
 
-    <!-- <?php require '/footer.php'; ?> -->
+   <!-- <?php require '/footer.php'; ?> -->
 
-    <script src="/css/navbar.js"></script>
+   <script src="/css/navbar.js"></script>
 </body>
 </html>
+

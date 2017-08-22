@@ -11,9 +11,9 @@
         </li>
 
         <li class="desktop-link">
-            <a href="#">HOME
+            <a href="/home">HOME
             </a>
-
+        </li>
 
         <li class="desktop-link">
             <a href="/item">VEGGIES FOR SALE

@@ -5,18 +5,18 @@
 
 <div class="container">
 
-    <section id="login">
+   <section id="login">
 
-        <div class="row">
+       <div class="row">
 
-            <div id='broccoliIcon'>
+           <div id='broccoliIcon'>
 
-                <h1 class="section-title">Login to Veggie Connect</h1>
+               <h1 class="section-title">Login to Veggie Connect</h1>
                     <img src="broccolilogo.png" class="yonsei-logo rotate brocc">
 
-            </div>
+           </div>
 
-            <?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
+           <?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
                 <div class="alert alert-danger">
                     <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
                 </div>
@@ -29,13 +29,13 @@
                 <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
             <?php endif; ?>
 
-            <div class="col-md-6 col-md-offset-3">
+           <div class="col-md-6 col-md-offset-3">
 
-                <p>Login with your email/username and password.</p>
+               <p>Login with your email/username and password.</p>
 
-                <form method="POST" action="" data-validation data-required-message="This field is required">
+               <form method="POST" action="" data-validation data-required-message="This field is required">
 
-                    <div class="form-group">
+                   <div class="form-group">
                         <input type="text" class="form-control" id="email_user" name="email_user" placeholder="EMAIL OR USERNAME" data-required>
                     </div>
                     <div class="form-group">
@@ -48,10 +48,10 @@
                         <div class="column one-half loginButtonRow">
                             <a href="/signup" id="signupButton" class="button btn btn-success">NOT A MEMBER? SIGN-UP</a>
 
-                        </div>
+                       </div>
                     
-             
+           
 
-    </body>
+   </body>
 
 </html>
