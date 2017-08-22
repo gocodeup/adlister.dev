@@ -55,7 +55,7 @@
         <?php if (Auth::check()) : ?>
                 
             <ul class="desktopMenu hidden-xs desktop-link">
-                 <span class="navbar-text">WELCOME <?= Auth::user()->NAME; ?></span>
+                 <span class="navbar-text">WELCOME <?= Auth::user()->name; ?></span>
             </ul>
         
         <?php endif; ?>
