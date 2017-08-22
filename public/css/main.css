@@ -35,6 +35,9 @@ body{
 #search {
   padding-top: 8px;
 }
+#home_ads {
+  height: 50%;
+}
 @media (min-width: 768px) {
   .navbar {
     border-radius: 0px;
