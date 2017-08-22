@@ -10,7 +10,25 @@
         <!-- FONT AWESOME ICONS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
-    <style>/*/////////////////////////////////////////////*/
+    <style>/*Collumn Settings*/
+        .column.whole {width: 100%;}
+        .column.one-half {width: 50%;}
+        .column.one-third {width: 33.33%;}
+        .column.one-fourth{width: 25%;}
+        .column.one-fifth{width: 20%; float:left;}
+        .column.one-seventh {width: 14.285%;}
+        .column.one-eigth{width: 12.5%;}
+        .column.two-third{width: 66.66%}
+        .column.three-eigth{width: 37.5%;}
+        .column.two-fourth {width: 50%;}
+        .column.three-fourth{width: 75%;}
+        .column.three-sixth{width: 50%;}
+        .column.six-sixteenth{width:37.5%}
+        .column.ten-sixteenth{width:62.5%}
+
+        .column {
+          float:left;}
+    /*/////////////////////////////////////////////*/
     /*CSS for Mobile Responsive Navigation Bar */
     /*/////////////////////////////////////////////*/
 
@@ -139,7 +157,7 @@
 
       #farmersMktGif {
       	max-width: 100%;
-        height: 600px;
+        height: 400px;
         background-image: url("fmrmkt.jpg");
       	background-repeat: no-repeat;
       	margin: auto;
@@ -157,9 +175,25 @@
 		font-family: 'Josefin Sans', sans-serif;
 		color:white;
 	  	text-align: center;
-	  }
+    }
 
-      </style>
+    #fPH {
+      font-family: 'Amatic SC', cursive;
+      
+
+    }
+
+    .featuredProducts {
+      font-family: 'Josefin Sans', sans-serif;
+
+    }
+	  
+
+
+
+
+
+    </style>
     <body>
         <!-- ///////////////////////////////////////
 Mobile Responsive Navigation Bar
@@ -169,7 +203,7 @@ Mobile Responsive Navigation Bar
                 <ul class="desktop-menu" id="desktopMenu">
                     <li>
                         <a id="home" href="#">
-                            <img src="broccolilogo.png" class="yonsei-logo">VEGGIE LIST
+                            <img src="broccolilogo.png" class="yonsei-logo">VEGGIE CONNECT
                         </a>
                     </li>
                     <li class="desktop-link">
@@ -213,18 +247,41 @@ Mobile Responsive Navigation Bar
         <div id='container'> 
             <div id="farmersMktGif" style="margin-top: 133px">
                 <div>
-                    <h1 id="veggieConnectH" style="align-self: center"> Veggie Connect</h1>
-                    <p id="veggieConnectP">We connect you with local farmers and vendors offering fruits, veggies, fresh plants, honey and jams.</p>
+                    <h1 id="veggieConnectH" style="align-self: center;font-size: 120px;padding-top: 80px"> Veggie Connect</h1>
+                    <p id="veggieConnectP" style="font-size: 35px">We connect you with local farmers and vendors offering fruits, veggies, fresh plants, honey and jams.</p>
                 </div>
             </div>
+            <h1></h1>
         </div>
-        <!-- /////////////////////
+        <div id='container'>
+            <section>
+                <div id="featuredProducts">
+                <h1 id="fPH"> Featured Products </h1>
+                    <div class="column one-fourth featuredProducts jansJams"> 
+                        <h1 style="text-align: center">Jan's Jams</h1>
+                        <img src="file:///private/var/folders/2j/b8fgrpc90bsfjw7xfj8yfvdc0000gn/T/AppTranslocation/548D4821-802B-44DB-AA86-3AE75E3B99D3/d/Pinegrow.app/Contents/Resources/app.nw/placeholders/img7.jpg" />
+                    </div>
+                    <div class="column one-fourth featuredProducts carlsCarrots">
+                        <h1 style="text-align: center">Carl's Carrots</h1>
+                        <img src="file:///private/var/folders/2j/b8fgrpc90bsfjw7xfj8yfvdc0000gn/T/AppTranslocation/548D4821-802B-44DB-AA86-3AE75E3B99D3/d/Pinegrow.app/Contents/Resources/app.nw/placeholders/img6.jpg" />
+                    </div>
+                    <div class="column one-fourth featuredProducts hanksHoney">
+                        <h1 style="text-align: center">Hank's Honey</h1>
+                        <img src="file:///private/var/folders/2j/b8fgrpc90bsfjw7xfj8yfvdc0000gn/T/AppTranslocation/548D4821-802B-44DB-AA86-3AE75E3B99D3/d/Pinegrow.app/Contents/Resources/app.nw/placeholders/img1.jpg" />
+                    </div>
+                    <div class="column one-fourth featuredProducts paulasPeppers">
+                        <h1 style="text-align: center">Paula's Peppers</h1>
+                        <img src="file:///private/var/folders/2j/b8fgrpc90bsfjw7xfj8yfvdc0000gn/T/AppTranslocation/548D4821-802B-44DB-AA86-3AE75E3B99D3/d/Pinegrow.app/Contents/Resources/app.nw/placeholders/img8.jpg" />
+                    </div>
+                </div>
+            </section>
+            <!-- /////////////////////
   Java Script Section
   /////////////////////
 
   /*Mobile Responsive Nav Bar */ -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-        <script type="text/javascript">
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+            <script type="text/javascript">
   /* Toggle between adding and removing the "responsive" class to main menu when mobile menu icon is clicked */
     function responsiveMenu() {
     var x = document.getElementById("desktopMenu");

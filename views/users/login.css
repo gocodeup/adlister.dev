@@ -145,7 +145,9 @@
 #login {
 	font-family: 'Josefin Sans', sans-serif;
 	color: #293127;
-	font-size: 20px;
+
+	font-size: 40px;
+
 	text-align: center;
 
 }
@@ -160,41 +162,5 @@
     font-size: 20px;
 }
 
- .button {
-          background-color: #3E6617;
-          border: none;
-          color: white;
-          padding: 10px 27px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 13px;
-          margin: 4px 2px;
-          cursor: pointer;
-          font-family: 'Josefin Sans', sans-serif;
-        }
 
 
-.button:hover {
-	background-color: #ffd800;
-}
-
-.button:active {
-  background-color: #ffd800;
-}
-
-.btn-success {
-	
-	padding: 10px 27px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 13px;
-    margin: 4px 2px;
-
-}
-
-.signup {
-	background-color: pink !important;
-
-}

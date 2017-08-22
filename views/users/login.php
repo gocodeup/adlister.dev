@@ -2,6 +2,7 @@
 <html>
     <title>Adlister</title>
 
+
 <div class="container">
 
     <section id="login">
@@ -46,15 +47,11 @@
                         </div>
                         <div class="column one-half loginButtonRow">
                             <a href="/signup" id="signupButton" class="button btn btn-success">NOT A MEMBER? SIGN-UP</a>
+
                         </div>
-                    </div>
-                </form>
+                    
+             
 
-            </div>
+    </body>
 
-        </div>
-
-    </section>
-
-</div>
 </html>
