@@ -63,7 +63,7 @@ function saveUploadedImage($inputName) {
 }
 function signUp ()
 {
-    
+
     $fullNameError = '';
     $emailError = '';
     $usernameError = '';
@@ -73,13 +73,13 @@ function signUp ()
         $userInfo = User::findByUsernameOrEmail(Input::get('username'));
         if(Input::get('name') === '') {
             return $fullNameError =  'Please enter a name.'.PHP_EOL;
-        } 
+        }
         if(Input::get('email') === '') {
             return $emailError = 'Please enter an email.'.PHP_EOL;
-        } 
+        }
         if(Input::get('username') === '') {
             return $usernameError = 'Please enter a username.'.PHP_EOL;
-        } 
+        }
         if(Input::get('password') === '') {
             return $passwordError = 'Please enter a password.'.PHP_EOL;
         }
@@ -106,11 +106,8 @@ function signUp ()
 function logIn ()
 {
     if(!empty($_POST)){
-        var_dump('firing');
         $username = Input::has('email_user')? escape(Input::get('email_user')): '';
         $password = Input::has('password')? escape(Input::get('password')): '';
-        var_dump($username);
-        var_dump($password);
         Auth::attempt($username, $password);
         if(Auth::check()) {
             header('Location:/index');
