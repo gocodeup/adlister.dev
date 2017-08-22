@@ -60,6 +60,8 @@ function pageController()
         case ('/logout'):
             $mainView = '../views/home.php';
             Auth::logout();
+            $ads = Ad::order('clicks');
+            $data['ads'] = $ads;
             break;
         default:    // displays 404 if route not specified above
             $mainView = '../views/404.php';
