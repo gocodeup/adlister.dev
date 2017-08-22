@@ -1,3 +1,9 @@
+<?php
+
+$passError = isset($_SESSION['PASS_ERROR'])? ($_SESSION['PASS_ERROR']) : '';
+
+?>
+
 
 <div class="container">
 
@@ -36,7 +42,10 @@
                         <input type="text" class="form-control" id="username" name="username" placeholder="Username" <?php if(!empty($_POST)): ?> value='<?= $_POST['username']?>' <?php endif ?>  required>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" <?php if(!empty($_POST)): ?> value='<?= $_POST['password']?>' <?php endif ?> required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="rePassword" name="rePassword" placeholder="Confirm password" <?php if(!empty($_POST)): ?> value='<?= $_POST['rePassword']?>' <?php endif ?> required>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">

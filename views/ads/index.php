@@ -19,7 +19,7 @@ $ads = Ad::getAds();
 			</div>
 		</a>
 	<?php endforeach; } else { ?>
-  <?php echo "No ads met your search results."; } ?>
+  <?php echo "No ads met your search results. <a href='/index'> clear search</a>"; } ?>
 </div>
 
 <br>
