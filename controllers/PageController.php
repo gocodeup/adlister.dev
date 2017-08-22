@@ -96,6 +96,10 @@ function pageController()
             }
             updateUser();
             break;
+        case ('/password'):
+            $mainView = '../views/users/password.php';
+            updatePass();
+            break;
         case ('/logout'):
             $mainView = '../views/home.php';
             Auth::logout();
