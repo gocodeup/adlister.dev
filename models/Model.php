@@ -15,11 +15,11 @@ $_ENV = include __DIR__ . '/../.env.php';
  * is not necessary in instance methods.
  */
 abstract class Model {
-    /** @var PDO|null the connection to the database */ 
+    /** @var PDO|null the connection to the database */
     protected static $dbc;
     /** @var string the name of the table */
     protected static $table;
-    
+
     /** @var array the attributes of this instance */
     protected $attributes = [];
 
@@ -215,8 +215,12 @@ abstract class Model {
         $stmt->bindValue(':column_name', $column_name, PDO::PARAM_STR);
         $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
         $stmt->execute();
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $result;
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return array_map(function($result) {
+            $instance = new static;
+            $instance->attributes = $result;
+            return $instance;
+        }, $results);
 
     }
 

@@ -56,10 +56,9 @@ function pageController()
             break;
         case ('/show'):
             $mainView = '../views/ads/show.php';
-            $ad = Ad::find($_GET['ad']);
+            $ad = Ad::findAd($_GET['ad']);
             $data['ad'] = $ad;
-            $ad->clicks+= 1;
-            $ad->save();
+            $ad->updateClicks();
             break;
         case ('/account'):
             if(Auth::check()) {
