@@ -9,6 +9,7 @@ $ads = Ad::getAds();
 ?>
 
 <div class="container">
+
 	<?php if (! empty($ads)) { ?>
 
 	<?php foreach($ads as $ad): ?>	
