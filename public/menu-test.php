@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
    <head>
-     <title>Antiquitas Lost</title>
       <meta charset="utf-8">
       <link rel="stylesheet" type="text/css" href="css/menu.css">
       <link rel="stylesheet" type="text/css" href="css/main.css">
-      <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
       <title></title>
    </head>
    <body>
@@ -31,7 +29,7 @@
                <div class='square2' data-image="img/armor-flip.jpg">
                   <div class="square-container2">
                      <div class="align-center"></div>
-                     <a href="http://adlister.dev" target="_blank" class="boxshadow kallyas-button">View More</a>
+                     <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View Demos</a>
                   </div>
                   <div class="flip-overlay"></div>
                </div>
@@ -50,7 +48,7 @@
                <div class='square2' data-image="img/weapons-flip.jpg">
                   <div class="square-container2">
                      <div class="align-center"></div>
-                     <a href="http://adlister.dev" target="_blank" class="boxshadow kallyas-button">View More</a>
+                     <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View Demos</a>
                   </div>
                   <div class="flip-overlay"></div>
                </div>
@@ -69,7 +67,7 @@
                <div class='square2' data-image="img/tools-flip.jpg">
                   <div class="square-container2">
                      <div class="align-center"></div>
-                     <a href="http://adlister.dev" target="_blank" class="boxshadow kallyas-button">View More</a>
+                     <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View Demos</a>
                   </div>
                   <div class="flip-overlay"></div>
                </div>
@@ -88,7 +86,7 @@
                <div class='square2' data-image="img/tort-flip.jpg">
                   <div class="square-container2">
                      <div class="align-center"></div>
-                     <a href="http://adlister.dev" target="_blank" class="boxshadow kallyas-button">View More</a>
+                     <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View Demos</a>
                   </div>
                   <div class="flip-overlay"></div>
                </div>
@@ -107,7 +105,7 @@
                <div class='square2' data-image="img/livestock-flip.jpg">
                   <div class="square-container2">
                      <div class="align-center"></div>
-                     <a href="http://adlister.dev" target="_blank" class="boxshadow kallyas-button">View More</a>
+                     <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View Demos</a>
                   </div>
                   <div class="flip-overlay"></div>
                </div>
@@ -126,16 +124,18 @@
                <div class='square2' data-image="img/ales-flip.jpg">
                   <div class ="square-container2">
                      <div class="align-center"></div>
-                     <a href="http://adlister.dev" target="_blank" class="boxshadow kallyas-button">View More</a>
+                     <a href="http://kallyas.net" target="_blank" class="boxshadow kallyas-button">View Demos</a>
                   </div>
                   <div class="flip-overlay"></div>
                </div>
             </div>
-
-
-
+            <div class="clearfix"></div>
+            <p>Made with ♡ by Team Turbo</p>
+            <a href="https://github.com/teamturboadlister/adlister.dev" target="_blank">Team Turbo GitHub</a>
+            <br />
+            <br />
+            <br />
          </div>
-         <?php include 'assets/footer.php' ?>
       </div>
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>

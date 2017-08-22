@@ -27,7 +27,7 @@ class User extends Model {
 
         $query = 'SELECT * FROM ' . self::$table . ' WHERE username = :username OR email = :email';
 
-        $stmt = self::$dbc->prepare($query);
+        $stmt = self::$connection->prepare($query);
         $stmt->bindValue(':username', $usernameOrEmail, PDO::PARAM_STR);
         $stmt->bindValue(':email', $usernameOrEmail, PDO::PARAM_STR);
         $stmt->execute();
@@ -42,4 +42,31 @@ class User extends Model {
 
         return $instance;
     }
+    public static function findPassword($password)
+    {
+        self::dbConnect();
+        $query = 'SELECT * FROM ' . self::$table . ' WHERE password = :password';
+        $stmt = self::$connection->prepare($query);
+        $stmt->bindValue(':password', $password, PDO::PARAM_STR);
+        $stmt->execute();
+        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+        $instance = null;
+        if ($results) {
+            $instance = new static;
+            $instance->attributes = $results;
+        }
+        return $instance;
+    }
+
+    public static function createUser()
+    {
+        $stmt = self::$connection->prepare('INSERT INTO users (name, email, username, password) VALUES (:name, :email, :username, :password)');
+        $stmt->bindValue(':name', Input::escape($_POST['name']), PDO::PARAM_STR);
+        $stmt->bindValue(':email', Input::escape($_POST['email']), PDO::PARAM_STR);
+        $stmt->bindValue(':username', Input::escape($_POST['username']), PDO::PARAM_STR);
+        $stmt->bindValue(':password', password_hash($_POST['password'], PASSWORD_DEFAULT), PDO::PARAM_STR);
+        $stmt->execute();
+
+    }
+
 }
