@@ -4,6 +4,10 @@
 .navbar-nav > li > a {
 	padding-right: 25px;
 }
+#links {
+  list-style: none;
+  text-decoration: none;
+}
 #search {
 	float:right;
 }
@@ -25,4 +29,13 @@
 .ad-img {
 	width:100%;
 	height:auto;
+}
+
+#search {
+  padding-top: 3px;
+}
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0px;
+  }
 }
