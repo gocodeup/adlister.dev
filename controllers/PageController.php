@@ -26,6 +26,8 @@ function pageController()
             break;
         case ('/edit_ads'):
             $mainView = '../views/ads/edit.php';
+            $ad = Ad::findAd($_GET['ad']);
+            $data['ad'] = $ad;
             break;
         case ('/index'):
             $mainView = '../views/ads/index.php';

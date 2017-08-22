@@ -4,18 +4,19 @@
 <?php
 
 //require_once "../models/Ad.php";
-$ads = Ad::getAds();	
+$ads = Ad::getAds();
 
 ?>
 
 <div class="container">
 	<?php if (! empty($ads)) { ?>
-	<?php foreach($ads as $ad): ?>	
+	<?php foreach($ads as $ad): ?>
     <a href="/show?ad=<?php echo($ad->id) ?>">
 			<div class="well text-center col-md-6">
 				<h4><?= $ad->name ?></h4>
 				<p>Description: <?= $ad->description ?></p>
-        <img class="ad-img" src=<?= $ad->image ?>>
+		        <img class="ad-img" src=<?= $ad->image ?>>
+				<p>Seller: <?=$ad->username?></p>
 			</div>
 		</a>
 	<?php endforeach; } else { ?>

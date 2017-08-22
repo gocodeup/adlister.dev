@@ -23,8 +23,8 @@
             <?php foreach($ads as $ad): ?>
 
                 <div class="well text-center col-md-4">
-                    <h4><?= $ad['name'] ?></h4>
-                    <p>Description: <?= $ad['description'] ?></p>
+                    <h4><?= $ad->name ?></h4>
+                    <p>Description: <?= $ad->description ?></p>
                 </div>
             <?php endforeach; ?>
         </div>
