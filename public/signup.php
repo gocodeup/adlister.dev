@@ -1,9 +1,22 @@
 <?php
-require_once __DIR__ . '/../database/db_connect.php';
-require_once __DIR__ . '/../database/db_connect.php';
-require_once "../utils/Input.php";
-require_once "../utils/Auth.php";
-require_once __DIR__ . ' /../utils/helper_functions.php';
+require_once __DIR__ . '/../models/User.php';
+include '../utils/Input.php';
+
+
+if(!empty($_POST)) {
+    $user = new User;
+    $user->name = Input::get('name');
+    $user->email = Input::get('email');
+    $user->username = Input::get('username');
+    $user->password = Input::get('password');
+    if (Input::get('password') === Input::get('confirm_password')){
+        $user->save();
+        header( 'location: /account');
+        die;
+    }else{
+        $errorMessage = 'Passwords do not match.';
+    }
+}
 
 ?>
 
@@ -50,6 +63,15 @@ require_once __DIR__ . ' /../utils/helper_functions.php';
                             <div class="form-group">
                                 <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required>
                             </div>
+                            <div class="form-group" id= "confirm_sign_up_group">
+                       CONFIRM PASSWORD<br>
+                           <input type="password" class="form-control" id="confirm_sign_up_password" name="confirm_password" data-required>
+                       </div>
+                       <?php if (isset($errorMessage)) : ?>
+                           <div class="alert alert-danger">
+                               <p class="error"><?= $errorMessage; ?></p>
+                           </div>
+                       <?php endif; ?>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <button type="submit" class="btn btn-primary">Signup</button>
