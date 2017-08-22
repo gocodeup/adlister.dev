@@ -249,6 +249,11 @@ a img {
     .desktop-link:hover .caretDropdown {
       display: block; /* Allows dropdown menu to remain on screen when other mobile menu items are hovered. AFFECTED BY ".desktop-link:hover .dropdown-menu"! */
     }
+
+    .navbar-text {
+        color: white;
+        margin: auto;
+    }
 }
 
 
@@ -819,3 +824,82 @@ a img {
         max-width: 100%;
         height: 100px;
       }
+
+/*////////////////////////////////////////////////////////////////
+                    Accounts Page
+////////////////////////////////////////////////////////////////*/
+.containerAccount {
+  max-width: 100%;
+  height: 4000px;
+  background-color: #F8FEE9;
+  color: #293127;
+}
+
+.profileImage{
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+  margin: auto;
+}
+
+.uploadButton {
+  background-color: #3E6617;
+  border: none;
+  color: white;
+  padding: 10px 27px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin: auto;
+  cursor: pointer;
+  font-family: 'Josefin Sans', sans-serif;        
+  width: 40%;
+}
+
+.uploadButton:hover {
+  background-color: #ffd800;
+}
+
+.uploadButton:active {
+  background-color: #ffd800;
+}
+
+.userInfo {
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+  font-size: 40px;
+
+
+}
+
+#userInfo {
+  margin-top: -40px;
+}
+
+.buttonProfile {
+  background-color: #3E6617;
+  border: none;
+  color: white;
+  padding: 10px 27px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin: auto;
+  cursor: pointer;
+  font-family: 'Josefin Sans', sans-serif;        
+  width: 40%;
+}
+
+.buttonProfile:hover {
+  background-color: #ffd800;
+}
+
+.buttonProfile:active {
+  background-color: #ffd800;
+}
+
+.itemsForSale {
+  color: #293127;
+}

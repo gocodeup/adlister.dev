@@ -61,22 +61,22 @@ function pageController()
             $data['item'] = Item::all();
             $main_view = '../views/ads/index.php';
             break;
-        case '/item/create':  
+        case '/ads/create':  
             redirectIfNotLoggedIn();
             processNewItemInputIfExists();
             $main_view = '../views/ads/create.php';
             break;
-        case '/item/edit':     
+        case '/ads/edit':     
             redirectIfNotLoggedIn();
             updateItemWithInputIfExists();
             $data['item'] = Item::find(Input::get('id'));
             $main_view = '../views/ads/edit.php';
             break;
-        case '/item/show':     
+        case '/ads/show':     
             $data['item'] = Item::find(Input::get('id'));
             $main_view = '../views/ads/show.php';
             break;
-        case '/item/delete':   
+        case '/ad/delete':   
             redirectIfNotLoggedIn();
             processDeleteOfItem();
             break;
