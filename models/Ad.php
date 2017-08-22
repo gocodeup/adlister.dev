@@ -9,27 +9,36 @@ class Ad extends Model
 	protected static $ads;
 
 	public static function getAds()
-
     {
-       
         self::dbConnect();
-	
-	if (! empty($_GET)) {
 
-		$search = strip_tags($_GET['query']);
+		if (! empty($_GET)) {
+			$search = strip_tags($_GET['query']);
 
-		$query = "SELECT * from ". "ads " ."WHERE name like ". "\"%$search%\"" . " or description like " . "\"%$search%\"";
-		$stmt = self::$dbc->query($query);
- 		
- 		$ads = $stmt->fetchAll(PDO::FETCH_OBJ);
+			$query = "SELECT ads.*, users.email, users.username
+					  from ". "ads " .
+					 "join users on users.id = ads.seller_id " .
+					 "WHERE ads.name like :search or ads.description like :search";
+			$stmt = self::$dbc->prepare($query);
+			$stmt->bindValue(":search", "%$search%");
+			$stmt->execute();
+	 		$results = $stmt->fetchAll(PDO::FETCH_OBJ);
+	 	} else {
+			$query = "SELECT ads.*, users.email, users.username
+					  from ". "ads " .
+					 "join users on users.id = ads.seller_id ";
 
- 	} else {
-		
-		$ads = Ad::all();
- }
+			$stmt = self::$dbc->query($query);
 
- 		return $ads;
+			$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+		}
+		return array_map(function($result) {
+			$instance = new static;
+			$instance->attributes = $result;
+			return $instance;
+		}, $results);
+	}
 }
 }
 ?>
