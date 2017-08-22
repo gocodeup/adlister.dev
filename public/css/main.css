@@ -1,11 +1,16 @@
+body{
+  padding-top: 70px;
+}
+
 .navbar-nav {
 	padding-top: 10px;
 }
 .navbar-nav > li > a {
 	padding-right: 25px;
 }
-#search {
-	float:right;
+#links {
+  list-style: none;
+  text-decoration: none;
 }
 
 #sticky {
@@ -25,4 +30,16 @@
 .ad-img {
 	width:100%;
 	height:auto;
+}
+
+#search {
+  padding-top: 8px;
+}
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0px;
+  }
+  #search {
+    float: right;
+  }
 }
