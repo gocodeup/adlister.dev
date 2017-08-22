@@ -1,4 +1,4 @@
-<div class="container">
+<div class="containerAccount">
 
     <section id="account">
 
@@ -19,14 +19,21 @@
 
             <h1 class="section-title">User Info</h1>
 
-            <p class="text-center">Name: <?= $user->name; ?></p>
-            <p class="text-center">Username: <?= $user->username; ?></p>
-            <p class="text-center">Email: <?= $user->email; ?></p>
+            <!-- Filestack -->
+            <!-- <img class="profileImage" src="https://cdn.filestackcontent.com/2h25ZGRHTfmQ2DBEt3yR" alt="Image uploaded with Filestack" title="Image uploaded with Filestack">
+            
+            <input class="uploadButton" type="button" value="UPLOAD PROFILE PICTURE" onclick="showPicker()" /> -->
+            
+            <div id="userInfo">
+            <p class="text-center userInfo">NAME: <?= $user->name; ?></p>
+            <p class="text-center userInfo">USERNAME: <?= $user->username; ?></p>
+            <p class="text-center userInfo">EMAIL: <?= $user->email; ?></p>
+            </div>
 
             <?php if($user->id == Auth::id()) : ?>
             <div class="col-sm-12 text-center">
 
-                <a href="/users/account/edit?id=<?= $user->id; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i> Edit Profile</a>
+                <a href="/users/account/edit?id=<?= $user->id; ?>" class="buttonProfile btn btn-primary"><i class="fa fa-pencil"></i>EDIT PROFILE</a>
 
             </div>
             <?php endif; ?>
@@ -41,7 +48,7 @@
 
             <div class="col-xs-12">
 
-                <h1 class="section-title">Items You Have For Sale</h1>
+                <h1 class="section-title itemsForSale">Items You Have For Sale</h1>
 
             </div>
 
