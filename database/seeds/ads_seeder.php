@@ -1,11 +1,12 @@
 <?php
 
-require_once __DIR__ .  '/../../models/Ad.php';
+require_once '../../models/Ad.php';
 
 $ad = new Ad;
 $ad->name = "Finn's old shoes";
 $ad->description = "Just some old shoes";
 $ad->seller_id = 1;
+$ad->image = 'img/uploads/old_shoes.jpg';
 $ad->save();
 
 $ad = new Ad;

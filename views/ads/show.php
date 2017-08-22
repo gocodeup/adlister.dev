@@ -4,5 +4,6 @@
 		<h4><?= $ad->name ?></h4>
 		<p>Description: <?= $ad->description ?></p>
 		<img class='ad-img' src=<?= $ad->image ?> alt="">
+		<p>Seller: <?= $ad->username?></p>
 	</div>
 </div>

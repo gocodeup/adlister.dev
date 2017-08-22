@@ -44,8 +44,11 @@ function pageController()
             } else if (!Auth::check()) {
                 $mainView = '../views/users/login.php';
             }
+            $ad = Ad::findAd($_GET['ad']);
+            $data['ad'] = $ad;
             $navbarStatus = 'active';
             $data['adsStatus'] = $navbarStatus;
+
             break;
         case ('/index'):
             $mainView = '../views/ads/index.php';
