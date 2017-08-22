@@ -1,5 +1,6 @@
 <?php
 
+
 require_once '../models/User.php';
 
 class Auth
@@ -22,25 +23,25 @@ class Auth
             return false;
         }
 
-        // gets instance of user model by searching with username or email($username)
+       // gets instance of user model by searching with username or email($username)
         $user = User::findByUsernameOrEmail($username);
 
-        // makes sure the instance returned is not empty
+       // makes sure the instance returned is not empty
         if ($user == null) {
             $_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
             return false;
         }
 
-        // checks password submitted against hashed password
+       // checks password submitted against hashed password
         if (password_verify($password, $user->password)) {
             // sets session variables used for logged in user
             $_SESSION['IS_LOGGED_IN'] = $user->username;
             $_SESSION['LOGGED_IN_ID'] = $user->id;
 
-            return true;
+           return true;
         }
 
-        $_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
+       $_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
         return false;
     }
        /**
@@ -53,7 +54,7 @@ class Auth
         return (isset($_SESSION['IS_LOGGED_IN']) && $_SESSION['IS_LOGGED_IN'] != '');
     }
 
-    /**
+   /**
      * get the id of the logged in user
      *
      * @return int
@@ -66,7 +67,7 @@ class Auth
         return null;
     }
 
-    /**
+   /**
      * get the logged in user object
      *
      * @return User
@@ -79,7 +80,7 @@ class Auth
         return null;
     }
 
-    /**
+   /**
      * clear out and regenerate the session
      *
      * @return boolean true

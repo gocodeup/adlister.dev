@@ -1,3 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Veggie Connect</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- GOOGLE FONTS -->
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Josefin+Sans" rel="stylesheet">
+        <!-- font-family: 'Amatic SC', cursive;
+	  font-family: 'Josefin Sans', sans-serif; -->
+        <!-- FONT AWESOME ICONS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
+    </head>
+  
+    <body>
+<!-- //////////////////
+    Welcome Hero
+////////////////// -->
 <section>
   <div id='container'> 
     <div id="farmersMktGif" style="margin-top: 133px">
@@ -91,5 +110,12 @@
       </ul>
     </div>
   </div>
+
+<!-- /////////////////////
+  Java Script Section
+//////////////////////// -->
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script type="text/javascript" src='home.js'>
+    </body>
+</html>
