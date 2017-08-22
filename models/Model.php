@@ -207,6 +207,18 @@ abstract class Model {
         // return either the found instance or null
         return $instance;
     }
+    public static function order($column_name, $limit = 3)
+    {
+        self::dbConnect();
+        $query = 'SELECT * FROM ' . static::$table . ' ORDER BY :column_name DESC LIMIT :limit';
+        $stmt = self::$dbc->prepare($query);
+        $stmt->bindValue(':column_name', $column_name, PDO::PARAM_STR);
+        $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+
+    }
 
 
     /**
