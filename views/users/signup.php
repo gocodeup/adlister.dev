@@ -1,50 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <title>Adlister</title>
+
 <div class="container">
 
-    <section id="login">
+    <section id="signup">
 
         <div class="row">
+            <div id='broccoliIcon'>
 
-            <h1 class="section-title">Signup For OooLister</h1>
+                    <h1 class="section-title">Sign-Up for Veggie Connect</h1>
+                
+                    <img src="broccolilogo.png" class="yonsei-logo rotate brocc">
+
+            </div>
+
+           
+
+            <?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
+                <div class="alert alert-danger">
+                    <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
+                </div>
+                <?php unset($_SESSION['ERROR_MESSAGE']); ?>
+            <?php endif; ?>
+            <?php if (isset($_SESSION['SUCCESS_MESSAGE'])) : ?>
+                <div class="alert alert-success">
+                    <p class="success"><?= $_SESSION['SUCCESS_MESSAGE']; ?></p>
+                </div>
+                <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
+            <?php endif; ?>
 
             <div class="col-md-6 col-md-offset-3">
 
-                <p>Please fill out the information below so we can create your account.</p>
-                <?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
-                    <div class="alert alert-danger">
-                        <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
-                    </div>
-                    <?php unset($_SESSION['ERROR_MESSAGE']); ?>
-                <?php endif; ?>
-                <?php if (isset($_SESSION['SUCCESS_MESSAGE'])) : ?>
-                    <div class="alert alert-success">
-                        <p class="success"><?= $_SESSION['SUCCESS_MESSAGE']; ?></p>
-                    </div>
-                    <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
-                <?php endif; ?>
+                <p>Sign-up with your email/username and password.</p>
 
                 <form method="POST" action="" data-validation data-required-message="This field is required">
 
                     <div class="form-group">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" data-required>
+                        <input type="text" class="form-control" id="email_user" name="email_user" placeholder="EMAIL OR USERNAME" data-required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" data-required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" data-required>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="PASSWORD" data-required>
                     </div>
                     <div class="row">
-                        <div class="col-sm-6">
-                            <button type="submit" class="btn btn-primary">Signup</button>
+                        <div class="column one-half loginButtonRow">
+                            <a href="/login" id="loginButton" class="button btn btn-success">ALREADY A MEMBER? LOGIN</a>
                         </div>
-                        <div class="col-sm-6 text-right">
-                            <a href="/login" class="btn btn-success">Go To Login</a>
+                        <div class="column one-half loginButtonRow">
+                            <button class="button btn btn-primary">SIGN-UP</button>
                         </div>
                     </div>
-
                 </form>
 
             </div>
@@ -54,3 +59,5 @@
     </section>
 
 </div>
+
+</html>
