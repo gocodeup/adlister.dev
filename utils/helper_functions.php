@@ -127,7 +127,6 @@ function updateUser()
     {
     $user->name = Input::get('name');
     $user->email = Input::get('email');
-    $user->username = Input::get('username');
 
     $user->save();
     header("Location: /account");

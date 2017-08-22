@@ -19,10 +19,6 @@
                         <input type="text" class="form-control" id="name" name="name" value="<?php echo $user->name; ?>"required>
                     </div>
                     <div class="form-group">
-                    	<label for="username">Username</label>
-                        <input type="username" class="form-control" id="username" name="username" value="<?php echo $user->username; ?>"required>
-                    </div>
-                    <div class="form-group">
                     	<label for="Email">Email</label>
                         <input type="email" class="form-control" id="email" name="email" value="<?php echo $user->email; ?>"required>
                     </div>
