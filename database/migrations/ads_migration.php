@@ -1,7 +1,7 @@
 <?php
 
 $_ENV = include __DIR__ . '/../../.env.php';
-require_once '../db_connect.php';
+require_once __DIR__ . '/../db_connect.php';
 
 $dbc->exec('DROP TABLE IF EXISTS ads');
 
@@ -10,6 +10,7 @@ $query = 'CREATE TABLE ads (
     name VARCHAR(240) NOT NULL,
     description TEXT,
 	seller_id INT UNSIGNED,
+    image VARCHAR(240),
     PRIMARY KEY (id)
 )';
 
