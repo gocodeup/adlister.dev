@@ -3,43 +3,20 @@ session_start();
 // require_once __DIR__  .  '/../database/db_connect.php';
 require_once __DIR__ . '/../bootstrap.php';
 require_once '../models/User.php';
+require_once '../utils/Auth.php';
 
-function logout()
- {
- 	session_unset();
- 	session_regenerate_id(true); //destroys the data & erasing the session data from server
- 	session_destroy();
- 	session_start();
- }
-function getUser()
-{
-    $data = [];
-    $user =User::findByUsernameOrEmail($_SESSION['IS_LOGGED_IN']);
-    $username = (isset($_POST['username'])) ? $_POST['username'] : "";
-    		$password = (isset($_POST['password'])) ? $_POST['password'] : "";
+  $user = Auth::findByUsernameOrEmail($_SESSION['IS_LOGGED_IN']);
 
-    		if(empty($_POST)) {
-    			if($username == "username" && $password == "password"){
-    				header("Location:/authorized.php");
-    				die();
-    			} else {
-    				$message = "Invalid login!";
-    			}
-    		}
-    		$user = [
-    		'username' => $username,
-    		'password'=> $password,
-    		'message' => $message
-    		];
 
-    		// if(isset($_GET['logout'])) {
-    		// 	logout();
-    		// 	header("Location:/login.php");
-    		// 	die();
 
-    	return $user;
-    }
-var_dump($user);
+  function logout()
+   {
+    session_unset();
+    session_regenerate_id(true); //destroys the data & erasing the session data from server
+    session_destroy();
+    session_start();
+   }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -52,6 +29,7 @@ var_dump($user);
     </head>
     <body>
             <h1> Iron List Account Settings </h1>
+            <h2> Welcome <?=  $user->name ?></h2>
             <?php include 'assets/menu.php';?>
             <!-- menu panel -->
             <div id="content">
@@ -65,13 +43,15 @@ var_dump($user);
             <h4> User Id <?=$user->user_id; ?></h4>
             <h4> User Name <?=$user->username; ?></h4>
             <h4> Email <?=$user->email; ?><h4>
-            <form method="POST">
+            <form method="POST" >
                 <label for "username">User Name</label>
                 <input id="username" type="text" name="username">
                 <br>
                 <a class="btn-btn-primary" href="/edit.php" > Edit Account </a>
                 <a class="btn-btn-primary" href="/../ads/create.php"> Post An Ad </a>
                 <a class="btn-btn-primary" href="/show.php"> My Ads </a>
+                <br>
+                <button type ='submit' name='logout'>Logout</button>
             </form>
         </div>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

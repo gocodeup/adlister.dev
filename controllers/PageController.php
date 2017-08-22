@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../utils/helper_functions.php';
 
+
 function pageController()
 {
 
@@ -39,7 +40,7 @@ function pageController()
                 }
                 if (!empty($_POST['deleteListing'])) {
                     Ads::deleteAd($_POST['deleteListing']);
-                    header("Location: /users/account");
+                    header("Location: /users/account.php");
                 }
                 break;
 
@@ -60,15 +61,15 @@ function pageController()
                     empty($_POST['name']) 	&&
                     empty($_POST['email']) 	&&
                     empty($_POST['password']) &&
-                    !empty(User::findByUsernameOrEmail($_POST['username'])) &&
-                    password_verify($_POST['password'], User::findByUsernameOrEmail($_POST['username'])->password)
+                    !empty(User::findByUsernameOrEmail($_POST['usernameOrEmail'])) &&
+                    password_verify($_POST['password'], User::findByUsernameOrEmail($_POST['usernameOrEmail'])->password)
                     ) {
-                    $usernameOrEmail = Input::get('username');
+                    $usernameOrEmail = Input::get('usernameOrEmail');
                     $password = Input::get('password');
                     Auth::attempt($usernameOrEmail, $password);
                     $_SESSION['IS_LOGGED_IN'] = $usernameOrEmail;
                     var_dump(User::findByUsernameOrEmail($usernameOrEmail));
-                    // header("Location: /users/account");
+                    header("Location: /users/account.php");
 
                 } elseif (!empty($_POST['username']) && !empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['password']) && $_POST['password'] === $_POST['password'] && empty($_POST['username']) && empty($_POST['password'])) {
                     $_SESSION['IS_LOGGED_IN'] = $_POST['username'];
@@ -76,7 +77,7 @@ function pageController()
                     $usernameOrEmail = $_POST['username'];
                     $password = $_POST['password'];
                     Auth::attempt($usernameOrEmail, $password);
-                    header("Location: /users/account");
+                    header("Location: /users/account.php");
 
                 } else if (
                     (!empty($_POST['username']) ||

@@ -2,7 +2,6 @@
 require_once __DIR__ . '/../models/User.php';
 include '../utils/Input.php';
 
-
 if(!empty($_POST)) {
     $user = new User;
     $user->name = Input::get('name');
@@ -11,7 +10,7 @@ if(!empty($_POST)) {
     $user->password = Input::get('password');
     if (Input::get('password') === Input::get('confirm_password')){
         $user->save();
-        header( 'location: /account');
+        header( 'location: /account.php');
         die;
     }else{
         $errorMessage = 'Passwords do not match.';

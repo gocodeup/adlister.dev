@@ -5,36 +5,23 @@
    require_once "../utils/Auth.php";
    require_once __DIR__ . " /../utils/helper_functions.php";
 
-   function attempt($usernameOrEmail)
-    {
-        // gets instance of user model by searching with username or email($username)
-        $user = User::findByUsernameOrEmail($usernameOrEmail);
-
-        // makes sure the values passed in are not empty
-        if(($username == '' || $username == null) || ($password == '' || $password == null)) {
-            $_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
-            return false;
-        }
-
-        // makes sure the instance returned is not empty
-        if ($user == null) {
-            $_SESSION['ERROR_MESSAGE'] = 'Login information isincorrect';
-            return false;
-        }
-        // checks password submitted against hashed password
-        if (password_verify($password, $user->password)) {
-            // sets session variables used for logged in user
-            $_SESSION['IS_LOGGED_IN'] = $user->username;
-            $_SESSION['LOG_IN_EMAIL'] = $user->email;
-            $_SESSION['LOGGED_IN_ID'] = $user->id;
-            header("Location: /account.php");
-            die();
-            return true;
-        }
-
-        $_SESSION['ERROR_MESSAGE'] = 'Login information is incorrect';
-        return false;
-    }
+   if(!empty($_POST)) {
+            $username = Input::get("email_user");
+            $password = Input::get("password");
+            $log = new Log();
+            if(Auth::attempt($username, $password)) {
+                $log->info("$username logged in successfully. ");
+                header("Location: http://adlister.dev/account.php");
+                die();
+            } else {
+                $log->info("$username failed to log in.");
+                // send a message to the user that their username or password
+                $data['inputClass'] = "form-group has-error";
+                $data['usernamePlaceholder'] = "Username/email or password is incorrect";
+                $data['background'] = "error";
+                $data['username'] = $username;
+            }
+}
 
     ?>
 
@@ -84,7 +71,7 @@
                               <button type="submit" class="btn btn-primary">Login</button>
                            </div>
                            <div class="col-sm-6 text-right">
-                              <a href="/signup" class="btn btn-success">Go To Signup</a>
+                              <a href="/signup.php" class="btn btn-success">Go To Signup</a>
                            </div>
                         </div>
                      </form>
