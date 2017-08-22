@@ -109,14 +109,14 @@ height:100%;
 }
 
 .square-flip {
-	-webkit-perspective: 1000;
+	-webkit-perspective: 800;
 	-moz-perspective: 00;
-	-ms-perspective: 900;
-	perspective: 900;
-	-webkit-transform: perspective(900px);
-	-moz-transform: perspective(900px);
-	-ms-transform: perspective(900px);
-	transform: perspective(900px);
+	-ms-perspective: 800;
+	perspective: 800;
+	-webkit-transform: perspective(800px);
+	-moz-transform: perspective(800px);
+	-ms-transform: perspective(800px);
+	transform: perspective(800px);
 	-webkit-transform-style: preserve-3d;
 	-moz-transform-style: preserve-3d;
 	-ms-transform-style: preserve-3d;
@@ -128,8 +128,8 @@ height:100%;
 }
 
 .square-flip {
-	width: 400px;
-	height: 400px;
+	width: 350px;
+	height: 350px;
 }
 
 .square,
@@ -360,14 +360,14 @@ height:100%;
 
 /*You can delete this style*/
 
-.centerflipcards {
+/*.centerflipcards {
 	display: block;
-	width: 1330px;
+	width: 1300px;
 	height: 440px;
 	text-align: center;
 	margin: 0 auto;
 	margin-top: 25px;
-}
+}*/
 
 .clearfix {
 	clear: both;
