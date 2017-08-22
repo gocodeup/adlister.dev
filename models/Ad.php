@@ -69,8 +69,18 @@ class Ad extends Model
 		return $instance;
 	}
 
+	public function updateClicks(){
+		$query = "UPDATE ads
+				  SET clicks = :clicks
+				  WHERE id = :id";
+
+		$stmt = self::$dbc->prepare($query);
+		$stmt->bindValue(':clicks', $this->clicks + 1);
+		$stmt->bindValue('id', $this->id);
+
+		$stmt->execute();
+	}
 }
-}
+
+
 ?>
-
-
