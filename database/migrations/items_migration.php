@@ -11,7 +11,7 @@ $query = 'CREATE TABLE items (
     user_id INT UNSIGNED NOT NULL,
     quantity VARCHAR(240) NOT NULL,
     cost VARCHAR(100) NOT NULL,
-    discount VARCHAR(255) NOT NULL,
+    description VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
 )';
 

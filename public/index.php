@@ -17,7 +17,7 @@ require_once __DIR__ . '/../bootstrap.php';
 
    <?php require '../views/partials/common_js.php'; ?>
 
-   <?php require '/footer.php'; ?>
+   <!-- <?php require '/footer.php'; ?> -->
 
    <script src="/css/navbar.js"></script>
 </body>
