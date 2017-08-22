@@ -1,3 +1,7 @@
+body{
+  padding-top: 70px;
+}
+
 .navbar-nav {
 	padding-top: 10px;
 }
@@ -7,9 +11,6 @@
 #links {
   list-style: none;
   text-decoration: none;
-}
-#search {
-	float:right;
 }
 
 #sticky {
@@ -32,10 +33,13 @@
 }
 
 #search {
-  padding-top: 3px;
+  padding-top: 8px;
 }
 @media (min-width: 768px) {
   .navbar {
     border-radius: 0px;
+  }
+  #search {
+    float: right;
   }
 }
