@@ -4,7 +4,7 @@ function checkIfUserIdGiven()
     if (!Input::has('id'))
     {
         $_SESSION['ERROR_MESSAGE'] = 'User account not found. Please try again.';
-        header('Location: /items');
+        header('Location: /views/users/login');
         die();
     }
 }
@@ -12,27 +12,29 @@ function redirectIfNotLoggedIn()
 {
     if (!Auth::check())
     {
-        header('Location: /login');
+        header('Location: /views/user/login');
+        die();
     }
 }
 function redirectIfLoggedIn()
 {
     if (Auth::check())
     {
-        header('Location: /account');
+        header('Location: /views/users/account');
+        die();
     }
 }
 function runLogout()
 {
     Auth::logout();
-    header('Location: /login');
+    header('Location: /views/users/login');
     die();
 }
 function processLoginInputIfExists()
 {
     if (hasInput('POST') && Auth::attempt(Input::get('email_user'), Input::get('password')))
     {
-        header('Location: /');
+        header('Location: /utils/log');
         die();
     }
 }
@@ -57,18 +59,18 @@ function processDeleteOfItem()
     if ($item == null)
     {
         $_SESSION['ERROR_MESSAGE'] = 'Post not found';
-        header('Location: /items');
+        header('Location: /views/ads/show');
         die();
     }
     if ($item->user_id != Auth::id())
     {
         $_SESSION['ERROR_MESSAGE'] = 'You do not have permission to do that';
-        header('Location: /items/show?id=' . $item->id);
+        header('Location: /views/ads/show?id=' . $item->id);
         die();
     }
     $item->delete();
     $_SESSION['SUCCESS_MESSAGE'] = 'Post successfully deleted';
-    header('Location: /items');
+    header('Location: /views/users/edit');
     die();
 }
 function processAccountEditInputIfExisits()
@@ -81,7 +83,7 @@ function processAccountEditInputIfExisits()
         $user->username = Input::get('username');
         $user->save();
         $_SESSION['SUCCESS_MESSAGE'] = 'Account successfully updated';
-        header('Location: /users/account?id=' . $user->id);
+        header('Location: /views/users/account?id=' . $user->id);
         die();
     }
 }
@@ -97,13 +99,13 @@ function processSignupInputIfExisits()
         $user->save();
         if (Auth::attempt(Input::get('email'), Input::get('password')))
         {
-            header('Location: /users/account?id=' . $user->id);
+            header('Location: /views/users/account?id=' . $user->id);
             die();
         }
         else
         {
             $_SESSION['ERROR_MESSAGE'] = 'Failed to login user after signup. Please login with the form below.';
-            header('Location: /login');
+            header('Location: /views/users/signup');
             die();
         }
     }
@@ -120,7 +122,7 @@ function processNewItemInputIfExists()
         $image_url = saveUploadedImage('image');
         $item->image_url = $image_url;
         $item->save();
-        header('Location: /items/show?id=' . $item->id);
+        header('Location: /views/ads/show?id=' . $item->id);
         die();
     }
 }
@@ -140,7 +142,7 @@ function updateItemWithInputIfExists()
                 $item->image_url = $image_url;
             }
             $item->save();
-            header('Location: /items');
+            header('Location: /views/ads/show');
             die();
         }
     }

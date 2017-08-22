@@ -1,51 +1,51 @@
-<?php
-require('public/css/main.css');
-require('public/css/navbar.js');
+
+
 
 <nav>
     <ul class="desktop-menu" id="desktopMenu">
 
         <li>
             <a id="home" href="/">
-                <img src="broccolilogo.png" class="yonsei-logo">VEGGIE LIST
+                <img src="broccolilogo.png" class="yonsei-logo">VEGGIE CONNECT
             </a>
         </li>
 
         <li class="desktop-link">
-            <a href="#">HOME</a>
+            <a href="#">HOME
+            </a>
 
 
         <li class="desktop-link">
-            <a href="/items">VEGGIES FOR SALE
+            <a href="/item">VEGGIES FOR SALE
             </a>
         </li>
 
          <?php if (Auth::check()) : ?>
 
-        <li>
-            <a href="/users/account?id=<?= Auth::id(); ?>">Account
+        <li class="desktop-link">
+            <a href="/users/account?id=<?= Auth::id(); ?>">ACCOUNT
             </a>
         </li>
         
-        <li>
-            <a href="/logout">Logout
+        <li class="desktop-link">
+            <a href="/logout">LOGOUT
             </a>
         </li>
         
-        <li>
-            <a href="/items/create">Create Post
+        <li class="desktop-link">
+            <a href="/item/create">CREATE LISTING
             </a>
         </li>
         
         <?php else : ?>
                     
-        <li>
-            <a href="/login">Login
+        <li class="desktop-link">
+            <a href="/login">LOGIN
             </a>
         </li>
                     
-        <li>
-            <a href="/signup">Signup
+        <li class="desktop-link">
+            <a href="/signup">SIGN-UP
             </a>
         </li>
         
@@ -54,8 +54,8 @@ require('public/css/navbar.js');
         
         <?php if (Auth::check()) : ?>
                 
-            <ul class="desktopMenu hidden-xs">
-                 <span class="navbar-text">Welcome <?= Auth::user()->name; ?></span>
+            <ul class="desktopMenu hidden-xs desktop-link">
+                 <span class="navbar-text">WELCOME <?= Auth::user()->name; ?></span>
             </ul>
         
         <?php endif; ?>

@@ -1,243 +1,256 @@
+/*Collumn Settings*/
+        .column.whole {width: 100%;}
+        .column.one-half {width: 50%;}
+        .column.one-third {width: 33.33%;}
+        .column.one-fourth{width: 25%;}
+        .column.one-fifth{width: 20%; float:left;}
+        .column.one-seventh {width: 14.285%;}
+        .column.one-eigth{width: 12.5%;}
+        .column.two-third{width: 66.66%}
+        .column.three-eigth{width: 37.5%;}
+        .column.two-fourth {width: 50%;}
+        .column.three-fourth{width: 75%;}
+        .column.three-sixth{width: 50%;}
+        .column.six-sixteenth{width:37.5%}
+        .column.ten-sixteenth{width:62.5%}
+
+        .column {
+          float:left;}
 /*/////////////////////////////////////////////////////////////////////////
                              Navigation Bar
 /////////////////////////////////////////////////////////////////////////*/
 /* 1. General Links */
-    img {
-      width: 100%;
-      display: block; /* To remove background color under images */
+/* 1. General Links */
+img {
+  width: 100%;
+  display: block; /* To remove background color under images */
+}
+
+li {
+  list-style-type: none;
+}
+
+a,
+a:link,
+a:visited {
+  color: #fff;
+  display: block;
+  font-size: 1.25em;
+  font-weight: 500;
+  padding: 1em;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+  background: #ffd800;
+}
+
+/* Removes border around images in menu for IE10 */
+a img {
+	border: 0;
+}
+
+/* 2. Desktop Nav Menu */
+.desktop-menu {
+  background: #3E6617;
+  margin: 0;
+  padding: .75em 0;
+  position: absolute; /* Prevents parent ul from collapsing because of floated children li's. Alternative to overflow: auto/none; */
+  top: 0;
+  width: 100%;
+  z-index: 1; /* Allows desktop menu to show over slider */
+}
+
+.desktop-link {
+  float: left;
+  margin-top: 1.75em;
+  text-align: center;
+}
+
+  /* 2.1 Desktop Home Link */
+  #home {
+    border: 1px solid #fff;
+    float: left;
+    font-size: 1em;
+    margin: .5em 1em .5em 1em;
+    padding: .75em;
+  }
+
+  #home,
+  #home:link,
+  #home:visited,
+  #home:hover,
+  #home:focus,
+  #home:active {
+    color: #fff;
+    background: none;
+  }
+
+  .yonsei-logo {
+    margin: -.5em auto .5em auto;
+    width: 4em;
+  }
+
+  /* 2.2 Desktop Dropdown-menu */
+  a.caret,
+  #mobile-menu,
+  .dropdown-menu {
+    display: none; /* Removes mobile menu, caret links, and dropdown menu (when menu items are not hovered) on large screens */
+  }
+
+  .desktop-link:hover .dropdown-menu {
+    display: block; /* Shows dropdown menu when menu items are hovered */
+  }
+
+  .dropdown-menu {
+    background: #fff;
+    box-shadow: 2px 2px 10px #777;
+    font-size: .7em;
+    padding: 0;
+    position: absolute;
+    text-align: left;
+    width: 20em;
+  }
+
+  .dropdown-menu a,
+  .dropdown-menu a:link,
+  .dropdown-menu a:visited {
+    border-top: 1px solid #3E6617;
+    color: #3E6617;
+    font-size: 1.5em;
+    font-weight: 600;
+  }
+
+  .dropdown-menu a:hover,
+  .dropdown-menu a:focus,
+  .dropdown-menu a:active {
+    color: #fff;
+  }
+
+/* 3. Tablet/Mobile Nav Menu */
+@media screen and (max-width: 1200px) {
+  body {
+    padding-top: 5.9em; /*  is not covered by menu bar */
+  }
+
+  .desktop-menu {
+    padding: 0; /* Stops mobile nav from jumping up when mobile icon is clicked */
+  }
+
+  .desktop-link {
+    text-align: left;
+  }
+
+  #mobile-menu {
+    background: #3E6617;
+    display: block; /* Shows mobile-menu on small screen menu */
+    position: absolute;
+    width: 100%;
+  }
+
+  #mobile-icon-container {
+    background: none;
+    float: right;
+    width: .35em;
+  }
+
+    /* 3.1 Tablet/Mobile Home2 Link */
+    #home {
+      display: none; /* 연세대학교 desktop-link disappears from small screen menu */
+    }
+     #mobile-menu #home2 { /* Inherits from "Styles for mobile menu icon" */
+      background: none;
+      border: 1px solid #fff;
+      font-size: .8em;
+      left: 1em;
+      position: absolute;
+      top: 1em;
     }
 
-    li {
-      list-style-type: none;
+    .yonsei-logo {
+      float: left;
+      margin-bottom: -.5em;
+      margin-left: -.5em;
+      margin-right: .5em;
     }
 
-    a,
-    a:link,
-    a:visited {
-      color: white;
-      display: block;
+    #logo-text {
       font-size: 1.25em;
-      font-weight: 500;
-      padding: 1em;
-      text-decoration: none;
+      position: relative;
+      top: .5em;
     }
 
-    a:hover,
-    a:focus,
-    a:active {
+    #mobile-icon {
+      height: 3.5em;
+      margin-top: -.75em;
+      position: relative;
+      right: 1em;
+      top: .35em;
+      width: 2.5em;
+    }
+
+    /* 3.2 Tablet/Mobile Dropdown Menu  */
+    a.caret { /* a.caret to beat specificity of styles for general a links */
+      background: #193658;
+      border-bottom: 1px solid #3E6617;
+      border-left: 1px solid #3E6617;
+      bottom: 0;
+      color: #fff;
+      display: block; /* Shows caret link on small screen menu */
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .caret:hover,
+    .caret:focus,
+    .caret:active {
       background: #ffd800;
     }
 
-    /* Removes border around images in menu for IE10 */
-    a img {
-      border: 0;
-    }
-
-    /* 2. Desktop Nav Menu */
-    .desktop-menu {
-      background: #3E6617;
-      margin: 0;
-      padding: .50em 0;
-      position: absolute; /* Prevents parent ul from collapsing because of floated children li's. Alternative to overflow: auto/none; */
-      top: 0;
-      width: 100%;
-      z-index: 1; /* Allows desktop menu to show over slider */
-      font-family: 'Josefin Sans', sans-serif;
-    }
-
     .desktop-link {
-      float: left;
-      margin-top: 1.75em;
-      text-align: center;
-      font-family: 'Josefin Sans', sans-serif;
+      border-top: 1px solid #193658;
+      display: none; /* Javascript menu is removed when mobile menu is inactive */
+      font-size: .85em;
+      margin-top: 0;
     }
 
-      /* 2.1 Desktop Home Link */
-      #home {
-        border: 1px solid white;
-        float: left;
-        font-size: 1em;
-        margin: .5em 1em .5em 1em;
-        padding: .75em;
-      }
+    .desktop-link:hover .dropdown-menu {
+      display: none; /* Makes dropdown menu disappear on small screens. AFFECTS ".desktop-link:hover .caretDropdown" ! */
+    }
 
-      #home,
-      #home:link,
-      #home:visited,
-      #home:hover,
-      #home:focus,
-      #home:active {
-        color: white;
-        background: none;
-      }
+    #last-desktop-link {
+      border-bottom: 1px solid #3E6617;
+    }
 
-      .yonsei-logo {
-        margin: -.5em auto .5em auto;
-        width: 4em;
-      }
+    /* 3.3 Tablet/Mobile Javascript Onclick Menu */
+    .responsive {
+      padding: 0;
+      position: absolute; /* Allows scrolling */
+    }
 
-      /* 2.2 Desktop Dropdown-menu */
-      a.caret,
-      #mobile-menu,
-      .dropdown-menu {
-        display: none; /* Removes mobile menu, caret links, and dropdown menu (when menu items are not hovered) on large screens */
-      }
+    .responsive .desktop-link {
+      background: #3E6617;
+      display: block; /* Javascript menu is shown when mobile menu is active */
+      width: 100%;
+      position: relative;
+      top: 7em; /* Vertically aligns menu items */
+      z-index: 1; /* Allows mobile menu to show over slider */
+    }
 
-      .desktop-link:hover .dropdown-menu {
-        display: block; /* Shows dropdown menu when menu items are hovered */
-      }
+    .caretDropdown {
+      display: block;
+      width: 100%;
+      position: relative;
+    }
 
-      .dropdown-menu {
-        background: white;
-        box-shadow: 2px 2px 10px white;
-        font-size: .7em;
-        padding: 0;
-        position: absolute;
-        text-align: left;
-        width: 20em;
-        font-family: 'Josefin Sans', sans-serif;
-      }
+    .desktop-link:hover .caretDropdown {
+      display: block; /* Allows dropdown menu to remain on screen when other mobile menu items are hovered. AFFECTED BY ".desktop-link:hover .dropdown-menu"! */
+    }
+}
 
-      .dropdown-menu a,
-      .dropdown-menu a:link,
-      .dropdown-menu a:visited {
-        border-top: 1px solid #ffd800;
-        color: #ffd800;
-        font-size: 1.5em;
-        font-weight: 600;
-      }
-
-      .dropdown-menu a:hover,
-      .dropdown-menu a:focus,
-      .dropdown-menu a:active {
-        color: white;
-      }
-
-      /*//////////////////////////////
-      /MOBILE RESPONSIVENESS SECTION/
-      //////////////////////////////*/
-
-      @media screen and (max-width: 1024px) {
-        body {
-          padding-top: 5.9em; /*  is not covered by menu bar */
-        }
-
-        .desktop-menu {
-          padding: 0; /* Stops mobile nav from jumping up when mobile icon is clicked */
-        }
-
-        .desktop-link {
-          text-align: left;
-        }
-
-        #mobile-menu {
-          background: #3E6617;
-          display: block; /* Shows mobile-menu on small screen menu */
-          position: absolute;
-          width: 100%;
-        }
-
-        #mobile-icon-container {
-          background: none;
-          float: right;
-          width: .35em;
-        }
-
-          /* 3.1 Tablet/Mobile Home2 Link */
-          #home {
-            display: none; /* 연세대학교 desktop-link disappears from small screen menu */
-          }
-           #mobile-menu #home2 { /* Inherits from "Styles for mobile menu icon" */
-            background: none;
-            border: 1px solid white;
-            font-size: .8em;
-            left: 1em;
-            position: absolute;
-            top: 1em;
-          }
-
-          .yonsei-logo {
-            float: left;
-            margin-bottom: -.5em;
-            margin-left: -.5em;
-            margin-right: .5em;
-          }
-
-          #logo-text {
-            font-size: 1.25em;
-            position: relative;
-            top: .5em;
-            font-family: 'Rochester', cursive;
-          }
-
-          #mobile-icon {
-            height: 3.5em;
-            margin-top: -.75em;
-            position: relative;
-            right: 1em;
-            top: .35em;
-            width: 2.5em;
-          }
-
-          /* 3.2 Tablet/Mobile Dropdown Menu  */
-          a.caret { /* a.caret to beat specificity of styles for general a links */
-            background: #ffd800;
-            border-bottom: 1px solid #ffd800;
-            border-left: 1px solid #ffd800;
-            bottom: 0;
-            color: white;
-            display: block; /* Shows caret link on small screen menu */
-            position: absolute;
-            right: 0;
-            top: 0;
-          }
-
-          .caret:hover,
-          .caret:focus,
-          .caret:active {
-            background: #ffd800;
-          }
-
-          .desktop-link {
-            border-top: 1px solid #3E6617;
-            display: none; /* Javascript menu is removed when mobile menu is inactive */
-            font-size: .85em;
-            margin-top: 0;
-          }
-
-          .desktop-link:hover .dropdown-menu {
-            display: none; /* Makes dropdown menu disappear on small screens. AFFECTS ".desktop-link:hover .caretDropdown" ! */
-          }
-
-          #last-desktop-link {
-            border-bottom: 1px solid #3E6617;
-          }
-
-          /* 3.3 Tablet/Mobile Javascript Onclick Menu */
-          .responsive {
-            padding: 0;
-            position: absolute; /* Allows scrolling */
-          }
-
-          .responsive .desktop-link {
-            background: #3E6617;
-            display: block; /* Javascript menu is shown when mobile menu is active */
-            width: 100%;
-            position: relative;
-            top: 7em; /* Vertically aligns menu items */
-            z-index: 1; /* Allows mobile menu to show over slider */
-          }
-
-          .caretDropdown {
-            display: block;
-            width: 100%;
-            position: relative;
-          }
-
-          .desktop-link:hover .caretDropdown {
-            display: block; /* Allows dropdown menu to remain on screen when other mobile menu items are hovered. AFFECTED BY ".desktop-link:hover .dropdown-menu"! */
-
-          }
 
 /*///////////////////////////////////////////////////////////////////////////
 							Home Page
@@ -460,16 +473,16 @@
 
 
 /*///////////////////////////////////////////////////////////////////////////
-                              Login Page
+                              Login Page/ Sign-Up
 ///////////////////////////////////////////////////////////////////////////*/
 
 .container {
 	background-color: #F8FEE9;
+  max-width: 100%;
+  height: 730px;
 }
 
-#login {
 
-}
 
 .section-title {
 	font-family: 'Amatic SC', cursive;
@@ -483,17 +496,19 @@
 	height: 20px;
 }
 
-#login {
+
+
+#login, #signup {
 	font-family: 'Josefin Sans', sans-serif;
 	color: #293127;
-	font-size: 40px;
+	font-size: 35px;
 	text-align: center;
 
 }
 
 .form-control {
-	width: 100%;
-	width: 100%;
+	width: 90%;
+	width: 90%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -513,6 +528,8 @@
           margin: 4px 2px;
           cursor: pointer;
           font-family: 'Josefin Sans', sans-serif;
+          width: 40%;
+          font-size: 20px;
         }
 
 
@@ -524,18 +541,281 @@
   background-color: #ffd800;
 }
 
-.btn-success {
-	
-	padding: 10px 27px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 13px;
-    margin: 4px 2px;
+
+#signupButton, #loginButton{
+  background-color: #3E6617;
+          border: none;
+          color: white;
+          padding: 10px 27px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 13px;
+          margin: 4px 2px;
+          cursor: pointer;
+          font-family: 'Josefin Sans', sans-serif;
+          width: 50%;
+          font-size: 20px;
 
 }
 
-.signup {
-	background-color: pink !important;
-
+#loginButton:active {
+  background-color: #ffd800;
 }
+
+#loginButton:hover {
+  background-color: #ffd800;
+}
+
+/*#loginButton:visited {
+  background-color: #ffd800;
+}*/
+
+#signupButton:active {
+  background-color: #ffd800;
+}
+
+#signupButton:active {
+  background-color: #ffd800;
+}
+
+/*#signupButton:visited {
+  background-color: #ffd800;
+}*/
+
+.rotate {
+    cursor:pointer;
+}
+
+.rotate:hover { 
+    
+    -moz-animation: spin .4s 1 linear;
+    -o-animation: spin .4s 1 linear;
+    -webkit-animation: spin .4s 1 linear;
+    animation: spin .4s 1 linear;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(359deg); }
+}
+
+@-moz-keyframes spin {
+    0% { -moz-transform: rotate(0deg); }
+    100% { -moz-transform: rotate(359deg); }
+}
+
+@-o-keyframes spin {
+    0% { -o-transform: rotate(0deg); }
+    100% { -o-transform: rotate(359deg); }
+}
+
+@-ms-keyframes spin {
+    0% { -ms-transform: rotate(0deg); }
+    100% { -ms-transform: rotate(359deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(359deg); }
+}
+
+.brocc {
+  width: 220px;
+  height: 220px;
+  margin-top: -70px;
+}
+
+
+/* /////////////////////////
+         Welcome Hero Section
+      /////////////////////////*/
+      #farmersMktGif {
+        max-width: 100%;
+        height: 400px;
+        background-image: url("fmrmkt.jpg");
+        background-repeat: no-repeat;
+        margin: auto;
+        background-size: contain;
+      }
+      #veggieConnectH{
+        font-family: 'Amatic SC', cursive;
+        color:white;
+        text-align: center;
+      }
+      #veggieConnectP {
+        font-family: 'Josefin Sans', sans-serif;
+        color:white;
+        text-align: center;
+    }
+    /*//////////////////
+    Featured Products
+    //////////////////*/
+  
+      .featuredProducts {
+        background-color: white;
+        text-align: center;
+      }
+      #fP {
+        color: #293127;
+        font-size: 90px;
+        font-family: 'Amatic SC', cursive;
+      }
+          * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Avenir, Arial, sans-serif;
+        margin: 2%;
+      }
+      div.flip-3d {
+        perspective: 1200px;
+        width: 28%;
+        display: inline-block;
+        margin: 2%;
+      }
+      div.flip-3d figure {
+        position: relative;
+        transform-style: preserve-3d;
+        transition: 1s transform;
+        font-size: 1.6rem;
+      }
+      div.flip-3d figure img {
+        width: 100%;
+        height: auto;
+      }
+      div.flip-3d figure figcaption {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        transform: rotateY(.5turn) translateZ(1px);
+        background: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        padding-top: 45%;
+        opacity: 0.6;
+        transition: 1s .5s opacity;
+      }
+      div.flip-3d:hover figure,div.flip-3d.pg-state-hover figure {
+        transform: rotateY(.5turn);
+      }
+      div.flip-3d:hover figure figcaption,div.flip-3d.pg-state-hover figure figcaption {
+        opacity: 1;
+      }
+      div.flip-3d figure:after {
+        content: " ";
+        display: block;
+        height: 8vw;
+        width: 100%;
+        transform: rotateX(90deg);
+        background-image: radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
+      }
+      @media screen and (max-width: 800px) {
+        div#flip-3d {
+          perspective-origin: center top;
+        }
+        div#flip-3d figure {
+          display: block;
+          width: 50%;
+          margin: 0 auto;
+          margin-bottom: 12vw;
+        }
+        div#flip-3d figure:last-child {
+          display: none;
+        }
+      }
+        .fPbutton {
+          background-color: #C4E661;
+          border: none;
+          color: white;
+          padding: 10px 27px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 13px;
+          margin: 4px 2px;
+          cursor: pointer;
+          font-family: 'Josefin Sans', sans-serif;
+        }
+      
+    /*/////////////////
+     Testimonials
+    /////////////////*/
+      #testimonials{
+        background-color: #F8FEE9;
+      }
+        .testContainer
+      {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 60em;
+        *zoom: 1;
+        background-color: #F8FEE9;
+      }
+      .grid-testimonials
+      {
+        overflow: hidden;
+        padding-top: 3.125em;
+        font-family: 'Josefin Sans', sans-serif
+      }
+      .grid-testimonials li
+      {
+        float: left;
+        list-style-type: none;
+        padding-bottom: 3.125em
+      }
+      .grid-testimonials p
+      {
+        line-height: 1.5em;
+        margin: 0
+      }
+      .grid-testimonials-citation
+      {
+        color: #656262;
+        display: block;
+        font-size: 1.125em;
+        font-weight: 700;
+        margin-top: 2em;
+        text-transform: uppercase;
+        text-align: center
+      }
+      .grid-testimonials li div
+      {
+        border: 10px solid #3E6617;
+        padding: 2.125em 7.638888888888889%;
+        position: relative
+      }
+      .grid-testimonials .quote-arrow
+      {
+        background: #fff;
+        border-right:10px solid #3E6617;
+        border-bottom:10px solid #3E6617;
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -32px;
+        left: 50%;
+        margin-left: -25px;
+        width: 40px;
+        height: 40px;
+        -moz-transform:rotate(45deg);
+        -webkit-transform:rotate(45deg);
+      }
+      @media screen and (min-width: 50em) 
+      {
+        .grid-testimonials li
+        {
+          margin-right: 5%;
+          width: 30%
+        }
+        .grid-testimonials li:nth-child(3n)
+        {
+          margin-right: 0
+        }
+      }
+      footer {
+        background-color: #3E6617;
+        max-width: 100%;
+        height: 100px;
+      }

@@ -2,6 +2,8 @@
 
 require_once __DIR__ . '/../utils/helper_functions.php';
 
+
+
 function pageController()
 {
 
@@ -22,7 +24,7 @@ function pageController()
     switch ($request) {
         // TODO: put routes here
         case '/':   
-            $data['items'] = Item::featured();
+            $data['item'] = Item::featured();
             $main_view = '../views/home.php';
             break;
         case '/login':  
@@ -38,7 +40,7 @@ function pageController()
             redirectIfNotLoggedIn();
             checkIfUserIdGiven();
             $data['user'] = User::find(Input::get('id'));
-            $data['items'] = $data['user']->items();
+            $data['item'] = $data['user']->items();
             $main_view = '../views/users/account.php';
             break;
         case '/users/account/edit': 
@@ -51,26 +53,26 @@ function pageController()
         case '/logout': 
             runLogout();
             break;
-        case '/items':  
-            $data['items'] = Item::all();
-            $main_view = '../views/items/index.php';
+        case '/item':  
+            $data['item'] = Item::all();
+            $main_view = '../views/ads/index.php';
             break;
-        case '/items/create':  
+        case '/item/create':  
             redirectIfNotLoggedIn();
             processNewItemInputIfExists();
-            $main_view = '../views/items/create.php';
+            $main_view = '../views/ads/create.php';
             break;
-        case '/items/edit':     
+        case '/item/edit':     
             redirectIfNotLoggedIn();
             updateItemWithInputIfExists();
             $data['item'] = Item::find(Input::get('id'));
-            $main_view = '../views/items/edit.php';
+            $main_view = '../views/ads/edit.php';
             break;
-        case '/items/show':     
+        case '/item/show':     
             $data['item'] = Item::find(Input::get('id'));
-            $main_view = '../views/items/show.php';
+            $main_view = '../views/ads/show.php';
             break;
-        case '/items/delete':   
+        case '/item/delete':   
             redirectIfNotLoggedIn();
             processDeleteOfItem();
             break;
