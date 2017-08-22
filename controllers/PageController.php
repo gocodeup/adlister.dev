@@ -25,7 +25,11 @@ function pageController()
         // TODO: put routes here
         case '/':   
             $data['item'] = Item::featured();
-            $main_view = '../views/home.php';
+            $main_view = '../home.php';
+            break;
+        case '/home':
+            header("Location: /");
+            die();
             break;
         case '/login':
             redirectIfLoggedIn();
@@ -38,9 +42,9 @@ function pageController()
             break;
         case '/users/account': 
             redirectIfNotLoggedIn();
-            checkIfUserIdGiven();
+            // checkIfUserIdGiven();
             $data['user'] = User::find(Input::get('id'));
-            $data['item'] = $data['user']->items();
+            $data['item'] = Item::findAllWithUserId($_SESSION['LOGGED_IN_ID']);
             $main_view = '../views/users/account.php';
             break;
         case '/users/account/edit': 
@@ -82,6 +86,7 @@ function pageController()
     }
 
     $data['main_view'] = $main_view;
+
 
     return $data;
 }

@@ -18,7 +18,6 @@
             <?php endif; ?>
 
             <h1 class="section-title">User Info</h1>
-
             <p class="text-center">Name: <?= $user->name; ?></p>
             <p class="text-center">Username: <?= $user->username; ?></p>
             <p class="text-center">Email: <?= $user->email; ?></p>
