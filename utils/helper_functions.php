@@ -83,12 +83,15 @@ function signUp ()
         if(Input::get('password') === '') {
             return $passwordError = 'Please enter a password.'.PHP_EOL;
         }
+        if(Input::get('password') !== Input::get('rePassword')) {
+            return $passwordError = 'Passwords must match.'.PHP_EOL;
+        }
         if($userInfo !== null && ($userInfo->email === Input::get('email'))) {
             return $emailError = 'The email you have chosen is already associated with another user. Please choose another email.';
         }
         if($userInfo !== null && ($userInfo->username === Input::get('username'))) {
             return $usernameError = 'That username is already in use. Please choose a unique username.';
-        } else if((Input::has('name') && Input::has('email') && Input::has('username') && Input::has('password')) && (User::findByUsernameOrEmail(Input::get('username')) === null) && (User::findByUsernameOrEmail(Input::get('email')) === null)) {
+        } else if((Input::has('name') && Input::has('email') && Input::has('username') && Input::has('password') && Input::has('rePassword'))&& (User::findByUsernameOrEmail(Input::get('username')) === null) && (User::findByUsernameOrEmail(Input::get('email')) === null)) {
             $user = new User();
             $user->name = Input::get('name');
             $user->email = Input::get('email');
@@ -130,7 +133,39 @@ function updateUser()
     header("Location: /account");
 
     }
+}
+function updatePass()
+{
+    $username = isset($_SESSION['IS_LOGGED_IN']) ? $_SESSION['IS_LOGGED_IN'] : '';
+    $password = Input::has('currentPassword')? escape(Input::get('currentPassword')): '';
+    $newPass = Input::has('enterNew')? escape(Input::get('enterNew')): '';
+    if (!empty($_POST))
+    {
+        if (($_POST['enterNew']) !== ($_POST['reEnterNew'])) {
 
+            return $_SESSION['PASS_ERROR'] = "Passwords must match";
+        }
 
+        if (Auth::attempt($username, $password)) {
+
+            $user = Auth::user();
+            $user->password = $newPass;
+            $user->save();
+            
+            unset($_SESSION['ERROR_MESSAGE']);
+            unset($_SESSION['PASS_ERROR']);
+            header("Location: /account");
+
+        } else {
+
+            return $_SESSION['ERROR_MESSAGE'] = "Current password incorrect";
+            
+        }
+        
+    }
 
 }
+
+
+            
+
