@@ -8,7 +8,7 @@ $ads = Ad::getAds();
 
 ?>
 
-<div class="container">
+<div class="container ad-index">
 	<br>
 	<?php if (! empty($ads)) { ?>
 	<?php foreach($ads as $ad): ?>
@@ -17,7 +17,6 @@ $ads = Ad::getAds();
 				<h4><?= $ad->name ?></h4>
 				<p>Description: <?= $ad->description ?></p>
 		        <img class="ad-img" src=<?= $ad->image ?>>
-				<p>Seller: <?=$ad->username?></p>
 			</div>
 		</a>
 	<?php endforeach; } else { ?>
