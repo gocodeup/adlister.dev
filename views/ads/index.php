@@ -9,7 +9,6 @@ $ads = Ad::getAds();
 ?>
 
 <div class="container">
-
 	<?php if (! empty($ads)) { ?>
 	<?php foreach($ads as $ad): ?>
     <a href="/show?ad=<?php echo($ad->id) ?>">
@@ -22,6 +21,7 @@ $ads = Ad::getAds();
 		</a>
 	<?php endforeach; } else { ?>
   <?php echo "No ads met your search results. <a href='/index'> clear search</a>"; } ?>
+
 </div>
 
 <br>
