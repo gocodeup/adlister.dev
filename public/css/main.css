@@ -2,6 +2,9 @@ body {
   padding-top: 52px;
   margin-bottom: 100px;
 }
+a:hover {
+  text-decoration:none;
+}
 .jumbodiv {
   width: 100vw;
   height: 35vh;
@@ -34,6 +37,10 @@ body {
   text-align: center;
   letter-spacing: 0.1em;
   line-height: 2.8em;
+
+}
+#signUp:hover {
+  background-color: #488be6;
 }
 
 #footerIcon{

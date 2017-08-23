@@ -2,7 +2,12 @@
     <div class="row jumbodiv">
         <div id="bigLogo"></div>
     
-        <p id="signUp"><span>SELL MY OLD STUFF!</span></p>
+        <p id="signUp">
+        
+        <?php if(isset($_SESSION['IS_LOGGED_IN'])):?>
+        <?php echo "<a href='/create'><span style='color:white'>SELL MY OLD STUFF!</span></p></a>"; ?>
+        <?php else: echo "<a href='/signup'><span style='color:white'>SELL MY OLD STUFF!</span></p></a>"; ?>
+    <?php endif ?></p>
     </div>
     </section>
 
