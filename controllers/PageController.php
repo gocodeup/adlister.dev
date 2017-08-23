@@ -45,10 +45,14 @@ function pageController()
                 $mainView = '../views/users/login.php';
             }
             $ad = Ad::findAd($_GET['ad']);
+            if ($ad->username !== $_SESSION['IS_LOGGED_IN']){
+                header('Location:/index');
+                die;
+            }
             $data['ad'] = $ad;
+            editAd();
             $navbarStatus = 'active';
             $data['adsStatus'] = $navbarStatus;
-
             break;
         case ('/index'):
             $mainView = '../views/ads/index.php';
@@ -69,6 +73,7 @@ function pageController()
             } else if (!Auth::check()) {
                 $mainView = '../views/users/login.php';
             }
+            $ads = Ad::findAdsByUser();
             $navbarStatus = 'active';
             $data['accountStatus'] = $navbarStatus;
             break;
