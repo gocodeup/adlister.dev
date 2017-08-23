@@ -29,17 +29,17 @@
       <?php endif ?>
       <?php if(Auth::check()): ?>
         <li class="dropdown">
-          <a href="#" id="toggle" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ads <span class="caret"></span></a>
+          <a href="#" id="toggle" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADS <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="/create">Create</a></li>
-            <li><a href="/edit_ads">Edit</a></li>
+            <li><a class="dropDowns" href="/create">CREATE</a></li>
+            <li><a class="dropDowns" href="/edit_ads">EDIT</a></li>
           </ul>
         </li>
         <li class="nav-item  <?= $accountStatus ?>">
-            <a class="nav-link" href="/account">Account<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/account">ACCOUNT<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/logout">Logout<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/logout">LOGOUT<span class="sr-only">(current)</span></a>
         </li>
       <?php endif ?>
       </ul>
