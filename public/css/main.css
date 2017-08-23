@@ -169,7 +169,9 @@ a:hover {
   font-size: 15px;
 }
 #ad_image {
-  height: 30em;
+  height: 22em;
+  object-fit: cover;
+  border-radius: 5px;
 }
 #ad_image_account {
   height: 20em;
