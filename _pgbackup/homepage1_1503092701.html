@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Veggie Connect</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- GOOGLE FONTS -->
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Josefin+Sans" rel="stylesheet">
+        <!-- font-family: 'Amatic SC', cursive;
+	  font-family: 'Josefin Sans', sans-serif; -->
+        <!-- FONT AWESOME ICONS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <style>
+     /*Collumn Settings*/
+        .column.whole {width: 100%;}
+        .column.one-half {width: 50%;}
+        .column.one-third {width: 33.33%;}
+        .column.one-fourth{width: 25%;}
+        .column.one-fifth{width: 20%; float:left;}
+        .column.one-seventh {width: 14.285%;}
+        .column.one-eigth{width: 12.5%;}
+        .column.two-third{width: 66.66%}
+        .column.three-eigth{width: 37.5%;}
+        .column.two-fourth {width: 50%;}
+        .column.three-fourth{width: 75%;}
+        .column.three-sixth{width: 50%;}
+        .column.six-sixteenth{width:37.5%}
+        .column.ten-sixteenth{width:62.5%}
+
+        .column {
+          float:left;}
+    /*/////////////////////////////////////////////*/
+    /*CSS for Mobile Responsive Navigation Bar */
+    /*/////////////////////////////////////////////*/
+
+
+    /* 1. General Links */
+    img {
+      width: 100%;
+      display: block; /* To remove background color under images */
+    }
+
+    li {
+      list-style-type: none;
+    }
+
+    a,
+    a:link,
+    a:visited,a.pg-state-visited {
+      color: white;
+      display: block;
+      font-size: 1.25em;
+      font-weight: 500;
+      padding: 1em;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus,
+    a:active,a.pg-state-focus,a.pg-state-focus,a.pg-state-hover,a.pg-state-focus,a.pg-state-active {
+      background: #ffd800;
+    }
+
+    /* Removes border around images in menu for IE10 */
+    a img {
+      border: 0;
+    }
+
+    /* 2. Desktop Nav Menu */
+    .desktop-menu {
+      background: #3E6617;
+      margin: 0;
+      padding: .50em 0;
+      position: absolute; /* Prevents parent ul from collapsing because of floated children li's. Alternative to overflow: auto/none; */
+      top: 0;
+      width: 100%;
+      z-index: 1; /* Allows desktop menu to show over slider */
+      font-family: 'Josefin Sans', sans-serif;
+    }
+
+    .desktop-link {
+      float: left;
+      margin-top: 1.75em;
+      text-align: center;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+
+      /* 2.1 Desktop Home Link */
+      #home {
+        border: 1px solid white;
+        float: left;
+        font-size: 1em;
+        margin: .5em 1em .5em 1em;
+        padding: .75em;
+      }
+
+      #home,
+      #home:link,
+      #home:visited,
+      #home:hover,
+      #home:focus,
+      #home:active,#home.pg-state-visited,#home.pg-state-visited,#home.pg-state-focus,#home.pg-state-visited,#home.pg-state-hover,#home.pg-state-focus,#home.pg-state-active {
+        color: white;
+        background: none;
+      }
+
+      .yonsei-logo {
+        margin: -.5em auto .5em auto;
+        width: 4em;
+      }
+
+      /* 2.2 Desktop Dropdown-menu */
+      a.caret,
+      #mobile-menu,
+      .dropdown-menu {
+        display: none; /* Removes mobile menu, caret links, and dropdown menu (when menu items are not hovered) on large screens */
+      }
+
+      .desktop-link:hover .dropdown-menu,.desktop-link.pg-state-hover .dropdown-menu {
+        display: block; /* Shows dropdown menu when menu items are hovered */
+      }
+
+      .dropdown-menu {
+        background: white;
+        box-shadow: 2px 2px 10px white;
+        font-size: .7em;
+        padding: 0;
+        position: absolute;
+        text-align: left;
+        width: 20em;
+        font-family: 'Josefin Sans', sans-serif;
+      }
+
+      .dropdown-menu a,
+      .dropdown-menu a:link,
+      .dropdown-menu a:visited,.dropdown-menu a.pg-state-visited {
+        border-top: 1px solid #ffd800;
+        color: #ffd800;
+        font-size: 1.5em;
+        font-weight: 600;
+      }
+
+      .dropdown-menu a:hover,
+      .dropdown-menu a:focus,
+      .dropdown-menu a:active,.dropdown-menu a.pg-state-focus,.dropdown-menu a.pg-state-focus,.dropdown-menu a.pg-state-hover,.dropdown-menu a.pg-state-focus,.dropdown-menu a.pg-state-active {
+        color: white;
+      }
+
+      /*#containerGif{
+        max-width: 100%;
+        height: 1000px;
+        background-color: yellow;
+      }*/
+
+     /* /////////////////////////
+         Welcome Hero Section
+      /////////////////////////*/
+
+      #farmersMktGif {
+      	max-width: 100%;
+        height: 600px;
+        background-image: url("fmrmkt.jpg");
+      	background-repeat: no-repeat;
+      	margin: auto;
+      	background-size: contain;
+
+      }
+
+      #veggieConnectH{
+      	font-family: 'Amatic SC', cursive;
+	  	color:white;
+	  	text-align: center;
+      }
+
+       #veggieConnectP {
+		font-family: 'Josefin Sans', sans-serif;
+		color:white;
+	  	text-align: center;
+	  }</style>
+    <body>
+        <!-- ///////////////////////////////////////
+Mobile Responsive Navigation Bar
+///////////////////////////////////////  -->
+        <div id='navContainer'>
+            <nav>
+                <ul class="desktop-menu" id="desktopMenu">
+                    <li>
+                        <a id="home" href="#">
+                            <img src="broccolilogo.png" class="yonsei-logo">VEGGIE LIST
+                        </a>
+                    </li>
+                    <li class="desktop-link">
+                        <a href="#">HOME</a>
+                        <li class="desktop-link">
+                            <a href="#">VEGGIES FOR SALE</a>
+                        </li>
+                        <li class="desktop-link">
+                            <a href="#">SIGN-UP</a>
+                        </li>
+                        <li class="desktop-link">
+                            <a href="#">LOGIN</a>
+                        </li>
+                        <!-- <li class="desktop-link">
+        <a href="regulations.html">SERVICES</a>
+      </li>
+
+      <li class="desktop-link">
+        <a href="regulations.html">CONTACT</a>
+      </li>
+
+      <li class="desktop-link">
+        <a href="regulations.html">BLOG</a>
+      </li>
+ -->
+                        <li id="mobile-menu">
+                            <a id="home2" href="index.html">
+                                <img src="broccolilogo.png" class="yonsei-logo">
+                            </a>
+                        </a>
+                        <a id="mobile-icon-container" href="#" onclick="responsiveMenu(); return false;">
+                            <img id="mobile-icon" src="https://eliya33.github.io/church/images/mobile-menu-icon-125x125.png" alt="Mobile Menu Icon">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- //////////////////
+     Welcome Hero
+  ////////////////// -->
+        <div id='container'> 
+            <div id="farmersMktGif" style="margin-top: 133px">
+                <div>
+                    <h1 id="veggieConnectH" style="align-self: center;padding-top: 0;font-size: 120px"> Veggie Connect</h1>
+                    <p id="veggieConnectP" style="font-size: 35px;padding-top: -15px">We connect you with local farmers and vendors offering fruits, veggies, fresh plants, honey and jams.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <section>
+        	<div id="featuredProducts">
+        		<div class="column one-fourth myServicesSection myServicesOptionBlock">
+        		<div class="column one-fourth myServicesSection myServicesOptionBlock">
+        		<div class="column one-fourth myServicesSection myServicesOptionBlock">
+        		<div class="column one-fourth myServicesSection myServicesOptionBlock">
+        	</div>
+        </section>
+        <!-- /////////////////////
+  Java Script Section
+  /////////////////////
+
+  /*Mobile Responsive Nav Bar */ -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript">
+  /* Toggle between adding and removing the "responsive" class to main menu when mobile menu icon is clicked */
+    function responsiveMenu() {
+    var x = document.getElementById("desktopMenu");
+    if (x.className === "desktop-menu") {
+      x.className += " responsive";
+    } else {
+      x.className = "desktop-menu";
+    }
+  }
+
+  /* Toggle between adding and removing the "caretDropdown" class to mobile menu links when caret link are clicked */
+  function caretDropdownOne() {
+    var caretDropdown1 = document.getElementById("caretDropdownOne");
+    if (caretDropdown1.className === "dropdown-menu") {
+      caretDropdown1.className += " caretDropdown";
+    } else {
+      caretDropdown1.className = "dropdown-menu";
+    }
+  }
+
+  function caretDropdownTwo() {
+    var caretDropdown2 = document.getElementById("caretDropdownTwo");
+    if (caretDropdown2.className === "dropdown-menu") {
+      caretDropdown2.className += " caretDropdown";
+    } else {
+      caretDropdown2.className = "dropdown-menu";
+    }
+  }
+
+  function caretDropdownThree() {
+    var caretDropdown3 = document.getElementById("caretDropdownThree");
+    if (caretDropdown3.className === "dropdown-menu") {
+      caretDropdown3.className += " caretDropdown";
+    } else {
+      caretDropdown3.className = "dropdown-menu";
+    }
+  }
+
+  function caretDropdownFour() {
+    var caretDropdown4 = document.getElementById("caretDropdownFour");
+    if (caretDropdown4.className === "dropdown-menu") {
+      caretDropdown4.className += " caretDropdown";
+    } else {
+      caretDropdown4.className = "dropdown-menu";
+    }
+  }
+
+  function caretDropdownFive() {
+    var caretDropdown5 = document.getElementById("caretDropdownFive");
+    if (caretDropdown5.className === "dropdown-menu") {
+      caretDropdown5.className += " caretDropdown";
+    } else {
+      caretDropdown5.className = "dropdown-menu";
+    }
+  }
+</script>
+    </body>
+</html>

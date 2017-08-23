@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Log.php';
+
 require_once '../models/User.php';
 
 class Auth
@@ -44,8 +44,7 @@ class Auth
         $_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
         return false;
     }
-
-    /**
+       /**
      * check if a user is logged in
      *
      * @return boolean whether or not a user is logged in
@@ -95,3 +94,4 @@ class Auth
         return true;
     }
 }
+?>
