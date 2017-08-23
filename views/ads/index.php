@@ -9,6 +9,7 @@ $ads = Ad::getAds();
 ?>
 
 <div class="container">
+	<br>
 	<?php if (! empty($ads)) { ?>
 	<?php foreach($ads as $ad): ?>
     <a href="/show?ad=<?php echo($ad->id) ?>">
