@@ -171,6 +171,9 @@ a:hover {
 #ad_image {
   height: 30em;
 }
+#ad_image_account {
+  height: 20em;
+}
 @media (min-width: 768px) {
 .jumbodiv {
   width: 100vw;
