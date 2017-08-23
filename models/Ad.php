@@ -22,7 +22,13 @@ class Ad extends Model
 			$stmt = self::$dbc->prepare($query);
 			$stmt->bindValue(":search", "%$search%");
 			$stmt->execute();
-	 		$results = $stmt->fetchAll(PDO::FETCH_OBJ);
+	 		$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+			return array_map(function($result) {
+				$instance = new static;
+				$instance->attributes = $result;
+				return $instance;
+			}, $results);
 	 	} else {
 			$query = "SELECT ads.*, users.email, users.username
 					  from ". "ads " .
@@ -67,6 +73,28 @@ class Ad extends Model
 
 		// return either the found instance or null
 		return $instance;
+	}
+
+	public static function findAdsByUser()
+	{
+		self::dbConnect();
+
+		$query = "SELECT *
+				  FROM ads
+				  WHERE seller_id = :id ";
+
+		$stmt = self::$dbc->prepare($query);
+		$stmt->bindValue(':id', Auth::id(), PDO::PARAM_INT);
+		$stmt->execute();
+
+		//Store the resultset in a variable named $result
+		$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+		return array_map(function($result) {
+			$instance = new static;
+			$instance->attributes = $result;
+			return $instance;
+		}, $results);
 	}
 
 	public function updateClicks(){
