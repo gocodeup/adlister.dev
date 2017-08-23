@@ -33,7 +33,7 @@
         </li>
         
         <li class="desktop-link">
-            <a href="/item/create">CREATE LISTING
+            <a href="/ads/create">CREATE LISTING
             </a>
         </li>
         
