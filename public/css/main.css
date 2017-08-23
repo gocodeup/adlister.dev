@@ -67,7 +67,19 @@ body{
   background-color: #5e9ff7;
   color: rgba(255,255,255, .5);
 }
-
+.nav .open>a,
+.nav .open>a:focus,
+.nav .open>a:hover {
+    background-color: #5392e7;
+    border-color: #337ab7;
+}
+.nav .dropDowns{
+  color: #5e9ff7;
+}
+.nav .dropDowns:hover,
+.nav .dropDowns:active {
+  color: #5e9ff7;
+}
 #sticky {
   width:100%;
   padding:20px;
