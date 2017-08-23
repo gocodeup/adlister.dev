@@ -1,2 +1,4 @@
 
-<footer id="sticky" class="navbar-inverse">Adlister</footer>
+<footer id="sticky" class="navbar-inverse">
+	<div id="footerIcon" class="header"></div>
+</footer>

@@ -1,7 +1,49 @@
 body{
-  padding-top: 70px;
+  padding-top: 52px;
+}
+.jumbodiv {
+  width: 100vw;
+  height: 35vh;
+  margin: 0px;
+  padding: 0px;
+  background-image: url("../img/Homepage_bg.jpg");
+  background-size: 100vw;
+  background-position-y: 70%;
+}
+#bigLogo {
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(255,255,255,0);
+  background-image: url("../img/Logo_Lg.gif");
+  background-size: 70%;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-position: center;
+  margin: -6vh auto 0px auto;
+}
+#signUp {
+  width: 220px;
+  height: 40px;
+  background-color: #529df9;
+  background-position: center;
+  margin: -40px auto 0 auto;
+  border:none;
+  color:white;
+  font-family: 'Work Sans', sans-serif;
+  text-align: center;
+  letter-spacing: 0.1em;
+  line-height: 2.8em;
 }
 
+#footerIcon{
+  height: 50px;
+  width: 140px;
+  background-image: url("../img/Logo_sm.gif");
+  background-size: 140px 38px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin:auto;
+}
 .navbar-nav {
 	padding-top: 10px;
 }
@@ -11,6 +53,19 @@ body{
 #links {
   list-style: none;
   text-decoration: none;
+}
+.navbar-toggle .icon-bar {
+  background-color:white;
+}
+.navbar ul li a {
+  font-family: 'Work Sans', sans-serif;
+  color: white;
+  letter-spacing: .1em;
+}
+
+.nav > li > a:hover {
+  background-color: #5e9ff7;
+  color: rgba(255,255,255, .5);
 }
 
 #sticky {
@@ -34,12 +89,184 @@ body{
 
 #search {
   padding-top: 8px;
+
+}
+  .form-control {
+    background-color: rgba(255,255,255, 0);
+    border:none;
+    -webkit-box-shadow:none;
+    border-radius: 0px;
+    border-bottom: 1px solid white;
+    font-family: 'Work Sans', sans-serif;
+    color:white;
+    -webkit-color:white;
+  }
+  .form-control:focus {
+    -webkit-box-shadow:none;
+    box-shadow:none;
+    border-color: rgba(255,255,255, 1);
+    color:white;
+    font-family: 'Work Sans', sans-serif;
+    -webkit-color:white;
+  }
+
+.navbar {
+    border-radius: 0px;
+    background-color: #5e9ff7;
+
+  }
+
+.form-control::-webkit-input-placeholder {
+  color: rgba(255,255,255, .5);
+  font-family: 'Work Sans', sans-serif;
+
+}
+#searchButton {
+  color:white;
+  border-radius: 0px;
+  margin: 0px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  background-color: #5e9ff7;
+  font-size: 15px;
+}
+#searchButton:hover {
+  color:white;
+  border-radius: 0px;
+  margin: 0px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  background-color: #84b6f8;
+  font-size: 15px;
+}
+#searchButton:focus {
+  color:white;
+  border-radius: 0px;
+  margin: 0px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  background-color: #84b6f8;
+  font-size: 15px;
 }
 @media (min-width: 768px) {
-  .navbar {
-    border-radius: 0px;
-  }
+.jumbodiv {
+  width: 100vw;
+  height: 55vh;
+  margin: 0px;
+  padding: 0px;
+  background-image: url("../img/Homepage_bg.jpg");
+  background-size: 100vw;
+  background-position-y: 70%;
+}
+#bigLogo {
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(255,255,255,0);
+  background-image: url("../img/Logo_Lg.gif");
+  background-size: 63%;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-position: center;
+  margin: -6vh auto 0px auto;
+}
+#signUp {
+  width: 220px;
+  height: 40px;
+  background-color: #529df9;
+  background-position: center;
+  margin: -90px auto 0 auto;
+  border:none;
+  color:white;
+  font-family: 'Work Sans', sans-serif;
+  text-align: center;
+  letter-spacing: 0.1em;
+  line-height: 2.8em;
+}
   #search {
     float: right;
   }
+  .navbar ul li a {
+    font-family: 'Work Sans', sans-serif;
+    color: white;
+    letter-spacing: .1em;
+  }
+  
+  .nav > li > a:hover {
+    background-color: #5e9ff7;
+    color: rgba(255,255,255, .5);
+  }
+  .form-control {
+    background-color: rgba(255,255,255, 0);
+    border:none;
+    -webkit-box-shadow:none;
+    border-radius: 0px;
+    border-bottom: 1px solid white;
+    font-family: 'Work Sans', sans-serif;
+    color:white;
+    -webkit-color:white;
+  }
+  .form-control:focus {
+    -webkit-box-shadow:none;
+    box-shadow:none;
+    border-color: rgba(255,255,255, 1);
+    color:white;
+    font-family: 'Work Sans', sans-serif;
+    -webkit-color:white;
+  }
+
+.form-control::-webkit-input-placeholder {
+  color: rgba(255,255,255, .5);
+  font-family: 'Work Sans', sans-serif;
+
+}
+#searchButton {
+  color:white;
+  border-radius: 0px;
+  margin: 0px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  background-color: #5e9ff7;
+  font-size: 15px;
+}
+#searchButton:hover {
+  color:white;
+  border-radius: 0px;
+  margin: 0px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  background-color: #84b6f8;
+  font-size: 15px;
+}
+#searchButton:focus {
+  color:white;
+  border-radius: 0px;
+  margin: 0px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  background-color: #84b6f8;
+  font-size: 15px;
+}
+.form-control {
+    background-color: rgba(255,255,255, 0);
+    border:none;
+    -webkit-box-shadow:none;
+    border-radius: 0px;
+    border-bottom: 1px solid white;
+    font-family: 'Work Sans', sans-serif;
+    color:white;
+    -webkit-color:white;
+  }
+  .form-control:focus {
+    -webkit-box-shadow:none;
+    box-shadow:none;
+    border-color: rgba(255,255,255, 1);
+    color:white;
+    font-family: 'Work Sans', sans-serif;
+    -webkit-color:white;
+  }
+  
+
+    
+
+    
 }

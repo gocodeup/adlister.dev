@@ -1,19 +1,14 @@
-<div class="container">
+<section>
 
-    <section id="welcome">
 
-        <div class="row">
-
-            <div class="col-xs-12">
-
-                <h1 class="text-center">Welcome To Adlister</h1>
-
-            </div>
-
-        </div>
-
+    <div class="row jumbodiv">
+        <div id="bigLogo"></div>
+    
+        <p id="signUp"><span>SELL MY OLD STUFF!</span></p>
+    </div>
     </section>
 
+<div class="container">
     <section id="features">
 
         <div class="row">

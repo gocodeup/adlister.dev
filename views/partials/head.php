@@ -1,1 +1,1 @@
-<!--Partial for head.  Good place to include things like css files.-->
+<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
