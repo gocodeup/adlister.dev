@@ -32,7 +32,7 @@
           <a href="#" id="toggle" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADS <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a class="dropDowns" href="/create">CREATE</a></li>
-            <li><a class="dropDowns" href="/edit_ads">EDIT</a></li>
+            <li><a class="dropDowns" href="/account">EDIT</a></li>
           </ul>
         </li>
         <li class="nav-item  <?= $accountStatus ?>">
@@ -47,7 +47,7 @@
       <form method="GET" action="/index" class="navbar-form navbar-left">
         <div class="form-group">
           <input class="form-control mr-sm-2" name="query" type="text" placeholder="Search for old stuff"   aria-label="Search">
-        
+
         </div>
         <button id="searchButton" class="btn btn-outline-success my-2 my-sm-0" type="submit">GO</button>
       </form>

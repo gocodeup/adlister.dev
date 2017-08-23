@@ -210,7 +210,7 @@ a:hover {
     color: white;
     letter-spacing: .1em;
   }
-  
+
   .nav > li > a:hover {
     background-color: #5e9ff7;
     color: rgba(255,255,255, .5);
@@ -284,11 +284,11 @@ a:hover {
     font-family: 'Work Sans', sans-serif;
     -webkit-color:white;
   }
-  
 
-    
 
-    
+
+
+
 }
 
 .close{
@@ -297,5 +297,10 @@ a:hover {
 	font-weight: normal;
 	padding:0;
 	margin:0;
-	
+
+}
+
+.ad-index a, .ad-index a:hover, .ad-index a:focus, .ad-index:active {
+	color: #337ab7;
+	text-decoration: none;
 }

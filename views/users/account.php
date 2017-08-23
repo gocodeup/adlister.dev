@@ -28,7 +28,7 @@
                         <h4><?= $ad->name ?></h4>
                         <p>Description: <?= $ad->description ?></p>
                         <img class="ad-img" src=<?= $ad->image ?>>
-                        <p>Seller: <?=$ad->username?></p>
+                        <a href="/edit_ads?ad=<?=$ad->id?>">Edit</a>
                     </div>
                     <!-- </a> -->
                 <?php endforeach; } else { ?>
