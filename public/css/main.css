@@ -168,6 +168,9 @@ a:hover {
   background-color: #84b6f8;
   font-size: 15px;
 }
+#ad_image {
+  height: 30em;
+}
 @media (min-width: 768px) {
 .jumbodiv {
   width: 100vw;
