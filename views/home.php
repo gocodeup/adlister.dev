@@ -1,19 +1,12 @@
-<div class="container">
-
-    <section id="welcome">
-
-        <div class="row">
-
-            <div class="col-xs-12">
-
-                <h1 class="text-center">Welcome To</h1>
-
-            </div>
-
-        </div>
-
+<section>
+    <div class="row jumbodiv">
+        <div id="bigLogo"></div>
+    
+        <p id="signUp"><span>SELL MY OLD STUFF!</span></p>
+    </div>
     </section>
 
+<div class="container">
     <section id="features">
 
         <div class="row">
