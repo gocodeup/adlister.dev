@@ -16,7 +16,7 @@ $ads = Ad::getAds();
 			<div class="well text-center col-md-6">
 				<h4><?= $ad->name ?></h4>
 				<p>Description: <?= $ad->description ?></p>
-		        <img class="ad-img" src=<?= $ad->image ?>>
+		        <img class="ad-img" src=<?= $ad->image ?> id='ad_image'>
 			</div>
 		</a>
 	<?php endforeach; } else { ?>
