@@ -132,6 +132,31 @@ function updateUser()
     }
 }
 
+function updatePass()
+{
+    $username = isset($_SESSION['IS_LOGGED_IN']) ? $_SESSION['IS_LOGGED_IN'] : '';
+    $password = Input::has('currentPassword')? escape(Input::get('currentPassword')): '';
+    $newPass = Input::has('enterNew')? escape(Input::get('enterNew')): '';
+    if (!empty($_POST))
+    {
+        if (($_POST['enterNew']) !== ($_POST['reEnterNew'])) {
+            return $_SESSION['PASS_ERROR'] = "Passwords must match";
+        }
+        if (Auth::attempt($username, $password)) {
+            $user = Auth::user();
+            $user->password = $newPass;
+            $user->save();
+
+            unset($_SESSION['ERROR_MESSAGE']);
+            unset($_SESSION['PASS_ERROR']);
+            header("Location: /account");
+        } else {
+            return $_SESSION['ERROR_MESSAGE'] = "Current password incorrect";
+
+        }
+
+    }
+}
 
 function editAd()
 {
