@@ -1,4 +1,5 @@
 <?php
+
 class FileUploadException extends Exception { }
 
 /**
@@ -16,7 +17,7 @@ class FileUploadException extends Exception { }
  */
 function saveUploadedImage($inputName) {
     $maxUploadSize = 1024000000;
-    $validFileExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+    $validFileExtensions = ['jpg', 'jpeg', 'png', 'gif', 'JPG'];
     $uploadsDirectory = 'img/uploads';
 
     // make sure the input exists and is a file
@@ -54,9 +55,124 @@ function saveUploadedImage($inputName) {
     $newName = substr($tempName, $positionOfLastSlash);
 
     // move image to uploads directory
-    $imagePath = $uploadsDirectory . '/' . $newName . '.' . $fileExtension;
+    $imagePath = $uploadsDirectory . $newName . '.' . $fileExtension;
     move_uploaded_file($tempName, __DIR__ .'/../public/' . $imagePath);
 
     // return the path to the image relative to our public folder
     return $imagePath;
+}
+function signUp ()
+{
+
+    $fullNameError = '';
+    $emailError = '';
+    $usernameError = '';
+    $passwordError = '';
+
+    if(!empty($_POST)){
+        $userInfo = User::findByUsernameOrEmail(Input::get('username'));
+        if(Input::get('name') === '') {
+            return $fullNameError =  'Please enter a name.'.PHP_EOL;
+        }
+        if(Input::get('email') === '') {
+            return $emailError = 'Please enter an email.'.PHP_EOL;
+        }
+        if(Input::get('username') === '') {
+            return $usernameError = 'Please enter a username.'.PHP_EOL;
+        }
+        if(Input::get('password') === '') {
+            return $passwordError = 'Please enter a password.'.PHP_EOL;
+        }
+        if($userInfo !== null && ($userInfo->email === Input::get('email'))) {
+            return $emailError = 'The email you have chosen is already associated with another user. Please choose another email.';
+        }
+        if($userInfo !== null && ($userInfo->username === Input::get('username'))) {
+            return $usernameError = 'That username is already in use. Please choose a unique username.';
+        } else if((Input::has('name') && Input::has('email') && Input::has('username') && Input::has('password')) && (User::findByUsernameOrEmail(Input::get('username')) === null) && (User::findByUsernameOrEmail(Input::get('email')) === null)) {
+            $user = new User();
+            $user->name = Input::get('name');
+            $user->email = Input::get('email');
+            $user->username = Input::get('username');
+            $user->password = Input::get('password');
+            $user->save();
+            header('Location:/login');
+            die();
+
+        }
+    }
+
+}
+
+function logIn ()
+{
+    if(!empty($_POST)){
+        $username = Input::has('email_user')? escape(Input::get('email_user')): '';
+        $password = Input::has('password')? escape(Input::get('password')): '';
+        Auth::attempt($username, $password);
+        if(Auth::check()) {
+            header('Location:/index');
+            die;
+        }
+    }
+}
+
+function updateUser()
+{
+
+    $user = Auth::user();
+
+    if (!empty($_POST))
+    {
+    $user->name = Input::get('name');
+    $user->email = Input::get('email');
+
+    $user->save();
+    header("Location: /account");
+
+    }
+}
+
+function updatePass()
+{
+    $username = isset($_SESSION['IS_LOGGED_IN']) ? $_SESSION['IS_LOGGED_IN'] : '';
+    $password = Input::has('currentPassword')? escape(Input::get('currentPassword')): '';
+    $newPass = Input::has('enterNew')? escape(Input::get('enterNew')): '';
+    if (!empty($_POST))
+    {
+        if (($_POST['enterNew']) !== ($_POST['reEnterNew'])) {
+            return $_SESSION['PASS_ERROR'] = "Passwords must match";
+        }
+        if (Auth::attempt($username, $password)) {
+            $user = Auth::user();
+            $user->password = $newPass;
+            $user->save();
+
+            unset($_SESSION['ERROR_MESSAGE']);
+            unset($_SESSION['PASS_ERROR']);
+            header("Location: /account");
+        } else {
+            return $_SESSION['ERROR_MESSAGE'] = "Current password incorrect";
+
+        }
+
+    }
+}
+
+function editAd()
+{
+    // $adCheck = Ad::findAd($_GET['ad']);
+    // if ($adCheck->username !== $_SESSION['IS_LOGGED_IN']){
+    //     header('Location:/index');
+    //     die;
+    // }
+
+    $ad = Ad::find($_GET['ad']);
+    $data['ad'] = $ad;
+
+    if(!empty($_POST)){
+        $ad->name = Input::get('name');
+        $ad->description = Input::get('description');
+        $ad->save();
+        header('Location:/account');
+    }
 }

@@ -15,11 +15,11 @@ $_ENV = include __DIR__ . '/../.env.php';
  * is not necessary in instance methods.
  */
 abstract class Model {
-    /** @var PDO|null the connection to the database */ 
+    /** @var PDO|null the connection to the database */
     protected static $dbc;
     /** @var string the name of the table */
     protected static $table;
-    
+
     /** @var array the attributes of this instance */
     protected $attributes = [];
 
@@ -206,6 +206,22 @@ abstract class Model {
 
         // return either the found instance or null
         return $instance;
+    }
+    public static function order($column_name, $limit = 3)
+    {
+        self::dbConnect();
+        $query = 'SELECT * FROM ' . static::$table . ' ORDER BY :column_name DESC LIMIT :limit';
+        $stmt = self::$dbc->prepare($query);
+        $stmt->bindValue(':column_name', $column_name, PDO::PARAM_STR);
+        $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+        $stmt->execute();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return array_map(function($result) {
+            $instance = new static;
+            $instance->attributes = $result;
+            return $instance;
+        }, $results);
+
     }
 
 
