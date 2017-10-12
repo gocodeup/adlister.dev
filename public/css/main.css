@@ -13,6 +13,7 @@ a:hover {
   background-image: url("../img/Homepage_bg.jpg");
   background-size: 100vw;
   background-position-y: 70%;
+  background-repeat:no-repeat;
 }
 #bigLogo {
   width: 100vw;

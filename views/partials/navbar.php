@@ -30,7 +30,7 @@
       <?php if(Auth::check()): ?>
         <li class="dropdown">
           <a href="#" id="toggle" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADS <span class="caret"></span></a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-content">
             <li><a class="dropDowns" href="/create">CREATE</a></li>
             <li><a class="dropDowns" href="/account">EDIT</a></li>
           </ul>

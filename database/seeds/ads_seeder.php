@@ -40,3 +40,5 @@ $ad->image = 'img/uploads/old_guitar.jpg';
 $ad->save();
 
  ?>
+
+//just a comment
