@@ -8,7 +8,7 @@ require_once "../controllers/PageController.php";
 <!DOCTYPE html>
 <html>
 <head>
-    <title>OooLister</title>
+    <title>OldLister</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <?php require '../views/partials/head.php'; ?>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">

@@ -195,6 +195,7 @@ a:hover {
   background-size: 63%;
   background-repeat-x: no-repeat;
   background-repeat-y: no-repeat;
+  background-repeat: no-repeat;
   background-position: center;
   margin: -6vh auto 0px auto;
 }
